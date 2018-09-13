@@ -9,7 +9,7 @@ LSINF1121: Algorithmique et Structures de données
 ###################################################
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    intro/index
    part1/index
