@@ -41,13 +41,17 @@ Agenda
 
 Le cours est organisé en 6 modules de 2 semaines.
 
+.. image:: _static/organisation.svg
+    :scale: 80
+    :width: 400
+    :alt: DFS
 
-* lundi semaine 1: introduction module (auditoire avec Prof. Pierre Schaus)
-* todo: lecture chapitres + exercices théoriques première partie
-* lundi semaine 2 correction exercices (auditoire avec TA. G. Derval)
-* todo: exercices inginious + exercices théoriques deuxième partie
-* lundi semaine 3: restructuration et correction exercices théorique + intro module suivant et on est reparti (auditoire avec Prof. Pierre Schaus)
 
+* lundi semaine 1: introduction et motivation pour la matière (en auditoire avec Prof. P. Schaus)
+* semaine 1: lecture des chapitres par les étudiants et préparation des exercices théoriques A
+* lundi semaine 2: correction des exercices théoriques A (en auditoire avec TA. G. Derval)
+* semaine 2: préparation des exercices théoriques B et exercices sur inginious
+* lundi semaine 3: restructuration et correction exercices théoriques B [+ début module suivant] (auditoire avec Prof. Pierre Schaus)
 
 Le cours d'introduction, de TP et de restructuration
 se donne le lundi 16h15-18h15 au BA94 sauf exception:
