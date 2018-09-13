@@ -119,7 +119,7 @@ taille de l'entrée :math:`n`:
 * Que serait le temps d'exécution pour 128000?
 
 Exercices théoriques supplémentaires
-===================================
+====================================
 
 .. note::
     Ces exercices ne seront pas forcéments résolus en cours, ils restent néanmoins intéressants.
@@ -139,7 +139,7 @@ Exercice 1.2.2
 * Pensez-vous à la valeur maximale des entiers, doubles, etc?
 * En quoi la génération de données aléatoire peut être utile pour tester les structures de données?
 * Pourquoi est-ce important de travailler avec une semence (seed) fixée?
-* En quoi un outil d'analyse de couverture de code peut être utile (tel que \url{http://eclemma.org/jacoco/})
+* En quoi un outil d'analyse de couverture de code peut être utile (tel que `Jacoco <http://eclemma.org/jacoco/>`_)
   pour vous aidez à concevoir des tests.
 * Comment vérifier expérimentalement que l'implémentation d'une structure de données ou un algorithme a
   bien la complexité temporelle théorique attendue ?
