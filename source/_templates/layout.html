@@ -1,8 +1,10 @@
+{# layout.html #}
 {% extends "!layout.html" %}
+
+{% set css_files = css_files + ['_static/css/custom.css'] %}
 
 {%- block extrahead %}
 {{ super() }}
-Hello Pierre
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-125562792-1']);
