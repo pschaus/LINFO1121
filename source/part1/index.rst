@@ -12,7 +12,8 @@ A l'issue de cette partie chaque étudiant sera capable de:
 
 * faire la disctinction entre les notations :math:`\mathcal{\sim}`, :math:`\mathcal{O}`,
   :math:`\mathcal{\Theta}`, et :math:`\mathcal{\Omega}`;
-* décrire avec précision les propriétés des types abstraits *pile* et *file*, ainsi que les divers types de listes chainées;
+* décrire avec précision les propriétés des types abstraits *pile* et *file*,
+  ainsi que les divers types de listes chainées;
 * faire la distinction entre un *type abstrait de données* et son implémentation;
 * mettre en oeuvre et évaluer une implémentation d'une pile par une *liste simplement ou doublement chaînée*;
 * utiliser des *tests unitaires* (avec JUnit) pour tester et prouver le bon fonctionnement d'un programme;
@@ -21,7 +22,13 @@ A l'issue de cette partie chaque étudiant sera capable de:
 A lire
 =======================================
 
-TODO
+Livre de référence:
+
+* Chapitre 1, section 1: quelques rappels de Java et la programmation en général
+* Chapitre 1, section 2: Abstraction de données
+* Chapitre 1, section 3: Piles, files, sacs, listes chainées
+
+Ainsi que ce document résumant les différentes notations de :ref:`part1complexity`.
 
 Exercices théorique: première partie
 =======================================
@@ -64,3 +71,17 @@ Image example
     :alt: DFS
 
 
+Ressources supplémentaires
+==========================
+
+.. toctree::
+   :maxdepth: 1
+
+   complexity
+
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
