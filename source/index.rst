@@ -4,17 +4,15 @@
    :linenothreshold: 4
 
 
-########
-Mini-CP: A Minimalist Open-Source Solver to teach Constraint Programming
-########
+###################################################
+LSINF1121: Algorithmique et Structures de données
+###################################################
 
 .. toctree::
    :maxdepth: 3
 
    intro
-   minicp
-   exercises
-   about
+   part1
 	
 
 
