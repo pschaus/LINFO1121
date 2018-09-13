@@ -195,7 +195,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'lsinf1121.tex', u'LSINF1121',
-   u'Pierre Schaus', 'course'),
+   u'Pierre Schaus', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
