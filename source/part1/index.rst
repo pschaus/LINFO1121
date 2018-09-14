@@ -27,8 +27,12 @@ Livre de référence:
 * Chapitre 1, section 1: quelques rappels de Java et la programmation en général
 * Chapitre 1, section 2: Abstraction de données
 * Chapitre 1, section 3: Piles, files, sacs, listes chainées
+* Chapitre 1, section 4: Analyses d'algorithmes
 
 Ainsi que ce document résumant les différentes notations de :ref:`part1complexity`.
+
+Les `slides (Keynote) <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_ d'introduction.
+
 
 Exercices théoriques: première partie
 =======================================
