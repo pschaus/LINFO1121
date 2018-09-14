@@ -64,13 +64,13 @@ Evaluation
 
 Examen sur Inginious + Une évaluation mid-term lors de la smart-week sur Inginious.
 
-L'évaluation mid-term compte pour 4 points sur 20 à l'examen uniquement si elle fait remonter la moyenne de l'étudiant.
+L'évaluation mid-term compte pour 2 points sur 20 à l'examen uniquement si elle fait remonter la moyenne de l'étudiant.
 La même pondération est appliquée au mois d'août.
 Il est donc fortement conseillé de vous préparer et de participer à l'évaluation mid-term.
 
-Exemple1: évaluation mid-term: 15/20, examen 10/20, total: maximum(10,15*0.2+10*0.8)=11.
+Exemple1: évaluation mid-term: 15/20, examen 10/20, total: maximum(10,15*0.1+10*0.9)=10.5.
 
-Exemple2: évaluation mid-term 6: 8/20, examen 12/20, total: maximum(12,8*0.2+12*0.8)=12.
+Exemple2: évaluation mid-term 6: 8/20, examen 12/20, total: maximum(12,8*0.1+12*0.9)=12.
 
 
 
