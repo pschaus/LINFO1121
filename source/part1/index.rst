@@ -82,7 +82,7 @@ Exercice 1.1.5
 
 * Qu'est-ce qu'un iterateur en Java (`java.util.Iterator`)?
 * Pourquoi est-ce utile de définir une méthode `iterator()` sur les structures de données?
-* Que pensez vous de permettre la modification d'une structure de donnéealors qu'on est en train d'itérer sur celle-ci?
+* Que pensez vous de permettre la modification d'une structure de donnée alors qu'on est en train d'itérer sur celle-ci?
 
 Pour vous aidez dans la réflexion, nous vous invitons à lire la spécification de l'API Java concernant la méthode
 `remove()`.
