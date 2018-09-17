@@ -94,7 +94,7 @@ il n'est pas possible de dire que Insertion est en :math:`\mathcal{\Theta}(g(n))
 Exemple
 -------
 
-Merge sort est en :math:`\in \mathcal{\Theta}(n\log_2 n)`.
+Merge sort est en :math:`\mathcal{\Theta}(n\log_2 n)`.
 
 Notation Tilde (:math:`\mathcal{\sim}`)
 =======================================
