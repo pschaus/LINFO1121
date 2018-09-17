@@ -5,7 +5,7 @@
 Complexités
 *************************************************************************************************
 
-Veuillez notez que toutes les définitions sont ici pour des fonctions positives à un argument entier, mais sont quasiment identiques
+Veuillez noter que toutes les définitions sont ici pour des fonctions positives à un argument entier, mais sont quasiment identiques
 pour les fonctions à plusieurs variables venant d'autres ensembles.
 
 Notation Big-Oh (:math:`\mathcal{O}`)
@@ -89,7 +89,7 @@ Remarques
 
 Il n'est pas possible de trouver une fonction :math:`g(n)` telle que :math:`f(n) \in \mathcal{\Theta}(g(n))` pour toute fonction :math:`f(n)`.
 Par exemple, pour Insertion sort, Vu qu'il est en :math:`\mathcal{O}(n^2)` mais en :math:`\mathcal{\Omega}(n)`, et que ces deux bornes sont atteintes,
-il n'est pas possible de dire que Insertion en en :math:`\mathcal{\Theta}(g(n))`.
+il n'est pas possible de dire que Insertion est en :math:`\mathcal{\Theta}(g(n))`.
 
 Exemple
 -------
