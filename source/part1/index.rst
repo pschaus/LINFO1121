@@ -154,9 +154,9 @@ Exercices d'implémentation sur Inginious
 .. note::
    Vous devez faire ces exercices pour le lundi de S3.
 
-1. `Ecriture de tests unitaires pour une stack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stacktests>`_ 
-2. `Implementation d'une stack avec structure chainée  <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stack>`_ 
-3. `Implementation d'une liste chainée circulaire et d'un iterateur  <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/p1circularlinkedlist>`_ 
+1. `Ecriture de tests unitaires pour une stack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stacktests>`_
+2. `Implementation d'une stack avec structure chainée <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stack>`_ 
+3. `Implementation d'une liste chainée circulaire et d'un iterateur <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/p1circularlinkedlist>`_ 
 
 
 Exercices théorique: deuxième partie
@@ -165,7 +165,102 @@ Exercices théorique: deuxième partie
 .. note::
    Vous devez faire ces exercices pour le lundi de S3.
 
-TODO
+Exercice 1.2.1
+""""""""""""""
+
+Dans votre implémentation d'une liste chainée circulaire ci-dessous.
+Quelle est la complexité de la méthode
+
+
+* `public void enqueue(Item item)`?
+* `public Item remove(int index)` ?
+* d'une séquence d'operations qui consiste à *créer un iterateur et ensuite itérer sur les k-premiers elements* ?
+
+.. code-block:: java
+
+
+   import java.util.ConcurrentModificationException;
+   import java.util.Iterator;
+   import java.util.NoSuchElementException;
+
+   public class CircularLinkedList<Item> implements Iterable<Item> {
+    private long nOp = 0; // count the number of operations
+    private int n;          // size of the stack
+    private Node  last;   // trailer of the list
+
+    // helper linked list class
+    private class Node {
+        private Item item;
+        private Node next;
+    }
+
+    public CircularLinkedList() {
+        last = null;
+        n = 0;
+    }
+
+    public boolean isEmpty() { return n == 0; }
+
+    public int size() { return n; }
+
+    private long nOp() { return nOp; }
+
+    /**
+     * Append an item at the end of the list
+     * @param item the item to append
+     */
+    public void enqueue(Item item) {
+        // TODO STUDENT: Implement add method
+    }
+
+    /**
+     * Removes the element at the specified position in this list.
+     * Shifts any subsequent elements to the left (subtracts one from their indices).
+     * Returns the element that was removed from the list.
+     */
+    public Item remove(int index) {
+        // TODO STUDENT: Implement remove method
+    }
+
+    /**
+     * Returns an iterator that iterates through the items in FIFO order.
+     * @return an iterator that iterates through the items in FIFO order.
+     */
+    public Iterator<Item> iterator() {
+        return new ListIterator();
+    }
+
+    /**
+     * Implementation of an iterator that iterates through the items in FIFO order.
+     *
+     */
+    private class ListIterator implements Iterator<Item> {
+        // TODO STUDDENT: Implement the ListIterator
+    }
+
+   }
+
+Exercice 1.2.2
+""""""""""""""
+La notation post-fixe (ou `polonaise inverse <https://fr.wikipedia.org/wiki/Notation_polonaise_inverse>`_) est utilisée pour représenter des expressions algébriques.
+Nous ne considérons pour simplifier que des expression post-fixes avec des entiers positifs
+et les opérateurs `+` et `*. Par exemple "2 3 1 * + 9 *" dont le résultat vaut 45
+et le résultat de "4 20 + 3 5 1 * * +" est 39.
+
+1. Ecrivez un algorithme en Java pour évaluer une expression post-fixe au départ d'une chaine de n-caractères.
+2. Quelle structure de donnée utilisez vous ?
+3. Quelle est la complexité de votre algorithme (temporelle est spaciale) ?
+
+Pour rappel, voici comment on peut itérer sur les elements d'une chaine qui sont séparés par des espaces.
+
+.. code-block:: java
+
+
+    String in = "4 20 + 3 5 1 * * +";
+    StringTokenizer tokenizer = new StringTokenizer(in);
+    while (tokenizer.hasMoreTokens()) {
+         String element = tokenizer.nextToken();
+    }
 
 Ressources supplémentaires
 ==========================
