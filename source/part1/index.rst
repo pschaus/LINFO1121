@@ -154,7 +154,10 @@ Exercices d'implémentation sur Inginious
 .. note::
    Vous devez faire ces exercices pour le lundi de S3.
 
-TODO
+1. `Ecriture de tests unitaires pour une stack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stacktests>`_ 
+2. `Implementation d'une stack avec structure chainée  <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stack>`_ 
+3. `Implementation d'une liste chainée circulaire et d'un iterateur  <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/p1circularlinkedlist>`_ 
+
 
 Exercices théorique: deuxième partie
 =======================================
