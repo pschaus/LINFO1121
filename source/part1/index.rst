@@ -262,6 +262,166 @@ Pour rappel, voici comment on peut itérer sur les elements d'une chaine qui son
          String element = tokenizer.nextToken();
     }
 
+
+Exercice 1.2.3
+""""""""""""""
+
+La `programmation fonctionnelle <https://fr.wikipedia.org/wiki/Programmation_fonctionnelle>`_ est un paradigme de programmation de plus en plus important.
+Dans ce paradigme de programmation, les structures de données sont `immutables <https://en.wikipedia.org/wiki/Purely_functional_data_structure>`_ .
+Nous nous intéressons ici à l'implémentation d'une liste immutable appelée *FList* permettant d'être utilisée dans un cadre fonctionnel.
+Voici l'API d'une *FList*
+
+.. code-block:: java
+
+
+    public abstract class FList<A> implements Iterable<A> {
+
+        // creates an empty list
+        public static <A> FList<A> nil();
+
+        // prepend a to the list and return the new list
+        public final FList<A> cons(final A a);
+
+        public final boolean isNotEmpty();
+
+        public final boolean isEmpty();
+
+        public final int length();
+
+        // return the head element of the list
+        public abstract A head();
+
+        // return the tail of the list
+        public abstract FList<A> tail();
+
+        // return a list on which each element has been applied function f
+        public final <B> FList<B> map(Function<A,B> f);
+
+        // return a list on which only the elements that satisfies predicate are kept
+        public final FList<A> filter(Predicate<A> f);
+
+        // return an iterator on the element of the list
+        public Iterator<A> iterator();
+
+    }
+
+
+Comme vous pouvez vous en rendre compte, aucne des méthodes ne permet de modifier l'état de la liste.
+Voici un exemple de manipulation d'une telle liste.
+Si vous n'êtes pas familiers avec les `interfaces fonctionnelles <https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`_  de Java8, 
+nous vous demandons de vous familiariser d'abord avec celles-ci.
+
+
+
+.. code-block:: java
+
+
+        FList<Integer> list = FList.nil();
+
+        for (int i = 0; i < 10; i++) {
+            list = list.cons(i);
+        }
+
+        list = list.map(i -> i+1);
+        // will print 1,2,...,11
+        for (Integer i: list) {
+            System.out.println(i);
+        }
+
+        list = list.filter(i -> i%2 == 0);
+        // will print 2,4,6,...,10
+        for (Integer i: list) {
+            System.out.println(i);
+        }
+
+
+Voici une implémentation partielle de la `FList`
+
+
+.. code-block:: java
+
+
+        import java.util.Iterator;
+        import java.util.NoSuchElementException;
+        import java.util.function.Function;
+        import java.util.function.Predicate;
+
+        public abstract class FList<A> implements Iterable<A> {
+
+            public final boolean isNotEmpty() {
+                return this instanceof Cons;
+            }
+
+            public final boolean isEmpty() {
+                return this instanceof Nil;
+            }
+
+            public final int length() {
+                // TODO
+            }
+
+            public abstract A head();
+
+            public abstract FList<A> tail();
+
+            public static <A> FList<A> nil() {
+                return (Nil<A>) Nil.INSTANCE;
+            }
+
+            public final FList<A> cons(final A a) {
+                return new Cons(a, this);
+            }
+
+            public final <B> FList<B> map(Function<A,B> f) {
+                // TODO
+            }
+
+            public final FList<A> filter(Predicate<A> f) {
+                // TODO
+            }
+
+
+            public Iterator<A> iterator() {
+                return new Iterator<A>() {
+                    // complete this class
+
+
+                    public boolean hasNext() {
+                      // TODO
+                    }
+
+                    public A next() {
+                      // TODO
+                    }
+
+                    public void remove() {
+                        throw new UnsupportedOperationException();
+                    }
+                };
+            }
+
+
+            private static final class Nil<A> extends FList<A> {
+                public static final Nil<Object> INSTANCE = new Nil();
+                // TODO
+            }
+
+            private static final class Cons<A> extends FList<A> {
+                // TODO
+            }
+
+
+        }
+
+
+Nous vous demandons de 
+
+
+* compléter cette implémentation, si possible utilisez autant que possible des méthodes récursives.
+* déterminer la complexité de chacune des méthodes.
+
+
+
 Ressources supplémentaires
 ==========================
 
