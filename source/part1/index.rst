@@ -195,13 +195,14 @@ Quelle est la complexité de la méthode
     }
 
     public CircularLinkedList() {
-        last = null;
-        n = 0;
+        last = new Node(); // dummy node
+        last.next = last;
+        n = 1;
     }
 
-    public boolean isEmpty() { return n == 0; }
+    public boolean isEmpty() { return n == 1; }
 
-    public int size() { return n; }
+    public int size() { return n-1; }
 
     private long nOp() { return nOp; }
 
