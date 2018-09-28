@@ -129,14 +129,14 @@ Exercices théoriques supplémentaires
     Ces exercices ne seront pas forcéments résolus en cours, ils restent néanmoins intéressants.
     Si vous avez des problèmes avec ceux-ci, posez votre question lors d'un TP.
 
-Exercice 1.2.1
-""""""""""""""
+Exercice 1.1b.1
+"""""""""""""""
 
 Que signifient les paramètres -Xmx, -Xms que l'on peut passer à la JVM pour l'exécution d'un bytecode?
 Est-ce que ces paramètres peuvent influencer la vitesse d'exécution d'un programme Java? Pourquoi?
 
-Exercice 1.2.2
-""""""""""""""
+Exercice 1.1b.2
+"""""""""""""""
 
 * Qu'est-ce qu'un bon ensemble de tests unitaires pour vérifier l'exactitude d'une structure de données?
 * Pensez-vous aux cas limites?
