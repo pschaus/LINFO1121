@@ -94,7 +94,7 @@ il n'est pas possible de dire que Insertion est en :math:`\mathcal{\Theta}(g(n))
 Exemple
 -------
 
-Merge sort est en :math:`\mathcal{\Theta}(n\log_2 n)`.
+Merge sort est :math:`\in \mathcal{\Theta}(n\log_2 n)`.
 
 Notation Tilde (:math:`\mathcal{\sim}`)
 =======================================
@@ -175,3 +175,25 @@ L'opération de doublement de la taille se fait en :math:`O(n)` où :math:`n` es
 Attention la complexité de la méthode *add(E e)* isolément est bien  :math:`\mathcal{\Omega}(1)` et :math:`\mathcal{O}(n)`
 ou n est le nombre d’éléments dans l'ArrayList.
 
+Types de complexités usuels
+===========================
+
++---------------------------------------+-------------------+-------------------------------------------------------+
+| Classe                                | Nom               | Exemple                                               |
++=======================================+===================+=======================================================+
+| :math:`\mathcal{O}(1)`                | Constante         | Trouver le minimum dans un tableau trié               |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(\log_2{n})`        | Logarithmique     | Binary search                                         |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(n)`                | Linéaire          | Parcours de tableau                                   |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(n\log_2{n})`       | Linéarithmique    | Tris efficaces                                        |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(n^2)`              | Quadratique       | Tris inefficaces                                      |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(n^c)`              | Polynomial        | La majorité des algorithmes vu dans ce cours          |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(c^n)`              | Exponentielle     | Problème du sac à dos                                 |
++---------------------------------------+-------------------+-------------------------------------------------------+
+| :math:`\mathcal{O}(n!)`               | Factorielle       | Approche naïve du problème du voyageur du commerce    |
++---------------------------------------+-------------------+-------------------------------------------------------+

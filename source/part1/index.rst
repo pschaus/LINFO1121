@@ -156,8 +156,7 @@ Exercices d'implémentation sur Inginious
 
 1. `Ecriture de tests unitaires pour une stack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stacktests>`_
 2. `Implementation d'une stack avec structure chainée <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stack>`_ 
-3. `Implementation d'une liste chainée circulaire et d'un iterateur <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part1CircularLinkedList>`_ 
-
+3. `Implementation d'une liste chainée circulaire et d'un iterateur <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part1CircularLinkedList>`_
 
 Exercices théorique: deuxième partie
 =======================================
@@ -420,7 +419,6 @@ Nous vous demandons de
 
 * compléter cette implémentation, si possible utilisez autant que possible des méthodes récursives.
 * déterminer la complexité de chacune des méthodes.
-
 
 
 Ressources supplémentaires
