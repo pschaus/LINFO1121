@@ -19,6 +19,7 @@ A lire
 
 Livre de référence:
 
+* Chapitre 1, section 1: quelques rappels de Java et la programmation en général (partie sur le Binary Search)
 * Chapitre 2, section 1: Tris élémentaires
 * Chapitre 2, section 2: Tri fusion
 * Chapitre 2, section 3: Tri rapide
@@ -158,7 +159,7 @@ le même tableau avec des `Integer`.
 Exercice 2.1.12
 """""""""""""""
 
-Qu'est-ce qu'un \textit{profiler} de code?
+Qu'est-ce qu'un *profiler* de code?
 Quelles informations fournies par un profiler pourriez-vous utiliser pour améliorer les
 performances de votre algorithmes et structures de données de manière générale (vitesse, mémoire, GC)?
 
