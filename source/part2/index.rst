@@ -83,14 +83,14 @@ seules opérations permises sont:
 Écrivez le pseudo code de votre algorithme et donnez-en la complexité.
 
 Exercice 2.1.5
-==============
+""""""""""""""
 
 Comment trier une liste doublement chaînée (qui ne permet donc pas d’accéder
 à une position par son indice) efficacement? Quelle est la complexité de votre
 algorithme?
 
 Exercice 2.1.6
-==============
+""""""""""""""
 
 Imaginez un algorithme efficace pour compter le nombre de paires de valeurs désordonnées.
 Par exemple dans la séquence :math:`1,3,2,5,6,4,8` il y a les paires :math:`(3,2),(5,4),(6,4)`
@@ -115,7 +115,7 @@ qui sont non ordonnées. Justifiez la complexité de votre algorithme et donnez 
     connu qui s'exécute en :math:`\mathcal{O}(n \cdot \log(n))`?
 
 Exercice 2.1.7
-==============
+""""""""""""""
 
 Imaginons que nous souhaitons trier des objets `Person` de manière lexicographique par leur (poids, age, taille)
 mais aussi des objets `Student` par leur (age, note, année), comment faire pour ne pas dupliquer l'algorithme de tri
@@ -125,18 +125,18 @@ Expliquez pourquoi les notions de `Comparable` et `Comparator` de Java sont util
 Expliquez comment vous implémenteriez un `Comparator` efficace pour des `String`.
 
 Exercice 2.1.8
-==============
+""""""""""""""
 
 Est-il possible d'obtenir un tri stable au départ d'un algorithme de tri non stable? Comment?
 
 Exercice 2.1.9
-==============
+""""""""""""""
 
 Comment feriez-vous pour obtenir la 3e plus petite valeur dans un tableau d'un millions de int?
 Quelle est la complexité de votre algorithme?
 
 Exercice 2.1.10
-===============
+"""""""""""""""
 
 Comment feriez-vous pour obtenir la médiane d'un tableau de valeur (donc la :math:`\frac{n}{2}` ième valeur) ?
 Quelle est la complexité de votre algorithme?
@@ -147,7 +147,7 @@ Quelle est la complexité de votre algorithme?
     autour d'une valeur :math:`v` dans l'algorithme Quick-Sort?
 
 Exercice 2.1.11
-===============
+"""""""""""""""
 
 Qu'est-ce que le Autoboxing and Unboxing en Java?
 En quoi est-ce que cela peut impacter les performance d'un algorithme de tri?
@@ -156,7 +156,7 @@ Comparer les performance de `java.util.Sort` sur un tableau de 10000000 entrées
 le même tableau avec des `Integer`.
 
 Exercice 2.1.12
-===============
+"""""""""""""""
 
 Qu'est-ce qu'un \textit{profiler} de code?
 Quelles informations fournies par un profiler pourriez-vous utiliser pour améliorer les
