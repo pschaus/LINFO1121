@@ -94,7 +94,7 @@ il n'est pas possible de dire que Insertion est en :math:`\mathcal{\Theta}(g(n))
 Exemple
 -------
 
-Merge sort est :math:`\in \mathcal{\Theta}(n\log_2 n)`.
+Merge sort est en:math:`\mathcal{\Theta}(n\log_2 n)`.
 
 Notation Tilde (:math:`\mathcal{\sim}`)
 =======================================
@@ -167,13 +167,13 @@ Complexité amortie
 Un autre type de complexité utile est celle qui compte la complexité moyenne pour :math:`m` opérations.
     Cette complexité s'appelle la *complexité amortie*.
 Par exemple, un `ArrayList <https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>`_
-en java est simplémenté avec un array qui double sa taille dès que sa capacité est atteinte.
+en java est implémenté avec un array qui double sa taille dès que sa capacité est atteinte.
 L'opération de doublement de la taille se fait en :math:`O(n)` où :math:`n` est la taille courante du tableau
     L'insertion de :math:`n+1` opérations avec la méthode *add(E e)* lorsque le tableau a une taille courante de :math:`n`
     coûtera en moyenne :math:`\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)`.
 
 Attention la complexité de la méthode *add(E e)* isolément est bien  :math:`\mathcal{\Omega}(1)` et :math:`\mathcal{O}(n)`
-ou n est le nombre d’éléments dans l'ArrayList.
+où :math:`n` est le nombre d’éléments dans l'ArrayList.
 
 Types de complexités usuels
 ===========================
