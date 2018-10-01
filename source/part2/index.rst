@@ -25,6 +25,11 @@ Livre de référence:
 * Chapitre 2, section 3: Tri rapide
 * Chapitre 2, section 5: Application des tris
 
+Slides (keynote)
+
+* `Introduction <https://www.icloud.com/keynote/0bRuyaeN9Z63bppq_yWw_RD1Q#part2-intro>`_ .
+
+
 Exercices théoriques: première partie
 =======================================
 

@@ -31,7 +31,12 @@ Livre de référence:
 
 Ainsi que ce document résumant les différentes notations de :ref:`part1complexity`.
 
-Les `slides (Keynote) <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_ d'introduction.
+Slides (keynote)
+
+* `Introduction <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_ .
+*`Séance Intermédiaire <https://www.icloud.com/keynote/037KCYIeXbULVFGRo7xLiY8fA#part1-exercices>`_ .
+*`Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_ .
+
 
 
 Exercices théoriques: première partie
@@ -243,7 +248,7 @@ Quelle est la complexité de la méthode
 Exercice 1.2.2
 """"""""""""""
 La notation post-fixe (ou `polonaise inverse <https://fr.wikipedia.org/wiki/Notation_polonaise_inverse>`_) est utilisée pour représenter des expressions algébriques.
-Nous ne considérons pour simplifier que des expression post-fixes avec des entiers positifs
+Nous ne considérons pour simplifier que des expressions post-fixes avec des entiers positifs
 et les opérateurs `+` et `*. Par exemple "2 3 1 * + 9 *" dont le résultat vaut 45
 et le résultat de "4 20 + 3 5 1 * * +" est 39.
 
