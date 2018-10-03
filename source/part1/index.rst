@@ -89,7 +89,7 @@ Exercice 1.1.5
 * Pourquoi est-ce utile de définir une méthode `iterator()` sur les structures de données?
 * Que pensez vous de permettre la modification d'une structure de donnée alors qu'on est en train d'itérer sur celle-ci?
 
-Pour vous aidez dans la réflexion, nous vous invitons à lire la spécification de l'API Java concernant la méthode
+Pour vous aider dans la réflexion, nous vous invitons à lire la spécification de l'API Java concernant la méthode
 `remove()`.
 
 Proposez une modification du code de l'iterateur de Stack qui lance une `java.util.ConcurrentModificationException`
