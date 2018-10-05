@@ -47,7 +47,7 @@ Quelle est la complexité de cet algorithme?
 Exercice 2.1.2
 """"""""""""""
 
-Nous considérons le problème très général où l'on a :math:`n` jobs à a accomplir pour des clients
+Nous considérons le problème très général où l'on a :math:`n` jobs à accomplir pour des clients
 et chaque job :math:`j` demande :math:`t_j` secondes pour l'accomplir.
 Un seul job peut être effectué à la fois.
 
