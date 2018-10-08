@@ -178,7 +178,12 @@ Exercices d'implémentation sur Inginious
 .. note::
    Vous devez faire ces exercices pour le lundi de S5.
 
-Les exercices seront publiés le lundi de S4.
+
+1. `Uniont intervals <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2UnionIntervals>`_
+2. `Mediane <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2Median>`_ 
+3. `Merge Sort <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2MergeSort>`_
+4. `QCM <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2QCM>`_
+5. `Global Warming <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2GlobalWarming>`_
 
 Exercices théorique: deuxième partie
 =======================================
@@ -204,7 +209,7 @@ Quel sera la complexité pour trier le tableau? Discutez cette complexité par r
 Exercice 2.2.3
 """""""""""""""
 
-Le mode d'un tableau de nombres est le nombre qui apparait le plus fréquemment dans le tableau. Par exemple (4,6,2,4,3,1) a le mode 4. Donnez un algorithme efficace pour calculer le mode d'un tableau de $n$ nombres. Quid si on sait que le tableau ne contient que des valeurs de 0 à k ?
+Le mode d'un tableau de nombres est le nombre qui apparait le plus fréquemment dans le tableau. Par exemple (4,6,2,4,3,1) a le mode 4. Donnez un algorithme efficace pour calculer le mode d'un tableau de :math:`n nombres. Quid si on sait que le tableau ne contient que des valeurs de 0 à k ?
 
 Exercice 2.2.4
 """""""""""""""
@@ -227,5 +232,5 @@ Exercice 2.2.7
 """""""""""""""
 
 Étant donné une matrice de nombres entiers qui sont triés le long des lignes et des colonnes, comment trouver un nombre donné dans la matrice de manière efficace ?
-Indice: Il existe un algorithme en temps $O(n+m)$ pour une matrice :math:`n\times m. Pour cela commencez dans le coin supérieur droit et comparez avec le nombre recherché. Quelles parties de la matrice pouvez-vous élaguer dans votre recherche en fonction du résultat? 
+Indice: Il existe un algorithme en temps :math:`O(n+m)` pour une matrice :math:`n\times m`. Pour cela commencez dans le coin supérieur droit et comparez avec le nombre recherché. Quelles parties de la matrice pouvez-vous élaguer dans votre recherche en fonction du résultat? 
 
