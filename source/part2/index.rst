@@ -214,7 +214,7 @@ Le mode d'un tableau de nombres est le nombre qui apparait le plus fréquemment 
 Exercice 2.2.4
 """""""""""""""
 
-Étant donné deux ensembles :math:`S_1` et :math:`S_2` (chacun de taille $n$), et un nombre $x$. Décrivez un algorithme efficace pour trouver s'il existe une paire :math:`(a,b)` avec :math:`a \in S_1,b \in S_2` telle que :math:`a+b=x`. Quelle est la complexité de votre algorithme? Quid si les ensembles sont dans des tableaux déjà triés ?
+Étant donné deux ensembles :math:`S_1` et :math:`S_2` (chacun de taille :math:`n`), et un nombre :math:`x`. Décrivez un algorithme efficace pour trouver s'il existe une paire :math:`(a,b)` avec :math:`a \in S_1,b \in S_2` telle que :math:`a+b=x`. Quelle est la complexité de votre algorithme? Quid si les ensembles sont dans des tableaux déjà triés ?
 
 
 Exercice 2.2.5
@@ -226,7 +226,7 @@ Même question que la précédente mais pour un seul ensemble. Quid si l'ensembl
 Exercice 2.2.6
 """""""""""""""
 
-Donnez un algorithme pour calculer l'union de deux ensembles :math:`A` et :math:`B`. Supposons un second temps, que l'ensemble :math:`A` déjà trié a une taille :math:`n` et l'ensemble :math:`B` également trié a une taille :math:`n^2`. Quelle seraient la complexité, est-ce que votre algorithme change ?
+Donnez un algorithme pour calculer l'union de deux ensembles :math:`A` et :math:`B`. Supposons un second temps, que l'ensemble :math:`A` déjà trié a une taille :math:`n` et l'ensemble :math:`B` également trié a une taille :math:`n^2`. Quelle serait la complexité, est-ce que votre algorithme change ?
 
 Exercice 2.2.7
 """""""""""""""
