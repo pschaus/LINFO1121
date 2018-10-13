@@ -195,7 +195,7 @@ Exercices théorique: deuxième partie
 Exercice 2.2.1
 """""""""""""""
 
-Écrivez une méthode qui prend en entrée un tableau d'intervalles et qui retourne l'union de ces intervalles comme un tableau d'intervalles disjoints. On considère que les intervalles d'input sont donnés sous la forme de deux tableaux `int[] min, int[] max;` où le ième intervalle est donné par `(min[i],max[i])`. Exemple d'intrée `min=[5,0,1,6,2]` `max=[7,2,2,8,3]` donnerait en sortie `min=[0,5],max=[3,8]`.  
+Écrivez une méthode qui prend en entrée un tableau d'intervalles et qui retourne l'union de ces intervalles comme un tableau d'intervalles disjoints. On considère que les intervalles d'input sont donnés sous la forme de deux tableaux `int[] min, int[] max;` où le ième intervalle est donné par `(min[i],max[i])`. Exemple d'entrée `min=[5,0,1,6,2]` `max=[7,2,2,8,3]` donnerait en sortie `min=[0,5],max=[3,8]`.  
 Ecrivez le pseudo-code. Quelle est la complexité de votre méthode ? 
 
 Exercice 2.2.2
@@ -209,12 +209,12 @@ Quel sera la complexité pour trier le tableau? Discutez cette complexité par r
 Exercice 2.2.3
 """""""""""""""
 
-Le mode d'un tableau de nombres est le nombre qui apparait le plus fréquemment dans le tableau. Par exemple (4,6,2,4,3,1) a le mode 4. Donnez un algorithme efficace pour calculer le mode d'un tableau de :math:`n nombres. Quid si on sait que le tableau ne contient que des valeurs de 0 à k ?
+Le mode d'un tableau de nombres est le nombre qui apparait le plus fréquemment dans le tableau. Par exemple (4,6,2,4,3,1) a le mode 4. Donnez un algorithme efficace pour calculer le mode d'un tableau de :math:`n` nombres. Quid si on sait que le tableau ne contient que des valeurs de 0 à :math:`k` ?
 
 Exercice 2.2.4
 """""""""""""""
 
-Étant donné deux ensembles $S_1$ et $S_2$ (chacun de taille $n$), et un nombre $x$. Décrivez un algorithme efficace pour trouver s'il existe une paire :math:`(a,b)` avec :math:`a \in S_1,b \in S_2` telle que :math:`a+b=x`. Quelle est la complexité de votre algorithme? Quid si les ensembles sont dans des tableaux déjà triés ?
+Étant donné deux ensembles :math:`S_1` et :math:`S_2` (chacun de taille $n$), et un nombre $x$. Décrivez un algorithme efficace pour trouver s'il existe une paire :math:`(a,b)` avec :math:`a \in S_1,b \in S_2` telle que :math:`a+b=x`. Quelle est la complexité de votre algorithme? Quid si les ensembles sont dans des tableaux déjà triés ?
 
 
 Exercice 2.2.5
