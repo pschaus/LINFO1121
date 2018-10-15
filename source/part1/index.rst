@@ -247,10 +247,11 @@ Quelle est la complexité de la méthode
 
 Exercice 1.2.2
 """"""""""""""
-La notation post-fixe (ou `polonaise inverse <https://fr.wikipedia.org/wiki/Notation_polonaise_inverse>`_) est utilisée pour représenter des expressions algébriques.
+La notation post-fixe (ou `polonaise inverse <https://fr.wikipedia.org/wiki/Notation_polonaise_inverse>`_) est utilisée
+pour représenter des expressions algébriques.
 Nous ne considérons pour simplifier que des expressions post-fixes avec des entiers positifs
-et les opérateurs `+` et `*. Par exemple "2 3 1 * + 9 *" dont le résultat vaut 45
-et le résultat de "4 20 + 3 5 1 * * +" est 39.
+et les opérateurs `+` et `*`. Par exemple `2 3 1 * + 9 *` dont le résultat vaut 45
+et le résultat de `4 20 + 3 5 1 * * +` est 39.
 
 1. Ecrivez un algorithme en Java pour évaluer une expression post-fixe au départ d'une chaine de n-caractères.
 2. Quelle structure de donnée utilisez vous ?
