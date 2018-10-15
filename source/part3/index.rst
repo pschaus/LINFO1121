@@ -4,7 +4,31 @@
 Partie 3 | Arbres de recherche
 ************************************************************************************************
 
-Rendez-vous en S5!
+Objectifs
+=========
+
+A l'issue de cette partie chaque étudiant sera capable de:
+
+* de décrire avec exactitude et précision les concepts d'arbres binaires de recherche et de table de symboles ordonnée;
+* de mettre en oeuvre des algorithmes basés sur les arbres de recherche;
+* d'évaluer et mettre en oeuvre des représentations classiques d'arbres de recherche;
+
+
+A lire
+=======================================
+
+Livre de référence:
+
+* Chapitres 3.1, 3.2 et 3.3
+
+
+Slides (keynote)
+
+* `Introduction <https://www.icloud.com/keynote/0XRcJhjLaXKDgGXmYP_obsvtQ#part3-intro>`_ 
+* `Séance Intermédiaire <Nope>`_ 
+* `Restructuration <Nope>`_ 
+
+
 
 Exercices théoriques: première partie
 =======================================

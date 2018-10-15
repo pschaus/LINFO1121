@@ -27,7 +27,10 @@ Livre de référence:
 
 Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/0bRuyaeN9Z63bppq_yWw_RD1Q#part2-intro>`_ .
+* `Introduction <https://www.icloud.com/keynote/0bRuyaeN9Z63bppq_yWw_RD1Q#part2-intro>`_ 
+* `Séance Intermédiaire <https://www.icloud.com/keynote/0dFFN4hYyXJPWF2OoxCz0TpYA#part2-exercises>`_ 
+* `Restructuration <https://www.icloud.com/keynote/0ApmboQix6cyNZZ7i6xenxUzA#part2-bilan>`_ 
+
 
 
 Exercices théoriques: première partie
@@ -203,7 +206,7 @@ Exercice 2.2.2
 
 Vous devez trier un grand tableau qui a pour propriété qu'il ne contient que des valeurs dans l'ensemble `{0,1,2}`. 
 Quel algorithme de tri suggérez-vous? Ecrivez le code. 
-Quel sera la complexité pour trier le tableau? Discutez cette complexité par rapport à la borne inférieure d'un algorithme de tri (Proposition 1 pages 280-281).
+Quelle sera la complexité pour trier le tableau? Discutez cette complexité par rapport à la borne inférieure d'un algorithme de tri (Proposition 1 pages 280-281).
 
 
 Exercice 2.2.3
@@ -226,7 +229,7 @@ Même question que la précédente mais pour un seul ensemble. Quid si l'ensembl
 Exercice 2.2.6
 """""""""""""""
 
-Donnez un algorithme pour calculer l'union de deux ensembles :math:`A` et :math:`B`. Supposons un second temps, que l'ensemble :math:`A` déjà trié a une taille :math:`n` et l'ensemble :math:`B` également trié a une taille :math:`n^2`. Quelle serait la complexité, est-ce que votre algorithme change ?
+Donnez un algorithme pour calculer l'union de deux ensembles :math:`A` et :math:`B`. Supposons dans un second temps, que l'ensemble :math:`A` déjà trié a une taille :math:`n` et l'ensemble :math:`B` également trié a une taille :math:`n^2`. Quelle serait la complexité, est-ce que votre algorithme change ?
 
 Exercice 2.2.7
 """""""""""""""
