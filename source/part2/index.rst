@@ -175,20 +175,20 @@ Un bon profiler gratuit est VisualVM.
 
 Utilisez VisualVM sur votre code pour la question précédente.
 
-Exercices d'implémentation sur Inginious
+Exercices sur Inginious
 ==========================================
 
 .. note::
    Vous devez faire ces exercices pour le lundi de S5.
 
 
-1. `Uniont intervals <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2UnionIntervals>`_
+1. `Union intervals <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2UnionIntervals>`_
 2. `Mediane <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2Median>`_ 
 3. `Merge Sort <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2MergeSort>`_
 4. `QCM <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2QCM>`_
 5. `Global Warming <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2GlobalWarming>`_
 
-Exercices théorique: deuxième partie
+Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
@@ -224,6 +224,7 @@ Exercice 2.2.5
 """""""""""""""
 
 Même question que la précédente mais pour un seul ensemble. Quid si l'ensemble est dans un tableau déjà triés ?
+
 
 
 Exercice 2.2.6

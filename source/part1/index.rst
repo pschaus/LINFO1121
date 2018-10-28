@@ -153,7 +153,7 @@ Exercice 1.1b.2
 * Comment vérifier expérimentalement que l'implémentation d'une structure de données ou un algorithme a
   bien la complexité temporelle théorique attendue ?
 
-Exercices d'implémentation sur Inginious
+Exercices sur Inginious
 ==========================================
 
 .. note::

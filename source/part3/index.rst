@@ -136,18 +136,76 @@ Lequel ou lesquels de ces arbres est(sont) red-black? Pour chacun, dessiner la c
 .. image:: rbtree.png
     :alt: Arbres
 
-Exercices d'implémentation sur Inginious
+Exercices sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S7.
+   Vous devez faire ces exercices pour le lundi de S8.
 
-Les exercices seront publiés le lundi de S6.
+1. `Unit tests redblack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3WriteUnittestsRedBlackTree>`_
+2. `QCM Complexite <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm>`_
+3. `QCM Traversal <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3QcmBt>`_
+4. `Exercice redblack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Rbt>`_
+5. `Implémentation de ceil <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Bst>`_
+6. `Implémentation d un iterateur sur un BST <https://inginious.info.ucl.ac.be/admin/LSINF1121-2016/edit/task/PART3OrderedBstIterator>`_ 
 
-Exercices théorique: deuxième partie
+
+Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S7.
+   Vous devez faire ces exercices pour le lundi de S8.
 
-Les exercices seront publiés le lundi de S6.
+
+
+Exercice 3.2.1
+"""""""""""""""
+
+Vrai ou faux ? 
+
+Remarque: BST s'entend ici comme l'implémentation du livre, c'est-à-dire un arbre qui n'est pas nécessairement équilibré.
+Les 2-3/red-black BST s'entendent également comme étant celles du livre de référence. 
+
+
+Nous recommandons de vous familiariser préalablement avec les notions de `parcourt d'arbres <https://fr.wikipedia.org/wiki/Arbre_binaire#Parcours_préfixe>`_: infixe, préfixe et postfixe.
+
+
+* Dans le meilleur des cas, le nombre de comparaisons entre clefs pour une recherche binaire d'une clef particulière dans un tableau trié de N clefs distinctes est :math:`\sim \log N$`.
+* Étant donné un parcours infixe d'un BST contenant N clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
+* Étant donné un parcours préfixe d'un BST contenant $N$ clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
+* Étant donné un arbre ordonné de N clefs distinctes et une clef :math:`x`, est-il possible de trouver la plus petite clef strictement plus grande que :math:`x` en temps logarithmique dans le pire cas?
+* La hauteur attendue d'un BST résultant de l'insertion de N clefs distinctes dans un ordre aléatoire dans un arbre initialement vide est en moyenne logarithmique. 
+* Soit :math:`x` un noeud dans un BST. Le successeur de :math:`x` (le noeud contenant la clef suivante dans l'ordre croissant) est le noeud le plus à gauche dans l'arbre de droite de :math:`x`.
+* La hauteur maximum d'un 2-3 tree avec N clefs est :math:`\sim \log_3 N`
+* Pour l'insertion de N clefs dans l'ordre croissant dans un red-black BST initialement vide. Le nombre de changements de couleur de la dernière insertion est au plus 3.
+	  Le nombre de changements s'entend comme la somme des différences en valeur absolue entre le nombre de rouges après insertion moins le nombre de rouges avant insertion.
+* Un red-black BST obtenu après insertion de :math:`N > 1` clefs dans un arbre initialement vide possède au moins un lien rouge ? Si non, donnez un contre-exemple.
+* Dans un red-black BST de N noeuds, la hauteur noire (i.e. le nombre de liens noirs de chaque chemin depuis la racine vers un lien null) est maximum :math:`\log N`.
+
+Exercice 3.2.1
+""""""""""""""""
+
+Imaginez un algorithme de tri utilisant un BST. A quoi ressemblerait cet algorithme ?
+Quelle serait la complexité de votre algorithme si le BST est remplacé par un red-black BST ?
+
+Exercice 3.2.1
+""""""""""""""""
+
+Est-ce que l'opération de suppression dans un BST est "commutative" ?
+C'est à dire que supprimer :math:`x` et ensuite directement :math:`y` d'un BST (tel qu'implémenté dans le livre) 
+laisse l'arbre dans même état que si on avait d'abord supprimé :math:`y`  et puis :math:`x` ?
+Donner un contre-exemple ou argumenter pourquoi c'est effectivement toujours le cas. 
+Pour vous aider, considérez l'arbre suivant et les opérations de suppression de 5 et 10.
+
+.. code-block:: java
+
+      10
+     / \
+    5   15
+       /
+      11
+ 
+
+
+
+
