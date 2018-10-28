@@ -167,7 +167,7 @@ Remarque: BST s'entend ici comme l'implémentation du livre, c'est-à-dire un ar
 Les 2-3/red-black BST s'entendent également comme étant celles du livre de référence. 
 
 
-Nous recommandons de vous familiariser préalablement avec les notions de `parcourt d'arbres <https://fr.wikipedia.org/wiki/Arbre_binaire#Parcours_préfixe>`_: infixe, préfixe et postfixe.
+Nous recommandons de vous familiariser préalablement avec les notions de `parcours d'arbres <https://fr.wikipedia.org/wiki/Arbre_binaire#Parcours_préfixe>`_: infixe, préfixe et postfixe.
 
 
 * Dans le meilleur des cas, le nombre de comparaisons entre clefs pour une recherche binaire d'une clef particulière dans un tableau trié de N clefs distinctes est :math:`\sim \log N$`.
