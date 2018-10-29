@@ -173,7 +173,7 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
 * Dans le meilleur des cas, le nombre de comparaisons entre clefs pour une recherche binaire d'une clef particulière dans un tableau trié de N clefs distinctes est :math:`\sim \log N`.
 * Étant donné un parcours infixe d'un BST contenant N clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
 * Étant donné un parcours préfixe d'un BST contenant :math:`N` clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
-* Étant donné un arbre ordonné de N clefs distinctes et une clef :math:`x`, est-il possible de trouver la plus petite clef strictement plus grande que :math:`x` en temps logarithmique dans le pire cas?
+* Étant donné un arbre ordonné de :math:`N` clefs distinctes et une clef :math:`x`, est-il possible de trouver la plus petite clef strictement plus grande que :math:`x` en temps logarithmique dans le pire cas?
 * La hauteur attendue d'un BST résultant de l'insertion de N clefs distinctes dans un ordre aléatoire dans un arbre initialement vide est en moyenne logarithmique. 
 * Soit :math:`x` un noeud dans un BST. Le successeur de :math:`x` (le noeud contenant la clef suivante dans l'ordre croissant) est le noeud le plus à gauche dans l'arbre de droite de :math:`x`.
 * La hauteur maximum d'un 2-3 tree avec N clefs est :math:`\sim \log_3 N`
