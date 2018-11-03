@@ -53,9 +53,9 @@ Quelle est la complexité pour calculer 1 fois et :math:`N` fois le hashcode d'u
 Exercice 4.1.3
 """"""""""""""
 
-Expliquez pourquoi la méthode `hash()` p461 du livre retourne `(x.hashCode() \& 0x7FFFFFFF) \% M` et pas simplement `x.hashCode() \% M`?  
-Quel nombre représente `0x7FFFFFFF`? 
-Quelle est sa représentation binaire? 
+Expliquez pourquoi la méthode `hash()` p461 du livre retourne `(x.hashCode() \& 0x7FFFFFFF) \% M` et pas simplement `x.hashCode() \% M` ?  
+Quel nombre représente `0x7FFFFFFF` ? 
+Quelle est sa représentation binaire ? 
 Montrer l'impact au niveau binaire sur un exemple où `x.hashCode()` retourne un nombre négatif. H
 int: utilisez `Integer.toBinaryString(int)` pour vérifier votre réponse. 
 
@@ -80,9 +80,9 @@ Exercice 4.1.6
 """"""""""""""
 
 Qu'est-ce que le facteur de charge d'une table de hachage. 
-Est-ce que le contrôle du facteur de charge est nécessaire/optionnel pour le bon fonctionnement d'une table de hachage avec Linear Probing ou Separate Chaining?
+Est-ce que le contrôle du facteur de charge est nécessaire/optionnel pour le bon fonctionnement d'une table de hachage avec Linear Probing ou Separate Chaining ?
 Quelle est la stratégie utilisé par `java.util.Hashtable` pour contrôler le facteur de charge ? 
-En quoi est-elle différente de celle proposée dans`LinearProbinHashST`?
+En quoi est-elle différente de celle proposée dans`LinearProbinHashST` ?
 Quel est le lien entre le facteur de charge et collision ?
 
 Exercice 4.1.7
@@ -96,8 +96,8 @@ Que suggérez vous pour ce faire? Hint: Inspirez vous de la stratégie de `java.
 Exercice 4.1.8
 """"""""""""""
 
-Décrivez l'implémentation  de la méthode `put(key)` dans une table de hachage qui utilise la technique du "linear probing" pour gérer les collisions qui utiliserait un marqueur spécial pour représenter les entrées supprimées à l'aide de la méthode "delete(key)". 
-En d'autres termes la méthode "delete(key)" au lieu de réarranger le contenu de la table de hachage de telle sorte qu'elle soit comme si l'entrée supprimée n'avait jamais été insérée, va simplement marquer l'entrée avec le marqueur spécial.
+Décrivez l'implémentation  de la méthode `put(key)` dans une table de hachage qui utilise la technique du "linear probing" pour gérer les collisions qui utiliserait un marqueur spécial pour représenter les entrées supprimées à l'aide de la méthode `delete(key)`. 
+En d'autres termes la méthode `delete(key)` au lieu de réarranger le contenu de la table de hachage de telle sorte qu'elle soit comme si l'entrée supprimée n'avait jamais été insérée, va simplement marquer l'entrée avec le marqueur spécial.
 Quel est l'avantage ou l'inconvénient de cette approche par rapport à celle de "LinearProbingHashST" du livre ?
 
 
