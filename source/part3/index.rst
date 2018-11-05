@@ -182,13 +182,13 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
 * Un red-black BST obtenu après insertion de :math:`N > 1` clefs dans un arbre initialement vide possède au moins un lien rouge ? Si non, donnez un contre-exemple.
 * Dans un red-black BST de N noeuds, la hauteur noire (i.e. le nombre de liens noirs de chaque chemin depuis la racine vers un lien null) est maximum :math:`\log N`.
 
-Exercice 3.2.1
+Exercice 3.2.2
 """"""""""""""""
 
 Imaginez un algorithme de tri utilisant un BST. A quoi ressemblerait cet algorithme ?
 Quelle serait la complexité de votre algorithme si le BST est remplacé par un red-black BST ?
 
-Exercice 3.2.1
+Exercice 3.2.3
 """"""""""""""""
 
 Est-ce que l'opération de suppression dans un BST est "commutative" ?
