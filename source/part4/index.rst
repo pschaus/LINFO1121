@@ -27,7 +27,7 @@ Livre de référence:
 
 Slides (keynote)
 
-* `Introduction <Nope>`_ 
+* `Introduction <https://www.icloud.com/keynote/060axAx-WvIieFjqV9nvebAoQ#part-4-intro>`_ 
 * `Séance Intermédiaire <Nope>`_ 
 * `Restructuration <Nope>`_ 
 
