@@ -122,7 +122,11 @@ Exercices d'implémentation sur Inginious
 .. note::
    Vous devez faire ces exercices pour le lundi de S10.
 
-Les exercices seront publiés le lundi de S9.
+
+1. `QCM fonction de hachage <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmHashing>`_
+2. `QCM Complexité RabinKarp <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmRk>`_ 
+3. `Implem Fonction de Hash incémentale <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4IncrementalHash>`_
+4. `Implem RabinKarp K patterns <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4RabinKarp>`_
 
 Exercices théorique: deuxième partie
 =======================================
