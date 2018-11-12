@@ -135,3 +135,73 @@ Exercices théorique: deuxième partie
    Vous devez faire ces exercices pour le lundi de S10.
 
 Les exercices seront publiés le lundi de S9.
+
+Exercice 4.2.1 (Hash des Long and Double)
+"""""""""""""""""""""""""""""""""""""""""""""
+
+Voici la formule utilisée par Java pour calculer une fonction de hachage 
+sur les doubles (bits est un tableau de 64 bit représenté sous forme de long): 
+`return (int) bits ^ (bits >>> 32)`
+
+* Pourquoi ne pas simplement utiliser `|(int) bits|` (casting de long vers int) ? Indice: Le livre de référence suggère qu'une bonne fonction de hachage doit utiliser tous les bits pour son calcul. Pourquoi ? 
+* Un double en Java est représenté en 64 bits sous la forme :math:`(-1)^s \times m \times 2^{(e - 1023)}`. Le premier bit :math:`s` est le signe, les 11 bits suivants représentent l'exposant sous forme binaire et les 52 derniers bits représentent la mantisse sous forme binaire.  Est-ce qu'un nombre décimal positif et son opposé obtiennent des fonctions de hachage différentes ? 
+
+Exercice 4.2.2 (Hash des int castés)
+"""""""""""""""""""""""""""""""""""""""""""""
+
+
+* Est-ce que la fonction de hachage d'un entier sur 32 bits et celle de ce même entier qui serait casté en double sont les mêmes? 
+* Est-ce que la fonction de hachage d'un entier sur 32 bits et celle de ce même entier qui serait casté en long sont les mêmes?  Hint: `Long.toBinaryString( Double.doubleToRawLongBits(a))` permet d'afficher le tableau de bits utilisé pour la représentation d'un double.
+
+
+Exercice 4.2.3 (Hash de String: le choix de M et R)
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+La fonction de hachage pour un string donné tel que présenté dans le livre p460 est la suivante:
+
+.. code-block:: java
+   :linenos:
+
+	int hash = 0;
+	for (int i = 0; i < s.length(); i++)
+		hash = (R * hash + s.charAt(i)) % M;
+
+
+Dans l'implémentation du livre, la taille de :math:`M` (le tableau) est une puissance de deux.
+La valeur suggérée pour :math:`R` est *un petit nombre premier tel que 31 de sorte que les bits de tous les caractères jouent un rôle.*
+
+* Supposons que :math:`R` soit un multiple de :math:`M`. Que se passerait-il lors du calcul ? 
+* Supposons que :math:`R` est un nombre pair. Que se passerait-il ?
+* Dans les deux cas, combien d'entrées du string détermineront effectivement le code de hachage ? Quels sont les risques en termes de collision? Est-ce que le contrôle du facteur de charge peut résoudre le problème ? Expliquez pourquoi utiliser 31 est un choix judicieux pour des tailles de tableau qui sont des puissances de deux ? Serait-ce aussi un bon choix pour une taille de tableau qui commencerait à 31 et qui serait multipliée par deux à chaque fois qu'il faut redimensionner ?
+* Dans l'implémentation du livre la taille de M (le tableau) est une puissance de deux initialisée à 16. Supposons qu'à moment donné la taille de :math:`M` soit :math:`2^8=256`. Ensuite deux clefs entières sont ajoutées dans une table de hachage implémentée avec separate chaining: respectivement :math:`2560` et :math:`3072` (on suppose que ces ajouts ne causent pas de redimensionnement de la table). Comme vous le savez, le code de hachage d'une clef entière (int) est le nombre lui-même.
+Est-ce que l'ajout de ces deux valeurs va causer une collision entre elles dans la table ? Si oui pourquoi ? 
+Si collision il y a, peut-elle disparaître lors du prochain redimensionnement du tableau telle que dans l'implémentation du livre ?
+* Que suggérez-vous pour éviter ce problème ? Quelle a la politique d'initialisation de :math:`M` et de redimensionnement utilisée dans `java.util.HashMap` ? Est-ce que cela résout le problème sur notre exemple ?
+
+
+Exercice 4.2.4 (Création de Hash: Véhicules)
+"""""""""""""""""""""""""""""""""""""""""""""
+
+* Que suggèreriez-vous comme fonction de hachage pour l'identification de véhicules qui sont des strings de nombres et de lettres de la forme: "9X9XX99X9XX999999" où un 9 représente un chiffre et un "X" une lettre de A à Z. 
+* Est-ce que votre fonction de hachage a la propriété que pour une taille de tableau N hypothétique de :math:`10^{11} \cdot 26^6` je n'ai jamais de collision 
+
+
+Exercice 4.2.5 (Création de Hash: Citoyens)
+"""""""""""""""""""""""""""""""""""""""""""""
+
+Imaginons que l'on cherche à construire un répertoire des citoyens belges
+et que l'on veuille pouvoir accéder à chaque citoyen par son numéro de carte d'identité
+(12 chiffres). 
+On peut donc considérer ce numéro comme la clé unique identifiant
+chaque citoyen et utiliser cette clé comme l'indice dans un tableau (array en Java).
+A chaque indice correspondrait une référence vers une instance de la classe 
+`Citoyen` dont les champs constituent les informations que l'on désire mémoriser pour chacun.
+Quelle est la complexité temporelle des opérations suivantes ?
+
+* rechercher les informations relatives à un citoyen à partir de son numéro de carte
+  d'identité.
+* ajouter un nouveau citoyen.
+
+Cette implémentation d'un dictionnaire n'est-elle pas encore meilleure qu'une table de hachage ? 
+Peut-on avoir un problème de collision dans ce cas ? Justifiez.
