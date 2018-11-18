@@ -143,15 +143,17 @@ Voici la formule utilisée par Java pour calculer une fonction de hachage
 sur les doubles (bits est un tableau de 64 bit représenté sous forme de long): 
 `return (int) bits ^ (bits >>> 32)`
 
-* Pourquoi ne pas simplement utiliser `|(int) bits|` (casting de long vers int) ? Indice: Le livre de référence suggère qu'une bonne fonction de hachage doit utiliser tous les bits pour son calcul. Pourquoi ? 
-* Un double en Java est représenté en 64 bits sous la forme :math:`(-1)^s \times m \times 2^{(e - 1023)}`. Le premier bit :math:`s` est le signe, les 11 bits suivants représentent l'exposant sous forme binaire et les 52 derniers bits représentent la mantisse sous forme binaire.  Est-ce qu'un nombre décimal positif et son opposé obtiennent des fonctions de hachage différentes ? 
+* Pourquoi ne pas simplement utiliser `(int) bits` (casting de long vers int) ? Indice: Le livre de référence suggère qu'une bonne fonction de hachage doit utiliser tous les bits pour son calcul. Pourquoi ? 
+* Un double en Java est représenté en 64 bits sous la forme :math:`(-1)^s \times m \times 2^{(e - 1023)}`. Le premier bit :math:`s` est le signe, les 11 bits suivants représentent l'exposant sous forme binaire et les 52 derniers bits représentent la mantisse (partie décimale) sous forme binaire.  Est-ce qu'un nombre décimal positif et son opposé obtiennent des fonctions de hachage différentes ? 
+
+
 
 Exercice 4.2.2 (Hash des int castés)
 """""""""""""""""""""""""""""""""""""""""""""
 
 
-* Est-ce que la fonction de hachage d'un entier sur 32 bits et celle de ce même entier qui serait casté en double sont les mêmes? 
-* Est-ce que la fonction de hachage d'un entier sur 32 bits et celle de ce même entier qui serait casté en long sont les mêmes?  Hint: `Long.toBinaryString( Double.doubleToRawLongBits(a))` permet d'afficher le tableau de bits utilisé pour la représentation d'un double.
+* Est-ce que la fonction de hachage d'un entier sur 32 bits et celle de ce même entier qui serait casté en double sont les mêmes ? 
+* Est-ce que la fonction de hachage d'un entier sur 32 bits et celle de ce même entier qui serait casté en long sont les mêmes ?  Hint: `Long.toBinaryString( Double.doubleToRawLongBits(a))` permet d'afficher le tableau de bits utilisé pour la représentation d'un double.
 
 
 Exercice 4.2.3 (Hash de String: le choix de M et R)
@@ -176,6 +178,7 @@ La valeur suggérée pour :math:`R` est *un petit nombre premier tel que 31 de s
 * Dans les deux cas, combien d'entrées du string détermineront effectivement le code de hachage ? Quels sont les risques en termes de collision? Est-ce que le contrôle du facteur de charge peut résoudre le problème ? Expliquez pourquoi utiliser 31 est un choix judicieux pour des tailles de tableau qui sont des puissances de deux ? Serait-ce aussi un bon choix pour une taille de tableau qui commencerait à 31 et qui serait multipliée par deux à chaque fois qu'il faut redimensionner ?
 * Dans l'implémentation du livre la taille de M (le tableau) est une puissance de deux initialisée à 16. Supposons qu'à moment donné la taille de :math:`M` soit :math:`2^8=256`. Ensuite deux clefs entières sont ajoutées dans une table de hachage implémentée avec separate chaining: respectivement :math:`2560` et :math:`3072` (on suppose que ces ajouts ne causent pas de redimensionnement de la table). Comme vous le savez, le code de hachage d'une clef entière (int) est le nombre lui-même.
 Est-ce que l'ajout de ces deux valeurs va causer une collision entre elles dans la table ? Si oui pourquoi ? 
+Si oui pouvez-vous proposer une troisième valeur qui va aussi entrer en collision ? 
 Si collision il y a, peut-elle disparaître lors du prochain redimensionnement du tableau telle que dans l'implémentation du livre ?
 * Que suggérez-vous pour éviter ce problème ? Quelle a la politique d'initialisation de :math:`M` et de redimensionnement utilisée dans `java.util.HashMap` ? Est-ce que cela résout le problème sur notre exemple ?
 
