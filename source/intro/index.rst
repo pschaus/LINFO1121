@@ -36,6 +36,18 @@ Il est fortement recommandé de vous familiariser à ces outils en préparation 
 .. _Inginious: https://inginious.info.ucl.ac.be
 .. _JUnit4: https://junit.org/junit4/.
 
+
+Cours Open-Source
+=======================================
+
+Le sources de ce site web sont open-source et sur `bitbucket <https://bitbucket.org/pschaus/lsinf1121/src/master/>`_.
+Nous accueillons volontiers les pull-requests avec correction d'erreur ou proposition d'exercices supplémentaires.
+La licence utilisée est Creative Commons Attribution-ShareAlike 4.0 International License:
+
+.. image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+    :alt: CC-BY-SA
+
+
 Agenda
 =======================================
 
