@@ -37,7 +37,104 @@ Exercices théoriques: première partie
 .. note::
    Vous devez faire ces exercices pour le lundi de S11.
 
-Les exercices seront publiés le lundi de S10.
+Exercice 5.1.1
+""""""""""""""
+
+Donnez le tableau `id[]` qui résulte de la séquence suivante de 6 opérations d'union sur un ensemble de départ de 10 items avec l'algorithme quick-find.
+`3-8, 1-7, 1-8, 9-4, 6-4, 2-0`. 
+Votre réponse doit être une séquence de 10 entiers. 
+Rappel: la convention quick-find pour l'union `p-q` est de changer `id[p]` (et éventuellement d'autres entrées) mais pas `id[q]`.
+
+
+Exercice 5.1.2
+""""""""""""""
+
+Donnez le tableau id[] qui résulte de la séquence suivante de 9 opérations d'union sur un ensemble de 10 items en utilisant l'algorithme weighted quick-union:
+	`4-6, 3-6, 8-9, 7-0, 1-2, 8-4, 6-5, 1-7, 6-0.` 
+Votre réponse doit être une séquence de 10 entiers. Rappel: Lors de la fusion de deux arbres de même taille, l'algorithme weighted quick-union utilise la convention
+de faire pointer la racine du second arbre vers la racine du premier arbre. 
+Notre algorithme utilise l'union par la taille (nombre de noeuds) et pas l'union par la hauteur, ni la technique de compression de chemin.
+
+Exercice 5.1.3
+""""""""""""""
+
+Le(s)quel(s) tableau(x) id[] suivant(s) pourrai(en)t résulter de l'application de l'algorithme weighted quick-union sur un ensemble de 10 items au départ?
+Rappel: nous utilisons l'union par la taille (nombre de noeuds) et pas l'union par la hauteur.
+
+* 0 8 2 3 4 7 6 8 8 9
+* 4 2 6 6 2 6 6 2 4 2
+* 7 0 0 0 0 1 0 5 1 0
+* 3 3 0 3 0 3 3 3 5 2
+* 1 3 3 6 4 1 6 0 6 8
+
+Exercice 5.1.4
+""""""""""""""
+
+Donnez la séquence des clefs dans le tableau qui résulte de l'insertion de la séquence des 3 clefs 48, 30 et 84 
+dans la heap suivante (orientée vers le maximum) de taille 10:
+	`97 , 93 , 89 , 83 , 38 , 32 , 40 , 12 , 26 , 24`.
+Votre réponse devrait être une séquence de 13 entiers.
+
+Exercice 5.1.5
+""""""""""""""
+
+Donnez la séquence des clefs dans le tableau qui résulte de l'ajout de 3 opérations successives de suppression du maximum dans la heap suivante (orientée vers le maximum)
+de taille 10: 
+	`98 , 96 , 84 , 34 , 62 , 31 , 72 , 13 , 27 , 33`.
+Votre réponse devrait être une séquence de 7 entiers.
+
+
+Exercice 5.1.6
+""""""""""""""""
+
+Quels sont les avantages et inconvénients éventuels d'implémenter une file de
+priorité par un heap plutôt que par une liste ?
+
+
+Exercice 5.1.7
+""""""""""""""
+
+Existe-t-il un tas T mémorisant 7 éléments distincts tel qu'un parcours 
+infixe du tas renvoie les éléments de T en ordre décroissant ? 
+Qu'en est-il avec un parcours préfixe ou post-fixe ?
+
+
+Exercice 5.1.8
+""""""""""""""
+
+Quelles déclarations suivantes sont vraies à propos d'une file de priorité implémentée par une heap? Par défaut les heaps sont orientées maximum et utilisent une base d'indice commençant à 1.
+
+* Dans le pire cas, l'insertion d'une clef dans une heap binaire contenant N clefs nécessite :math:`\sim lg N` comparaisons.
+* Soit :math:`a[]` un tableau tel que :math:`a[1] > a[2] > \ldots > a[N]` (et :math:`a[0]` est vide). Alors :math:`a[]` satisfait les propriétés d'une heap binaire.
+* Le tableau d'une heap est toujours un tableau trié dans l'ordre décroissant.
+* Étant donné une heap binaire de N clefs distinctes, supprimer la clef maximum et ensuite l'insérer directement laisse le tableau de la heap inchangé (on ignore les redimensionnements possibles du tableau) .
+
+
+Exercice 5.1.9
+""""""""""""""
+
+Exercise 2.4.20 Prouver que la construction bottom-up "sink" d'une heap pour le Heapsort (p323) se fait en :math:`O(N)`. 
+Indice: comptez le nombre de noeuds au niveau :math:`h` de la heap. 
+Quelle est la complexité d'un sink à ce niveau. Faites la somme pour tous les niveaux. Formule utile: :math:`\sum_{k=0}^\infty k x^k = x/(1-x)^2` pour 
+:math:`|x| < 1`.
+
+
+Exercice 5.1.10
+""""""""""""""""
+
+L'utilisation d'une file de priorité est-elle indispensable 
+pour pouvoir construire un code de Huffman ? Pouvez-vous imaginer
+une autre solution en utilisant un algorithme de tri ? Sa complexité calculatoire serait-elle meilleure que l'algorithme original ? Pourquoi ?
+
+
+Exercice 5.1.11
+""""""""""""""""
+
+* Quelles sont les différentes étapes d'un algorithme de compression de texte qui prend en entrée un texte et fournit en sortie une version comprimée de ce texte à l'aide d'un codage de Huffman ? Soyez précis dans votre description en isolant chaque étape du problème. Précisez notamment pour chaque étape les structures de données utiles et la complexité temporelle des opérations menées.  
+* Quelles sont les différentes étapes d'un algorithme de décompression de texte qui prend en entrée une version comprimée d'un texte à l'aide d'un codage de Huffman et fournit en sortie le texte original ? Soyez précis dans votre description en isolant chaque étape du problème. Précisez notamment pour chaque étape les structures de données utiles et la complexité temporelle des opérations menées.  
+
+
+
 
 Exercices d'implémentation sur Inginious
 ==========================================
