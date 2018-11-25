@@ -27,9 +27,9 @@ Livre de référence:
 
 Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/060axAx-WvIieFjqV9nvebAoQ#part-4-intro>`_ 
-* `Séance Intermédiaire <Nope>`_ 
-* `Restructuration <Nope>`_ 
+* `Introduction <https://www.icloud.com/keynote/060axAx-WvIieFjqV9nvebAoQ#part4-intro>`_ 
+* `Séance Intermédiaire <https://www.icloud.com/keynote/0TixMvOD8GNdrZKROHyYUiXfw#part4-bilan>`_ 
+* `Restructuration <https://www.icloud.com/keynote/0LwjcO8rozlr-a4jzmTvWMNww#part-4-bilan>`_ 
 
 Exercices théoriques: première partie
 =======================================
