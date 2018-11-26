@@ -150,4 +150,72 @@ Exercices théorique: deuxième partie
 .. note::
    Vous devez faire ces exercices pour le lundi de S12.
 
-Les exercices seront publiés le lundi de S11.
+Exercice 5.2.1
+""""""""""""""
+Dans la technique de compression par un codage de Huffman, il s'avère utile
+d'inclure dans le fichier comprimé une entête contenant l'information nécessaire au décodage
+de ce fichier. Dans votre implémentation, l'entête est probablement une version sérialisée 
+de l'arbre (résultat d'un parcourt préfixe) tel que proposé dans le livre.
+Pensez-vous qu'il serait plus ou moins intéressant d'un point de vue mémoire de stoker pour chaque symbole, son codage binaire
+plutôt que l'arbre sérialisé ? 
+
+Exercice 5.2.2
+""""""""""""""
+
+Peut-on gagner encore en taux de compression si l'on réapplique
+l'algorithme de compression de Huffman sur un fichier déjà comprimé une première fois ?
+Que se passe-t-il dans ce cas ?
+Cela ouvre-t-il la porte vers un algorithme de compression récursif et optimal ? 
+
+Exercice 5.2.3
+""""""""""""""
+
+Quel est, approximativement, le taux de compression obtenu si l'on applique l'algorithme 
+de compression de Huffman sur un un fichier comportant une seule chaîne composée du caractère 'a' répété un million (:math:`\approx 2^{20}`) de fois, suivi du caractère `b` présent une seule fois ? 
+Le taux de compression obtenu varie-t-il avec la longueur du fichier  (par exemple, si le caractère `a` est répété deux millions de fois) ? 
+A votre avis, quel est le nombre minimal de bits nécessaires pour représenter sous forme comprimée  ce fichier ?
+Peut-on adapter la technique de compression par un codage de Huffman en mesurant 
+la fréquence d'autre chose que les caractères présents ? Peut-on utiliser une autre technique
+de compression qui serait plus efficace dans ce cas particulier ?
+
+
+Exercice 5.2.4
+""""""""""""""
+
+maginez une implémentation d'une file de priorité par un tas (\textsl{heap}, en anglais) à l'aide d'une structure chaînée pour représenter l'arbre binaire essentiellement complet correspondant au tas. 
+Combien de liens sont nécessaires dans chaque noeud?
+Écrivez le code des méthodes \textit{insert}, \textit{delMax}. Quelle en est la complexité? Est-il utile de donner la taille \texttt{maxN} dans le constructeur?
+Comment faites-vous pour ajouter un nouveau noeuds dans la heap ou retirer le prochain noeud ? Est-ce que cela peut être fait au départ de la taille courante de la heap?
+
+
+Exercice 5.2.5
+""""""""""""""
+
+Proposez une structure de données qui supporterait les opérations suivantes en temps logarithmique: *insertion*, *supprimer le maximum*, *supprimer le minimum*; 
+et les opérations suivantes en temps constant: *trouver le maximum et le minimum*.
+Pour cela, nous vous proposons d'étudier la propriété suivante appelée min-max heap.
+Les niveaux pairs sont: 0 (racine), 2, 4, etc. 
+Ces niveaux pairs sont aussi appelés les niveau :math:`min`.
+Les niveaux impairs sont 1, 3, 5, etc. 
+Les niveaux impairs sont aussi appelés les niveaux :math:`max`.
+Pour n'importe quel élément :math:`x` dans la min-max heap on a la propriété suivante:
+
+*  Si :math:`x` est à un niveau  :math:`min`, tous les descendants de :math:`x` sont supérieurs à :math:`x`.
+*  Si :math:`x` est à un niveau :math:`max`, tous les descendants de :math:`x` sont inférieurs à :math:`x`.
+
+
+Questions:
+
+* D'après cette propriété déterminez quel est le plus petit élement de la heap ?
+* Quel est le plus grand élément de la heap ?
+* Dessinez une min-max heap qui contient les éléments suivants: 10,8,71,31,41,46,51,31,21,11,16,13.
+* Décrivez l'opération d'insertion dans une min-max heap? Donnez le pseudo-code.
+
+Exercice 5.2.6
+""""""""""""""
+
+Imaginez une structure de données qui supporte 
+
+1. l'*insertion* en temps logarithmique
+2. l'opération *trouver la médiane* en temps constant 
+3. *supprimer la médiane* en temps logarithmique.
