@@ -142,7 +142,14 @@ Exercices d'implémentation sur Inginious
 .. note::
    Vous devez faire ces exercices pour le lundi de S12.
 
-Les exercices seront publiés le lundi de S11.
+
+1. `Exercices sur les heap <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5Heap>`_
+2. `Exercices sur le UnionFind <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5UnionFind>`_ 
+3. `Implem Huffman <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5Huffman>`_
+4. `Implem UnionFind appliqué <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5GlobalWarming>`_
+5. `Implem Heap push <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART5BinaryHeapPush>`_
+
+
 
 Exercices théorique: deuxième partie
 =======================================
