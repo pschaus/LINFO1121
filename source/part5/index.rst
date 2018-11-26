@@ -26,8 +26,8 @@ Livre de référence:
 
 Slides (keynote)
 
-* `Introduction <Nope>`_ 
-* `Séance Intermédiaire <Nope>`_ 
+* `Introduction <https://www.icloud.com/keynote/0kZvMH6djI5t45YFxQ2xzSfog#part5-intro>`_ 
+* `Séance Intermédiaire <https://www.icloud.com/keynote/0CjZEjoEFtp6VH7XyVSlWLXGQ#part5-exerises>`_ 
 * `Restructuration <Nope>`_ 
 
 
@@ -151,7 +151,7 @@ Exercices d'implémentation sur Inginious
 
 
 
-Exercices théorique: deuxième partie
+Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
