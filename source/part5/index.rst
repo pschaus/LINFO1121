@@ -189,10 +189,10 @@ de compression qui serait plus efficace dans ce cas particulier ?
 Exercice 5.2.4
 """"""""""""""
 
-maginez une implémentation d'une file de priorité par un tas (\textsl{heap}, en anglais) à l'aide d'une structure chaînée pour représenter l'arbre binaire essentiellement complet correspondant au tas. 
-Combien de liens sont nécessaires dans chaque noeud?
-Écrivez le code des méthodes \textit{insert}, \textit{delMax}. Quelle en est la complexité? Est-il utile de donner la taille \texttt{maxN} dans le constructeur?
-Comment faites-vous pour ajouter un nouveau noeuds dans la heap ou retirer le prochain noeud ? Est-ce que cela peut être fait au départ de la taille courante de la heap?
+maginez une implémentation d'une file de priorité par un tas (heap, en anglais) à l'aide d'une structure chaînée pour représenter l'arbre binaire essentiellement complet correspondant au tas. 
+Combien de liens sont nécessaires dans chaque noeud ?
+Écrivez le code des méthodes *insert*, *delMax*. Quelle en est la complexité ? Est-il utile de donner la taille *max N* dans le constructeur ?
+Comment faites-vous pour ajouter un nouveau noeuds dans la heap ou retirer le prochain noeud ? Est-ce que cela peut être fait au départ de la taille courante de la heap ?
 
 
 Exercice 5.2.5
