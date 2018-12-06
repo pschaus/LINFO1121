@@ -128,7 +128,7 @@ Exercices d'implémentation sur Inginious
 3. `Implem Fonction de Hash incémentale <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4IncrementalHash>`_
 4. `Implem RabinKarp K patterns <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4RabinKarp>`_
 
-Exercices théorique: deuxième partie
+Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
