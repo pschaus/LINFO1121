@@ -156,7 +156,7 @@ Exercices théoriques: deuxième partie
    Vous devez faire ces exercices pour le lundi de S14.
 
 
-Exercice 6.2.1 (Labyrinthe)
+Exercice 6.2.1 (Labyrinthe.)
 """""""""""""""""""""""""""""""""""""""""""""
 
 On s'intéresse à la résolution d'un labyrinthe représenté sous la forme d'une matrice binaire :math:`n \times m`.
