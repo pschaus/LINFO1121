@@ -33,7 +33,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S11.
+   Vous devez faire ces exercices pour le lundi de S13.
 
 Exercice 6.1.1
 """"""""""""""
