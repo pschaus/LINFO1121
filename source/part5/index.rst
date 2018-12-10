@@ -28,7 +28,7 @@ Slides (keynote)
 
 * `Introduction <https://www.icloud.com/keynote/0kZvMH6djI5t45YFxQ2xzSfog#part5-intro>`_ 
 * `Séance Intermédiaire <https://www.icloud.com/keynote/0CjZEjoEFtp6VH7XyVSlWLXGQ#part5-exerises>`_ 
-* `Restructuration <Nope>`_ 
+* `Restructuration <https://www.icloud.com/keynote/0TR23WOD7cI2jGI9oH3KVOocQ#part5-bilan>`_ 
 
 
 Exercices théoriques: première partie

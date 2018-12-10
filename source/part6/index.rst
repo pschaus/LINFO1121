@@ -29,6 +29,14 @@ Livre de référence:
 * chapitres 4.1, 4.2, 4.3, 4.4
 
 
+
+Slides (keynote)
+
+* `Introduction <https://www.icloud.com/keynote/0ICOAb5mCaM2Uexx64Vc5Vpaw#part6-intro>`_ 
+* `Séance Intermédiaire <Nope>`_ 
+* `Restructuration <Nope>`_ 
+
+
 Exercices théoriques: première partie
 =======================================
 
