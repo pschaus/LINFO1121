@@ -186,7 +186,7 @@ Questions préliminaires:
 * Quelle est la complexité de votre algorithme worst/best case ?
 
 
-Exercice 6.2.1 (Dijkstra revisité)
+Exercice 6.2.2 (Dijkstra revisité)
 """""""""""""""""""""""""""""""""""""""""""""
 
 On s’intéresse à l’implémentation de l’algorithme de Dijkstra p655. 
@@ -196,7 +196,7 @@ On s’intéresse à l’implémentation de l’algorithme de Dijkstra p655.
 * Réécrivez cet algorithme en utilisant uniquement des collections auxiliaires issues de *java.util*.  Il faut donc se débarrasser de *IndexMinPQ* et remplacer cette structure par autre chose issu de *java.util*.
 
 
-Exercice 6.2.2 (La Guirlande de Noël INGI)
+Exercice 6.2.3 (La Guirlande de Noël INGI)
 """""""""""""""""""""""""""""""""""""""""""""
 
 Le département INGI s’est doté d’une très jolie guirlande de Noël pour décorer le Réaumur.
