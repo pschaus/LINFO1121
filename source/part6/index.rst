@@ -157,6 +157,15 @@ Exercices d'implémentation sur Inginious
 
 Les exercices seront publiés le lundi de S13.
 
+
+1. `Implem BFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6BreadthFirstPaths>`_
+2. `Implem DFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DepthFirstPaths>`_ 
+3. `Implem composantes connexes <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6ConnectedComponents>`_
+4. `Implem Global Warming <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6GlobalWarming>`_
+5. `Implem Digraph <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Digraph>`_
+6. `Implem Shortest Path Puzzle <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DijkstraForWordTransformation>`_
+
+
 Exercices théoriques: deuxième partie
 =======================================
 
