@@ -164,7 +164,7 @@ Les exercices seront publiés le lundi de S13.
 4. `Implem Global Warming <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6GlobalWarming>`_
 5. `Implem Digraph <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Digraph>`_
 6. `Implem Shortest Path Puzzle <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DijkstraForWordTransformation>`_
-
+7. `Implem Shortest Path Maze <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Maze>`_
 
 Exercices théoriques: deuxième partie
 =======================================
