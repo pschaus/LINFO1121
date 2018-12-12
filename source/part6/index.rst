@@ -237,8 +237,8 @@ On suppose que le graph G est connexe.
 Exercice 6.2.4 (Maximisation de poids minimum)
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-Soit un graphe G dirigé et pondéré positivement. On définit pour tout chemin dans ce graphe le poids d'un chemin,
-qui est égal (dans ce contexte) au minimum du poids des arêtes du chemin.
+Soit un graphe G dirigé et pondéré positivement. 
+On définit pour tout chemin dans ce graphe le poids d'un chemin comme étant le poids maximum des arêtes du chemin.
 
 Calculez, à partir d'un sommet donné S, le poids maximal possible pour atteindre chaque noeud du graphe depuis S.
 
@@ -251,6 +251,6 @@ Par exemple, dans ce graphe, un chemin de poids maximum entre S et D est S-F-B-A
 un autre chemin maximal, aussi de poids 2.
 
 Pouvez-vous adapter un algorithme vu au cours pour trouver les poids des chemins de poids maximums entre S et tous
-les autres noeuds? Et pour toutes les paires de noeuds?
+les autres noeuds? Et pour toutes les paires de noeuds ?
 
-Hint: regardez aux propriétés des poids. Est-ce comparable aux plus courts chemins?
+Hint: regardez aux propriétés des poids. Est-ce comparable aux plus courts chemins ?
