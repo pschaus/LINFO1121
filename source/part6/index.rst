@@ -238,19 +238,16 @@ Exercice 6.2.4 (Maximisation de poids minimum)
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 Soit un graphe G dirigé et pondéré positivement. 
-On définit pour tout chemin dans ce graphe le poids d'un chemin comme étant le poids maximum des arêtes du chemin.
+Etant donné une origine S, on veut trouver un chemin vers chaque noeud qui maximise *le poids de l'arête minimum sur ce chemin*.
 
-Calculez, à partir d'un sommet donné S, le poids maximal possible pour atteindre chaque noeud du graphe depuis S.
 
 .. image:: minmax.svg
     :scale: 80
     :width: 400
     :alt: Exemple de graphe
 
-Par exemple, dans ce graphe, un chemin de poids maximum entre S et D est S-F-B-A-C-D qui a un poids de 2. S-F-B-E-D est
-un autre chemin maximal, aussi de poids 2.
+Par exemple, dans ce graphe, S-F-B-A-C-D  est un tel chemin avec 2 comme étant le point de l'arête minimum.
 
-Pouvez-vous adapter un algorithme vu au cours pour trouver les poids des chemins de poids maximums entre S et tous
-les autres noeuds? Et pour toutes les paires de noeuds ?
+Pouvez-vous adapter un algorithme vu au cours pour trouver de tels chemins vers chaque noeud ?
 
 Hint: regardez aux propriétés des poids. Est-ce comparable aux plus courts chemins ?
