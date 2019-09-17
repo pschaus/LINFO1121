@@ -41,7 +41,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S13.
+   Vous devez faire ces exercices pour le mercredi de S13.
 
 Exercice 6.1.1
 """"""""""""""
@@ -153,9 +153,7 @@ Exercices d'implémentation sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S14.
-
-Les exercices seront publiés le lundi de S13.
+   Vous devez faire ces exercices pour le mercredi de S14.
 
 
 1. `Implem BFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6BreadthFirstPaths>`_
@@ -170,7 +168,7 @@ Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S14.
+   Vous devez faire ces exercices pour le mercredi de S14.
 
 
 Exercice 6.2.1 (Labyrinthe.)

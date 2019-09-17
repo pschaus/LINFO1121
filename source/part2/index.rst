@@ -37,7 +37,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S4.
+   Vous devez faire ces exercices pour le mercredi de S4.
 
 Exercice 2.1.1
 """"""""""""""
@@ -179,7 +179,7 @@ Exercices sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S5.
+   Vous devez faire ces exercices pour le mercredi de S5.
 
 
 1. `Union intervals <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2UnionIntervals>`_
@@ -192,7 +192,7 @@ Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S5.
+   Vous devez faire ces exercices pour le mercredi de S5.
 
 
 Exercice 2.2.1

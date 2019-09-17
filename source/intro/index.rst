@@ -42,6 +42,8 @@ Cours Open-Source
 
 Le sources de ce site web sont open-source et sur `bitbucket <https://bitbucket.org/pschaus/lsinf1121/src/master/>`_.
 Nous accueillons volontiers les pull-requests avec correction d'erreur ou proposition d'exercices supplémentaires.
+Les exercices sont aussi open-source sur `github <https://github.com/UCL-INGI/LSINF1121-Data-Structures-And-Algorithms>`_.
+
 La licence utilisée est Creative Commons Attribution-ShareAlike 4.0 International License:
 
 .. image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
@@ -59,22 +61,28 @@ Le cours est organisé en 6 modules de 2 semaines.
     :alt: DFS
 
 
-* lundi semaine 1: introduction et motivation pour la matière (en auditoire avec Prof. P. Schaus)
+* mercredi semaine 1: introduction et motivation pour la matière (en auditoire avec Prof. P. Schaus)
 * semaine 1: lecture des chapitres par les étudiants et préparation des exercices théoriques A
-* lundi semaine 2: correction des exercices théoriques A (en auditoire avec TA. G. Derval)
+* mercredi semaine 2: correction des exercices théoriques A (en auditoire avec TA. G. Derval)
 * semaine 2: préparation des exercices théoriques B et exercices sur inginious
-* lundi semaine 3: restructuration et correction exercices théoriques B [+ début module suivant] (auditoire avec Prof. Pierre Schaus)
+* mercredi semaine 3: restructuration et correction exercices théoriques B [+ début module suivant] (auditoire avec Prof. Pierre Schaus)
 
-Le cours d'introduction, de TP et de restructuration
-se donne le lundi 16h15-18h15 au BA94 sauf exception:
+Le cours d'introduction, de TP et de restructuration se donne le mercredi 08h30-10h30 au BA94.
 
-* Lundi 16/9/2018 8h30-10h30 BA92
+Une permanence est également organisée à partir de la semaine 2 en salle Candix le mardi de 16h15 à 18h15.
+Trois tuteurs sont à votre disposition pour vous aider à faire les exercices inginious ou théoriques et répondre à vos questions.
 
+* S1-S3 :doc:`partie1 <../part1/index>`
+* S3-S5 :doc:`partie2 <../part2/index>`
+* S5-S7 :doc:`partie3 <../part3/index>` (attention pas cours mercredi S6: 24h vélos)
+* S8-S10 :doc:`partie4 <../part4/index>` attention, mid-term-quizz à la place du cours à 8h30 (à domicile ou salle info sur inginious)
+* S10-S12 :doc:`partie5 <../part5/index>`
+* S12-S14 :doc:`partie6 <../part6/index>`
 
 Evaluation
 =======================================
 
-Examen sur Inginious + Une évaluation mid-term lors de la smart-week sur Inginious.
+Examen sur Inginious + Une évaluation mid-term lors de la S8 sur Inginious (matière portant sur parties 1 à 3).
 
 L'évaluation mid-term compte pour 2 points sur 20 à l'examen uniquement si elle fait remonter la moyenne de l'étudiant.
 La même pondération est appliquée au mois d'août.

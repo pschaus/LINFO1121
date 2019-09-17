@@ -35,7 +35,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S11.
+   Vous devez faire ces exercices pour le mercredi de S11.
 
 Exercice 5.1.1
 """"""""""""""
@@ -140,7 +140,7 @@ Exercices d'implémentation sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S12.
+   Vous devez faire ces exercices pour le mercredi de S12.
 
 
 1. `Exercices sur les heap <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5Heap>`_
@@ -155,7 +155,7 @@ Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S12.
+   Vous devez faire ces exercices pour le mercredi de S12.
 
 Exercice 5.2.1
 """"""""""""""

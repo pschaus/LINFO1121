@@ -43,7 +43,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S2.
+   Vous devez faire ces exercices pour le mercredi de S2.
 
 Exercice 1.1.1
 """"""""""""""
@@ -157,7 +157,7 @@ Exercices sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S3.
+   Vous devez faire ces exercices pour le mercredi de S3.
 
 1. `Ecriture de tests unitaires pour une stack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stacktests>`_
 2. `Implementation d'une stack avec structure chainée <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stack>`_ 
@@ -167,7 +167,7 @@ Exercices théorique: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S3.
+   Vous devez faire ces exercices pour le mercredi de S3.
 
 Exercice 1.2.1
 """"""""""""""

@@ -35,7 +35,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S9.
+   Vous devez faire ces exercices pour le mercredi de S9.
 
 Exercice 4.1.1
 """"""""""""""
@@ -120,7 +120,7 @@ Exercices d'implémentation sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S10.
+   Vous devez faire ces exercices pour le mercredi de S10.
 
 
 1. `QCM fonction de hachage <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmHashing>`_
@@ -132,9 +132,8 @@ Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S10.
+   Vous devez faire ces exercices pour le mercredi de S10.
 
-Les exercices seront publiés le lundi de S9.
 
 Exercice 4.2.1 (Hash des Long and Double)
 """""""""""""""""""""""""""""""""""""""""""""

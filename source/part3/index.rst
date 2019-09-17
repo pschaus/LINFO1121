@@ -25,7 +25,7 @@ Livre de référence:
 Slides (keynote)
 
 * `Introduction <https://www.icloud.com/keynote/0XRcJhjLaXKDgGXmYP_obsvtQ#part3-intro>`_ 
-* `Séance Intermédiaire <https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises>`_ 
+* `Séance Intermédiaire <https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises>`_  (attention celle-ci sera faite en même temps que la restructureation en S7)
 * `Restructuration <https://www.icloud.com/keynote/06MTKLmzIm6CiPon3fChb2vbA#part3-bilane>`_ 
 
 
@@ -34,7 +34,7 @@ Exercices théoriques: première partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S6.
+   Vous devez faire ces exercices pour le mercredi de S6.
 
 Exercice 3.1.1
 """"""""""""""
@@ -140,7 +140,7 @@ Exercices sur Inginious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S8.
+   Vous devez faire ces exercices pour le mercredi de S7.
 
 1. `Unit tests redblack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3WriteUnittestsRedBlackTree>`_
 2. `QCM Complexite <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm>`_
@@ -154,8 +154,7 @@ Exercices théoriques: deuxième partie
 =======================================
 
 .. note::
-   Vous devez faire ces exercices pour le lundi de S8.
-
+   Vous devez faire ces exercices pour le mercredi de S7.
 
 
 Exercice 3.2.1
