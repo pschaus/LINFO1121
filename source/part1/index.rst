@@ -312,7 +312,7 @@ Voici l'API d'une *FList*
     }
 
 
-Comme vous pouvez vous en rendre compte, aucne des méthodes ne permet de modifier l'état de la liste.
+Comme vous pouvez vous en rendre compte, aucune des méthodes ne permet de modifier l'état de la liste.
 Voici un exemple de manipulation d'une telle liste.
 Si vous n'êtes pas familiers avec les `interfaces fonctionnelles <https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`_  de Java8, 
 nous vous demandons de vous familiariser d'abord avec celles-ci.
