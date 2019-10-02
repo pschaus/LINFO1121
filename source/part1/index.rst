@@ -255,7 +255,7 @@ et le résultat de `4 20 + 3 5 1 * * +` est 39.
 
 1. Ecrivez un algorithme en Java pour évaluer une expression post-fixe au départ d'une chaine de n-caractères.
 2. Quelle structure de donnée utilisez vous ?
-3. Quelle est la complexité de votre algorithme (temporelle et spaciale) ?
+3. Quelle est la complexité de votre algorithme (temporelle et spatiale) ?
 
 Pour rappel, voici comment on peut itérer sur les elements d'une chaine qui sont séparés par des espaces.
 
