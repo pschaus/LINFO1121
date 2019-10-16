@@ -32,6 +32,11 @@ Slides (keynote)
 * `Restructuration <https://www.icloud.com/keynote/0ApmboQix6cyNZZ7i6xenxUzA#part2-bilan>`_ 
 
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pLL9aypVRmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 Exercices théoriques: première partie
 =======================================
