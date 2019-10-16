@@ -113,7 +113,7 @@ l’intuition est donc un peu la même que pour :math:`\mathcal{O}`. D’ailleur
 
     f(n) \sim g(n) \quad \quad \Longrightarrow \quad f(n) \in \mathcal{O}(g(n))
 
-Mais la relation inverse n’est pas vraie. En effet, si on prend l’exemple de d’un
+Mais la relation inverse n’est pas vraie. En effet, si on prend l’exemple d’un
 algorithme avec un temps d'exécution A qui nécessite de parcourir une liste deux fois, on a:
 
 .. math::
@@ -195,5 +195,5 @@ Types de complexités usuels
 +---------------------------------------+-------------------+-------------------------------------------------------+
 | :math:`\mathcal{O}(c^n)`              | Exponentielle     | Problème du sac à dos                                 |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n!)`               | Factorielle       | Approche naïve du problème du voyageur du commerce    |
+| :math:`\mathcal{O}(n!)`               | Factorielle       | Approche naïve du problème du voyageur de commerce    |
 +---------------------------------------+-------------------+-------------------------------------------------------+

@@ -255,7 +255,7 @@ et le résultat de `4 20 + 3 5 1 * * +` est 39.
 
 1. Ecrivez un algorithme en Java pour évaluer une expression post-fixe au départ d'une chaine de n-caractères.
 2. Quelle structure de donnée utilisez vous ?
-3. Quelle est la complexité de votre algorithme (temporelle et spaciale) ?
+3. Quelle est la complexité de votre algorithme (temporelle et spatiale) ?
 
 Pour rappel, voici comment on peut itérer sur les elements d'une chaine qui sont séparés par des espaces.
 
@@ -312,7 +312,7 @@ Voici l'API d'une *FList*
     }
 
 
-Comme vous pouvez vous en rendre compte, aucne des méthodes ne permet de modifier l'état de la liste.
+Comme vous pouvez vous en rendre compte, aucune des méthodes ne permet de modifier l'état de la liste.
 Voici un exemple de manipulation d'une telle liste.
 Si vous n'êtes pas familiers avec les `interfaces fonctionnelles <https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`_  de Java8, 
 nous vous demandons de vous familiariser d'abord avec celles-ci.
