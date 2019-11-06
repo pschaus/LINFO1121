@@ -25,7 +25,7 @@ Livre de référence:
 Slides (keynote)
 
 * `Introduction <https://www.icloud.com/keynote/0XRcJhjLaXKDgGXmYP_obsvtQ#part3-intro>`_ 
-* `Séance Intermédiaire <https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises>`_  (attention celle-ci sera faite en même temps que la restructureation en S7)
+* `Séance Intermédiaire <https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises>`_  (attention celle-ci sera faite en même temps que la restructuration en S7)
 * `Restructuration <https://www.icloud.com/keynote/06MTKLmzIm6CiPon3fChb2vbA#part3-bilane>`_ 
 
 .. raw:: html
