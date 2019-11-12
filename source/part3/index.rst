@@ -82,7 +82,7 @@ Exercice 3.1.5
 
 *Exercice 3.2.31 du livre*.
 
-Écrivez une méthode `isBST()` qui prend un `Node` comme argument et qui retourne `true` si l'argument est est la racine
+Écrivez une méthode `isBST()` qui prend un `Node` comme argument et qui retourne `true` si l'argument est la racine
 d'un BST, `false` sinon (il faut donc vérifier que les propriétés d'un BST sont satisfaites).
 
 Est-ce que vérifier (localement) si pour chaque noeud la propriété *"le fils gauche a une clef inférieure et le fils
@@ -109,7 +109,7 @@ Exercice 3.1.7
 
 *Exercice 3.3.33 du livre*.
 
-Écrivez une méthode `is23()` dans `RedBlackBST` qui vérifient respectivement qu'aucun noeud n'est connecté
+Écrivez une méthode `is23()` dans `RedBlackBST` qui vérifie qu'aucun noeud n'est connecté
 à deux liens rouges et qu'il n'y a pas de lien rouge vers la droite.
 Écrivez aussi une méthode `isBalanced()` qui vérifie que tout chemin depuis la racine vers vers un lien null a le
 même nombre de liens noirs. Finalement combinez `isBST(),is23()` et `isBalanced()` pour implémenter `isRedBlackBST()`.
