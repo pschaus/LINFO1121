@@ -56,8 +56,7 @@ Exercice 4.1.3
 Expliquez pourquoi la méthode `hash()` p461 du livre retourne `(x.hashCode() \& 0x7FFFFFFF) \% M` et pas simplement `x.hashCode() \% M` ?  
 Quel nombre représente `0x7FFFFFFF` ? 
 Quelle est sa représentation binaire ? 
-Montrer l'impact au niveau binaire sur un exemple où `x.hashCode()` retourne un nombre négatif. H
-int: utilisez `Integer.toBinaryString(int)` pour vérifier votre réponse. 
+Montrer l'impact au niveau binaire sur un exemple où `x.hashCode()` retourne un nombre négatif. Hint: utilisez `Integer.toBinaryString(int)` pour vérifier votre réponse. 
 
 
 Exercice 4.1.4
