@@ -164,9 +164,9 @@ Exercice 2.1.11
 """""""""""""""
 
 Qu'est-ce que le Autoboxing and Unboxing en Java?
-En quoi est-ce que cela peut impacter les performance d'un algorithme de tri?
+En quoi est-ce que cela peut impacter les performances d'un algorithme de tri?
 
-Comparer les performance de `java.util.Sort` sur un tableau de 10000000 entrées composé de `int` et
+Comparer les performances de `java.util.Sort` sur un tableau de 10000000 entrées composé de `int` et
 le même tableau avec des `Integer`.
 
 Exercice 2.1.12
