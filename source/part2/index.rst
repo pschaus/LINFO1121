@@ -74,7 +74,7 @@ Exercice 2.1.3
 """"""""""""""
 
 Qu'entend-t-on par un algorithme de tri stable et en place (in place)?
-Pour tout les algorithmes présentés dans le livre de référence,
+Pour tous les algorithmes présentés dans le livre de référence,
 indiquez s'ils sont en place (ou pas) ou stable (ou pas).
 
 Exercice 2.1.4
