@@ -19,6 +19,7 @@ jobs:
       run: |
         mkdir /tmp/gh-pages
         cp -r build/html/* /tmp/gh-pages
+        git checkout gh-pages
         rm -rf *
         cp -r /tmp/gh-pages/* .
         git config --local user.email "action@github.com"
