@@ -15,11 +15,15 @@ jobs:
       env:
         AUTHORIZATION: ${{ secrets.DROPBOX_AUTHORIZATION }}
       run: ./build_github.sh
-    - name: Commit documentation changes
+    - name: Save build in /tmp
       run: |
         mkdir /tmp/gh-pages
         cp -r build/html/* /tmp/gh-pages
-        git checkout gh-pages
+    - uses: actions/checkout@v2
+      with:
+        ref: gh-pages
+    - name: Commit the new html build
+      run: |
         rm -rf *
         cp -r /tmp/gh-pages/* .
         git config --local user.email "action@github.com"
