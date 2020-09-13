@@ -11,7 +11,7 @@ Le livre de référence utilisé pour ce cours est
 de Robert Sedgewick et Kevin Wayne.
 
 Il est important de vous **procurer ce livre le plus rapidement possible**.
-Le livre est disponible au SICI!
+**Le livre est disponible au SICI à un prix réduit (à partir du mercredi 16/09)!**
 
 
 Pédagogie
