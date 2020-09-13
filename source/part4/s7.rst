@@ -1,0 +1,250 @@
+.. _part4_1:
+
+.. rubric:: Partie 4 | Dictionnaires: tables de hachages et autres implémentations
+
+*************************************************************************************************
+Partie 4: Questions d'introduction
+*************************************************************************************************
+
+Objectifs
+=========
+
+À l'issue de cette partie, chaque étudiant sera capable de:
+
+* décrire avec exactitude et précision les concepts présents dans le chapitre du livre de référence, qui traite de tables de hachage
+* mettre en oeuvre des algorithmes basés sur les tables de hachage,
+* concevoir des fonctions de hachage adéquates pour différents types d'objets,
+* de résoudre des problèmes simples sur la mémorisation d'informations et leur accès dans des tables de hachage,
+* d'évaluer et mettre en oeuvre des représentations classiques de tables de hachage,
+* décrire et mettre en oeuvre avec précision l'algorithme de Rabin-Karp pour rechercher un texte dans un corpus.
+
+Calendrier
+==========
+
+TODO
+
+A lire
+=======================================
+
+Livre de référence:
+
+* chapitre 3.4, 3.5, 5.3 (Rabin-Karp fingerprint search only).
+
+Exercices théoriques
+====================
+
+.. note::
+    Ces exercices sont à préparer pour le mercredi de S7.
+
+Exercice 4.1.1
+""""""""""""""
+
+Citez au moins quatre implémentations différentes d'un dictionnaire (table de symboles).
+Précisez, dans chaque cas, quelles sont les propriétés principales de ces implémentations.
+Dans quel(s) cas s'avèrent-elles intéressantes ?
+Quelles sont les complexités calculatoires de leurs principales méthodes ?
+
+.. answer::
+
+   Il *FAUT* insister sur l'existence dictionnaires qui ne sont pas tables de hachage.
+
+   .. list-table:: Résumé des différentes implémentations
+      :header-rows: 1
+
+      * - Nom
+        - Implémentation en dictionnaire
+        - en ensemble
+        - Insertion
+        - Recherche
+        - Suppression
+        - Commentaire
+      * - Double tableau, non trié
+        -
+        -
+        - :math:`\mathcal{O}(1)` amorti
+        - :math:`\mathcal{O}(n)`
+        - :math:`\mathcal{O}(n)` (:math:`\mathcal{O}(1)` avec des listes)
+        -
+      * - Double tableau, trié
+        -
+        -
+        - :math:`\mathcal{O}(n)` amorti
+        - :math:`\mathcal{O}(\log n)`
+        - :math:`\mathcal{O}(n)` (:math:`\mathcal{O}(1)` avec des listes)
+        - nécessite un comparateur
+      * - Hash tables
+        - ``HashMap``
+        - ``HashSet``
+        - :math:`\mathcal{O}(1)` amorti
+        - :math:`\mathcal{O}(1)` amorti
+        - :math:`\mathcal{O}(1)` amorti
+        - nécessite un hash
+      * - Arbres de recherche
+        - ``TreeMap``
+        - ``TreeSet``
+        - :math:`\mathcal{O}(\log n)`
+        - :math:`\mathcal{O}(\log n)`
+        - :math:`\mathcal{O}(\log n)`
+        - nécessite un comparateur
+      * - Linked Hash tables
+        - ``LinkedHashMap``
+        - ``inkedHashMap``
+        - :math:`\mathcal{O}(1)` amorti
+        - :math:`\mathcal{O}(1)` amorti
+        - :math:`\mathcal{O}(1)` amorti
+        - ordre d'itération = ordre insertion
+
+
+Exercice 4.1.2
+""""""""""""""
+
+Souvenez vous de la question suivante proposée en bilan sur la mission sur les tris: Étant donné un ensemble :math:`S` de taille :math:`n`, et un nombre :math:`x`. Décrivez un algorithme efficace utilisant une HashTable pour trouver s'il existe une paire :math:`(a,b)` avec :math:`a \in S,b \in S` telle que :math:`a+b=x`. Quelle est la complexité de votre algorithme? Est-elle meilleure que votre solution qui utilisait un tri?
+
+.. answer::
+
+   Une table de hachage étant en :math:`\mathcal{O}(1)` amorti en insertion/recherche (sous réserve d'un hachage correct)
+   on peut simplement insérer tout les nombres dans la table, puis regarder pour chaque nombre :math:`i` si :math:`x-i`
+   est présent dans l'ensemble. Complexité totale: :math:`\mathcal{O}(n)`.
+
+Exercice 4.1.3
+""""""""""""""
+
+Démontrez que :math:`(a + b) \% M` est équivalent à :math:`((a \% M) + b) \% M`. En quoi cette propriété peut être utile pour construire une fonction de hachage sur les String.
+Expliquez comment Java calcule une fonction de hachage sur les String?
+Quelle est la complexité pour calculer 1 fois et :math:`N` fois le hashcode d'un String.
+
+.. answer::
+
+   Le modulo est distributif, et l'appliquer deux fois est identique à l'appliquer une fois:
+
+   .. math::
+
+      ((a \% M) + b) \% M = (a \% M) \% M + b \% M = a \% M + b \% M
+
+   Pour un string :math:`s_0,s_1,\ldots,s_n` java utilise la formule :math:`\sum_{i=0}^{n-1} 31^{n-i-1}s_i`.
+   Mais l'implémentation utilise une boucle for (Horner method) similaire à celle de la page 460. La complexity est
+   donc de :math:`\sim n`. Mais attention, Java met en cache le hashcode, il est donc calculé au plus 1 fois. La complexity
+   pour :math:`N` appel à ``hashCode`` est donc :math:`n+N`.
+
+Exercice 4.1.4
+""""""""""""""
+
+Expliquez pourquoi la méthode ``hash()`` p461 du livre retourne `(x.hashCode() \& 0x7FFFFFFF) \% M` et pas simplement `x.hashCode() \% M` ?
+Quel nombre représente ``0x7FFFFFFF`` ?
+Quelle est sa représentation binaire ?
+Montrer l'impact au niveau binaire sur un exemple où ``x.hashCode()`` retourne un nombre négatif. Hint: utilisez ``Integer.toBinaryString(int)`` pour vérifier votre réponse.
+
+.. answer::
+
+   0x7FFFFFFF est une représentation hexadecimale (car il commence par 0x). Un caractère hexa spécifie 4 bits. 0x7F FF FF FF spécifie donc la valeur de 32 bits.
+   7=0111,F=1111. Donc  0x7FFFFFFF est le nombre binaire `0(suivi de 31 x 1)`. C'est l'entier maximum en Java, c'est à dire :math:`2^{31}-1=2147483647`.
+   Rien ne garanti que la méthode hashCode retourne un entier positif. Or tout entier négatif a une representation binaire qui commence par \texttt{1 (suivi de 31 x (0 ou 1))}.
+   Appliquer un :math:`\&` logique va donc mettre ce premier bit toujours à 0 afin d'éviter de calculer un index négatif qui résulterait en un OutOfBoundException dans un tableau.
+
+   Question bonus: est-ce que `x \& 0x7FFFFFFF = abs(x)`? Non car on utilise une notation en complément de deux. Une bonne raison d'être attentif au cours de systèmes informatiques...
+
+Exercice 4.1.5
+""""""""""""""
+
+Java fournit la classe ``java.util.Hashtable`` comme implémentation de l'interface ``java.util.Map``.
+Pouvez-vous déterminer précisément de quelle variante de table de hachage il s'agit ?
+Java fournit-il d'autres implémentations de l'interface ``Map`` ?
+Faites un diagramme qui représente  les interfaces et les classes qui se rapportent à ``Map`` et précisez ce qui, dans chaque cas, les caractérise.
+Qu'est-ce qui peut servir de clef pour une ``Hashtable`` en Java ? Soyez précis.
+
+.. answer::
+
+   Java utilise du separate-chaining. Sa structure pour le chaining est une liste doublement chaînée. Un object Entry est un noeud de la liste qui à une référence vers le predecesseur et le successeur.
+   Différence entre HashMap et HashTable: HashMap accepte les clefs et valeurs nulles et celle-ci n'est pas synchronisée.
+   Ensuite il y a aussi les SortedMap dont la TreeMap qui implémente les red-black tree et *ajoute des fonctionnalité relative à l'ordre (firstKey, ceil, floor, etc)*.
+
+Exercice 4.1.6
+""""""""""""""
+
+Qu'entend-on par la notion de "collision" dans une table de hachage ?
+Les collisions ont-elles une influence sur la complexité des opérations ?
+Si oui, quelle(s) opération(s) avec quelle(s) complexité(s), sinon précisez pourquoi.
+
+.. answer::
+
+   Une collision entre deux entrées veut dire qu'elle ont le même hash (après modulo). Clairement, cela force à utiliser une technique pour gérer ces cas.
+   Il faut profiter de cette question pour demander aux étudiants quels sont les méthodes usuelles dans des hash tables pour gérer cela.
+   Assurez-vous que tout le monde à bien compris le separate chaining et le linear probing (notamment la recherche et la suppression...)
+
+Exercice 4.1.7
+""""""""""""""
+
+Qu'est-ce que le facteur de charge d'une table de hachage.
+Est-ce que le contrôle du facteur de charge est nécessaire/optionnel pour le bon fonctionnement d'une table de hachage avec Linear Probing ou Separate Chaining ?
+Quelle est la stratégie utilisé par ``java.util.Hashtable`` pour contrôler le facteur de charge ?
+En quoi est-elle différente de celle proposée dans``LinearProbinHashST`` ?
+Quel est le lien entre le facteur de charge et collision ?
+
+.. answer::
+
+   Il y a une valeur threshold = taille du tableau x facteur de charge limite.
+   Le facteur de charge limite est par défaut de 0.75 mais le constructeur permet de le changer.
+   Dès que le nombre d'element atteint cette limite threshold, on rehashe tout dans un nouveau tableau dont la capacité est multipliée par deux plus 1 (pourquoi?).
+
+Exercice 4.1.8
+""""""""""""""
+
+Imaginez une nouvelle méthode ``iterator()`` qui retourne un itérateur sur les clefs de ``LinearProbingHashST``.
+Votre itérateur ne devrait pas accepter de modification de la table de hashage alors qu'il est utilisé: une ``ConcurrentModificationException()`` doit être lancée si c'est le cas.
+Que suggérez vous pour ce faire? Hint: Inspirez vous de la stratégie de ``java.util.Hashtable``.
+
+
+Exercice 4.1.9
+""""""""""""""
+
+Décrivez l'implémentation  de la méthode ``put(key)`` dans une table de hachage qui utilise la technique du "linear probing" pour gérer les collisions qui utiliserait un marqueur spécial pour représenter les entrées supprimées à l'aide de la méthode ``delete(key)``.
+En d'autres termes la méthode ``delete(key)`` au lieu de réarranger le contenu de la table de hachage de telle sorte qu'elle soit comme si l'entrée supprimée n'avait jamais été insérée, va simplement marquer l'entrée avec le marqueur spécial.
+Quel est l'avantage ou l'inconvénient de cette approche par rapport à celle de "LinearProbingHashST" du livre ?
+
+.. answer::
+
+   L'inconvénient est que le get risque de prendre beaucoup plus de temps.
+   si on fait un get et que la clef n'est pas là, on ne peut plus s'arrêter après le premier trou, il faudra a chaque fois tout parcourir.
+   Le meilleur temps dans le cas où la clef n'est pas présente prendra donc :math:`\Theta(N)` au lieu de :math:`mathcal{O}(1)`.
+   Par contre le delete est plus rapide puisqu'il ne faut pas décaler vers la gauche les clefs.
+   Il y d'autres problèmes que les étudiants pourraient soulever...
+
+Exercice 4.1.10 (Rabin-Karp)
+""""""""""""""""""""""""""""
+
+Imaginez une fonction de hachage pour un string :math:`s` telle que connaître sa valeur pour le sous string :math:`s[i,...,i+n-1]` permettrait de calculer la fonction de hachage du string :math:`s[i+1,...,i+n]` en temps constant (de manière incrémentale).
+
+.. answer::
+
+   C'est l'idée de Rabin-Karp p 775 du livre. Soit :math:`x_i` le hash sur :math:`s[i,...,i+n-1]` alors :math:`x_{i+1}= (x_i-t_iR^{n-1})R+t_{i+n}`.
+
+Exercice 4.1.11 (Rabin-Karp)
+""""""""""""""""""""""""""""
+
+Expliquez comment rechercher un sous string de taille :math:`M` dans un long string de taille :math:`N` en :math:`mathcal{O}(N)` à l'aide d'une fonction de hachage incrémentale.
+Comment feriez-vous si vous avez :math:`k` strings de taille :math:`M` à rechercher dans le long string de taille :math:`N` ?
+Quelle serait la complexité de votre méthode ? est-elle plus avantageuse que lancer k fois l'algorithme de Rabin-Karp ?
+
+.. answer::
+
+   Pour la première partie c'est Rabin-Karp, classique.
+   Pour la deuxième question, le cout de hashage sera :math:`mathcal{O}(kM)` car il y a :math:`kM` clef a mettre dans la table de hashage.
+   Ensuite c'est :math:`mathcal{O}(k)` pour tester les :math:`k` string.
+   On peut imaginer de nombreuses optimisations.
+   Imaginons qu'on cherche deux mots de longueur 5 et 10.
+   On fait le RK classique pour la longueur 5. Ensuite si on trouve un match, on peut chercher à l'étendre pour matcher les 10 symboles.
+   On peut aussi chercher les matchs du suffixe de longeur 5. Ensuite faire une double boucle pour voir si les matchs matches entre eux ;-)
+
+
+
+Exercices d'implémentation sur INGInious
+==========================================
+
+.. note::
+   Vous devez faire ces exercices pour le mercredi de S8.
+
+
+1. `QCM fonction de hachage <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmHashing>`_
+2. `QCM Complexité RabinKarp <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmRk>`_
+3. `Implem Fonction de Hash incémentale <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4IncrementalHash>`_
+4. `Implem RabinKarp K patterns <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4RabinKarp>`_

@@ -1,0 +1,367 @@
+.. _part1_1:
+
+.. rubric:: Partie 1 | Types abstraits de données, Complexité, Collections Java; Piles, files et listes liées
+
+*************************************************************************************************
+Partie 1: Questions d'introduction
+*************************************************************************************************
+
+Objectifs de cette partie
+=========================
+
+A l'issue de cette partie chaque étudiant sera capable de:
+
+* faire la distinction entre les notations :math:`\mathcal{\sim}`, :math:`\mathcal{O}`,
+  :math:`\Theta`, et :math:`\Omega`, connaitre leurs propriétés et définitions;
+* décrire avec précision les propriétés des types abstraits *pile* et *file*;
+  ainsi que les divers types de listes chainées;
+* faire la distinction entre un *type abstrait de données* et son implémentation;
+* mettre en oeuvre et évaluer une implémentation d'une pile par une *liste simplement ou doublement chaînée*;
+* utiliser des *tests unitaires* (avec JUnit) pour tester et prouver le bon fonctionnement d'un programme;
+* utiliser les diverses collections présentes de base dans la language Java, en s'aidant de la documentation.
+
+Calendrier
+==========
+
+- lundi 14 septembre: démarrage de la partie 1
+- mercredi/jeudi 16/17 septembre: première séance tutorée. Réponse aux questions ci-dessous.
+- lundi/mardi 21/22 septembre: soumission du rapport pour les questions restantes (en groupe) + deadline exercice INGInious
+- mercredi/jeudi 23/24 septembre: seconde séance tutorée. Réponse aux questions de bilans et exercices INGInious.
+  Début de la partie 2.
+
+A lire
+=======================================
+
+Si vous avez retenu ce que vous avez vu en Informatique 2 (LEPL1402) ces deux premières semaines seront une formalité!
+Rafraichissez vous la mémoire dans le livre de référence.
+
+Livre de référence:
+
+* Chapitre 1, section 1: quelques rappels de Java et la programmation en général
+* Chapitre 1, section 2: Abstraction de données
+* Chapitre 1, section 3: Piles, files, sacs, listes chainées
+* Chapitre 1, section 4: Analyses d'algorithmes
+
+Ainsi que ce document résumant les différentes notations de :ref:`part1complexity`.
+
+Exercices théoriques
+====================
+
+.. note::
+
+    Habituellement, ces questions seront préparées à l'avance. Pour la première semaine, vous n'avez pas besoin de rendre
+    de rapport. Il s'agit de la matière de l'année dernière (LEPL1402) après tout ;-)
+
+    Vous devriez avoir assez de temps pour faire ces questions avec votre tuteur en séance.
+    Si néanmoins ce n'est pas le cas, nous vous demandons de soumettre, en groupe, un rapport
+    donnant vos réponses aux questions *que vous n'avez pas eu le temps de faire en séance
+    avec le tuteur*.
+
+    La soumission se fait par mail, la deadline étant la même que celle des exercices INGInious.
+    Voir le calendrier ci-dessus.
+
+    Vous pouvez vous répartir les questions entre vous, mais lisez les réponses et comprenez-les
+    (et demandez des explications à vos condisciples) avant le prochain TP. Connaitre et comprendre
+    les réponses que votre groupe donne dans les rapports fait partie de la côte de participation.
+
+Exercice 1.1.1
+""""""""""""""
+
+Définissez ce qu'est un type abstrait de données (TAD [#adt]_). En java, est-il préférable de décrire un TAD par une
+classe ou une interface ? Pourquoi ?
+
+.. answer::
+
+    Page 64 du livre. En java, on utilisera une interface, car une classe est soit
+
+    * inutile car complétement abstraite (autant la remplacer par une interface)
+    * impose déjà une méthode pour implémenter l'ADT.
+
+    Il y a certains cas où l'on veut néanmoins utiliser une classe abstraite plutôt
+    qu'une interface. Par exemple, pour réutiliser du code que l'on sait être
+    commun à toute implémentation possible.
+
+    Un exemple pratique: une classe abstraite pourrait implémenter ``isEmpty()``
+    à partir de ``size()`` (``return size() == 0``).
+
+
+Exercice 1.1.2
+""""""""""""""
+
+Comment faire pour implémenter une *pile* par une liste simplement chaînée où les opérations
+``push`` et ``pop`` se font en **fin de liste** ? Cette solution est-elle efficace ? Argumentez.
+
+.. answer::
+
+    En pratique, à l'examen, il faudra l'implémenter! Rappelez aux étudiants qu'il
+    faut faire plus que simplement comprendre l'idée générale.
+
+Exercice 1.1.3
+""""""""""""""
+
+Quelles sont les implémentations possibles pour une pile? En consultant la documentation sur l'API de Java, décrivez
+l'implémentation d'une pile par la classe ``java.util.Stack``. Aller voir le code source de l'implémentation
+``java.util.Stack`` (crtl+B depuis IntelliJ).
+
+Pourquoi pensez-vous que les développeurs de Java ont choisi cette implémentation
+(hint: argumentez au niveau de la mémoire et du garbage collector)?
+
+.. answer::
+
+    Stack étends Vector, qui est un tableau contigu redimensionable.
+
+    Evidemment, cela permet d'éviter de créer plein de petits objets "noeuds" en mémoire,
+    et donc d'utiliser moins le garbage collector et le heap.
+
+    La complexité est donc un peu plus complexe que l'habituel ":math:`\mathcal{O}(1)` pour push/pop".
+    La vérité est que c'est une complexité amortie!
+
+    C'est un bon moment pour prendre le temps d'expliquer à tout les groupes en même temps,
+    au tableau, comme fonctionne un tableau redimensionnable en temps amorti constant.
+
+    Soit un tableau de taille 1, initialement vide. On double la taille du tableau
+    à chaque fois qu'il est complet:
+
+    * insérer un élément quand le tableau n'est pas plein est en :math:`\mathcal{O}(1)`
+    * dans le cas contraire, il faut faire une copie du tableau dans un nouvel emplacement
+      mémoire deux fois plus grand. Une opération en :math:`\mathcal{O}(n)` où :math:`n`
+      est la taille courante du tableau.
+
+    Si on fait le calcul, en ajoutant :math:`n=2^m` objets. On va avoir une opération de redimensionnement
+    quand le tableau fait une taille :math:`1, 2, 4, 8, 16, ... n/2, n`. Ce sont des puissances de deux...
+    On a que
+
+    .. math::
+
+        \sum_{i=0}^m 2^i = 2^{m+1}-1 = 2n-1
+
+    Autrement dit, les opérations de resize sur :math:`n` insertions sont EN TOUT en :math:`\mathcal{O}(n)`.
+    Rapporté par opération, ça fait :math:`\mathcal{O}(1)`. Magie.
+
+    Note rigolote: Java recommande d'utiliser Deque à la place de Stack.
+    "Qu'est-ce que ça change?" est une bonne question à poser aux étudiants.
+
+
+Exercice 1.1.4
+""""""""""""""
+
+Comment faire pour implémenter le type abstrait de données *Pile* à l'aide de deux *files* ?
+Décrivez en particulier le fonctionnement des méthodes ``push`` et ``pop`` dans ce cas.
+
+A titre d'exemple, précisez l'état de chacune des deux files après avoir empilé les entiers `1 2 3` à partir d'une pile
+initialement vide. Décrivez ce qu'il se passe ensuite lorsque l'on effectue l'opération ``pop``.
+
+Quelle est la complexité temporelle de ces méthodes si l'on suppose que chaque opération ``enqueue`` et ``dequeue``
+s'exécute en temps constant?
+
+Cette implémentation d'une pile est-elle efficace (pour :math:`n` opérations)
+par rapport aux autres implémentations présentées dans le livre de référence ?
+
+
+.. answer::
+
+    Il y a plusieurs possibilités. En voici deux:
+
+    *   Méthode 1. On maintien l'ordre FIFO dans la file 1 en permanence.
+
+        * ``push`` pousse dans la première file (:math:`\mathcal{O}(1)`)
+
+          .. code-block:: java
+
+            a.add(x);
+
+        * ``pop`` "vide" la file 1 dans la file 2, renvoie le dernier élément, puis remet tout dans la première file (:math:`\mathcal{O}(n)`)
+
+          .. code-block:: java
+
+            if(a.size() == 0)
+                throw new EmptyStackException();
+            while (a.size() != 1)
+                b.add(a.remove());
+            int out = a.remove();
+            while (b.size() != 0)
+                a.add(b.remove());
+            return out;
+    *   Méthode 2. On maintien l'ordre LIFO dans la file 1 en permanence.
+
+        * ``pop`` retire un élément de la file 1 (:math:`\mathcal{O}(1)`)
+
+          .. code-block:: java
+
+            return a.remove();
+
+        * ``push`` ajoute l'élément à la file 2, vide la file 1 dans la file 2, et intervertit les files. (:math:`\mathcal{O}(n)`)
+
+          .. code-block:: java
+
+            b.add(x);
+            while (a.size() != 0)
+                b.add(a.remove());
+            Queue<Integer> tmp = a;
+            a = b;
+            b = tmp;
+
+    Il y a beaucoup d'autres manières de faire, mais elles sont toutes en :math:`\mathcal{O}(n)` sur au moins une des deux opérations.
+
+Exercice 1.1.5
+""""""""""""""
+
+* Qu'est-ce qu'un iterateur en Java (``java.util.Iterator``)?
+* Pourquoi est-ce utile de définir une méthode ``iterator()`` sur les structures de données?
+* Que pensez vous de permettre la modification d'une structure de donnée alors qu'on est en train d'itérer sur celle-ci?
+
+Pour vous aider dans la réflexion, nous vous invitons à lire la spécification de l'API Java concernant la méthode
+``remove()``.
+
+Proposez une modification du code de l'iterateur de Stack qui lance une ``java.util.ConcurrentModificationException``
+si le client modifie la collection avec un ``push()`` ou ``pop()`` durant l'itération. Est-ce une bonne idée de laisser
+l'implémentation de la méthode ``remove()`` vide si on ne désire pas permettre cette fonctionnalité?
+
+.. answer::
+
+    Comparez avec les étudiants la complexité des trois boucles suivantes:
+
+    .. code-block:: java
+
+        LinkedList<Integer> list = new LinkedList<>();
+
+        for(Integer val: list) {
+            System.out.println(val);
+        }
+
+        Iterator<Integer> itr = list.iterator();
+        while (itr.hasNext()) {
+            Integer val = itr.next();
+            System.out.println(val);
+        }
+
+        for(int i = 0; i < list.size(); i++) {
+            Integer val = list.get(i);
+            System.out.println(val);
+        }
+
+    Les deux premières sont équivalentes (lors de la première, Java utilise en arrière-plan
+    un itérateur... c'est un sucre syntaxique): :math:`\mathcal{O}(n)` pour visiter la liste.
+
+    Malheureusement, ``list.get(i)`` est une opération en :math:`\mathcal{O}(n)` sur une liste,
+    et donc la troisième boucle est en :math:`\mathcal{O}(n^2)`!
+
+    Cela montre l'utilité d'un itérateur. Il permet de contenir de l'information sur "où on se trouve"
+    dans la structure de données, et permet d'éviter de refaire plusieurs fois le même travail.
+
+    En ce qui concerne ``java.util.ConcurrentModificationException``, il suffit de maintenir un
+    entier qui est incrémenté à chaque fois que la structure est modifiée. L'entier est copié
+    quand l'itérateur est créé et comparé à chaque hasNext. S'il a changé on lance l'exception.
+
+    Pour ``remove()``, l'API est claire, il faut lancer un UnsupportedOperationException. Sinon, comment
+    se rendre compte que ça ne fonctionne pas, si ce n'est dans la douleur, le sang et les larmes?
+
+Exercice 1.1.6
+"""""""""""""""
+
+La notation :math:`\sim` (tilde) est utilisée dans le livre de référence pour l'analyse des temps de calcul des
+algorithmes. En quoi cette notation diffère ou ressemble aux notations plus classiquement utilisées :math:`\mathcal{O}`
+(big Oh), :math:`\Omega` (big Omega) et :math:`\Theta` (big Theta)?
+
+Expliquez précisément les liens et similitudes entre celles-ci.
+Que voyez-vous comme avantage à utiliser la notation :math:`\sim` (tilde) plutôt que :math:`\mathcal{O}`
+lorsque c'est possible?
+
+.. answer::
+
+    Voir le document sur les complexités: :ref:`part1complexity`.
+
+Exercice 1.1.7
+""""""""""""""
+
+Expliquez comment nous pouvons extraire la caractérisation :math:`\sim` (tilde) de l'implémentation d'un algorithme à
+l'aide du test *Doubling ratio*.
+
+* Comment fonctionne ce test?
+
+  .. answer::
+
+    Si :math:`T(N)\sim aN^b\log N` alors :math:`T(2N)/T(N)\sim 2^b`.
+
+    L'idée est donc de doubler la taille de l'entrée à chaque fois, d'en approximer la valeur de :math:`b`
+    Et puis de donner une idée de l'ordre de grandeur.
+
+* Quelles sont les limites et avantages de ce test?
+
+  .. answer::
+
+    L'avantage est la simplicité de l'approche, mais l'algorithme se révèle rapidement
+    impraticable car les tailles d'input augmentent très vite.
+
+    Par ailleurs, le facteur :math:`\log N` est souvent inexistant en pratique; ce n'est pas
+    une méthode qui permet de prouver une complexité, seulement d'en avoir une idée générale.
+
+Supposont que nous mesurons les temps d'exécutions :math:`T(n)` suivants (en secondes) d'un programme en fonction de la
+taille de l'entrée :math:`n`:
+
+============  ==== ==== ==== ==== ===== ===== =====
+:math:`n`     1000 2000 4000 8000 16000 32000 64000
+:math:`T(n)`  0    0    0.1  0.3  1.3   5.1   20.5
+============  ==== ==== ==== ==== ===== ===== =====
+
+* Comment pouvez-vous caractériser au mieux l'ordre de croissance de cette fonction ?
+
+  .. answer::
+
+    ===================  ================  ================  ==== ==== ===== ===== =====
+    :math:`n`            1000              2000              4000 8000 16000 32000 64000
+    :math:`T(n)`         0                 0                  0.1  0.3   1.3   5.1  20.5
+    :math:`T(2n)/T(n)`   :math:`\simeq 1`  :math:`\simeq 1`     3  4.3   3.9   4.0
+    ===================  ================  ================  ==== ==== ===== ===== =====
+
+    On a donc :math:`2^b \sim 4.0`, :math:`b=2`. On serait donc théoriquement en :math:`\mathcal{O}(n^2\log n)`.
+    En pratique, cette fonction est en :math:`\mathcal{O}(n^2)`. C'est l'un des inconvénient de la méthode,
+    le :math:`\log n` ajouté est souvent inexistant.
+
+* Que serait le temps d'exécution pour 128000?
+
+  .. answer::
+
+    :math:`T(128000)/T(64000)\sim 4 \rightarrow T(128000)\sim 4*T(64000)=82`.
+
+Exercice 1.1.8
+"""""""""""""""
+
+Que signifient les paramètres -Xmx, -Xms que l'on peut passer à la JVM pour l'exécution d'un bytecode?
+Est-ce que ces paramètres peuvent influencer la vitesse d'exécution d'un programme Java? Pourquoi?
+
+.. answer::
+
+    A good opportunity to recall/introduce the notion of amortized constant time complexity.
+    Depite the fact that operations using an array are amortized constant time, they are generally preferred
+    because they generate less objects on the heap that eventually will be garbabe collected (Nodes, etc).
+    Garbage collection can substantially slow down the execution.
+    Extreme case: you do a series of consecutive push, pop, push, pop, etc...
+
+Exercice 1.1.9
+"""""""""""""""
+
+* Qu'est-ce qu'un bon ensemble de tests unitaires pour vérifier l'exactitude d'une structure de données?
+* Pensez-vous aux cas limites?
+* Pensez-vous à la valeur maximale des entiers, doubles, etc?
+* En quoi la génération de données aléatoire peut être utile pour tester les structures de données?
+* Pourquoi est-ce important de travailler avec une semence (seed) fixée?
+* En quoi un outil d'analyse de couverture de code peut être utile (tel que `Jacoco <http://eclemma.org/jacoco/>`_)
+  pour vous aidez à concevoir des tests.
+* Comment vérifier expérimentalement que l'implémentation d'une structure de données ou un algorithme a
+  bien la complexité temporelle théorique attendue ?
+
+Exercices sur INGInious
+==========================================
+
+.. note::
+    Vous devez faire ces exercices pour le mercredi de S2. Ils sont à faire individuellement, mais n'hésitez pas
+    à demander à votre tuteur/aux membres de votre groupe de vous aider.
+
+1. `Ecriture de tests unitaires pour une stack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stacktests>`_
+2. `Implementation d'une stack avec structure chainée <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/m1stack>`_ 
+3. `Implementation d'une liste chainée circulaire et d'un iterateur <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part1CircularLinkedList>`_
+
+.. rubric:: Notes de bas de page
+
+.. [#adt] *abstract data type* (ADT) en anglais

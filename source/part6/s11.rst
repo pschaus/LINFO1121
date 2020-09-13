@@ -1,0 +1,405 @@
+.. _part6_1:
+
+.. rubric:: Partie 6 | Graphes: parcours, arbres sous-tendants, et plus courts chemins
+
+*************************************************************************************************
+Partie 6: Questions d'introduction
+*************************************************************************************************
+
+Objectifs
+=========
+
+À l'issue de cette partie, chaque étudiant sera capable de:
+
+* de *décrire* avec exactitude et précision les concepts présents au chapitre du livre de référence qui traite de *graphes*,
+* d'*évaluer* et *mettre en oeuvre* des représentations classiques de graphes,
+* de *choisir* une représentation adéquate d'un graphe en fonction des opérations à effectuer sur ce graphe,
+* de *mettre* en oeuvre des algorithmes de parcours et manipulation de graphes, en particulier
+    * depth et breadth first search:
+        * calcul de composantes connexes (le calcul des composantes fortement connexes ne fait pas partie de la matière)
+        * détection de cycle
+        * tri topologique
+    * calcul d'arbres sous tendant de poids minimum (Kruskal et Prim)
+    *  calcul de plus courts chemins (Dijkstra, Bellman-Ford)
+
+
+A lire
+======
+
+Livre de référence:
+
+* chapitres 4.1, 4.2, 4.3, 4.4
+
+Exercices théoriques
+====================
+
+.. note::
+   Vous devez faire ces exercices pour le mercredi de S11.
+
+Exercice 6.1.1
+""""""""""""""
+
+Donnez plusieurs structures de données pouvant être utilisées pour représenter un graphe :math:`G` non dirigé
+comportant :math:`n` noeuds (vertex) et :math:`m` arcs (edges).
+
+Quelles sont les complexités des opérations élémentaires ``Iterable<Integer> adj(int v)`` et ``addEdge(int v, int w)``?
+
+.. answer::
+
+    .. list-table:: Résumé des différentes implémentations
+      :header-rows: 1
+
+      * - Nom
+        - Type usuel
+        - ``ajd(v)``
+        - ``addEdge(v)``
+      * - Matrice d'adjacence
+        - ``boolean[n][n]``
+        - :math:`\Theta(n)`
+        - :math:`\Theta(1)`
+      * - Matrice d'incidence
+        - ``boolean[m][n]``
+        - :math:`\Theta(m)`
+        - :math:`\Theta(n+m)` ou :math:`\Theta(nm)`
+      * - Liste d'adjacence
+        - ``List<Integer>[n]``
+        - :math:`\Theta(\text{degré du noeud})`
+        - :math:`\Theta(1)`
+      * - Liste d'incidence
+        - ``List<Edge>``
+        - :math:`\Theta(m)`
+        - :math:`\Theta(1)`
+
+    Faire remarquer que parfois, on veut stocker de l'information supplémentaire sur une edge, comme son poids.
+    L'objet ``Edge`` de la liste d'incidence peut servir à ça. Une variante "liste d'incidence" ultra pratique est
+    le double HashMap: ``HashMap<Node, HashMap<Node, Property>>``, modifiable à toutes les sauces.
+
+    ``HashMap<Integer,Integer>[]`` est dans la même veine le must have pour les graphes avec noeuds indexés par des
+    entiers, et avec des poids entiers.
+
+Exercice 6.1.2
+""""""""""""""
+
+Un graphe est biparti si ses noeuds peuvent être divisés en deux ensembles disjoints de sorte qu'il n'existe pas d'arc
+entre deux noeuds du même ensemble.
+
+Proposez une méthode pour tester si un graphe est biparti et si oui qui trouverait une telle partition.
+Quelle est la complexité de votre algorithme? Hint: utilisez un DFS.
+
+.. answer::
+
+    Avec un DFS:
+    Tout les noeuds sont blancs initialement. On va colorer les noeuds en rouge ou en bleu.
+    On démarre en rouge.
+    A chaque fois qu'on croise un noeud:
+
+    - s'il est blanc, on le met à la couleur courante
+    - s'il est de la couleur courante, on ne fait rien
+    - s'il est de l'autre couleur, le graphe n'est pas biparti
+    - ensuite on change de couleur (de rouge vers bleu ou bleu vers rouge).
+    - on visite les voisins immédiats, récursivement.
+
+    Si quand on a visité tout les noeuds on a pas détecté d'erreur, c'est que le graphe est biparti (! connexité initiale...)
+
+Exercice 6.1.3
+""""""""""""""
+
+Prouvez que tout graphe connecté a un noeud dont le retrait (y compris des arcs incidents) ne déconnecterait pas le graphe.
+Ecrivez une méthode qui trouve un tel noeud. Hint: utilisez un DFS et le marquage des noeuds.
+
+.. answer::
+
+    Quand on visite le "dernier" noeud dans un DFS, c'est que l'on a atteind tout les autres noeuds d'abord
+    via le noeud de départ, sans utiliser le dernier noeud.
+
+    Celui-ci peut donc être retiré.
+
+Exercice 6.1.4
+""""""""""""""
+
+Soit un graphe :math:`G` non dirigé et sans poids dont les arcs représentent les déplacements élémentaires possibles d'un robot dans un labyrinthe au départ de toutes les positions possibles (noeuds). Etant donné la position courante et un noeud qui représente la sortie. Proposez une méthode pour trouver un chemin vers la sortie et qui minimise le nombre de déplacements élémentaires.
+Quelle est la complexité de votre méthode? Est-ce que cela dépend de l'implémentation du graphe (par exemple si c'est une matrice d'adjacence?)
+
+.. answer::
+
+    BFS. Bien demander d'expliquer l'algorithme. Noter la *seule* différence entre le BFS et le DFS: l'usage d'une ``Queue`` plutot que d'une ``Stack``.
+    Avec une liste d'adjacence, l'algo est en :math:`\mathcal{O}(n+m)`. Avec une matrice d'incidence, c'est :math:`\mathcal{O}(n^2)`...
+
+    Dans un graphe simplement connecté :math:`m` peut être aussi grand que :math:`\mathcal{O}(n^2)`.
+    Du coup, est-ce grave?
+    Oui car généralement les graphes sont très sparse et donc :math:`m << n^2`
+
+Exercice 6.1.5
+""""""""""""""
+
+Le programme des cours de l'EPL donne pour chaque cours la liste des pré-requis de ces cours.
+Vous souhaitez vous assurer que tous les cours peuvent être pris, autrement dit qu'il n'existe pas de dépendance
+cyclique entre les cours.
+
+Quelle méthode proposez-vous pour réaliser ce test?
+Quelle en est la complexité?
+
+.. answer::
+
+    Un DFS (correctement écrit) permet de détecter les cycles. L'idée est la suivante: on va
+    marquer chaque noeud suivant 3 états. Non visité (pas encore atteind par le DFS), en cours de visite (tout ses
+    voisins n'ont pas encore été visités, i.e. le DFS est en train de faire une récursion depuis ce noeud) et
+    visité (le DFS a fini ses récursions sur ce noeud).
+
+    Si on croise dans notre DFS un noeud X qui est déjà "en cours de visite", c'est qu'il existe un chemin
+    entre le noeud courant Y et le noeud X, mais également entre le noeud X et le noeud Y vu qu'il
+    est en cours de visite (et que donc la "stack trace" du DFS crée ce chemin). Autrement dit, il y a un cycle.
+
+    Demandez aux étudiants d'écrire le code en récursif.
+
+    .. code-block:: java
+
+        List<Integer>[] graph = ...;
+        int[] status = new int[graph.length];
+        boolean hasCycle = false;
+        Arrays.fill(status, 0); //0 == non-visité
+
+        void visit(int node) {
+            status[nei] = 1; //en visite
+            for(Integer nei: graph[node]) {
+                if(status[nei] == 0)
+                    visit(nei);
+                else if(status[nei] == 1)
+                    hasCycle = true;
+                //ignore if already visited
+            }
+            status[nei] = 2; //visité
+        }
+
+        visit(0);
+
+    (NB: ce code a été écrit sans IDE et n'a pas été testé ;-))
+
+    Comment adapter ce code si on veut extraire le cycle?
+
+    Il suffit de "sauvegarder" par quel noeud chaque noeud a été atteint, puis de remonter
+    la liste chainée résultat de Y vers X.
+
+Exercice 6.1.6
+""""""""""""""
+
+Développez un algorithme de tri topologique (écrivez le code) qui maintient un tableau de la taille du nombre de
+noeud dont chaque entrée correspond au degré entrant de chaque noeud (in-degree).
+Votre algorithme maintient également une queue des *sources* (noeuds avec un in-degree de 0).
+Initialisez ces deux structures en une seule passe sur toutes les edges.
+Ensuite réalisez les opérations suivantes jusqu'à ce que la queue des sources devienne vide:
+
+* retirez une source de la queue et marquez la.
+* décrémentez les in-degree des destinations adjacentes du noeud marqué à l'étape précédente.
+* si le in-degree d'un noeud devient 0, il faut l'insérer dans la queue des sources.
+
+Est-il-possible au passage de détecter si le tri topologique est unique? Quelle est la complexité de votre algorithme?
+
+.. answer::
+
+    (code non testé, mais donne l'idée générale)
+
+    .. code-block::
+
+        List<Integer>[] graph = ...; //liste d'adjacence
+        List<Integer> out = new LinkedList<>(); //output
+
+        int[] inDegree = new int[graph.length];
+        Arrays.fill(inDegree, 0);
+
+        for(int i = 0; i < graph.length; i++)
+            for(Integer j: graph[i])
+                inDegree[j] += 1;
+
+        Queue<Integer> todo = new LinkedList<>(); //ou n'importe quelle DS qui est O(1) insert/delete
+        for(int i = 0; i < graph.length; i++)
+            if(inDegree[i] == 0)
+                todo.add(i);
+
+        while (!todo.isEmpty()) {
+            int now = todo.poll();
+            out.add(now);
+            for(Integer j: graph[now]) {
+                inDegree[j]--;
+                if(inDegree[j] == 0)
+                    todo.add(j);
+            }
+        }
+
+    Complexité: :math:`\mathcal{O}(n+m)`. On passe deux fois par chaque noeud et chaque arete.
+
+    Un toposort n'est pas unique ssi il existe deux noeuds sur la même "profondeur", car ils peuvent être interchangés.
+    On peut détecter ça en utilisant par exemple deux queues...
+
+    .. code-block::
+
+        // remplacer le code de la boucle while par ceci
+
+        boolean hasMultipleOutputs = false;
+        while (!todo.isEmpty()) {
+            hasMultipleOutputs |= todo.size() != 1;
+            Queue<Integer> nextTodo = new LinkedList<>();
+
+            while (!todo.isEmpty()) {
+                int now = todo.poll();
+                out.add(now);
+                for (Integer j : graph[now]) {
+                    inDegree[j]--;
+                    if (inDegree[j] == 0)
+                        nextTodo.add(j);
+                }
+            }
+
+            todo = nextTodo;
+        }
+
+Exercice 6.1.7
+""""""""""""""
+
+Soit :math:`G(V,E)` un graphe non dirigé avec poids sur lequel a été calculé un minimum spanning tree.
+Ensuite :math:`k` arcs ont été retirés aléatoirement de ce MST.
+Écrivez une méthode pour retrouver un MST au départ du MST partiel.
+Le MST final ne doit pas nécessairement être identique à l'original, seuls les :math:`V-1-k` arcs restants doivent
+au minimum s'y trouver.
+
+Sur quelle(s) propriété(s) importante(s) des MST se base votre algorithme?
+Quelle est la complexité de votre méthode?
+
+.. answer::
+
+    La majorité des étudiants constate qu'une "foret de morceaux d'arbres" telle qu'obtenue ici est en fait
+    un état intermédiaire de l'algorithme de Kruskal.
+
+    Une autre manière de faire, et qui est intéressante pour la comprehésension de étudiants, est d'utiliser Prim.
+
+    On peut "compacter" chaque morceau d'arbre en un seul noeud, qui aurait comme aretes l'ensemble des aretes "sortant
+    de l'arbre". On peut ensuite lancer Prim (ou n'importe quel algorithme!) et générer un nouvel arbre.
+    Ensuite on peut "defusionner" les noeuds qui étaient auparavant des arbres, et magie!
+
+    C'est forcément assez compliqué à implémenter, mais c'est algorithmiquement élégant et montre bien
+    que tout les algorithmes trouvent toujours une solution optimale à partir de n'importe quelle solution partielle
+    i.e. ils sont greedy.
+
+Exercice 6.1.8
+""""""""""""""
+
+Soit :math:`G(V,E)` un graphe non dirigé avec poids sur lequel a été calculé un minimum spanning tree.
+L'edge :math:`e \in E` de poids :math:`w` ne fait pas partie de ce MST.
+Pouvez-vous recalculer un MST qui inclurait :math:`e` en adaptant le MST de départ? Décrivez votre algorithme (code).
+Quelle en est la complexité? Hint: DFS sur le MST de départ.
+
+.. answer::
+
+    Par définition d'un arbre, ajouter cette edge créerait un cycle. Pour que le résultat reste un arbre,
+    il faut supprimer une arète de ce nouveau cycle (pas :math:`e`), et pour minimiser le résultat, il faut en fait
+    supprimer l'arete la plus petite du cycle.
+
+    C'est faisable par un DFS pour trouver le chemin (unique!) entre les deux noeuds dans l'arbre.
+
+    Comment prouver que ce MST est bien minimal, sous contrainte de l'inclusion de :math:`e`?
+    Il suffit de voir que si on démarrait avec les deux noeuds liés à :math:`e` fusionné, l'arbre obtenu
+    ici est bien un MST.
+
+Exercice 6.1.9
+""""""""""""""
+
+Est-ce que ``java.util.PriorityQueue`` pourrait être utilisée pour implémenter efficacement Dijkstra?
+Si-non pourquoi? Que serait la complexité si on souhait utiliser cette file de priorité?
+
+.. answer::
+
+    Dans le livre, l'implémentation de l'algorithme de Dijkstra est basée sur une file de priorité dans laquelle
+    on peut changer la priorité d'un élément. ``java.util.PriorityQueue`` ne permet pas cela. Cela dit, ce n'est
+    pas très grave.
+
+    Lors de l'algorithme, chaque fois qu'on trouve un chemin plus court vers un noeud, on doit "mettre à jour"
+    son poids dans la PQ. Une autre option est en fait de "re-ajouter" le noeud dans la queue avec son nouveau
+    poids. Pour que cela marche, il faut ne considérer le noeud que la première fois qu'on le retire de la PQ.
+
+    L'algorithme de dijkstra du livre est dans :math:`\mathcal{O}((V+E)\log V)`. L'algorithme proposé ici
+    ne change pas le multiplicateur du logarithme, mais bien le logarithme, qui est la taille maximale de la PQ.
+
+    Chaque noeud :math:`v` pouvant être maintenant ajouté au plus :math:`\text{degré}(v)` fois, et vu que :math:`\sum_v \text{degré}(v) = E`
+    on obtient :math:`\mathcal{O}((V+E)\log E)`.
+
+    Il se trouve qu'on peut simplifier tout (multi-)graphe en entrée du Dijkstra en utilisant la propriété
+    que tout chemin "le plus court" passera forcément, s'il existe plusieurs edges entre une paire de noeuds,
+    par l'edge de poids le plus faible. Sans perte de généralité, on a donc toujours un graphe simple.
+
+    Hors dans un graphe simple, on a toujours que :math:`E < V^2`. Autrement dit:
+
+    .. math::
+
+        \mathcal{O}((V+E)\log E) \subseteq \mathcal{O}((V+E)\log (V^2)) = \mathcal{O}(2(V+E)\log V) = \mathcal{O}((V+E)\log V)
+
+    On a donc la même complexité!
+
+Exercice 6.1.10
+"""""""""""""""
+
+Expliquez pourquoi DijkstraSP ne permet pas de gérer les arcs avec un poids négatif?
+Est-ce que le résultat serait faux ou est-ce que la complexité ne serait plus garantie?
+Montrez un exemple d'input qui illustre le problème.
+
+.. answer::
+
+    Avec des cycles négatifs:
+
+    .. image:: dijkneg1.png
+
+    Sans cycle négatifs:
+
+    .. image:: dijkneg2.png
+
+    Dans les deux cas ça ne marche pas. Avec cycle négatif == il n'existe pas de chemin le plus court.
+    Sans cycle négatif, on arrive à C avec une taille de chemin de 4 mais la véritable valeur est 0.
+    Si on laisse l'algo se "corriger" et recommencer à explorer de C, on peut créer des cas où la complexité
+    devient exponentielle.
+
+Exercice 6.1.11
+"""""""""""""""
+
+Soit :math:`G` un graphe avec des poids potentiellement négatif mais il n'y a pas de cycle négatif.
+Je cherche le chemin le plus court entre un noeud :math:`u` et un noeuds :math:`v`.
+J'ai à ma disposition une implémentation de Dijkstra qui ne permet pas de gérer les poids négatifs.
+Il me suffit dès lors d'augmenter tous les poids d'une même quantité correspondant a la valeur absolue du plus petit
+poids et d'appliquer Dijkstra sur ce graphe.
+Cette méthode est-elle valable?
+Si oui, prouvez le.
+Si non, montrez un contre exemple.
+
+.. answer::
+
+    En partant du dernier exemple de la question précédente:
+
+    .. image:: dijkneg3.png
+
+    Est-ce que ça marche ici?
+
+Exercice 6.1.12
+"""""""""""""""
+
+Soit :math:`G` un graphe avec des poids positifs. Je cherche le chemin le plus long entre un noeud :math:`u` et un noeuds :math:`v`.
+J'ai à ma disposition l'implémentation de Bellman-Ford (qui supporte les poids négatifs).
+Il me suffit dès lors de calculer le plus court chemin sur le même graphe avec l'opposé des poids.
+Est-ce que cette méthode est valable? Si non pouvez-vous proposer une méthode pour le calcul de plus long chemin?
+Votre méthode s'applique-t-elle à tous les graphes? Si non quels-types particuliers de graphes peut-elle gérer?
+
+.. answer::
+
+    Ca marche ssi le graphe original est un DAG (et que donc il ne forme pas de cycle négatifs en faisant l'opposé des poids).
+
+Exercices d'implémentation sur INGInious
+==========================================
+
+.. note::
+   Vous devez faire ces exercices pour le mercredi de S12.
+
+
+1. `Implem BFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6BreadthFirstPaths>`_
+2. `Implem DFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DepthFirstPaths>`_
+3. `Implem composantes connexes <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6ConnectedComponents>`_
+4. `Implem Global Warming <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6GlobalWarming>`_
+5. `Implem Digraph <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Digraph>`_
+6. `Implem Shortest Path Puzzle <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DijkstraForWordTransformation>`_
+7. `Implem Shortest Path Maze <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Maze>`_

@@ -1,4 +1,4 @@
-	.. _intro:
+.. _intro:
 
 
 
@@ -6,102 +6,95 @@
 Organisation
 ************
 
-
 Le livre de référence utilisé pour ce cours est
 `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4e édition)
 de Robert Sedgewick et Kevin Wayne.
 
 Il est important de vous **procurer ce livre le plus rapidement possible**.
+Le livre est disponible au SICI!
 
 
 Pédagogie
 =======================================
 
 
-La pédagogie utilisée est celle des `classes inversées <https://fr.wikipedia.org/wiki/Classe_inversée>`_.
+La pédagogie utilisée est celle des `classes inversées <https://fr.wikipedia.org/wiki/Classe_inversée>`_. Il n'y
+a pas de cours magistraux, seulement des séances de TPs, en groupes fixes, sous supervision d'un tuteur.
 
 Par conséquent, les élèves doivent impérativement travailler chez eux:
 
 * lire les chapitres mentionnés du livre de référence,
-* programmer régulièrement en faisant les exercices proposés sur Inginious_
-
+* programmer régulièrement en faisant les exercices proposés sur INGInious_
+* préparer les questions théoriques en vue d'une discussion avec le tuteur.
 
 Le cours utilise le langage *Java* et plus spécifiquement la version Java8_.
 L'IDE recommandé pour ce cours et disponible à l'examen est IntelliJ_.
 Nous utiliserons également l'outil Junit4_ pour réaliser des tests unitaires.
 Il est fortement recommandé de vous familiariser à ces outils en préparation à l'examen.
 
+Chaque étudiant sera assigné à un groupe de 7 étudiants, et sera supervisé par un tuteur (qui supervise 4 groupes).
+Certains exercices (notamment théoriques) se font en groupe, tandis que d'autres (ceux de programmation) se font individuellement.
+
 .. _Java8: https://docs.oracle.com/javase/8/docs/api.
 .. _IntelliJ: https://www.jetbrains.com/idea/
-.. _Inginious: https://inginious.info.ucl.ac.be
+.. _INGInious: https://inginious.info.ucl.ac.be
 .. _JUnit4: https://junit.org/junit4/.
-
-
-Cours Open-Source
-=======================================
-
-Le sources de ce site web sont open-source et sur `bitbucket <https://bitbucket.org/pschaus/lsinf1121/src/master/>`_.
-Nous accueillons volontiers les pull-requests avec correction d'erreur ou proposition d'exercices supplémentaires.
-Les exercices sont aussi open-source sur `github <https://github.com/UCL-INGI/LSINF1121-Data-Structures-And-Algorithms>`_.
-
-La licence utilisée est Creative Commons Attribution-ShareAlike 4.0 International License:
-
-.. image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
-    :alt: CC-BY-SA
 
 
 Agenda
 =======================================
 
-Le cours est organisé en 6 modules de 2 semaines.
+Le cours est organisé en 6 modules de 2 semaines. Chaque module est composé de deux TPs. Dans la mesure du possible, ils se font en présentiel.
+
+Le cours devrait vous prendre environ 5/6h par semaine, dont deux en TP.
+
+Les TPs sont donnés soit le mercredi soit le jeudi, en fonction de ce qui vous est assigné.
+Prenons l'exemple d'une semaine typique d'un étudiant ayant son TP le mercredi:
 
 .. image:: organisation.svg
-    :scale: 80
-    :width: 400
-    :alt: DFS
+    :align: center
 
+- De **mercredi à lundi** de la semaine avant le TP1:
+    - lecture du livre de référence
+    - préparation des exercices théoriques **en groupe**
+- **Lundi minuit**: soumission du rapport de groupe, répondant aux questions théoriques
+- **Mercredi 14h**: TP1
+- De **mercredi à lundi** de la semaine suivant le TP1: préparation des exercices individuels sur INGInious
+- **Lundi minuit**: deadline pour les exercices INGInious
+- **Mercredi 14h**: TP2
+- retour au début de la liste pour la partie suivante.
 
-* mercredi semaine 1: introduction et motivation pour la matière (en auditoire avec Prof. P. Schaus)
-* semaine 1: lecture des chapitres par les étudiants et préparation des exercices théoriques A
-* mercredi semaine 2: correction des exercices théoriques A (en auditoire avec TA. G. Derval)
-* semaine 2: préparation des exercices théoriques B et exercices sur inginious
-* mercredi semaine 3: restructuration et correction exercices théoriques B [+ début module suivant] (auditoire avec Prof. Pierre Schaus)
-
-Le cours d'introduction, de TP et de restructuration se donne le mercredi 08h30-10h30 au BA94.
-
-Une permanence est également organisée à partir de la semaine 2 en salle Candix le mardi de 16h15 à 18h15.
-Trois tuteurs sont à votre disposition pour vous aider à faire les exercices inginious ou théoriques et répondre à vos questions.
-
-* S1-S3 :doc:`partie1 <../part1/index>`
-* S3-S5 :doc:`partie2 <../part2/index>`
-* S5-S7 :doc:`partie3 <../part3/index>` (attention pas cours mercredi S6: 24h vélos)
-* S8-S10 :doc:`partie4 <../part4/index>` attention, mid-term-quizz à la place du cours à 8h30 (à domicile ou salle info sur inginious)
-* S10-S12 :doc:`partie5 <../part5/index>`
-* S12-S14 :doc:`partie6 <../part6/index>`
+Si vous avez TP le jeudi (à 8h30 ou a 16h15), décalez l'horaire d'une journée.
 
 Evaluation
 =======================================
 
-Examen sur Inginious + Une évaluation mid-term lors de la S8 sur Inginious (matière portant sur parties 1 à 3).
+Sur les 20 points de la note finale:
 
-L'évaluation mid-term compte pour 2 points sur 20 à l'examen uniquement si elle fait remonter la moyenne de l'étudiant.
-La même pondération est appliquée au mois d'août.
-Il est donc fortement conseillé de vous préparer et de participer à l'évaluation mid-term.
+- La participation aux TPs est évaluée sur 4 points. Dans ce total sont intégrées ces différentes facettes:
+    - Participation **active** aux TPs, évaluée par le tuteur
+    - Remise des tâches INGInious dans les temps (essayer raisonablement est suffisant; vous avez le droit à l'erreur!)
+  La participation est prise en compte également pour la session d'Aout.
+- L'examen est sur 16 points.
+    - Un mid-term est organisé en S7 sur INGInious. L'évaluation mid-term compte pour 10% du total de l'examen,
+      uniquement si elle fait remonter la moyenne de l'étudiant. La même pondération est appliquée au mois d'août.
+      La matière est celle des partie 1 à 3.
+    - L'examen est sur ordinateur.
 
-Exemple1: évaluation mid-term: 15/20, examen 10/20, total: maximum(10,15*0.1+10*0.9)=10.5.
+Pour résumer:
 
-Exemple2: évaluation mid-term 6: 8/20, examen 12/20, total: maximum(12,8*0.1+12*0.9)=12.
+- Soit :math:`p \in [0, 4]` la note de participation (sur 4)
+- Soit :math:`e \in [0, 20]` la note de l'examen (sur 20)
+- Soit :math:`m \in [0, 20]` la note du midterm (sur 20)
 
+La note finale sur 20 est
 
+.. math::
+
+    p + \frac{16\cdot \max(e, \frac{9e+m}{10})}{20}
 
 Contact et communication
 =======================================
 
-
 Les communications importantes avec les étudiants se feront via moodle.
-Nous vous recommandons cependant de vérifier régulièrement cette page également.
 Pour toutes communications importantes, vous pouvez également nous écrire par mail.
-
-`Pierre Schaus <pierre.schaus@uclouvain.be>`_ et
-`Guillaume Derval <guillaume.derval@uclouvain.be>`_.
-

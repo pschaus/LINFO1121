@@ -43,14 +43,14 @@ car toutes ces fonctions sont bien des bornes supérieures à :math:`n^2` quand 
 Dans la majorité des cas, on va vouloir choisir la fonction :math:`g(n)` la plus petite possible qui respecte la
 propriété, étant donné que cela va nous apporter le plus d'information.
 
-Notation Big-Omega (:math:`\mathcal{\Omega}`)
+Notation Big-Omega (:math:`\Omega`)
 =============================================
 
 La définition est similaire à celle de Big-Oh. En gras les différences:
 
 .. math::
 
-    f(n) \in \mathbf{\mathcal{\Omega}}(g(n)) \quad \Longleftrightarrow \quad
+    f(n) \in \mathbf{\Omega}(g(n)) \quad \Longleftrightarrow \quad
         \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ t.q. } \quad
         \mathbf{k \cdot f(n) \geq g(n)} \quad
         \forall n \geq n_0
@@ -63,14 +63,14 @@ inférieure sur la complexité de :math:`f(n)`. En d’autres mots, :math:`g(n)`
 Exemple
 -------
 
-Dans le cas général, Insertion sort :math:`\in \mathcal{\Omega}(n)`.
+Dans le cas général, Insertion sort :math:`\in \Omega(n)`.
 
-Notation Big-Theta (:math:`\mathcal{\Theta}`)
+Notation Big-Theta (:math:`\Theta`)
 =============================================
 
 .. math::
 
-    f(n) \in \mathbf{\mathcal{\Theta}}(g(n)) \quad \Longleftrightarrow \quad
+    f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad
         \exists k_0,k_1 \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ t.q. } \quad
         \mathbf{k_0 \cdot g(n) \leq f(n) \leq k_1 \cdot g(n)} \quad
         \forall n \geq n_0
@@ -82,19 +82,19 @@ On peut voir aisément que (démonstration laissée en exercice)
 
 .. math::
 
-    f(n) \in \mathbf{\mathcal{\Theta}}(g(n)) \quad \Longleftrightarrow \quad f(n) \in \mathbf{\mathcal{O}}(g(n)) \quad\wedge\quad f(n) \in \mathbf{\mathcal{\Omega}}(g(n))
+    f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad f(n) \in \mathbf{\mathcal{O}}(g(n)) \quad\wedge\quad f(n) \in \mathbf{\Omega}(g(n))
 
 Remarques
 ---------
 
-Il n'est pas possible de trouver une fonction :math:`g(n)` telle que :math:`f(n) \in \mathcal{\Theta}(g(n))` pour toute fonction :math:`f(n)`.
-Par exemple, pour Insertion sort, Vu qu'il est en :math:`\mathcal{O}(n^2)` mais en :math:`\mathcal{\Omega}(n)`, et que ces deux bornes sont atteintes,
-il n'est pas possible de dire que Insertion est en :math:`\mathcal{\Theta}(g(n))`.
+Il n'est pas possible de trouver une fonction :math:`g(n)` telle que :math:`f(n) \in \Theta(g(n))` pour toute fonction :math:`f(n)`.
+Par exemple, pour Insertion sort, Vu qu'il est en :math:`\mathcal{O}(n^2)` mais en :math:`\Omega(n)`, et que ces deux bornes sont atteintes,
+il n'est pas possible de dire que Insertion est en :math:`\Theta(g(n))`.
 
 Exemple
 -------
 
-Merge sort est en :math:`\mathcal{\Theta}(n\log_2 n)`.
+Merge sort est en :math:`\Theta(n\log_2 n)`.
 
 Notation Tilde (:math:`\mathcal{\sim}`)
 =======================================
@@ -142,23 +142,23 @@ Il existe d'autres différences plus subtiles, dont nous parlerons lors d'exerci
 Meilleur cas, pire cas, cas moyen
 =================================
 
-Nous entendons trop souvent dire que :math:`\mathcal{O}` est *le pire cas* et :math:`\mathcal{\Omega}` le *meilleur cas*.
+Nous entendons trop souvent dire que :math:`\mathcal{O}` est *le pire cas* et :math:`\Omega` le *meilleur cas*.
 Cela est **faux** en général, tout dépend de la manière dont vous définissez votre fonction.
 
 Imaginons que nous utilisions un algorithme de Tri Rapide, que nous verrons dans la Partie 2 du cours.
 Si vous définissez :math:`f(n)` comme "le nombre d'opérations de comparaison à effectuer pour un tableau de taille n", alors vous avez:
 
 * :math:`f(n) \sim n^2` et :math:`f(n) \in \mathcal{O}(n^2)`
-* :math:`f(n) \in \mathcal{\Omega}(n\log_2 n)`
+* :math:`f(n) \in \Omega(n\log_2 n)`
 
 Si maintenant vous définissez :math:`g(n)` comme "le nombre **moyen** (l'espérance) d'opérations de comparaison à effectuer
 pour un tableau de taille n, **quand on sélectionne uniformement les tableaux**", vous obtenez:
 
 * :math:`g(n) \sim n\log_2 n` et :math:`g(n) \in \mathcal{O}(n\log_2 n)`
-* :math:`g(n) \in \mathcal{\Omega}(n\log_2 n)`
-* et donc :math:`g(n) \in \mathcal{\Theta}(n\log_2 n)`
+* :math:`g(n) \in \Omega(n\log_2 n)`
+* et donc :math:`g(n) \in \Theta(n\log_2 n)`
 
-Par un (léger) abus de language, on dit que le "cas moyen" du Tri rapide est en :math:`\mathcal{\Theta}(n\log_2 n)`.
+Par un (léger) abus de language, on dit que le "cas moyen" du Tri rapide est en :math:`\Theta(n\log_2 n)`.
 Mais le cas général ne l'est pas!
 
 Complexité amortie
@@ -168,11 +168,11 @@ Un autre type de complexité utile est celle qui compte la complexité moyenne p
 Cette complexité s'appelle la *complexité amortie*.
 Par exemple, un `ArrayList <https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>`_
 en java est implémenté avec un array qui double sa taille dès que sa capacité est atteinte.
-L'opération de doublement de la taille se fait en :math:`O(n)` où :math:`n` est la taille courante du tableau
+L'opération de doublement de la taille se fait en :math:`\mathcal{O}(n)` où :math:`n` est la taille courante du tableau
 L'insertion de :math:`n+1` opérations avec la méthode *add(E e)* lorsque le tableau a une taille courante de :math:`n`
 coûtera en moyenne :math:`\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)`.
 
-Attention la complexité de la méthode *add(E e)* isolément est bien  :math:`\mathcal{\Omega}(1)` et :math:`\mathcal{O}(n)`
+Attention la complexité de la méthode *add(E e)* isolément est bien  :math:`\Omega(1)` et :math:`\mathcal{O}(n)`
 où :math:`n` est le nombre d’éléments dans l'ArrayList.
 
 Types de complexités usuels
