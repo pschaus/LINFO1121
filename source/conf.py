@@ -108,6 +108,7 @@ html_theme = "press"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #html_theme_options = {}
+html_copy_source = False
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -222,7 +223,6 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ('index', 'linfo1121.tex', u'LINFO1121', u'Guillaume Derval', 'manual'),
     ('part1/s1', 's1.tex', u'Partie 1', u'Guillaume Derval', 'howto'),
     ('part1/s2', 's2.tex', u'Partie 1: bilan', u'Guillaume Derval', 'howto'),
     ('part2/s3', 's3.tex', u'Partie 2', u'Guillaume Derval', 'howto'),
@@ -292,5 +292,4 @@ texinfo_documents = [
 
 show_answers = True
 respect_hide = False
-current_week = 100
-
+current_week = 1

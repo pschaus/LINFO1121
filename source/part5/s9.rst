@@ -209,7 +209,7 @@ Quelle est la complexité d'un sink à ce niveau. Faites la somme pour tous les 
 
 .. answer::
 
-    from the bottom, at level :math:`j` there are :math:`2^{h−j}` nodes, and each might shift down :math:`j` levels. So, if we count from bottom to top, level-by-level, we see that the total time is proportional to
+    from the bottom, at level :math:`j` there are :math:`2^{h-j}` nodes, and each might shift down :math:`j` levels. So, if we count from bottom to top, level-by-level, we see that the total time is proportional to
 
     .. math::
 
