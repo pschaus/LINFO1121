@@ -10,9 +10,10 @@ LINFO1121: Algorithmique et Structures de données
 
 .. toctree::
    :caption: Informations générales
-   :maxdepth: 2
+   :maxdepth: 1
 
    intro/index
+   intro/authors
 
 .. toctree::
    :caption: Partie 1 | Types abstraits de données, Complexité, Collections Java; Piles, files et listes liées

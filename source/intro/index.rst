@@ -2,9 +2,9 @@
 
 
 
-************
-Organisation
-************
+************************************
+Organisation (lisez ceci en premier)
+************************************
 
 Le livre de référence utilisé pour ce cours est
 `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4e édition)
@@ -98,3 +98,4 @@ Contact et communication
 
 Les communications importantes avec les étudiants se feront via moodle.
 Pour toutes communications importantes, vous pouvez également nous écrire par mail.
+
