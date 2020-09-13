@@ -1,0 +1,17 @@
+name: Build PDFs and html files
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: guillaumederval/build-linfo1121
+    steps:
+    - uses: actions/checkout@v2
+    - name: sphinx build
+      env:
+        AUTHORIZATION: ${{ secrets.DROPBOX_AUTHORIZATION }}
+      run: ./build_github.sh
