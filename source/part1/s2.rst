@@ -7,258 +7,389 @@ Partie 1: Questions supplémentaires
 *************************************************************************************************
 
 Exercice 1.2.1
-""""""""""""""
+==============
 
-Dans votre implémentation d'une liste chainée circulaire ci-dessous.
-Quelle est la complexité de la méthode
-
-
-* ``public void enqueue(Item item)`` ?
-* ``public Item remove(int index)`` ?
-* d'une séquence d'operations qui consiste à *créer un iterateur et ensuite itérer sur les k-premiers elements* ?
+La classe ``NodeQueue`` implémente l'interface ``Queue``. On vous demande de
+compléter les méthodes de cette implémentation **sans** ajouter ou supprimer
+de variables d'instance dans cette classe.
+Vous veillerez à **commenter succintement et précisément**
+votre code.
 
 .. code-block:: java
 
-
-   import java.util.ConcurrentModificationException;
-   import java.util.Iterator;
-   import java.util.NoSuchElementException;
-
-   public class CircularLinkedList<Item> implements Iterable<Item> {
-    private long nOp = 0; // count the number of operations
-    private int n;          // size of the stack
-    private Node  last;   // trailer of the list
-
-    // helper linked list class
-    private class Node {
-        private Item item;
-        private Node next;
+    public class Node<E> {
+        private E element;
+        private Node<E> next;
+        public Node(E e, Node<E> n) {
+            element = e;
+           next = n;
+        }
+        public E getElement() {return element;}
+        public Node<E> getNext() {return next;}
+        public void setNext(Node<E> n) {next = n;}
     }
 
-    public CircularLinkedList() {
-        last = new Node(); // dummy node
-        last.next = last;
-        n = 1;
+.. code-block:: java
+
+    public class NodeQueue<E> implements Queue<E> {
+        // Variables d'instance
+        private Node<E> marker;
+        private int size;
+
+        // Constructeur
+        public NodeQueue() {
+            ...................
+            ...................
+            ...................
+            ...................
+        }
+        public int size() { return size; }
+        public boolean isEmpty() { return (size==0); }
+
+        public E front() throws QueueEmptyException {
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+        }
+
+        public void enqueue (E element) {
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+        }
+
+        public E dequeue() throws QueueEmptyException {
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+            ...................
+        }
     }
-
-    public boolean isEmpty() { return n == 1; }
-
-    public int size() { return n-1; }
-
-    private long nOp() { return nOp; }
-
-    /**
-     * Append an item at the end of the list
-     * @param item the item to append
-     */
-    public void enqueue(Item item) {
-        // TODO STUDENT: Implement add method
-    }
-
-    /**
-     * Removes the element at the specified position in this list.
-     * Shifts any subsequent elements to the left (subtracts one from their indices).
-     * Returns the element that was removed from the list.
-     */
-    public Item remove(int index) {
-        // TODO STUDENT: Implement remove method
-    }
-
-    /**
-     * Returns an iterator that iterates through the items in FIFO order.
-     * @return an iterator that iterates through the items in FIFO order.
-     */
-    public Iterator<Item> iterator() {
-        return new ListIterator();
-    }
-
-    /**
-     * Implementation of an iterator that iterates through the items in FIFO order.
-     *
-     */
-    private class ListIterator implements Iterator<Item> {
-        // TODO STUDENT: Implement the ListIterator
-    }
-
-   }
 
 Exercice 1.2.2
-""""""""""""""
-La notation post-fixe (ou `polonaise inverse <https://fr.wikipedia.org/wiki/Notation_polonaise_inverse>`_) est utilisée
-pour représenter des expressions algébriques.
-Nous ne considérons pour simplifier que des expressions post-fixes avec des entiers positifs
-et les opérateurs ``+`` et `*`. Par exemple `2 3 1 * + 9 *` dont le résultat vaut 45
-et le résultat de `4 20 + 3 5 1 * * +` est 39.
+==============
 
-1. Ecrivez un algorithme en Java pour évaluer une expression post-fixe au départ d'une chaine de n-caractères.
-2. Quelle structure de donnée utilisez vous ?
-3. Quelle est la complexité de votre algorithme (temporelle et spatiale) ?
+L'examen de LINFO1121 comporte une partie programmation des structures de données et algorithmes sur ordinateur.
+Pour réussir cette partie, il est indispensable de programmer régulièrement.
+Les erreurs triviales de Java seront perçues par le correcteur comme un manque de participation de la part de l'étudiant aux missions de programmation.
+Nous vous proposons d'étudier ici quelques erreurs ou problèmes rencontrées fréquemment.
 
-Pour rappel, voici comment on peut itérer sur les elements d'une chaine qui sont séparés par des espaces.
+* Nous envisageons d'implémenter une Stack avec un tableau.
+  Il faudra donc redimensionner le tableau si la taille de la stack atteint la taille maximale.
+  Est-ce que Java dispose d'une méthode efficace pour redimensionner/recopier un tableau?
+  Si oui donnez un exemple de code Java pour réaliser cette opération.
 
-.. code-block:: java
+  .. answer::
 
+    System.ArrayCopy
 
-    String in = "4 20 + 3 5 1 * * +";
-    StringTokenizer tokenizer = new StringTokenizer(in);
-    while (tokenizer.hasMoreTokens()) {
-         String element = tokenizer.nextToken();
+* Est-ce que Java propose une classe pour les ``Stack``, ``Vector``, ``List`` ?
+  Si oui dans quel package? A votre avis, est-ce intéressant de bien connaître ce package pour l'examen?
+  ``List`` est-elle une interface ou une classe?
+  Comment créer un object de type ``List``? Et un objet de type ``Queue``?
+
+  .. answer::
+
+    Most the algorithms covered in this class are available in ``java.util`` (part of standard Java).
+    You will spare a lot of time and maximize your chances to succeed if you know well
+    ``java.util`` most common classes.
+    We have seen at the exam students trying to instantiate object from ``java.util.List``, not understanding
+    the differences between interfaces and implementation. The same goes for ``java.util.Queue``...
+    Present them the ``ArrayList`` class.
+
+* Quelle est la différence entre un Iterable et un Iterator?
+
+  .. answer::
+
+    An ``Iterable`` is an interface with the method ``iterator()`` producing an iterator.
+    An ``Iterable`` is thus a class that can be iterated over (``Vector``, ``Stack``, ``ArrayList``, etc).
+    But the real instrument for iteration is the iterator itself (with ``next``, ``hasNext``, etc).
+    Any ``Iterable`` object can be used in the for loops with syntactical sugar: ``for (int a: myIterable)``
+
+* Quelle est l'erreur dans le code suivant où l'étudiant cherche à créer un tableau de 5 listes et ensuite insérer l'entier 4 dans la 3e liste? Corrigez le code.
+
+  .. code-block:: java
+
+    List<Integer>[] myList = new List<Integer>[5];
+    myList[2].add(4);
+
+  .. answer::
+
+      .. code-block:: java
+
+        List<Integer>[] myList = new List<Integer>[5];
+        for(int i = 0; i < myList.length; i++)
+            myList[i] = new LinkedList<>();
+        myList[2].add(4);
+
+* Quelle est l'erreur dans le code suivant où l'étudiant cherche à créer un objet Iterable? Corrigez le code.
+
+  .. code-block:: java
+
+    Iterable<Integer> myIterable = new Iterable<Integer>();
+
+* Quelle est l'erreur dans le code suivant où l'étudiant cherche à définir un constructeur?
+
+  .. code-block:: java
+
+    public class ADT {
+      private int n = 4;
+      private ADT myAdt;
+      public ADT(int n) {
+        n = n;
+        myAdt = new ADT(4);
+      }
     }
 
+* Quelle est la complexité de ce bout de code, en fonction de la taille de la liste, :math:`n`? Comment l'améliorer?
+
+  .. code-block:: java
+
+    void printList(List<Integer> l) {
+        for(int i = 0; i < l.size(); i++) {
+            int elem = l.get(i);
+            System.out.println(elem);
+        }
+    }
+
+  .. answer::
+
+    C'est du :math:`\Theta(n^2)` avec certaines implémentations usuelles de listes.
+
+    .. code-block:: java
+
+        void printList(List<Integer> l) {
+            for(Integer elem: l) {
+                System.out.println(elem);
+            }
+        }
+
+    ou
+
+    .. code-block:: java
+
+        void printList(List<Integer> l) {
+            Iterator<Integer> itr = l.iterator();
+            while(itr.hasNext()) {
+                int elem = itr.next();
+                System.out.println(elem);
+            }
+        }
 
 Exercice 1.2.3
-""""""""""""""
+==============
 
-La `programmation fonctionnelle <https://fr.wikipedia.org/wiki/Programmation_fonctionnelle>`_ est un paradigme de programmation de plus en plus important.
-Dans ce paradigme de programmation, les structures de données sont `immutables <https://en.wikipedia.org/wiki/Purely_functional_data_structure>`_ .
-Nous nous intéressons ici à l'implémentation d'une liste immutable appelée *FList* permettant d'être utilisée dans un cadre fonctionnel.
-Voici l'API d'une *FList*
+Pouvez-vous remplir le tableau suivant avec les complexités de chaque opération?
+Si une opération n'est pas possible (par exemple, aller au milieu d'une Stack est impossible car non prévu par le TAD,
+barrez la case.
+Précisez à chaque fois si c'est une complexité amortie ou pas.
 
-.. code-block:: java
+.. list-table:: Complexité
+   :header-rows: 1
 
+   * - TAD
+     - Implémentation
+     - Insertion (début)
+     - Insertion (fin)
+     - Insertion (pos :math:`i`)
+     - Supprimer (début)
+     - Supprimer (fin)
+     - Supprimer (pos :math:`i`)
+     - Voir (début)
+     - Voir (fin)
+     - Voir (pos :math:`i`)
+   * - Stack
+     - Liste chainée
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Queue
+     - Liste chainée
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Stack
+     - Tab. redim.
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Queue
+     - Tab. redim.
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Liste
+     - Simpl. Chainée
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Liste
+     - Doub. Chainée
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - Liste
+     - Tab. redim.
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
+     -
 
-    public abstract class FList<A> implements Iterable<A> {
+.. answer::
 
-        // creates an empty list
-        public static <A> FList<A> nil();
+    .. list-table:: Complexité
+       :header-rows: 1
 
-        // prepend a to the list and return the new list
-        public final FList<A> cons(final A a);
-
-        public final boolean isNotEmpty();
-
-        public final boolean isEmpty();
-
-        public final int length();
-
-        // return the head element of the list
-        public abstract A head();
-
-        // return the tail of the list
-        public abstract FList<A> tail();
-
-        // return a list on which each element has been applied function f
-        public final <B> FList<B> map(Function<A,B> f);
-
-        // return a list on which only the elements that satisfies predicate are kept
-        public final FList<A> filter(Predicate<A> f);
-
-        // return an iterator on the element of the list
-        public Iterator<A> iterator();
-
-    }
-
-
-Comme vous pouvez vous en rendre compte, aucune des méthodes ne permet de modifier l'état de la liste.
-Voici un exemple de manipulation d'une telle liste.
-Si vous n'êtes pas familiers avec les `interfaces fonctionnelles <https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`_  de Java8, 
-nous vous demandons de vous familiariser d'abord avec celles-ci.
-
-
-
-.. code-block:: java
-
-
-        FList<Integer> list = FList.nil();
-
-        for (int i = 0; i < 10; i++) {
-            list = list.cons(i);
-        }
-
-        list = list.map(i -> i+1);
-        // will print 1,2,...,11
-        for (Integer i: list) {
-            System.out.println(i);
-        }
-
-        list = list.filter(i -> i%2 == 0);
-        // will print 2,4,6,...,10
-        for (Integer i: list) {
-            System.out.println(i);
-        }
-
-
-Voici une implémentation partielle de la ``FList``
-
-
-.. code-block:: java
-
-
-        import java.util.Iterator;
-        import java.util.NoSuchElementException;
-        import java.util.function.Function;
-        import java.util.function.Predicate;
-
-        public abstract class FList<A> implements Iterable<A> {
-
-            public final boolean isNotEmpty() {
-                return this instanceof Cons;
-            }
-
-            public final boolean isEmpty() {
-                return this instanceof Nil;
-            }
-
-            public final int length() {
-                // TODO
-            }
-
-            public abstract A head();
-
-            public abstract FList<A> tail();
-
-            public static <A> FList<A> nil() {
-                return (Nil<A>) Nil.INSTANCE;
-            }
-
-            public final FList<A> cons(final A a) {
-                return new Cons(a, this);
-            }
-
-            public final <B> FList<B> map(Function<A,B> f) {
-                // TODO
-            }
-
-            public final FList<A> filter(Predicate<A> f) {
-                // TODO
-            }
-
-
-            public Iterator<A> iterator() {
-                return new Iterator<A>() {
-                    // complete this class
-
-
-                    public boolean hasNext() {
-                      // TODO
-                    }
-
-                    public A next() {
-                      // TODO
-                    }
-
-                    public void remove() {
-                        throw new UnsupportedOperationException();
-                    }
-                };
-            }
-
-
-            private static final class Nil<A> extends FList<A> {
-                public static final Nil<Object> INSTANCE = new Nil();
-                // TODO
-            }
-
-            private static final class Cons<A> extends FList<A> {
-                // TODO
-            }
-
-
-        }
-
-
-Nous vous demandons de 
-
-
-* compléter cette implémentation, si possible utilisez autant que possible des méthodes récursives.
-* déterminer la complexité de chacune des méthodes.
+       * - TAD
+         - Implémentation
+         - Insertion (début)
+         - Insertion (fin)
+         - Insertion (pos :math:`i`)
+         - Supprimer (début)
+         - Supprimer (fin)
+         - Supprimer (pos :math:`i`)
+         - Voir (début)
+         - Voir (fin)
+         - Voir (pos :math:`i`)
+       * - Stack
+         - Liste chainée
+         - /
+         - :math:`\Theta(1)`
+         - /
+         - /
+         - :math:`\Theta(1)`
+         - /
+         - /
+         - :math:`\Theta(1)`
+         - /
+       * - Queue
+         - Liste chainée
+         - /
+         - :math:`\Theta(1)`
+         - /
+         - :math:`\Theta(1)`
+         - /
+         - /
+         - :math:`\Theta(1)`
+         - /
+         - /
+       * - Stack
+         - Tab. redim.
+         - /
+         - :math:`\Theta(1)` a
+         - /
+         - /
+         - :math:`\Theta(1)` a
+         - /
+         - /
+         - :math:`\Theta(1)`
+         - /
+       * - Queue
+         - Tab. redim.
+         - /
+         - :math:`\Theta(1)` a
+         - /
+         - :math:`\Theta(1)` a
+         - /
+         - /
+         - :math:`\Theta(1)`
+         - /
+         - /
+       * - Liste
+         - Simpl. Chainée
+         - :math:`\Theta(1)`
+         - :math:`\Theta(n)`
+         - :math:`\Theta(i)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(n)`
+         - :math:`\Theta(i)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(n)`
+         - :math:`\Theta(i)`
+       * - Liste
+         - Doub. Chainée
+         - :math:`\Theta(1)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(i)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(i)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(i)`
+       * - Liste
+         - Tab. redim.
+         - :math:`\Theta(n)`
+         - :math:`\Theta(1)` a
+         - :math:`\Theta(n)`
+         - :math:`\Theta(n)`
+         - :math:`\Theta(1)` a
+         - :math:`\Theta(n)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(1)`
+         - :math:`\Theta(1)`
