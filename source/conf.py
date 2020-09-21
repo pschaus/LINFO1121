@@ -235,6 +235,8 @@ latex_documents = [
     ('part5/s10', 's10.tex', u'Partie 5: bilan', u'Guillaume Derval', 'howto'),
     ('part6/s11', 's11.tex', u'Partie 6', u'Guillaume Derval', 'howto'),
     ('part6/s12', 's12.tex', u'Partie 6: bilan', u'Guillaume Derval', 'howto'),
+    ('part1/complexity', 's1Complexity.tex', u'Partie 1: Rappel complexités', u'Guillaume Derval', 'howto'),
+    ('intro/index', 's1Intro.tex', u'Organisation du cours', u'Guillaume Derval', 'howto')
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -292,4 +294,4 @@ texinfo_documents = [
 
 show_answers = True
 respect_hide = False
-current_week = 1
+current_week = 3

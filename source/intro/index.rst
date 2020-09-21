@@ -11,12 +11,12 @@ Le livre de référence utilisé pour ce cours est
 de Robert Sedgewick et Kevin Wayne.
 
 Il est important de vous **procurer ce livre le plus rapidement possible**.
-**Le livre est disponible au SICI à un prix réduit (à partir du mercredi 16/09)!**
+**Le livre est disponible au SICI à un prix réduit (à partir du mercredi 16/09)!**.
+Il y en a une vingtaine à louer en BST.
 
 
 Pédagogie
 =======================================
-
 
 La pédagogie utilisée est celle des `classes inversées <https://fr.wikipedia.org/wiki/Classe_inversée>`_. Il n'y
 a pas de cours magistraux, seulement des séances de TPs, en groupes fixes, sous supervision d'un tuteur.
@@ -32,7 +32,7 @@ L'IDE recommandé pour ce cours et disponible à l'examen est IntelliJ_.
 Nous utiliserons également l'outil Junit4_ pour réaliser des tests unitaires.
 Il est fortement recommandé de vous familiariser à ces outils en préparation à l'examen.
 
-Chaque étudiant sera assigné à un groupe de 7 étudiants, et sera supervisé par un tuteur (qui supervise 4 groupes).
+Chaque étudiant sera assigné à un groupe de 5 à 7 étudiants, et sera supervisé par un tuteur (qui supervise 4 groupes).
 Certains exercices (notamment théoriques) se font en groupe, tandis que d'autres (ceux de programmation) se font individuellement.
 
 .. _Java8: https://docs.oracle.com/javase/8/docs/api.
@@ -57,7 +57,7 @@ Prenons l'exemple d'une semaine typique d'un étudiant ayant son TP le mercredi:
 - De **mercredi à lundi** de la semaine avant le TP1:
     - lecture du livre de référence
     - préparation des exercices théoriques **en groupe**
-- **Lundi minuit**: soumission du rapport de groupe, répondant aux questions théoriques
+- **Lundi minuit**: soumission du rapport de groupe (par mail au tuteur), répondant aux questions théoriques
 - **Mercredi 14h**: TP1
 - De **mercredi à lundi** de la semaine suivant le TP1: préparation des exercices individuels sur INGInious
 - **Lundi minuit**: deadline pour les exercices INGInious
@@ -96,6 +96,45 @@ La note finale sur 20 est
 Contact et communication
 =======================================
 
-Les communications importantes avec les étudiants se feront via moodle.
+Les communications importantes avec les étudiants se feront via moodle et Teams (merci de vous y inscrire!)
 Pour toutes communications importantes, vous pouvez également nous écrire par mail.
 
+.. list-table:: Contacts
+   :header-rows: 1
+
+   * - Nom
+     - Email
+     - Rôle
+   * - Guillaume Derval
+     - `guillaume.derval@uclouvain.be <mailto:guillaume.derval@uclouvain.be>`_
+     - Enseignant
+   * - Hélène Verhaeghe
+     - `helene.verhaeghe@uclouvain.be <mailto:helene.verhaeghe@uclouvain.be>`_
+     - Assistante, tutrice groupes 37-40
+   * - Alexandre Gobeaux
+     - `alexandre.gobeaux@student.uclouvain.be <mailto:alexandre.gobeaux@student.uclouvain.be>`_
+     - Tuteur groupe 1-4
+   * - Cyril Pletinckx
+     - `cyril.pletinckx@student.uclouvain.be <mailto:cyril.pletinckx@student.uclouvain.be>`_
+     - Tuteur groupe 5-8
+   * - Marine Branders
+     - `marine.branders@student.uclouvain.be <mailto:marine.branders@student.uclouvain.be>`_
+     - Tutrice groupe 9-12
+   * - Aurélien Buchet
+     - `aurelien.buchet@student.uclouvain.be <mailto:aurelien.buchet@student.uclouvain.be>`_
+     - Tuteur groupe 13-16
+   * - Henri Piron
+     - `henri.piron@student.uclouvain.be <mailto:henri.piron@student.uclouvain.be>`_
+     - Tuteur groupe 17-20
+   * - Edgar Gevorgyan
+     - `edgar.gevorgyan@student.uclouvain.be <mailto:edgar.gevorgyan@student.uclouvain.be>`_
+     - Tuteur groupe 21-24
+   * - Louis Navarre
+     - `navarre.louis@student.uclouvain.be <mailto:navarre.louis@student.uclouvain.be>`_
+     - Tuteur groupe 25-28
+   * - Romain Graux
+     - `romain.graux@student.uclouvain.be <mailto:romain.graux@student.uclouvain.be>`_
+     - Tuteur groupe 29-32
+   * - Emeline Christoph
+     - `emeline.christoph@student.uclouvain.be <mailto:emeline.christoph@student.uclouvain.be>`_
+     - Tutrice groupe 33-36
