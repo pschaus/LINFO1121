@@ -19,12 +19,27 @@ A l'issue de cette partie chaque étudiant sera capable de:
 Calendrier
 ==========
 
-- mercredi/jeudi 23/24 septembre: début de la partie 2.
-- mardi 29 septembre: soumission du rapport pour les questions d'introduction
-- mercredi 30 septembre/jeudi 1er octobre: première séance tutorée. Réponse aux questions ci-dessous.
-- mardi 6 octobre: deadline exercice INGInious + mini-projet
-- mercredi/jeudi 7/8 octobre: seconde séance tutorée. Réponse aux questions de bilans et exercices INGInious.
-  Début de la partie 3.
+.. list-table:: Calendrier de remise selon votre jour de TP
+    :header-rows: 1
+
+    * - TP Mercredi
+      - TP Jeudi
+      -
+    * - Mercredi 23/09
+      - Jeudi 24/09
+      - Début de la partie 2.
+    * - Lundi 29/09 23h59
+      - Mardi 30/09 23h59
+      - Soumission du rapport pour les questions d'introduction (en groupe)
+    * - Mercredi 30/09
+      - Jeudi 01/10
+      - Première séance tutorée.
+    * - Lundi 05/10 23h59
+      - Mardi 06/10 23h59
+      - Deadline exercice INGInious (individuel) + mini-projet (groupe)
+    * - Mercredi 07/10
+      - Jeudi 08/10
+      - Seconde séance tutorée. Questions de bilan + début partie 3.
 
 A lire
 =======================================
