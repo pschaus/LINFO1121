@@ -41,7 +41,8 @@ Exercices théoriques
 ====================
 
 .. note::
-    Ces exercices sont à préparer pour le mercredi de S3.
+    Ces exercices sont à préparer en groupe, et à rendre le lundi ou le mardi de S3, en fonction de la date de votre
+    TP.
 
 Exercice 2.1.1
 """"""""""""""
@@ -320,7 +321,7 @@ Exercices sur INGInious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le mercredi de S4, individuellement.
+   Vous devez faire ces exercices pour le lundi ou mardi de S4, individuellement.
 
 
 1. `Union intervals <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2UnionIntervals>`_ (notez le lien avec la question 2.2.1)
@@ -333,8 +334,8 @@ Mini-projet
 ===========
 
 .. note::
-   Vous devez faire ce projet pour le mercredi de S4, en groupe. Le rapport sera à rendre en même temps que celui des
-   questions de bilan.
+   Vous devez faire ce projet pour S4, en groupe. Le rapport sera à rendre en même temps que les
+   questions sur INGInious (le lundi ou mardi de S4 en fonction de si vous avez le mercredi ou jeudi)
 
 Nous nous intéressons à l'étude des algorithmes de tris suivants: Selection sort, Insertion sort, Shell sort, Merge sort, Quick sort.
 
