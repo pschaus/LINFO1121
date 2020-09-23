@@ -105,7 +105,7 @@ Nous vous proposons d'étudier ici quelques erreurs ou problèmes rencontrées f
 
   .. answer::
 
-    System.ArrayCopy
+    System.arraycopy
 
 * Est-ce que Java propose une classe pour les ``Stack``, ``Vector``, ``List`` ?
   Si oui dans quel package? A votre avis, est-ce intéressant de bien connaître ce package pour l'examen?
