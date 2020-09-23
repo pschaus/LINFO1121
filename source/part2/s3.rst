@@ -28,8 +28,8 @@ Calendrier
     * - Mercredi 23/09
       - Jeudi 24/09
       - Début de la partie 2.
-    * - Lundi 29/09 23h59
-      - Mardi 30/09 23h59
+    * - Lundi 28/09 23h59
+      - Mardi 29/09 23h59
       - Soumission du rapport pour les questions d'introduction (en groupe)
     * - Mercredi 30/09
       - Jeudi 01/10
