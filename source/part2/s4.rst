@@ -84,10 +84,10 @@ Quelle est la complexité de votre algorithme? Quid si les ensembles sont dans d
 
 .. answer::
 
-    Sort one of the sets one array (already takes :math:`mathcal{O}(n \log(n))`).
+    Sort one of the sets one array (already takes :math:`\mathcal{O}(n \log(n))`).
     Then for each value :math:`v` in the first (unsorted) set,
     search for the value :math:`x-v` in the second sorted array using a dichotomic search.
-    Again this complexity is :math:`mathcal{O}(n\log(n))`.
+    Again this complexity is :math:`\mathcal{O}(n\log(n))`.
 
     If both array are sorted, we can be a bit smarter.
     Instead of iterating over each element in the first array
@@ -96,7 +96,7 @@ Quelle est la complexité de votre algorithme? Quid si les ensembles sont dans d
     then we know that it is not worth considereing values :math:`>v` in the first array.
     This amounts at shrinking the bound of values in the first array.
     This doesn't change the worst-case time complexity
-    but can reduce the best-case time complexity to :math:`mathcal{O}(\log(n))`.
+    but can reduce the best-case time complexity to :math:`\mathcal{O}(\log(n))`.
 
 Exercice 2.2.5
 """""""""""""""
@@ -107,7 +107,7 @@ Même question que la précédente mais pour un seul ensemble. Quid si l'ensembl
 
     If the array is sorted, you can use two pointers :math:`i,j` starting from both extremities the array :math:`i=0,j=n-1`.
     For each position :math:`i`, find :math:`j` such that :math:`a[i]+a[j]\ge v` and :math:`a[i]+a[j-1] < v` then increment :math:`i`.
-    Since you can start the search for :math:`j` from its previous position, the complexity is :math:`mathcal{O}(n)`.
+    Since you can start the search for :math:`j` from its previous position, the complexity is :math:`\mathcal{O}(n)`.
 
 Exercice 2.2.6
 """""""""""""""
@@ -117,8 +117,8 @@ Donnez un algorithme pour calculer l'union de deux ensembles :math:`A` et :math:
 .. answer::
 
     Let :math:`m` and :math:`n` be the size of the sets.
-    Solution1: Put all the element in a large array then sort it => :math:`mathcal{O}((m+n)log(m+n))`.
-    Solution2 (a bit faster): Sort each set separately then collect avoiding dupplicates:  :math:`mathcal{O}(m\log(m)+n\log(n))`.
+    Solution1: Put all the element in a large array then sort it => :math:`\mathcal{O}((m+n)log(m+n))`.
+    Solution2 (a bit faster): Sort each set separately then collect avoiding dupplicates:  :math:`\mathcal{O}(m\log(m)+n\log(n))`.
     For the :math:`n` and :math:`n^2` size.
     For each element of the small one you do a dichotomic search on the large one. The time complexity is thus :math:`n \log(n^2) = 2n \log n`.
     This is better than the opposite which would be :math:`n^2 log(n)`.
@@ -128,10 +128,10 @@ Exercice 2.2.7 (optionnelle)
 """"""""""""""""""""""""""""
 
 Étant donné une matrice de nombres entiers qui sont triés le long des lignes et des colonnes, comment trouver un nombre donné dans la matrice de manière efficace ?
-Indice: Il existe un algorithme en temps :math:`mathcal{O}(n+m)` pour une matrice :math:`n\times m`. Pour cela commencez dans le coin supérieur droit et comparez avec le nombre recherché. Quelles parties de la matrice pouvez-vous élaguer dans votre recherche en fonction du résultat?
+Indice: Il existe un algorithme en temps :math:`\mathcal{O}(n+m)` pour une matrice :math:`n\times m`. Pour cela commencez dans le coin supérieur droit et comparez avec le nombre recherché. Quelles parties de la matrice pouvez-vous élaguer dans votre recherche en fonction du résultat?
 
 .. answer::
 
     Let :math:`(i,j)` initialized as :math:`(0,m-1)` the current row/column position and :math:`v` the number we are looking for.
-    If :math:`T[i,j-1] < v` increment :math:`i` else decrement :math:`j`. Complexity :math:`mathcal{O}(n+m)` since it the worst case
+    If :math:`T[i,j-1] < v` increment :math:`i` else decrement :math:`j`. Complexity :math:`\mathcal{O}(n+m)` since it the worst case
     we go until :math:`i=n,j=0` if the element is not found.
