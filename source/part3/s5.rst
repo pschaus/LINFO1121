@@ -26,7 +26,27 @@ Livre de référence:
 Calendrier
 ==========
 
-TODO
+.. list-table:: Calendrier de remise selon votre jour de TP
+    :header-rows: 1
+
+    * - TP Mercredi
+      - TP Jeudi
+      -
+    * - Mercredi 07/10
+      - Jeudi 08/10
+      - Début de la partie 3.
+    * - Lundi 12/10 23h59
+      - Mardi 13/10 23h59
+      - Soumission du rapport pour les questions d'introduction (en groupe)
+    * - Mercredi 14/10
+      - Jeudi 15/10
+      - Première séance tutorée.
+    * - Lundi 19/10 23h59
+      - Mardi 20/10 23h59
+      - Deadline exercice INGInious (individuel)
+    * - Mercredi 21/10
+      - Jeudi 22/10
+      - Seconde séance tutorée. Questions de bilan + début partie 4.
 
 Exercices théoriques
 ====================
