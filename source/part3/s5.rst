@@ -349,7 +349,7 @@ Exercices sur INGInious
 ==========================================
 
 .. note::
-   Vous devez faire ces exercices pour le mercredi de S7.
+   Vous devez faire ces exercices pour le mercredi de S6.
 
 1. `Unit tests redblack <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3WriteUnittestsRedBlackTree>`_
 2. `QCM Complexite <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm>`_
