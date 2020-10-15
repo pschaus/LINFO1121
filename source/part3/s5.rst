@@ -295,7 +295,7 @@ cette opération ? Justifiez votre réponse.
     Obviously, on fait simplement un parcours *in-order* sur l'arbre. La complexité est connue et est
     en :math:`\theta(n)`. Justification intuitive: Comme on doit toujours parcourir tous
     les noeuds de l'arbre (3 fois) on ne fait pas mieux qu':math:`\Omega(N)` mais pas pire
-    que :math:`mathcal{O}(N)` non plus.
+    que :math:`\mathcal{O}(N)` non plus.
 
 Exercice 3.1.9
 """"""""""""""
