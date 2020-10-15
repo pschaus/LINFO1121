@@ -82,13 +82,13 @@ qui réalise :math:`10^3` ``put()`` et :math:`10^6` ``get()`` dans un ordre alé
 
     .. math::
 
-        \approx 10^3\cdotI(M) + 10^6\cdotS(M)
+        \approx 10^3\cdot I(M) + 10^6\cdot S(M)
 
     where :math:`I(M)` and :math:`S(M)` are the cost of inserting and searching in an array of size :math:`M`.
 
     For ``SequentialSearchST`` it gives :math:`10^3M + 10^6M` worst case, :math:`10^3M/2 + 10^6M` average
 
-    For ``BinarySearchST`` it gives :math:`10^3\cdot 2 \cdot M + 10^6\cdot\log(M)` worst case,  :math:`10^3\cdotM + 10^6\cdot\log(M)` average case.
+    For ``BinarySearchST`` it gives :math:`10^3\cdot 2 \cdot M + 10^6\cdot\log(M)` worst case,  :math:`10^3\cdot M + 10^6\cdot\log(M)` average case.
 
     Thus ``BinarySearchST`` if :math:`M` is great enough.
 
