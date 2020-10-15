@@ -82,7 +82,7 @@ qui réalise :math:`10^3` ``put()`` et :math:`10^6` ``get()`` dans un ordre alé
 
     .. math::
 
-        \approx 10^3cdotI(M) + 10^6cdotS(M)
+        \approx 10^3\cdotI(M) + 10^6\cdotS(M)
 
     where :math:`I(M)` and :math:`S(M)` are the cost of inserting and searching in an array of size :math:`M`.
 
