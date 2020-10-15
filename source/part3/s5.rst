@@ -88,7 +88,7 @@ qui réalise :math:`10^3` ``put()`` et :math:`10^6` ``get()`` dans un ordre alé
 
     For ``SequentialSearchST`` it gives :math:`10^3M + 10^6M` worst case, :math:`10^3M/2 + 10^6M` average
 
-    For ``BinarySearchST`` it gives :math:`10^3\cdot 2 \cdot M + 10^6\cdot\log(M)` worst case,  :math:`10^3cdotM + 10^6cdot\log(M)` average case.
+    For ``BinarySearchST`` it gives :math:`10^3\cdot 2 \cdot M + 10^6\cdot\log(M)` worst case,  :math:`10^3\cdotM + 10^6\cdot\log(M)` average case.
 
     Thus ``BinarySearchST`` if :math:`M` is great enough.
 
