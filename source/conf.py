@@ -294,4 +294,4 @@ texinfo_documents = [
 
 show_answers = True
 respect_hide = False
-current_week = 5
+current_week = 7
