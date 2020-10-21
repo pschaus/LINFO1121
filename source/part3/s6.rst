@@ -21,7 +21,7 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
 
   .. answer::
 
-    Faux c'est :math:`mathcal{O}(1)`, si on a de la chance on tombe directement dessus.
+    Faux c'est :math:`\mathcal{O}(1)`, si on a de la chance on tombe directement dessus.
 
 * Étant donné un parcours infixe d'un BST contenant N clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
 
@@ -60,7 +60,7 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
 
   .. answer::
 
-    faux, rien ne dit que l'arbre est équilibré. Cela peut donc prendre :math:`mathcal{O}(N)` dans le pire cas. Demandez aux étudiants de dessiner un arbre correspondant à ce scénario.
+    faux, rien ne dit que l'arbre est équilibré. Cela peut donc prendre :math:`\mathcal{O}(N)` dans le pire cas. Demandez aux étudiants de dessiner un arbre correspondant à ce scénario.
 
 * La hauteur attendue d'un BST résultant de l'insertion de N clefs distinctes dans un ordre aléatoire dans un arbre initialement vide est en moyenne logarithmique.
 
@@ -78,7 +78,7 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
 
   .. answer::
 
-    faux, c’est ceil(log2N) (voir proposition F page 429)
+    faux, c’est :math:`\text{ceil}(\log_2 N)` (voir proposition F page 429) (le mot important de l'énoncé est *maximum*).
 
 * Pour l'insertion de N clefs dans l'ordre croissant dans un red-black BST initialement vide. Le nombre de changements de couleur de la dernière insertion est au plus 3.
   Le nombre de changements s'entend comme la somme des différences en valeur absolue entre le nombre de rouges après insertion moins le nombre de rouges avant insertion.
@@ -110,7 +110,7 @@ Quelle serait la complexité de votre algorithme si le BST est remplacé par un 
 
 .. answer::
 
-    :math:`mathcal{O}(n^2)` pour la construction du BST car l'insertion prends :math:`mathcal{O}(n)`, :math:`mathcal{O}(n \log(n))` pour la construction du red-black car l'insertion prend :math:`mathcal{O}(\log(n))`. Ensuite :math:`mathcal{O}(n)` pour faire le parcours infixe dans les deux cas.
+    :math:`\mathcal{O}(n^2)` pour la construction du BST car l'insertion prends :math:`\mathcal{O}(n)`, :math:`\mathcal{O}(n \log(n))` pour la construction du red-black car l'insertion prend :math:`\mathcal{O}(\log(n))`. Ensuite :math:`\mathcal{O}(n)` pour faire le parcours infixe dans les deux cas.
 
 Exercice 3.2.3
 """"""""""""""""
