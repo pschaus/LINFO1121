@@ -21,7 +21,27 @@ Objectifs
 Calendrier
 ==========
 
-TODO
+.. list-table:: Calendrier de remise selon votre jour de TP
+    :header-rows: 1
+
+    * - TP Mercredi
+      - TP Jeudi
+      -
+    * - Mercredi 21/10
+      - Jeudi 22/10
+      - Début de la partie 4.
+    * - Lundi 26/10 23h59
+      - Mardi 27/10 23h59
+      - Soumission du rapport pour les questions d'introduction (en groupe)
+    * - Mercredi 28/10
+      - Jeudi 29/10
+      - Première séance tutorée.
+    * - Lundi 02/11 23h59
+      - Mardi 03/11 23h59
+      - Deadline exercice INGInious (individuel)
+    * - Mercredi 04/11
+      - Jeudi 05/11
+      - Seconde séance tutorée. Questions de bilan + début partie 5.
 
 A lire
 =======================================
