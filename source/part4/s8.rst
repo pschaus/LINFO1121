@@ -13,14 +13,14 @@ Voici la formule utilisée par Java pour calculer une fonction de hachage
 sur les doubles (bits est un tableau de 64 bit représenté sous forme de long):
 ``return (int) bits ^ (bits >>> 32)``
 
-* Pourquoi ne pas simplement utiliser `(int) bits` (casting de long vers int) ? Indice: Le livre de référence suggère qu'une bonne fonction de hachage doit utiliser tous les bits pour son calcul. Pourquoi ?
+* Pourquoi ne pas simplement utiliser ``(int) bits`` (casting de long vers int) ? Indice: Le livre de référence suggère qu'une bonne fonction de hachage doit utiliser tous les bits pour son calcul. Pourquoi ?
 * Un double en Java est représenté en 64 bits sous la forme :math:`(-1)^s \times m \times 2^{(e - 1023)}`. Le premier bit :math:`s` est le signe, les 11 bits suivants représentent l'exposant sous forme binaire et les 52 derniers bits représentent la mantisse (partie décimale) sous forme binaire.  Est-ce qu'un nombre décimal positif et son opposé obtiennent des fonctions de hachage différentes ?
 
 .. answer::
 
-   Oui un décimal positif et son opposé n'obtiennent pas les mêmes fonction de hachage. Exemple hashCode(6.0)=1075314688, alors que hashCode(-6L)=-1072168960.
-   Le nombre 6 est représenté avec s = 1, m=00000000110 ,e = 0(x52) c'est à dire 0-10000000001-1000000000000000000000000000000000000000000000000000.
-   Le nombre -6 est lui représenté comme :math:`(-1)^1 \cdot 1.5 \cdot 2^2` c'est à dire 1-10000000001-1000000000000000000000000000000000000000000000000000.
+   Oui un décimal positif et son opposé n'obtiennent pas les mêmes fonction de hachage. Exemple hashCode(6.0)=1075314688, alors que hashCode(-6L)=-1072168960. Vous pouvez leur dire de tester directement dans Java :-)
+   Le nombre 6 est représenté avec ``s=1, m=00000000110, e=0(x52)`` c'est à dire ``0-10000000001-1000000000000000000000000000000000000000000000000000``.
+   Le nombre -6 est lui représenté comme :math:`(-1)^1 \cdot 1.5 \cdot 2^2` c'est à dire ``1-10000000001-1000000000000000000000000000000000000000000000000000``.
    On pourrait penser que le xor suivi du casting ne prenne pas en compte les 32 premiers bits (dont le bit de poids fort).
    Mais grâce (bits ``>>>`` 32), tous les bits auront bien un impact sur la fonction de hachage. Propritété évidemment souhaitable pour éviter les collisions et obtenir une mapping le plus uniforme possible sur les int.
 
@@ -62,7 +62,7 @@ La fonction de hachage pour un string donné tel que présenté dans le livre p4
 		hash = (R * hash + s.charAt(i)) % M;
 
 
-Dans l'implémentation du livre, la taille de :math:`M` (le tableau) est une puissance de deux.
+Dans l'implémentation du livre, :math:`M` (la taille de la table de hashage) est une puissance de deux.
 La valeur suggérée pour :math:`R` est *un petit nombre premier tel que 31 de sorte que les bits de tous les caractères jouent un rôle.*
 
 * Supposons que :math:`R` soit un multiple de :math:`M`. Que se passerait-il lors du calcul ?
@@ -93,7 +93,7 @@ La valeur suggérée pour :math:`R` est *un petit nombre premier tel que 31 de s
 
 Dans les deux cas, combien d'entrées du string détermineront effectivement le code de hachage ? Quels sont les risques en termes de collision? Est-ce que le contrôle du facteur de charge peut résoudre le problème ? Expliquez pourquoi utiliser 31 est un choix judicieux pour des tailles de tableau qui sont des puissances de deux ? Serait-ce aussi un bon choix pour une taille de tableau qui commencerait à 31 et qui serait multipliée par deux à chaque fois qu'il faut redimensionner ?
 
-* Dans l'implémentation du livre la taille de M (le tableau) est une puissance de deux initialisée à 16. Supposons qu'à moment donné la taille de :math:`M` soit :math:`2^8=256`. Ensuite deux clefs entières sont ajoutées dans une table de hachage implémentée avec separate chaining: respectivement :math:`2560` et :math:`3072` (on suppose que ces ajouts ne causent pas de redimensionnement de la table). Comme vous le savez, le code de hachage d'une clef entière (int) est le nombre lui-même.
+* Dans l'implémentation du livre, :math:`M` (la taille de la table de hashage) est une puissance de deux, initialisée à 16. Supposons qu'à moment donné :math:`M` soit :math:`2^8=256`. Ensuite deux clefs entières sont ajoutées dans une table de hachage implémentée avec separate chaining: respectivement :math:`2560` et :math:`3072` (on suppose que ces ajouts ne causent pas de redimensionnement de la table). Comme vous le savez, le code de hachage d'une clef entière (int) est le nombre lui-même.
   Est-ce que l'ajout de ces deux valeurs va causer une collision entre elles dans la table ? Si oui pourquoi ?
 
   .. answer::
@@ -162,3 +162,25 @@ Peut-on avoir un problème de collision dans ce cas ? Justifiez.
       \frac{11\cdot 10^6}{10^12} = 11\cdot 10^{-6}
 
    Ca ne semble pas être une utilisation très raisonnable de l'espace...
+
+Exercice 4.2.6 Rabin-Karp, le retour de la vengeance
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Vérifiez que vous avez bien obtenu une solution en :math:`\mathcal{O}(n)`, et pas :math:`\mathcal{O}(kn)` (en ne comptant
+pas le hashing initial des mots-clés à chercher qui est en :math:`\mathcal{O}(km)`),
+pour l'exercice 4.1.11 de la semaine dernière.
+
+.. answer::
+
+    La partie :math:`\mathcal{O}(km)` vient du hashing initial des :math:`k` mots-clés de taille :math:`m`, on
+    ne peut pas y couper.
+
+    Contrairement, en mettant dans une table de hachage (HashMap ici) les [hash -> mots-clés], on sait savoir en
+    O(1) si le hash d'un des mots-clés matche, plutôt que d'aller comparer les hash en :math:`\mathcal{O}(k)`.
+
+    On a donc pour chaque lettre du string principal (de taille :math:`n`) une opération d'update de hash en :math:`\mathcal{O}(1)`
+    (update incrémental du hash) suivi d'un check de présence du hash dans la table de hashage en :math:`\mathcal{O}(1)`,
+    suivi eventuellement d'un check de collision en :math:`\mathcal{O}(m)` qui peut être négligé.
+
+    On est donc bien en :math:`\mathcal{O}(n)` si on considère qu'il n'y a pas trop de collisions, la même complexité
+    qu'avec un seul mot-clé! Magique, non?

@@ -75,7 +75,7 @@ qui réalise :math:`10^3` ``put()`` et :math:`10^6` ``get()`` dans un ordre alé
 
     (note: the book doesn't consider that the array is copied at each iteration, thus this is the amortized complexity;
     may be a good opportunity to explain what this is to students? == if we double the size of the internal array
-    each time there is an overflow, the complexity per element is :math:`mathcal{O}(1)` for the array copy)
+    each time there is an overflow, the complexity per element is :math:`\mathcal{O}(1)` for the array copy)
     (the 2 factor that appears here is because there are two arrays)
 
     Let :math:`M` be the initial size of the array before we do the push and get operations. If :math:`M >> 10^3`, the total number of operations is

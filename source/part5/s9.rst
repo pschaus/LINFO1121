@@ -19,7 +19,30 @@ Objectifs
 Calendrier
 ==========
 
-TODO
+.. list-table:: Calendrier de remise selon votre jour de TP
+    :header-rows: 1
+
+    * - TP Mercredi
+      - TP Jeudi
+      -
+    * - Mercredi 04/11
+      - Jeudi 05/11
+      - Début de la partie 5.
+    * - S9
+      - S9
+      - Pause bien méritée :-) Rien à faire cette semaine, mais vous pouvez vous avancer pour la semaine d'après.
+    * - Lundi 16/11 23h59
+      - Mardi 17/11 23h59
+      - Soumission du rapport pour les questions d'introduction (en groupe)
+    * - Mercredi 18/11
+      - Jeudi 19/11
+      - Première séance tutorée.
+    * - Lundi 23/11 23h59
+      - Mardi 24/11 23h59
+      - Deadline exercice INGInious (individuel)
+    * - Mercredi 25/11
+      - Jeudi 26/11
+      - Seconde séance tutorée. Questions de bilan + début partie 6.
 
 
 A lire
@@ -32,9 +55,6 @@ Livre de référence:
 
 Exercices théoriques
 =======================================
-
-.. note::
-   Vous devez faire ces exercices pour le mercredi de S9.
 
 Exercice 5.1.1
 """"""""""""""
@@ -238,10 +258,6 @@ Exercice 5.1.11
 
 Exercices d'implémentation sur INGInious
 ==========================================
-
-.. note::
-   Vous devez faire ces exercices pour le mercredi de S10.
-
 
 1. `Exercices sur les heap <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5Heap>`_
 2. `Exercices sur le UnionFind <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part5UnionFind>`_

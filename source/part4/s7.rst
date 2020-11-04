@@ -225,7 +225,7 @@ Quel est l'avantage ou l'inconvénient de cette approche par rapport à celle de
 
    L'inconvénient est que le get risque de prendre beaucoup plus de temps.
    si on fait un get et que la clef n'est pas là, on ne peut plus s'arrêter après le premier trou, il faudra a chaque fois tout parcourir.
-   Le meilleur temps dans le cas où la clef n'est pas présente prendra donc :math:`\Theta(N)` au lieu de :math:`mathcal{O}(1)`.
+   Le meilleur temps dans le cas où la clef n'est pas présente prendra donc :math:`\Theta(N)` au lieu de :math:`\mathcal{O}(1)`.
    Par contre le delete est plus rapide puisqu'il ne faut pas décaler vers la gauche les clefs.
    Il y d'autres problèmes que les étudiants pourraient soulever...
 
@@ -241,15 +241,15 @@ Imaginez une fonction de hachage pour un string :math:`s` telle que connaître s
 Exercice 4.1.11 (Rabin-Karp)
 """"""""""""""""""""""""""""
 
-Expliquez comment rechercher un sous string de taille :math:`M` dans un long string de taille :math:`N` en :math:`mathcal{O}(N)` à l'aide d'une fonction de hachage incrémentale.
-Comment feriez-vous si vous avez :math:`k` strings de taille :math:`M` à rechercher dans le long string de taille :math:`N` ?
+Expliquez comment rechercher un sous string de taille :math:`m` dans un long string de taille :math:`n` en :math:`\mathcal{O}(n)` à l'aide d'une fonction de hachage incrémentale.
+Comment feriez-vous si vous avez :math:`k` strings de taille :math:`m` à rechercher dans le long string de taille :math:`n` ?
 Quelle serait la complexité de votre méthode ? est-elle plus avantageuse que lancer k fois l'algorithme de Rabin-Karp ?
 
 .. answer::
 
    Pour la première partie c'est Rabin-Karp, classique.
-   Pour la deuxième question, le cout de hashage sera :math:`mathcal{O}(kM)` car il y a :math:`kM` clef a mettre dans la table de hashage.
-   Ensuite c'est :math:`mathcal{O}(k)` pour tester les :math:`k` string.
+   Pour la deuxième question, le cout de hashage sera :math:`\mathcal{O}(km)` car il y a :math:`km` clef a mettre dans la table de hashage.
+   Ensuite c'est :math:`\mathcal{O}(k)` pour tester les :math:`k` string.
    On peut imaginer de nombreuses optimisations.
    Imaginons qu'on cherche deux mots de longueur 5 et 10.
    On fait le RK classique pour la longueur 5. Ensuite si on trouve un match, on peut chercher à l'étendre pour matcher les 10 symboles.
