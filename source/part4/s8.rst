@@ -19,10 +19,8 @@ sur les doubles (bits est un tableau de 64 bit représenté sous forme de long):
 .. answer::
 
    Oui un décimal positif et son opposé n'obtiennent pas les mêmes fonction de hachage. Exemple hashCode(6.0)=1075314688, alors que hashCode(-6L)=-1072168960. Vous pouvez leur dire de tester directement dans Java :-)
-   Le nombre 6 est représenté avec ``s=1, m=00000000110, e=0(x52)`` c'est à dire ``0-10000000001-1000000000000000000000000000000000000000000000000000``.
-   Le nombre -6 est lui représenté comme :math:`(-1)^1 \cdot 1.5 \cdot 2^2` c'est à dire ``1-10000000001-1000000000000000000000000000000000000000000000000000``.
    On pourrait penser que le xor suivi du casting ne prenne pas en compte les 32 premiers bits (dont le bit de poids fort).
-   Mais grâce (bits ``>>>`` 32), tous les bits auront bien un impact sur la fonction de hachage. Propritété évidemment souhaitable pour éviter les collisions et obtenir une mapping le plus uniforme possible sur les int.
+   Mais grâce (bits ``>>>`` 32), tous les bits auront bien un impact sur la fonction de hachage. Propritété évidemment souhaitable pour éviter les collisions et obtenir une mapping le plus réparti possible sur les int. (il faut que deux double/long "adjacent" (+1, -1, *2, ...) soient "éloignés" les un des autres quand ils sont hashés).
 
 Exercice 4.2.2 (Hash des int castés)
 """""""""""""""""""""""""""""""""""""""""""""
