@@ -14,7 +14,7 @@ sur les doubles (bits est un tableau de 64 bit représenté sous forme de long):
 ``return (int) bits ^ (bits >>> 32)``
 
 * Pourquoi ne pas simplement utiliser ``(int) bits`` (casting de long vers int) ? Indice: Le livre de référence suggère qu'une bonne fonction de hachage doit utiliser tous les bits pour son calcul. Pourquoi ?
-* Un double en Java est représenté en 64 bits sous la forme :math:`(-1)^s \times m \times 2^{(e - 1023)}`. Le premier bit :math:`s` est le signe, les 11 bits suivants représentent l'exposant sous forme binaire et les 52 derniers bits représentent la mantisse (partie décimale) sous forme binaire.  Est-ce qu'un nombre décimal positif et son opposé obtiennent des fonctions de hachage différentes ?
+* Un double en Java est représenté en 64 bits sous la forme :math:`(-1)^s \times 1,m \times 2^{(e - 1023)}`. Le premier bit :math:`s` est le signe, les 11 bits suivants représentent l'exposant sous forme binaire et les 52 derniers bits représentent la mantisse (partie décimale) sous forme binaire.  Est-ce qu'un nombre décimal positif et son opposé obtiennent des fonctions de hachage différentes ?
 
 .. answer::
 
