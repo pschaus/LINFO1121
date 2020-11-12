@@ -84,7 +84,7 @@ class HideNextWeeksFiles(SphinxTransform):
         except:
             return
 
-        if filename <= self.config['current_week']:
+        if filename <= self.config['current_week'] or filename % 2 == 1:
             return
 
         self.document.children = []
@@ -107,7 +107,7 @@ class HideNextWeeksTOC(SphinxTransform):
                     if not name.startswith('s'):
                         return True
                     name = int(name[1:])
-                    return name <= self.config['current_week']
+                    return name <= self.config['current_week'] or name % 2 == 1
                 except:
                     return True
 

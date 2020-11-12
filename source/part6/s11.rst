@@ -33,9 +33,6 @@ Livre de référence:
 Exercices théoriques
 ====================
 
-.. note::
-   Vous devez faire ces exercices pour le mercredi de S11.
-
 Exercice 6.1.1
 """"""""""""""
 
@@ -391,10 +388,6 @@ Votre méthode s'applique-t-elle à tous les graphes? Si non quels-types particu
 
 Exercices d'implémentation sur INGInious
 ==========================================
-
-.. note::
-   Vous devez faire ces exercices pour le mercredi de S12.
-
 
 1. `Implem BFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6BreadthFirstPaths>`_
 2. `Implem DFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DepthFirstPaths>`_
