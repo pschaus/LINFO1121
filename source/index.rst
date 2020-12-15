@@ -57,3 +57,9 @@ LINFO1121: Algorithmique et Structures de données
 
    part6/s11
    part6/s12
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Partie 7 | Révisions
+
+   part7/s13
