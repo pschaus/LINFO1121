@@ -7,9 +7,10 @@ Partie 7: Révisions
 *************************************************************************************************
 
 Plan du TP:
+
 - 20 premières minutes: lecture et réponse aux QCMs individuellement
 - 20 minutes suivantes: correction collective des QCMs. Le groupe vérifie que les réponses de chacun sont toutes les mêmes, et tente
-             de trouver la bonne si ce n'est pas le cas (+ justification et explication pour ceux qui se trompaient).
+  de trouver la bonne si ce n'est pas le cas (+ justification et explication pour ceux qui se trompaient).
 - Pendant les 1h20 restantes, tentez de faire, en groupe, les deux questions INGInious, *séquentiellement* (travaillez
   tous en même temps sur la même question). Ouvrez à chaque fois un partage d'écran sur Teams, et partagez IntelliJ.
   **La personne qui partage IntelliJ devrait être différente à chaque fois, et devrait idéalement être à chaque fois**
@@ -121,7 +122,7 @@ Exemple
 """""""
 Pour vous aider, voilà un exemple de graphe. Il sera probablement utile.
 
-.. image:: part7/example.svg
+.. image:: example.svg
     :width: 200px
     :align: center
     :alt: graph example
@@ -131,7 +132,7 @@ Transformation linéaire
 
 Quand on parle de "transformation linéaire" ci-dessous, nous entendons appliquer la formule :math:`a*w+b` sur le poids :math:`w` de chaque arête du graphe. Par exemple:
 
-.. image:: part7/linear.svg
+.. image:: linear.svg
     :width: 200px
     :align: center
     :alt: graph example
@@ -235,4 +236,5 @@ Questions INGInious (examen Aout 2020)
 --------------------------------------
 
 https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q1
+
 https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q2
