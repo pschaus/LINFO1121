@@ -49,7 +49,7 @@ cd ../..
 rm -rf build
 
 echo "respect_hide = True" >> source/conf.py
-echo "html_baseurl = 'https://guillaumederval.github.io/LINFO1121/'" >> source/conf.py
+echo "html_baseurl = 'https://pschaus.github.io/LINFO1121/'" >> source/conf.py
 make html
 make latexpdf
 cd build/latex
