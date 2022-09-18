@@ -33,4 +33,6 @@ curl -X POST https://content.dropboxapi.com/2/files/upload \
 
 cd ../..
 
+echo "show_answers = False" >> source/conf.py
+
 make html
