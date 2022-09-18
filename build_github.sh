@@ -32,3 +32,5 @@ curl -X POST https://content.dropboxapi.com/2/files/upload \
     --data-binary @$f
 
 cd ../..
+
+make html
