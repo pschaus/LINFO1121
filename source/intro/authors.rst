@@ -2,13 +2,15 @@
 Auteurs
 ************
 
-De nombreuses personnes ont contribué au fil des années à ce cours.
-Voici une liste (non-ordonnée et malheureusement non exhaustive) des principaux contributeurs:
+Many people have contributed to this course over the years.
+Here is a list (unordered and unfortunately not exhaustive) of the main contributors:
 
-- Pierre Dupont (enseignant ???-2014)
-- Virginie Van den Schrieck (enseignante 2014-2015)
-- Pierre Schaus (enseignant 2016-2020)
-- Guillaume Derval (enseignant 2020-2021)
+- Pierre Schaus (teacher 2016-2020, 2021-today)
+- Guillaume Derval (teacher 2020-2021 and TA 2017-2021)
+- Pierre Dupont (teacher 2002-2014)
+- Virginie Van den Schrieck (teacher 2014-2015)
+- Alexandre Dubray
+- Harold Kiossou
 - Antoine Cailliau
 - Charles Thomas
 - Quentin De Coninck
@@ -17,4 +19,4 @@ Voici une liste (non-ordonnée et malheureusement non exhaustive) des principaux
 - Xavier Gillard
 - John Aoga
 - Hélène Verhaeghe
-- Ainsi que la myriade de tuteurs et d'étudiants jobistes qui nous ont aidé!
+- As well as all the tutors and working students who have helped us!

@@ -3,37 +3,34 @@
 
 
 ************************************
-Organisation (lisez ceci en premier)
+Organization (read this first)
 ************************************
 
-Le livre de référence utilisé pour ce cours est
-`Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4e édition)
-de Robert Sedgewick et Kevin Wayne.
+The reference book used for this course is
+`Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition)
+by Robert Sedgewick and Kevin Wayne.
 
-Il est important de vous **procurer ce livre le plus rapidement possible**.
-**Le livre est disponible au SICI à un prix réduit (à partir du mercredi 16/09)!**.
-Il y en a une vingtaine à louer en BST.
+It is important that you **get this book as soon as possible**.
+There are about twenty for rent in BST.
 
 
-Pédagogie
-=======================================
+Pedagogy
+======================================
 
-La pédagogie utilisée est celle des `classes inversées <https://fr.wikipedia.org/wiki/Classe_inversée>`_. Il n'y
-a pas de cours magistraux, seulement des séances de TPs, en groupes fixes, sous supervision d'un tuteur.
+The pedagogy used is that of `Flipped classroom <https://en.wikipedia.org/wiki/Flipped_classroom>`_. 
 
-Par conséquent, les élèves doivent impérativement travailler chez eux:
+Therefore, it is imperative that students work from home:
 
-* lire les chapitres mentionnés du livre de référence,
-* programmer régulièrement en faisant les exercices proposés sur INGInious_
-* préparer les questions théoriques en vue d'une discussion avec le tuteur.
+* read the mentioned chapters of the reference book,
+* program regularly by doing the exercises offered on INGInious_
+* prepare theoretical questions.
 
-Le cours utilise le langage *Java* et plus spécifiquement la version Java8_.
-L'IDE recommandé pour ce cours et disponible à l'examen est IntelliJ_.
-Nous utiliserons également l'outil Junit4_ pour réaliser des tests unitaires.
-Il est fortement recommandé de vous familiariser à ces outils en préparation à l'examen.
+The course uses the *Java* language and more specifically the Java8_ version.
+The recommended IDE for this course and available for the exam is IntelliJ_.
+We will also use the Junit4_ tool to perform unit tests.
+It is strongly recommended that you familiarize yourself with these tools in preparation for the exam.
 
-Chaque étudiant sera assigné à un groupe de 5 à 7 étudiants, et sera supervisé par un tuteur (qui supervise 4 groupes).
-Certains exercices (notamment théoriques) se font en groupe, tandis que d'autres (ceux de programmation) se font individuellement.
+
 
 .. _Java8: https://docs.oracle.com/javase/8/docs/api.
 .. _IntelliJ: https://www.jetbrains.com/idea/
@@ -41,100 +38,87 @@ Certains exercices (notamment théoriques) se font en groupe, tandis que d'autre
 .. _JUnit4: https://junit.org/junit4/.
 
 
+
+Cours Open-Source
+=======================================
+
+
+
+The source code of all programming exercises are available on Github
+
+* `Github Repository <https://github.com/pschaus/algorithms_exercises_students>`_ without the solutions
+* `Github Repository <https://github.com/pschaus/algorithms_exercises>`_ with the solutions (it is not recommended to read the solution to an exercise before having tried really hard to solve it). The best way to use the solution is to compare it with your own solution. 
+
+
+Motivated students can also propose new exercises as pull requests.
+
+
+The license used is Creative Commons Attribution-ShareAlike 4.0 International License:
+
+.. image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+    :alt: CC-BY-SA
+
+
+
 Agenda
 =======================================
 
-Le cours est organisé en 6 modules de 2 semaines. Chaque module est composé de deux TPs. Dans la mesure du possible, ils se font en présentiel.
 
-Le cours devrait vous prendre environ 5/6h par semaine, dont deux en TP.
-
-Les TPs sont donnés soit le mercredi soit le jeudi, en fonction de ce qui vous est assigné.
-Prenons l'exemple d'une semaine typique d'un étudiant ayant son TP le mercredi:
+The course is organized in 6 modules of 2 weeks. 
+Each module spans over two weeks:
 
 .. image:: organisation.svg
-    :align: center
+    :scale: 100
+    :width: 600
+    :alt: organization
 
-- De **mercredi à lundi** de la semaine avant le TP1:
-    - lecture du livre de référence
-    - préparation des exercices théoriques **en groupe**
-- **Lundi minuit**: soumission du rapport de groupe (par mail au tuteur), répondant aux questions théoriques
-- **Mercredi 14h**: TP1
-- De **mercredi à lundi** de la semaine suivant le TP1: préparation des exercices individuels sur INGInious
-- **Lundi minuit**: deadline pour les exercices INGInious
-- **Mercredi 14h**: TP2
-- retour au début de la liste pour la partie suivante.
+Week 1:
 
-Si vous avez TP le jeudi (à 8h30 ou a 16h15), décalez l'horaire d'une journée.
+* Wednesday 2PM: introduction to the topic with Prof. P. Schaus
+* Thursday 8h30 or 16h15: lab session with the TA and tutors (on teams or computer lab)
+* Rest of the week: reading of the chapters by the students and preparation of the theoretical exercises A
 
-Evaluation
+Week 2:
+
+* Wednesday 2PM: correction of exercises A by TA (Harold Kiossou or Alexandre Dubray)
+* Thursday 8h30 or 16h15: lab session with the TA and tutors (on teams or computer lab)
+
+Week 3:
+
+* Wednesday 2M: Correction of exercises B [+ beginning of next module] with Prof. P. Schaus
+
+Check the `rooms <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ 
+
+Labs will be given on Thursdays on `teams <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ or
+in the labs DAO (8h30) or Ferraris (16h15).
+
+Make sure you registered on `Moodle <https://moodle.uclouvain.be/course/view.php?id=1049>`_. 
+
+Feel free to ask questions during the two hours of practical work in writing or via a teams call.
+Of course, nothing prevents you from asking questions via chat with your tutor outside of the slot provided.
+TA will respond to you as they can.
+
+* S1-S3 :doc:`part1 <../part1/index>`
+
+.. * S3-S5 :doc:`part2 <../part2/index>`
+.. * S5-S7 :doc:`part3 <../part3/index>`
+.. * S8-S10:doc:`partie4 <../part4/index>` warning, mid-term-quiz instead of the course at 2:00 p.m. (at home or info room on inginious)
+.. * S10-S12:doc:`part5 <../part5/index>`
+.. * S12-S14:doc:`part6 <../part6/index>`
+
+
+
+Grading
 =======================================
 
-Sur les 20 points de la note finale:
 
-- La participation aux TPs est évaluée sur 4 points. Dans ce total sont intégrées ces différentes facettes:
-    - Participation **active** aux TPs, évaluée par le tuteur
-    - Remise des tâches INGInious dans les temps (essayer raisonablement est suffisant; vous avez le droit à l'erreur!)
-  La participation est prise en compte également pour la session d'Aout.
-- L'examen est sur 16 points.
-    - Un mid-term est organisé en S7 sur INGInious. L'évaluation mid-term compte pour 10% du total de l'examen,
-      uniquement si elle fait remonter la moyenne de l'étudiant. La même pondération est appliquée au mois d'août.
-      La matière est celle des partie 1 à 3.
-    - L'examen est sur ordinateur.
+Computer exam on Inginious.
+One mid-term quizz quizz might be proposed on two points during smart week. 
+It can only impact positively your grade.
 
-Pour résumer:
 
-- Soit :math:`p \in [0, 4]` la note de participation (sur 4)
-- Soit :math:`e \in [0, 20]` la note de l'examen (sur 20)
-- Soit :math:`m \in [0, 20]` la note du midterm (sur 20)
-
-La note finale sur 20 est
-
-.. math::
-
-    p + \frac{16\cdot \max(e, \frac{9e+m}{10})}{20}
-
-Contact et communication
+Contact and Communication
 =======================================
 
-Les communications importantes avec les étudiants se feront via moodle et Teams (merci de vous y inscrire!)
-Pour toutes communications importantes, vous pouvez également nous écrire par mail.
-
-.. list-table:: Contacts
-   :header-rows: 1
-
-   * - Nom
-     - Email
-     - Rôle
-   * - Guillaume Derval
-     - `guillaume.derval@uclouvain.be <mailto:guillaume.derval@uclouvain.be>`_
-     - Enseignant
-   * - Hélène Verhaeghe
-     - `helene.verhaeghe@uclouvain.be <mailto:helene.verhaeghe@uclouvain.be>`_
-     - Assistante, tutrice groupes 37-40
-   * - Alexandre Gobeaux
-     - `alexandre.gobeaux@student.uclouvain.be <mailto:alexandre.gobeaux@student.uclouvain.be>`_
-     - Tuteur groupe 1-4
-   * - Cyril Pletinckx
-     - `cyril.pletinckx@student.uclouvain.be <mailto:cyril.pletinckx@student.uclouvain.be>`_
-     - Tuteur groupe 5-8
-   * - Marine Branders
-     - `marine.branders@student.uclouvain.be <mailto:marine.branders@student.uclouvain.be>`_
-     - Tutrice groupe 9-12
-   * - Aurélien Buchet
-     - `aurelien.buchet@student.uclouvain.be <mailto:aurelien.buchet@student.uclouvain.be>`_
-     - Tuteur groupe 13-16
-   * - Henri Piron
-     - `henri.piron@student.uclouvain.be <mailto:henri.piron@student.uclouvain.be>`_
-     - Tuteur groupe 17-20
-   * - Edgar Gevorgyan
-     - `edgar.gevorgyan@student.uclouvain.be <mailto:edgar.gevorgyan@student.uclouvain.be>`_
-     - Tuteur groupe 21-24
-   * - Louis Navarre
-     - `navarre.louis@student.uclouvain.be <mailto:navarre.louis@student.uclouvain.be>`_
-     - Tuteur groupe 25-28
-   * - Romain Graux
-     - `romain.graux@student.uclouvain.be <mailto:romain.graux@student.uclouvain.be>`_
-     - Tuteur groupe 29-32
-   * - Emeline Christoph
-     - `emeline.christoph@student.uclouvain.be <mailto:emeline.christoph@student.uclouvain.be>`_
-     - Tutrice groupe 33-36
+Important communications with students will be via moodle and Teams (please sign up!)
+For all important communications, you can also write to us by email.

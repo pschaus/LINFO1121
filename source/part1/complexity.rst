@@ -2,11 +2,11 @@
 
 
 *************************************************************************************************
-Complexités
+Complexity
 *************************************************************************************************
 
-Veuillez noter que toutes les définitions sont ici pour des fonctions positives à un argument entier, mais sont quasiment identiques
-pour les fonctions à plusieurs variables venant d'autres ensembles.
+Please note that all definitions here are for positive functions with one integer argument, but are almost identical
+for multivariate functions from other sets.
 
 Notation Big-Oh (:math:`\mathcal{O}`)
 =====================================
@@ -14,23 +14,24 @@ Notation Big-Oh (:math:`\mathcal{O}`)
 .. math::
 
     f(n) \in \mathcal{O}(g(n)) \quad \Longleftrightarrow \quad
-        \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ t.q. } \quad
+        \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ s.t. } \quad
         f(n) \leq k \cdot g(n) \quad
         \forall n \geq n_0
 
-On dit qu'une fonction :math:`f(n)` appartient à :math:`\mathcal{O}(g(n))` si il existe une constante :math:`k`,
-telle que :math:`k\cdot g(n)` est systématiquement plus grand que :math:`f(n)` pour tout :math:`n` suffisament grand
-(autrement dit, il existe un :math:`n_0` à partir de laquelle la règle est respectée).
+A function :math:`f(n)` is said to belong to :math:`\mathcal{O}(g(n))` if there is a constant :math:`k`,
+such that :math:`k \cdot g(n)` is systematically greater than :math:`f(n)` for all :math:`n` large enough
+(that is, there is a :math:`n_0` from which the rule is satisfied).
 
-:math:`g(n)` fonctionne donc comme une borne supérieure à la fonction à une constante près.
+:math:`g(n)` therefore works as an upper bound on the function up to a constant.
 
-Exemple
+Example
 -------
 
-Soit :math:`f(n) = 2n^2+3n`. On a que :math:`f(n)\in \mathcal{O}(n^2)` (autrement dit, on choisi :math:`g(n)=n^2`).
-En effet, avec :math:`k=3`, la règle est respectée à partir de :math:`n=3`.
+Let :math:`f(n) = 2n^2+3n`. We have that :math:`f(n)\in \mathcal{O}(n^2)` (in other words, we choose :math:`g(n)=n^2`).
+Indeed, with :math:`k=3`, the rule is respected from :math:`n=3`.
 
-De manière similaire, la même fonction :math:`f(n) = 2n^2+3n` appartient à d'autres ensembles:
+Similarly, the same function :math:`f(n) = 2n^2+3n` belongs to other sets:
+
 
 * :math:`f(n) \in \mathcal{O}(n^3)`
 * :math:`f(n) \in \mathcal{O}(n^4)`
@@ -38,32 +39,32 @@ De manière similaire, la même fonction :math:`f(n) = 2n^2+3n` appartient à d'
 * :math:`f(n) \in \mathcal{O}(2^n)`
 * ...
 
-car toutes ces fonctions sont bien des bornes supérieures à :math:`n^2` quand :math:`n` est grand.
+because all these functions are upper bounds than :math:`n^2` when :math:`n` is large.
 
-Dans la majorité des cas, on va vouloir choisir la fonction :math:`g(n)` la plus petite possible qui respecte la
-propriété, étant donné que cela va nous apporter le plus d'information.
+In the majority of cases, we will want to choose the smallest possible :math:`g(n)` function that respects the
+property, since it will give us the most information.
 
 Notation Big-Omega (:math:`\Omega`)
 =============================================
 
-La définition est similaire à celle de Big-Oh. En gras les différences:
+The definition is similar to that of Big-Oh. In bold the differences:
 
 .. math::
 
     f(n) \in \mathbf{\Omega}(g(n)) \quad \Longleftrightarrow \quad
-        \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ t.q. } \quad
+        \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ s.t. } \quad
         \mathbf{k \cdot f(n) \geq g(n)} \quad
         \forall n \geq n_0
 
-Pour de grandes valeurs de :math:`n`, :math:`f(n)` est toujours plus grande que :math:`g(n)` à une constante
-près. Concrètement, cela signifie que la fonction :math:`g(n)` place une borne
-inférieure sur la complexité de :math:`f(n)`. En d’autres mots, :math:`g(n)` caractérise le
-"meilleur cas" possible pour le calcul de f(n) (ceci est un abus de language: voir plus bas).
+For large values of :math:`n`, :math:`f(n)` is always greater than :math:`g(n)` to a constant
+close. Concretely, this means that the function :math:`g(n)` places a bound
+lower on the complexity of :math:`f(n)`. In other words, :math:`g(n)` characterizes the
+"best case" possible for the calculation of f(n) (this is an abuse of language: see below).
 
-Exemple
+Example
 -------
 
-Dans le cas général, Insertion sort :math:`\in \Omega(n)`.
+In the general case, Insert outputs :math:`\in \Omega(n)`.
 
 Notation Big-Theta (:math:`\Theta`)
 =============================================
@@ -71,109 +72,111 @@ Notation Big-Theta (:math:`\Theta`)
 .. math::
 
     f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad
-        \exists k_0,k_1 \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ t.q. } \quad
+        \exists k_0,k_1 \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ s.t. } \quad
         \mathbf{k_0 \cdot g(n) \leq f(n) \leq k_1 \cdot g(n)} \quad
         \forall n \geq n_0
 
-Autrement dit, pour de grandes valeurs de :math:`n`, :math:`f(n)` se comporte comme :math:`g(n)` à une constante
-multiplicative près. :math:`g(n)` agit donc à la fois comme une borne inférieure et supérieure.
+In other words, for large values of :math:`n`, :math:`f(n)` behaves like :math:`g(n)` up to a multiplicative constant. 
+:math:`g(n)` thus acts as both a lower and an upper bound.
 
-On peut voir aisément que (démonstration laissée en exercice)
+One can easily see that (proof left as an exercise)
 
 .. math::
 
     f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad f(n) \in \mathbf{\mathcal{O}}(g(n)) \quad\wedge\quad f(n) \in \mathbf{\Omega}(g(n))
 
-Remarques
+Notes
 ---------
 
-Il n'est pas possible de trouver une fonction :math:`g(n)` telle que :math:`f(n) \in \Theta(g(n))` pour toute fonction :math:`f(n)`.
-Par exemple, pour Insertion sort, Vu qu'il est en :math:`\mathcal{O}(n^2)` mais en :math:`\Omega(n)`, et que ces deux bornes sont atteintes,
-il n'est pas possible de dire que Insertion est en :math:`\Theta(g(n))`.
+It is not possible to find a :math:`g(n)` function such as :math:`f(n) \in \Theta(g(n))` for any :math:`f(n) function )`.
+For example, for Insertion sort, Since it is in :math:`\mathcal{O}(n^2)` but in :math:`\Omega(n)`, and that these two bounds are reached,
+it is not possible to say that Insertion is in :math:`\Theta(g(n))`.
 
-Exemple
+Example
 -------
 
-Merge sort est en :math:`\Theta(n\log_2 n)`.
+Merge sort is in :math:`\Theta(n\log_2 n)`.
 
 Notation Tilde (:math:`\mathcal{\sim}`)
 =======================================
 
-La définition de la notation tilde se base sur des principes différents:
+The definition of tilde notation is based on different principles:
 
 .. math::
 
     f(n) \sim g(n) \quad \quad \Longleftrightarrow \quad \lim_{n\rightarrow\infty} \frac{f(n)}{g(n)} = 1
 
-Cette définition à priori plus compliquée nous permet simplement de voir que
-pour de grandes valeurs de :math:`n`, :math:`f(n)` et :math:`g(n)` se comportent de la même façon:
-l’intuition est donc un peu la même que pour :math:`\mathcal{O}`. D’ailleurs, on a aussi:
+
+This a priori more complicated definition simply allows us to see that
+for large values of :math:`n`, :math:`f(n)` and :math:`g(n)` behave the same way:
+the intuition is therefore somewhat the same as for :math:`\mathcal{O}`. Besides, we also have:
 
 .. math::
 
     f(n) \sim g(n) \quad \quad \Longrightarrow \quad f(n) \in \mathcal{O}(g(n))
 
-Mais la relation inverse n’est pas vraie. En effet, si on prend l’exemple d’un
-algorithme avec un temps d'exécution A qui nécessite de parcourir une liste deux fois, on a:
+But the opposite relationship is not true. Indeed, if we take the example of an
+algorithm with an execution time :math:`A` which needs to go through a list twice, we have:
 
 .. math::
 
-    A(n) \not\sim n \quad \text{car} \quad  \lim_{n\rightarrow\infty} \frac{A(n)}{n} = 2
+    A(n) \not\sim n \quad \text{since} \quad  \lim_{n\rightarrow\infty} \frac{A(n)}{n} = 2
 
-Cet exemple nous montre la principale différence entre :math:`\mathcal{O}` et :math:`\sim`: tilde conserve le facteur
-multiplicatif.
+This example shows us the main difference between :math:`\mathcal{O}` and :math:`\sim`: tilde keeps the
+multiplicative factor.
 
-Il existe une autre différence: tilde fournit une borne *atteinte*. Par exemple: selon la définition de :math:`\mathcal{O}`, on a que
+There is another difference: tilde provides a *reached* bound. For example: according to the definition of :math:`\mathcal{O}`, we have that
 
 * :math:`n \in \mathcal{O}(n)`
 * :math:`n \in \mathcal{O}(n^2)`
 * :math:`n \in \mathcal{O}(2^n)`
 
-car :math:`n`, :math:`n^2` et :math:`2^n` deviennent toute à terme "plus grands" que :math:`n`. Or, nous avons que
+because :math:`n`, :math:`n^2` and :math:`2^n` all eventually become "bigger" than :math:`n`. Now, we have that
 
-* :math:`n \sim n` (évidemment)
+
+* :math:`n \sim n` (of course ...)
 * :math:`n \not\sim n^2`
 * :math:`n \not\sim 2^n`
 
-car la limite de ces deux dernières fonctions tends vers 0, et non pas 1!
+because the limit of the latter two functions tends to 0, not 1!
 
-Il existe d'autres différences plus subtiles, dont nous parlerons lors d'exercices.
+There are other more subtle differences, which we will discuss in exercises.
 
-Meilleur cas, pire cas, cas moyen
-=================================
+Best case, worst case, average case
+====================================
 
-Nous entendons trop souvent dire que :math:`\mathcal{O}` est *le pire cas* et :math:`\Omega` le *meilleur cas*.
-Cela est **faux** en général, tout dépend de la manière dont vous définissez votre fonction.
+We too often hear that :math:`\mathcal{O}` is the *worst case* and :math:`\Omega` is the *best case*.
+This is **false** in general, depending on how you define your function.
 
-Imaginons que nous utilisions un algorithme de Tri Rapide, que nous verrons dans la Partie 2 du cours.
-Si vous définissez :math:`f(n)` comme "le nombre d'opérations de comparaison à effectuer pour un tableau de taille n", alors vous avez:
+Let's say we're using a Quick Sort algorithm, which we'll see in Part 2 of the course.
+If you define :math:`f(n)` as "the number of comparison operations to perform for an array of size n", then you have:
 
 * :math:`f(n) \sim n^2` et :math:`f(n) \in \mathcal{O}(n^2)`
 * :math:`f(n) \in \Omega(n\log_2 n)`
 
-Si maintenant vous définissez :math:`g(n)` comme "le nombre **moyen** (l'espérance) d'opérations de comparaison à effectuer
-pour un tableau de taille n, **quand on sélectionne uniformement les tableaux**", vous obtenez:
+If you now define :math:`g(n)` as "the **average** (expectation) number of comparison operations to perform
+for an array of size n, **when selecting arrays uniformly**", you get:
 
 * :math:`g(n) \sim n\log_2 n` et :math:`g(n) \in \mathcal{O}(n\log_2 n)`
 * :math:`g(n) \in \Omega(n\log_2 n)`
 * et donc :math:`g(n) \in \Theta(n\log_2 n)`
 
-Par un (léger) abus de language, on dit que le "cas moyen" du Tri rapide est en :math:`\Theta(n\log_2 n)`.
-Mais le cas général ne l'est pas!
+By a (slight) abuse of language, we say that the "average case" of Quick Sort is in :math:`\Theta(n\log_2 n)`.
+But the general case is not!
 
-Complexité amortie
+Amortized Comlexity
 =================================
 
-Un autre type de complexité utile est celle qui compte la complexité moyenne pour :math:`m` opérations.
-Cette complexité s'appelle la *complexité amortie*.
-Par exemple, un `ArrayList <https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>`_
-en java est implémenté avec un array qui double sa taille dès que sa capacité est atteinte.
-L'opération de doublement de la taille se fait en :math:`\mathcal{O}(n)` où :math:`n` est la taille courante du tableau
-L'insertion de :math:`n+1` opérations avec la méthode *add(E e)* lorsque le tableau a une taille courante de :math:`n`
-coûtera en moyenne :math:`\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)`.
+Another useful type of complexity is that which counts the average complexity for :math:`m` operations.
+This complexity is called the *amortized complexity*.
+For example, an `ArrayList <https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>`_
+in java is implemented with an array that doubles its size as soon as its capacity is reached.
+The doubling of size operation is done in :math:`\mathcal{O}(n)` where :math:`n` is the current size of the array
+Inserting :math:`n+1` operations with the *add(E e)* method when the array has a current size of :math:`n`
+will cost on average :math:`\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)`.
 
-Attention la complexité de la méthode *add(E e)* isolément est bien  :math:`\Omega(1)` et :math:`\mathcal{O}(n)`
-où :math:`n` est le nombre d’éléments dans l'ArrayList.
+Warning: the complexity of the method *add(E e)* in isolation is well :math:`\Omega(1)` and :math:`\mathcal{O}(n)`
+where :math:`n` is the number of elements in the ArrayList.
 
 Types de complexités usuels
 ===========================
@@ -181,19 +184,19 @@ Types de complexités usuels
 +---------------------------------------+-------------------+-------------------------------------------------------+
 | Classe                                | Nom               | Exemple                                               |
 +=======================================+===================+=======================================================+
-| :math:`\mathcal{O}(1)`                | Constante         | Trouver le minimum dans un tableau trié               |
+| :math:`\mathcal{O}(1)`                | Constante         | Find min in sorted array                              |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(\log_2{n})`        | Logarithmique     | Binary search                                         |
+| :math:`\mathcal{O}(\log_2{n})`        | Logarithmic       | Binary search                                         |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n)`                | Linéaire          | Parcours de tableau                                   |
+| :math:`\mathcal{O}(n)`                | Linear            | Iterate over elements in an array                     |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n\log_2{n})`       | Linéarithmique    | Tris efficaces                                        |
+| :math:`\mathcal{O}(n\log_2{n})`       | Linearithmic      | Efficient sorting (e.g. merge sort)                   |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n^2)`              | Quadratique       | Tris inefficaces                                      |
+| :math:`\mathcal{O}(n^2)`              | Quadratic         | Inefficient sorting (e.g. insertion sort)             |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n^c)`              | Polynomial        | La majorité des algorithmes vu dans ce cours          |
+| :math:`\mathcal{O}(n^c)`              | Polynomial        | Magorith of algorithms in this course                 |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(c^n)`              | Exponentielle     | Problème du sac à dos                                 |
+| :math:`\mathcal{O}(c^n)`              | Exponential       | Knapsack Problem                                      |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n!)`               | Factorielle       | Approche naïve du problème du voyageur de commerce    |
+| :math:`\mathcal{O}(n!)`               | Factorial         | Brute force Solving of the TSP (all permutations)     |
 +---------------------------------------+-------------------+-------------------------------------------------------+
