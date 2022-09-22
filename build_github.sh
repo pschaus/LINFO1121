@@ -3,6 +3,8 @@ set -e
 
 rm -rf build
 
+echo "show_answers = True" >> source/conf.py
+
 make latexpdf
 
 f="linfo1121.pdf"
