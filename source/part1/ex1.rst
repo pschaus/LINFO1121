@@ -85,8 +85,8 @@ Why do you think Java developers chose this implementation
     Note rigolote: Java recommande d'utiliser Deque à la place de Stack.
     "Qu'est-ce que ça change?" est une bonne question à poser aux étudiants.
 
-Exercise 1.1.4
-""""""""""""""
+Exercise 1.1.4 (Inginious)
+""""""""""""""""""""""""""
 
 How do you implement the abstract data type *stack* using two *queues*?
 In particular, describe how the `push` and `pop` methods work in this case.
@@ -99,6 +99,9 @@ operations are executed in constant time?
 
 Is this implementation of a stack efficient (for :math:`n` operations)
 compared to the other implementations presented in the reference book?
+
+
+Once you have imagined your solution on paper, you can solve the corresponding Inginious task `StackWithTwoQueues <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues>`_ .
 
 .. answer::
 
