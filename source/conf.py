@@ -286,3 +286,5 @@ current_week = 13
 show_answers = False
 show_answers = True
 show_answers = False
+show_answers = True
+show_answers = False

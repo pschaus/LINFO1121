@@ -148,9 +148,16 @@ Exercise 2.2.8 (Inginious)
 """"""""""""""""""""""""""""
 
 Design an algorihtm to compute the number of entries larger or equal to a given value :math:`v_1` in n x n matrix of integers. 
-What if you need to recompte it for a different value math:`v_2`? 
+What if you need to recompte it for a different value :math:`v_2`? 
 Do you need to redo the computation from scratch or some pre-computation can be done do it more efficiently?
 
 Inginious task: `Global Warming <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_GlobalWarmingImpl>`_
+
+
+.. answer::
+
+    Il faut stocker chaque entree de la matrice dans un grand tableau de taille n^2 qu'on trie (preprocessing en O(n.log(n))).
+    Ensuite il est très facile de retrouver le nombre d'élément >= à une valeur v donnée par simple recherche dichotomique dans ce tableau.
+
 
 
