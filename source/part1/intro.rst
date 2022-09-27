@@ -31,9 +31,14 @@ As well as this document summarizing the different notations of :ref:`part1compl
 Slides (keynote)
 
 * `Introduction <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_ 
+* `Feedback part A <https://www.icloud.com/keynote/037KCYIeXbULVFGRo7xLiY8fA#part1-exercises>`_ 
+* `Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_ 
 
-.. * `Séance Intermédiaire <https://www.icloud.com/keynote/037KCYIeXbULVFGRo7xLiY8fA#part1-exercises>`_ 
-.. * `Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_ 
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pLL9aypVRmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 

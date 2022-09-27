@@ -91,8 +91,8 @@ Exercise 1.1.4 (Inginious)
 How do you implement the abstract data type *stack* using two *queues*?
 In particular, describe how the `push` and `pop` methods work in this case.
 
-As an example, specify the state of each of the two queues after stacking the integers `1 2 3` from an initially empty
-initially empty. Describe what happens next when the `pop` operation is performed.
+As an example, specify the state of each of the two queues after stacking the integers `1 2 3` from an initially empty stack. 
+Describe what happens next when the `pop` operation is performed.
 
 What is the time complexity of these methods if we assume that each `queue` and `dequeue` operation
 operations are executed in constant time?

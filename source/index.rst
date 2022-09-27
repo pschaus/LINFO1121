@@ -13,8 +13,7 @@ LINFO1121: Data Structures and Algorithms
 
    intro/index
    part1/index
-
-..   part2/index
+   part2/index
 ..   part3/index
 ..   part4/index
 ..   part5/index
