@@ -328,6 +328,6 @@ Use VisualVM on your code for the previous question.
 Exercise 2.1.13 (Inginious)
 """"""""""""""""""""""""""""""
 
-Complete (without reading the book since you won't have it at the exam) the implementation of `Merge Sort <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part2MergeSort>`_
+Complete (without reading the book since you won't have it at the exam) the implementation of `Merge Sort <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort>`_
 
 

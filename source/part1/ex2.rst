@@ -78,8 +78,8 @@ As a reminder, here is how you can iterate over the elements of a string that ar
     }
 
 
-Exercise 1.2.3
-""""""""""""""
+Exercise 1.2.3 (Inginious)
+""""""""""""""""""""""""""""
 
 `Functional Programming <https://en.wikipedia.org/wiki/Functional_Programming>`_ is an increasingly important programming paradigm.
 In this programming paradigm, data structures are `immutable <https://en.wikipedia.org/wiki/Purely_functional_data_structure>`_.
@@ -136,15 +136,16 @@ we ask that you familiarize yourself with these first.
         for (int i = 0; i < 10; i++) {
             list = list.cons(i);
         }
-
+        // list = 9,8,7,...,0
+        
         list = list.map(i -> i+1);
-        // will print 1,2,...,11
+        // will print 10,9,...,1
         for (Integer i: list) {
             System.out.println(i);
         }
 
         list = list.filter(i -> i%2 == 0);
-        // will print 2,4,6,...,10
+        // will print 10,...,6,4,2
         for (Integer i: list) {
             System.out.println(i);
         }
@@ -234,6 +235,10 @@ We ask you to
 
 * complete this implementation, if possible use recursive methods as much as possible.
 * determine the complexity of each method.
+
+
+The inginious taks is the following: `FList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList>`_
+
 
 
 
