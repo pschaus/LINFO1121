@@ -89,7 +89,7 @@ Week 3:
 
 Check the `rooms <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ 
 
-Labs will be given on Thursdays on `teams <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ or
+Labs will be given on Thursdays on `teams <https://teams.microsoft.com/l/team/19%3aHLxo4AxKlfrwda6o8T8PpFSb0n2ziz5e9KBusYlhsf41%40thread.tacv2/conversations?groupId=c24af655-2d7d-4bf0-91b1-4f4068a26907&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_ or
 in the labs DAO (8h30) or Ferraris (16h15).
 
 Make sure you registered on `Moodle <https://moodle.uclouvain.be/course/view.php?id=1049>`_. 
