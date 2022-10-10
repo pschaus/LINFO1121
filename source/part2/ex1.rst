@@ -36,7 +36,7 @@ Exercise 2.1.2
 """"""""""""""
 
 We consider the very general problem where we have :math:`n` jobs to perform for clients
-and each :math:`j` job takes :math:`t_j` seconds to complete.
+and each job :math:`j` takes :math:`t_j` seconds to complete.
 Only one job can be performed at a time.
 
 The goal is to complete all jobs while maximizing customer satisfaction.
@@ -105,10 +105,10 @@ Answer to the small `Inginious MCQ <https://inginious.info.ucl.ac.be/course/LINF
 
     In-place: n'utilise pas de mémoire supplémentaire. (du moins, pas plus que :math:`\mathcal{O}(1)`).
 
-Exercise 2.1.4
-""""""""""""""
+Exercise 2.1.4 (Inginious)
+""""""""""""""""""""""""""""""
 
-How would you sort a pile of cards with the restriction that
+How would you sort increasingly a pile of cards with the restriction that
 the only permitted operations are:
 
 1. compare the first two cards,
@@ -117,28 +117,14 @@ the only permitted operations are:
 
 .. tip::
 
-     The "Bubble-Sort" is a sorting algorithm which consists in comparing in a way
-     repeated the consecutive elements of an array, and to permute them when they are wrong
-     sorted. This operation is repeated until the list is sorted.
-     This algorithm may possibly inspire you.
+     Try to maintain the invariant that the `last i elements of the pile are sorted and those are the ith biggest ones`.
+     Then at each iteration try to make this invariant true for one more card (i+1).
 
 
-Write the pseudo code of your algorithm and give the complexity.
-
-.. answer::
-
-    Apply a bubble sort-like algo.
-
-    .. code-block::
-
-        for (i in 1 to n)
-            invariant: the i-1 last ones are sorted
-            for (k in 1 to n)
-                if (k <= n-i)
-                    put the smalest of the two top cards on top
-                move the top card at the end
+Write the pseudo code of your algorithm on paper and give the complexity.
 
 
+Once it is done, implement your solution on the inginious `task <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_CardSorter>`_
 
 Exercise 2.1.5
 """"""""""""""""""
@@ -207,7 +193,7 @@ which are unordered. Justify the complexity of your algorithm and give its pseud
             // A et B sont des tableaux triés dans l'ordre croissant
             int posB = B.length;
             int count = 0;
-            for(int i = A.length - 1; i >= 0; i--) {
+            for (int i = A.length - 1; i >= 0; i--) {
                 while(posB != 0 && B[posB-1] >= A[i])
                     posB--;
                 count += posB;
