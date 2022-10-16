@@ -1,7 +1,7 @@
 .. _intro2:
 
 Objectives
-=========
+===========
 
 At the end of this part each student will be able to:
 
