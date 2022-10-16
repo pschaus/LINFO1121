@@ -10,28 +10,29 @@ Exercises B
 Exercice 3.2.1
 """""""""""""""
 
-Vrai ou faux ?
+True or false ?
 
-Remarque: BST s'entend ici comme l'implémentation du livre, c'est-à-dire un arbre qui n'est pas nécessairement équilibré.
-Les 2-3/red-black BST s'entendent également comme étant celles du livre de référence.
+Note: BST is understood here as the implementation of the book, i.e. a tree that is not necessarily balanced.
+The 2-3/red-black BST is also understood to be the one in the reference book.
 
 
-Nous recommandons de vous familiariser préalablement avec les notions de `parcours d'arbres <https://fr.wikipedia.org/wiki/Arbre_binaire#Parcours_préfixe>`_: infixe, préfixe et postfixe.
+We recommend that you first become familiar with the notions of `tree traversals <https://en.wikipedia.org/wiki/Tree_traversal>`_: infix, prefix and postfix.
 
-* Dans le meilleur des cas, le nombre de comparaisons entre clefs pour une recherche binaire d'une clef particulière dans un tableau trié de N clefs distinctes est :math:`\sim \log N`.
+* In the best case, the number of key comparisons for a binary search for a particular key in a sorted array of N distinct keys is :math:`\sim \log N`.
+
 
   .. answer::
 
     Faux c'est :math:`\mathcal{O}(1)`, si on a de la chance on tombe directement dessus.
 
-* Étant donné un parcours infixe d'un BST contenant N clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
+* Given the output of an infix traversal of a BST containing N distinct keys. Is it possible to reconstruct the shape of the BST based on the result of the traversal? If so, write the pseudo-code of an algorithm to do so, if not, give a counterexample that justifies your answer.
 
   .. answer::
 
     Invitez les étudiants à avoir un regard critique, comment prouver que c'est vrai ou faux?
     Non, on peut facilement trouver deux BST différents pour l'input 5,10,15,20.
 
-* Étant donné un parcours préfixe d'un BST contenant :math:`N` clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d'un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.
+* Given a the output of a prefix traversal of a BST containing :math:`N` distinct keys. Is it possible to reconstruct the shape of the BST based on the result of the walk? If so, write the pseudo-code of an algorithm to do so, if not, give a counterexample that justifies your answer.
 
   .. answer::
 
@@ -57,32 +58,31 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
 
     Est-ce que cela marche avec un parcours postfixe? Et avec un parcours infixe?
 
-* Étant donné un arbre ordonné de :math:`N` clefs distinctes et une clef :math:`x`, est-il possible de trouver la plus petite clef strictement plus grande que :math:`x` en temps logarithmique dans le pire cas?
+* Given an ordered tree of :math:`N` distinct keys and a :math:`x` key, is it possible to find the smallest key strictly larger than :math:`x` in logarithmic time in the worst case?
 
   .. answer::
 
     faux, rien ne dit que l'arbre est équilibré. Cela peut donc prendre :math:`\mathcal{O}(N)` dans le pire cas. Demandez aux étudiants de dessiner un arbre correspondant à ce scénario.
 
-* La hauteur attendue d'un BST résultant de l'insertion de N clefs distinctes dans un ordre aléatoire dans un arbre initialement vide est en moyenne logarithmique.
+* The expected height of a BST resulting from inserting N distinct keys in a random order into an initially empty tree is on average logarithmic.
 
   .. answer::
 
     C'est vrai. Et le meilleur cas? (:math:`\mathcal{O}(\log n)`) Et le pire cas? (:math:`\mathcal{O}(n)`)
 
-* Soit :math:`x` un noeud dans un BST. Le successeur de :math:`x` (le noeud contenant la clef suivante dans l'ordre croissant) est le noeud le plus à gauche dans l'arbre de droite de :math:`x`.
+* Let :math:`x` be a node in a BST. The successor of :math:`x` (the node containing the next key in ascending order) is the leftmost node in the tree on the right of :math:`x`.
 
   .. answer::
 
     Non, le noeud :math:`x` peut être une feuille ...
 
-* La hauteur maximum d'un 2-3 tree avec N clefs est :math:`\sim \log_3 N`
+* The maximum height of a 2-3 tree with N keys is :math:`\sim \log_3 N`
 
   .. answer::
 
     faux, c’est :math:`\text{ceil}(\log_2 N)` (voir proposition F page 429) (le mot important de l'énoncé est *maximum*).
 
-* Pour l'insertion de N clefs dans l'ordre croissant dans un red-black BST initialement vide. Le nombre de changements de couleur de la dernière insertion est au plus 3.
-  Le nombre de changements s'entend comme la somme des différences en valeur absolue entre le nombre de rouges après insertion moins le nombre de rouges avant insertion.
+* For the insertion of N keys in ascending order into an initially empty red-black BST. The number of color changes of the last insertion is at most 3. The number of changes is understood to be the sum of the absolute value differences between the number of reds after insertion minus the number of reds before insertion.
 
   .. answer::
 
@@ -91,36 +91,36 @@ Nous recommandons de vous familiariser préalablement avec les notions de `parco
     les noeuds de la branche de droite sont des 3-noeuds
     car la "bulle" (transormation de 3 noeuds en 2 noeuds) doit remonter jusqu'à la racine.
 
-* Un red-black BST obtenu après insertion de :math:`N > 1` clefs dans un arbre initialement vide possède au moins un lien rouge ? Si non, donnez un contre-exemple.
+* A red-black BST obtained after inserting :math:`N > 1` keys into an initially empty tree has at least one red link? If not, give a counterexample.
 
   .. answer::
 
     faux. le nombre de lien rouge peut descendre si ça remonte à la racine. On peut trouver un arbre avec zero lien rouge: (v=2,left=1,right=3).
 
-* Dans un red-black BST de N noeuds, la hauteur noire (i.e. le nombre de liens noirs de chaque chemin depuis la racine vers un lien null) est maximum :math:`\log N`.
+* In a red-black BST of N nodes, the black height (i.e. the number of black links in each path from the root to a null link) is maximum :math:`log N`.
 
   .. answer::
 
     oui, pour s'en convaincre il faut garder le mapping vers les arbres 2-3.
 
-Exercice 3.2.2
+Exercise 3.2.2
 """"""""""""""""
 
-Imaginez un algorithme de tri utilisant un BST. A quoi ressemblerait cet algorithme ?
-Quelle serait la complexité de votre algorithme si le BST est remplacé par un red-black BST ?
+Imagine a sorting algorithm using a BST. What would this algorithm look like?
+What would be the complexity of your algorithm if the BST is replaced by a red-black BST?
 
 .. answer::
 
     :math:`\mathcal{O}(n^2)` pour la construction du BST car l'insertion prends :math:`\mathcal{O}(n)`, :math:`\mathcal{O}(n \log(n))` pour la construction du red-black car l'insertion prend :math:`\mathcal{O}(\log(n))`. Ensuite :math:`\mathcal{O}(n)` pour faire le parcours infixe dans les deux cas.
 
-Exercice 3.2.3
+Exercise 3.2.3
 """"""""""""""""
 
-Est-ce que l'opération de suppression dans un BST est "commutative" ?
-C'est à dire que supprimer :math:`x` et ensuite directement :math:`y` d'un BST (tel qu'implémenté dans le livre)
-laisse l'arbre dans même état que si on avait d'abord supprimé :math:`y`  et puis :math:`x` ?
-Donner un contre-exemple ou argumenter pourquoi c'est effectivement toujours le cas.
-Pour vous aider, considérez l'arbre suivant et les opérations de suppression de 5 et 10.
+Is the delete operation in a BST "commutative"?
+That is, deleting :math:`x` and then directly :math:`y` from a BST (as implemented in the book)
+leaves the tree in the same state as if we had first deleted :math:`y` and then :math:`x`?
+Give a counterexample or argue why this is indeed always the case.
+To help you, consider the following tree and the deletion operations of 5 and 10.
 
 .. code-block::
 
