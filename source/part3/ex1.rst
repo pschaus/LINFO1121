@@ -306,7 +306,7 @@ Which of these trees is (are) red-black? For each, draw the correspondence to a 
 Exercise 3.1.11 (Inginious)
 """""""""""""""""""""""""""""
 
-`Implement an iterator for a BST <hhttps://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIteratorr>`_
+`Implement an iterator for a BST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIteratorr>`_
 
 
 Exercise 3.1.12 (Inginious MCQ)

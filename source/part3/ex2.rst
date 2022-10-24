@@ -103,6 +103,8 @@ We recommend that you first become familiar with the notions of `tree traversals
 
     oui, pour s'en convaincre il faut garder le mapping vers les arbres 2-3.
 
+
+
 Exercise 3.2.2
 """"""""""""""""
 
@@ -133,3 +135,13 @@ To help you, consider the following tree and the deletion operations of 5 and 10
 .. answer::
 
     faux, delete 10 puis 5 donne (11,right:15), delete 5 puis 10 donne (15,left:11)
+
+
+
+Exercise 3.2.4 (Inginious)
+"""""""""""""""""""""""""""""
+
+`Implement the reconstruction of a BST from the preorder traversal <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_PreorderToBST>`_
+
+
+
