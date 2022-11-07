@@ -7,10 +7,22 @@ Exercises B
     You must complete these exercises by Wednesday of W7.
 
 
-Exercice 3.2.1
-"""""""""""""""
+    Faux c'est :math:`\mathcal{O}(1)`, si on a de la chance on tombe directement dessus.
 
-True or false ?
+
+Exercice 3.2.1 (True/False BinarySearch)
+""""""""""""""""""""""""""""""""""""""""
+
+* In the best case, the number of key comparisons for a binary search for a particular key in a sorted array of N distinct keys is :math:`\sim \log N`.
+
+
+  .. answer::
+
+
+
+Exercice 3.2.2 (True/False BST)
+""""""""""""""""""""""""""""""""
+
 
 Note: BST is understood here as the implementation of the book, i.e. a tree that is not necessarily balanced.
 The 2-3/red-black BST is also understood to be the one in the reference book.
@@ -18,12 +30,7 @@ The 2-3/red-black BST is also understood to be the one in the reference book.
 
 We recommend that you first become familiar with the notions of `tree traversals <https://en.wikipedia.org/wiki/Tree_traversal>`_: infix, prefix and postfix.
 
-* In the best case, the number of key comparisons for a binary search for a particular key in a sorted array of N distinct keys is :math:`\sim \log N`.
 
-
-  .. answer::
-
-    Faux c'est :math:`\mathcal{O}(1)`, si on a de la chance on tombe directement dessus.
 
 * Given the output of an infix traversal of a BST containing N distinct keys. Is it possible to reconstruct the shape of the BST based on the result of the traversal? If so, write the pseudo-code of an algorithm to do so, if not, give a counterexample that justifies your answer.
 
@@ -76,6 +83,16 @@ We recommend that you first become familiar with the notions of `tree traversals
 
     Non, le noeud :math:`x` peut être une feuille ...
 
+
+
+Exercice 3.2.3 (True/False Redblack Trees)
+"""""""""""""""""""""""""""""""""""""""""""
+
+For the statements related to red-black trees, we advise you to first translate it into a statement into 2-3 trees
+as there is a one-to-one mapping between the two representation.
+In most cases, it is easier to answer on the validity of the statement for 2-3 trees.
+
+
 * The maximum height of a 2-3 tree with N keys is :math:`\sim \log_3 N`
 
   .. answer::
@@ -104,9 +121,8 @@ We recommend that you first become familiar with the notions of `tree traversals
     oui, pour s'en convaincre il faut garder le mapping vers les arbres 2-3.
 
 
-
-Exercise 3.2.2
-""""""""""""""""
+Exercise 3.2.2 (Sorting with BST)
+"""""""""""""""""""""""""""""""""""""
 
 Imagine a sorting algorithm using a BST. What would this algorithm look like?
 What would be the complexity of your algorithm if the BST is replaced by a red-black BST?
@@ -115,11 +131,34 @@ What would be the complexity of your algorithm if the BST is replaced by a red-b
 
     :math:`\mathcal{O}(n^2)` pour la construction du BST car l'insertion prends :math:`\mathcal{O}(n)`, :math:`\mathcal{O}(n \log(n))` pour la construction du red-black car l'insertion prend :math:`\mathcal{O}(\log(n))`. Ensuite :math:`\mathcal{O}(n)` pour faire le parcours infixe dans les deux cas.
 
-Exercise 3.2.3
-""""""""""""""""
 
-Is the delete operation in a BST "commutative"?
-That is, deleting :math:`x` and then directly :math:`y` from a BST (as implemented in the book)
+Exercise 3.2.3 (Delete Complexity)
+"""""""""""""""""""""""""""""""""""
+
+What is the time complexity for deleting the key 5 from the BST depitected below with the implementation of the text book?
+
+.. code-block::
+
+      15
+        \
+         x
+        / \
+       /   \
+      /     \ 
+     /n nodes\ 
+    /         \
+    -----------
+
+.. answer::
+
+    :math:`\mathcal{O}(1)` since the book has an optimization in the case the left or right node is null, it simply returns the other child node in O(1).
+
+Exercise 3.2.4 (Delete Commutativity)
+""""""""""""""""""""""""""""""""""""""
+
+
+Is the delete operation (as implemented in the book) in a BST "commutative"?
+That is, deleting :math:`x` and then directly :math:`y` from a BST
 leaves the tree in the same state as if we had first deleted :math:`y` and then :math:`x`?
 Give a counterexample or argue why this is indeed always the case.
 To help you, consider the following tree and the deletion operations of 5 and 10.
@@ -137,11 +176,25 @@ To help you, consider the following tree and the deletion operations of 5 and 10
     faux, delete 10 puis 5 donne (11,right:15), delete 5 puis 10 donne (15,left:11)
 
 
-
-Exercise 3.2.4 (Inginious)
+Exercise 3.2.5 (Inginious)
 """""""""""""""""""""""""""""
 
-`Implement the reconstruction of a BST from the preorder traversal <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_PreorderToBST>`_
+Impement a method which returns the least key strictly greater than a given key:
+`Preorder reconstruction <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
+
+Exercise 3.2.6 (Inginious)
+"""""""""""""""""""""""""""""
+
+Implement the reconstruction of a BST from the preorder traversal:
+`Preorder reconstruction <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_PreorderToBST>`_
+
+
+Exercise 3.2.7 (Inginious)
+"""""""""""""""""""""""""""""
+
+Implement the get/put operations of a BST with an array-based data-structure instead of linked nodes:
+`ArrayBST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
+
 
 
 
