@@ -21,7 +21,7 @@ on doubles (bits is a 64 bit array represented as a long):
 
 
 * Why not just use ``(int) bits`` (casting from long to int)? Hint: The reference book suggests that a good hash function should use all bits for its calculation. Why?
-* A double in Java is represented in 64 bits as :math:`(-1)^s \times 1,m \times 2^{(e - 1023)}`. The first bit :math:`s` is the sign, the next 11 bits represent the exponent in binary form and the last 52 bits represent the mantissa (decimal part) in binary form.  Do a positive decimal number and its opposite get different hash functions?
+* A double in Java is represented in 64 bits as :math:`(-1)^s \times m \times 2^{(e - 1023)}`. The first bit :math:`s` is the sign, the next 11 bits represent the exponent in binary form and the last 52 bits represent the mantissa (decimal part) in binary form.  Do a positive decimal number and its opposite get different hash functions?
 
 .. answer::
 
