@@ -1,45 +1,20 @@
-.. _part6_1:
+.. _part2_ex1:
 
-.. rubric:: Partie 6 | Graphes: parcours, arbres sous-tendants, et plus courts chemins
+Exercises A
+=======================================
 
-*************************************************************************************************
-Partie 6: Questions d'introduction
-*************************************************************************************************
-
-Objectifs
-=========
-
-À l'issue de cette partie, chaque étudiant sera capable de:
-
-* de *décrire* avec exactitude et précision les concepts présents au chapitre du livre de référence qui traite de *graphes*,
-* d'*évaluer* et *mettre en oeuvre* des représentations classiques de graphes,
-* de *choisir* une représentation adéquate d'un graphe en fonction des opérations à effectuer sur ce graphe,
-* de *mettre* en oeuvre des algorithmes de parcours et manipulation de graphes, en particulier
-    * depth et breadth first search:
-        * calcul de composantes connexes (le calcul des composantes fortement connexes ne fait pas partie de la matière)
-        * détection de cycle
-        * tri topologique
-    * calcul d'arbres sous tendant de poids minimum (Kruskal et Prim)
-    *  calcul de plus courts chemins (Dijkstra, Bellman-Ford)
+.. note::
+    You must complete these exercises by Wednesday of W12.
 
 
-A lire
-======
 
-Livre de référence:
-
-* chapitres 4.1, 4.2, 4.3, 4.4
-
-Exercices théoriques
-====================
-
-Exercice 6.1.1
+Exercise 6.1.1
 """"""""""""""
 
-Donnez plusieurs structures de données pouvant être utilisées pour représenter un graphe :math:`G` non dirigé
-comportant :math:`n` noeuds (vertex) et :math:`m` arcs (edges).
+Give several data structures that can be used to represent an undirected :math:`G` graph
+with :math:`n` nodes (vertex) and :math:`m` arcs (edges).
 
-Quelles sont les complexités des opérations élémentaires ``Iterable<Integer> adj(int v)`` et ``addEdge(int v, int w)``?
+What are the complexities of the elementary operations ``Iterable<Integer> adj(int v)`` and ``addEdge(int v, int w)``?
 
 .. answer::
 
@@ -74,35 +49,36 @@ Quelles sont les complexités des opérations élémentaires ``Iterable<Integer>
     ``HashMap<Integer,Integer>[]`` est dans la même veine le must have pour les graphes avec noeuds indexés par des
     entiers, et avec des poids entiers.
 
-Exercice 6.1.2
+Exercise 6.1.2
 """"""""""""""
 
-Un graphe est biparti si ses noeuds peuvent être divisés en deux ensembles disjoints de sorte qu'il n'existe pas d'arc
-entre deux noeuds du même ensemble.
+A graph is bipartite if its nodes can be divided into two disjoint sets so that there is no arc
+between two nodes of the same set.
 
-Proposez une méthode pour tester si un graphe est biparti et si oui qui trouverait une telle partition.
-Quelle est la complexité de votre algorithme? Hint: utilisez un DFS.
+Propose a method to test if a graph is bipartite and if so who would find such a partition.
+What is the complexity of your algorithm? Hint: use a DFS.
 
-.. answer::
+... answer::
 
-    Avec un DFS:
-    Tout les noeuds sont blancs initialement. On va colorer les noeuds en rouge ou en bleu.
-    On démarre en rouge.
-    A chaque fois qu'on croise un noeud:
+    With a DFS:
+    All nodes are white initially. We will color the nodes in red or blue.
+    We start in red.
+    Each time we cross a node:
 
-    - s'il est blanc, on le met à la couleur courante
-    - s'il est de la couleur courante, on ne fait rien
-    - s'il est de l'autre couleur, le graphe n'est pas biparti
-    - ensuite on change de couleur (de rouge vers bleu ou bleu vers rouge).
-    - on visite les voisins immédiats, récursivement.
+    - if it is white, we set it to the current color
+    - if it is the current color, we do nothing
+    - if it is of the other color, the graph is not bipartite
+    - then we change color (from red to blue or blue to red).
+    - we visit the immediate neighbors, recursively.
 
-    Si quand on a visité tout les noeuds on a pas détecté d'erreur, c'est que le graphe est biparti (! connexité initiale...)
+    If when we have visited all the nodes we have not detected any error, it means that the graph is bipartite (! initial connectivity...)
 
-Exercice 6.1.3
+
+Exercise 6.1.3
 """"""""""""""
 
-Prouvez que tout graphe connecté a un noeud dont le retrait (y compris des arcs incidents) ne déconnecterait pas le graphe.
-Ecrivez une méthode qui trouve un tel noeud. Hint: utilisez un DFS et le marquage des noeuds.
+Prove that any connected graph has a node whose removal (including incident arcs) would not disconnect the graph.
+Write a method that finds such a node. Hint: use a DFS and node marking.
 
 .. answer::
 
@@ -111,11 +87,14 @@ Ecrivez une méthode qui trouve un tel noeud. Hint: utilisez un DFS et le marqua
 
     Celui-ci peut donc être retiré.
 
-Exercice 6.1.4
-""""""""""""""
+Exercise 6.1.4 (Inginious)
+""""""""""""""""""""""""""""
 
-Soit un graphe :math:`G` non dirigé et sans poids dont les arcs représentent les déplacements élémentaires possibles d'un robot dans un labyrinthe au départ de toutes les positions possibles (noeuds). Etant donné la position courante et un noeud qui représente la sortie. Proposez une méthode pour trouver un chemin vers la sortie et qui minimise le nombre de déplacements élémentaires.
-Quelle est la complexité de votre méthode? Est-ce que cela dépend de l'implémentation du graphe (par exemple si c'est une matrice d'adjacence?)
+Let be an undirected and weightless graph :math:`G` whose arcs represent the possible elementary moves of a robot in a maze from all possible positions (nodes). 
+Given the current position and a node, implement method to find a path to the exit that minimizes the number of elementary moves: `Maze <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Maze>`_.
+What is the complexity of your method? Does it depend on the implementation of the graph (for example if it is an adjacency matrix?)
+
+
 
 .. answer::
 
@@ -126,15 +105,14 @@ Quelle est la complexité de votre méthode? Est-ce que cela dépend de l'implé
     Du coup, est-ce grave?
     Oui car généralement les graphes sont très sparse et donc :math:`m << n^2`
 
-Exercice 6.1.5
+Exercise 6.1.5
 """"""""""""""
 
-Le programme des cours de l'EPL donne pour chaque cours la liste des pré-requis de ces cours.
-Vous souhaitez vous assurer que tous les cours peuvent être pris, autrement dit qu'il n'existe pas de dépendance
-cyclique entre les cours.
+The EPL course syllabus lists the prerequisites for each course.
+You want to make sure that all courses can be taken, i.e. that there is no cycle of dependency between courses.
 
-Quelle méthode proposez-vous pour réaliser ce test?
-Quelle en est la complexité?
+What method do you propose to perform this test?
+What would be the time complexity of your method?
 
 .. answer::
 
@@ -177,20 +155,21 @@ Quelle en est la complexité?
     Il suffit de "sauvegarder" par quel noeud chaque noeud a été atteint, puis de remonter
     la liste chainée résultat de Y vers X.
 
-Exercice 6.1.6
+Exercise 6.1.6
 """"""""""""""
 
-Développez un algorithme de tri topologique (écrivez le code) qui maintient un tableau de la taille du nombre de
-noeud dont chaque entrée correspond au degré entrant de chaque noeud (in-degree).
-Votre algorithme maintient également une queue des *sources* (noeuds avec un in-degree de 0).
-Initialisez ces deux structures en une seule passe sur toutes les edges.
-Ensuite réalisez les opérations suivantes jusqu'à ce que la queue des sources devienne vide:
+Develop (write the code) a topological sorting algorithm for a directed graph that maintains an array of the size of the number of
+nodes with each entry corresponding to the in-degree of each node.
+Your algorithm also maintains a queue of *sources* (nodes with an in-degree of 0).
+Initialize these two structures in a single pass on all edges.
+Then perform the following operations until the source queue becomes empty:
 
-* retirez une source de la queue et marquez la.
-* décrémentez les in-degree des destinations adjacentes du noeud marqué à l'étape précédente.
-* si le in-degree d'un noeud devient 0, il faut l'insérer dans la queue des sources.
+* remove a source from the queue and mark it.
+* decrement the in-degree of the adjacent destinations of the node marked in the previous step.
+* if the in-degree of a node becomes 0, insert it in the source queue.
 
-Est-il-possible au passage de détecter si le tri topologique est unique? Quelle est la complexité de votre algorithme?
+Is it possible to detect whether the topological sort is unique? 
+What is the time complexity of your algorithm?
 
 .. answer::
 
@@ -250,17 +229,17 @@ Est-il-possible au passage de détecter si le tri topologique est unique? Quelle
             todo = nextTodo;
         }
 
-Exercice 6.1.7
+Exercise 6.1.7
 """"""""""""""
 
-Soit :math:`G(V,E)` un graphe non dirigé avec poids sur lequel a été calculé un minimum spanning tree.
-Ensuite :math:`k` arcs ont été retirés aléatoirement de ce MST.
-Écrivez une méthode pour retrouver un MST au départ du MST partiel.
-Le MST final ne doit pas nécessairement être identique à l'original, seuls les :math:`V-1-k` arcs restants doivent
-au minimum s'y trouver.
+Let :math:`G(V,E)` be an undirected graph with weights on which a minimum spanning tree has been computed.
+Then :math:`k` arcs have been randomly removed from this MST.
+Write a method to retrieve an MST from the partial MST.
+The final MST does not have to be identical to the original, only the remaining :math:`V-1-k` arcs must
+at least be present.
 
-Sur quelle(s) propriété(s) importante(s) des MST se base votre algorithme?
-Quelle est la complexité de votre méthode?
+On what important property(ies) of MSTs is your algorithm based?
+What is the complexity of your method?
 
 .. answer::
 
@@ -277,13 +256,14 @@ Quelle est la complexité de votre méthode?
     que tout les algorithmes trouvent toujours une solution optimale à partir de n'importe quelle solution partielle
     i.e. ils sont greedy.
 
-Exercice 6.1.8
+Exercise 6.1.8
 """"""""""""""
 
-Soit :math:`G(V,E)` un graphe non dirigé avec poids sur lequel a été calculé un minimum spanning tree.
-L'edge :math:`e \in E` de poids :math:`w` ne fait pas partie de ce MST.
-Pouvez-vous recalculer un MST qui inclurait :math:`e` en adaptant le MST de départ? Décrivez votre algorithme (code).
-Quelle en est la complexité? Hint: DFS sur le MST de départ.
+Let :math:`G(V,E)` be an undirected graph with weight on which a minimum spanning tree has been computed.
+The edge :math:`e \in E` of weight :math:`w` is not part of this MST.
+Can you recompute an MST that would include :math:`e` by adapting the original MST? Describe your algorithm (code).
+What is the time complexity? Hint: DFS on the original MST.
+
 
 .. answer::
 
@@ -297,11 +277,11 @@ Quelle en est la complexité? Hint: DFS sur le MST de départ.
     Il suffit de voir que si on démarrait avec les deux noeuds liés à :math:`e` fusionné, l'arbre obtenu
     ici est bien un MST.
 
-Exercice 6.1.9
+Exercise 6.1.9
 """"""""""""""
 
-Est-ce que ``java.util.PriorityQueue`` pourrait être utilisée pour implémenter efficacement Dijkstra?
-Si-non pourquoi? Que serait la complexité si on souhait utiliser cette file de priorité?
+Could ``java.util.PriorityQueue`` be used to effectively implement Dijkstra?
+If not, why not? What would be the complexity of using this priority queue?
 
 .. answer::
 
@@ -331,12 +311,12 @@ Si-non pourquoi? Que serait la complexité si on souhait utiliser cette file de 
 
     On a donc la même complexité!
 
-Exercice 6.1.10
+Exercise 6.1.10
 """""""""""""""
 
-Expliquez pourquoi DijkstraSP ne permet pas de gérer les arcs avec un poids négatif?
-Est-ce que le résultat serait faux ou est-ce que la complexité ne serait plus garantie?
-Montrez un exemple d'input qui illustre le problème.
+Explain why DijkstraSP does not support arcs with negative weight?
+Would the result be wrong or would the complexity no longer be guaranteed?
+Show an example of input that illustrates the problem.
 
 .. answer::
 
@@ -353,17 +333,17 @@ Montrez un exemple d'input qui illustre le problème.
     Si on laisse l'algo se "corriger" et recommencer à explorer de C, on peut créer des cas où la complexité
     devient exponentielle.
 
-Exercice 6.1.11
+Exercise 6.1.11
 """""""""""""""
 
-Soit :math:`G` un graphe avec des poids potentiellement négatif mais il n'y a pas de cycle négatif.
-Je cherche le chemin le plus court entre un noeud :math:`u` et un noeuds :math:`v`.
-J'ai à ma disposition une implémentation de Dijkstra qui ne permet pas de gérer les poids négatifs.
-Il me suffit dès lors d'augmenter tous les poids d'une même quantité correspondant a la valeur absolue du plus petit
-poids et d'appliquer Dijkstra sur ce graphe.
-Cette méthode est-elle valable?
-Si oui, prouvez le.
-Si non, montrez un contre exemple.
+Let :math:`G` be a graph with potentially negative weights but there is no negative cycle.
+I am looking for the shortest path between a :math:`u` node and a :math:`v` node.
+I have at my disposal an implementation of Dijkstra which does not allow to manage negative weights.
+So I just have to increase all the weights by the same amount corresponding to the absolute value of the smallest weight and apply Dijkstra to the
+and to apply Dijkstra on this graph.
+Is this method valid?
+If yes, prove it.
+If not, show a counter example.
 
 .. answer::
 
@@ -373,26 +353,76 @@ Si non, montrez un contre exemple.
 
     Est-ce que ça marche ici?
 
-Exercice 6.1.12
+Exercise 6.1.12
 """""""""""""""
 
-Soit :math:`G` un graphe avec des poids positifs. Je cherche le chemin le plus long entre un noeud :math:`u` et un noeuds :math:`v`.
-J'ai à ma disposition l'implémentation de Bellman-Ford (qui supporte les poids négatifs).
-Il me suffit dès lors de calculer le plus court chemin sur le même graphe avec l'opposé des poids.
-Est-ce que cette méthode est valable? Si non pouvez-vous proposer une méthode pour le calcul de plus long chemin?
-Votre méthode s'applique-t-elle à tous les graphes? Si non quels-types particuliers de graphes peut-elle gérer?
+Let :math:`G` be a graph with positive weights. I am looking for the longest path between a :math:`u` node and a :math:`v` node.
+I have at my disposal the Bellman-Ford implementation (which supports negative weights).
+I just need to compute the shortest path on the same graph with the opposite weights.
+Is this method valid? If not, can you propose a method to compute the longest path?
+Does your method apply to all graphs? If not, what particular types of graphs can it handle?
 
 .. answer::
 
     Ca marche ssi le graphe original est un DAG (et que donc il ne forme pas de cycle négatifs en faisant l'opposé des poids).
 
-Exercices d'implémentation sur INGInious
-==========================================
 
-1. `Implem BFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6BreadthFirstPaths>`_
-2. `Implem DFS <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DepthFirstPaths>`_
-3. `Implem composantes connexes <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6ConnectedComponents>`_
-4. `Implem Global Warming <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6GlobalWarming>`_
-5. `Implem Digraph <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Digraph>`_
-6. `Implem Shortest Path Puzzle <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6DijkstraForWordTransformation>`_
-7. `Implem Shortest Path Maze <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part6Maze>`_
+
+Exercise 6.1.13 (Inginious)
+"""""""""""""""""""""""""""
+
+Implement a
+`Digraph Data Structure <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Digraph>`_
+
+
+
+Exercise 6.1.14 (Inginious)
+"""""""""""""""""""""""""""
+
+Implement a
+`Depth First Search <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_DepthFirstPaths>`_
+
+
+Exercise 6.1.15 (Inginious)
+"""""""""""""""""""""""""""
+
+Implement the computation of the number of connected components in a Graph:
+`ConnectedComponents <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_ConnectedComponents>`_
+
+
+
+Exercise 6.1.16 (Inginious)
+"""""""""""""""""""""""""""
+
+A programming exercise on finding
+the the relations to forbid in a contact network
+to satisfy the belgian covid rules:
+`Covid bubbles  <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Bubbles>`_
+
+
+Exercise 6.1.17 (Inginious)
+"""""""""""""""""""""""""""
+
+A programming exercise on BFS from multiple sources:
+`BFS multiple sources <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_BreadthFirstShortestPaths>`_
+
+
+
+Exercise 6.1.18 (Inginious)
+"""""""""""""""""""""""""""
+
+A programming exercise on shortest path in an implicit graph:
+`Global Warming Path <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarmingPaths>`_
+
+
+Exercise 6.1.19 (Inginious)
+"""""""""""""""""""""""""""
+
+A programming exercise on connected components in an implicit graph:
+`Global Warming Island <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming>`_
+
+
+
+
+
+
