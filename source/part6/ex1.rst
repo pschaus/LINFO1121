@@ -16,6 +16,7 @@ with :math:`n` nodes (vertex) and :math:`m` arcs (edges).
 
 What are the complexities of the elementary operations ``Iterable<Integer> adj(int v)`` and ``addEdge(int v, int w)``?
 
+
 .. answer::
 
     .. list-table:: Résumé des différentes implémentations
@@ -58,7 +59,7 @@ between two nodes of the same set.
 Propose a method to test if a graph is bipartite and if so who would find such a partition.
 What is the complexity of your algorithm? Hint: use a DFS.
 
-... answer::
+.. answer::
 
     With a DFS:
     All nodes are white initially. We will color the nodes in red or blue.
