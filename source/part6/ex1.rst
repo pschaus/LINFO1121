@@ -419,11 +419,8 @@ A programming exercise on shortest path in an implicit graph:
 Exercise 6.1.19 (Inginious)
 """""""""""""""""""""""""""
 
-A programming exercise on connected components in an implicit graph:
+Revisit your computation of the number of islands but this time using DFS rather than union-find
 `Global Warming Island <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming>`_
-
-
-
 
 
 

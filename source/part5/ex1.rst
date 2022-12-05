@@ -226,7 +226,7 @@ Exercise 5.1.13 (Inginious, Global Warming)
 """"""""""""""""""""""""""""""""""""""""""""""
 
 
-Implement the Global Warming to compute the number of islands using union-find `GlobalWarmming <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_GlobalWarmingImpl>`_
+Implement the Global Warming to compute the number of islands using union-find `GlobalWarmming <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming>`_
 
 
 Exercise 5.1.14 (Inginious, Huffman)
