@@ -27,7 +27,7 @@ Therefore, it is imperative that students work from home:
 
 The course uses the *Java* language and more specifically the Java8_ version.
 The recommended IDE for this course and available for the exam is IntelliJ_.
-We will also use the Junit4_ tool to perform unit tests.
+We will also use the Junit5_ tool to perform unit tests.
 It is strongly recommended that you familiarize yourself with these tools in preparation for the exam.
 
 
@@ -35,7 +35,7 @@ It is strongly recommended that you familiarize yourself with these tools in pre
 .. _Java8: https://docs.oracle.com/javase/8/docs/api
 .. _IntelliJ: https://www.jetbrains.com/idea/
 .. _INGInious: https://inginious.info.ucl.ac.be
-.. _JUnit4: https://junit.org/junit5/
+.. _JUnit5: https://junit.org/junit5/
 
 
 
