@@ -32,10 +32,10 @@ It is strongly recommended that you familiarize yourself with these tools in pre
 
 
 
-.. _Java8: https://docs.oracle.com/javase/8/docs/api.
+.. _Java8: https://docs.oracle.com/javase/8/docs/api
 .. _IntelliJ: https://www.jetbrains.com/idea/
 .. _INGInious: https://inginious.info.ucl.ac.be
-.. _JUnit4: https://junit.org/junit4/.
+.. _JUnit4: https://junit.org/junit5/
 
 
 

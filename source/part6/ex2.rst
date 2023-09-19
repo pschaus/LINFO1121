@@ -41,7 +41,7 @@ We assume that the graph G is connected.
 Exercise 6.2.4 (Maximization of minimum weight)
 """""""""""""""""""""""""""""""""""""""""""""""""
 
-Let G be a directed and positively weighted graph.
+Let G be a undirected and positively weighted graph.
 Given an origin S, we want to find a path to each node that maximizes *the minimum edge weight on this path*.
 
 
