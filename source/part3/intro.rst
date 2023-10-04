@@ -18,11 +18,11 @@ Reference book:
 * Chapters 3.1, 3.2 and 3.3
 
 
-Slides (keynote)
+.. Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/0XRcJhjLaXKDgGXmYP_obsvtQ#part3-intro>`_
-* `Intermediate Session <https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises>`_ 
-* `Restructuring <https://www.icloud.com/keynote/06MTKLmzIm6CiPon3fChb2vbA#part3-bilane>`_
+.. * `Introduction <https://www.icloud.com/keynote/0XRcJhjLaXKDgGXmYP_obsvtQ#part3-intro>`_
+.. * `Intermediate Session <https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises>`_ 
+.. * `Restructuring <https://www.icloud.com/keynote/06MTKLmzIm6CiPon3fChb2vbA#part3-bilane>`_
 
 .. raw:: html
 

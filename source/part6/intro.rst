@@ -27,8 +27,8 @@ Reference book:
 
 
 
-Slides (keynote)
+.. Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/0ICOAb5mCaM2Uexx64Vc5Vpaw#part6-intro>`_ 
-* `Séance Intermédiaire <https://www.icloud.com/keynote/0hNMe6ICO2e9Yqs9mCf8w3v5Q#part6-exercises>`_ 
-* `Restructuration <https://www.icloud.com/keynote/0kvkcWCUrTWXpp5kqAyCFPsAQ#part6-bilan>`_ 
+.. * `Introduction <https://www.icloud.com/keynote/0ICOAb5mCaM2Uexx64Vc5Vpaw#part6-intro>`_ 
+.. * `Séance Intermédiaire <https://www.icloud.com/keynote/0hNMe6ICO2e9Yqs9mCf8w3v5Q#part6-exercises>`_ 
+.. * `Restructuration <https://www.icloud.com/keynote/0kvkcWCUrTWXpp5kqAyCFPsAQ#part6-bilan>`_ 

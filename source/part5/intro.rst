@@ -18,8 +18,8 @@ Reference book:
 * chapter 1.5 (union find), 2.4 (heap), 5.5 (Huffman compression).
 
 
-Slides (keynote)
+.. Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/0kZvMH6djI5t45YFxQ2xzSfog#part5-intro>`_ 
-* `Intermediate Session <https://www.icloud.com/keynote/0CjZEjoEFtp6VH7XyVSlWLXGQ#part5-exerises>`_ 
-* `Restructuring <https://www.icloud.com/keynote/0TR23WOD7cI2jGI9oH3KVOocQ#part5-bilan>`_ 
+.. * `Introduction <https://www.icloud.com/keynote/0kZvMH6djI5t45YFxQ2xzSfog#part5-intro>`_ 
+.. * `Intermediate Session <https://www.icloud.com/keynote/0CjZEjoEFtp6VH7XyVSlWLXGQ#part5-exerises>`_ 
+.. * `Restructuring <https://www.icloud.com/keynote/0TR23WOD7cI2jGI9oH3KVOocQ#part5-bilan>`_ 

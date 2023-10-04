@@ -23,9 +23,9 @@ Reference book:
 
 Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/0bRuyaeN9Z63bppq_yWw_RD1Q#part2-intro>`_ 
-* `Feedback part A <https://www.icloud.com/keynote/0dFFN4hYyXJPWF2OoxCz0TpYA#part2-exercises>`_ 
-* `Restructuration <https://www.icloud.com/keynote/0ApmboQix6cyNZZ7i6xenxUzA#part2-bilan>`_ 
+.. * `Introduction <https://www.icloud.com/keynote/0bRuyaeN9Z63bppq_yWw_RD1Q#part2-intro>`_ 
+.. * `Feedback part A <https://www.icloud.com/keynote/0dFFN4hYyXJPWF2OoxCz0TpYA#part2-exercises>`_ 
+.. * `Restructuration <https://www.icloud.com/keynote/0ApmboQix6cyNZZ7i6xenxUzA#part2-bilan>`_ 
 
 
 .. raw:: html

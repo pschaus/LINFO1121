@@ -28,11 +28,13 @@ Reference book:
 As well as this document summarizing the different notations of :ref:`part1complexity`.
 
 
-Slides (keynote)
+.. Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_ 
-* `Feedback part A <https://www.icloud.com/keynote/037KCYIeXbULVFGRo7xLiY8fA#part1-exercises>`_ 
-* `Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_ 
+
+
+.. * `Introduction <https://www.icloud.com/keynote/0jTHGv9VcBJNqr701X0LiSSeQ#part1-intro>`_ 
+.. * `Feedback part A <https://www.icloud.com/keynote/037KCYIeXbULVFGRo7xLiY8fA#part1-exercises>`_ 
+.. * `Restructuration <https://www.icloud.com/keynote/0C9qyvWomr8eHMmHUELTMbC7A#part1-bilan>`_ 
 
 
 .. raw:: html
