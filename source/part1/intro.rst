@@ -28,6 +28,9 @@ Reference book:
 As well as this document summarizing the different notations of :ref:`part1complexity`.
 
 
+* `Slides <../_static/slides/part1-bilan.pdf>`_
+
+
 .. Slides (keynote)
 
 
