@@ -20,8 +20,8 @@ Reference book:
 * chapter 3.4, 3.5, 5.3 (Rabin-Karp fingerprint search only). 
 
 
-Slides (keynote)
+.. Slides (keynote)
 
-* `Introduction <https://www.icloud.com/keynote/060axAx-WvIieFjqV9nvebAoQ#part4-intro>`_ 
-* `Intermediate Session <https://www.icloud.com/keynote/0TixMvOD8GNdrZKROHyYUiXfw#part4-bilan>`_ 
-* `Restructuring <https://www.icloud.com/keynote/0LwjcO8rozlr-a4jzmTvWMNww#part-4-bilan>`_ 
+.. * `Introduction <https://www.icloud.com/keynote/060axAx-WvIieFjqV9nvebAoQ#part4-intro>`_ 
+.. * `Intermediate Session <https://www.icloud.com/keynote/0TixMvOD8GNdrZKROHyYUiXfw#part4-bilan>`_ 
+.. * `Restructuring <https://www.icloud.com/keynote/0LwjcO8rozlr-a4jzmTvWMNww#part-4-bilan>`_ 

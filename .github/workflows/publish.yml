@@ -3,7 +3,7 @@ name: Build PDFs and html files
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -12,8 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Sphinx build
-      env:
-        AUTHORIZATION: ${{ secrets.DROPBOX_AUTHORIZATION }}
       run: ./build_github.sh
     - name: Save build in /tmp
       run: |
