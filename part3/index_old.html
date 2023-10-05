@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partie 3 | Arbres de recherche &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partie 3 | Arbres de recherche</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="partie-3-arbres-de-recherche">
+<span id="part3"></span><h1>Partie 3 | Arbres de recherche<a class="headerlink" href="#partie-3-arbres-de-recherche" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="objectifs">
+<h2>Objectifs<a class="headerlink" href="#objectifs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A l’issue de cette partie chaque étudiant sera capable de:</p>
+<ul class="simple">
+<li><p>de décrire avec exactitude et précision les concepts d’arbres binaires de recherche et de table de symboles ordonnée;</p></li>
+<li><p>de mettre en oeuvre des algorithmes basés sur les arbres de recherche;</p></li>
+<li><p>d’évaluer et mettre en oeuvre des représentations classiques d’arbres de recherche;</p></li>
+</ul>
+</div>
+<div class="section" id="a-lire">
+<h2>A lire<a class="headerlink" href="#a-lire" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Livre de référence:</p>
+<ul class="simple">
+<li><p>Chapitres 3.1, 3.2 et 3.3</p></li>
+</ul>
+<p>Slides (keynote)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.icloud.com/keynote/0XRcJhjLaXKDgGXmYP_obsvtQ#part3-intro">Introduction</a></p></li>
+<li><p><a class="reference external" href="https://www.icloud.com/keynote/0ci2fEeuSuJLs64Uy5lYXBi_g#part3-exercises">Séance Intermédiaire</a>  (attention celle-ci sera faite en même temps que la restructuration en S7)</p></li>
+<li><p><a class="reference external" href="https://www.icloud.com/keynote/06MTKLmzIm6CiPon3fChb2vbA#part3-bilane">Restructuration</a></p></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PJWVL15ntl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="exercices-theoriques-premiere-partie">
+<h2>Exercices théoriques: première partie<a class="headerlink" href="#exercices-theoriques-premiere-partie" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous devez faire ces exercices pour le mercredi de S6.</p>
+</div>
+<div class="section" id="exercice-3-1-1">
+<h3>Exercice 3.1.1<a class="headerlink" href="#exercice-3-1-1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Laquelle des deux implémentations <cite>SequentialSearchST</cite> ou <cite>BinarySearchST</cite> utiliseriez vous pour une application
+qui réalise <span class="math notranslate nohighlight">\(10^3\)</span> <cite>put()</cite> et <span class="math notranslate nohighlight">\(10^6\)</span> <cite>get()</cite> dans un ordre aléatoire? Justifiez.</p>
+</div>
+<div class="section" id="exercice-3-1-2">
+<h3>Exercice 3.1.2<a class="headerlink" href="#exercice-3-1-2" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Implémentez la méthode <cite>floor()</cite> de <cite>BinarySearchST</cite>.</p>
+</div>
+<div class="section" id="exercice-3-1-3">
+<h3>Exercice 3.1.3<a class="headerlink" href="#exercice-3-1-3" title="Lien permanent vers ce titre">¶</a></h3>
+<p><em>Exercice 3.1.24 du livre</em>.</p>
+<p>En supposant que les clefs soient des doubles ou des entiers. Écrivez une version de la recherche binaire qui supposant
+une répartition uniforme des clefs va d’abord chercher au début d’un dictionnaire un mot qui commence par une lettre
+proche du début d’alphabet.</p>
+<p>Plus exactement, si la clef recherchée est <span class="math notranslate nohighlight">\(k_x\)</span>, et que la plus petite clef est <span class="math notranslate nohighlight">\(k_{lo}\)</span> et la plus grande
+est <span class="math notranslate nohighlight">\(k_{hi}\)</span>, cherchez d’abord au pourcentile <span class="math notranslate nohighlight">\(\lfloor(k_x-k_{lo})/(k_{hi}-k_{lo}) \rfloor * 100\)</span> du tableau
+et pas au milieu (pourcentile 50) du tableau d’abord.</p>
+<p>Implémentez <cite>InterpolationSearchST</cite> et comparez celle-ci sur <cite>FrequencyCounter</cite>.</p>
+</div>
+<div class="section" id="exercice-3-1-4">
+<h3>Exercice 3.1.4<a class="headerlink" href="#exercice-3-1-4" title="Lien permanent vers ce titre">¶</a></h3>
+<p><em>Exercice 3.1.25 du livre</em>.</p>
+<p>Il est très fréquent de tester d’abord la présence d’une clef avant d’ajouter ou modifier l’entrée correspondante. Cela
+engendre successivement plusieurs recherches consécutives de la même clef.</p>
+<p>L’idée du <em>caching</em> est de mémoriser en interne la dernière clef accédée
+et de l’utiliser de manière opportuniste si celle-ci est toujours valide.
+Modifiez <cite>BinarySearchST</cite> pour y intégrer cette idée.</p>
+</div>
+<div class="section" id="exercice-3-1-5">
+<h3>Exercice 3.1.5<a class="headerlink" href="#exercice-3-1-5" title="Lien permanent vers ce titre">¶</a></h3>
+<p><em>Exercice 3.2.31 du livre</em>.</p>
+<p>Écrivez une méthode <cite>isBST()</cite> qui prend un <cite>Node</cite> comme argument et qui retourne <cite>true</cite> si l’argument est la racine
+d’un BST, <cite>false</cite> sinon (il faut donc vérifier que les propriétés d’un BST sont satisfaites).</p>
+<p>Est-ce que vérifier (localement) si pour chaque noeud la propriété <em>« le fils gauche a une clef inférieure et le fils
+droit une clef supérieure »</em> est suffisant? Si non donnez un contre-exemple.</p>
+<p>Quelle est la complexité de votre algorithme ?</p>
+</div>
+<div class="section" id="exercice-3-1-6">
+<h3>Exercice 3.1.6<a class="headerlink" href="#exercice-3-1-6" title="Lien permanent vers ce titre">¶</a></h3>
+<p><em>Exercice 3.2.4 du livre</em>.</p>
+<p>Supposons qu’un certain arbre de recherche possède des clefs entre 1 et 10 et que nous cherchions la clef 5.
+Quelle(s) séquence(s) ne peut pas correspondre à la séquence des clefs examinées?</p>
+<ul class="simple">
+<li><p>10,9,8,7,6,5</p></li>
+<li><p>4,10,8,6,5</p></li>
+<li><p>1,10,2,9,3,8,4,7,6,5</p></li>
+<li><p>2,7,3,8,4,5</p></li>
+<li><p>1,2,10,4,8,5</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-3-1-7">
+<h3>Exercice 3.1.7<a class="headerlink" href="#exercice-3-1-7" title="Lien permanent vers ce titre">¶</a></h3>
+<p><em>Exercice 3.3.33 du livre</em>.</p>
+<p>Écrivez une méthode <cite>is23()</cite> dans <cite>RedBlackBST</cite> qui vérifie qu’aucun noeud n’est connecté
+à deux liens rouges et qu’il n’y a pas de lien rouge vers la droite.
+Écrivez aussi une méthode <cite>isBalanced()</cite> qui vérifie que tout chemin depuis la racine vers vers un lien null a le
+même nombre de liens noirs. Finalement combinez <cite>isBST(),is23()</cite> et <cite>isBalanced()</cite> pour implémenter <cite>isRedBlackBST()</cite>.</p>
+</div>
+<div class="section" id="exercice-3-1-8">
+<h3>Exercice 3.1.8<a class="headerlink" href="#exercice-3-1-8" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Comment faire pour énumérer en ordre croissant toutes les clés mémorisées
+dans un arbre binaire de recherche ? Quelle est la complexité temporelle de
+cette opération ? Justifiez votre réponse.</p>
+</div>
+<div class="section" id="exercice-3-1-9">
+<h3>Exercice 3.1.9<a class="headerlink" href="#exercice-3-1-9" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Partant d’un arbre binaire de recherche initialement vide, comment se présente l’arbre
+après y avoir inséré les clés 12, 5, 10, 3, 13, 14, 15, 17, 18, 15 ? Pour les mêmes données comment se présenterait
+l’arbre finalement obtenu s’il s’agissait d’un 2-3 arbre ?</p>
+<p>Cet exemple illustre-t-il les avantages ou inconvénients de ces différentes structures de données ? Pourquoi ?</p>
+</div>
+<div class="section" id="exercice-3-1-10">
+<h3>Exercice 3.1.10<a class="headerlink" href="#exercice-3-1-10" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Lequel ou lesquels de ces arbres est(sont) red-black? Pour chacun, dessiner la correspondance vers un 2-3 tree
+(décrite p432).</p>
+<img alt="Arbres" src="../_images/rbtree.png" />
+</div>
+</div>
+<div class="section" id="exercices-sur-inginious">
+<h2>Exercices sur Inginious<a class="headerlink" href="#exercices-sur-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous devez faire ces exercices pour le mercredi de S7.</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3WriteUnittestsRedBlackTree">Unit tests redblack</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm">QCM Complexite</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3QcmBt">QCM Traversal</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Rbt">Exercice redblack</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Bst">Implémentation de ceil</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/admin/LSINF1121-2016/edit/task/PART3OrderedBstIterator">Implémentation d un iterateur sur un BST</a></p></li>
+</ol>
+</div>
+<div class="section" id="exercices-theoriques-deuxieme-partie">
+<h2>Exercices théoriques: deuxième partie<a class="headerlink" href="#exercices-theoriques-deuxieme-partie" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous devez faire ces exercices pour le mercredi de S7.</p>
+</div>
+<div class="section" id="exercice-3-2-1">
+<h3>Exercice 3.2.1<a class="headerlink" href="#exercice-3-2-1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Vrai ou faux ?</p>
+<p>Remarque: BST s’entend ici comme l’implémentation du livre, c’est-à-dire un arbre qui n’est pas nécessairement équilibré.
+Les 2-3/red-black BST s’entendent également comme étant celles du livre de référence.</p>
+<p>Nous recommandons de vous familiariser préalablement avec les notions de <a class="reference external" href="https://fr.wikipedia.org/wiki/Arbre_binaire#Parcours_préfixe">parcours d’arbres</a>: infixe, préfixe et postfixe.</p>
+<ul class="simple">
+<li><p>Dans le meilleur des cas, le nombre de comparaisons entre clefs pour une recherche binaire d’une clef particulière dans un tableau trié de N clefs distinctes est <span class="math notranslate nohighlight">\(\sim \log N\)</span>.</p></li>
+<li><p>Étant donné un parcours infixe d’un BST contenant N clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d’un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.</p></li>
+<li><p>Étant donné un parcours préfixe d’un BST contenant <span class="math notranslate nohighlight">\(N\)</span> clefs distinctes. Est-il possible de reconstruire la forme du BST sur base du résultat du parcours ? Si oui, écrivez le pseudo-code d’un algorithme pour le faire, si non, donnez un contre-exemple qui justifie votre réponse.</p></li>
+<li><p>Étant donné un arbre ordonné de <span class="math notranslate nohighlight">\(N\)</span> clefs distinctes et une clef <span class="math notranslate nohighlight">\(x\)</span>, est-il possible de trouver la plus petite clef strictement plus grande que <span class="math notranslate nohighlight">\(x\)</span> en temps logarithmique dans le pire cas?</p></li>
+<li><p>La hauteur attendue d’un BST résultant de l’insertion de N clefs distinctes dans un ordre aléatoire dans un arbre initialement vide est en moyenne logarithmique.</p></li>
+<li><p>Soit <span class="math notranslate nohighlight">\(x\)</span> un noeud dans un BST. Le successeur de <span class="math notranslate nohighlight">\(x\)</span> (le noeud contenant la clef suivante dans l’ordre croissant) est le noeud le plus à gauche dans l’arbre de droite de <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>La hauteur maximum d’un 2-3 tree avec N clefs est <span class="math notranslate nohighlight">\(\sim \log_3 N\)</span></p></li>
+<li><dl class="simple">
+<dt>Pour l’insertion de N clefs dans l’ordre croissant dans un red-black BST initialement vide. Le nombre de changements de couleur de la dernière insertion est au plus 3.</dt><dd><p>Le nombre de changements s’entend comme la somme des différences en valeur absolue entre le nombre de rouges après insertion moins le nombre de rouges avant insertion.</p>
+</dd>
+</dl>
+</li>
+<li><p>Un red-black BST obtenu après insertion de <span class="math notranslate nohighlight">\(N &gt; 1\)</span> clefs dans un arbre initialement vide possède au moins un lien rouge ? Si non, donnez un contre-exemple.</p></li>
+<li><p>Dans un red-black BST de N noeuds, la hauteur noire (i.e. le nombre de liens noirs de chaque chemin depuis la racine vers un lien null) est maximum <span class="math notranslate nohighlight">\(\log N\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-3-2-2">
+<h3>Exercice 3.2.2<a class="headerlink" href="#exercice-3-2-2" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Imaginez un algorithme de tri utilisant un BST. A quoi ressemblerait cet algorithme ?
+Quelle serait la complexité de votre algorithme si le BST est remplacé par un red-black BST ?</p>
+</div>
+<div class="section" id="exercice-3-2-3">
+<h3>Exercice 3.2.3<a class="headerlink" href="#exercice-3-2-3" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Est-ce que l’opération de suppression dans un BST est « commutative » ?
+C’est à dire que supprimer <span class="math notranslate nohighlight">\(x\)</span> et ensuite directement <span class="math notranslate nohighlight">\(y\)</span> d’un BST (tel qu’implémenté dans le livre)
+laisse l’arbre dans même état que si on avait d’abord supprimé <span class="math notranslate nohighlight">\(y\)</span>  et puis <span class="math notranslate nohighlight">\(x\)</span> ?
+Donner un contre-exemple ou argumenter pourquoi c’est effectivement toujours le cas.
+Pour vous aider, considérez l’arbre suivant et les opérations de suppression de 5 et 10.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  10
+ / \
+5   15
+   /
+  11
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Partie 3 | Arbres de recherche</a><ul>
+<li><a class="reference internal" href="#objectifs">Objectifs</a></li>
+<li><a class="reference internal" href="#a-lire">A lire</a></li>
+<li><a class="reference internal" href="#exercices-theoriques-premiere-partie">Exercices théoriques: première partie</a><ul>
+<li><a class="reference internal" href="#exercice-3-1-1">Exercice 3.1.1</a></li>
+<li><a class="reference internal" href="#exercice-3-1-2">Exercice 3.1.2</a></li>
+<li><a class="reference internal" href="#exercice-3-1-3">Exercice 3.1.3</a></li>
+<li><a class="reference internal" href="#exercice-3-1-4">Exercice 3.1.4</a></li>
+<li><a class="reference internal" href="#exercice-3-1-5">Exercice 3.1.5</a></li>
+<li><a class="reference internal" href="#exercice-3-1-6">Exercice 3.1.6</a></li>
+<li><a class="reference internal" href="#exercice-3-1-7">Exercice 3.1.7</a></li>
+<li><a class="reference internal" href="#exercice-3-1-8">Exercice 3.1.8</a></li>
+<li><a class="reference internal" href="#exercice-3-1-9">Exercice 3.1.9</a></li>
+<li><a class="reference internal" href="#exercice-3-1-10">Exercice 3.1.10</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercices-sur-inginious">Exercices sur Inginious</a></li>
+<li><a class="reference internal" href="#exercices-theoriques-deuxieme-partie">Exercices théoriques: deuxième partie</a><ul>
+<li><a class="reference internal" href="#exercice-3-2-1">Exercice 3.2.1</a></li>
+<li><a class="reference internal" href="#exercice-3-2-2">Exercice 3.2.2</a></li>
+<li><a class="reference internal" href="#exercice-3-2-3">Exercice 3.2.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partie 3 | Arbres de recherche</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

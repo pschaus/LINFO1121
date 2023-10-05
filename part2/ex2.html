@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises B &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Part 3 | Search Trees" href="../part3/index.html" />
+    <link rel="prev" title="Exercises A" href="ex1.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../part3/index.html" title="Part 3 | Search Trees"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 2 |  Sorting and Properties of Sorted Sets</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-b">
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W5.</p>
+</div>
+<div class="section" id="exercise-2-2-1-inginious">
+<h2>Exercise 2.2.1 (Inginious)<a class="headerlink" href="#exercise-2-2-1-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals. We consider that the input intervals are given in the form of two arrays <cite>int[] min, int[] max;</cite> where the ith interval is given by <code class="docutils literal notranslate"><span class="pre">(min[i],max[i])</span></code> . Example input <code class="docutils literal notranslate"><span class="pre">min=[5,0,1,6,2]</span></code> <code class="docutils literal notranslate"><span class="pre">max=[7,2,2,8,3]</span></code> would output <code class="docutils literal notranslate"><span class="pre">min=[0,5]</span> <span class="pre">,max=[3,8]</span></code>.
+Write the pseudocode. How complex is your method?</p>
+<p>Solve the corresponding taks on Inginious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Union">Union intervals</a></p>
+</div>
+<div class="section" id="exercise-2-2-2">
+<h2>Exercise 2.2.2<a class="headerlink" href="#exercise-2-2-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>You need to sort a large array that has the property that it only contains values in the set <code class="docutils literal notranslate"><span class="pre">{0,1,2}</span></code>.
+What sorting algorithm do you suggest? Write the code.
+How complex will it be to sort the array? Discuss this complexity with respect to the lower bound of a sorting algorithm (Proposition 1 pages 280-281).</p>
+</div>
+<div class="section" id="exercise-2-2-3">
+<h2>Exercise 2.2.3<a class="headerlink" href="#exercise-2-2-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>The mode of a table of numbers is the number that appears most frequently in the table. For example (4,6,2,4,3,1) has mode 4. Give an efficient algorithm to calculate the mode of an array of <span class="math notranslate nohighlight">\(n\)</span> numbers. What if we know that the array only contains values from 0 to <span class="math notranslate nohighlight">\(k\)</span>?</p>
+</div>
+<div class="section" id="exercise-2-2-4">
+<h2>Exercise 2.2.4<a class="headerlink" href="#exercise-2-2-4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Given two sets <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> (each of size <span class="math notranslate nohighlight">\(n\)</span>), and a number <span class="math notranslate nohighlight">\(x\)</span>. Describe an efficient algorithm to find if there is a pair <span class="math notranslate nohighlight">\((a,b)\)</span> with <span class="math notranslate nohighlight">\(a \in S_1,b \in S_2\)</span> such that <span class="math notranslate nohighlight">\(a+b=x\)</span>.
+What is the time complexity of your algorithm? What if the sets are in already sorted arrays?</p>
+</div>
+<div class="section" id="exercise-2-2-5">
+<h2>Exercise 2.2.5<a class="headerlink" href="#exercise-2-2-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Same question as the previous one but for a single set. What if the set is in an already sorted array?</p>
+</div>
+<div class="section" id="exercise-2-2-6">
+<h2>Exercise 2.2.6<a class="headerlink" href="#exercise-2-2-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Give an algorithm to calculate the union of two sets <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.
+Suppose in a second step that the already sorted set <span class="math notranslate nohighlight">\(A\)</span> has a size <span class="math notranslate nohighlight">\(n\)</span> and the also sorted set <span class="math notranslate nohighlight">\(B\)</span> has a size <span class="math notranslate nohighlight">\(n^2\)</span> . What would be the time complexity of you algorithm, does your algorithm change?</p>
+</div>
+<div class="section" id="exercise-2-2-7">
+<h2>Exercise 2.2.7<a class="headerlink" href="#exercise-2-2-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Given a matrix of integers that are sorted along rows and columns, how do you find a given number in the matrix efficiently?
+Hint: There is a <span class="math notranslate nohighlight">\(\mathcal{O}(n+m)\)</span> time algorithm for a <span class="math notranslate nohighlight">\(n\times m\)</span> matrix. To do this, start in the upper right corner and compare with the number you are looking for. Which parts of the matrix can you prune in your search based on the result?</p>
+</div>
+<div class="section" id="exercise-2-2-8-inginious">
+<h2>Exercise 2.2.8 (Inginious)<a class="headerlink" href="#exercise-2-2-8-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Design an algorihtm to compute the number of entries larger or equal to a given value <span class="math notranslate nohighlight">\(v_1\)</span> in n x n matrix of integers.
+What if you need to recompte it for a different value <span class="math notranslate nohighlight">\(v_2\)</span>?
+Do you need to redo the computation from scratch or some pre-computation can be done do it more efficiently?</p>
+<p>Inginious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_GlobalWarmingImpl">Global Warming</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises B</a><ul>
+<li><a class="reference internal" href="#exercise-2-2-1-inginious">Exercise 2.2.1 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-2-2">Exercise 2.2.2</a></li>
+<li><a class="reference internal" href="#exercise-2-2-3">Exercise 2.2.3</a></li>
+<li><a class="reference internal" href="#exercise-2-2-4">Exercise 2.2.4</a></li>
+<li><a class="reference internal" href="#exercise-2-2-5">Exercise 2.2.5</a></li>
+<li><a class="reference internal" href="#exercise-2-2-6">Exercise 2.2.6</a></li>
+<li><a class="reference internal" href="#exercise-2-2-7">Exercise 2.2.7</a></li>
+<li><a class="reference internal" href="#exercise-2-2-8-inginious">Exercise 2.2.8 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="ex1.html"
+                        title="Chapitre précédent">Exercises A</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="../part3/index.html"
+                        title="Chapitre suivant">Part 3 |  Search Trees</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../part3/index.html" title="Part 3 | Search Trees"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 2 |  Sorting and Properties of Sorted Sets</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

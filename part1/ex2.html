@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises B &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Part 2 | Sorting and Properties of Sorted Sets" href="../part2/index.html" />
+    <link rel="prev" title="Exercises A" href="ex1.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../part2/index.html" title="Part 2 | Sorting and Properties of Sorted Sets"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-b">
+<span id="part1-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W3.</p>
+</div>
+<div class="section" id="exercise-1-2-1-inginious">
+<h2>Exercise 1.2.1 (Inginious)<a class="headerlink" href="#exercise-1-2-1-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>What is the difference between an Iterable and an Iterator?</p></li>
+</ul>
+<p>Implement a <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_CircularLinkedList">Circular Linked List</a> and its iterator.</p>
+<p>In your implementation, what is the time complexity of:</p>
+<ul class="simple">
+<li><p><cite>public void enqueue(Item item)</cite>?</p></li>
+<li><p><cite>public Item remove(int index)</cite> ?</p></li>
+<li><p>a sequence of operations which consists of <em>creating an iterator and then iterating over the first k-elements</em>?</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Exercise 1.2.1 (Inginious)<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>In your implementation, you will need to resize the array if the size of the stack reaches the maximum size.
+oes Java have an efficient way to resize/refill an array? If yes, give an example of Java code to perform this operation.</p>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_Stack">Stack</a> interface with an internal array-based implemenation and with a linked-list.</p>
+<p>In your implementation, what is the time complexity of:</p>
+<ul class="simple">
+<li><p><cite>public void push(E item)</cite>?</p></li>
+<li><p>a sequence of n <cite>push</cite> operations</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-1-2-2">
+<h2>Exercise 1.2.2<a class="headerlink" href="#exercise-1-2-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Post-fix notation (or <a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_Polish_Notation">Inverse Polish</a>) is used
+to represent algebraic expressions.
+We consider for simplicity only post-fix expressions with positive integers
+and the <cite>+</cite> and <cite>*</cite> operators. For example <cite>2 3 1 * + 9 *</cite> whose result is 45
+and the result of <cite>4 20 + 3 5 1 * * +</cite> is 39.</p>
+<ol class="arabic simple">
+<li><p>Write an algorithm in Java to evaluate a post-fix expression from a string of n-characters.</p></li>
+<li><p>What data structure do you use?</p></li>
+<li><p>What is the complexity of your algorithm (temporal and spatial)?</p></li>
+</ol>
+<p>As a reminder, here is how you can iterate over the elements of a string that are separated by spaces.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">in</span> <span class="o">=</span> <span class="s">&quot;4 20 + 3 5 1 * * +&quot;</span><span class="p">;</span>
+<span class="n">StringTokenizer</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringTokenizer</span><span class="p">(</span><span class="n">in</span><span class="p">);</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span> <span class="p">{</span>
+     <span class="n">String</span> <span class="n">element</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="na">nextToken</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-1-2-3-inginious">
+<h2>Exercise 1.2.3 (Inginious)<a class="headerlink" href="#exercise-1-2-3-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Functional_Programming">Functional Programming</a> is an increasingly important programming paradigm.
+In this programming paradigm, data structures are <a class="reference external" href="https://en.wikipedia.org/wiki/Purely_functional_data_structure">immutable</a>.
+We are interested here in the implementation of an immutable list called <em>FList</em> allowing to be used in a functional framework.
+Here is the API of a <em>FList</em></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="c1">// creates an empty list</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">nil</span><span class="p">();</span>
+
+    <span class="c1">// prepend a to the list and return the new list</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">cons</span><span class="p">(</span><span class="kd">final</span> <span class="n">A</span> <span class="n">a</span><span class="p">);</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isNotEmpty</span><span class="p">();</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">();</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">length</span><span class="p">();</span>
+
+    <span class="c1">// return the head element of the list</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">A</span> <span class="nf">head</span><span class="p">();</span>
+
+    <span class="c1">// return the tail of the list</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">tail</span><span class="p">();</span>
+
+    <span class="c1">// return a list on which each element has been applied function f</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">);</span>
+
+    <span class="c1">// return a list on which only the elements that satisfies predicate are kept</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">);</span>
+
+    <span class="c1">// return an iterator on the element of the list</span>
+    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">();</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you can see, none of the methods allow you to modify the state of the list.
+Here is an example of manipulation of such a list.
+If you are unfamiliar with the <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</a> functional interfaces of Java8,
+we ask that you familiarize yourself with these first.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">FList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">FList</span><span class="p">.</span><span class="na">nil</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">cons</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// list = 9,8,7,...,0</span>
+
+<span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// will print 10,9,...,1</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span><span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// will print 10,...,6,4,2</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span><span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here is a partial implementation of the <cite>FList</cite></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.NoSuchElementException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.function.Function</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.function.Predicate</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isNotEmpty</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span> <span class="k">instanceof</span> <span class="n">Cons</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span> <span class="k">instanceof</span> <span class="n">Nil</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">length</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// TODO</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">A</span> <span class="nf">head</span><span class="p">();</span>
+
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">tail</span><span class="p">();</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">nil</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">Nil</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">Nil</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">cons</span><span class="p">(</span><span class="kd">final</span> <span class="n">A</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Cons</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// TODO</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// TODO</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// complete this class</span>
+
+
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">()</span> <span class="p">{</span>
+              <span class="c1">// TODO</span>
+            <span class="p">}</span>
+
+            <span class="kd">public</span> <span class="n">A</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
+              <span class="c1">// TODO</span>
+            <span class="p">}</span>
+
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">UnsupportedOperationException</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Nil</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Nil</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Nil</span><span class="p">();</span>
+        <span class="c1">// TODO</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Cons</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="c1">// TODO</span>
+    <span class="p">}</span>
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We ask you to</p>
+<ul class="simple">
+<li><p>complete this implementation, if possible use recursive methods as much as possible.</p></li>
+<li><p>determine the complexity of each method.</p></li>
+</ul>
+<p>The inginious taks is the following: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList">FList</a></p>
+</div>
+<div class="section" id="exercise-1-2-4">
+<h2>Exercise 1.2.4<a class="headerlink" href="#exercise-1-2-4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Fill in the following table with the complexities of each operation?
+If an operation is not possible (for example, going to the middle of a Stack is impossible because not provided for by the TAD, indicate it with a cross.
+Specify each time if it is an amortized complexity or not.
+SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentioning.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Complexité</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TAD</p></th>
+<th class="head"><p>Implementation</p></th>
+<th class="head"><p>Insertion (head)</p></th>
+<th class="head"><p>Insertion (end)</p></th>
+<th class="head"><p>Insertion (pos <span class="math notranslate nohighlight">\(i\)</span>)</p></th>
+<th class="head"><p>Remove (head)</p></th>
+<th class="head"><p>Remove (end)</p></th>
+<th class="head"><p>Remove (pos <span class="math notranslate nohighlight">\(i\)</span>)</p></th>
+<th class="head"><p>Get (head)</p></th>
+<th class="head"><p>Get (end)</p></th>
+<th class="head"><p>Get (pos <span class="math notranslate nohighlight">\(i\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stack</p></td>
+<td><p>SL</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Queue</p></td>
+<td><p>SL</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Stack</p></td>
+<td><p>Arr</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Queue</p></td>
+<td><p>Arr</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>List</p></td>
+<td><p>SL</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>List</p></td>
+<td><p>DL</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Liste</p></td>
+<td><p>Arr</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>What is this ?</p>
+</div>
+<div class="section" id="exercice-1-2-5">
+<h2>Exercice 1.2.5<a class="headerlink" href="#exercice-1-2-5" title="Lien permanent vers ce titre">¶</a></h2>
+<ul>
+<li><dl class="simple">
+<dt>Does Java provide a class for <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, <code class="docutils literal notranslate"><span class="pre">Vector</span></code>, <code class="docutils literal notranslate"><span class="pre">List</span></code>?</dt><dd><p>If so in which package? In your opinion, is it interesting to know this package well for the exam?
+Is <code class="docutils literal notranslate"><span class="pre">List</span></code> an interface or a class?
+How to create an object of type <code class="docutils literal notranslate"><span class="pre">List</span></code>? And an object of type <code class="docutils literal notranslate"><span class="pre">Queue</span></code>?</p>
+</dd>
+</dl>
+</li>
+<li><p>What is the error in the following code where the student is looking to create an array of 5 lists and then insert the integer 4 into the 3rd list? Correct the code.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">myList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+<span class="n">myList</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>What is the error in the following code where the student is trying to create an Iterable object? Correct the code.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">myIterable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p>What is the error in the following code where the student is trying to define a constructor?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ADT</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="n">ADT</span> <span class="n">myAdt</span><span class="p">;</span>
+  <span class="kd">public</span> <span class="nf">ADT</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">myAdt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ADT</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>What is the time complexity of is this code, given the size of the list, <span class="math notranslate nohighlight">\(n\)</span>? How to improve it?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">printList</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">elem</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">elem</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises B</a><ul>
+<li><a class="reference internal" href="#exercise-1-2-1-inginious">Exercise 1.2.1 (Inginious)</a></li>
+<li><a class="reference internal" href="#id1">Exercise 1.2.1 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-1-2-2">Exercise 1.2.2</a></li>
+<li><a class="reference internal" href="#exercise-1-2-3-inginious">Exercise 1.2.3 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-1-2-4">Exercise 1.2.4</a></li>
+<li><a class="reference internal" href="#exercice-1-2-5">Exercice 1.2.5</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="ex1.html"
+                        title="Chapitre précédent">Exercises A</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="../part2/index.html"
+                        title="Chapitre suivant">Part 2 |  Sorting and Properties of Sorted Sets</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../part2/index.html" title="Part 2 | Sorting and Properties of Sorted Sets"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

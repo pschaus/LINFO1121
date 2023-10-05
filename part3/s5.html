@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice 3.1.1 &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercice 3.1.1</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercice-3-1-1">
+<h1>Exercice 3.1.1<a class="headerlink" href="#exercice-3-1-1" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Laquelle des deux implémentations <code class="docutils literal notranslate"><span class="pre">SequentialSearchST</span></code> ou <code class="docutils literal notranslate"><span class="pre">BinarySearchST</span></code> utiliseriez vous pour une application
+qui réalise <span class="math notranslate nohighlight">\(10^3\)</span> <code class="docutils literal notranslate"><span class="pre">put()</span></code> et <span class="math notranslate nohighlight">\(10^6\)</span> <code class="docutils literal notranslate"><span class="pre">get()</span></code> dans un ordre aléatoire? Justifiez.</p>
+</div>
+<div class="section" id="exercice-3-1-2">
+<h1>Exercice 3.1.2<a class="headerlink" href="#exercice-3-1-2" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Implémentez la méthode <code class="docutils literal notranslate"><span class="pre">floor()</span></code> de <code class="docutils literal notranslate"><span class="pre">BinarySearchST</span></code>.</p>
+</div>
+<div class="section" id="exercice-3-1-3">
+<h1>Exercice 3.1.3<a class="headerlink" href="#exercice-3-1-3" title="Lien permanent vers ce titre">¶</a></h1>
+<p><em>Exercice 3.1.24 du livre</em>.</p>
+<p>En supposant que les clefs soient des doubles ou des entiers. Écrivez une version de la recherche binaire qui supposant
+une répartition uniforme des clefs va d’abord chercher au début d’un dictionnaire un mot qui commence par une lettre
+proche du début d’alphabet.</p>
+<p>Plus exactement, si la clef recherchée est <span class="math notranslate nohighlight">\(k_x\)</span>, et que la plus petite clef est <span class="math notranslate nohighlight">\(k_{lo}\)</span> et la plus grande
+est <span class="math notranslate nohighlight">\(k_{hi}\)</span>, cherchez d’abord au pourcentile <span class="math notranslate nohighlight">\(\lfloor(k_x-k_{lo})/(k_{hi}-k_{lo}) \rfloor * 100\)</span> du tableau
+et pas au milieu (pourcentile 50) du tableau d’abord.</p>
+<p>Implémentez <code class="docutils literal notranslate"><span class="pre">InterpolationSearchST</span></code> et comparez celle-ci sur <code class="docutils literal notranslate"><span class="pre">FrequencyCounter</span></code>.</p>
+</div>
+<div class="section" id="exercice-3-1-4">
+<h1>Exercice 3.1.4<a class="headerlink" href="#exercice-3-1-4" title="Lien permanent vers ce titre">¶</a></h1>
+<p><em>Exercice 3.1.25 du livre</em>.</p>
+<p>Il est très fréquent de tester d’abord la présence d’une clef avant d’ajouter ou modifier l’entrée correspondante. Cela
+engendre successivement plusieurs recherches consécutives de la même clef.</p>
+<p>L’idée du <em>caching</em> est de mémoriser en interne la dernière clef accédée
+et de l’utiliser de manière opportuniste si celle-ci est toujours valide.
+Modifiez <code class="docutils literal notranslate"><span class="pre">BinarySearchST</span></code> pour y intégrer cette idée.</p>
+</div>
+<div class="section" id="exercice-3-1-5">
+<h1>Exercice 3.1.5<a class="headerlink" href="#exercice-3-1-5" title="Lien permanent vers ce titre">¶</a></h1>
+<p><em>Exercice 3.2.31 du livre</em>.</p>
+<p>Écrivez une méthode <code class="docutils literal notranslate"><span class="pre">isBST()</span></code> qui prend un <code class="docutils literal notranslate"><span class="pre">Node</span></code> comme argument et qui retourne <code class="docutils literal notranslate"><span class="pre">true</span></code> si l’argument est la racine
+d’un BST, <code class="docutils literal notranslate"><span class="pre">false</span></code> sinon (il faut donc vérifier que les propriétés d’un BST sont satisfaites).</p>
+<p>Est-ce que vérifier (localement) si pour chaque noeud la propriété <em>« le fils gauche a une clef inférieure et le fils
+droit une clef supérieure »</em> est suffisant? Si non donnez un contre-exemple.</p>
+<p>Quelle est la complexité de votre algorithme ?</p>
+</div>
+<div class="section" id="exercice-3-1-6">
+<h1>Exercice 3.1.6<a class="headerlink" href="#exercice-3-1-6" title="Lien permanent vers ce titre">¶</a></h1>
+<p><em>Exercice 3.2.4 du livre</em>.</p>
+<p>Supposons qu’un certain arbre de recherche possède des clefs entre 1 et 10 et que nous cherchions la clef 5.
+Quelle(s) séquence(s) ne peut pas correspondre à la séquence des clefs examinées?</p>
+<ul class="simple">
+<li><p>10,9,8,7,6,5</p></li>
+<li><p>4,10,8,6,5</p></li>
+<li><p>1,10,2,9,3,8,4,7,6,5</p></li>
+<li><p>2,7,3,8,4,5</p></li>
+<li><p>1,2,10,4,8,5</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-3-1-7">
+<h1>Exercice 3.1.7<a class="headerlink" href="#exercice-3-1-7" title="Lien permanent vers ce titre">¶</a></h1>
+<p><em>Exercice 3.3.33 du livre</em>.</p>
+<p>Écrivez une méthode <code class="docutils literal notranslate"><span class="pre">is23()</span></code> dans <code class="docutils literal notranslate"><span class="pre">RedBlackBST</span></code> qui vérifie qu’aucun noeud n’est connecté
+à deux liens rouges et qu’il n’y a pas de lien rouge vers la droite.
+Écrivez aussi une méthode <code class="docutils literal notranslate"><span class="pre">isBalanced()</span></code> qui vérifie que tout chemin depuis la racine vers vers un lien null a le
+même nombre de liens noirs. Finalement combinez <code class="docutils literal notranslate"><span class="pre">isBST(),is23()</span></code> et <code class="docutils literal notranslate"><span class="pre">isBalanced()</span></code> pour implémenter <code class="docutils literal notranslate"><span class="pre">isRedBlackBST()</span></code>.</p>
+</div>
+<div class="section" id="exercice-3-1-8">
+<h1>Exercice 3.1.8<a class="headerlink" href="#exercice-3-1-8" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Comment faire pour énumérer en ordre croissant toutes les clés mémorisées
+dans un arbre binaire de recherche ? Quelle est la complexité temporelle de
+cette opération ? Justifiez votre réponse.</p>
+</div>
+<div class="section" id="exercice-3-1-9">
+<h1>Exercice 3.1.9<a class="headerlink" href="#exercice-3-1-9" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Partant d’un arbre binaire de recherche initialement vide, comment se présente l’arbre
+après y avoir inséré les clés 12, 5, 10, 3, 13, 14, 15, 17, 18, 15 ? Pour les mêmes données comment se présenterait
+l’arbre finalement obtenu s’il s’agissait d’un 2-3 arbre ?</p>
+<p>Cet exemple illustre-t-il les avantages ou inconvénients de ces différentes structures de données ? Pourquoi ?</p>
+</div>
+<div class="section" id="exercice-3-1-10">
+<h1>Exercice 3.1.10<a class="headerlink" href="#exercice-3-1-10" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Lequel ou lesquels de ces arbres est(sont) red-black? Pour chacun, dessiner la correspondance vers un 2-3 tree
+(décrite p432).</p>
+<img alt="Arbres" src="../_images/rbtree.png" />
+<div class="section" id="exercices-sur-inginious">
+<h2>Exercices sur INGInious<a class="headerlink" href="#exercices-sur-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous devez faire ces exercices pour le mercredi de S6.</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3WriteUnittestsRedBlackTree">Unit tests redblack</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm">QCM Complexite</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3QcmBt">QCM Traversal</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Rbt">Exercice redblack</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Bst">Implémentation de ceil</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/admin/LSINF1121-2016/edit/task/PART3OrderedBstIterator">Implémentation d un iterateur sur un BST</a></p></li>
+</ol>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercice 3.1.1</a></li>
+<li><a class="reference internal" href="#exercice-3-1-2">Exercice 3.1.2</a></li>
+<li><a class="reference internal" href="#exercice-3-1-3">Exercice 3.1.3</a></li>
+<li><a class="reference internal" href="#exercice-3-1-4">Exercice 3.1.4</a></li>
+<li><a class="reference internal" href="#exercice-3-1-5">Exercice 3.1.5</a></li>
+<li><a class="reference internal" href="#exercice-3-1-6">Exercice 3.1.6</a></li>
+<li><a class="reference internal" href="#exercice-3-1-7">Exercice 3.1.7</a></li>
+<li><a class="reference internal" href="#exercice-3-1-8">Exercice 3.1.8</a></li>
+<li><a class="reference internal" href="#exercice-3-1-9">Exercice 3.1.9</a></li>
+<li><a class="reference internal" href="#exercice-3-1-10">Exercice 3.1.10</a><ul>
+<li><a class="reference internal" href="#exercices-sur-inginious">Exercices sur INGInious</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercice 3.1.1</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

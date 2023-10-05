@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises B &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Part 5 | Priority queues, union-find and data compression" href="../part5/index.html" />
+    <link rel="prev" title="Exercises A" href="ex1.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../part5/index.html" title="Part 5 | Priority queues, union-find and data compression"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 4 |  Maps: hash tables and other implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-b">
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W8.</p>
+</div>
+<div class="section" id="exercise-4-2-1-hash-of-long-and-double">
+<h2>Exercise 4.2.1 (Hash of Long and Double)<a class="headerlink" href="#exercise-4-2-1-hash-of-long-and-double" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Here is the formula used by Java to calculate a hash function
+on doubles (bits is a 64 bit array represented as a long):</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">bits</span> <span class="o">^</span> <span class="p">(</span><span class="n">bits</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">32</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Why not just use <code class="docutils literal notranslate"><span class="pre">(int)</span> <span class="pre">bits</span></code> (casting from long to int)? Hint: The reference book suggests that a good hash function should use all bits for its calculation. Why?</p></li>
+<li><p>A double in Java is represented in 64 bits as <span class="math notranslate nohighlight">\((-1)^s \times m \times 2^{(e - 1023)}\)</span>. The first bit <span class="math notranslate nohighlight">\(s\)</span> is the sign, the next 11 bits represent the exponent in binary form and the last 52 bits represent the mantissa (decimal part) in binary form.  Do a positive decimal number and its opposite get different hash functions?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-2-2-hash-and-casting-of-integers">
+<h2>Exercise 4.2.2 (Hash and casting of integers)<a class="headerlink" href="#exercise-4-2-2-hash-and-casting-of-integers" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>Is the hash function of a 32-bit integer the same as the hash function of the same integer that would be double-cast?</p></li>
+<li><p>Is the hash function of a 32-bit integer the same as the hash function of the same integer that would be cast as a long?  Hint: <cite>Long.toBinaryString( Double.doubleToRawLongBits(a))</cite> displays the array of bits used to represent a double.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-2-3-hash-of-string-the-choice-of-m-and-r-constants">
+<h2>Exercise 4.2.3 (Hash of String: the choice of M and R constants)<a class="headerlink" href="#exercise-4-2-3-hash-of-string-the-choice-of-m-and-r-constants" title="Lien permanent vers ce titre">¶</a></h2>
+<p>The hash function for a given string as presented in the book p460 is as follows:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">hash</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">hash</span> <span class="o">+</span> <span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">%</span> <span class="n">M</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In the book’s implementation, <span class="math notranslate nohighlight">\(M\)</span> (the size of the hash table) is a power of two.
+The suggested value for <span class="math notranslate nohighlight">\(R\)</span> is <em>a small prime such that 31 so that the bits of all characters play a role.</em></p>
+<ul class="simple">
+<li><p>Suppose that <span class="math notranslate nohighlight">\(R\)</span> is a multiple of <span class="math notranslate nohighlight">\(M\)</span>. What would happen in the calculation?</p></li>
+<li><p>Suppose that <span class="math notranslate nohighlight">\(R\)</span> is an even number. What would happen?</p></li>
+</ul>
+<p>In both cases, how many entries in the string will actually determine the hash code? What are the risks in terms of collision? Can load factor control solve the problem? Explain why using 31 is a good choice for array sizes that are powers of two? Would it also be a good choice for an array size that starts at 31 and is multiplied by two each time it needs to resize?</p>
+<ul>
+<li><p>In the book implementation, <span class="math notranslate nohighlight">\(M\)</span> (the size of the hash table) is a power of two, initialized to 16. Suppose that at some point <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(2^8=256\)</span>. Then two integer keys are added to a hash table implemented with separate chaining: respectively <span class="math notranslate nohighlight">\(2560\)</span> and <span class="math notranslate nohighlight">\(3072\)</span> (it is assumed that these additions do not cause any resizing of the table). As you know, the hash code of an integer key (int) is the number itself.
+Will adding these two values cause a collision between them in the table? If so why?</p>
+<p>If so can you suggest a third value that will also collide?</p>
+<p>If there is a collision, can it disappear the next time the table is resized as in the book implementation?</p>
+</li>
+<li><p>What do you suggest to avoid this problem? What is the <span class="math notranslate nohighlight">\(M\)</span> initialization and resizing policy used in <code class="docutils literal notranslate"><span class="pre">java.util.HashMap</span></code>? Does this solve the problem on our example?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-2-4-design-of-hash-function-for-vehicules">
+<h2>Exercise 4.2.4 (Design of Hash function for Vehicules)<a class="headerlink" href="#exercise-4-2-4-design-of-hash-function-for-vehicules" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>What would you suggest as a hash function for identifying vehicles that are strings of numbers and letters of the form: « 9X9XX99X9XX999999 » where a 9 represents a number and an « X » represents a letter from A to Z.</p></li>
+<li><p>Does your hash function have the property that for a hypothetical array size N of <span class="math notranslate nohighlight">\(10^{11} \cdot 26^6\)</span> there is never a collision?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-2-5-design-of-hash-function-citizens">
+<h2>Exercise 4.2.5 (Design of Hash function: Citizens)<a class="headerlink" href="#exercise-4-2-5-design-of-hash-function-citizens" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Let’s imagine that we want to build a directory of Belgian citizens
+and we want to be able to access each citizen by his identity card number
+(12 digits).
+We can then consider this number as the unique key identifying
+each citizen and use this key as an index in an array in Java.
+To each index would correspond a reference to an instance of the class
+class whose fields constitute the information that we want to store for each citizen.
+What is the time complexity of the following operations?</p>
+<ul class="simple">
+<li><p>search for the information relative to a citizen from his identity card number.
+identity card number.</p></li>
+<li><p>add a new citizen.</p></li>
+</ul>
+<p>Isn’t this implementation of a dictionary even better than a hash table?
+Can we have a collision problem in this case? Justify.</p>
+</div>
+<div class="section" id="exercise-4-2-6-rabin-karp-the-return-of-revenge">
+<h2>Exercise 4.2.6 Rabin-Karp, the return of revenge<a class="headerlink" href="#exercise-4-2-6-rabin-karp-the-return-of-revenge" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Check that you have obtained a solution in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>, and not <span class="math notranslate nohighlight">\(\mathcal{O}(kn)\)</span> (not counting the initial hashing of the keywords to be searched, which is in <span class="math notranslate nohighlight">\(\mathcal{O}(km)\)</span>), and
+not counting the initial hashing of the keywords to be searched which is in <span class="math notranslate nohighlight">\(\mathcal{O}(km)\)</span>),
+for last week’s Exercise 4.1.11.</p>
+</div>
+<div class="section" id="exercise-4-1-15-inginious">
+<h2>Exercise 4.1.15 (Inginious)<a class="headerlink" href="#exercise-4-1-15-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement a <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST">Linear Probing Hashtable</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises B</a><ul>
+<li><a class="reference internal" href="#exercise-4-2-1-hash-of-long-and-double">Exercise 4.2.1 (Hash of Long and Double)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-2-hash-and-casting-of-integers">Exercise 4.2.2 (Hash and casting of integers)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-3-hash-of-string-the-choice-of-m-and-r-constants">Exercise 4.2.3 (Hash of String: the choice of M and R constants)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-4-design-of-hash-function-for-vehicules">Exercise 4.2.4 (Design of Hash function for Vehicules)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-5-design-of-hash-function-citizens">Exercise 4.2.5 (Design of Hash function: Citizens)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-6-rabin-karp-the-return-of-revenge">Exercise 4.2.6 Rabin-Karp, the return of revenge</a></li>
+<li><a class="reference internal" href="#exercise-4-1-15-inginious">Exercise 4.1.15 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="ex1.html"
+                        title="Chapitre précédent">Exercises A</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="../part5/index.html"
+                        title="Chapitre suivant">Part 5 |  Priority queues, union-find and data compression</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../part5/index.html" title="Part 5 | Priority queues, union-find and data compression"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 4 |  Maps: hash tables and other implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

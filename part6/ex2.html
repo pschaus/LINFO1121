@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises B &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="Exercises A" href="ex1.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-b">
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W13.</p>
+</div>
+<div class="section" id="exercise-6-2-2-dijkstra-revisited">
+<h2>Exercise 6.2.2 (Dijkstra revisited)<a class="headerlink" href="#exercise-6-2-2-dijkstra-revisited" title="Lien permanent vers ce titre">¶</a></h2>
+<p>We are interested in the implementation of the Dijkstra algorithm p655.</p>
+<ul class="simple">
+<li><p>What is the time complexity of this algorithm.</p></li>
+<li><p>Rewrite this algorithm using only auxiliary collections from <em>java.util</em>.  So we have to get rid of <em>IndexMinPQ</em> and replace this structure by something else from <em>java.util</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-6-2-3-string-of-fairy-lights">
+<h2>Exercise 6.2.3 (string of fairy lights)<a class="headerlink" href="#exercise-6-2-3-string-of-fairy-lights" title="Lien permanent vers ce titre">¶</a></h2>
+<p>The INGI department has acquired a very nice string of fairy lights for Christmas to decorate the Réaumur building.
+It has the structure of a graph with a lamp on each node.
+When the tinsel is turned on, a lamp is randomly turned on and then every second, all the lamps directly connected (on adjacent nodes) are turned on in turn.
+Implement the « minTime » method answering the following question:
+<em>At the end of how many seconds</em> <strong>at the very least</strong> <em>could our garland be completely lit?</em></p>
+<p>Voici la signature de la méthode:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">minTime</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can assume that you have the Graph structure API as described in the book.
+We assume that the graph G is connected.</p>
+<ul class="simple">
+<li><p>What is the time complexity of your algorithm?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-6-2-4-maximization-of-minimum-weight">
+<h2>Exercise 6.2.4 (Maximization of minimum weight)<a class="headerlink" href="#exercise-6-2-4-maximization-of-minimum-weight" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Let G be a undirected and positively weighted graph.
+Given an origin S, we want to find a path to each node that maximizes <em>the minimum edge weight on this path</em>.</p>
+<a class="reference internal image-reference" href="../_images/minmax.svg"><img alt="Exemple de graphe" src="../_images/minmax.svg" width="320" /></a>
+<p>For example, in this graph, S-F-B-A-C-D is such a path with 2 as the minimum edge point.</p>
+<p>Can you adapt an algorithm seen in class to find such paths to each node?</p>
+<p>Hint: look at the properties of the weights. Is it comparable to shortest paths?</p>
+</div>
+<div class="section" id="exercise-6-2-5-inginious">
+<h2>Exercise 6.2.5 (Inginious)<a class="headerlink" href="#exercise-6-2-5-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A programming exercise on shortest path with implicit graphs:
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_MineClimbing">MineClimbing</a></p>
+</div>
+<div class="section" id="exercise-6-2-6-inginious">
+<h2>Exercise 6.2.6 (Inginious)<a class="headerlink" href="#exercise-6-2-6-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A challenging path problem in a public transport network:
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Trains">Trains</a></p>
+</div>
+<div class="section" id="exercise-6-2-7-inginious">
+<h2>Exercise 6.2.7 (Inginious)<a class="headerlink" href="#exercise-6-2-7-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A string transformation problem viewed as path problem on a graph:
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_WordTransformationSP">Words</a></p>
+</div>
+<div class="section" id="exercise-6-2-8-inginious">
+<h2>Exercise 6.2.8 (Inginious)<a class="headerlink" href="#exercise-6-2-8-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Help the humanity to discover a new habitable galaxy by solving a hyperspace shortest
+space: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GalaxyPath">GalaxyPath</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises B</a><ul>
+<li><a class="reference internal" href="#exercise-6-2-2-dijkstra-revisited">Exercise 6.2.2 (Dijkstra revisited)</a></li>
+<li><a class="reference internal" href="#exercise-6-2-3-string-of-fairy-lights">Exercise 6.2.3 (string of fairy lights)</a></li>
+<li><a class="reference internal" href="#exercise-6-2-4-maximization-of-minimum-weight">Exercise 6.2.4 (Maximization of minimum weight)</a></li>
+<li><a class="reference internal" href="#exercise-6-2-5-inginious">Exercise 6.2.5 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-6-2-6-inginious">Exercise 6.2.6 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-6-2-7-inginious">Exercise 6.2.7 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-6-2-8-inginious">Exercise 6.2.8 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="ex1.html"
+                        title="Chapitre précédent">Exercises A</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 6 |  Graphs: paths, spanning trees, and shortest paths</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

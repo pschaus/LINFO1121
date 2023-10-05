@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises A &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercises B" href="ex2.html" />
+    <link rel="prev" title="Objectives" href="intro.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 5 |  Priority queues, union-find and data compression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-a">
+<span id="part2-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W10.</p>
+</div>
+<div class="section" id="exercise-5-1-1">
+<h2>Exercise 5.1.1<a class="headerlink" href="#exercise-5-1-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 6 union operations on a starting set of 10 items with the quick-find algorithm.
+<code class="docutils literal notranslate"><span class="pre">3-8,</span> <span class="pre">1-7,</span> <span class="pre">1-8,</span> <span class="pre">9-4,</span> <span class="pre">6-4,</span> <span class="pre">2-0</span></code>.
+Your answer must be a sequence of 10 integers.
+Reminder: the quick-find convention for the <code class="docutils literal notranslate"><span class="pre">p-q</span></code> union is to change <code class="docutils literal notranslate"><span class="pre">id[p]</span></code> (and possibly other inputs) but not <code class="docutils literal notranslate"><span class="pre">id[q]</span></code>.</p>
+</div>
+<div class="section" id="exercise-5-1-2">
+<h2>Exercise 5.1.2<a class="headerlink" href="#exercise-5-1-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Give the array id[] that results from the following sequence of 9 union operations on a set of 10 items using the weighted quick-union algorithm:</p>
+<p><code class="docutils literal notranslate"><span class="pre">4-6,</span> <span class="pre">3-6,</span> <span class="pre">8-9,</span> <span class="pre">7-0,</span> <span class="pre">1-2,</span> <span class="pre">8-4,</span> <span class="pre">6-5,</span> <span class="pre">1-7,</span> <span class="pre">6-0.</span></code></p>
+<p>Your answer must be a sequence of 10 integers. Reminder: When merging two trees of the same size, the weighted quick-union algorithm uses the convention
+to point the root of the second tree to the root of the first tree.
+Our algorithm uses union by size (number of nodes) and not union by height, nor the path compression technique.</p>
+</div>
+<div class="section" id="exercise-5-1-3">
+<h2>Exercise 5.1.3<a class="headerlink" href="#exercise-5-1-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Which of the following id[] array(s) could result from applying the weighted quick-union algorithm on a set of 10 items at the beginning?
+Reminder: we use union by size (number of nodes) and not union by height.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">8</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">7</span> <span class="pre">6</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">9</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">2</span> <span class="pre">6</span> <span class="pre">6</span> <span class="pre">2</span> <span class="pre">6</span> <span class="pre">6</span> <span class="pre">2</span> <span class="pre">4</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">5</span> <span class="pre">1</span> <span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">3</span> <span class="pre">0</span> <span class="pre">3</span> <span class="pre">0</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">5</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">6</span> <span class="pre">4</span> <span class="pre">1</span> <span class="pre">6</span> <span class="pre">0</span> <span class="pre">6</span> <span class="pre">8</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="exercise-5-1-4">
+<h2>Exercise 5.1.4<a class="headerlink" href="#exercise-5-1-4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Give the sequence of keys in the table that results from inserting the sequence of the 3 keys 48, 30 and 84
+in the following heap (oriented to the maximum) of size 10:</p>
+<p><code class="docutils literal notranslate"><span class="pre">97</span> <span class="pre">,</span> <span class="pre">93</span> <span class="pre">,</span> <span class="pre">89</span> <span class="pre">,</span> <span class="pre">83</span> <span class="pre">,</span> <span class="pre">38</span> <span class="pre">,</span> <span class="pre">32</span> <span class="pre">,</span> <span class="pre">40</span> <span class="pre">,</span> <span class="pre">12</span> <span class="pre">,</span> <span class="pre">26</span> <span class="pre">,</span> <span class="pre">24</span></code>.</p>
+<p>Your answer should be a sequence of 13 integers.</p>
+</div>
+<div class="section" id="exercise-5-1-5">
+<h2>Exercise 5.1.5<a class="headerlink" href="#exercise-5-1-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Give the sequence of keys in the array that results from adding 3 successive deletion operations from the maximum in the following heap (oriented to the maximum)
+of size 10:</p>
+<p><code class="docutils literal notranslate"><span class="pre">98</span> <span class="pre">,</span> <span class="pre">96</span> <span class="pre">,</span> <span class="pre">84</span> <span class="pre">,</span> <span class="pre">34</span> <span class="pre">,</span> <span class="pre">62</span> <span class="pre">,</span> <span class="pre">31</span> <span class="pre">,</span> <span class="pre">72</span> <span class="pre">,</span> <span class="pre">13</span> <span class="pre">,</span> <span class="pre">27</span> <span class="pre">,</span> <span class="pre">33</span></code>.</p>
+<p>Your answer should be a sequence of 7 integers.</p>
+</div>
+<div class="section" id="exercise-5-1-6">
+<h2>Exercise 5.1.6<a class="headerlink" href="#exercise-5-1-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What are the possible advantages and disadvantages of implementing a priority queue with
+a heap rather than a list?</p>
+</div>
+<div class="section" id="exercise-5-1-7">
+<h2>Exercise 5.1.7<a class="headerlink" href="#exercise-5-1-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Can you find an example of a valid heap T storing 7 distinct elements such that
+an infix traversal of T visists the elements in decreasing order?
+What about an prefix or postfix traversal?</p>
+</div>
+<div class="section" id="exercise-5-1-8">
+<h2>Exercise 5.1.8<a class="headerlink" href="#exercise-5-1-8" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Which of the following statements are true about a priority queue implemented by a heap?
+By default heaps are maximum oriented and use an index base starting at 1.</p>
+<ul class="simple">
+<li><p>In the worst case, inserting a key into a binary heap containing N keys requires <span class="math notranslate nohighlight">\(\sim \log N\)</span> comparisons.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(a[]\)</span> be an array such that <span class="math notranslate nohighlight">\(a[1] &gt; a[2] &gt; a[N]\)</span> (and <span class="math notranslate nohighlight">\(a[0]\)</span> is empty). Then <span class="math notranslate nohighlight">\(a[]\)</span> satisfies the properties of a binary heap.</p></li>
+<li><p>The inernal array of a binary (max-)heap is always an array sorted in non increasing order.</p></li>
+<li><p>Given a binary heap of N distinct keys, deleting the maximum key and then inserting it directly leaves the array of the heap unchanged (we ignore the possible resizing of the array).</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-5-1-9">
+<h2>Exercise 5.1.9<a class="headerlink" href="#exercise-5-1-9" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Prove that the bottom-up « sink » construction of a heap for the Heapsort (p323) is done in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.
+Hint: count the number of nodes at the <span class="math notranslate nohighlight">\(h\)</span> level of the heap.
+What is the complexity of a sink at this level. Do the sum for all levels. Useful formula: <span class="math notranslate nohighlight">\(\sum_{k=0}^\infty k x^k = x/(1-x)^2\)</span> for
+<span class="math notranslate nohighlight">\(|x| &lt; 1\)</span>.</p>
+</div>
+<div class="section" id="exercise-5-1-10">
+<h2>Exercise 5.1.10<a class="headerlink" href="#exercise-5-1-10" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Is the use of a priority queue essential to be able to build a Huffman code?
+Can you imagine another solution using a sorting algorithm?
+Would the computational complexity be better than the original algorithm? Why or why not?</p>
+</div>
+<div class="section" id="exercise-5-1-11">
+<h2>Exercise 5.1.11<a class="headerlink" href="#exercise-5-1-11" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>What are the different steps in a text <em>compression</em> algorithm that takes a text as input and provides a compressed version of that text as output using Huffman coding? Be specific in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.</p></li>
+<li><p>What are the different steps of a text <em>decompression</em> algorithm that takes as input a compressed version of a text using Huffman coding and provides as output the original text? Be precise in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-5-1-12-inginious-heap">
+<h2>Exercise 5.1.12 (Inginious, heap)<a class="headerlink" href="#exercise-5-1-12-inginious-heap" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap">Push of a binary Heap</a></p>
+</div>
+<div class="section" id="exercise-5-1-13-inginious-global-warming">
+<h2>Exercise 5.1.13 (Inginious, Global Warming)<a class="headerlink" href="#exercise-5-1-13-inginious-global-warming" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement the Global Warming to compute the number of islands using union-find <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">GlobalWarmming</a></p>
+</div>
+<div class="section" id="exercise-5-1-14-inginious-huffman">
+<h2>Exercise 5.1.14 (Inginious, Huffman)<a class="headerlink" href="#exercise-5-1-14-inginious-huffman" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement the Huffman tree reconstruction <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman">Huffman</a></p>
+</div>
+<div class="section" id="exercise-5-1-15-inginious-manual-exercise-on-unionfind">
+<h2>Exercise 5.1.15 (Inginious, manual exercise on UnionFind)<a class="headerlink" href="#exercise-5-1-15-inginious-manual-exercise-on-unionfind" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind">UnionFind</a></p>
+</div>
+<div class="section" id="exercise-5-1-16-inginious-manual-exercise-on-heaps">
+<h2>Exercise 5.1.16 (Inginious, manual exercise on Heaps)<a class="headerlink" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5Heap">Heaps</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises A</a><ul>
+<li><a class="reference internal" href="#exercise-5-1-1">Exercise 5.1.1</a></li>
+<li><a class="reference internal" href="#exercise-5-1-2">Exercise 5.1.2</a></li>
+<li><a class="reference internal" href="#exercise-5-1-3">Exercise 5.1.3</a></li>
+<li><a class="reference internal" href="#exercise-5-1-4">Exercise 5.1.4</a></li>
+<li><a class="reference internal" href="#exercise-5-1-5">Exercise 5.1.5</a></li>
+<li><a class="reference internal" href="#exercise-5-1-6">Exercise 5.1.6</a></li>
+<li><a class="reference internal" href="#exercise-5-1-7">Exercise 5.1.7</a></li>
+<li><a class="reference internal" href="#exercise-5-1-8">Exercise 5.1.8</a></li>
+<li><a class="reference internal" href="#exercise-5-1-9">Exercise 5.1.9</a></li>
+<li><a class="reference internal" href="#exercise-5-1-10">Exercise 5.1.10</a></li>
+<li><a class="reference internal" href="#exercise-5-1-11">Exercise 5.1.11</a></li>
+<li><a class="reference internal" href="#exercise-5-1-12-inginious-heap">Exercise 5.1.12 (Inginious, heap)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-13-inginious-global-warming">Exercise 5.1.13 (Inginious, Global Warming)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-14-inginious-huffman">Exercise 5.1.14 (Inginious, Huffman)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-15-inginious-manual-exercise-on-unionfind">Exercise 5.1.15 (Inginious, manual exercise on UnionFind)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps">Exercise 5.1.16 (Inginious, manual exercise on Heaps)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="intro.html"
+                        title="Chapitre précédent">Objectives</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="ex2.html"
+                        title="Chapitre suivant">Exercises B</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 5 |  Priority queues, union-find and data compression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

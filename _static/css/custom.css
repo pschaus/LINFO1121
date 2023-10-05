@@ -1,0 +1,50 @@
+/*h2 {
+    margin: 1.3em 0 0.2em 0;
+    font-size: 1.35em;
+    padding: .5em;
+    background-color: #336699;
+    color: white;
+}*/
+
+.admonition.admonition-answer {
+     background-color:#ffe6e6;
+     border-color:#c00;
+     color:#4d0000
+}
+
+p.rubric {
+    font-size: 2.2rem !important;
+}
+
+@media print {
+    .navbar {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .page {
+        padding: 0;
+    }
+    .body-header {
+        display: none;
+    }
+    .page > hr {
+        display: none;
+    }
+    .content {
+        max-width: none !important;
+    }
+    .page-nav {
+        display: none;
+    }
+    html {
+        font-size: 10px;
+    }
+    body {
+        font-size: 10px;
+    }
+    #app {
+        width: 100%; margin: 0; float: none;
+    }
+}

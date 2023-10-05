@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises B &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Part 6 | Graphs: paths, spanning trees, and shortest paths" href="../part6/index.html" />
+    <link rel="prev" title="Exercises A" href="ex1.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../part6/index.html" title="Part 6 | Graphs: paths, spanning trees, and shortest paths"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 5 |  Priority queues, union-find and data compression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-b">
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W11.</p>
+</div>
+<div class="section" id="exercise-5-2-1">
+<h2>Exercise 5.2.1<a class="headerlink" href="#exercise-5-2-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>In the Huffman coding compression technique, it is useful to
+to include in the compressed file a header containing the information necessary to decode of the file.
+In your implementation, the header is probably a serialized version
+of the tree (result of a prefix parse) as proposed in the book.
+Do you think it would be more or less interesting from a memory point of view to store for each symbol its binary encoding
+rather than the serialized tree?</p>
+</div>
+<div class="section" id="exercise-5-2-2">
+<h2>Exercise 5.2.2<a class="headerlink" href="#exercise-5-2-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Can we gain even more compression ratio if we reapply Huffman’s compression algorithm
+Huffman’s compression algorithm on a file already compressed once?
+What happens in this case?
+Does this open the door to a recursive and optimal compression algorithm?</p>
+</div>
+<div class="section" id="exercise-5-2-3">
+<h2>Exercise 5.2.3<a class="headerlink" href="#exercise-5-2-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is, approximately, the compression ratio obtained if we apply the Huffman compression algorithm
+on a file with a single string consisting of the character “a” repeated a million times (:math:<code class="docutils literal notranslate"><span class="pre">approx</span> <span class="pre">2^{20}</span></code>), followed by the character <code class="docutils literal notranslate"><span class="pre">b</span></code> present only once?</p>
+<p>Does the resulting compression ratio vary with the length of the file (for example, if the <code class="docutils literal notranslate"><span class="pre">a</span></code> character is repeated two million times)?</p>
+<p>What is the minimum number of bits needed to represent this file in compressed form?</p>
+<p>Can we use another compression scheme, compressing more than Huffman compression in this particular case?</p>
+<p>Can Huffman compression algorithm be used for other input than text files (say for instance a picture)?
+What would the algorithm count in this case?</p>
+</div>
+<div class="section" id="exercise-5-2-4-linked-heap-inginious">
+<h2>Exercise 5.2.4 (Linked Heap, Inginious)<a class="headerlink" href="#exercise-5-2-4-linked-heap-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Imagine a heap implementation of a priority queue using a chained structure to represent the essentially complete binary tree corresponding to the heap.
+How many links are needed in each node?
+Write the code for the methods <em>insert</em>, <em>delMax</em>. What is the complexity? Is it useful to give the size <em>max N</em> in the constructor?
+How do you add a new node in the heap or remove the next node? Can this be done from the current heap size?</p>
+<p>Implement the min priority queue using a linked structure for representing the heap: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinPQLinked">MinPQLinked</a></p>
+</div>
+<div class="section" id="exercise-5-2-5-inginious">
+<h2>Exercise 5.2.5 (Inginious)<a class="headerlink" href="#exercise-5-2-5-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Propose a data structure that would support the following operations in logarithmic time: <em>insert</em>, <em>remove maximum</em>, <em>remove minimum</em>;
+and the following operations in constant time: <em>find maximum and minimum</em>.
+For this, we propose to study the following property called min-max heap.
+The even levels are: 0 (root), 2, 4, etc.
+These even levels are also called the <span class="math notranslate nohighlight">\(min\)</span> levels.
+The odd levels are 1, 3, 5, etc.
+Odd levels are also called <span class="math notranslate nohighlight">\(max\)</span> levels.
+For any <span class="math notranslate nohighlight">\(x\)</span> element in the min-max heap we have the following property:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is at a <span class="math notranslate nohighlight">\(min\)</span> level, all descendants of <span class="math notranslate nohighlight">\(x\)</span> are greater than <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is at a level <span class="math notranslate nohighlight">\(max\)</span>, all descendants of <span class="math notranslate nohighlight">\(x\)</span> are lower than <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ul>
+<p>Questions related to this min-max heap:</p>
+<ul class="simple">
+<li><p>Which is the smallest element of the heap?</p></li>
+<li><p>Which is the largest element of the heap?</p></li>
+<li><p>Draw a min-max heap that contains the following elements: 10,8,71,31,41,46,51,31,21,11,16,13.</p></li>
+<li><p>Describe the insertion operation in a min-max heap? Give the pseudo-code.</p></li>
+</ul>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinMaxHeap">MinMax Heap</a></p>
+</div>
+<div class="section" id="exercise-5-2-6">
+<h2>Exercise 5.2.6<a class="headerlink" href="#exercise-5-2-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Imagine a data structure that supports</p>
+<ol class="arabic simple">
+<li><p><em>insertion</em> in logarithmic time</p></li>
+<li><p>the <em>find median</em> operation in constant time</p></li>
+<li><p><em>deleting the median</em> in logarithmic time.</p></li>
+</ol>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises B</a><ul>
+<li><a class="reference internal" href="#exercise-5-2-1">Exercise 5.2.1</a></li>
+<li><a class="reference internal" href="#exercise-5-2-2">Exercise 5.2.2</a></li>
+<li><a class="reference internal" href="#exercise-5-2-3">Exercise 5.2.3</a></li>
+<li><a class="reference internal" href="#exercise-5-2-4-linked-heap-inginious">Exercise 5.2.4 (Linked Heap, Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-5-inginious">Exercise 5.2.5 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-6">Exercise 5.2.6</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="ex1.html"
+                        title="Chapitre précédent">Exercises A</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="../part6/index.html"
+                        title="Chapitre suivant">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../part6/index.html" title="Part 6 | Graphs: paths, spanning trees, and shortest paths"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 5 |  Priority queues, union-find and data compression</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

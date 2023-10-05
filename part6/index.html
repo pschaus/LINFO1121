@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part 6 | Graphs: paths, spanning trees, and shortest paths &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Objectives" href="intro.html" />
+    <link rel="prev" title="Exercises B" href="../part5/ex2.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="../part5/ex2.html" title="Exercises B"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="part-6-graphs-paths-spanning-trees-and-shortest-paths">
+<span id="part6"></span><h1>Part 6 |  Graphs: paths, spanning trees, and shortest paths<a class="headerlink" href="#part-6-graphs-paths-spanning-trees-and-shortest-paths" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#to-read">To read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ex1.html">Exercises A</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-1">Exercise 6.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-2">Exercise 6.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-3">Exercise 6.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-4-inginious">Exercise 6.1.4 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-5">Exercise 6.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-6">Exercise 6.1.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-7">Exercise 6.1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-8">Exercise 6.1.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-9">Exercise 6.1.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-10">Exercise 6.1.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-11">Exercise 6.1.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-12">Exercise 6.1.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-13-inginious">Exercise 6.1.13 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-14-inginious">Exercise 6.1.14 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-15-inginious">Exercise 6.1.15 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-16-inginious">Exercise 6.1.16 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-17-inginious">Exercise 6.1.17 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-18-inginious">Exercise 6.1.18 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-19-inginious">Exercise 6.1.19 (Inginious)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ex2.html">Exercises B</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-2-dijkstra-revisited">Exercise 6.2.2 (Dijkstra revisited)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-3-string-of-fairy-lights">Exercise 6.2.3 (string of fairy lights)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-4-maximization-of-minimum-weight">Exercise 6.2.4 (Maximization of minimum weight)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-5-inginious">Exercise 6.2.5 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-6-inginious">Exercise 6.2.6 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-7-inginious">Exercise 6.2.7 (Inginious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-8-inginious">Exercise 6.2.8 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="../part5/ex2.html"
+                        title="Chapitre précédent">Exercises B</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="intro.html"
+                        title="Chapitre suivant">Objectives</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="../part5/ex2.html" title="Exercises B"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

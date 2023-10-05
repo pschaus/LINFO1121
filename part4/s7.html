@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partie 4: Questions d’introduction &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partie 4: Questions d’introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p class="rubric" id="part4-1">Partie 4 | Dictionnaires: tables de hachages et autres implémentations</p>
+<div class="section" id="partie-4-questions-d-introduction">
+<h1>Partie 4: Questions d’introduction<a class="headerlink" href="#partie-4-questions-d-introduction" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="objectifs">
+<h2>Objectifs<a class="headerlink" href="#objectifs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>À l’issue de cette partie, chaque étudiant sera capable de:</p>
+<ul class="simple">
+<li><p>décrire avec exactitude et précision les concepts présents dans le chapitre du livre de référence, qui traite de tables de hachage</p></li>
+<li><p>mettre en oeuvre des algorithmes basés sur les tables de hachage,</p></li>
+<li><p>concevoir des fonctions de hachage adéquates pour différents types d’objets,</p></li>
+<li><p>de résoudre des problèmes simples sur la mémorisation d’informations et leur accès dans des tables de hachage,</p></li>
+<li><p>d’évaluer et mettre en oeuvre des représentations classiques de tables de hachage,</p></li>
+<li><p>décrire et mettre en oeuvre avec précision l’algorithme de Rabin-Karp pour rechercher un texte dans un corpus.</p></li>
+</ul>
+</div>
+<div class="section" id="calendrier">
+<h2>Calendrier<a class="headerlink" href="#calendrier" title="Lien permanent vers ce titre">¶</a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Calendrier de remise selon votre jour de TP</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TP Mercredi</p></th>
+<th class="head"><p>TP Jeudi</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mercredi 21/10</p></td>
+<td><p>Jeudi 22/10</p></td>
+<td><p>Début de la partie 4.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lundi 26/10 23h59</p></td>
+<td><p>Mardi 27/10 23h59</p></td>
+<td><p>Soumission du rapport pour les questions d’introduction (en groupe)</p></td>
+</tr>
+<tr class="row-even"><td><p>Mercredi 28/10</p></td>
+<td><p>Jeudi 29/10</p></td>
+<td><p>Première séance tutorée.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lundi 02/11 23h59</p></td>
+<td><p>Mardi 03/11 23h59</p></td>
+<td><p>Deadline exercice INGInious (individuel)</p></td>
+</tr>
+<tr class="row-even"><td><p>Mercredi 04/11</p></td>
+<td><p>Jeudi 05/11</p></td>
+<td><p>Seconde séance tutorée. Questions de bilan + début partie 5.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a-lire">
+<h2>A lire<a class="headerlink" href="#a-lire" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Livre de référence:</p>
+<ul class="simple">
+<li><p>chapitre 3.4, 3.5, 5.3 (Rabin-Karp fingerprint search only).</p></li>
+</ul>
+</div>
+<div class="section" id="exercices-theoriques">
+<h2>Exercices théoriques<a class="headerlink" href="#exercices-theoriques" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ces exercices sont à préparer pour le mercredi de S7.</p>
+</div>
+<div class="section" id="exercice-4-1-1">
+<h3>Exercice 4.1.1<a class="headerlink" href="#exercice-4-1-1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Citez au moins quatre implémentations différentes d’un dictionnaire (table de symboles).
+Précisez, dans chaque cas, quelles sont les propriétés principales de ces implémentations.
+Dans quel(s) cas s’avèrent-elles intéressantes ?
+Quelles sont les complexités calculatoires de leurs principales méthodes ?</p>
+</div>
+<div class="section" id="exercice-4-1-2">
+<h3>Exercice 4.1.2<a class="headerlink" href="#exercice-4-1-2" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Souvenez vous de la question suivante proposée en bilan sur la mission sur les tris: Étant donné un ensemble <span class="math notranslate nohighlight">\(S\)</span> de taille <span class="math notranslate nohighlight">\(n\)</span>, et un nombre <span class="math notranslate nohighlight">\(x\)</span>. Décrivez un algorithme efficace utilisant une HashTable pour trouver s’il existe une paire <span class="math notranslate nohighlight">\((a,b)\)</span> avec <span class="math notranslate nohighlight">\(a \in S,b \in S\)</span> telle que <span class="math notranslate nohighlight">\(a+b=x\)</span>. Quelle est la complexité de votre algorithme? Est-elle meilleure que votre solution qui utilisait un tri?</p>
+</div>
+<div class="section" id="exercice-4-1-3">
+<h3>Exercice 4.1.3<a class="headerlink" href="#exercice-4-1-3" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Démontrez que <span class="math notranslate nohighlight">\((a + b) \% M\)</span> est équivalent à <span class="math notranslate nohighlight">\(((a \% M) + b) \% M\)</span>. En quoi cette propriété peut être utile pour construire une fonction de hachage sur les String.
+Expliquez comment Java calcule une fonction de hachage sur les String?
+Quelle est la complexité pour calculer 1 fois et <span class="math notranslate nohighlight">\(N\)</span> fois le hashcode d’un String.</p>
+</div>
+<div class="section" id="exercice-4-1-4">
+<h3>Exercice 4.1.4<a class="headerlink" href="#exercice-4-1-4" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Expliquez pourquoi la méthode <code class="docutils literal notranslate"><span class="pre">hash()</span></code> p461 du livre retourne <cite>(x.hashCode() &amp; 0x7FFFFFFF) % M</cite> et pas simplement <cite>x.hashCode() % M</cite> ?
+Quel nombre représente <code class="docutils literal notranslate"><span class="pre">0x7FFFFFFF</span></code> ?
+Quelle est sa représentation binaire ?
+Montrer l’impact au niveau binaire sur un exemple où <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span></code> retourne un nombre négatif. Hint: utilisez <code class="docutils literal notranslate"><span class="pre">Integer.toBinaryString(int)</span></code> pour vérifier votre réponse.</p>
+</div>
+<div class="section" id="exercice-4-1-5">
+<h3>Exercice 4.1.5<a class="headerlink" href="#exercice-4-1-5" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Java fournit la classe <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> comme implémentation de l’interface <code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code>.
+Pouvez-vous déterminer précisément de quelle variante de table de hachage il s’agit ?
+Java fournit-il d’autres implémentations de l’interface <code class="docutils literal notranslate"><span class="pre">Map</span></code> ?
+Faites un diagramme qui représente  les interfaces et les classes qui se rapportent à <code class="docutils literal notranslate"><span class="pre">Map</span></code> et précisez ce qui, dans chaque cas, les caractérise.
+Qu’est-ce qui peut servir de clef pour une <code class="docutils literal notranslate"><span class="pre">Hashtable</span></code> en Java ? Soyez précis.</p>
+</div>
+<div class="section" id="exercice-4-1-6">
+<h3>Exercice 4.1.6<a class="headerlink" href="#exercice-4-1-6" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Qu’entend-on par la notion de « collision » dans une table de hachage ?
+Les collisions ont-elles une influence sur la complexité des opérations ?
+Si oui, quelle(s) opération(s) avec quelle(s) complexité(s), sinon précisez pourquoi.</p>
+</div>
+<div class="section" id="exercice-4-1-7">
+<h3>Exercice 4.1.7<a class="headerlink" href="#exercice-4-1-7" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Qu’est-ce que le facteur de charge d’une table de hachage.
+Est-ce que le contrôle du facteur de charge est nécessaire/optionnel pour le bon fonctionnement d’une table de hachage avec Linear Probing ou Separate Chaining ?
+Quelle est la stratégie utilisé par <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> pour contrôler le facteur de charge ?
+En quoi est-elle différente de celle proposée dans``LinearProbinHashST`` ?
+Quel est le lien entre le facteur de charge et collision ?</p>
+</div>
+<div class="section" id="exercice-4-1-8">
+<h3>Exercice 4.1.8<a class="headerlink" href="#exercice-4-1-8" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Imaginez une nouvelle méthode <code class="docutils literal notranslate"><span class="pre">iterator()</span></code> qui retourne un itérateur sur les clefs de <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code>.
+Votre itérateur ne devrait pas accepter de modification de la table de hashage alors qu’il est utilisé: une <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException()</span></code> doit être lancée si c’est le cas.
+Que suggérez vous pour ce faire? Hint: Inspirez vous de la stratégie de <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code>.</p>
+</div>
+<div class="section" id="exercice-4-1-9">
+<h3>Exercice 4.1.9<a class="headerlink" href="#exercice-4-1-9" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Décrivez l’implémentation  de la méthode <code class="docutils literal notranslate"><span class="pre">put(key)</span></code> dans une table de hachage qui utilise la technique du « linear probing » pour gérer les collisions qui utiliserait un marqueur spécial pour représenter les entrées supprimées à l’aide de la méthode <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code>.
+En d’autres termes la méthode <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> au lieu de réarranger le contenu de la table de hachage de telle sorte qu’elle soit comme si l’entrée supprimée n’avait jamais été insérée, va simplement marquer l’entrée avec le marqueur spécial.
+Quel est l’avantage ou l’inconvénient de cette approche par rapport à celle de « LinearProbingHashST » du livre ?</p>
+</div>
+<div class="section" id="exercice-4-1-10-rabin-karp">
+<h3>Exercice 4.1.10 (Rabin-Karp)<a class="headerlink" href="#exercice-4-1-10-rabin-karp" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Imaginez une fonction de hachage pour un string <span class="math notranslate nohighlight">\(s\)</span> telle que connaître sa valeur pour le sous string <span class="math notranslate nohighlight">\(s[i,...,i+n-1]\)</span> permettrait de calculer la fonction de hachage du string <span class="math notranslate nohighlight">\(s[i+1,...,i+n]\)</span> en temps constant (de manière incrémentale).</p>
+</div>
+<div class="section" id="exercice-4-1-11-rabin-karp">
+<h3>Exercice 4.1.11 (Rabin-Karp)<a class="headerlink" href="#exercice-4-1-11-rabin-karp" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Expliquez comment rechercher un sous string de taille <span class="math notranslate nohighlight">\(m\)</span> dans un long string de taille <span class="math notranslate nohighlight">\(n\)</span> en <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> à l’aide d’une fonction de hachage incrémentale.
+Comment feriez-vous si vous avez <span class="math notranslate nohighlight">\(k\)</span> strings de taille <span class="math notranslate nohighlight">\(m\)</span> à rechercher dans le long string de taille <span class="math notranslate nohighlight">\(n\)</span> ?
+Quelle serait la complexité de votre méthode ? est-elle plus avantageuse que lancer k fois l’algorithme de Rabin-Karp ?</p>
+</div>
+</div>
+<div class="section" id="exercices-d-implementation-sur-inginious">
+<h2>Exercices d’implémentation sur INGInious<a class="headerlink" href="#exercices-d-implementation-sur-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous devez faire ces exercices pour le mercredi de S8.</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmHashing">QCM fonction de hachage</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4QcmRk">QCM Complexité RabinKarp</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4IncrementalHash">Implem Fonction de Hash incémentale</a></p></li>
+<li><p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/Part4RabinKarp">Implem RabinKarp K patterns</a></p></li>
+</ol>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Partie 4: Questions d’introduction</a><ul>
+<li><a class="reference internal" href="#objectifs">Objectifs</a></li>
+<li><a class="reference internal" href="#calendrier">Calendrier</a></li>
+<li><a class="reference internal" href="#a-lire">A lire</a></li>
+<li><a class="reference internal" href="#exercices-theoriques">Exercices théoriques</a><ul>
+<li><a class="reference internal" href="#exercice-4-1-1">Exercice 4.1.1</a></li>
+<li><a class="reference internal" href="#exercice-4-1-2">Exercice 4.1.2</a></li>
+<li><a class="reference internal" href="#exercice-4-1-3">Exercice 4.1.3</a></li>
+<li><a class="reference internal" href="#exercice-4-1-4">Exercice 4.1.4</a></li>
+<li><a class="reference internal" href="#exercice-4-1-5">Exercice 4.1.5</a></li>
+<li><a class="reference internal" href="#exercice-4-1-6">Exercice 4.1.6</a></li>
+<li><a class="reference internal" href="#exercice-4-1-7">Exercice 4.1.7</a></li>
+<li><a class="reference internal" href="#exercice-4-1-8">Exercice 4.1.8</a></li>
+<li><a class="reference internal" href="#exercice-4-1-9">Exercice 4.1.9</a></li>
+<li><a class="reference internal" href="#exercice-4-1-10-rabin-karp">Exercice 4.1.10 (Rabin-Karp)</a></li>
+<li><a class="reference internal" href="#exercice-4-1-11-rabin-karp">Exercice 4.1.11 (Rabin-Karp)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercices-d-implementation-sur-inginious">Exercices d’implémentation sur INGInious</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partie 4: Questions d’introduction</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

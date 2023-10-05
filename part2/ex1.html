@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises A &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercises B" href="ex2.html" />
+    <link rel="prev" title="Objectives" href="intro.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 2 |  Sorting and Properties of Sorted Sets</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-a">
+<span id="part2-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W4.</p>
+</div>
+<div class="section" id="exercise-2-1-1">
+<h2>Exercise 2.1.1<a class="headerlink" href="#exercise-2-1-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Given an array containing <span class="math notranslate nohighlight">\(n\)</span> sorted integers, and a number <span class="math notranslate nohighlight">\(x\)</span> to insert into the array, can you
+indicate an algorithm to find the position where to insert <span class="math notranslate nohighlight">\(x\)</span> while keeping the array sorted?</p>
+<p>What is the complexity of this algorithm?
+Does your algorithm also work for a sorted linked-list? With what complexity?</p>
+</div>
+<div class="section" id="exercise-2-1-2">
+<h2>Exercise 2.1.2<a class="headerlink" href="#exercise-2-1-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>We consider the very general problem where we have <span class="math notranslate nohighlight">\(n\)</span> jobs to perform for clients
+and each job <span class="math notranslate nohighlight">\(j\)</span> takes <span class="math notranslate nohighlight">\(t_j\)</span> seconds to complete.
+Only one job can be performed at a time.</p>
+<p>The goal is to complete all jobs while maximizing customer satisfaction.
+Maximizing customer satisfaction means building a schedule that minimizes
+the average job completion time.</p>
+<p>For example, if the duration of the jobs is 5,8,3,4 and the jobs are carried out in this order,
+the end times will be 5,13,16,20 and therefore the average end time will be
+<span class="math notranslate nohighlight">\(\frac{5+13+16+20}{4}=13.5\)</span>.</p>
+<p>Prove (with a written proof!) that sorting the <span class="math notranslate nohighlight">\(n\)</span> jobs in ascending order of <span class="math notranslate nohighlight">\(t_j\)</span> generates an optimal
+solution to the problem.</p>
+</div>
+<div class="section" id="exercise-2-1-3">
+<h2>Exercise 2.1.3<a class="headerlink" href="#exercise-2-1-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is meant by a stable and in place sorting algorithm?
+For all the algorithms presented in the reference book,
+indicate whether they are in place (or not) or stable (or not).</p>
+<p>Answer to the small <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/sorting_property">Inginious MCQ</a></p>
+</div>
+<div class="section" id="exercise-2-1-4-inginious">
+<h2>Exercise 2.1.4 (Inginious)<a class="headerlink" href="#exercise-2-1-4-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>How would you sort increasingly a pile of cards with the restriction that
+the only permitted operations are:</p>
+<ol class="arabic simple">
+<li><p>compare the first two cards,</p></li>
+<li><p>exchange the first two cards,</p></li>
+<li><p>move the first card to the back of the pile?</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Try to maintain the invariant that the <cite>last i elements of the pile are sorted and those are the ith biggest ones</cite>.
+Then at each iteration try to make this invariant true for one more card (i+1).</p>
+</div>
+<p>Write the pseudo code of your algorithm on paper and give the complexity.</p>
+<p>Once it is done, implement your solution on the inginious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_CardSorter">task</a></p>
+</div>
+<div class="section" id="exercise-2-1-5">
+<h2>Exercise 2.1.5<a class="headerlink" href="#exercise-2-1-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>How to sort a doubly linked list (which therefore does not allow access
+to a position by its index) efficiently? How complex is your
+algorithm?</p>
+<p>Which algorithm is used by the <cite>sort</cite> method of the <cite>Collections</cite> class below?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">list</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nb">list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">compare</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-2-1-6">
+<h2>Exercise 2.1.6<a class="headerlink" href="#exercise-2-1-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Design an efficient algorithm for counting the number of pairs of disordered values.
+For example in the sequence <span class="math notranslate nohighlight">\(1,3,2,5,6,4,8\)</span> there are the pairs <span class="math notranslate nohighlight">\((3,2),(5,4),(6,4)\)</span>
+which are unordered. Justify the complexity of your algorithm and give its pseudo code.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Assume two arrays <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, let <span class="math notranslate nohighlight">\(A.B\)</span> be the array result of the
+concatenation of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Let <span class="math notranslate nohighlight">\(nUnsorted(A)\)</span> be the number of unsorted pairs
+in an array <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We have the following property that you can prove:</p>
+<div class="math notranslate nohighlight">
+\[nUnsorted(A.B) = nUnsorted(A)+ nUnsorted(B)+|\{(i,j) : A[i]&gt;B[j]\}|\]</div>
+<p>What is the complexity to calculate <span class="math notranslate nohighlight">\(|\{(i,j) : A[i]&gt;B[j]\}|\)</span> ?
+Can this complexity be improved if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are sorted?
+Could you compute <span class="math notranslate nohighlight">\(nUnsorted\)</span> based on some adaptation of a well-known sorting algorithm
+that runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n \cdot \log(n))\)</span>?</p>
+</div>
+</div>
+<div class="section" id="exercise-2-1-7">
+<h2>Exercise 2.1.7<a class="headerlink" href="#exercise-2-1-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Imagine that we want to sort a collection of <cite>Person</cite> objects lexicographically by their (weight, age, height)
+but also <cite>Student</cite> objects by their (age, grade, year), how to avoid duplicating the sorting algorithm
+specifically for these classes?</p>
+<p>Explain why the notions of <cite>Comparable</cite> and <cite>Comparator</cite> of Java are useful for this?
+Explain how you would implement an efficient <cite>Comparator</cite> for <cite>String</cite>.</p>
+</div>
+<div class="section" id="exercise-2-1-8">
+<h2>Exercise 2.1.8<a class="headerlink" href="#exercise-2-1-8" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Is it possible to get a stable sort starting from an unstable sorting algorithm? How?</p>
+</div>
+<div class="section" id="exercise-2-1-9">
+<h2>Exercise 2.1.9<a class="headerlink" href="#exercise-2-1-9" title="Lien permanent vers ce titre">¶</a></h2>
+<p>How would you get the 3rd smallest value in an array of one million int?
+How complex is your algorithm?</p>
+</div>
+<div class="section" id="exercise-2-1-10-inginious">
+<h2>Exercise 2.1.10 (Inginious)<a class="headerlink" href="#exercise-2-1-10-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>How would you get the median of an array of values (so the <span class="math notranslate nohighlight">\(\frac{n}{2}\)</span> th value)?
+What is the time complexity of your algorithm?</p>
+<p>Solve the related Inginious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Median">Median</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>What can you infer regarding the position of the median after the partitioning operation
+around a <span class="math notranslate nohighlight">\(v\)</span> value in Quick-Sort algorithm?</p>
+</div>
+</div>
+<div class="section" id="exercise-2-1-11">
+<h2>Exercise 2.1.11<a class="headerlink" href="#exercise-2-1-11" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is Autoboxing and Unboxing in Java?
+How can this impact the performance of a sorting algorithm?</p>
+<p>Compare the performance of <code class="docutils literal notranslate"><span class="pre">java.util.Sort</span></code> on an array of 10000000 entries consisting of <code class="docutils literal notranslate"><span class="pre">int</span></code> and
+the same array with <code class="docutils literal notranslate"><span class="pre">Integer</span></code>.</p>
+</div>
+<div class="section" id="exercise-2-1-12">
+<h2>Exercise 2.1.12<a class="headerlink" href="#exercise-2-1-12" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is a code <em>profiler</em>?
+What information provided by a profiler could you use to improve
+performance of your algorithms and data structures in general (speed, memory, GC)?</p>
+<p>A good free profiler is VisualVM.</p>
+<p>Use VisualVM on your code for the previous question.</p>
+</div>
+<div class="section" id="exercise-2-1-13-inginious">
+<h2>Exercise 2.1.13 (Inginious)<a class="headerlink" href="#exercise-2-1-13-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Complete (without reading the book since you won’t have it at the exam) the implementation of <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort">Merge Sort</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises A</a><ul>
+<li><a class="reference internal" href="#exercise-2-1-1">Exercise 2.1.1</a></li>
+<li><a class="reference internal" href="#exercise-2-1-2">Exercise 2.1.2</a></li>
+<li><a class="reference internal" href="#exercise-2-1-3">Exercise 2.1.3</a></li>
+<li><a class="reference internal" href="#exercise-2-1-4-inginious">Exercise 2.1.4 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-5">Exercise 2.1.5</a></li>
+<li><a class="reference internal" href="#exercise-2-1-6">Exercise 2.1.6</a></li>
+<li><a class="reference internal" href="#exercise-2-1-7">Exercise 2.1.7</a></li>
+<li><a class="reference internal" href="#exercise-2-1-8">Exercise 2.1.8</a></li>
+<li><a class="reference internal" href="#exercise-2-1-9">Exercise 2.1.9</a></li>
+<li><a class="reference internal" href="#exercise-2-1-10-inginious">Exercise 2.1.10 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-11">Exercise 2.1.11</a></li>
+<li><a class="reference internal" href="#exercise-2-1-12">Exercise 2.1.12</a></li>
+<li><a class="reference internal" href="#exercise-2-1-13-inginious">Exercise 2.1.13 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="intro.html"
+                        title="Chapitre précédent">Objectives</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="ex2.html"
+                        title="Chapitre suivant">Exercises B</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 2 |  Sorting and Properties of Sorted Sets</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

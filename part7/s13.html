@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partie 7: Révisions &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partie 7: Révisions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p class="rubric" id="part7-1">Partie 7 | Révisions</p>
+<div class="section" id="partie-7-revisions">
+<h1>Partie 7: Révisions<a class="headerlink" href="#partie-7-revisions" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Plan du TP:</p>
+<ul class="simple">
+<li><p>20 premières minutes: lecture et réponse aux QCMs individuellement</p></li>
+<li><p>20 minutes suivantes: correction collective des QCMs. Le groupe vérifie que les réponses de chacun sont toutes les mêmes, et tente
+de trouver la bonne si ce n’est pas le cas (+ justification et explication pour ceux qui se trompaient).</p></li>
+<li><p>Pendant les 1h20 restantes, tentez de faire, en groupe, les deux questions INGInious, <em>séquentiellement</em> (travaillez
+tous en même temps sur la même question). Ouvrez à chaque fois un partage d’écran sur Teams, et partagez IntelliJ.
+<strong>La personne qui partage IntelliJ devrait être différente à chaque fois, et devrait idéalement être à chaque fois</strong>
+<strong>un membre de votre groupe qui se sent moins à l’aise avec la matière.</strong> Le but est que cette personne résolve le problème
+et que le reste du groupe l’aide.</p></li>
+</ul>
+<div class="section" id="qcm-1-janvier-2020">
+<h2>QCM 1 (janvier 2020)<a class="headerlink" href="#qcm-1-janvier-2020" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Etant donné un texte ne contenant que la lettre <cite>a</cite> répété un million de fois (<span class="math notranslate nohighlight">\(10^6\)</span>) et encodé en ASCII étendu (un byte par caractère).
+Supposez maintenant que ce texte est compressé en appliquant deux fois l’algorithme de compression de Huffman successivement.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">--</span><span class="n">compress</span><span class="o">--&gt;</span> <span class="n">output1</span> <span class="o">--</span><span class="n">compress</span><span class="o">--&gt;</span> <span class="n">output2</span>
+      \<span class="o">-----------&gt;</span> <span class="n">tree1</span>   \<span class="o">-----------&gt;</span> <span class="n">tree2</span>
+</pre></div>
+</div>
+<p>Les arbres (tree1/2) ne sont pas comptés dans la taille des sorties (output1/2).</p>
+<p>Cochez <strong>les</strong> affirmations correctes. <span class="math notranslate nohighlight">\(size(x)\)</span> donne la longueur en bit de <cite>x</cite>. Par exemple, <span class="math notranslate nohighlight">\(size(input)=8\cdot 10^6\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Large{\frac{\text{size}(output\mathbf{1})}{\text{size}(input)}\simeq \frac{1}{8}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Large{\frac{size(output\mathbf{1})}{size(input)}\simeq \frac{1}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Large{\frac{size(output\mathbf{2})}{size(input)}\simeq \frac{1}{64}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Large{\frac{size(output\mathbf{2})}{size(input)}\simeq \frac{1}{16}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Large{\frac{size(output\mathbf{2})}{size(input)}\simeq \frac{1}{8}}\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="qcm-2-janvier-2020">
+<h2>QCM 2 (janvier 2020)<a class="headerlink" href="#qcm-2-janvier-2020" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’en-tête d’un fichier compressé par l’algorithme de compression de Huffman contient une version sérialisée de l’arbre utilisé pour la compression. Cette sérialisation est effectuée en utilisant un parcours préfixe de l’arbre, tel que vu au cours.</p>
+<p>Etant donné qu’un arbre contient <span class="math notranslate nohighlight">\(n\)</span> noeuds, quelle est la complexité temporelle (la plus précise, le cas échéant) de reconstruire l’arbre (chainé) à partir du parcours avec la méthode <cite>readTrie()</cite> ?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">static</span> <span class="n">Node</span> <span class="nf">readTrie</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">boolean</span> <span class="n">isLeaf</span> <span class="o">=</span> <span class="n">BinaryStdIn</span><span class="p">.</span><span class="na">readBoolean</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isLeaf</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// constructor is (letter, leftNode, rightNode)</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">BinaryStdIn</span><span class="p">.</span><span class="na">readChar</span><span class="p">(),</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">&#39;\0&#39;</span><span class="p">,</span> <span class="n">readTrie</span><span class="p">(),</span> <span class="n">readTrie</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(n \log n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(\log n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p></li>
+<li><p>Aucune de ces réponses (<span class="math notranslate nohighlight">\(\mathcal{O}(f(n))\)</span> où <span class="math notranslate nohighlight">\(f(n)\)</span> est asymptotiquement plus grand que <span class="math notranslate nohighlight">\(n^2\)</span>)</p></li>
+</ul>
+</div>
+<div class="section" id="qcm-3-janvier-2020">
+<h2>QCM 3 (janvier 2020)<a class="headerlink" href="#qcm-3-janvier-2020" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Etant donné un tableau de fréquence avec <span class="math notranslate nohighlight">\(n\)</span> entrées, quelle est la complexité temporelle (la plus précise, le cas échéant) pour construire l’arbre de Huffman au départ du tableau de fréquences avec <cite>buildTrie</cite> ?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// build the Huffman trie given frequencies</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">Node</span> <span class="nf">buildTrie</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">freq</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// initialze priority queue with singleton trees</span>
+    <span class="n">MinPQ</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">pq</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MinPQ</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">freq</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">pq</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">freq</span><span class="o">[</span><span class="n">c</span><span class="o">]</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">));</span>
+
+    <span class="c1">// merge two smallest trees</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Node</span> <span class="n">left</span>  <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="na">delMin</span><span class="p">();</span>
+        <span class="n">Node</span> <span class="n">right</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="na">delMin</span><span class="p">();</span>
+        <span class="n">Node</span> <span class="n">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">&#39;\0&#39;</span><span class="p">,</span> <span class="n">left</span><span class="p">.</span><span class="na">freq</span> <span class="o">+</span> <span class="n">right</span><span class="p">.</span><span class="na">freq</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+        <span class="n">pq</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">parent</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">pq</span><span class="p">.</span><span class="na">delMin</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(log(n))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(n.log(n))\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span></p></li>
+<li><p>Aucune de ces réponses (<span class="math notranslate nohighlight">\(\mathcal{O}(f(n))\)</span> où <span class="math notranslate nohighlight">\(f(n)\)</span> est asymptotiquement plus grand que <span class="math notranslate nohighlight">\(n^2\)</span>)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notez que dans notre infinie bonté, on vous donne ici l’algorithme… vous n’avez donc qu’à le regarder et à donner
+la complexité. C’est quelque chose qu’on fait… parfois. D’autres fois, on ne vous le donnera pas; la méthode
+est donc à ce moment soit de connaitre la réponse par coeur (mauvaise idée sauf pour quelques algorithmes spécifiques,
+dont la complexité n’est pas évidente à la lecture) soit d’abord de réécrire l’algorithme et de regarder sa complexité.</p>
+</div>
+</div>
+<div class="section" id="qcm-4-janvier-2020">
+<h2>QCM 4 (janvier 2020)<a class="headerlink" href="#qcm-4-janvier-2020" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Répondez par vrai ou faux. Tout les mots sont importants!</p>
+<p>La cotation de cette question est <span class="math notranslate nohighlight">\(20\cdot\max(0, 2(\frac{x}{n}-0.5))\)</span> où <span class="math notranslate nohighlight">\(x\)</span> est le nombre de case correctement cochées (une case est correctement cochée si l’affirmation est fausse et qu’elle n’est pas cochée ou si elle est cochée et que l’affirmation est vraie) et où <span class="math notranslate nohighlight">\(n\)</span> est le nombre d’affirmations. Répondre au hasard vous vaudra donc <span class="math notranslate nohighlight">\(0\)</span> en moyenne!</p>
+<div class="section" id="exemple">
+<h3>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour vous aider, voilà un exemple de graphe. Il sera probablement utile.</p>
+<a class="reference internal image-reference" href="../_images/example.svg"><img alt="graph example" class="align-center" src="../_images/example.svg" width="200px" /></a>
+</div>
+<div class="section" id="transformation-lineaire">
+<h3>Transformation linéaire<a class="headerlink" href="#transformation-lineaire" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Quand on parle de « transformation linéaire » ci-dessous, nous entendons appliquer la formule <span class="math notranslate nohighlight">\(a*w+b\)</span> sur le poids <span class="math notranslate nohighlight">\(w\)</span> de chaque arête du graphe. Par exemple:</p>
+<a class="reference internal image-reference" href="../_images/linear.svg"><img alt="graph example" class="align-center" src="../_images/linear.svg" width="200px" /></a>
+<p>Avec <span class="math notranslate nohighlight">\(a &gt; 0\)</span> et <span class="math notranslate nohighlight">\(b \geq 0\)</span>.</p>
+<ul class="simple">
+<li><p>L’algorithme de Dijkstra permet de trouver le chemin le plus court dans tout graphe, y compris avec des poids négatifs, mais pas dans ceux qui ont des cycles de poids négatif.</p></li>
+<li><p>En supposant un graphe connexe au départ, lors de son exécution, un invariant de l’algorithme de Prim est que les edges selectionnées forment un graphe connexe.</p></li>
+<li><p>L’algorithme de Dijkstra génère, pendant son calcul du chemin le plus court sur un graphe connexe pondéré positivement, un arbre sous-tendant du graphe. Chaque chemin partant de la racine et allant vers n’importe quel noeud est le (== un des) chemins les plus courts de la racine vers cette feuille. <strong>Hint: raisonnez sur l’exemple ci-dessus. Cela pourrait vous aider.</strong></p></li>
+<li><p>L’algorithme de Dijkstra génère, pendant son calcul du chemin le plus court sur un graphe connexe pondéré positivement, un arbre sous-tendant du graphe. Cet arbre est un minimum spanning tree. <strong>Hint: raisonnez sur l’exemple ci-dessus. Cela pourrait vous aider.</strong></p></li>
+<li><p>L’algorithme de Dijkstra permet de trouver le chemin le plus court dans tout graphe, y compris avec des poids négatifs.</p></li>
+<li><p>Soit un graphe G, connexe, non-dirigé, et pondéré (positivement). On effectue une opération linéaire (de coefficient <span class="math notranslate nohighlight">\(a\)</span> strictement positif et biais <span class="math notranslate nohighlight">\(b\)</span> positif, <strong>voir exemple ci-dessus</strong>) sur le poids des arêtes. L’ensemble des MSTs de ce nouveau graphe est le même que celui du graphe original.</p></li>
+<li><p>Soit un graphe G, connexe, non-dirigé, et pondéré (positivement). On effectue une opération linéaire (de coefficient <span class="math notranslate nohighlight">\(a\)</span> strictement positif et biais <span class="math notranslate nohighlight">\(b\)</span> positif, <strong>voir exemple ci-dessus</strong>) sur le poids des arêtes.  Les chemins les plus courts trouvés par l’algorithme de Bellman-Ford sont les mêmes que ceux du graphe original. (Considérez par simplicité que dans le graphe original il y a au plus un chemin le plus court entre toute paire de noeud)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="qcm-5-janvier-2020">
+<h2>QCM 5 (janvier 2020)<a class="headerlink" href="#qcm-5-janvier-2020" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Cochez les affirmations correctes.</p>
+<p>Dans les questions ci-dessous:</p>
+<ul class="simple">
+<li><p>Les heaps sont toujours formées de telle sorte qu’elles donnent le plus petit élément en premier. Autrement dit, ce sont des min-heaps.</p></li>
+<li><p>Quand on parle de « tableau d’un arbre complet » il s’agit de l’encodage d’arbre sous forme de tableau vu au cours. Le tableau commence à l’indice 1, cet indice représantant la racine de l’arbre. Les deux noeuds fils d’un noeud <span class="math notranslate nohighlight">\(i\)</span> sont <span class="math notranslate nohighlight">\(2i\)</span> et <span class="math notranslate nohighlight">\(2i+1\)</span>.</p></li>
+<li><p>Les arbres sont complets</p></li>
+</ul>
+<p>Tout les mots sont importants!</p>
+<p>La cotation de cette question est <span class="math notranslate nohighlight">\(\max(0, 2(\frac{x}{n}-0.5))\)</span> où <span class="math notranslate nohighlight">\(x\)</span> est le nombre de case correctement cochées (une case est correctement cochée si l’affirmation est fausse et qu’elle n’est pas cochée ou si elle est cochée et que l’affirmation est vraie) et où <span class="math notranslate nohighlight">\(n\)</span> est le nombre d’affirmations. Répondre au hasard vous vaudra donc <span class="math notranslate nohighlight">\(0\)</span> en moyenne!</p>
+<ul class="simple">
+<li><p>Il est nécessaire et suffisant que « pour tout chemin allant de la racine vers une feuille du heap, les noeuds soient (non-strictement) croissants » pour qu’un arbre soit un heap (donnant le plus petit élément en premier).</p></li>
+<li><p>Il est nécessaire et suffisant que « pour chaque noeud, ses deux enfants soient plus grands que lui » pour qu’un arbre soit un heap (donnant le plus petit élément en premier).</p></li>
+<li><p>Le tableau d’une heap binaire complet est (non-strictement) croissant.</p></li>
+<li><p>Un arbre binaire complet dont le tableau est croissant forme un heap.</p></li>
+<li><p>Etant donné un heap binaire complet de <span class="math notranslate nohighlight">\(n&gt;10\)</span> noeuds, retirer le minimum et le remettre (pop puis push) laisse le heap (le tableau) inchangé.</p></li>
+<li><p>Il existe un algorithme en <span class="math notranslate nohighlight">\(\Theta(n)\)</span> pour former un heap correct à partir d’un tableau d’éléments non trié.</p></li>
+</ul>
+</div>
+<div class="section" id="questions-inginious-examen-aout-2020">
+<h2>Questions INGInious (examen Aout 2020)<a class="headerlink" href="#questions-inginious-examen-aout-2020" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q1">https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q1</a></p>
+<p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q2">https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q2</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Partie 7: Révisions</a><ul>
+<li><a class="reference internal" href="#qcm-1-janvier-2020">QCM 1 (janvier 2020)</a></li>
+<li><a class="reference internal" href="#qcm-2-janvier-2020">QCM 2 (janvier 2020)</a></li>
+<li><a class="reference internal" href="#qcm-3-janvier-2020">QCM 3 (janvier 2020)</a></li>
+<li><a class="reference internal" href="#qcm-4-janvier-2020">QCM 4 (janvier 2020)</a><ul>
+<li><a class="reference internal" href="#exemple">Exemple</a></li>
+<li><a class="reference internal" href="#transformation-lineaire">Transformation linéaire</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#qcm-5-janvier-2020">QCM 5 (janvier 2020)</a></li>
+<li><a class="reference internal" href="#questions-inginious-examen-aout-2020">Questions INGInious (examen Aout 2020)</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Partie 7: Révisions</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

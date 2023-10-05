@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises A &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercises B" href="ex2.html" />
+    <link rel="prev" title="Objectives" href="intro.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-a">
+<span id="part1-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W2.</p>
+</div>
+<div class="section" id="exercise-1-1-1">
+<h2>Exercise 1.1.1<a class="headerlink" href="#exercise-1-1-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Define what an abstract data type (ADT) is. In java, is it better to describe an ADT by a
+class or an interface? Why?</p>
+</div>
+<div class="section" id="exercise-1-1-2">
+<h2>Exercise 1.1.2<a class="headerlink" href="#exercise-1-1-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>How to implement a <em>stack</em> by a simply linked list where the operations
+and <cite>pop</cite> operations are done at <strong>end of list</strong>? Is this solution efficient? Argue.</p>
+</div>
+<div class="section" id="exercise-1-1-3">
+<h2>Exercise 1.1.3<a class="headerlink" href="#exercise-1-1-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What are the possible implementations for a stack? By consulting the Java API documentation, describe
+the implementation of a stack by the class <cite>java.util.Stack</cite>. Go to the source code of the implementation
+<cite>java.util.Stack</cite> (crtl+B from IntelliJ).</p>
+<p>Why do you think Java developers chose this implementation
+(hint: argue about memory and garbage collection)?</p>
+</div>
+<div class="section" id="exercise-1-1-4-inginious">
+<h2>Exercise 1.1.4 (Inginious)<a class="headerlink" href="#exercise-1-1-4-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>How do you implement the abstract data type <em>stack</em> using two <em>queues</em>?
+In particular, describe how the <cite>push</cite> and <cite>pop</cite> methods work in this case.</p>
+<p>As an example, specify the state of each of the two queues after stacking the integers <cite>1 2 3</cite> from an initially empty stack.
+Describe what happens next when the <cite>pop</cite> operation is performed.</p>
+<p>What is the time complexity of these methods if we assume that each <cite>queue</cite> and <cite>dequeue</cite> operation
+operations are executed in constant time?</p>
+<p>Is this implementation of a stack efficient (for <span class="math notranslate nohighlight">\(n\)</span> operations)
+compared to the other implementations presented in the reference book?</p>
+<p>Once you have imagined your solution on paper, you can solve the corresponding Inginious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues">StackWithTwoQueues</a> .</p>
+</div>
+<div class="section" id="exercise-1-1-5">
+<h2>Exercise 1.1.5<a class="headerlink" href="#exercise-1-1-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What do you think about these three different ways of iterating over the elements of a <a href="#id1"><span class="problematic" id="id2">`</span></a>java.util.LinkedList? Are they equivalent? Use a time-complecity argument.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="c1">// assume I insert n elements in the list here</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">val</span><span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">itr</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">Integer</span> <span class="n">val</span> <span class="o">=</span> <span class="n">itr</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Integer</span> <span class="n">val</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-1-1-6">
+<h2>Exercise 1.1.6<a class="headerlink" href="#exercise-1-1-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>The <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation is used in the reference book for the analysis of the calculation times of
+algorithms. How this notation differs or resembles the more classically used notations <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
+(big Oh), <span class="math notranslate nohighlight">\(\mathcal{\Omega}\)</span> (big Omega) and <span class="math notranslate nohighlight">\(\mathcal{\Theta}\)</span> (big Theta)?</p>
+<p>Explain precisely the links and similarities between them.
+What do you see as the advantage of using <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation rather than <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
+when possible?</p>
+</div>
+<div class="section" id="exercise-1-1-7">
+<h2>Exercise 1.1.7<a class="headerlink" href="#exercise-1-1-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Explain how we can extract the characterization <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) from the implementation of an algorithm to
+using the <em>Doubling ratio</em> test.</p>
+<ul class="simple">
+<li><p>How does this test work?</p></li>
+<li><p>What are the limitations and advantages of this test?</p></li>
+</ul>
+<p>Suppose we measure the following <span class="math notranslate nohighlight">\(T(n)\)</span> execution times (in seconds) of a program as a function of the
+input size <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n\)</span></p></td>
+<td><p>1000</p></td>
+<td><p>2000</p></td>
+<td><p>4000</p></td>
+<td><p>8000</p></td>
+<td><p>16000</p></td>
+<td><p>32000</p></td>
+<td><p>64000</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(T(n)\)</span></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0.1</p></td>
+<td><p>0.3</p></td>
+<td><p>1.3</p></td>
+<td><p>5.1</p></td>
+<td><p>20.5</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>How can you best characterize the growth order of this function?</p></li>
+<li><p>What would be the running time for 128000?</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-1-1-8">
+<h2>Exercise 1.1.8<a class="headerlink" href="#exercise-1-1-8" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>What do heap and stack mean when talking about the execution of a program in a programming language?</p></li>
+<li><p>What do the -Xmx, -Xms parameters mean that we can pass to the JVM for the execution of a bytecode?</p></li>
+<li><p>Can these parameters influence the execution speed of a Java program? Why?</p></li>
+<li><p>What is the JVM garbage collector</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-1-1-9">
+<h2>Exercise 1.1.9<a class="headerlink" href="#exercise-1-1-9" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>What is a good set of unit tests to verify the correctness of a data structure?</p></li>
+<li><p>Do you think about borderline cases?</p></li>
+<li><p>What could possibly go wrong with the implementation of this method implementation?</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// return the floor of the average between a and b</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">average</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>How can random data generation be useful for testing data structures?</p></li>
+<li><p>Why is it important to work with a fixed seed for testing?</p></li>
+<li><dl class="simple">
+<dt>How a code coverage analysis tool can be useful (such as <a class="reference external" href="http://eclemma.org/jacoco/">Jacoco</a>)</dt><dd><p>to help you design tests.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>How to verify experimentally that the implementation of a data structure or an algorithm has</dt><dd><p>the expected theoretical time complexity?</p>
+</dd>
+</dl>
+</li>
+<li><p>How can you test the time complexity of your program?</p></li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises A</a><ul>
+<li><a class="reference internal" href="#exercise-1-1-1">Exercise 1.1.1</a></li>
+<li><a class="reference internal" href="#exercise-1-1-2">Exercise 1.1.2</a></li>
+<li><a class="reference internal" href="#exercise-1-1-3">Exercise 1.1.3</a></li>
+<li><a class="reference internal" href="#exercise-1-1-4-inginious">Exercise 1.1.4 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-1-1-5">Exercise 1.1.5</a></li>
+<li><a class="reference internal" href="#exercise-1-1-6">Exercise 1.1.6</a></li>
+<li><a class="reference internal" href="#exercise-1-1-7">Exercise 1.1.7</a></li>
+<li><a class="reference internal" href="#exercise-1-1-8">Exercise 1.1.8</a></li>
+<li><a class="reference internal" href="#exercise-1-1-9">Exercise 1.1.9</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="intro.html"
+                        title="Chapitre précédent">Objectives</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="ex2.html"
+                        title="Chapitre suivant">Exercises B</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

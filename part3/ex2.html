@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises B &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Part 4 | Maps: hash tables and other implementations" href="../part4/index.html" />
+    <link rel="prev" title="Exercises A" href="ex1.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../part4/index.html" title="Part 4 | Maps: hash tables and other implementations"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 3 |  Search Trees</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-b">
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W7.</p>
+<p>Faux c’est <span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span>, si on a de la chance on tombe directement dessus.</p>
+</div>
+<div class="section" id="exercice-3-2-1-true-false-binarysearch">
+<h2>Exercice 3.2.1 (True/False BinarySearch)<a class="headerlink" href="#exercice-3-2-1-true-false-binarysearch" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>In the best case, the number of key comparisons for a binary search for a particular key in a sorted array of N distinct keys is <span class="math notranslate nohighlight">\(\sim \log N\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-3-2-2-true-false-bst">
+<h2>Exercice 3.2.2 (True/False BST)<a class="headerlink" href="#exercice-3-2-2-true-false-bst" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Note: BST is understood here as the implementation of the book, i.e. a tree that is not necessarily balanced.
+The 2-3/red-black BST is also understood to be the one in the reference book.</p>
+<p>We recommend that you first become familiar with the notions of <a class="reference external" href="https://en.wikipedia.org/wiki/Tree_traversal">tree traversals</a>: infix, prefix and postfix.</p>
+<ul class="simple">
+<li><p>Given the output of an infix traversal of a BST containing N distinct keys. Is it possible to reconstruct the shape of the BST based on the result of the traversal? If so, write the pseudo-code of an algorithm to do so, if not, give a counterexample that justifies your answer.</p></li>
+<li><p>Given a the output of a prefix traversal of a BST containing <span class="math notranslate nohighlight">\(N\)</span> distinct keys. Is it possible to reconstruct the shape of the BST based on the result of the walk? If so, write the pseudo-code of an algorithm to do so, if not, give a counterexample that justifies your answer.</p></li>
+<li><p>Given an ordered tree of <span class="math notranslate nohighlight">\(N\)</span> distinct keys and a <span class="math notranslate nohighlight">\(x\)</span> key, is it possible to find the smallest key strictly larger than <span class="math notranslate nohighlight">\(x\)</span> in logarithmic time in the worst case?</p></li>
+<li><p>The expected height of a BST resulting from inserting N distinct keys in a random order into an initially empty tree is on average logarithmic.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(x\)</span> be a node in a BST. The successor of <span class="math notranslate nohighlight">\(x\)</span> (the node containing the next key in ascending order) is the leftmost node in the tree on the right of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-3-2-3-true-false-redblack-trees">
+<h2>Exercice 3.2.3 (True/False Redblack Trees)<a class="headerlink" href="#exercice-3-2-3-true-false-redblack-trees" title="Lien permanent vers ce titre">¶</a></h2>
+<p>For the statements related to red-black trees, we advise you to first translate it into a statement into 2-3 trees
+as there is a one-to-one mapping between the two representation.
+In most cases, it is easier to answer on the validity of the statement for 2-3 trees.</p>
+<ul class="simple">
+<li><p>The maximum height of a 2-3 tree with N keys is <span class="math notranslate nohighlight">\(\sim \log_3 N\)</span></p></li>
+<li><p>For the insertion of N keys in ascending order into an initially empty red-black BST. The number of color changes of the last insertion is at most 3. The number of changes is understood to be the sum of the absolute value differences between the number of reds after insertion minus the number of reds before insertion.</p></li>
+<li><p>A red-black BST obtained after inserting <span class="math notranslate nohighlight">\(N &gt; 1\)</span> keys into an initially empty tree has at least one red link? If not, give a counterexample.</p></li>
+<li><p>In a red-black BST of N nodes, the black height (i.e. the number of black links in each path from the root to a null link) is maximum <span class="math notranslate nohighlight">\(log N\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-3-2-2-sorting-with-bst">
+<h2>Exercise 3.2.2 (Sorting with BST)<a class="headerlink" href="#exercise-3-2-2-sorting-with-bst" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Imagine a sorting algorithm using a BST. What would this algorithm look like?
+What would be the complexity of your algorithm if the BST is replaced by a red-black BST?</p>
+</div>
+<div class="section" id="exercise-3-2-3-delete-complexity">
+<h2>Exercise 3.2.3 (Delete Complexity)<a class="headerlink" href="#exercise-3-2-3-delete-complexity" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is the time complexity for deleting the key 5 from the BST depitected below with the implementation of the text book?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">15</span>
+    \
+     <span class="n">x</span>
+    <span class="o">/</span> \
+   <span class="o">/</span>   \
+  <span class="o">/</span>     \
+ <span class="o">/</span><span class="n">n</span> <span class="n">nodes</span>\
+<span class="o">/</span>         \
+<span class="o">-----------</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-3-2-4-delete-commutativity">
+<h2>Exercise 3.2.4 (Delete Commutativity)<a class="headerlink" href="#exercise-3-2-4-delete-commutativity" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Is the delete operation (as implemented in the book) in a BST « commutative »?
+That is, deleting <span class="math notranslate nohighlight">\(x\)</span> and then directly <span class="math notranslate nohighlight">\(y\)</span> from a BST
+leaves the tree in the same state as if we had first deleted <span class="math notranslate nohighlight">\(y\)</span> and then <span class="math notranslate nohighlight">\(x\)</span>?
+Give a counterexample or argue why this is indeed always the case.
+To help you, consider the following tree and the deletion operations of 5 and 10.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">10</span>
+ <span class="o">/</span> \
+<span class="mi">5</span>   <span class="mi">15</span>
+   <span class="o">/</span>
+  <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercise-3-2-5-inginious">
+<h2>Exercise 3.2.5 (Inginious)<a class="headerlink" href="#exercise-3-2-5-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Impement a method which returns the least key strictly greater than a given key:
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher">Preorder reconstruction</a></p>
+</div>
+<div class="section" id="exercise-3-2-6-inginious">
+<h2>Exercise 3.2.6 (Inginious)<a class="headerlink" href="#exercise-3-2-6-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement the reconstruction of a BST from the preorder traversal:
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_PreorderToBST">Preorder reconstruction</a></p>
+</div>
+<div class="section" id="exercise-3-2-7-inginious">
+<h2>Exercise 3.2.7 (Inginious)<a class="headerlink" href="#exercise-3-2-7-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement the get/put operations of a BST with an array-based data-structure instead of linked nodes:
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST">ArrayBST</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises B</a><ul>
+<li><a class="reference internal" href="#exercice-3-2-1-true-false-binarysearch">Exercice 3.2.1 (True/False BinarySearch)</a></li>
+<li><a class="reference internal" href="#exercice-3-2-2-true-false-bst">Exercice 3.2.2 (True/False BST)</a></li>
+<li><a class="reference internal" href="#exercice-3-2-3-true-false-redblack-trees">Exercice 3.2.3 (True/False Redblack Trees)</a></li>
+<li><a class="reference internal" href="#exercise-3-2-2-sorting-with-bst">Exercise 3.2.2 (Sorting with BST)</a></li>
+<li><a class="reference internal" href="#exercise-3-2-3-delete-complexity">Exercise 3.2.3 (Delete Complexity)</a></li>
+<li><a class="reference internal" href="#exercise-3-2-4-delete-commutativity">Exercise 3.2.4 (Delete Commutativity)</a></li>
+<li><a class="reference internal" href="#exercise-3-2-5-inginious">Exercise 3.2.5 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-3-2-6-inginious">Exercise 3.2.6 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-3-2-7-inginious">Exercise 3.2.7 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="ex1.html"
+                        title="Chapitre précédent">Exercises A</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="../part4/index.html"
+                        title="Chapitre suivant">Part 4 |  Maps: hash tables and other implementations</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../part4/index.html" title="Part 4 | Maps: hash tables and other implementations"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="ex1.html" title="Exercises A"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 3 |  Search Trees</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>

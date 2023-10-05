@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises A &#8212; Documentation LINFO1121 2023-2024</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercises B" href="ex2.html" />
+    <link rel="prev" title="Objectives" href="intro.html" />
+ 
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 4 |  Maps: hash tables and other implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercises-a">
+<span id="part2-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must complete these exercises by Wednesday of W7.</p>
+</div>
+<div class="section" id="exercise-4-1-1">
+<h2>Exercise 4.1.1<a class="headerlink" href="#exercise-4-1-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Name at least four different implementations of a dictionary (table of symbols).
+Specify, in each case, what are the main properties of these implementations.
+In which case(s) are they interesting?
+What are the computational complexities of their main methods?</p>
+</div>
+<div class="section" id="exercise-4-1-2">
+<h2>Exercise 4.1.2<a class="headerlink" href="#exercise-4-1-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Recall the following question proposed in the assignment on sorting: Given a set <span class="math notranslate nohighlight">\(S\)</span> of size <span class="math notranslate nohighlight">\(n\)</span>, and a number <span class="math notranslate nohighlight">\(x\)</span>. Describe an efficient algorithm using a HashTable to find if there exists a pair <span class="math notranslate nohighlight">\((a,b)\)</span> with <span class="math notranslate nohighlight">\(a \in S,b \in S\)</span> such that <span class="math notranslate nohighlight">\(a+b=x\)</span>. What is the complexity of your algorithm? Is it better than your solution which used a sort?</p>
+</div>
+<div class="section" id="exercise-4-1-3">
+<h2>Exercise 4.1.3<a class="headerlink" href="#exercise-4-1-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Show that <span class="math notranslate nohighlight">\((a + b) \% M\)</span> is equivalent to <span class="math notranslate nohighlight">\(((a \% M) + b) \% M\)</span>. How can this property be useful to build a hash function on Strings.
+Explain how Java computes a hash function on Strings?
+What is the complexity of computing 1 time and <span class="math notranslate nohighlight">\(N\)</span> times the hashcode of a String.</p>
+</div>
+<div class="section" id="exercise-4-1-4">
+<h2>Exercise 4.1.4<a class="headerlink" href="#exercise-4-1-4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Explain why the <code class="docutils literal notranslate"><span class="pre">hash()</span></code> method p461 in the book returns <cite>(x.hashCode() &amp; 0x7FFFFFFF) % M</cite> and not just <cite>x.hashCode() % M</cite>?
+What number represents <code class="docutils literal notranslate"><span class="pre">0x7FFFFFFF</span></code> ?
+What is its binary representation ?
+Show the binary impact on an example where <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span></code> returns a negative number. Hint: use <code class="docutils literal notranslate"><span class="pre">Integer.toBinaryString(int)</span></code> to verify your answer.</p>
+</div>
+<div class="section" id="exercise-4-1-5">
+<h2>Exercise 4.1.5<a class="headerlink" href="#exercise-4-1-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Java provides the class <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> as an implementation of the <code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code> interface.
+Can you determine exactly which variant of hash table this is?
+Does Java provide other implementations of the <code class="docutils literal notranslate"><span class="pre">Map</span></code> interface?
+Make a diagram that represents the interfaces and classes that relate to <code class="docutils literal notranslate"><span class="pre">Map</span></code> and specify what, in each case, characterizes them.
+What can be used as a key for a hashtable in Java? Be specific.</p>
+</div>
+<div class="section" id="exercise-4-1-6">
+<h2>Exercise 4.1.6<a class="headerlink" href="#exercise-4-1-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is meant by the notion of « collision » in a hash table?
+Do collisions have an influence on the complexity of operations?
+If yes, which operation(s) with which complexity(ies), otherwise specify why.</p>
+</div>
+<div class="section" id="exercise-4-1-7">
+<h2>Exercise 4.1.7<a class="headerlink" href="#exercise-4-1-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is the load factor of a hash table.
+Is the load factor control necessary/optional for the proper functioning of a hash table with Linear Probing or Separate Chaining?
+What is the strategy used by <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> to control the load factor?
+How is it different from the one proposed in <code class="docutils literal notranslate"><span class="pre">LinearProbinHashST</span></code>?
+What is the link between load factor and collision?</p>
+</div>
+<div class="section" id="exercise-4-1-8">
+<h2>Exercise 4.1.8<a class="headerlink" href="#exercise-4-1-8" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Imagine a new <code class="docutils literal notranslate"><span class="pre">iterator()</span></code> method that returns an iterator over the keys of <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code>.
+Your iterator should not accept a modification of the hash table while it is in use: a <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException()</span></code> should be thrown if it does.
+What do you suggest to do this? Hint: Take inspiration from the <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> strategy.</p>
+</div>
+<div class="section" id="exercise-4-1-9">
+<h2>Exercise 4.1.9<a class="headerlink" href="#exercise-4-1-9" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Describe the implementation of the <code class="docutils literal notranslate"><span class="pre">put(key)</span></code> method in a hash table that uses the linear probing technique to handle collisions that would use a special marker to represent entries deleted using the <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> method.
+In other words the <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> method instead of rearranging the contents of the hash table so that it is as if the deleted entry had never been inserted, will simply mark the entry with the special marker.
+What is the advantage or disadvantage of this approach over the « LinearProbingHashST » approach in the book?</p>
+</div>
+<div class="section" id="exercise-4-1-10-rabin-karp">
+<h2>Exercise 4.1.10 (Rabin-Karp)<a class="headerlink" href="#exercise-4-1-10-rabin-karp" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Imagine a hash function for a string <span class="math notranslate nohighlight">\(s\)</span> such that knowing its value for the sub-string <span class="math notranslate nohighlight">\(s[i,...,i+n-1]\)</span> would allow to compute the hash function of the string <span class="math notranslate nohighlight">\(s[i+1,...,i+n]\)</span> in constant time (incrementally).</p>
+</div>
+<div class="section" id="exercise-4-1-11-rabin-karp">
+<h2>Exercise 4.1.11 (Rabin-Karp)<a class="headerlink" href="#exercise-4-1-11-rabin-karp" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Explain how to search for a sub-string of size <span class="math notranslate nohighlight">\(m\)</span> in a long string of size <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> using an incremental hash function.
+How would you do it if you have <span class="math notranslate nohighlight">\(k\)</span> strings of size <span class="math notranslate nohighlight">\(m\)</span> to search in the long string of size <span class="math notranslate nohighlight">\(n\)</span>?
+What would be the complexity of your method? Is it better than running the Rabin-Karp algorithm k times?</p>
+</div>
+<div class="section" id="exercise-4-1-12-inginious-mcq">
+<h2>Exercise 4.1.12 (Inginious, MCQ)<a class="headerlink" href="#exercise-4-1-12-inginious-mcq" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmHashing">Multiple choice questions on hash function</a></p>
+</div>
+<div class="section" id="exercise-4-1-13-inginious-mcq">
+<h2>Exercise 4.1.13 (Inginious, MCQ)<a class="headerlink" href="#exercise-4-1-13-inginious-mcq" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk">Multiple choice questions on RabinKarp</a></p>
+</div>
+<div class="section" id="exercise-4-1-14-inginious">
+<h2>Exercise 4.1.14 (Inginious)<a class="headerlink" href="#exercise-4-1-14-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement an <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash">incremental hash function</a></p>
+</div>
+<div class="section" id="exercise-4-1-15-inginious">
+<h2>Exercise 4.1.15 (Inginious)<a class="headerlink" href="#exercise-4-1-15-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Implement RabinKarp for looking for <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp">K patterns</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Exercises A</a><ul>
+<li><a class="reference internal" href="#exercise-4-1-1">Exercise 4.1.1</a></li>
+<li><a class="reference internal" href="#exercise-4-1-2">Exercise 4.1.2</a></li>
+<li><a class="reference internal" href="#exercise-4-1-3">Exercise 4.1.3</a></li>
+<li><a class="reference internal" href="#exercise-4-1-4">Exercise 4.1.4</a></li>
+<li><a class="reference internal" href="#exercise-4-1-5">Exercise 4.1.5</a></li>
+<li><a class="reference internal" href="#exercise-4-1-6">Exercise 4.1.6</a></li>
+<li><a class="reference internal" href="#exercise-4-1-7">Exercise 4.1.7</a></li>
+<li><a class="reference internal" href="#exercise-4-1-8">Exercise 4.1.8</a></li>
+<li><a class="reference internal" href="#exercise-4-1-9">Exercise 4.1.9</a></li>
+<li><a class="reference internal" href="#exercise-4-1-10-rabin-karp">Exercise 4.1.10 (Rabin-Karp)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-11-rabin-karp">Exercise 4.1.11 (Rabin-Karp)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-12-inginious-mcq">Exercise 4.1.12 (Inginious, MCQ)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-13-inginious-mcq">Exercise 4.1.13 (Inginious, MCQ)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-14-inginious">Exercise 4.1.14 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-15-inginious">Exercise 4.1.15 (Inginious)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="intro.html"
+                        title="Chapitre précédent">Objectives</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="ex2.html"
+                        title="Chapitre suivant">Exercises B</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex2.html" title="Exercises B"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objectives"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2023-2024</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Part 4 |  Maps: hash tables and other implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+  </body>
+</html>
