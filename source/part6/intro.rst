@@ -26,9 +26,5 @@ Reference book:
 * Chapters 4.1, 4.2, 4.3, 4.4
 
 
-
-.. Slides (keynote)
-
-.. * `Introduction <https://www.icloud.com/keynote/0ICOAb5mCaM2Uexx64Vc5Vpaw#part6-intro>`_ 
-.. * `Séance Intermédiaire <https://www.icloud.com/keynote/0hNMe6ICO2e9Yqs9mCf8w3v5Q#part6-exercises>`_ 
-.. * `Restructuration <https://www.icloud.com/keynote/0kvkcWCUrTWXpp5kqAyCFPsAQ#part6-bilan>`_ 
+.. * `Slides <../_static/slides/part6-exercises.pdf>`_
+.. * `Slides <../_static/slides/part6-bilan.pdf>`_

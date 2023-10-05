@@ -21,14 +21,15 @@ Reference book:
 * Chapter 2, Section 3: Quick Sort
 * Chapter 2, Section 5: Applications of sorting algorithms
 
-Slides (keynote)
+Slides
 
-.. * `Introduction <https://www.icloud.com/keynote/0bRuyaeN9Z63bppq_yWw_RD1Q#part2-intro>`_ 
-.. * `Feedback part A <https://www.icloud.com/keynote/0dFFN4hYyXJPWF2OoxCz0TpYA#part2-exercises>`_ 
-.. * `Restructuration <https://www.icloud.com/keynote/0ApmboQix6cyNZZ7i6xenxUzA#part2-bilan>`_ 
+.. * `Slides <../_static/slides/part2-exercises.pdf>`_
+.. * `Slides <../_static/slides/part2-bilan.pdf>`_
 
 
-.. raw:: html
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/pLL9aypVRmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+..
+   .. raw:: html
+
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/pLL9aypVRmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
