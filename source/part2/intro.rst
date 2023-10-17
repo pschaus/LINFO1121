@@ -23,8 +23,8 @@ Reference book:
 
 Slides
 
-.. * `Slides <../_static/slides/part2-exercises.pdf>`_
-.. * `Slides <../_static/slides/part2-bilan.pdf>`_
+* `Slides exercises <../_static/slides/s4-part2-exercises.pdf>`_
+* `Slides restructuration <../_static/slides/s5-part2-bilan-part3-intro.pdf>`_
 
 
 
