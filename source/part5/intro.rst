@@ -1,4 +1,4 @@
-.. _intro2:
+.. _intro5:
 
 Objectives
 ===========
@@ -6,7 +6,7 @@ Objectives
 Upon completion of this part, each student will be able to:
 
 * accurately and precisely describe the concepts presented in the reference book that deal with *union-find structures*, *priority files*, and textual data manipulation/compression, 
-*implement* a text compression algorithm based on Huffman coding,
+* *implement* a text compression algorithm based on Huffman coding,
 * evaluate* and *implement* an efficient representation of a priority queue based on a *heap*,*design* and *implement* a text compression/decompression program.
 
    

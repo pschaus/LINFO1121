@@ -1,4 +1,4 @@
-.. _part2_ex2:
+.. _part3_ex2:
 
 Exercises B
 =======================================
@@ -180,7 +180,7 @@ Exercise 3.2.5 (Inginious)
 """""""""""""""""""""""""""""
 
 Impement a method which returns the least key strictly greater than a given key:
-`Preorder reconstruction <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
+`Higher key <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
 
 Exercise 3.2.6 (Inginious)
 """""""""""""""""""""""""""""

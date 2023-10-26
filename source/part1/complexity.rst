@@ -178,7 +178,7 @@ will cost on average :math:`\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)
 Warning: the complexity of the method *add(E e)* in isolation is well :math:`\Omega(1)` and :math:`\mathcal{O}(n)`
 where :math:`n` is the number of elements in the ArrayList.
 
-Types de complexités usuels
+Frequent complexities
 ===========================
 
 +---------------------------------------+-------------------+-------------------------------------------------------+

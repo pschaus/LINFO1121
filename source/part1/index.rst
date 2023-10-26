@@ -12,4 +12,5 @@ Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and 
    intro
    ex1
    ex2
+   complexity
 

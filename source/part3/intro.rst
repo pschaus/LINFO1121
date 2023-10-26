@@ -1,4 +1,4 @@
-.. _intro2:
+.. _intro3:
 
 Objectives
 ============
@@ -17,7 +17,10 @@ Reference book:
 
 * Chapters 3.1, 3.2 and 3.3
 
-.. * `Slides <../_static/slides/part3-exercises.pdf>`_
+
+
+* `Slides <../_static/slides/s6-part3-exercises.pdf>`_
+
 .. * `Slides <../_static/slides/part3-bilan.pdf>`_
 
 
