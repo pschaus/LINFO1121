@@ -192,10 +192,22 @@ for last week's Exercise 4.1.11.
     qu'avec un seul mot-clé! Magique, non?
 
 
-Exercise 4.1.15 (Inginious)
+Exercise 4.2.7 (Inginious)
 """""""""""""""""""""""""""""""""
 
 Implement a `Linear Probing Hashtable <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST>`_
 
+
+Exercise 4.2.8 (Inginious)
+"""""""""""""""""""""""""""""""""
+
+This is the question 21 of the `advent of code 2022 <https://adventofcode.com>`_.
+It can be efficently solved using a hashtables in combination with a linked tree data-structure.
+ `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
+
+ Exercise 4.2.9 (Inginious)
+"""""""""""""""""""""""""""""""""
+
+An easy one (exam 2023) `BirthdayMap <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BirthdayMap>`_
 
 

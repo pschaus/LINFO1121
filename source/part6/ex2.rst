@@ -61,7 +61,7 @@ Hint: look at the properties of the weights. Is it comparable to shortest paths?
 Exercise 6.2.5 (Inginious)
 """"""""""""""""""""""""""""
 
-A programming exercise on shortest path with implicit graphs:
+A programming exercise on shortest path with implicit graphs (exam 2018)
 `MineClimbing <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_MineClimbing>`_
 
 
@@ -69,7 +69,7 @@ A programming exercise on shortest path with implicit graphs:
 Exercise 6.2.6 (Inginious)
 """"""""""""""""""""""""""""
 
-A challenging path problem in a public transport network:
+A challenging path problem in a public transport network (exam 2019)
 `Trains <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Trains>`_
 
 
@@ -83,8 +83,26 @@ A string transformation problem viewed as path problem on a graph:
 Exercise 6.2.8 (Inginious)
 """"""""""""""""""""""""""""
 
-Help the humanity to discover a new habitable galaxy by solving a hyperspace shortest
+Help the humanity to discover a new habitable galaxy by solving a hyperspace shortest (exam 2021)
 space: `GalaxyPath <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GalaxyPath>`_
+
+Exercise 6.2.9 (Inginious)
+""""""""""""""""""""""""""""
+
+A topological sort problem to help you verify if your course programme complies with univeristy pre-requisite constraints (exam 2022) 
+`TaskScheduler <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_TaskScheduler>`_
+
+Exercise 6.2.10 (Inginious)
+""""""""""""""""""""""""""""
+
+🎄 Help Nayeli to find the cheapeast shop to buy a christmast gift with a time budget (exam 2022) 
+`SmallestPrice <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_SmallestPrice>`_
+
+Exercise 6.2.11 (Inginious)
+""""""""""""""""""""""""""""
+
+Help the firemen to compute the spread of a fire 🔥 in a forest 🌳 (exam 2022) 
+`Wildfire <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Wildfire>`_
 
 
 

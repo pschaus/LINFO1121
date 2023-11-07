@@ -316,4 +316,9 @@ Exercise 2.1.13 (Inginious)
 
 Complete (without reading the book since you won't have it at the exam) the implementation of `Merge Sort <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort>`_
 
+Exercise 2.1.14 (Inginious)
+""""""""""""""""""""""""""""""
+
+Help the photograph to arrange players of two soccer teams so that every body is visible on the picture (exam 2022) `Photo <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Photo>`_
+
 

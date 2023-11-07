@@ -325,6 +325,21 @@ Exercise 3.1.13 (Inginious MCQ)
 Exercise 3.1.14 (Inginious manual exericse)
 """"""""""""""""""""""""""""""""""""""""""""
 
-`Red-black tree insertions <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt>`_
+`Redblack tree insertions <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt>`_
+
+Exercise 3.1.15 (Inginious)
+""""""""""""""""""""""""""""""""""""""""""""
+
+Special implementation of Binary Search tree with ArrayLists (mid-term quiz 2022).
+`ArrayBST put and get <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
+
+Exercise 3.1.16 (Inginious)
+""""""""""""""""""""""""""""""""""""""""""""
+
+Introduction of the delete method (mid-term quiz 2023).
+`ArrayBST with delete <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
+
+
+
 
 

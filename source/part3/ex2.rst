@@ -196,5 +196,14 @@ Implement the get/put operations of a BST with an array-based data-structure ins
 `ArrayBST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
 
 
+Exercise 3.2.8 (Inginious)
+"""""""""""""""""""""""""""""""""
+
+An easy one to query efficiently persons by their Birthday 🎂 (exam 2023) `BirthdayMap <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BirthdayMap>`_
+
+Exercise 3.2.9 (Inginious)
+"""""""""""""""""""""""""""""""""
+
+Design an efficient algorithm to compute the 🏙️ `Skyline <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Skyline>`_ form the set of building shapes (rectangles) that can overlap.
 
 

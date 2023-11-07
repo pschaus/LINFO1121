@@ -219,17 +219,32 @@ Exercise 4.1.13 (Inginious, MCQ)
 
 `Multiple choice questions on RabinKarp <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk>`_
 
-
 Exercise 4.1.14 (Inginious)
 """""""""""""""""""""""""""""""""
 
-Implement an `incremental hash function <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash>`_
+An easy to implement a tool for counting word occurences (exam 2022). 
+Word counting is a frequent task in natural language processing algorithm.
+`Word Counter <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_WordCounter>`_
 
 
 Exercise 4.1.15 (Inginious)
 """""""""""""""""""""""""""""""""
 
-Implement RabinKarp for looking for `K patterns <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp>`_
+Incremental computation of a hash function (exam 2018).
+`Incremental Hash <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash>`_
+
+
+Exercise 4.1.16 (Inginious)
+""""""""""""""""""""""""""""""""""""""""""""
+
+Very interesting hash-map with a bounded memory keeping only the most recently used ones (exam 2022).
+`LRUCache <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_LRUCache>`_
+
+
+Exercise 4.1.17 (Inginious)
+"""""""""""""""""""""""""""""""""
+
+Implement a version of RabinKarp but for looking for `K patterns <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp>`_ instead of just one.
 
 
 
