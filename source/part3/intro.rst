@@ -20,6 +20,8 @@ Reference book:
 
 
 * `Slides <../_static/slides/s6-part3-exercises.pdf>`_
+* `Slides <../_static/slides/s7-part3-bilan-part4-intro.pdf>`_
+
 
 .. * `Slides <../_static/slides/part3-bilan.pdf>`_
 
