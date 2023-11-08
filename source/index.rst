@@ -12,6 +12,7 @@ LINFO1121: Data Structures and Algorithms
    :maxdepth: 2
 
    intro/index
+   course/index
    part1/index
    part2/index
    part3/index

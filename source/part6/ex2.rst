@@ -95,13 +95,13 @@ A topological sort problem to help you verify if your course programme complies 
 Exercise 6.2.10 (Inginious)
 """"""""""""""""""""""""""""
 
-🎄 Help Nayeli to find the cheapeast shop to buy a christmast gift with a time budget (exam 2022) 
+Help Nayeli to find the cheapeast shop to buy a christmast gift with a time budget (exam 2022) 
 `SmallestPrice <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_SmallestPrice>`_
 
 Exercise 6.2.11 (Inginious)
 """"""""""""""""""""""""""""
 
-Help the firemen to compute the spread of a fire 🔥 in a forest 🌳 (exam 2022) 
+Help the firemen to compute the spread of a fire in a forest (exam 2022) 
 `Wildfire <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Wildfire>`_
 
 

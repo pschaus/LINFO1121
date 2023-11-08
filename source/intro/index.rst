@@ -1,31 +1,26 @@
 .. _intro:
 
 
-
 ************************************
-Organization (read this first)
+Introduction
 ************************************
 
-The reference book used for this course is
-`Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition)
-by Robert Sedgewick and Kevin Wayne.
 
-It is important that you **get this book as soon as possible**.
-There are about twenty for rent in BST.
+This repository serves as a supplementary resource to the foundational text `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition) by Sedgewick and Wayne, 
+offering a set of theoretical and programming exercises designed to complement the book's content. 
+These exercises are ideally suited for a flipped classroom setting, allowing for an interactive, student-centered learning experience. 
+Additionally, the exercises are compatible with the `Inginious <https://inginious.org>`_   grading platform, providing an efficient means for automated assessment.
 
 
-Pedagogy
+The repository also stands as a valuable tool for individuals preparing for programming interviews. 
+Whether within a formal educational environment or as part of personal study, these resources aim to enhance understanding and proficiency in data structures and algorithms.
+
+
+Java Resources
 ======================================
 
-The pedagogy used is that of `Flipped classroom <https://en.wikipedia.org/wiki/Flipped_classroom>`_. 
 
-Therefore, it is imperative that students work from home:
-
-* read the mentioned chapters of the reference book,
-* program regularly by doing the exercises offered on INGInious_
-* prepare theoretical questions.
-
-The course uses the *Java* language and more specifically the Java8_ version.
+We use the *Java* language and more specifically the Java8_ version.
 The recommended IDE for this course and available for the exam is IntelliJ_.
 We will also use the Junit5_ tool to perform unit tests.
 It is strongly recommended that you familiarize yourself with these tools in preparation for the exam.
@@ -39,86 +34,58 @@ It is strongly recommended that you familiarize yourself with these tools in pre
 
 
 
-Cours Open-Source
+Open-Source Course Material
 =======================================
 
 
+The source code of all programming exercises and tests are available on Github.
 
-The source code of all programming exercises are available on Github
 
-* `Github Repository <https://github.com/pschaus/algorithms_exercises_students>`_ without the solutions
-* `Github Repository <https://github.com/pschaus/algorithms_exercises>`_ with the solutions (it is not recommended to read the solution to an exercise before having tried really hard to solve it). The best way to use the solution is to compare it with your own solution. 
+* `Github Student Repository <https://github.com/pschaus/algorithms_exercises_students>`_ 
+* `Github Solution Repository <https://github.com/pschaus/algorithms_exercises>`_ 
+
+
+This student repository is generated from the solution repository by removing the programming task code and complex unit tests. 
+These removed complex unit tests are designed for the grading platform and are not intended for student use. 
+Students are strongly encouraged to attempt solving the problems on their own before looking at the solutions. 
+The best practice is to use the solutions for comparison purposes, 
+allowing you to reflect on and analyze the differences between your approach and the provided solutions after you have made a concerted effort to tackle the problems yourself.
 
 
 Motivated students can also propose new exercises as pull requests.
 
 
-The license used is Creative Commons Attribution-ShareAlike 4.0 International License:
+The license used is Creative Commons Attribution-ShareAlike 4.0 International License for theoretical exercises and MIT for the source code.
 
 .. image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
     :alt: CC-BY-SA
+    
 
 
-
-Agenda
+Authors
 =======================================
 
 
-The course is organized in 6 modules of 2 weeks. 
-Each module spans over two weeks:
+Since 2016, Professor `Pierre Schaus <http://www.info.ucl.ac.be/~pschaus>`_ has been leading the Data Structures and Algorithms course at UCLouvain. 
+This rich collection of theoretical and hands-on programming exercises is not just a solo endeavor of his; it's a collaborative work. 
+Here is the list of persons who have contributed to this educational work over the years.
 
-.. image:: organisation.svg
-    :scale: 100
-    :width: 600
-    :alt: organization
+- Guillaume Derval (TA 2017-2021 and teaching in 2020-2021)
+- Pierre Dupont (teacher 2002-2014)
+- Virginie Van den Schrieck (teacher 2014-2015)
+- Alexandre Dubray
+- Harold Kiossou
+- Antoine Cailliau
+- Charles Thomas
+- Quentin De Coninck
+- Sascha Van Cauwelaert
+- Simon Hardy
+- Xavier Gillard
+- John Aoga
+- Hélène Verhaeghe
+- Auguste Burlat
+- As well as all the tutors and working students who have helped us!
 
-Week 1:
-
-* Wednesday 2PM: introduction to the topic with Prof. P. Schaus
-* Thursday 8h30 or 16h15: lab session with the TA and tutors (on teams or computer lab)
-* Rest of the week: reading of the chapters by the students and preparation of the theoretical exercises A
-
-Week 2:
-
-* Wednesday 2PM: correction of exercises A by TA (Harold Kiossou or Alexandre Dubray)
-* Thursday 8h30 or 16h15: lab session with the TA and tutors (on teams or computer lab)
-
-Week 3:
-
-* Wednesday 2M: Correction of exercises B [+ beginning of next module] with Prof. P. Schaus
-
-Check the `rooms <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ 
-
-Labs will be given on Thursdays on `teams <https://teams.microsoft.com/l/team/19%3aHLxo4AxKlfrwda6o8T8PpFSb0n2ziz5e9KBusYlhsf41%40thread.tacv2/conversations?groupId=c24af655-2d7d-4bf0-91b1-4f4068a26907&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_ or
-in the labs DAO (8h30) or Ferraris (16h15).
-
-Make sure you registered on `Moodle <https://moodle.uclouvain.be/course/view.php?id=1049>`_. 
-
-Feel free to ask questions during the two hours of practical work in writing or via a teams call.
-Of course, nothing prevents you from asking questions via chat with your tutor outside of the slot provided.
-TA will respond to you as they can.
-
-* S1-S3 :doc:`part1 <../part1/index>`
-
-.. * S3-S5 :doc:`part2 <../part2/index>`
-.. * S5-S7 :doc:`part3 <../part3/index>`
-.. * S8-S10:doc:`partie4 <../part4/index>` warning, mid-term-quiz instead of the course at 2:00 p.m. (at home or info room on inginious)
-.. * S10-S12:doc:`part5 <../part5/index>`
-.. * S12-S14:doc:`part6 <../part6/index>`
+A special note of gratitude is extended to Anthony Gego for developing `Inginious <https://inginious.org>`_, the indispensable grading platform that supports our course.
 
 
-
-Grading
-=======================================
-
-
-Computer exam on Inginious.
-One mid-term quizz quizz might be proposed on two points during smart week. 
-It can only impact positively your grade.
-
-
-Contact and Communication
-=======================================
-
-Important communications with students will be via moodle and Teams (please sign up!)
-For all important communications, you can also write to us by email.
