@@ -205,9 +205,6 @@ This is the question 21 of the `advent of code 2022 <https://adventofcode.com>`_
 It can be efficently solved using a hashtables in combination with a linked tree data-structure.
  `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
 
- Exercise 4.2.9 (Inginious)
-"""""""""""""""""""""""""""""""""
 
-An easy one (exam 2023) `BirthdayMap <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BirthdayMap>`_
 
 
