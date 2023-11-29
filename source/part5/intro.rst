@@ -18,5 +18,6 @@ Reference book:
 * chapter 1.5 (union find), 2.4 (heap), 5.5 (Huffman compression).
 
 
-.. * `Slides <../_static/slides/part5-exercises.pdf>`_
-.. * `Slides <../_static/slides/part5-bilan.pdf>`_
+
+* `Slides1 <../_static/slides/s10-part5-exercises.pdf>`_
+.. * `Slides2 <../_static/slides/s11-part4-bilan-part5-intro.pdf>`_
