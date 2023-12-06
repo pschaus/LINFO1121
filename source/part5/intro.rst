@@ -20,4 +20,4 @@ Reference book:
 
 
 * `Slides1 <../_static/slides/s10-part5-exercises.pdf>`_
-.. * `Slides2 <../_static/slides/s11-part4-bilan-part5-intro.pdf>`_
+* `Slides2 <../_static/slides/s11-part5-bilan-part6-intro.pdf>`_
