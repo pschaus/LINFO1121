@@ -16,6 +16,8 @@ The repository also stands as a valuable tool for individuals preparing for prog
 Whether within a formal educational environment or as part of personal study, these resources aim to enhance understanding and proficiency in data structures and algorithms.
 
 
+
+
 Java Resources
 ======================================
 
@@ -31,7 +33,6 @@ It is strongly recommended that you familiarize yourself with these tools in pre
 .. _IntelliJ: https://www.jetbrains.com/idea/
 .. _INGInious: https://inginious.info.ucl.ac.be
 .. _JUnit5: https://junit.org/junit5/
-
 
 
 Open-Source Course Material
