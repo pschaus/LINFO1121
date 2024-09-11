@@ -84,9 +84,9 @@ Here is the list of persons who have contributed to this educational work over t
 - Xavier Gillard
 - John Aoga
 - Hélène Verhaeghe
-- Auguste Burlat
+- Alice Burlat
 - As well as all the tutors and working students who have helped us!
 
-A special note of gratitude is extended to Anthony Gego for developing `Inginious <https://inginious.org>`_, the indispensable grading platform that supports our course.
+A special note of gratitude is extended to Anthony Gego for developing Inginious, the indispensable grading platform that supports our course.
 
 

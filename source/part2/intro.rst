@@ -20,6 +20,7 @@ Reference book:
 * Chapter 2, Section 2: Merge Sort
 * Chapter 2, Section 3: Quick Sort
 * Chapter 2, Section 5: Applications of sorting algorithms
+* Chapter 5, Section 5.1: String Sorts
 
 Slides
 

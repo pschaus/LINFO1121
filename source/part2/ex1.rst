@@ -321,4 +321,9 @@ Exercise 2.1.14 (Inginious)
 
 Help the photograph to arrange players of two soccer teams so that every body is visible on the picture (exam 2022) `Photo <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Photo>`_
 
+Exercise 2.1.15 (Inginious)
+""""""""""""""""""""""""""""""
+
+Help the olympic games organisers to compute the number of training rooms (exam 2024) `TrainigSessions <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TrainingSessions>`_
+i
 

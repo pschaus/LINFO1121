@@ -15,8 +15,7 @@ To read
 
 Reference book:
 
-* Chapters 3.1, 3.2 and 3.3
-
+* Chapters 3.1, 3.2, 3.3, 5.2
 
 
 * `Slides <../_static/slides/s6-part3-exercises.pdf>`_
