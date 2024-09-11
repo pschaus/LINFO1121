@@ -9,7 +9,7 @@ Introduction
 This repository serves as a supplementary resource to the foundational text `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition) by Sedgewick and Wayne, 
 offering a set of theoretical and programming exercises designed to complement the book's content. 
 These exercises are ideally suited for a flipped classroom setting, allowing for an interactive, student-centered learning experience. 
-Additionally, the exercises are compatible with the `Inginious <https://inginious.org>`_   grading platform, providing an efficient means for automated assessment.
+Additionally, the exercises are compatible with the `Inginious Grading <https://inginious.org>`_  platform, providing an efficient means for automated assessment.
 
 
 The repository also stands as a valuable tool for individuals preparing for programming interviews. 
@@ -31,7 +31,7 @@ It is strongly recommended that you familiarize yourself with these tools in pre
 
 .. _Java8: https://docs.oracle.com/javase/8/docs/api
 .. _IntelliJ: https://www.jetbrains.com/idea/
-.. _INGInious: https://inginious.info.ucl.ac.be
+.. _Inginious: https://inginious.info.ucl.ac.be
 .. _JUnit5: https://junit.org/junit5/
 
 

@@ -26,5 +26,5 @@ Reference book:
 * Chapters 4.1, 4.2, 4.3, 4.4
 
 
-* `Slides <../_static/slides/s12-part6-exercises.pdf>`_
-* `Slides <../_static/slides/s13-part6-bilan.pdf>`_
+* `Slides Intermediate <../_static/slides/s12-part6-exercises.pdf>`_
+* `Slides Bilan <../_static/slides/s13-part6-bilan.pdf>`_

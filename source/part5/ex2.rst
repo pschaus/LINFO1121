@@ -148,7 +148,7 @@ Imagine a data structure that supports
 
 
 Exercise 5.2.7 (Ternary Heap, Inginious)
-"""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""
 
 Implement a ternary heap that stores three children rather than one.
 Be carefull here, we start storing the values at index 0 and not at index 1 as for the binary heap, as the formulla :math:`2k` and :math:`2k+1` does not work for the ternary case.

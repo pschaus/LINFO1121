@@ -18,8 +18,8 @@ Reference book:
 * Chapters 3.1, 3.2, 3.3, 5.2
 
 
-* `Slides <../_static/slides/s6-part3-exercises.pdf>`_
-* `Slides <../_static/slides/s7-part3-bilan-part4-intro.pdf>`_
+* `Slides Intermediate <../_static/slides/s6-part3-exercises.pdf>`_
+* `Slides Bilan <../_static/slides/s7-part3-bilan-part4-intro.pdf>`_
 
 
 .. * `Slides <../_static/slides/part3-bilan.pdf>`_
