@@ -308,3 +308,7 @@ Exercise 1.1.9
 .. answer::
 
     testing time is not always easy (possible using doubling ratio test), couting operations might be a good alternative
+
+Exercise 1.1.10 (Inginious)
+""""""""""""""""""""""""""""""
+You are asked to implement an ADT called a `SegmentedList` and the iterator method of this ADT: `SegmentedList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList>`_ .
