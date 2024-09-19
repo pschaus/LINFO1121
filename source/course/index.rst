@@ -43,7 +43,7 @@ Week 1:
 
 Week 2:
 
-* Wednesday 2PM: correction of exercises A by TA (Harold Kiossou or Alexandre Dubray)
+* Wednesday 2PM: correction of exercises A by TA (Harold Kiossou or Alice Burlats)
 * Thursday 8h30 or 16h15: lab session with the TA and tutors (on teams or computer lab)
 
 Week 3:
@@ -52,15 +52,15 @@ Week 3:
 
 Check the `rooms <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ 
 
-Labs will be given on Thursdays on `teams <https://teams.microsoft.com/l/team/19%3aHLxo4AxKlfrwda6o8T8PpFSb0n2ziz5e9KBusYlhsf41%40thread.tacv2/conversations?groupId=c24af655-2d7d-4bf0-91b1-4f4068a26907&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_ or
-in the labs DAO (8h30) or Ferraris (16h15).
+You need to subscribe on `Moodle <https://moodle.uclouvain.be>`_ for the labs and for the communication with the students.
+
+For the students participating on the lab on `Teams <https://teams.microsoft.com/l/team/19%3Ac5uyy7pCrTfE8exSLNuY6MmMsuSkAQyYS4sd8PizuiM1%40thread.tacv2/conversations?groupId=089eaa3e-68ad-41a8-a915-11c26db23d69&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_  , there is a channel for each module.
 
 Make sure you registered on `Moodle <https://moodle.uclouvain.be/course/view.php?id=1049>`_. 
 
 Feel free to ask questions during the two hours of practical work in writing or via a teams call.
 Of course, nothing prevents you from asking questions via chat with your tutor outside of the slot provided.
 TA will respond to you as they can.
-
 
 
 Grading
