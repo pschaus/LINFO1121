@@ -52,6 +52,8 @@ Week 3:
 
 Check the `rooms <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_ 
 
+`Map <https://www.google.com/maps/d/u/0/viewer?mid=1UaZEWHizhiTYLF-kG9b6TRXjLnQ&femb=1&ll=50.66759707303555%2C4.620358972176275&z=17>`_ to find the labs.
+
 You need to subscribe on `Moodle <https://moodle.uclouvain.be>`_ for the labs and for the communication with the students.
 
 For the students participating on the lab on `Teams <https://teams.microsoft.com/l/team/19%3Ac5uyy7pCrTfE8exSLNuY6MmMsuSkAQyYS4sd8PizuiM1%40thread.tacv2/conversations?groupId=089eaa3e-68ad-41a8-a915-11c26db23d69&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_  , there is a channel for each module.
