@@ -8,8 +8,8 @@ Exercises B
     You must complete these exercises by Wednesday of W3.
 
 
-Exercise 1.2.1 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 1.2.1 (Inginious: Circular Linked List)
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 * What is the difference between an Iterable and an Iterator?
 
@@ -32,14 +32,13 @@ In your implementation, what is the time complexity of:
 *  a sequence of operations which consists of *creating an iterator and then iterating over the first k-elements*?
 
 
-Exercise 1.2.1 (Inginious)
-""""""""""""""""""""""""""
-
+Exercise 1.2.2 (Inginious: Implement a stack with an Array)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 In your implementation, you will need to resize the array if the size of the stack reaches the maximum size.
-oes Java have an efficient way to resize/refill an array? If yes, give an example of Java code to perform this operation.
+Does Java have an efficient way to resize/refill an array? If yes, give an example of Java code to perform this operation.
 
-  .. answer::
+.. answer::
 
     System.arraycopy
 
@@ -53,8 +52,8 @@ In your implementation, what is the time complexity of:
 
 
 
-Exercise 1.2.2
-""""""""""""""
+Exercise 1.2.3
+"""""""""""""""""""""""""""""""""
 
 Post-fix notation (or `Inverse Polish <https://en.wikipedia.org/wiki/Inverse_Polish_Notation>`_) is used
 to represent algebraic expressions.
@@ -78,8 +77,8 @@ As a reminder, here is how you can iterate over the elements of a string that ar
     }
 
 
-Exercise 1.2.3 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 1.2.4 (Inginious: Functional Lists)
+""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Functional Programming <https://en.wikipedia.org/wiki/Functional_Programming>`_ is an increasingly important programming paradigm.
 In this programming paradigm, data structures are `immutable <https://en.wikipedia.org/wiki/Purely_functional_data_structure>`_.
@@ -242,7 +241,7 @@ The inginious taks is the following: `FList <https://inginious.info.ucl.ac.be/co
 
 
 
-Exercise 1.2.4
+Exercise 1.2.5
 """"""""""""""""""""""
 
 Fill in the following table with the complexities of each operation?
@@ -446,7 +445,7 @@ What is this ?
 
 
 
-Exercice 1.2.5
+Exercice 1.2.6
 """""""""""""""""
 
 * Does Java provide a class for ``Stack``, ``Vector``, ``List``?
