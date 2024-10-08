@@ -7,8 +7,8 @@ Exercises B
     You must complete these exercises by Wednesday of W5.
 
 
-Exercise 2.2.1 (Inginious)
-"""""""""""""""""""""""""""
+Exercise 2.2.1 (Inginious: Union of Intervals)
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals. We consider that the input intervals are given in the form of two arrays `int[] min, int[] max;` where the ith interval is given by ``(min[i],max[i])`` . Example input ``min=[5,0,1,6,2]`` ``max=[7,2,2,8,3]`` would output ``min=[0,5] ,max=[3,8]``.
 Write the pseudocode. How complex is your method?
@@ -144,8 +144,8 @@ Hint: There is a :math:`\mathcal{O}(n+m)` time algorithm for a :math:`n\times m`
 
 
 
-Exercise 2.2.8 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 2.2.8 (Inginious: Global Warming)
+"""""""""""""""""""""""""""""""""""""""""""
 
 Design an algorihtm to compute the number of entries larger or equal to a given value :math:`v_1` in n x n matrix of integers. 
 What if you need to recompte it for a different value :math:`v_2`? 
@@ -158,6 +158,43 @@ Inginious task: `Global Warming <https://inginious.info.ucl.ac.be/course/LINFO11
 
     Il faut stocker chaque entree de la matrice dans un grand tableau de taille n^2 qu'on trie (preprocessing en O(n.log(n))).
     Ensuite il est très facile de retrouver le nombre d'élément >= à une valeur v donnée par simple recherche dichotomique dans ce tableau.
+
+
+Exercise 2.2.9 (Inginious: Radix Sort)
+"""""""""""""""""""""""""""""""""""""""""""
+
+Every integer is encoded on 32 bits in Java.
+An integer can thus be seen as a string of 32 bits.
+The radix-sort algorithm is version of string sort that start with the least significant bit rather than the most sigfificant bit (as for MDS pp. 710).
+
+Complete the partial implementation for sorting an array of integers using radix sort.
+
+Inginious task: `Radix Sort <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_RadixSort>`_
+
+
+While implementing this algorithm try to answer the following questions:
+
+1. What is the time-complexity of this algorithm?
+2. Would the radix sort  algorithm as implemented also  work by starting from the most signficant bit rather than from the least significant bit?
+3. What stable sort algorihtm did you choose in your implementation? What it its time complexity? Do you know another algorithm that could be used without requiring an auxiliary array?
+4. How to adapt the radix-sort implementation to sort  number that may be positive or negative (be carefull about the way an negative number is represented bitwise)? 
+
+
+
+.. answer::
+
+   The algorihtm runs in :math:`O(n\cdot k)` where n is the size of the array and k is index of the most significant bit used among all the numbers.
+   We could use insertion sort or bubble sort instead of couting sort as an alternative not using auxiliary arrays but the worst-case time complexity is then :math:`O(k\cdot n^2).`
+   No we cannot use the same outer-loop to start from the most significant bit. If we do that like for MDS, we need a low and hi profile to keep the relative order of alrady most significant bits that are already sorted.
+   
+
+
+
+Exercise 2.2.10 (Inginious: Aggregate, january 2023)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Inginious task: `Aggregate <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Aggregate>`_
+
 
 
 
