@@ -54,8 +54,8 @@
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W5.</p>
 </div>
-<div class="section" id="exercise-2-2-1-inginious">
-<h2>Exercise 2.2.1 (Inginious)<a class="headerlink" href="#exercise-2-2-1-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-2-2-1-inginious-union-of-intervals">
+<h2>Exercise 2.2.1 (Inginious: Union of Intervals)<a class="headerlink" href="#exercise-2-2-1-inginious-union-of-intervals" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals. We consider that the input intervals are given in the form of two arrays <cite>int[] min, int[] max;</cite> where the ith interval is given by <code class="docutils literal notranslate"><span class="pre">(min[i],max[i])</span></code> . Example input <code class="docutils literal notranslate"><span class="pre">min=[5,0,1,6,2]</span></code> <code class="docutils literal notranslate"><span class="pre">max=[7,2,2,8,3]</span></code> would output <code class="docutils literal notranslate"><span class="pre">min=[0,5]</span> <span class="pre">,max=[3,8]</span></code>.
 Write the pseudocode. How complex is your method?</p>
 <p>Solve the corresponding taks on Inginious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Union">Union intervals</a></p>
@@ -89,12 +89,31 @@ Suppose in a second step that the already sorted set <span class="math notransla
 <p>Given a matrix of integers that are sorted along rows and columns, how do you find a given number in the matrix efficiently?
 Hint: There is a <span class="math notranslate nohighlight">\(\mathcal{O}(n+m)\)</span> time algorithm for a <span class="math notranslate nohighlight">\(n\times m\)</span> matrix. To do this, start in the upper right corner and compare with the number you are looking for. Which parts of the matrix can you prune in your search based on the result?</p>
 </div>
-<div class="section" id="exercise-2-2-8-inginious">
-<h2>Exercise 2.2.8 (Inginious)<a class="headerlink" href="#exercise-2-2-8-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-2-2-8-inginious-global-warming">
+<h2>Exercise 2.2.8 (Inginious: Global Warming)<a class="headerlink" href="#exercise-2-2-8-inginious-global-warming" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Design an algorihtm to compute the number of entries larger or equal to a given value <span class="math notranslate nohighlight">\(v_1\)</span> in n x n matrix of integers.
 What if you need to recompte it for a different value <span class="math notranslate nohighlight">\(v_2\)</span>?
 Do you need to redo the computation from scratch or some pre-computation can be done do it more efficiently?</p>
 <p>Inginious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_GlobalWarmingImpl">Global Warming</a></p>
+</div>
+<div class="section" id="exercise-2-2-9-inginious-radix-sort">
+<h2>Exercise 2.2.9 (Inginious: Radix Sort)<a class="headerlink" href="#exercise-2-2-9-inginious-radix-sort" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Every integer is encoded on 32 bits in Java.
+An integer can thus be seen as a string of 32 bits.
+The radix-sort algorithm is version of string sort that start with the least significant bit rather than the most sigfificant bit (as for MDS pp. 710).</p>
+<p>Complete the partial implementation for sorting an array of integers using radix sort.</p>
+<p>Inginious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_RadixSort">Radix Sort</a></p>
+<p>While implementing this algorithm try to answer the following questions:</p>
+<ol class="arabic simple">
+<li><p>What is the time-complexity of this algorithm?</p></li>
+<li><p>Would the radix sort  algorithm as implemented also  work by starting from the most signficant bit rather than from the least significant bit?</p></li>
+<li><p>What stable sort algorihtm did you choose in your implementation? What it its time complexity? Do you know another algorithm that could be used without requiring an auxiliary array?</p></li>
+<li><p>How to adapt the radix-sort implementation to sort  number that may be positive or negative (be carefull about the way an negative number is represented bitwise)?</p></li>
+</ol>
+</div>
+<div class="section" id="exercise-2-2-10-inginious-aggregate-january-2023">
+<h2>Exercise 2.2.10 (Inginious: Aggregate, january 2023)<a class="headerlink" href="#exercise-2-2-10-inginious-aggregate-january-2023" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Inginious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Aggregate">Aggregate</a></p>
 </div>
 </div>
 
@@ -108,14 +127,16 @@ Do you need to redo the computation from scratch or some pre-computation can be 
   <h3><a href="../index.html">Table des matières</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
-<li><a class="reference internal" href="#exercise-2-2-1-inginious">Exercise 2.2.1 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-2-1-inginious-union-of-intervals">Exercise 2.2.1 (Inginious: Union of Intervals)</a></li>
 <li><a class="reference internal" href="#exercise-2-2-2">Exercise 2.2.2</a></li>
 <li><a class="reference internal" href="#exercise-2-2-3">Exercise 2.2.3</a></li>
 <li><a class="reference internal" href="#exercise-2-2-4">Exercise 2.2.4</a></li>
 <li><a class="reference internal" href="#exercise-2-2-5">Exercise 2.2.5</a></li>
 <li><a class="reference internal" href="#exercise-2-2-6">Exercise 2.2.6</a></li>
 <li><a class="reference internal" href="#exercise-2-2-7">Exercise 2.2.7</a></li>
-<li><a class="reference internal" href="#exercise-2-2-8-inginious">Exercise 2.2.8 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-2-8-inginious-global-warming">Exercise 2.2.8 (Inginious: Global Warming)</a></li>
+<li><a class="reference internal" href="#exercise-2-2-9-inginious-radix-sort">Exercise 2.2.9 (Inginious: Radix Sort)</a></li>
+<li><a class="reference internal" href="#exercise-2-2-10-inginious-aggregate-january-2023">Exercise 2.2.10 (Inginious: Aggregate, january 2023)</a></li>
 </ul>
 </li>
 </ul>
