@@ -81,8 +81,8 @@ Implement the min priority queue using a linked structure for representing the h
     No you don't need a "maxN" value but you need to be able to add a new node on the last layer or remove the last one of the last layer efficiently. This can be done using the current size :math:`n` in :math:`O(log(n))`.
     The hight :math:`h = \lfloor log_2 (n+1) \rfloor`. The node index of the last node on the last layer is :math:`n-(2^h-1)`. You can consider this node index as a binary number. Each bit tells you if you should follow the left/right link from the root down to the leaf you are looking for in the tree (to retrieve where to add or delete the node at the last layer).
 
-Exercise 5.2.5 (Inginious)
-"""""""""""""""""""""""""""
+Exercise 5.2.5 (Inginious: MinMax Heap)
+""""""""""""""""""""""""""""""""""""""""""
 
 Propose a data structure that would support the following operations in logarithmic time: *insert*, *remove maximum*, *remove minimum*;
 and the following operations in constant time: *find maximum and minimum*.
@@ -130,14 +130,22 @@ Implement the `MinMax Heap <https://inginious.info.ucl.ac.be/course/LINFO1121/so
 
 
 
-Exercise 5.2.6
-""""""""""""""
+Exercise 5.2.6 (Inginious: MedianHeap)
+"""""""""""""""""""""""""""""""""""""""""
 
 Imagine a data structure that supports
 
 1. *insertion* in logarithmic time
 2. the *find median* operation in constant time
 3. *deleting the median* in logarithmic time.
+
+Hint: There is solution that uses two internal heaps.
+
+Before starting your implementation, think about the class invariant or property that you want
+to maintain between the two heaps after each operation.
+
+Implement the `MedianHeap <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MedianHeap>`_
+
 
 .. answer::
 
