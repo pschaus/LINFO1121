@@ -88,8 +88,8 @@ Write the code for the methods <em>insert</em>, <em>delMax</em>. What is the com
 How do you add a new node in the heap or remove the next node? Can this be done from the current heap size?</p>
 <p>Implement the min priority queue using a linked structure for representing the heap: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinPQLinked">MinPQLinked</a></p>
 </div>
-<div class="section" id="exercise-5-2-5-inginious">
-<h2>Exercise 5.2.5 (Inginious)<a class="headerlink" href="#exercise-5-2-5-inginious" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-5-2-5-inginious-minmax-heap">
+<h2>Exercise 5.2.5 (Inginious: MinMax Heap)<a class="headerlink" href="#exercise-5-2-5-inginious-minmax-heap" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Propose a data structure that would support the following operations in logarithmic time: <em>insert</em>, <em>remove maximum</em>, <em>remove minimum</em>;
 and the following operations in constant time: <em>find maximum and minimum</em>.
 For this, we propose to study the following property called min-max heap.
@@ -111,14 +111,18 @@ For any <span class="math notranslate nohighlight">\(x\)</span> element in the m
 </ul>
 <p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinMaxHeap">MinMax Heap</a></p>
 </div>
-<div class="section" id="exercise-5-2-6">
-<h2>Exercise 5.2.6<a class="headerlink" href="#exercise-5-2-6" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-5-2-6-inginious-medianheap">
+<h2>Exercise 5.2.6 (Inginious: MedianHeap)<a class="headerlink" href="#exercise-5-2-6-inginious-medianheap" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Imagine a data structure that supports</p>
 <ol class="arabic simple">
 <li><p><em>insertion</em> in logarithmic time</p></li>
 <li><p>the <em>find median</em> operation in constant time</p></li>
 <li><p><em>deleting the median</em> in logarithmic time.</p></li>
 </ol>
+<p>Hint: There is solution that uses two internal heaps.</p>
+<p>Before starting your implementation, think about the class invariant or property that you want
+to maintain between the two heaps after each operation.</p>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MedianHeap">MedianHeap</a></p>
 </div>
 <div class="section" id="exercise-5-2-7-ternary-heap-inginious">
 <h2>Exercise 5.2.7 (Ternary Heap, Inginious)<a class="headerlink" href="#exercise-5-2-7-ternary-heap-inginious" title="Lien permanent vers ce titre">¶</a></h2>
@@ -143,8 +147,8 @@ What is the time complexity for an <cite>insert</cite> and <cite>delMax</cite> o
 <li><a class="reference internal" href="#exercise-5-2-2">Exercise 5.2.2</a></li>
 <li><a class="reference internal" href="#exercise-5-2-3">Exercise 5.2.3</a></li>
 <li><a class="reference internal" href="#exercise-5-2-4-linked-heap-inginious">Exercise 5.2.4 (Linked Heap, Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-5-inginious">Exercise 5.2.5 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-6">Exercise 5.2.6</a></li>
+<li><a class="reference internal" href="#exercise-5-2-5-inginious-minmax-heap">Exercise 5.2.5 (Inginious: MinMax Heap)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-6-inginious-medianheap">Exercise 5.2.6 (Inginious: MedianHeap)</a></li>
 <li><a class="reference internal" href="#exercise-5-2-7-ternary-heap-inginious">Exercise 5.2.7 (Ternary Heap, Inginious)</a></li>
 </ul>
 </li>
