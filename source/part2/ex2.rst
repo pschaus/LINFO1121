@@ -10,8 +10,8 @@ Exercises B
 Exercise 2.2.1 (Inginious: Union of Intervals)
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
-Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals. We consider that the input intervals are given in the form of two arrays `int[] min, int[] max;` where the ith interval is given by ``(min[i],max[i])`` . Example input ``min=[5,0,1,6,2]`` ``max=[7,2,2,8,3]`` would output ``min=[0,5] ,max=[3,8]``.
-Write the pseudocode. How complex is your method?
+Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals. 
+What is the time complexity of your method?
 
 
 Solve the corresponding taks on Inginious `Union intervals <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Union>`_
