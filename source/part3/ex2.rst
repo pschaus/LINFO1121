@@ -176,34 +176,37 @@ To help you, consider the following tree and the deletion operations of 5 and 10
     faux, delete 10 puis 5 donne (11,right:15), delete 5 puis 10 donne (15,left:11)
 
 
-Exercise 3.2.5 (Inginious)
-"""""""""""""""""""""""""""""
 
-Impement a method which returns the least key strictly greater than a given key:
-`Higher key <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
+Exercise 3.2.5 (Inginious: BST Serialization)
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Exercise 3.2.6 (Inginious)
-"""""""""""""""""""""""""""""
+Data structure serialization refers to the process of converting a data structure (such as a list, tree, or graph) into a format that can be stored or transmitted and then reconstructed (deserialized) later. 
+We are interested here to restruct (deserialization) a BST that has been serialized using a pre-order traversal.
 
 Implement the reconstruction of a BST from the preorder traversal:
 `Preorder reconstruction <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_PreorderToBST>`_
 
 
-Exercise 3.2.7 (Inginious)
-"""""""""""""""""""""""""""""
-
-Implement the get/put operations of a BST with an array-based data-structure instead of linked nodes:
-`ArrayBST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
-
-
-Exercise 3.2.8 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 3.2.6 (Inginious: BirthdayMap)
+"""""""""""""""""""""""""""""""""""""""""""""
 
 An easy one to query efficiently persons by their Birthday (exam 2023) `BirthdayMap <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BirthdayMap>`_
 
-Exercise 3.2.9 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 3.2.7 (Inginious: Skyline)
+"""""""""""""""""""""""""""""""""""""
 
 Design an efficient algorithm to compute the `Skyline <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Skyline>`_ form the set of building shapes (rectangles) that can overlap.
+
+Exercise 3.2.8 (Inginious: Array BST, put and get)
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Special implementation of Binary Search tree with ArrayLists (mid-term quiz 2022).
+`ArrayBST put and get <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
+
+Exercise 3.2.9 (Inginious: Array BST, delete)
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Introduction of the delete method in our array-based implementation of a BST (mid-term quiz 2023).
+`ArrayBST with delete <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
 
 

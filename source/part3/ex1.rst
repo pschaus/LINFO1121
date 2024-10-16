@@ -9,7 +9,7 @@ Exercises A
 
 
 Exercise 3.1.1
-""""""""""""""
+"""""""""""""""""
 
 Which of the two ``SequentialSearchST`` or ``BinarySearchST`` implementations would you use for an application?
 which performs :math:`10^3` ``put()`` and :math:`10^6` ``get()`` in random order? Justify.
@@ -46,34 +46,8 @@ which performs :math:`10^3` ``put()`` and :math:`10^6` ``get()`` in random order
 
     Thus ``BinarySearchST`` if :math:`M` is great enough.
 
-Exercise 3.1.2 (Inginious)
-"""""""""""""""""""""""""""
 
-`Implement the ceil method <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree>`_ method of ``BinarySearchST``.
-
-
-
-Implement the ``floor()`` method of ``BinarySearchST``.
-
-.. answer::
-
-    .. code-block:: java
-
-        public Key floor(Key key) {
-            //rank returns the position where the key
-            //should be if it is added
-
-            //i.e. if keys[loc] == key => it exists, return key
-            //     else, return the key just before the location
-            //           where the key should be added
-
-            int loc = rank(key);
-            if(keys[loc].compareTo(key) == 0)
-                return key;
-            return keys[loc-1];
-        }
-
-Exercise 3.1.3
+Exercise 3.1.2
 """""""""""""""
 
 *Exercise 3.1.24 of the book*.
@@ -129,7 +103,7 @@ Implement ``InterpolationSearchST`` and compare this on ``FrequencyCounter``.
       pense intuitivement que l'interpolation devrait aller plus vite).
 
 
-Exercise 3.1.4
+Exercise 3.1.3
 """""""""""""""
 
 *Exercise 3.1.25 of the book*.
@@ -145,14 +119,14 @@ Modify ``BinarySearchST`` to incorporate this idea.
 
     Simply create the *instance variables* ``lastKey`` and ``lastI`` (for example) and in functions ``get`` and ``put`` check if ``key==lastKey`` if so use ``lastI`` if not call ``lastI=rank(key)`` and `lastKey = key`.
 
-Exercise 3.1.5
-""""""""""""""
+Exercise 3.1.4
+"""""""""""""""
 
 *Exercise 3.2.31 of the book*.
 
 Write a method ``isBST()`` method that takes a ``Node`` as an argument and returns ``true`` if the argument is the root of a BST, ``false`` otherwise (so check that the properties of a BST are satisfied).
 
-Do you think that testing (locally) for each node the property *"the left child has a lower key and the right child an upper key"* is sufficient? If not, give a counterexample.
+Do you think that testing (locally) for each node the property *"the left child has a lower key and the right child an upper key"* is sufficient? If not, give a counter-example.
 
 How complex is your algorithm?
 
@@ -175,8 +149,8 @@ How complex is your algorithm?
             return isBST(x.left, min, x.key) && isBST(x.right, x.key, max);
         }
 
-Exercise 3.1.6
-""""""""""""""
+Exercise 3.1.5
+"""""""""""""""
 
 *Exercise 3.2.4 of the book*.
 
@@ -193,7 +167,7 @@ Which sequence(s) cannot match the sequence of the examined keys?
 
     Seul le d est impossible ca on a 8 qui apparait après 7,3. Or :math:`8 \not\in\left[7,3\right]`
 
-Exercics 3.1.7
+Exercics 3.1.6
 """""""""""""""""
 
 *Exercise 3.3.33 of the book*.
@@ -239,8 +213,8 @@ same number of black links. Finally combine ``isBST(),is23()`` and ``isBalanced(
 
         isRedBlackBST() =  isBST() && is23() && isBalanced().
 
-Exercise 3.1.8
-""""""""""""""
+Exercise 3.1.7
+""""""""""""""""
 
 How to enumerate all memorized keys in ascending order
 in a binary search tree? What is the time complexity of
@@ -253,7 +227,7 @@ this operation ? Justify your answer.
     les noeuds de l'arbre (3 fois) on ne fait pas mieux qu':math:`\Omega(N)` mais pas pire
     que :math:`\mathcal{O}(N)` non plus.
 
-Exercise 3.1.9
+Exercise 3.1.8
 """""""""""""""
 
 Starting from an initially empty binary search tree, how does the tree look like
@@ -277,7 +251,7 @@ Does this example illustrate the advantages or disadvantages of these different 
 
 
 
-Exercise 3.1.10
+Exercise 3.1.9
 """""""""""""""""
 
 Which of these trees is (are) red-black? For each, draw the correspondence to a 2-3 tree
@@ -303,41 +277,75 @@ Which of these trees is (are) red-black? For each, draw the correspondence to a 
     .. image:: tree_iv.png
 
 
-Exercise 3.1.11 (Inginious)
-"""""""""""""""""""""""""""""
+Exercise 3.1.10 (Inginious MCQ on tree traversals)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+`Binary search tree traversals <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3QcmBt>`_
+
+
+Exercise 3.1.11 (Inginious: BST Iterator)
+"""""""""""""""""""""""""""""""""""""""""""""
 
 `Implement an iterator for a BST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIteratorr>`_
 
 
-Exercise 3.1.12 (Inginious MCQ)
-""""""""""""""""""""""""""""""""""
+Exercise 3.1.12 (Inginious: Ceil)
+""""""""""""""""""""""""""""""""""""""""""
+
+`Implement the ceil method <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree>`_ method of ``BinarySearchST``.
+
+
+
+.. answer::
+
+    .. code-block:: java
+
+        public Key floor(Key key) {
+            //rank returns the position where the key
+            //should be if it is added
+
+            //i.e. if keys[loc] == key => it exists, return key
+            //     else, return the key just before the location
+            //           where the key should be added
+
+            int loc = rank(key);
+            if(keys[loc].compareTo(key) == 0)
+                return key;
+            return keys[loc-1];
+        }
+
+
+
+Exercise 3.1.13 (Inginious: Higher key)
+"""""""""""""""""""""""""""""""""""""""""""""
+
+Impement a method which returns the least key strictly greater than a given key:
+`Higher key <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
+
+
+Exercise 3.1.14 (Inginious MCQ on BST Time-Complexity)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Time complexity of binary search trees <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Qcm>`_
 
 
 
-Exercise 3.1.13 (Inginious MCQ)
-""""""""""""""""""""""""""""""""""
-
-`Binary search tree traversals <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3QcmBt>`_
-
-
-Exercise 3.1.14 (Inginious manual exericse)
-""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.15 (Inginious: Small exercices on red-black)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Redblack tree insertions <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt>`_
 
-Exercise 3.1.15 (Inginious)
-""""""""""""""""""""""""""""""""""""""""""""
 
-Special implementation of Binary Search tree with ArrayLists (mid-term quiz 2022).
-`ArrayBST put and get <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
+Exercise 3.1.16 (Inginious: Red-Black Tree Conversion)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Exercise 3.1.16 (Inginious)
-""""""""""""""""""""""""""""""""""""""""""""
+Implement a class that converts a 2-3 tree into a red black tree:
 
-Introduction of the delete method (mid-term quiz 2023).
-`ArrayBST with delete <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST>`_
+`RedblackTreeConverter <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_RedBlackTreeConverter>`_
+
+
+
+
 
 
 
