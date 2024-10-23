@@ -59,8 +59,8 @@
 <p>Which of the two <code class="docutils literal notranslate"><span class="pre">SequentialSearchST</span></code> or <code class="docutils literal notranslate"><span class="pre">BinarySearchST</span></code> implementations would you use for an application?
 which performs <span class="math notranslate nohighlight">\(10^3\)</span> <code class="docutils literal notranslate"><span class="pre">put()</span></code> and <span class="math notranslate nohighlight">\(10^6\)</span> <code class="docutils literal notranslate"><span class="pre">get()</span></code> in random order? Justify.</p>
 </div>
-<div class="section" id="exercise-3-1-2">
-<h2>Exercise 3.1.2<a class="headerlink" href="#exercise-3-1-2" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-3">
+<h2>Exercise 3.1.3<a class="headerlink" href="#exercise-3-1-3" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>Exercise 3.1.24 of the book</em>.</p>
 <p>Assuming the keys are doubles or integers. Write a version of binary search that assumes
 a uniform distribution of keys and will thus first look at the beginning of a dictionary for a word that begins with a letter close to the beginning of the alphabet.</p>
@@ -69,8 +69,8 @@ is <span class="math notranslate nohighlight">\(k_{hi}\)</span>, the interpolati
 and not in the middle (50 percentile) of the table first.</p>
 <p>Implement <code class="docutils literal notranslate"><span class="pre">InterpolationSearchST</span></code> and compare this on <code class="docutils literal notranslate"><span class="pre">FrequencyCounter</span></code>.</p>
 </div>
-<div class="section" id="exercise-3-1-3">
-<h2>Exercise 3.1.3<a class="headerlink" href="#exercise-3-1-3" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-4">
+<h2>Exercise 3.1.4<a class="headerlink" href="#exercise-3-1-4" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>Exercise 3.1.25 of the book</em>.</p>
 <p>It is very common to first test the presence of a key before adding or modifying the corresponding entry. That
 successively generates several consecutive searches for the same key.</p>
@@ -78,15 +78,15 @@ successively generates several consecutive searches for the same key.</p>
 and to use it opportunistically if it is still valid.
 Modify <code class="docutils literal notranslate"><span class="pre">BinarySearchST</span></code> to incorporate this idea.</p>
 </div>
-<div class="section" id="exercise-3-1-4">
-<h2>Exercise 3.1.4<a class="headerlink" href="#exercise-3-1-4" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-5">
+<h2>Exercise 3.1.5<a class="headerlink" href="#exercise-3-1-5" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>Exercise 3.2.31 of the book</em>.</p>
 <p>Write a method <code class="docutils literal notranslate"><span class="pre">isBST()</span></code> method that takes a <code class="docutils literal notranslate"><span class="pre">Node</span></code> as an argument and returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the argument is the root of a BST, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise (so check that the properties of a BST are satisfied).</p>
 <p>Do you think that testing (locally) for each node the property <em>« the left child has a lower key and the right child an upper key »</em> is sufficient? If not, give a counter-example.</p>
 <p>How complex is your algorithm?</p>
 </div>
-<div class="section" id="exercise-3-1-5">
-<h2>Exercise 3.1.5<a class="headerlink" href="#exercise-3-1-5" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-6">
+<h2>Exercise 3.1.6<a class="headerlink" href="#exercise-3-1-6" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>Exercise 3.2.4 of the book</em>.</p>
 <p>Suppose a certain search tree has keys between 1 and 10 and we are looking for key 5.
 Which sequence(s) cannot match the sequence of the examined keys?</p>
@@ -98,60 +98,60 @@ Which sequence(s) cannot match the sequence of the examined keys?</p>
 <li><p>1,2,10,4,8,5</p></li>
 </ul>
 </div>
-<div class="section" id="exercics-3-1-6">
-<h2>Exercics 3.1.6<a class="headerlink" href="#exercics-3-1-6" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercics-3-1-7">
+<h2>Exercics 3.1.7<a class="headerlink" href="#exercics-3-1-7" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>Exercise 3.3.33 of the book</em>.</p>
 <p>Write an method <code class="docutils literal notranslate"><span class="pre">is23()</span></code> in <code class="docutils literal notranslate"><span class="pre">RedBlackBST</span></code> that checks that no nodes are connected
 to two red links and that there is no red link to the right.
 Also write an method <code class="docutils literal notranslate"><span class="pre">isBalanced()</span></code> that checks that any path from the root to a null link has the
 same number of black links. Finally combine <code class="docutils literal notranslate"><span class="pre">isBST(),is23()</span></code> and <code class="docutils literal notranslate"><span class="pre">isBalanced()</span></code> to implement <code class="docutils literal notranslate"><span class="pre">isRedBlackBST()</span></code>.</p>
 </div>
-<div class="section" id="exercise-3-1-7">
-<h2>Exercise 3.1.7<a class="headerlink" href="#exercise-3-1-7" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-8">
+<h2>Exercise 3.1.8<a class="headerlink" href="#exercise-3-1-8" title="Lien permanent vers ce titre">¶</a></h2>
 <p>How to enumerate all memorized keys in ascending order
 in a binary search tree? What is the time complexity of
 this operation ? Justify your answer.</p>
 </div>
-<div class="section" id="exercise-3-1-8">
-<h2>Exercise 3.1.8<a class="headerlink" href="#exercise-3-1-8" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-9">
+<h2>Exercise 3.1.9<a class="headerlink" href="#exercise-3-1-9" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Starting from an initially empty binary search tree, how does the tree look like
 after inserting the keys 12, 5, 10, 3, 13, 14, 15, 17, 18, 15?
 For the same data how would the tree look like for a 2-3 tree?</p>
 <p>Does this example illustrate the advantages or disadvantages of these different data structures? Why ?</p>
 </div>
-<div class="section" id="exercise-3-1-9">
-<h2>Exercise 3.1.9<a class="headerlink" href="#exercise-3-1-9" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-10">
+<h2>Exercise 3.1.10<a class="headerlink" href="#exercise-3-1-10" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Which of these trees is (are) red-black? For each, draw the correspondence to a 2-3 tree
 (described p432).</p>
 <img alt="Arbres" src="../_images/rbtree.png" />
 </div>
-<div class="section" id="exercise-3-1-10-inginious-mcq-on-tree-traversals">
-<h2>Exercise 3.1.10 (Inginious MCQ on tree traversals)<a class="headerlink" href="#exercise-3-1-10-inginious-mcq-on-tree-traversals" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-11-inginious-mcq-on-tree-traversals">
+<h2>Exercise 3.1.11 (Inginious MCQ on tree traversals)<a class="headerlink" href="#exercise-3-1-11-inginious-mcq-on-tree-traversals" title="Lien permanent vers ce titre">¶</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3QcmBt">Binary search tree traversals</a></p>
 </div>
-<div class="section" id="exercise-3-1-11-inginious-bst-iterator">
-<h2>Exercise 3.1.11 (Inginious: BST Iterator)<a class="headerlink" href="#exercise-3-1-11-inginious-bst-iterator" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-12-inginious-bst-iterator">
+<h2>Exercise 3.1.12 (Inginious: BST Iterator)<a class="headerlink" href="#exercise-3-1-12-inginious-bst-iterator" title="Lien permanent vers ce titre">¶</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIteratorr">Implement an iterator for a BST</a></p>
 </div>
-<div class="section" id="exercise-3-1-12-inginious-ceil">
-<h2>Exercise 3.1.12 (Inginious: Ceil)<a class="headerlink" href="#exercise-3-1-12-inginious-ceil" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-13-inginious-ceil">
+<h2>Exercise 3.1.13 (Inginious: Ceil)<a class="headerlink" href="#exercise-3-1-13-inginious-ceil" title="Lien permanent vers ce titre">¶</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree">Implement the ceil method</a> method of <code class="docutils literal notranslate"><span class="pre">BinarySearchST</span></code>.</p>
 </div>
-<div class="section" id="exercise-3-1-13-inginious-higher-key">
-<h2>Exercise 3.1.13 (Inginious: Higher key)<a class="headerlink" href="#exercise-3-1-13-inginious-higher-key" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-14-inginious-higher-key">
+<h2>Exercise 3.1.14 (Inginious: Higher key)<a class="headerlink" href="#exercise-3-1-14-inginious-higher-key" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Impement a method which returns the least key strictly greater than a given key:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher">Higher key</a></p>
 </div>
-<div class="section" id="exercise-3-1-14-inginious-mcq-on-bst-time-complexity">
-<h2>Exercise 3.1.14 (Inginious MCQ on BST Time-Complexity)<a class="headerlink" href="#exercise-3-1-14-inginious-mcq-on-bst-time-complexity" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-15-inginious-mcq-on-bst-time-complexity">
+<h2>Exercise 3.1.15 (Inginious MCQ on BST Time-Complexity)<a class="headerlink" href="#exercise-3-1-15-inginious-mcq-on-bst-time-complexity" title="Lien permanent vers ce titre">¶</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Qcm">Time complexity of binary search trees</a></p>
 </div>
-<div class="section" id="exercise-3-1-15-inginious-small-exercices-on-red-black">
-<h2>Exercise 3.1.15 (Inginious: Small exercices on red-black)<a class="headerlink" href="#exercise-3-1-15-inginious-small-exercices-on-red-black" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-16-inginious-small-exercices-on-red-black">
+<h2>Exercise 3.1.16 (Inginious: Small exercices on red-black)<a class="headerlink" href="#exercise-3-1-16-inginious-small-exercices-on-red-black" title="Lien permanent vers ce titre">¶</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt">Redblack tree insertions</a></p>
 </div>
-<div class="section" id="exercise-3-1-16-inginious-red-black-tree-conversion">
-<h2>Exercise 3.1.16 (Inginious: Red-Black Tree Conversion)<a class="headerlink" href="#exercise-3-1-16-inginious-red-black-tree-conversion" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercise-3-1-17-inginious-red-black-tree-conversion">
+<h2>Exercise 3.1.17 (Inginious: Red-Black Tree Conversion)<a class="headerlink" href="#exercise-3-1-17-inginious-red-black-tree-conversion" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Implement a class that converts a 2-3 tree into a red black tree:</p>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_RedBlackTreeConverter">RedblackTreeConverter</a></p>
 </div>
@@ -168,21 +168,21 @@ For the same data how would the tree look like for a 2-3 tree?</p>
   <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
 <li><a class="reference internal" href="#exercise-3-1-1">Exercise 3.1.1</a></li>
-<li><a class="reference internal" href="#exercise-3-1-2">Exercise 3.1.2</a></li>
 <li><a class="reference internal" href="#exercise-3-1-3">Exercise 3.1.3</a></li>
 <li><a class="reference internal" href="#exercise-3-1-4">Exercise 3.1.4</a></li>
 <li><a class="reference internal" href="#exercise-3-1-5">Exercise 3.1.5</a></li>
-<li><a class="reference internal" href="#exercics-3-1-6">Exercics 3.1.6</a></li>
-<li><a class="reference internal" href="#exercise-3-1-7">Exercise 3.1.7</a></li>
+<li><a class="reference internal" href="#exercise-3-1-6">Exercise 3.1.6</a></li>
+<li><a class="reference internal" href="#exercics-3-1-7">Exercics 3.1.7</a></li>
 <li><a class="reference internal" href="#exercise-3-1-8">Exercise 3.1.8</a></li>
 <li><a class="reference internal" href="#exercise-3-1-9">Exercise 3.1.9</a></li>
-<li><a class="reference internal" href="#exercise-3-1-10-inginious-mcq-on-tree-traversals">Exercise 3.1.10 (Inginious MCQ on tree traversals)</a></li>
-<li><a class="reference internal" href="#exercise-3-1-11-inginious-bst-iterator">Exercise 3.1.11 (Inginious: BST Iterator)</a></li>
-<li><a class="reference internal" href="#exercise-3-1-12-inginious-ceil">Exercise 3.1.12 (Inginious: Ceil)</a></li>
-<li><a class="reference internal" href="#exercise-3-1-13-inginious-higher-key">Exercise 3.1.13 (Inginious: Higher key)</a></li>
-<li><a class="reference internal" href="#exercise-3-1-14-inginious-mcq-on-bst-time-complexity">Exercise 3.1.14 (Inginious MCQ on BST Time-Complexity)</a></li>
-<li><a class="reference internal" href="#exercise-3-1-15-inginious-small-exercices-on-red-black">Exercise 3.1.15 (Inginious: Small exercices on red-black)</a></li>
-<li><a class="reference internal" href="#exercise-3-1-16-inginious-red-black-tree-conversion">Exercise 3.1.16 (Inginious: Red-Black Tree Conversion)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-10">Exercise 3.1.10</a></li>
+<li><a class="reference internal" href="#exercise-3-1-11-inginious-mcq-on-tree-traversals">Exercise 3.1.11 (Inginious MCQ on tree traversals)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-12-inginious-bst-iterator">Exercise 3.1.12 (Inginious: BST Iterator)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-13-inginious-ceil">Exercise 3.1.13 (Inginious: Ceil)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-14-inginious-higher-key">Exercise 3.1.14 (Inginious: Higher key)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-15-inginious-mcq-on-bst-time-complexity">Exercise 3.1.15 (Inginious MCQ on BST Time-Complexity)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-16-inginious-small-exercices-on-red-black">Exercise 3.1.16 (Inginious: Small exercices on red-black)</a></li>
+<li><a class="reference internal" href="#exercise-3-1-17-inginious-red-black-tree-conversion">Exercise 3.1.17 (Inginious: Red-Black Tree Conversion)</a></li>
 </ul>
 </li>
 </ul>
