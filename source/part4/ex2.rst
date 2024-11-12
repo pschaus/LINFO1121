@@ -209,8 +209,7 @@ Exercise 4.2.9 (Inginious: An funny exercise using HashTables)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 This is the question 21 of the `advent of code 2022 <https://adventofcode.com>`_.
-It can be efficently solved using a hashtables in combination with a linked tree data-structure.
- `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
+It can be efficently solved using a hashtables in combination with a linked tree data-structure: `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
 
 
 
