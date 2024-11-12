@@ -192,14 +192,21 @@ for last week's Exercise 4.1.11.
     qu'avec un seul mot-clé! Magique, non?
 
 
-Exercise 4.2.7 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 4.2.7 (Inginious: Linear Probing)
+""""""""""""""""""""""""""""""""""""""""""""
 
 Implement a `Linear Probing Hashtable <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST>`_
 
 
-Exercise 4.2.8 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 4.2.8 (Inginious: Tries and Autocompletion)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Implement an efficient auto-completionalgorithm using a trie data structure: `AutoCompletor <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_AutoCompleter>`_
+
+
+
+Exercise 4.2.9 (Inginious: An funny exercise using HashTables)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 This is the question 21 of the `advent of code 2022 <https://adventofcode.com>`_.
 It can be efficently solved using a hashtables in combination with a linked tree data-structure.

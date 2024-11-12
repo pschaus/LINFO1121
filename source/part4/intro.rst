@@ -11,14 +11,14 @@ Upon completion of this section, each student will be able to:
 * solve simple problems on storing and accessing information in hash tables,
 * evaluate and implement classical representations of hash tables
 * describe and accurately implement the Rabin-Karp algorithm for searching a text in a corpus.
+* 
    
 To read
 =======================================
 
 Reference book:
 
-* chapter 3.4, 3.5, 5.3 (Rabin-Karp fingerprint search only). 
-
+* chapter 3.4, 3.5, 5.2 (Tries), 5.3 (Rabin-Karp fingerprint search only). 
 
 * `Slides1 <../_static/slides/s8-part4-exercises.pdf>`_
 * `Slides2 <../_static/slides/s9-part4-bilan-part5-intro.pdf>`_
