@@ -214,7 +214,7 @@ It can be efficently solved using a hashtables in combination with a linked tree
 Exercise 4.2.10 (Inginious: Bitset)
 """""""""""""""""""""""""""""""""""""
 
-Implement an efficient alternative to using a Hashset when you need to store a dense set of integers : `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset>`_
+Implement an efficient alternative to using a Hashset when you need to store a dense set of integers : `Bitset <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset>`_
 
 
 
