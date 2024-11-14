@@ -211,6 +211,11 @@ Exercise 4.2.9 (Inginious: An funny exercise using HashTables)
 This is the question 21 of the `advent of code 2022 <https://adventofcode.com>`_.
 It can be efficently solved using a hashtables in combination with a linked tree data-structure: `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
 
+Exercise 4.2.10 (Inginious: Bitset)
+"""""""""""""""""""""""""""""""""""""
+
+Implement an efficient alternative to using a Hashset when you need to store a dense set of integers : `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset>`_
+
 
 
 
