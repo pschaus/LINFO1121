@@ -2,7 +2,7 @@
 
 
 *************************************************************************************************
-Part 4 |  Maps: hash tables and other implementations
+Part 4 |  Maps: hash tables and other implementations, Strings: Trie and sub-string search algo
 *************************************************************************************************
 
 
