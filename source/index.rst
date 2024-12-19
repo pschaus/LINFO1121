@@ -19,4 +19,5 @@ LINFO1121: Data Structures and Algorithms
    part4/index
    part5/index
    part6/index
+   training/index
 

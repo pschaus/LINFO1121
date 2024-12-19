@@ -95,8 +95,8 @@ A topological sort problem to help you verify if your course programme complies 
 Exercise 6.2.10 (Inginious)
 """"""""""""""""""""""""""""
 
-Help Nayeli to find the cheapeast shop to buy a christmast gift with a time budget (exam 2022) 
-`SmallestPrice <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_SmallestPrice>`_
+Help Olympic organizers plan efficient evacuation routes
+`Evacuation <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Evacuation>`_
 
 Exercise 6.2.11 (Inginious)
 """"""""""""""""""""""""""""
