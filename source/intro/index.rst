@@ -6,16 +6,14 @@ Introduction
 ************************************
 
 
-This repository serves as a supplementary resource to the foundational text `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition) by Sedgewick and Wayne, 
-offering a set of theoretical and programming exercises designed to complement the book's content. 
+This is the website of `LINFO1121 <https://uclouvain.be/en-cours-2024-linfo1121>`_ , the course of data-structures and algorithm tought by prof `Pierre Schaus <http://www.info.ucl.ac.be/~pschaus>`_ at UCLouvain.
+
+
+It serves as a supplementary resource to the foundational text `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition) by Sedgewick and Wayne, offering a set of theoretical and programming exercises designed to complement the book's content. 
 These exercises are ideally suited for a flipped classroom setting, allowing for an interactive, student-centered learning experience. 
-Additionally, the exercises are compatible with the `Inginious Grading <https://inginious.org>`_  platform, providing an efficient means for automated assessment.
+The exercises point to `Inginious Grading <https://inginious.org>`_  platform, providing automated assessment and instantaneous feedback.
 
-
-The repository also stands as a valuable tool for individuals preparing for programming interviews. 
-Whether within a formal educational environment or as part of personal study, these resources aim to enhance understanding and proficiency in data structures and algorithms.
-
-
+The repository also stands as a valuable tool for individuals preparing for programming interviews.
 
 
 Java Resources
@@ -39,7 +37,7 @@ Open-Source Course Material
 =======================================
 
 
-The source code of all programming exercises and tests are available on Github.
+The *source code of all programming exercises* and tests are available on Github.
 
 
 * `Github Student Repository <https://github.com/pschaus/algorithms_exercises_students>`_ 
@@ -54,6 +52,12 @@ allowing you to reflect on and analyze the differences between your approach and
 
 
 Motivated students can also propose new exercises as pull requests.
+
+
+
+
+Guillaume Derval has compiled a *summary of the course*, available `here <https://github.com/pschaus/LINFO1121-summary>`_. Note: It is not complete and should not replace the reference book. Topics such as Tries and the String Sort algorithm are missing. Contributions via pull requests are welcome!
+
 
 
 The license used is Creative Commons Attribution-ShareAlike 4.0 International License for theoretical exercises and MIT for the source code.
@@ -85,6 +89,7 @@ Here is the list of persons who have contributed to this educational work over t
 - John Aoga
 - Hélène Verhaeghe
 - Alice Burlat
+- Achile Morenville
 - As well as all the tutors and working students who have helped us!
 
 A special note of gratitude is extended to Anthony Gego for developing Inginious, the indispensable grading platform that supports our course.
