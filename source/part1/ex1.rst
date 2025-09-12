@@ -85,8 +85,8 @@ Why do you think Java developers chose this implementation
     Note rigolote: Java recommande d'utiliser Deque à la place de Stack.
     "Qu'est-ce que ça change?" est une bonne question à poser aux étudiants.
 
-Exercise 1.1.4 (Inginious)
-""""""""""""""""""""""""""
+Exercise 1.1.4 (Inginious: Implement a stack with two queues)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 How do you implement the abstract data type *stack* using two *queues*?
 In particular, describe how the `push` and `pop` methods work in this case.
@@ -309,6 +309,6 @@ Exercise 1.1.9
 
     testing time is not always easy (possible using doubling ratio test), couting operations might be a good alternative
 
-Exercise 1.1.10 (Inginious)
-""""""""""""""""""""""""""""""
+Exercise 1.1.10 (Inginious: SegmentedList and iterators)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 You are asked to implement an ADT called a `SegmentedList` and the iterator method of this ADT: `SegmentedList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList>`_ .
