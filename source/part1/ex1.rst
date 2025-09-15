@@ -153,7 +153,7 @@ Exercise 1.1.5
 """"""""""""""
 
 
-What do you think about these three different ways of iterating over the elements of a `java.util.LinkedList? Are they equivalent? Use a time-complecity argument.
+What do you think about these three different ways of iterating over the elements of a `java.util.LinkedList`? Are they equivalent? Use a time-complecity argument.
 
 .. code-block:: java
 

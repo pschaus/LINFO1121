@@ -1,7 +1,7 @@
 .. _training:
 
 *************************************************************************************************
-🎄🎄 Exam Training 🎄🎄
+ Exam Training
 *************************************************************************************************
 
 Try to complete these exercises within three hours to assess if you are ready for the exam.
