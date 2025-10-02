@@ -56,7 +56,7 @@ Check the `rooms <https://ade-scheduler.info.ucl.ac.be/calendar/#>`_
 
 You need to subscribe on `Moodle <https://moodle.uclouvain.be>`_ for the labs and for the communication with the students.
 
-For the students participating on the lab on `Teams <https://teams.microsoft.com/l/team/19%3Ac5uyy7pCrTfE8exSLNuY6MmMsuSkAQyYS4sd8PizuiM1%40thread.tacv2/conversations?groupId=089eaa3e-68ad-41a8-a915-11c26db23d69&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_  , there is a channel for each module.
+For the students participating on the lab on `Teams <https://teams.microsoft.com/l/channel/19%3A2yjydjEAAVcPT4Xe4Xw-ualX-Tu-F1KoK4tsH3WTgpA1%40thread.tacv2/General?groupId=b25c0bf9-1060-4f1f-96fb-04c32ac998cc&tenantId=7ab090d4-fa2e-4ecf-bc7c-4127b4d582ec>`_  , there is a channel for each module.
 
 Make sure you registered on `Moodle <https://moodle.uclouvain.be/course/view.php?id=1049>`_. 
 
