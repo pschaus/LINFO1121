@@ -311,19 +311,26 @@ Use VisualVM on your code for the previous question.
 
 
 
-Exercise 2.1.13 (Inginious)
-""""""""""""""""""""""""""""""
+Exercise 2.1.13 (Inginious: Merge Sort)
+"""""""""""""""""""""""""""""""""""""""""""
 
 Complete (without reading the book since you won't have it at the exam) the implementation of `Merge Sort <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort>`_
 
-Exercise 2.1.14 (Inginious)
-""""""""""""""""""""""""""""""
+Exercise 2.1.14 (Inginious: A Photograp problem)
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Help the photograph to arrange players of two soccer teams so that every body is visible on the picture (exam 2022) `Photo <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Photo>`_
 
-Exercise 2.1.15 (Inginious)
-""""""""""""""""""""""""""""""
+Exercise 2.1.15 (Inginious: On Olympic Problem)
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Help the olympic games organisers to compute the number of training rooms (exam 2024) `TrainigSessions <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TrainingSessions>`_
-i
+
+
+Exercise 2.1.16 (Inginious: Fix QuickSort)
+""""""""""""""""""""""""""""""""""""""""""""""
+It seems that this quick sort implementation does not always have the right time complexity.
+Help us improve it `FixQuickSort <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_FixQuickSort>`_
+
+
 
