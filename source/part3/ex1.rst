@@ -286,7 +286,7 @@ Exercise 3.1.11 (Inginious MCQ on tree traversals)
 Exercise 3.1.12 (Inginious: BST Iterator)
 """""""""""""""""""""""""""""""""""""""""""""
 
-`Implement an iterator for a BST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIteratorr>`_
+`Implement an iterator for a BST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIterator>`_
 
 
 Exercise 3.1.13 (Inginious: Ceil)
