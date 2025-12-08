@@ -380,7 +380,7 @@ Implement a
 Exercise 6.1.14 (Inginious)
 """""""""""""""""""""""""""
 
-Implement a
+Implement an algorihtm for finding a path (its length does not matter) between a node source and a destination using
 `Depth First Search <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_DepthFirstPaths>`_
 
 
@@ -404,7 +404,7 @@ to satisfy the belgian covid rules:
 Exercise 6.1.17 (Inginious)
 """""""""""""""""""""""""""
 
-A programming exercise on BFS from multiple sources:
+A programming exercise on BFS to find the shortest path from multiple possible sources to a destination node:
 `BFS multiple sources <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_BreadthFirstShortestPaths>`_
 
 
