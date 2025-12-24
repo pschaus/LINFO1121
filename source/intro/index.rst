@@ -42,7 +42,7 @@ The *source code of all programming exercises* and tests are available on Github
 
 * `Github Student Repository <https://github.com/pschaus/algorithms_exercises_students>`_ 
 * `Github Solution Repository <https://github.com/pschaus/algorithms_exercises>`_ 
-
+* `Summary of the course <../_static/slides/summary.pdf>`_ (`Github of the summary <https://github.com/pschaus/LINFO1121-summary>`_ )
 
 This student repository is generated from the solution repository by removing the programming task code and complex unit tests. 
 These removed complex unit tests are designed for the grading platform and are not intended for student use. 
