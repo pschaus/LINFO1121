@@ -46,7 +46,6 @@ Given an origin S, we want to find a path to each node that maximizes *the minim
 
 
 .. image:: minmax.svg
-    :scale: 80
     :width: 400
     :alt: Exemple de graphe
 

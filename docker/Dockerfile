@@ -24,4 +24,4 @@ RUN apt-get update \
  && apt-get autoremove \
  && apt-get clean
 
-RUN pip3 install sphinx sphinxcontrib-svg2pdfconverter sphinx-press-theme
+RUN pip3 install sphinx sphinxcontrib-svg2pdfconverter sphinx-press-theme furo

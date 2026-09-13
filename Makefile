@@ -2,8 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+SPHINXBUILD   ?= $(shell which sphinx-build 2>/dev/null || (test -f ./myvenv/bin/sphinx-build && echo ./myvenv/bin/sphinx-build) || echo sphinx-build)
 PAPER         =
 BUILDDIR      = build
 

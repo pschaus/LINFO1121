@@ -45,3 +45,15 @@ For the past two years, we have been organizing competitive programming contests
 * `UnfortunateDisassembly <https://inginious.info.ucl.ac.be/course/LINFO1121/competition_UnfortunateDisassembly>`_ (Graphs: Connected Components, DFS)
 
 
+Review Session & QCM
+""""""""""""""""""""
+
+* :doc:`Review Session & QCM <../part7/s13>`
+
+.. toctree::
+   :hidden:
+
+   ../part7/s13
+
+
+

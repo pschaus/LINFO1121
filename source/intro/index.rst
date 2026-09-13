@@ -11,7 +11,41 @@ This is the website of `LINFO1121 <https://uclouvain.be/en-cours-2024-linfo1121>
 
 It serves as a supplementary resource to the foundational text `Algorithms <https://algs4.cs.princeton.edu/home/>`_ (4th Edition) by Sedgewick and Wayne, offering a set of theoretical and programming exercises designed to complement the book's content. 
 These exercises are ideally suited for a flipped classroom setting, allowing for an interactive, student-centered learning experience. 
-The exercises point to `Inginious Grading <https://inginious.org>`_  platform, providing automated assessment and instantaneous feedback.
+The exercises point to `Inginious Grading <https://inginious.org>`_ platform, providing automated assessment and instantaneous feedback.
+
+.. raw:: html
+
+   <div class="book-showcase-card">
+     <div class="book-cover-wrap">
+       <a href="https://algs4.cs.princeton.edu/home/" target="_blank" rel="noopener">
+         <img class="book-cover-img" src="../_static/images/algs4_cover.png" alt="Algorithms 4th Edition Cover - Sedgewick &amp; Wayne" />
+       </a>
+     </div>
+     <div class="book-info">
+       <div class="book-badges">
+         <span class="book-badge primary">Reference Book</span>
+         <span class="book-badge accent">4th Edition</span>
+         <span class="book-badge accent">Sedgewick &amp; Wayne</span>
+       </div>
+       <h3 class="book-title">Algorithms (4th Edition)</h3>
+       <p class="book-authors">By Robert Sedgewick &amp; Kevin Wayne &mdash; Addison-Wesley</p>
+       <p class="book-desc">
+         The foundational textbook for this course. It covers the fundamental data structures and algorithms in Java, providing theoretical foundations, implementation details, and practical applications.
+       </p>
+       <div class="book-bst-alert">
+         <span>📚</span>
+         <span><strong>BST Library:</strong> ~20 copies available for student rental in Louvain-la-Neuve.</span>
+       </div>
+       <div class="book-actions">
+         <a class="book-btn primary" href="https://algs4.cs.princeton.edu/home/" target="_blank" rel="noopener">
+           <span>🌐</span> Companion Website
+         </a>
+         <a class="book-btn secondary" href="https://algs4.cs.princeton.edu/cheatsheet/" target="_blank" rel="noopener">
+           <span>📑</span> Online Cheatsheet
+         </a>
+       </div>
+     </div>
+   </div>
 
 The repository also stands as a valuable tool for individuals preparing for programming interviews.
 

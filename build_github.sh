@@ -3,6 +3,8 @@ set -e
 
 rm -rf build
 
+pip3 install -r requirements.txt || true
+
 #echo "show_answers = True" >> source/conf.py
 
 #make latexpdf
