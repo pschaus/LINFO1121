@@ -1,61 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Complexity" href="complexity.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
+        <title>Exercises B - LINFO1121: Data Structures and Algorithms</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+    
 
 
-<!DOCTYPE html>
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --color-brand-primary: #1d5b79;
+  --color-brand-content: #1a5276;
+  --color-admonition-background: #f8f9fa;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercises B &#8212; Documentation LINFO1121 2025-2026</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Complexity" href="complexity.html" />
-    <link rel="prev" title="Exercises A" href="ex1.html" />
- 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="complexity.html" title="Complexity"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="ex1.html" title="Exercises A"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
-      </ul>
-    </div>  
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="exercises-b">
-<span id="part1-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">LINFO1121: Data Structures and Algorithms</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/index.html">Organization (UCLouvain Specific)</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercises A</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Exercises B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complexity.html">Complexity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part2/index.html">Part 2 |  Sorting and Properties of Sorted Sets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part2/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part3/index.html">Part 3 |  Search Trees</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part4/index.html">Part 4 |  Maps: hash tables and other implementations, Strings: Trie and sub-string search algo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part5/index.html">Part 5 |  Priority queues, union-find and data compression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part5/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/index.html">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="exercises-b">
+<span id="part1-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers cette rubrique">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W3.</p>
 </div>
-<div class="section" id="exercise-1-2-1-inginious-circular-linked-list">
-<h2>Exercise 1.2.1 (Inginious: Circular Linked List)<a class="headerlink" href="#exercise-1-2-1-inginious-circular-linked-list" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="exercise-1-2-1-inginious-circular-linked-list">
+<h2>Exercise 1.2.1 (Inginious: Circular Linked List)<a class="headerlink" href="#exercise-1-2-1-inginious-circular-linked-list" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>What is the difference between an Iterable and an Iterator?</p></li>
 </ul>
@@ -66,9 +267,9 @@
 <li><p><cite>public Item remove(int index)</cite> ?</p></li>
 <li><p>a sequence of operations which consists of <em>creating an iterator and then iterating over the first k-elements</em>?</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-1-2-2-inginious-implement-a-stack-with-an-array">
-<h2>Exercise 1.2.2 (Inginious: Implement a stack with an Array)<a class="headerlink" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-1-2-2-inginious-implement-a-stack-with-an-array">
+<h2>Exercise 1.2.2 (Inginious: Implement a stack with an Array)<a class="headerlink" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>In your implementation, you will need to resize the array if the size of the stack reaches the maximum size.
 Does Java have an efficient way to resize/refill an array? If yes, give an example of Java code to perform this operation.</p>
 <p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_Stack">Stack</a> interface with an internal array-based implemenation and with a linked-list.</p>
@@ -77,9 +278,9 @@ Does Java have an efficient way to resize/refill an array? If yes, give an examp
 <li><p><cite>public void push(E item)</cite>?</p></li>
 <li><p>a sequence of n <cite>push</cite> operations</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-1-2-3">
-<h2>Exercise 1.2.3<a class="headerlink" href="#exercise-1-2-3" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-1-2-3">
+<h2>Exercise 1.2.3<a class="headerlink" href="#exercise-1-2-3" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Post-fix notation (or <a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_Polish_Notation">Inverse Polish</a>) is used
 to represent algebraic expressions.
 We consider for simplicity only post-fix expressions with positive integers
@@ -91,48 +292,48 @@ and the result of <cite>4 20 + 3 5 1 * * +</cite> is 39.</p>
 <li><p>What is the complexity of your algorithm (temporal and spatial)?</p></li>
 </ol>
 <p>As a reminder, here is how you can iterate over the elements of a string that are separated by spaces.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">in</span> <span class="o">=</span> <span class="s">&quot;4 20 + 3 5 1 * * +&quot;</span><span class="p">;</span>
-<span class="n">StringTokenizer</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringTokenizer</span><span class="p">(</span><span class="n">in</span><span class="p">);</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span> <span class="p">{</span>
-     <span class="n">String</span> <span class="n">element</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="na">nextToken</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"4 20 + 3 5 1 * * +"</span><span class="p">;</span>
+<span class="n">StringTokenizer</span><span class="w"> </span><span class="n">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringTokenizer</span><span class="p">(</span><span class="n">in</span><span class="p">);</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">String</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tokenizer</span><span class="p">.</span><span class="na">nextToken</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="exercise-1-2-4-inginious-functional-lists">
-<h2>Exercise 1.2.4 (Inginious: Functional Lists)<a class="headerlink" href="#exercise-1-2-4-inginious-functional-lists" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-1-2-4-inginious-functional-lists">
+<h2>Exercise 1.2.4 (Inginious: Functional Lists)<a class="headerlink" href="#exercise-1-2-4-inginious-functional-lists" title="Lien permanent vers cette rubrique">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Functional_Programming">Functional Programming</a> is an increasingly important programming paradigm.
 In this programming paradigm, data structures are <a class="reference external" href="https://en.wikipedia.org/wiki/Purely_functional_data_structure">immutable</a>.
 We are interested here in the implementation of an immutable list called <em>FList</em> allowing to be used in a functional framework.
 Here is the API of a <em>FList</em></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="c1">// creates an empty list</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">nil</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// creates an empty list</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">nil</span><span class="p">();</span>
 
-    <span class="c1">// prepend a to the list and return the new list</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">cons</span><span class="p">(</span><span class="kd">final</span> <span class="n">A</span> <span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// prepend a to the list and return the new list</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">cons</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isNotEmpty</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isNotEmpty</span><span class="p">();</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEmpty</span><span class="p">();</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">length</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">length</span><span class="p">();</span>
 
-    <span class="c1">// return the head element of the list</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">A</span> <span class="nf">head</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// return the head element of the list</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="nf">head</span><span class="p">();</span>
 
-    <span class="c1">// return the tail of the list</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">tail</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// return the tail of the list</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">tail</span><span class="p">();</span>
 
-    <span class="c1">// return a list on which each element has been applied function f</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// return a list on which each element has been applied function f</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 
-    <span class="c1">// return a list on which only the elements that satisfies predicate are kept</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// return a list on which only the elements that satisfies predicate are kept</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 
-    <span class="c1">// return an iterator on the element of the list</span>
-    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// return an iterator on the element of the list</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">iterator</span><span class="p">();</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -141,95 +342,95 @@ Here is the API of a <em>FList</em></p>
 Here is an example of manipulation of such a list.
 If you are unfamiliar with the <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</a> functional interfaces of Java8,
 we ask that you familiarize yourself with these first.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">FList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">FList</span><span class="p">.</span><span class="na">nil</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">FList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FList</span><span class="p">.</span><span class="na">nil</span><span class="p">();</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">cons</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">cons</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="c1">// list = 9,8,7,...,0</span>
 
-<span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
 <span class="c1">// will print 10,9,...,1</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span><span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="c1">// will print 10,...,6,4,2</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">i</span><span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Here is a partial implementation of the <cite>FList</cite></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.NoSuchElementException</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.function.Function</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.function.Predicate</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Iterator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.NoSuchElementException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.Function</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.Predicate</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isNotEmpty</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span> <span class="k">instanceof</span> <span class="n">Cons</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isNotEmpty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Cons</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span> <span class="k">instanceof</span> <span class="n">Nil</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Nil</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">length</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// TODO</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">length</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// TODO</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">A</span> <span class="nf">head</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="nf">head</span><span class="p">();</span>
 
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">tail</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">tail</span><span class="p">();</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">nil</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">Nil</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">Nil</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">nil</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">Nil</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">Nil</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">cons</span><span class="p">(</span><span class="kd">final</span> <span class="n">A</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">Cons</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">cons</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cons</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span> <span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// TODO</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// TODO</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// TODO</span>
-    <span class="p">}</span>
-
-
-    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
-            <span class="c1">// complete this class</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// TODO</span>
+<span class="w">    </span><span class="p">}</span>
 
 
-            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="p">()</span> <span class="p">{</span>
-              <span class="c1">// TODO</span>
-            <span class="p">}</span>
-
-            <span class="kd">public</span> <span class="n">A</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
-              <span class="c1">// TODO</span>
-            <span class="p">}</span>
-
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="p">()</span> <span class="p">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="n">UnsupportedOperationException</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">};</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">iterator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// complete this class</span>
 
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Nil</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Nil</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Nil</span><span class="p">();</span>
-        <span class="c1">// TODO</span>
-    <span class="p">}</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasNext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="c1">// TODO</span>
+<span class="w">            </span><span class="p">}</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Cons</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="c1">// TODO</span>
-    <span class="p">}</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="nf">next</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="c1">// TODO</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">remove</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UnsupportedOperationException</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Nil</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Nil</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">INSTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Nil</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// TODO</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cons</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// TODO</span>
+<span class="w">    </span><span class="p">}</span>
 
 
 <span class="p">}</span>
@@ -241,15 +442,16 @@ we ask that you familiarize yourself with these first.</p>
 <li><p>determine the complexity of each method.</p></li>
 </ul>
 <p>The inginious taks is the following: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList">FList</a></p>
-</div>
-<div class="section" id="exercise-1-2-5">
-<h2>Exercise 1.2.5<a class="headerlink" href="#exercise-1-2-5" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-1-2-5">
+<h2>Exercise 1.2.5<a class="headerlink" href="#exercise-1-2-5" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Fill in the following table with the complexities of each operation?
 If an operation is not possible (for example, going to the middle of a Stack is impossible because not provided for by the TAD, indicate it with a cross.
 Specify each time if it is an amortized complexity or not.
 SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentioning.</p>
+<div class="table-wrapper docutils container" id="id1">
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Complexité</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<caption><span class="caption-text">Complexité</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">#</a></caption>
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 9%" />
@@ -364,10 +566,11 @@ SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentionin
 </tr>
 </tbody>
 </table>
-<p>What is this ?</p>
 </div>
-<div class="section" id="exercice-1-2-6">
-<h2>Exercice 1.2.6<a class="headerlink" href="#exercice-1-2-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>What is this ?</p>
+</section>
+<section id="exercice-1-2-6">
+<h2>Exercice 1.2.6<a class="headerlink" href="#exercice-1-2-6" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul>
 <li><dl class="simple">
 <dt>Does Java provide a class for <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, <code class="docutils literal notranslate"><span class="pre">Vector</span></code>, <code class="docutils literal notranslate"><span class="pre">List</span></code>?</dt><dd><p>If so in which package? In your opinion, is it interesting to know this package well for the exam?
@@ -377,51 +580,102 @@ How to create an object of type <code class="docutils literal notranslate"><span
 </dl>
 </li>
 <li><p>What is the error in the following code where the student is looking to create an array of 5 lists and then insert the integer 4 into the 3rd list? Correct the code.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">myList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="w"> </span><span class="n">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
 <span class="n">myList</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 <li><p>What is the error in the following code where the student is trying to create an Iterable object? Correct the code.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">myIterable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myIterable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
 </pre></div>
 </div>
 </li>
 <li><p>What is the error in the following code where the student is trying to define a constructor?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ADT</span> <span class="p">{</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-  <span class="kd">private</span> <span class="n">ADT</span> <span class="n">myAdt</span><span class="p">;</span>
-  <span class="kd">public</span> <span class="nf">ADT</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
-    <span class="n">myAdt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ADT</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-  <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ADT</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">ADT</span><span class="w"> </span><span class="n">myAdt</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">ADT</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">myAdt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ADT</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </li>
 <li><p>What is the time complexity of is this code, given the size of the list, <span class="math notranslate nohighlight">\(n\)</span>? How to improve it?</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">printList</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">elem</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">elem</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">printList</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">elem</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
+        </article>
+      </div>
+      <footer>
+        
 
-            <div class="clearer"></div>
+        <div class="related-pages">
+          <a class="next-page" href="complexity.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Complexity</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="ex1.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Exercises A</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
           </div>
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table des matières</a></h3>
-  <ul>
+        
+<div class="custom-license-footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+  </a><br />
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
 <li><a class="reference internal" href="#exercise-1-2-1-inginious-circular-linked-list">Exercise 1.2.1 (Inginious: Circular Linked List)</a></li>
 <li><a class="reference internal" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array">Exercise 1.2.2 (Inginious: Implement a stack with an Array)</a></li>
@@ -433,52 +687,21 @@ How to create an object of type <code class="docutils literal notranslate"><span
 </li>
 </ul>
 
-  <h4>Sujet précédent</h4>
-  <p class="topless"><a href="ex1.html"
-                        title="Chapitre précédent">Exercises A</a></p>
-  <h4>Sujet suivant</h4>
-  <p class="topless"><a href="complexity.html"
-                        title="Chapitre suivant">Complexity</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+          </div>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="complexity.html" title="Complexity"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="ex1.html" title="Exercises A"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
-      </ul>
-    </div>
-
-    <div class="footer" role="contentinfo">
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
-    </div>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a><br />
-
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-  </body>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
 </html>

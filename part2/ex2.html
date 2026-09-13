@@ -1,103 +1,304 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Part 3 | Search Trees" href="../part3/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
+        <title>Exercises B - LINFO1121: Data Structures and Algorithms</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+    
 
 
-<!DOCTYPE html>
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --color-brand-primary: #1d5b79;
+  --color-brand-content: #1a5276;
+  --color-admonition-background: #f8f9fa;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercises B &#8212; Documentation LINFO1121 2025-2026</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Part 3 | Search Trees" href="../part3/index.html" />
-    <link rel="prev" title="Exercises A" href="ex1.html" />
- 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../part3/index.html" title="Part 3 | Search Trees"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="ex1.html" title="Exercises A"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 2 |  Sorting and Properties of Sorted Sets</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
-      </ul>
-    </div>  
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="exercises-b">
-<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers ce titre">¶</a></h1>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">LINFO1121: Data Structures and Algorithms</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/index.html">Organization (UCLouvain Specific)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part1/index.html">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part1/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/ex2.html">Exercises B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/complexity.html">Complexity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Part 2 |  Sorting and Properties of Sorted Sets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercises A</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part3/index.html">Part 3 |  Search Trees</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part4/index.html">Part 4 |  Maps: hash tables and other implementations, Strings: Trie and sub-string search algo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part5/index.html">Part 5 |  Priority queues, union-find and data compression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part5/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/index.html">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="exercises-b">
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers cette rubrique">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W5.</p>
 </div>
-<div class="section" id="exercise-2-2-1-inginious-union-of-intervals">
-<h2>Exercise 2.2.1 (Inginious: Union of Intervals)<a class="headerlink" href="#exercise-2-2-1-inginious-union-of-intervals" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="exercise-2-2-1-inginious-union-of-intervals">
+<h2>Exercise 2.2.1 (Inginious: Union of Intervals)<a class="headerlink" href="#exercise-2-2-1-inginious-union-of-intervals" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals.
 What is the time complexity of your method?</p>
 <p>Solve the corresponding taks on Inginious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Union">Union intervals</a></p>
-</div>
-<div class="section" id="exercise-2-2-2">
-<h2>Exercise 2.2.2<a class="headerlink" href="#exercise-2-2-2" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-2">
+<h2>Exercise 2.2.2<a class="headerlink" href="#exercise-2-2-2" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>You need to sort a large array that has the property that it only contains values in the set <code class="docutils literal notranslate"><span class="pre">{0,1,2}</span></code>.
 What sorting algorithm do you suggest? Write the code.
 How complex will it be to sort the array? Discuss this complexity with respect to the lower bound of a sorting algorithm (Proposition 1 pages 280-281).</p>
-</div>
-<div class="section" id="exercise-2-2-3">
-<h2>Exercise 2.2.3<a class="headerlink" href="#exercise-2-2-3" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-3">
+<h2>Exercise 2.2.3<a class="headerlink" href="#exercise-2-2-3" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>The mode of a table of numbers is the number that appears most frequently in the table. For example (4,6,2,4,3,1) has mode 4. Give an efficient algorithm to calculate the mode of an array of <span class="math notranslate nohighlight">\(n\)</span> numbers. What if we know that the array only contains values from 0 to <span class="math notranslate nohighlight">\(k\)</span>?</p>
-</div>
-<div class="section" id="exercise-2-2-4">
-<h2>Exercise 2.2.4<a class="headerlink" href="#exercise-2-2-4" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-4">
+<h2>Exercise 2.2.4<a class="headerlink" href="#exercise-2-2-4" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Given two sets <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> (each of size <span class="math notranslate nohighlight">\(n\)</span>), and a number <span class="math notranslate nohighlight">\(x\)</span>. Describe an efficient algorithm to find if there is a pair <span class="math notranslate nohighlight">\((a,b)\)</span> with <span class="math notranslate nohighlight">\(a \in S_1,b \in S_2\)</span> such that <span class="math notranslate nohighlight">\(a+b=x\)</span>.
 What is the time complexity of your algorithm? What if the sets are in already sorted arrays?</p>
-</div>
-<div class="section" id="exercise-2-2-5">
-<h2>Exercise 2.2.5<a class="headerlink" href="#exercise-2-2-5" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-5">
+<h2>Exercise 2.2.5<a class="headerlink" href="#exercise-2-2-5" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Same question as the previous one but for a single set. What if the set is in an already sorted array?</p>
-</div>
-<div class="section" id="exercise-2-2-6">
-<h2>Exercise 2.2.6<a class="headerlink" href="#exercise-2-2-6" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-6">
+<h2>Exercise 2.2.6<a class="headerlink" href="#exercise-2-2-6" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Give an algorithm to calculate the union of two sets <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.
 Suppose in a second step that the already sorted set <span class="math notranslate nohighlight">\(A\)</span> has a size <span class="math notranslate nohighlight">\(n\)</span> and the also sorted set <span class="math notranslate nohighlight">\(B\)</span> has a size <span class="math notranslate nohighlight">\(n^2\)</span> . What would be the time complexity of you algorithm, does your algorithm change?</p>
-</div>
-<div class="section" id="exercise-2-2-7">
-<h2>Exercise 2.2.7<a class="headerlink" href="#exercise-2-2-7" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-7">
+<h2>Exercise 2.2.7<a class="headerlink" href="#exercise-2-2-7" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Given a matrix of integers that are sorted along rows and columns, how do you find a given number in the matrix efficiently?
 Hint: There is a <span class="math notranslate nohighlight">\(\mathcal{O}(n+m)\)</span> time algorithm for a <span class="math notranslate nohighlight">\(n\times m\)</span> matrix. To do this, start in the upper right corner and compare with the number you are looking for. Which parts of the matrix can you prune in your search based on the result?</p>
-</div>
-<div class="section" id="exercise-2-2-8-inginious-global-warming">
-<h2>Exercise 2.2.8 (Inginious: Global Warming)<a class="headerlink" href="#exercise-2-2-8-inginious-global-warming" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-8-inginious-global-warming">
+<h2>Exercise 2.2.8 (Inginious: Global Warming)<a class="headerlink" href="#exercise-2-2-8-inginious-global-warming" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Design an algorihtm to compute the number of entries larger or equal to a given value <span class="math notranslate nohighlight">\(v_1\)</span> in n x n matrix of integers.
 What if you need to recompte it for a different value <span class="math notranslate nohighlight">\(v_2\)</span>?
 Do you need to redo the computation from scratch or some pre-computation can be done do it more efficiently?</p>
 <p>Inginious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_GlobalWarmingImpl">Global Warming</a></p>
-</div>
-<div class="section" id="exercise-2-2-9-inginious-radix-sort">
-<h2>Exercise 2.2.9 (Inginious: Radix Sort)<a class="headerlink" href="#exercise-2-2-9-inginious-radix-sort" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-9-inginious-radix-sort">
+<h2>Exercise 2.2.9 (Inginious: Radix Sort)<a class="headerlink" href="#exercise-2-2-9-inginious-radix-sort" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Every integer is encoded on 32 bits in Java.
 An integer can thus be seen as a string of 32 bits.
 The radix-sort algorithm is version of string sort that start with the least significant bit rather than the most sigfificant bit (as for MDS pp. 710).</p>
@@ -110,22 +311,73 @@ The radix-sort algorithm is version of string sort that start with the least sig
 <li><p>What stable sort algorihtm did you choose in your implementation? What it its time complexity? Do you know another algorithm that could be used without requiring an auxiliary array?</p></li>
 <li><p>How to adapt the radix-sort implementation to sort  number that may be positive or negative (be carefull about the way an negative number is represented bitwise)?</p></li>
 </ol>
-</div>
-<div class="section" id="exercise-2-2-10-inginious-aggregate-january-2023">
-<h2>Exercise 2.2.10 (Inginious: Aggregate, january 2023)<a class="headerlink" href="#exercise-2-2-10-inginious-aggregate-january-2023" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-2-2-10-inginious-aggregate-january-2023">
+<h2>Exercise 2.2.10 (Inginious: Aggregate, january 2023)<a class="headerlink" href="#exercise-2-2-10-inginious-aggregate-january-2023" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Inginious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Aggregate">Aggregate</a></p>
-</div>
-</div>
+</section>
+</section>
 
+        </article>
+      </div>
+      <footer>
+        
 
-            <div class="clearer"></div>
+        <div class="related-pages">
+          <a class="next-page" href="../part3/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Part 3 |  Search Trees</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="ex1.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Exercises A</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
           </div>
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table des matières</a></h3>
-  <ul>
+        
+<div class="custom-license-footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+  </a><br />
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
 <li><a class="reference internal" href="#exercise-2-2-1-inginious-union-of-intervals">Exercise 2.2.1 (Inginious: Union of Intervals)</a></li>
 <li><a class="reference internal" href="#exercise-2-2-2">Exercise 2.2.2</a></li>
@@ -141,52 +393,21 @@ The radix-sort algorithm is version of string sort that start with the least sig
 </li>
 </ul>
 
-  <h4>Sujet précédent</h4>
-  <p class="topless"><a href="ex1.html"
-                        title="Chapitre précédent">Exercises A</a></p>
-  <h4>Sujet suivant</h4>
-  <p class="topless"><a href="../part3/index.html"
-                        title="Chapitre suivant">Part 3 |  Search Trees</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+          </div>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="../part3/index.html" title="Part 3 | Search Trees"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="ex1.html" title="Exercises A"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Part 2 |  Sorting and Properties of Sorted Sets</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Exercises B</a></li> 
-      </ul>
-    </div>
-
-    <div class="footer" role="contentinfo">
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
-    </div>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a><br />
-
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-  </body>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
 </html>

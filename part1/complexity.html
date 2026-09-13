@@ -1,70 +1,273 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Part 2 | Sorting and Properties of Sorted Sets" href="../part2/index.html" /><link rel="prev" title="Exercises B" href="ex2.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
+        <title>Complexity - LINFO1121: Data Structures and Algorithms</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+    
 
 
-<!DOCTYPE html>
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --color-brand-primary: #1d5b79;
+  --color-brand-content: #1a5276;
+  --color-admonition-background: #f8f9fa;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complexity &#8212; Documentation LINFO1121 2025-2026</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Part 2 | Sorting and Properties of Sorted Sets" href="../part2/index.html" />
-    <link rel="prev" title="Exercises B" href="ex2.html" />
- 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../part2/index.html" title="Part 2 | Sorting and Properties of Sorted Sets"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="ex2.html" title="Exercises B"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Complexity</a></li> 
-      </ul>
-    </div>  
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="complexity">
-<span id="part1complexity"></span><h1>Complexity<a class="headerlink" href="#complexity" title="Lien permanent vers ce titre">¶</a></h1>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">LINFO1121: Data Structures and Algorithms</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/index.html">Organization (UCLouvain Specific)</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html">Exercises B</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Complexity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part2/index.html">Part 2 |  Sorting and Properties of Sorted Sets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part2/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part3/index.html">Part 3 |  Search Trees</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part4/index.html">Part 4 |  Maps: hash tables and other implementations, Strings: Trie and sub-string search algo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part5/index.html">Part 5 |  Priority queues, union-find and data compression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part5/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part5/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/index.html">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="complexity">
+<span id="part1complexity"></span><h1>Complexity<a class="headerlink" href="#complexity" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Please note that all definitions here are for positive functions with one integer argument, but are almost identical
 for multivariate functions from other sets.</p>
-<div class="section" id="notation-big-oh-mathcal-o">
-<h2>Notation Big-Oh (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>)<a class="headerlink" href="#notation-big-oh-mathcal-o" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="notation-big-oh-mathcal-o">
+<h2>Notation Big-Oh (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>)<a class="headerlink" href="#notation-big-oh-mathcal-o" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathcal{O}(g(n)) \quad \Longleftrightarrow \quad
     \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ s.t. } \quad
     f(n) \leq k \cdot g(n) \quad
     \forall n \geq n_0\]</div>
+</div>
 <p>A function <span class="math notranslate nohighlight">\(f(n)\)</span> is said to belong to <span class="math notranslate nohighlight">\(\mathcal{O}(g(n))\)</span> if there is a constant <span class="math notranslate nohighlight">\(k\)</span>,
 such that <span class="math notranslate nohighlight">\(k \cdot g(n)\)</span> is systematically greater than <span class="math notranslate nohighlight">\(f(n)\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> large enough
 (that is, there is a <span class="math notranslate nohighlight">\(n_0\)</span> from which the rule is satisfied).</p>
 <p><span class="math notranslate nohighlight">\(g(n)\)</span> therefore works as an upper bound on the function up to a constant.</p>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(f(n) = 2n^2+3n\)</span>. We have that <span class="math notranslate nohighlight">\(f(n)\in \mathcal{O}(n^2)\)</span> (in other words, we choose <span class="math notranslate nohighlight">\(g(n)=n^2\)</span>).
 Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule is respected from <span class="math notranslate nohighlight">\(n=3\)</span>.</p>
 <p>Similarly, the same function <span class="math notranslate nohighlight">\(f(n) = 2n^2+3n\)</span> belongs to other sets:</p>
@@ -78,62 +281,74 @@ Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule
 <p>because all these functions are upper bounds than <span class="math notranslate nohighlight">\(n^2\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is large.</p>
 <p>In the majority of cases, we will want to choose the smallest possible <span class="math notranslate nohighlight">\(g(n)\)</span> function that respects the
 property, since it will give us the most information.</p>
-</div>
-</div>
-<div class="section" id="notation-big-omega-omega">
-<h2>Notation Big-Omega (<span class="math notranslate nohighlight">\(\Omega\)</span>)<a class="headerlink" href="#notation-big-omega-omega" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="notation-big-omega-omega">
+<h2>Notation Big-Omega (<span class="math notranslate nohighlight">\(\Omega\)</span>)<a class="headerlink" href="#notation-big-omega-omega" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>The definition is similar to that of Big-Oh. In bold the differences:</p>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathbf{\Omega}(g(n)) \quad \Longleftrightarrow \quad
     \exists k \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ s.t. } \quad
     \mathbf{k \cdot f(n) \geq g(n)} \quad
     \forall n \geq n_0\]</div>
+</div>
 <p>For large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> is always greater than <span class="math notranslate nohighlight">\(g(n)\)</span> to a constant
 close. Concretely, this means that the function <span class="math notranslate nohighlight">\(g(n)\)</span> places a bound
 lower on the complexity of <span class="math notranslate nohighlight">\(f(n)\)</span>. In other words, <span class="math notranslate nohighlight">\(g(n)\)</span> characterizes the
 « best case » possible for the calculation of f(n) (this is an abuse of language: see below).</p>
-<div class="section" id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>In the general case, Insert outputs <span class="math notranslate nohighlight">\(\in \Omega(n)\)</span>.</p>
-</div>
-</div>
-<div class="section" id="notation-big-theta-theta">
-<h2>Notation Big-Theta (<span class="math notranslate nohighlight">\(\Theta\)</span>)<a class="headerlink" href="#notation-big-theta-theta" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="notation-big-theta-theta">
+<h2>Notation Big-Theta (<span class="math notranslate nohighlight">\(\Theta\)</span>)<a class="headerlink" href="#notation-big-theta-theta" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad
     \exists k_0,k_1 \in \mathbb{R^+}, n_0 \in \mathbb{N} \quad \text{ s.t. } \quad
     \mathbf{k_0 \cdot g(n) \leq f(n) \leq k_1 \cdot g(n)} \quad
     \forall n \geq n_0\]</div>
+</div>
 <p>In other words, for large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> behaves like <span class="math notranslate nohighlight">\(g(n)\)</span> up to a multiplicative constant.
 <span class="math notranslate nohighlight">\(g(n)\)</span> thus acts as both a lower and an upper bound.</p>
 <p>One can easily see that (proof left as an exercise)</p>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad f(n) \in \mathbf{\mathcal{O}}(g(n)) \quad\wedge\quad f(n) \in \mathbf{\Omega}(g(n))\]</div>
-<div class="section" id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>It is not possible to find a <span class="math notranslate nohighlight">\(g(n)\)</span> function such as <span class="math notranslate nohighlight">\(f(n) \in \Theta(g(n))\)</span> for any <span class="math notranslate nohighlight">\(f(n) function )\)</span>.
 For example, for Insertion sort, Since it is in <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> but in <span class="math notranslate nohighlight">\(\Omega(n)\)</span>, and that these two bounds are reached,
 it is not possible to say that Insertion is in <span class="math notranslate nohighlight">\(\Theta(g(n))\)</span>.</p>
-</div>
-<div class="section" id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Merge sort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.</p>
-</div>
-</div>
-<div class="section" id="notation-tilde-mathcal-sim">
-<h2>Notation Tilde (<span class="math notranslate nohighlight">\(\mathcal{\sim}\)</span>)<a class="headerlink" href="#notation-tilde-mathcal-sim" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="notation-tilde-mathcal-sim">
+<h2>Notation Tilde (<span class="math notranslate nohighlight">\(\mathcal{\sim}\)</span>)<a class="headerlink" href="#notation-tilde-mathcal-sim" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>The definition of tilde notation is based on different principles:</p>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \sim g(n) \quad \quad \Longleftrightarrow \quad \lim_{n\rightarrow\infty} \frac{f(n)}{g(n)} = 1\]</div>
+</div>
 <p>This a priori more complicated definition simply allows us to see that
 for large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> and <span class="math notranslate nohighlight">\(g(n)\)</span> behave the same way:
 the intuition is therefore somewhat the same as for <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>. Besides, we also have:</p>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \sim g(n) \quad \quad \Longrightarrow \quad f(n) \in \mathcal{O}(g(n))\]</div>
+</div>
 <p>But the opposite relationship is not true. Indeed, if we take the example of an
 algorithm with an execution time <span class="math notranslate nohighlight">\(A\)</span> which needs to go through a list twice, we have:</p>
+<div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[A(n) \not\sim n \quad \text{since} \quad  \lim_{n\rightarrow\infty} \frac{A(n)}{n} = 2\]</div>
+</div>
 <p>This example shows us the main difference between <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> and <span class="math notranslate nohighlight">\(\sim\)</span>: tilde keeps the
 multiplicative factor.</p>
 <p>There is another difference: tilde provides a <em>reached</em> bound. For example: according to the definition of <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>, we have that</p>
@@ -150,9 +365,9 @@ multiplicative factor.</p>
 </ul>
 <p>because the limit of the latter two functions tends to 0, not 1!</p>
 <p>There are other more subtle differences, which we will discuss in exercises.</p>
-</div>
-<div class="section" id="best-case-worst-case-average-case">
-<h2>Best case, worst case, average case<a class="headerlink" href="#best-case-worst-case-average-case" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="best-case-worst-case-average-case">
+<h2>Best case, worst case, average case<a class="headerlink" href="#best-case-worst-case-average-case" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>We too often hear that <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> is the <em>worst case</em> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <em>best case</em>.
 This is <strong>false</strong> in general, depending on how you define your function.</p>
 <p>Let’s say we’re using a Quick Sort algorithm, which we’ll see in Part 2 of the course.
@@ -170,9 +385,9 @@ for an array of size n, <strong>when selecting arrays uniformly</strong> », yo
 </ul>
 <p>By a (slight) abuse of language, we say that the « average case » of Quick Sort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.
 But the general case is not!</p>
-</div>
-<div class="section" id="amortized-comlexity">
-<h2>Amortized Comlexity<a class="headerlink" href="#amortized-comlexity" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="amortized-comlexity">
+<h2>Amortized Comlexity<a class="headerlink" href="#amortized-comlexity" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Another useful type of complexity is that which counts the average complexity for <span class="math notranslate nohighlight">\(m\)</span> operations.
 This complexity is called the <em>amortized complexity</em>.
 For example, an <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>
@@ -182,9 +397,10 @@ Inserting <span class="math notranslate nohighlight">\(n+1\)</span> operations w
 will cost on average <span class="math notranslate nohighlight">\(\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)\)</span>.</p>
 <p>Warning: the complexity of the method <em>add(E e)</em> in isolation is well <span class="math notranslate nohighlight">\(\Omega(1)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>
 where <span class="math notranslate nohighlight">\(n\)</span> is the number of elements in the ArrayList.</p>
-</div>
-<div class="section" id="frequent-complexities">
-<h2>Frequent complexities<a class="headerlink" href="#frequent-complexities" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="frequent-complexities">
+<h2>Frequent complexities<a class="headerlink" href="#frequent-complexities" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 35%" />
@@ -233,17 +449,69 @@ where <span class="math notranslate nohighlight">\(n\)</span> is the number of e
 </tbody>
 </table>
 </div>
-</div>
+</section>
+</section>
 
+        </article>
+      </div>
+      <footer>
+        
 
-            <div class="clearer"></div>
+        <div class="related-pages">
+          <a class="next-page" href="../part2/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Part 2 |  Sorting and Properties of Sorted Sets</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="ex2.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Exercises B</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
           </div>
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table des matières</a></h3>
-  <ul>
+        
+<div class="custom-license-footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+  </a><br />
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
 <li><a class="reference internal" href="#">Complexity</a><ul>
 <li><a class="reference internal" href="#notation-big-oh-mathcal-o">Notation Big-Oh (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>)</a><ul>
 <li><a class="reference internal" href="#example">Example</a></li>
@@ -266,52 +534,21 @@ where <span class="math notranslate nohighlight">\(n\)</span> is the number of e
 </li>
 </ul>
 
-  <h4>Sujet précédent</h4>
-  <p class="topless"><a href="ex2.html"
-                        title="Chapitre précédent">Exercises B</a></p>
-  <h4>Sujet suivant</h4>
-  <p class="topless"><a href="../part2/index.html"
-                        title="Chapitre suivant">Part 2 |  Sorting and Properties of Sorted Sets</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+          </div>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="../part2/index.html" title="Part 2 | Sorting and Properties of Sorted Sets"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="ex2.html" title="Exercises B"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Complexity</a></li> 
-      </ul>
-    </div>
-
-    <div class="footer" role="contentinfo">
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
-    </div>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a><br />
-
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-  </body>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
 </html>

@@ -1,76 +1,277 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
+        <title>Exercises A - LINFO1121: Data Structures and Algorithms</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+    
 
 
-<!DOCTYPE html>
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --color-brand-primary: #1d5b79;
+  --color-brand-content: #1a5276;
+  --color-admonition-background: #f8f9fa;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #5dade2;
+  --color-brand-content: #5dade2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
 
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercises A &#8212; Documentation LINFO1121 2025-2026</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Exercises B" href="ex2.html" />
-    <link rel="prev" title="Objectives" href="intro.html" />
- 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="ex2.html" title="Exercises B"
-             accesskey="N">suivant</a> |</li>
-        <li class="right" >
-          <a href="intro.html" title="Objectives"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Part 5 |  Priority queues, union-find and data compression</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
-      </ul>
-    </div>  
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="exercises-a">
-<span id="part5-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers ce titre">¶</a></h1>
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">LINFO1121: Data Structures and Algorithms</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/index.html">Organization (UCLouvain Specific)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part1/index.html">Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part1/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/ex2.html">Exercises B</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part1/complexity.html">Complexity</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part2/index.html">Part 2 |  Sorting and Properties of Sorted Sets</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part2/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part2/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part3/index.html">Part 3 |  Search Trees</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part3/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part4/index.html">Part 4 |  Maps: hash tables and other implementations, Strings: Trie and sub-string search algo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part4/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Part 5 |  Priority queues, union-find and data compression</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#to-read">To read</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/index.html">Part 6 |  Graphs: paths, spanning trees, and shortest paths</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/intro.html#to-read">To read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex1.html">Exercises A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ex2.html">Exercises B</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="exercises-a">
+<span id="part5-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers cette rubrique">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W10.</p>
 </div>
-<div class="section" id="exercise-5-1-1">
-<h2>Exercise 5.1.1<a class="headerlink" href="#exercise-5-1-1" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="exercise-5-1-1">
+<h2>Exercise 5.1.1<a class="headerlink" href="#exercise-5-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 6 union operations on a starting set of 10 items with the quick-find algorithm.
 <code class="docutils literal notranslate"><span class="pre">3-8,</span> <span class="pre">1-7,</span> <span class="pre">1-8,</span> <span class="pre">9-4,</span> <span class="pre">6-4,</span> <span class="pre">2-0</span></code>.
 Your answer must be a sequence of 10 integers.
 Reminder: the quick-find convention for the <code class="docutils literal notranslate"><span class="pre">p-q</span></code> union is to change <code class="docutils literal notranslate"><span class="pre">id[p]</span></code> (and possibly other inputs) but not <code class="docutils literal notranslate"><span class="pre">id[q]</span></code>.</p>
-</div>
-<div class="section" id="exercise-5-1-2">
-<h2>Exercise 5.1.2<a class="headerlink" href="#exercise-5-1-2" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-2">
+<h2>Exercise 5.1.2<a class="headerlink" href="#exercise-5-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Give the array id[] that results from the following sequence of 9 union operations on a set of 10 items using the weighted quick-union algorithm:</p>
 <p><code class="docutils literal notranslate"><span class="pre">4-6,</span> <span class="pre">3-6,</span> <span class="pre">8-9,</span> <span class="pre">7-0,</span> <span class="pre">1-2,</span> <span class="pre">8-4,</span> <span class="pre">6-5,</span> <span class="pre">1-7,</span> <span class="pre">6-0.</span></code></p>
 <p>Your answer must be a sequence of 10 integers. Reminder: When merging two trees of the same size, the weighted quick-union algorithm uses the convention
 to point the root of the second tree to the root of the first tree.
 Our algorithm uses union by size (number of nodes) and not union by height, nor the path compression technique.</p>
-</div>
-<div class="section" id="exercise-5-1-3">
-<h2>Exercise 5.1.3<a class="headerlink" href="#exercise-5-1-3" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-3">
+<h2>Exercise 5.1.3<a class="headerlink" href="#exercise-5-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Which of the following id[] array(s) could result from applying the weighted quick-union algorithm on a set of 10 items at the beginning?
 Reminder: we use union by size (number of nodes) and not union by height.</p>
 <ul class="simple">
@@ -80,34 +281,34 @@ Reminder: we use union by size (number of nodes) and not union by height.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">3</span> <span class="pre">0</span> <span class="pre">3</span> <span class="pre">0</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">5</span> <span class="pre">2</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">6</span> <span class="pre">4</span> <span class="pre">1</span> <span class="pre">6</span> <span class="pre">0</span> <span class="pre">6</span> <span class="pre">8</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="exercise-5-1-4">
-<h2>Exercise 5.1.4<a class="headerlink" href="#exercise-5-1-4" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-4">
+<h2>Exercise 5.1.4<a class="headerlink" href="#exercise-5-1-4" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Give the sequence of keys in the table that results from inserting the sequence of the 3 keys 48, 30 and 84
 in the following heap (oriented to the maximum) of size 10:</p>
 <p><code class="docutils literal notranslate"><span class="pre">97</span> <span class="pre">,</span> <span class="pre">93</span> <span class="pre">,</span> <span class="pre">89</span> <span class="pre">,</span> <span class="pre">83</span> <span class="pre">,</span> <span class="pre">38</span> <span class="pre">,</span> <span class="pre">32</span> <span class="pre">,</span> <span class="pre">40</span> <span class="pre">,</span> <span class="pre">12</span> <span class="pre">,</span> <span class="pre">26</span> <span class="pre">,</span> <span class="pre">24</span></code>.</p>
 <p>Your answer should be a sequence of 13 integers.</p>
-</div>
-<div class="section" id="exercise-5-1-5">
-<h2>Exercise 5.1.5<a class="headerlink" href="#exercise-5-1-5" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-5">
+<h2>Exercise 5.1.5<a class="headerlink" href="#exercise-5-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Give the sequence of keys in the array that results from adding 3 successive deletion operations from the maximum in the following heap (oriented to the maximum)
 of size 10:</p>
 <p><code class="docutils literal notranslate"><span class="pre">98</span> <span class="pre">,</span> <span class="pre">96</span> <span class="pre">,</span> <span class="pre">84</span> <span class="pre">,</span> <span class="pre">34</span> <span class="pre">,</span> <span class="pre">62</span> <span class="pre">,</span> <span class="pre">31</span> <span class="pre">,</span> <span class="pre">72</span> <span class="pre">,</span> <span class="pre">13</span> <span class="pre">,</span> <span class="pre">27</span> <span class="pre">,</span> <span class="pre">33</span></code>.</p>
 <p>Your answer should be a sequence of 7 integers.</p>
-</div>
-<div class="section" id="exercise-5-1-6">
-<h2>Exercise 5.1.6<a class="headerlink" href="#exercise-5-1-6" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-6">
+<h2>Exercise 5.1.6<a class="headerlink" href="#exercise-5-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>What are the possible advantages and disadvantages of implementing a priority queue with
 a heap rather than a list?</p>
-</div>
-<div class="section" id="exercise-5-1-7">
-<h2>Exercise 5.1.7<a class="headerlink" href="#exercise-5-1-7" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-7">
+<h2>Exercise 5.1.7<a class="headerlink" href="#exercise-5-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Can you find an example of a valid heap T storing 7 distinct elements such that
 an infix traversal of T visists the elements in decreasing order?
 What about an prefix or postfix traversal?</p>
-</div>
-<div class="section" id="exercise-5-1-8">
-<h2>Exercise 5.1.8<a class="headerlink" href="#exercise-5-1-8" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-8">
+<h2>Exercise 5.1.8<a class="headerlink" href="#exercise-5-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Which of the following statements are true about a priority queue implemented by a heap?
 By default heaps are maximum oriented and use an index base starting at 1.</p>
 <ul class="simple">
@@ -116,58 +317,109 @@ By default heaps are maximum oriented and use an index base starting at 1.</p>
 <li><p>The inernal array of a binary (max-)heap is always an array sorted in non increasing order.</p></li>
 <li><p>Given a binary heap of N distinct keys, deleting the maximum key and then inserting it directly leaves the array of the heap unchanged (we ignore the possible resizing of the array).</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-5-1-9">
-<h2>Exercise 5.1.9<a class="headerlink" href="#exercise-5-1-9" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-9">
+<h2>Exercise 5.1.9<a class="headerlink" href="#exercise-5-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Prove that the bottom-up « sink » construction of a heap for the Heapsort (p323) is done in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.
 Hint: count the number of nodes at the <span class="math notranslate nohighlight">\(h\)</span> level of the heap.
 What is the complexity of a sink at this level. Do the sum for all levels. Useful formula: <span class="math notranslate nohighlight">\(\sum_{k=0}^\infty k x^k = x/(1-x)^2\)</span> for
 <span class="math notranslate nohighlight">\(|x| &lt; 1\)</span>.</p>
-</div>
-<div class="section" id="exercise-5-1-10">
-<h2>Exercise 5.1.10<a class="headerlink" href="#exercise-5-1-10" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-10">
+<h2>Exercise 5.1.10<a class="headerlink" href="#exercise-5-1-10" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Is the use of a priority queue essential to be able to build a Huffman code?
 Can you imagine another solution using a sorting algorithm?
 Would the computational complexity be better than the original algorithm? Why or why not?</p>
-</div>
-<div class="section" id="exercise-5-1-11">
-<h2>Exercise 5.1.11<a class="headerlink" href="#exercise-5-1-11" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-11">
+<h2>Exercise 5.1.11<a class="headerlink" href="#exercise-5-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>What are the different steps in a text <em>compression</em> algorithm that takes a text as input and provides a compressed version of that text as output using Huffman coding? Be specific in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.</p></li>
 <li><p>What are the different steps of a text <em>decompression</em> algorithm that takes as input a compressed version of a text using Huffman coding and provides as output the original text? Be precise in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-5-1-12-inginious-heap">
-<h2>Exercise 5.1.12 (Inginious, heap)<a class="headerlink" href="#exercise-5-1-12-inginious-heap" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-12-inginious-heap">
+<h2>Exercise 5.1.12 (Inginious, heap)<a class="headerlink" href="#exercise-5-1-12-inginious-heap" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap">Push of a binary Heap</a></p>
-</div>
-<div class="section" id="exercise-5-1-13-inginious-global-warming">
-<h2>Exercise 5.1.13 (Inginious, Global Warming)<a class="headerlink" href="#exercise-5-1-13-inginious-global-warming" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-13-inginious-global-warming">
+<h2>Exercise 5.1.13 (Inginious, Global Warming)<a class="headerlink" href="#exercise-5-1-13-inginious-global-warming" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Implement the Global Warming to compute the number of islands using union-find <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">GlobalWarmming</a></p>
-</div>
-<div class="section" id="exercise-5-1-14-inginious-huffman">
-<h2>Exercise 5.1.14 (Inginious, Huffman)<a class="headerlink" href="#exercise-5-1-14-inginious-huffman" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-14-inginious-huffman">
+<h2>Exercise 5.1.14 (Inginious, Huffman)<a class="headerlink" href="#exercise-5-1-14-inginious-huffman" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Implement the Huffman tree reconstruction <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman">Huffman</a></p>
-</div>
-<div class="section" id="exercise-5-1-15-inginious-manual-exercise-on-unionfind">
-<h2>Exercise 5.1.15 (Inginious, manual exercise on UnionFind)<a class="headerlink" href="#exercise-5-1-15-inginious-manual-exercise-on-unionfind" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-15-inginious-manual-exercise-on-unionfind">
+<h2>Exercise 5.1.15 (Inginious, manual exercise on UnionFind)<a class="headerlink" href="#exercise-5-1-15-inginious-manual-exercise-on-unionfind" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind">UnionFind</a></p>
-</div>
-<div class="section" id="exercise-5-1-16-inginious-manual-exercise-on-heaps">
-<h2>Exercise 5.1.16 (Inginious, manual exercise on Heaps)<a class="headerlink" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="exercise-5-1-16-inginious-manual-exercise-on-heaps">
+<h2>Exercise 5.1.16 (Inginious, manual exercise on Heaps)<a class="headerlink" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5Heap">Heaps</a></p>
-</div>
-</div>
+</section>
+</section>
 
+        </article>
+      </div>
+      <footer>
+        
 
-            <div class="clearer"></div>
+        <div class="related-pages">
+          <a class="next-page" href="ex2.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Exercises B</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="intro.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Objectives</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
           </div>
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table des matières</a></h3>
-  <ul>
+        
+<div class="custom-license-footer">
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+  </a><br />
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
 <li><a class="reference internal" href="#exercise-5-1-1">Exercise 5.1.1</a></li>
 <li><a class="reference internal" href="#exercise-5-1-2">Exercise 5.1.2</a></li>
@@ -189,52 +441,21 @@ Would the computational complexity be better than the original algorithm? Why or
 </li>
 </ul>
 
-  <h4>Sujet précédent</h4>
-  <p class="topless"><a href="intro.html"
-                        title="Chapitre précédent">Objectives</a></p>
-  <h4>Sujet suivant</h4>
-  <p class="topless"><a href="ex2.html"
-                        title="Chapitre suivant">Exercises B</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+          </div>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="ex2.html" title="Exercises B"
-             >suivant</a> |</li>
-        <li class="right" >
-          <a href="intro.html" title="Objectives"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Documentation LINFO1121 2025-2026</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Part 5 |  Priority queues, union-find and data compression</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Exercises A</a></li> 
-      </ul>
-    </div>
-
-    <div class="footer" role="contentinfo">
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
-    </div>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a><br />
-
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
-  </body>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
 </html>
