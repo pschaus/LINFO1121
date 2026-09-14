@@ -60,6 +60,12 @@ There are about twenty copies available for rent in BST (Biblioth&egrave;que des
 Agenda
 =======================================
 
+.. important::
+
+   **Lab Group Registration:**
+   Students must register for their lab group and computer room session on Moodle:
+   `Register for your Lab Group <https://moodle.uclouvain.be/mod/choicegroup/view.php?id=390918>`_.
+
 
 The course is organized in **6 modules of 2 weeks**. Each module spans over an interactive two-week cycle:
 
@@ -80,7 +86,7 @@ The course is organized in **6 modules of 2 weeks**. Each module spans over an i
          <div class="timeline-step">
            <span class="step-time-badge">Thursday 08:30 or 14:00</span>
            <div class="step-title">Lab Session in Computer Room</div>
-           <p class="step-desc">Hands-on practice with TAs &amp; tutors (Teams support at 08:30)</p>
+           <p class="step-desc">Hands-on practice with TAs &amp; tutors (Teams support at 08:30) &mdash; <a href="https://moodle.uclouvain.be/mod/choicegroup/view.php?id=390918" target="_blank" rel="noopener"><strong>Registration required</strong></a></p>
          </div>
          <div class="timeline-step">
            <span class="step-time-badge">Rest of Week</span>
@@ -106,7 +112,7 @@ The course is organized in **6 modules of 2 weeks**. Each module spans over an i
          <div class="timeline-step">
            <span class="step-time-badge">Thursday 08:30 or 14:00</span>
            <div class="step-title">Lab Session in Computer Room</div>
-           <p class="step-desc">Hands-on programming with TAs &amp; tutors (Teams support at 08:30)</p>
+           <p class="step-desc">Hands-on programming with TAs &amp; tutors (Teams support at 08:30) &mdash; <a href="https://moodle.uclouvain.be/mod/choicegroup/view.php?id=390918" target="_blank" rel="noopener"><strong>Registration required</strong></a></p>
          </div>
          <div class="timeline-step">
            <span class="step-time-badge">Rest of Week</span>
@@ -125,6 +131,10 @@ The course is organized in **6 modules of 2 weeks**. Each module spans over an i
    </div>
 
    <div class="course-quick-links">
+     <a class="quick-link-card highlight-card" href="https://moodle.uclouvain.be/mod/choicegroup/view.php?id=390918" target="_blank" rel="noopener">
+       <span class="quick-link-icon">📝</span>
+       <span>Register for Lab Group (Moodle)</span>
+     </a>
      <a class="quick-link-card" href="https://ade-scheduler.info.ucl.ac.be/calendar/#" target="_blank" rel="noopener">
        <span class="quick-link-icon">📅</span>
        <span>Check Rooms Schedule (ADE)</span>
@@ -156,5 +166,6 @@ An algorithmic competition will be organized at the end of the semester to help 
 Contact and Communication
 =======================================
 
-Important communications with students will be via moodle.
+Important communications with students will be via Moodle.
+Please make sure to `register for your lab group on Moodle <https://moodle.uclouvain.be/mod/choicegroup/view.php?id=390918>`_.
 For all important communications, you can also write to us by email.

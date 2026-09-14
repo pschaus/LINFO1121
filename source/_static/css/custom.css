@@ -584,6 +584,16 @@ body[data-theme="dark"] .step-time-badge {
     transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.quick-link-card.highlight-card {
+    border: 1.5px solid var(--color-brand-primary);
+    background-color: rgba(29, 91, 121, 0.06);
+    font-weight: 600;
+}
+
+body[data-theme="dark"] .quick-link-card.highlight-card {
+    background-color: rgba(93, 173, 226, 0.12);
+}
+
 .quick-link-card:hover {
     border-color: var(--color-brand-primary);
     transform: translateY(-2px);
