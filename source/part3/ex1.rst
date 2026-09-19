@@ -9,61 +9,61 @@ Exercises A
 
 
 Exercise 3.1.1
-"""""""""""""""""
+""""""""""""""
 
-Which of the two ``SequentialSearchST`` or ``BinarySearchST`` implementations would you use for an application?
-which performs :math:`10^3` ``put()`` and :math:`10^6` ``get()`` in random order? Justify.
+Which of the two implementations, ``SequentialSearchST`` or ``BinarySearchST``, would you use for an application
+that performs :math:`10^3` ``put()`` and :math:`10^6` ``get()`` operations in random order? Justify your choice.
 
 .. answer::
 
-    For ``SequentialSearchST``
+    For ``SequentialSearchST``:
 
     - Search: :math:`N` (Worst-case), :math:`N/2` (Average-case)
     - Insert: :math:`N` (Worst-case), :math:`N` (Average-case)
 
 
-    For ``BinarySearchST``
+    For ``BinarySearchST``:
 
     - Search: :math:`\log(N)` (Worst-case), :math:`\log(N)` (Average-case)
-    - Insert: :math:`2N+\ln(N) \in mathcal{O}(n)` (Worst-case), :math:`\ln(N)+2\cdot N/2 \in mathcal{O }(n)` (Average-case)
+    - Insert: :math:`2N+\ln(N) \in \mathcal{O}(N)` (Worst-case), :math:`\ln(N)+2\cdot N/2 \in \mathcal{O}(N)` (Average-case)
 
     (note: the book doesn't consider that the array is copied at each iteration, thus this is the amortized complexity;
-    may be a good opportunity to explain what this is to students? == if we double the size of the internal array
+    may be a good opportunity to explain what this is to students: if we double the size of the internal array
     each time there is an overflow, the complexity per element is :math:`\mathcal{O}(1)` for the array copy)
-    (the 2 factor that appears here is because there are two arrays)
+    (the factor of 2 appears here because there are two parallel arrays: keys and values)
 
-    Let :math:`M` be the initial size of the array before we do the push and get operations. If :math:`M >> 10^3`, the total number of operations is
+    Let :math:`M` be the initial size of the array before we do the put and get operations. If :math:`M \gg 10^3`, the total number of operations is:
 
-    ..math::
+    .. math::
 
         \approx 10^3\cdot I(M) + 10^6\cdot S(M)
 
     where :math:`I(M)` and :math:`S(M)` are the cost of inserting and searching in an array of size :math:`M`.
 
-    For ``SequentialSearchST`` it gives :math:`10^3M + 10^6M` worst case, :math:`10^3M/2 + 10^6M` average
+    For ``SequentialSearchST`` it gives :math:`10^3M + 10^6M` worst case, :math:`10^3M/2 + 10^6M` average case.
 
     For ``BinarySearchST`` it gives :math:`10^3\cdot 2 \cdot M + 10^6\cdot\log(M)` worst case, :math:`10^3\cdot M + 10^6 \cdot\log(M)` average case.
 
-    Thus ``BinarySearchST`` if :math:`M` is great enough.
+    Thus ``BinarySearchST`` is much better if :math:`M` is large enough.
 
 
 Exercise 3.1.3
-"""""""""""""""
+""""""""""""""
 
 *Exercise 3.1.24 of the book*.
 
-Assuming the keys are doubles or integers. Write a version of binary search that assumes
+Assume the keys are doubles or integers. Write a version of binary search that assumes
 a uniform distribution of keys and will thus first look at the beginning of a dictionary for a word that begins with a letter close to the beginning of the alphabet.
 
-More exactly, if the searched key is :math:`k_x`, the smallest key is :math:`k_{lo}` and the largest
-is :math:`k_{hi}`, the interpolation-search will first test at the key at percentile :math:`\lfloor(k_x-k_{lo})/(k_{hi}-k_{lo}) \rfloor * 100` of the array
-and not in the middle (50 percentile) of the table first.
+More precisely, if the searched key is :math:`k_x`, the smallest key is :math:`k_{lo}`, and the largest
+key is :math:`k_{hi}`, interpolation search will first probe at the key at index fraction :math:`\lfloor (k_x-k_{lo})/(k_{hi}-k_{lo}) \cdot (\text{length}-1) \rfloor` of the array
+instead of probing the middle (50th percentile) first.
 
 Implement ``InterpolationSearchST`` and compare this on ``FrequencyCounter``.
 
 .. answer::
 
-    On garde tout le même code soure que BinarySearchST (pages 379, 380) et on
+    On garde tout le même code source que BinarySearchST (pages 379, 380) et on
     remplace la fonction ``rank`` (p 380) par celle-ci:
 
     .. code-block:: java
@@ -104,14 +104,14 @@ Implement ``InterpolationSearchST`` and compare this on ``FrequencyCounter``.
 
 
 Exercise 3.1.4
-"""""""""""""""
+""""""""""""""
 
 *Exercise 3.1.25 of the book*.
 
 It is very common to first test the presence of a key before adding or modifying the corresponding entry. That
-successively generates several consecutive searches for the same key.
+practice generates several consecutive searches for the same key.
 
-The idea of *caching* is to memorize internally the last accessed key
+The idea of *caching* is to store the last accessed key internally
 and to use it opportunistically if it is still valid.
 Modify ``BinarySearchST`` to incorporate this idea.
 
@@ -120,15 +120,15 @@ Modify ``BinarySearchST`` to incorporate this idea.
     Simply create the *instance variables* ``lastKey`` and ``lastI`` (for example) and in functions ``get`` and ``put`` check if ``key==lastKey`` if so use ``lastI`` if not call ``lastI=rank(key)`` and `lastKey = key`.
 
 Exercise 3.1.5
-"""""""""""""""
+""""""""""""""
 
 *Exercise 3.2.31 of the book*.
 
-Write a method ``isBST()`` method that takes a ``Node`` as an argument and returns ``true`` if the argument is the root of a BST, ``false`` otherwise (so check that the properties of a BST are satisfied).
+Write an ``isBST()`` method that takes a ``Node`` as an argument and returns ``true`` if the argument is the root of a valid BST, and ``false`` otherwise (i.e., verify that all properties of a BST are satisfied).
 
-Do you think that testing (locally) for each node the property *"the left child has a lower key and the right child an upper key"* is sufficient? If not, give a counter-example.
+Do you think that testing (locally) for each node the property *"the left child has a smaller key and the right child has a greater key"* is sufficient? If not, give a counterexample.
 
-How complex is your algorithm?
+What is the time complexity of your algorithm?
 
 .. answer::
 
@@ -167,15 +167,15 @@ Which sequence(s) cannot match the sequence of the examined keys?
 
     Seul le d est impossible ca on a 8 qui apparait après 7,3. Or :math:`8 \not\in\left[7,3\right]`
 
-Exercics 3.1.7
-"""""""""""""""""
+Exercise 3.1.7
+""""""""""""""
 
 *Exercise 3.3.33 of the book*.
 
-Write an method ``is23()`` in ``RedBlackBST`` that checks that no nodes are connected
+Write a method ``is23()`` in ``RedBlackBST`` that checks that no node is connected
 to two red links and that there is no red link to the right.
-Also write an method ``isBalanced()`` that checks that any path from the root to a null link has the
-same number of black links. Finally combine ``isBST(),is23()`` and ``isBalanced()`` to implement ``isRedBlackBST()``.
+Also write a method ``isBalanced()`` that checks that any path from the root to a null link has the
+same number of black links. Finally, combine ``isBST()``, ``is23()``, and ``isBalanced()`` to implement ``isRedBlackBST()``.
 
 
 .. answer::
@@ -214,11 +214,11 @@ same number of black links. Finally combine ``isBST(),is23()`` and ``isBalanced(
         isRedBlackBST() =  isBST() && is23() && isBalanced().
 
 Exercise 3.1.8
-""""""""""""""""
+""""""""""""""
 
-How to enumerate all memorized keys in ascending order
+How can you enumerate all stored keys in ascending order
 in a binary search tree? What is the time complexity of
-this operation ? Justify your answer.
+this operation? Justify your answer.
 
 .. answer::
 
@@ -228,13 +228,13 @@ this operation ? Justify your answer.
     que :math:`\mathcal{O}(N)` non plus.
 
 Exercise 3.1.9
-"""""""""""""""
+""""""""""""""
 
-Starting from an initially empty binary search tree, how does the tree look like
+Starting from an initially empty binary search tree, what does the tree look like
 after inserting the keys 12, 5, 10, 3, 13, 14, 15, 17, 18, 15? 
-For the same data how would the tree look like for a 2-3 tree?
+For the same data, what would the tree look like for a 2-3 tree?
 
-Does this example illustrate the advantages or disadvantages of these different data structures? Why ?
+Does this example illustrate the advantages or disadvantages of these different data structures? Why?
 
 
 .. answer::
@@ -252,10 +252,10 @@ Does this example illustrate the advantages or disadvantages of these different 
 
 
 Exercise 3.1.10
-"""""""""""""""""
+"""""""""""""""
 
-Which of these trees is (are) red-black? For each, draw the correspondence to a 2-3 tree
-(described p432).
+Which of these trees are red-black BSTs? For each, draw the corresponding 2-3 tree
+(described on page 432).
 
 .. image:: rbtree.png
     :alt: Arbres
@@ -266,8 +266,7 @@ Which of these trees is (are) red-black? For each, draw the correspondence to a 
     pas un 2-3 tree valide.
 
     1. Pas d'équilibre au niveau des longueurs noires
-    2. Pas un 2-3 arbre balancé, et en plus F est à gauche de E (donc même pas un
-    BST)
+    2. Pas un 2-3 arbre balancé, et en plus F est à gauche de E (donc même pas un BST)
     3. C'est un RBT (obviously !)
     4. Idem
 
@@ -277,22 +276,22 @@ Which of these trees is (are) red-black? For each, draw the correspondence to a 
     .. image:: tree_iv.png
 
 
-Exercise 3.1.11 (Inginious MCQ on tree traversals)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.11 (INGInious MCQ on tree traversals)
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Binary search tree traversals <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3QcmBt>`_
 
 
-Exercise 3.1.12 (Inginious: BST Iterator)
-"""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.12 (INGInious: BST Iterator)
+"""""""""""""""""""""""""""""""""""""""""
 
 `Implement an iterator for a BST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIterator>`_
 
 
-Exercise 3.1.13 (Inginious: Ceil)
-""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.13 (INGInious: Ceil)
+"""""""""""""""""""""""""""""""""
 
-`Implement the ceil method <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree>`_ method of ``BinarySearchST``.
+`Implement the ceil method <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree>`_ of ``BinarySearchST``.
 
 
 
@@ -316,30 +315,30 @@ Exercise 3.1.13 (Inginious: Ceil)
 
 
 
-Exercise 3.1.14 (Inginious: Higher key)
-"""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.14 (INGInious: Higher key)
+"""""""""""""""""""""""""""""""""""""""
 
-Impement a method which returns the least key strictly greater than a given key:
+Implement a method that returns the least key strictly greater than a given key:
 `Higher key <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
 
 
-Exercise 3.1.15 (Inginious MCQ on BST Time-Complexity)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.15 (INGInious MCQ on BST Time-Complexity)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 `Time complexity of binary search trees <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Qcm>`_
 
 
 
-Exercise 3.1.16 (Inginious: Small exercices on red-black)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.16 (INGInious: Small exercises on red-black)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-`Redblack tree insertions <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt>`_
+`Red-black tree insertions <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt>`_
 
 
-Exercise 3.1.17 (Inginious: Red-Black Tree Conversion)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 3.1.17 (INGInious: Red-Black Tree Conversion)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Implement a class that converts a 2-3 tree into a red black tree:
+Implement a class that converts a 2-3 tree into a red-black tree:
 
 `RedblackTreeConverter <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_RedBlackTreeConverter>`_
 

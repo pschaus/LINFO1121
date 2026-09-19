@@ -8,17 +8,17 @@ Exercises B
     You must complete these exercises by Wednesday of W3.
 
 
-Exercise 1.2.1 (Inginious: Circular Linked List)
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 1.2.1 (INGInious: Circular Linked List)
+""""""""""""""""""""""""""""""""""""""""""""""""
 
-* What is the difference between an Iterable and an Iterator?
+* What is the difference between an ``Iterable`` and an ``Iterator``?
 
   .. answer::
 
     An ``Iterable`` is an interface with the method ``iterator()`` producing an iterator.
     An ``Iterable`` is thus a class that can be iterated over (``Vector``, ``Stack``, ``ArrayList``, etc).
     But the real instrument for iteration is the iterator itself (with ``next``, ``hasNext``, etc).
-    Any ``Iterable`` object can be used in the for loops with syntactical sugar: ``for (int a: myIterable)``
+    Any ``Iterable`` object can be used in enhanced for-loops (syntactic sugar): ``for (int a: myIterable)``
 
 
 
@@ -28,12 +28,12 @@ Implement a `Circular Linked List <https://inginious.info.ucl.ac.be/course/LINFO
 In your implementation, what is the time complexity of:
 
 * `public void enqueue(Item item)`?
-* `public Item remove(int index)` ?
-*  a sequence of operations which consists of *creating an iterator and then iterating over the first k-elements*?
+* `public Item remove(int index)`?
+* a sequence of operations consisting of *creating an iterator and then iterating over the first k elements*?
 
 
-Exercise 1.2.2 (Inginious: Implement a stack with an Array)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 1.2.2 (INGInious: Implement a stack with an Array)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 In your implementation, you will need to resize the array if the size of the stack reaches the maximum size.
 Does Java have an efficient way to resize/refill an array? If yes, give an example of Java code to perform this operation.
@@ -43,29 +43,29 @@ Does Java have an efficient way to resize/refill an array? If yes, give an examp
     System.arraycopy
 
 
-Implement the `Stack <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_Stack>`_ interface with an internal array-based implemenation and with a linked-list.
+Implement the `Stack <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_Stack>`_ interface with an internal array-based implementation and with a linked list.
 
 In your implementation, what is the time complexity of:
 
 * `public void push(E item)`?
-*  a sequence of n `push` operations
+* a sequence of :math:`n` `push` operations?
 
 
 
 Exercise 1.2.3
-"""""""""""""""""""""""""""""""""
+""""""""""""""
 
-Post-fix notation (or `Inverse Polish <https://en.wikipedia.org/wiki/Inverse_Polish_Notation>`_) is used
+Postfix notation (or `Reverse Polish notation <https://en.wikipedia.org/wiki/Reverse_Polish_notation>`_) is used
 to represent algebraic expressions.
-We consider for simplicity only post-fix expressions with positive integers
-and the `+` and `*` operators. For example `2 3 1 * + 9 *` whose result is 45
-and the result of `4 20 + 3 5 1 * * +` is 39.
+For simplicity, we only consider postfix expressions with positive integers
+and the `+` and `*` operators: for example, `2 3 1 * + 9 *`, which evaluates to 45,
+and `4 20 + 3 5 1 * * +`, which evaluates to 39.
 
-1. Write an algorithm in Java to evaluate a post-fix expression from a string of n-characters.
+1. Write an algorithm in Java to evaluate a postfix expression from a string of :math:`n` characters.
 2. What data structure do you use?
-3. What is the complexity of your algorithm (temporal and spatial)?
+3. What is the time and space complexity of your algorithm?
 
-As a reminder, here is how you can iterate over the elements of a string that are separated by spaces.
+As a reminder, here is how you can iterate over the elements of a string that are separated by spaces:
 
 .. code-block:: java
 
@@ -77,13 +77,13 @@ As a reminder, here is how you can iterate over the elements of a string that ar
     }
 
 
-Exercise 1.2.4 (Inginious: Functional Lists)
-""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 1.2.4 (INGInious: Functional Lists)
+""""""""""""""""""""""""""""""""""""""""""""
 
 `Functional Programming <https://en.wikipedia.org/wiki/Functional_Programming>`_ is an increasingly important programming paradigm.
 In this programming paradigm, data structures are `immutable <https://en.wikipedia.org/wiki/Purely_functional_data_structure>`_.
-We are interested here in the implementation of an immutable list called *FList* allowing to be used in a functional framework.
-Here is the API of a *FList*
+We are interested here in implementing an immutable list called *FList* designed for use in a functional framework.
+Here is the API of *FList*:
 
 .. code-block:: java
 
@@ -108,22 +108,22 @@ Here is the API of a *FList*
         // return the tail of the list
         public abstract FList<A> tail();
 
-        // return a list on which each element has been applied function f
+        // return a list where function f has been applied to each element
         public final <B> FList<B> map(Function<A,B> f);
 
-        // return a list on which only the elements that satisfies predicate are kept
+        // return a list containing only the elements that satisfy the predicate
         public final FList<A> filter(Predicate<A> f);
 
-        // return an iterator on the element of the list
+        // return an iterator over the elements of the list
         public Iterator<A> iterator();
 
     }
 
 
 As you can see, none of the methods allow you to modify the state of the list.
-Here is an example of manipulation of such a list.
-If you are unfamiliar with the `<https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`_ functional interfaces of Java8,
-we ask that you familiarize yourself with these first.
+Here is an example of manipulating such a list.
+If you are unfamiliar with Java 8 `functional interfaces <https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html>`_,
+we recommend familiarizing yourself with them first.
 
 
 
@@ -229,32 +229,31 @@ Here is a partial implementation of the `FList`
         }
 
 
-We ask you to
+We ask you to:
+
+* complete this implementation (prefer recursive methods where appropriate).
+* determine the time complexity of each method.
 
 
-* complete this implementation, if possible use recursive methods as much as possible.
-* determine the complexity of each method.
-
-
-The inginious taks is the following: `FList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList>`_
+The INGInious task is the following: `FList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList>`_.
 
 
 
 
 Exercise 1.2.5
-""""""""""""""""""""""
+""""""""""""""
 
-Fill in the following table with the complexities of each operation?
-If an operation is not possible (for example, going to the middle of a Stack is impossible because not provided for by the TAD, indicate it with a cross.
-Specify each time if it is an amortized complexity or not.
-SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentioning.
+Fill in the following table with the time complexity of each operation.
+If an operation is not supported (for example, accessing the middle of a Stack is not supported by the ADT), indicate it with a cross.
+Specify in each case whether it is an amortized complexity.
+SL = Singly Linked List, DL = Doubly Linked List, Arr = Resizing Array.
 
 
 
-.. list-table:: Complexité
+.. list-table:: Complexity
    :header-rows: 1
 
-   * - TAD
+   * - ADT
      - Implementation
      - Insertion (head)
      - Insertion (end)
@@ -331,7 +330,7 @@ SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentionin
      -
      -
      -
-   * - Liste
+   * - List
      - Arr
      -
      -
@@ -344,29 +343,25 @@ SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentionin
      -
 
 
-What is this ?
+.. answer::
 
 
-
- .. answer::
-
-
-    .. list-table:: Complexité
+    .. list-table:: Complexity
        :header-rows: 1
 
-       * - TAD
-         - Implémentation
-         - Insertion (début)
-         - Insertion (fin)
+       * - ADT
+         - Implementation
+         - Insertion (head)
+         - Insertion (end)
          - Insertion (pos :math:`i`)
-         - Supprimer (début)
-         - Supprimer (fin)
-         - Supprimer (pos :math:`i`)
-         - Voir (début)
-         - Voir (fin)
-         - Voir (pos :math:`i`)
+         - Remove (head)
+         - Remove (end)
+         - Remove (pos :math:`i`)
+         - Get (head)
+         - Get (end)
+         - Get (pos :math:`i`)
        * - Stack
-         - Liste chainée
+         - Singly Linked List
          - /
          - :math:`\Theta(1)`
          - /
@@ -377,7 +372,7 @@ What is this ?
          - :math:`\Theta(1)`
          - /
        * - Queue
-         - Liste chainée
+         - Singly Linked List
          - /
          - :math:`\Theta(1)`
          - /
@@ -388,29 +383,29 @@ What is this ?
          - /
          - /
        * - Stack
-         - Tab. redim.
+         - Resizing Array
          - /
-         - :math:`\Theta(1)` a
+         - :math:`\Theta(1)` amortized
          - /
          - /
-         - :math:`\Theta(1)` a
+         - :math:`\Theta(1)` amortized
          - /
          - /
          - :math:`\Theta(1)`
          - /
        * - Queue
-         - Tab. redim.
+         - Resizing Array
          - /
-         - :math:`\Theta(1)` a
+         - :math:`\Theta(1)` amortized
          - /
-         - :math:`\Theta(1)` a
+         - :math:`\Theta(1)` amortized
          - /
          - /
          - :math:`\Theta(1)`
          - /
          - /
-       * - Liste
-         - Simpl. Chainée
+       * - List
+         - Singly Linked List
          - :math:`\Theta(1)`
          - :math:`\Theta(n)`
          - :math:`\Theta(i)`
@@ -420,8 +415,8 @@ What is this ?
          - :math:`\Theta(1)`
          - :math:`\Theta(n)`
          - :math:`\Theta(i)`
-       * - Liste
-         - Doub. Chainée
+       * - List
+         - Doubly Linked List
          - :math:`\Theta(1)`
          - :math:`\Theta(1)`
          - :math:`\Theta(i)`
@@ -431,13 +426,13 @@ What is this ?
          - :math:`\Theta(1)`
          - :math:`\Theta(1)`
          - :math:`\Theta(i)`
-       * - Liste
-         - Tab. redim.
+       * - List
+         - Resizing Array
          - :math:`\Theta(n)`
-         - :math:`\Theta(1)` a
+         - :math:`\Theta(1)` amortized
          - :math:`\Theta(n)`
          - :math:`\Theta(n)`
-         - :math:`\Theta(1)` a
+         - :math:`\Theta(1)` amortized
          - :math:`\Theta(n)`
          - :math:`\Theta(1)`
          - :math:`\Theta(1)`
@@ -445,26 +440,25 @@ What is this ?
 
 
 
-Exercice 1.2.6
-"""""""""""""""""
+Exercise 1.2.6
+""""""""""""""
 
-* Does Java provide a class for ``Stack``, ``Vector``, ``List``?
-   If so in which package? In your opinion, is it interesting to know this package well for the exam?
-   Is ``List`` an interface or a class?
-   How to create an object of type ``List``? And an object of type ``Queue``?
+* Does Java provide classes for ``Stack``, ``Vector``, ``List``?
+  If so, in which package? In your opinion, is it important to know this package well for the exam?
+  Is ``List`` an interface or a class?
+  How can you create an object of type ``List``? What about an object of type ``Queue``?
 
   .. answer::
 
-    Most the algorithms covered in this class are available in ``java.util`` (part of standard Java).
-    You will spare a lot of time and maximize your chances to succeed if you know well
-    ``java.util`` most common classes.
-    We have seen at the exam students trying to instantiate object from ``java.util.List``, not understanding
-    the differences between interfaces and implementation. The same goes for ``java.util.Queue``...
-    Present them the ``ArrayList`` class.
+    Most of the algorithms covered in this class are available in ``java.util`` (part of standard Java).
+    You will save a lot of time and maximize your chances of success if you know the most common classes in ``java.util`` well.
+    In past exams, we have seen students trying to instantiate an object from ``java.util.List``, failing to understand
+    the difference between interfaces and implementations. The same goes for ``java.util.Queue``...
+    Introduce the ``ArrayList`` class to them.
 
 
 
-* What is the error in the following code where the student is looking to create an array of 5 lists and then insert the integer 4 into the 3rd list? Correct the code.
+* What is the error in the following code where the student is trying to create an array of 5 lists and then insert the integer 4 into the 3rd list? Correct the code.
 
   .. code-block:: java
 
@@ -499,7 +493,7 @@ Exercice 1.2.6
       }
     }
 
-* What is the time complexity of is this code, given the size of the list, :math:`n`? How to improve it?
+* What is the time complexity of this code, given a list of size :math:`n`? How can it be improved?
 
   .. code-block:: java
 

@@ -18,17 +18,17 @@ Notation Big-Oh (:math:`\mathcal{O}`)
         f(n) \leq k \cdot g(n) \quad
         \forall n \geq n_0
 
-A function :math:`f(n)` is said to belong to :math:`\mathcal{O}(g(n))` if there is a constant :math:`k`,
-such that :math:`k \cdot g(n)` is systematically greater than :math:`f(n)` for all :math:`n` large enough
-(that is, there is a :math:`n_0` from which the rule is satisfied).
+A function :math:`f(n)` is said to belong to :math:`\mathcal{O}(g(n))` if there is a constant :math:`k`
+such that :math:`k \cdot g(n)` is systematically greater than or equal to :math:`f(n)` for all :math:`n` large enough
+(that is, there is an :math:`n_0` from which the rule is satisfied).
 
-:math:`g(n)` therefore works as an upper bound on the function up to a constant.
+:math:`g(n)` therefore acts as an upper bound on the function up to a constant factor.
 
 Example
 -------
 
 Let :math:`f(n) = 2n^2+3n`. We have that :math:`f(n)\in \mathcal{O}(n^2)` (in other words, we choose :math:`g(n)=n^2`).
-Indeed, with :math:`k=3`, the rule is respected from :math:`n=3`.
+Indeed, with :math:`k=3`, the rule is respected for all :math:`n \geq 3`.
 
 Similarly, the same function :math:`f(n) = 2n^2+3n` belongs to other sets:
 
@@ -39,15 +39,15 @@ Similarly, the same function :math:`f(n) = 2n^2+3n` belongs to other sets:
 * :math:`f(n) \in \mathcal{O}(2^n)`
 * ...
 
-because all these functions are upper bounds than :math:`n^2` when :math:`n` is large.
+because all these functions grow at least as fast as :math:`n^2` when :math:`n` is large.
 
-In the majority of cases, we will want to choose the smallest possible :math:`g(n)` function that respects the
-property, since it will give us the most information.
+In the majority of cases, we want to choose the smallest possible :math:`g(n)` function that satisfies the
+property, since it gives us the most information.
 
 Notation Big-Omega (:math:`\Omega`)
 =============================================
 
-The definition is similar to that of Big-Oh. In bold the differences:
+The definition is similar to that of Big-Oh. The differences are shown in bold:
 
 .. math::
 
@@ -56,10 +56,10 @@ The definition is similar to that of Big-Oh. In bold the differences:
         \mathbf{k \cdot f(n) \geq g(n)} \quad
         \forall n \geq n_0
 
-For large values of :math:`n`, :math:`f(n)` is always greater than :math:`g(n)` to a constant
-close. Concretely, this means that the function :math:`g(n)` places a bound
-lower on the complexity of :math:`f(n)`. In other words, :math:`g(n)` characterizes the
-"best case" possible for the calculation of f(n) (this is an abuse of language: see below).
+For large values of :math:`n`, :math:`f(n)` is always greater than :math:`g(n)` up to a constant
+factor. Concretely, this means that the function :math:`g(n)` places a lower
+bound on the complexity of :math:`f(n)`. In other words, :math:`g(n)` characterizes the
+"best case" possible for the calculation of :math:`f(n)` (this is an abuse of language: see below).
 
 Example
 -------
@@ -86,11 +86,11 @@ One can easily see that (proof left as an exercise)
     f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad f(n) \in \mathbf{\mathcal{O}}(g(n)) \quad\wedge\quad f(n) \in \mathbf{\Omega}(g(n))
 
 Notes
----------
+-----
 
-It is not possible to find a :math:`g(n)` function such as :math:`f(n) \in \Theta(g(n))` for any :math:`f(n) function )`.
-For example, for Insertion sort, Since it is in :math:`\mathcal{O}(n^2)` but in :math:`\Omega(n)`, and that these two bounds are reached,
-it is not possible to say that Insertion is in :math:`\Theta(g(n))`.
+It is not always possible to find a function :math:`g(n)` such that :math:`f(n) \in \Theta(g(n))` for an arbitrary function :math:`f(n)`.
+For example, for insertion sort, since its worst case is in :math:`\mathcal{O}(n^2)` while its best case is in :math:`\Omega(n)`, and both bounds are tight,
+it is not possible to say that insertion sort is in :math:`\Theta(g(n))` in general.
 
 Example
 -------
@@ -107,7 +107,7 @@ The definition of tilde notation is based on different principles:
     f(n) \sim g(n) \quad \quad \Longleftrightarrow \quad \lim_{n\rightarrow\infty} \frac{f(n)}{g(n)} = 1
 
 
-This a priori more complicated definition simply allows us to see that
+This seemingly more complicated definition simply allows us to see that
 for large values of :math:`n`, :math:`f(n)` and :math:`g(n)` behave the same way:
 the intuition is therefore somewhat the same as for :math:`\mathcal{O}`. Besides, we also have:
 
@@ -115,7 +115,7 @@ the intuition is therefore somewhat the same as for :math:`\mathcal{O}`. Besides
 
     f(n) \sim g(n) \quad \quad \Longrightarrow \quad f(n) \in \mathcal{O}(g(n))
 
-But the opposite relationship is not true. Indeed, if we take the example of an
+But the converse is not true. Indeed, if we take the example of an
 algorithm with an execution time :math:`A` which needs to go through a list twice, we have:
 
 .. math::
@@ -125,22 +125,21 @@ algorithm with an execution time :math:`A` which needs to go through a list twic
 This example shows us the main difference between :math:`\mathcal{O}` and :math:`\sim`: tilde keeps the
 multiplicative factor.
 
-There is another difference: tilde provides a *reached* bound. For example: according to the definition of :math:`\mathcal{O}`, we have that
+There is another difference: tilde provides a *tight* (achieved) bound. For example, according to the definition of :math:`\mathcal{O}`, we have:
 
 * :math:`n \in \mathcal{O}(n)`
 * :math:`n \in \mathcal{O}(n^2)`
 * :math:`n \in \mathcal{O}(2^n)`
 
-because :math:`n`, :math:`n^2` and :math:`2^n` all eventually become "bigger" than :math:`n`. Now, we have that
+because :math:`n`, :math:`n^2`, and :math:`2^n` all eventually upper-bound :math:`n`. However, we have:
 
-
-* :math:`n \sim n` (of course ...)
+* :math:`n \sim n` (of course)
 * :math:`n \not\sim n^2`
 * :math:`n \not\sim 2^n`
 
-because the limit of the latter two functions tends to 0, not 1!
+because the limit of the ratio for the latter two functions tends to 0, not 1!
 
-There are other more subtle differences, which we will discuss in exercises.
+There are other more subtle differences, which we will discuss in the exercises.
 
 Best case, worst case, average case
 ====================================
@@ -148,43 +147,42 @@ Best case, worst case, average case
 We too often hear that :math:`\mathcal{O}` is the *worst case* and :math:`\Omega` is the *best case*.
 This is **false** in general, depending on how you define your function.
 
-Let's say we're using a Quick Sort algorithm, which we'll see in Part 2 of the course.
-If you define :math:`f(n)` as "the number of comparison operations to perform for an array of size n", then you have:
+Let's say we are analyzing the QuickSort algorithm, which we will see in Part 2 of the course.
+If you define :math:`f(n)` as "the number of comparison operations performed on an array of size :math:`n`", then you have:
 
-* :math:`f(n) \sim n^2` et :math:`f(n) \in \mathcal{O}(n^2)`
+* :math:`f(n) \sim n^2` and :math:`f(n) \in \mathcal{O}(n^2)`
 * :math:`f(n) \in \Omega(n\log_2 n)`
 
-If you now define :math:`g(n)` as "the **average** (expectation) number of comparison operations to perform
-for an array of size n, **when selecting arrays uniformly**", you get:
+If you now define :math:`g(n)` as "the **expected** number of comparison operations performed
+on an array of size :math:`n`, **assuming arrays are selected uniformly at random**", you get:
 
-* :math:`g(n) \sim n\log_2 n` et :math:`g(n) \in \mathcal{O}(n\log_2 n)`
+* :math:`g(n) \sim n\log_2 n` and :math:`g(n) \in \mathcal{O}(n\log_2 n)`
 * :math:`g(n) \in \Omega(n\log_2 n)`
-* et donc :math:`g(n) \in \Theta(n\log_2 n)`
+* and therefore :math:`g(n) \in \Theta(n\log_2 n)`
 
-By a (slight) abuse of language, we say that the "average case" of Quick Sort is in :math:`\Theta(n\log_2 n)`.
-But the general case is not!
+By a (slight) abuse of language, we say that the "average case" of QuickSort is in :math:`\Theta(n\log_2 n)`.
+However, the general case is not!
 
-Amortized Comlexity
-=================================
+Amortized Complexity
+====================
 
-Another useful type of complexity is that which counts the average complexity for :math:`m` operations.
-This complexity is called the *amortized complexity*.
+Another useful measure of complexity is that which counts the average cost per operation over a sequence of :math:`m` operations.
+This is called *amortized complexity*.
 For example, an `ArrayList <https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>`_
-in java is implemented with an array that doubles its size as soon as its capacity is reached.
-The doubling of size operation is done in :math:`\mathcal{O}(n)` where :math:`n` is the current size of the array
-Inserting :math:`n+1` operations with the *add(E e)* method when the array has a current size of :math:`n`
-will cost on average :math:`\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)`.
+in Java is implemented with an array that doubles its capacity as soon as it is full.
+The resizing operation takes :math:`\mathcal{O}(n)` where :math:`n` is the current size of the array.
+Performing :math:`n+1` operations with the *add(E e)* method starting from an empty array
+will cost on average :math:`(\mathcal{O}(1)\cdot n + \mathcal{O}(n))/(n+1) = \mathcal{O}(1)`.
 
-Warning: the complexity of the method *add(E e)* in isolation is well :math:`\Omega(1)` and :math:`\mathcal{O}(n)`
-where :math:`n` is the number of elements in the ArrayList.
+Warning: the worst-case complexity of an individual call to *add(E e)* is indeed :math:`\mathcal{O}(n)`, while its best case is :math:`\Omega(1)`.
 
 Frequent complexities
-===========================
+=====================
 
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| Classe                                | Nom               | Exemple                                               |
+| Class                                 | Name              | Example                                               |
 +=======================================+===================+=======================================================+
-| :math:`\mathcal{O}(1)`                | Constante         | Find min in sorted array                              |
+| :math:`\mathcal{O}(1)`                | Constant          | Find min in sorted array                              |
 +---------------------------------------+-------------------+-------------------------------------------------------+
 | :math:`\mathcal{O}(\log_2{n})`        | Logarithmic       | Binary search                                         |
 +---------------------------------------+-------------------+-------------------------------------------------------+
@@ -194,9 +192,9 @@ Frequent complexities
 +---------------------------------------+-------------------+-------------------------------------------------------+
 | :math:`\mathcal{O}(n^2)`              | Quadratic         | Inefficient sorting (e.g. insertion sort)             |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n^c)`              | Polynomial        | Magorith of algorithms in this course                 |
+| :math:`\mathcal{O}(n^c)`              | Polynomial        | Majority of algorithms in this course                 |
 +---------------------------------------+-------------------+-------------------------------------------------------+
 | :math:`\mathcal{O}(c^n)`              | Exponential       | Knapsack Problem                                      |
 +---------------------------------------+-------------------+-------------------------------------------------------+
-| :math:`\mathcal{O}(n!)`               | Factorial         | Brute force Solving of the TSP (all permutations)     |
+| :math:`\mathcal{O}(n!)`               | Factorial         | Brute-force solving of the TSP (all permutations)     |
 +---------------------------------------+-------------------+-------------------------------------------------------+

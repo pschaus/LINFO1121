@@ -11,10 +11,10 @@ Exercises A
 Exercise 5.1.1
 """"""""""""""
 
-Give the array ``id[]`` that results from the following sequence of 6 union operations on a starting set of 10 items with the quick-find algorithm.
+Give the array ``id[]`` that results from the following sequence of 6 union operations on an initial set of 10 items using the quick-find algorithm:
 ``3-8, 1-7, 1-8, 9-4, 6-4, 2-0``.
 Your answer must be a sequence of 10 integers.
-Reminder: the quick-find convention for the ``p-q`` union is to change ``id[p]`` (and possibly other inputs) but not ``id[q]``.
+Reminder: the quick-find convention for the union operation ``p-q`` is to change ``id[p]`` (and all other entries with value ``id[p]``) to ``id[q]``.
 
 .. answer::
 
@@ -25,7 +25,7 @@ Reminder: the quick-find convention for the ``p-q`` union is to change ``id[p]``
 Exercise 5.1.2
 """"""""""""""
 
-Give the array id[] that results from the following sequence of 9 union operations on a set of 10 items using the weighted quick-union algorithm:
+Give the array ``id[]`` that results from the following sequence of 9 union operations on an initial set of 10 items using the weighted quick-union algorithm:
 
 ``4-6, 3-6, 8-9, 7-0, 1-2, 8-4, 6-5, 1-7, 6-0.``
 
@@ -40,8 +40,8 @@ Our algorithm uses union by size (number of nodes) and not union by height, nor 
 Exercise 5.1.3
 """"""""""""""
 
-Which of the following id[] array(s) could result from applying the weighted quick-union algorithm on a set of 10 items at the beginning?
-Reminder: we use union by size (number of nodes) and not union by height.
+Which of the following ``id[]`` array(s) could result from applying the weighted quick-union algorithm on an initial set of 10 items?
+Reminder: we use union by size (number of nodes), not union by height.
 
 
 * ``0 8 2 3 4 7 6 8 8 9``
@@ -61,10 +61,10 @@ Reminder: we use union by size (number of nodes) and not union by height.
 Exercise 5.1.4
 """"""""""""""
 
-Give the sequence of keys in the table that results from inserting the sequence of the 3 keys 48, 30 and 84
-in the following heap (oriented to the maximum) of size 10:
+Give the sequence of keys in the array that results from inserting the sequence of 3 keys 48, 30, and 84
+into the following max-oriented heap of size 10:
 
-``97 , 93 , 89 , 83 , 38 , 32 , 40 , 12 , 26 , 24``.
+``97, 93, 89, 83, 38, 32, 40, 12, 26, 24``.
 
 Your answer should be a sequence of 13 integers.
 
@@ -83,10 +83,9 @@ Your answer should be a sequence of 13 integers.
 Exercise 5.1.5
 """"""""""""""
 
-Give the sequence of keys in the array that results from adding 3 successive deletion operations from the maximum in the following heap (oriented to the maximum)
-of size 10:
+Give the sequence of keys in the array that results from performing 3 successive delete-the-maximum operations on the following max-oriented heap of size 10:
 
-``98 , 96 , 84 , 34 , 62 , 31 , 72 , 13 , 27 , 33``.
+``98, 96, 84, 34, 62, 31, 72, 13, 27, 33``.
 
 Your answer should be a sequence of 7 integers.
 
@@ -103,7 +102,7 @@ Your answer should be a sequence of 7 integers.
     ==========  ========================================
 
 Exercise 5.1.6
-""""""""""""""""
+""""""""""""""
 
 What are the possible advantages and disadvantages of implementing a priority queue with
 a heap rather than a list?
@@ -123,9 +122,9 @@ a heap rather than a list?
 Exercise 5.1.7
 """"""""""""""
 
-Can you find an example of a valid heap T storing 7 distinct elements such that 
-an infix traversal of T visists the elements in decreasing order?
-What about an prefix or postfix traversal?
+Can you find an example of a valid heap :math:`T` storing 7 distinct elements such that 
+an inorder traversal of :math:`T` visits the elements in decreasing order?
+What about a preorder or postorder traversal?
 
 
 .. answer::
@@ -149,28 +148,28 @@ What about an prefix or postfix traversal?
 Exercise 5.1.8
 """"""""""""""
 
-Which of the following statements are true about a priority queue implemented by a heap? 
-By default heaps are maximum oriented and use an index base starting at 1.
+Which of the following statements are true for a priority queue implemented as a binary heap? 
+Assume heaps are max-oriented and 1-indexed.
 
-* In the worst case, inserting a key into a binary heap containing N keys requires :math:`\sim \log N` comparisons.
+* In the worst case, inserting a key into a binary heap containing :math:`N` keys requires :math:`\sim \log N` comparisons.
 
   .. answer::
 
     true: each swim operation compares the inserted key only to keys on a path from the new leaf to the root
 
-* Let :math:`a[]` be an array such that :math:`a[1] > a[2] > a[N]` (and :math:`a[0]` is empty). Then :math:`a[]` satisfies the properties of a binary heap.
+* Let :math:`a[]` be an array such that :math:`a[1] > a[2] > \dots > a[N]` (and :math:`a[0]` is empty). Then :math:`a[]` satisfies the properties of a binary heap.
 
   .. answer::
 
     true: A reverse-sorted array obeys heap order.
 
-* The inernal array of a binary (max-)heap is always an array sorted in non increasing order.
+* The internal array of a binary (max-)heap is always sorted in non-increasing order.
 
   .. answer::
 
     faux. [-,3,1,2] est correct et n'est pas décroissant.
 
-* Given a binary heap of N distinct keys, deleting the maximum key and then inserting it directly leaves the array of the heap unchanged (we ignore the possible resizing of the array).
+* Given a binary heap of :math:`N` distinct keys, deleting the maximum key and then immediately re-inserting it leaves the heap array unchanged (ignoring any array resizing).
 
   .. answer::
 
@@ -179,9 +178,9 @@ By default heaps are maximum oriented and use an index base starting at 1.
 Exercise 5.1.9
 """"""""""""""
 
-Prove that the bottom-up "sink" construction of a heap for the Heapsort (p323) is done in :math:`\mathcal{O}(n)`.
-Hint: count the number of nodes at the :math:`h` level of the heap.
-What is the complexity of a sink at this level. Do the sum for all levels. Useful formula: :math:`\sum_{k=0}^\infty k x^k = x/(1-x)^2` for
+Prove that the bottom-up "sink-based" heap construction for heapsort (page 323) runs in :math:`\mathcal{O}(n)` time.
+Hint: Count the number of nodes at level :math:`h` of the heap.
+What is the cost of a ``sink`` operation at this level? Sum the costs over all levels. Useful formula: :math:`\sum_{k=0}^\infty k x^k = \frac{x}{(1-x)^2}` for
 :math:`|x| < 1`.
 
 .. answer::
@@ -193,18 +192,18 @@ What is the complexity of a sink at this level. Do the sum for all levels. Usefu
         T(N) = \sum_{j=0}^h j \frac{2^h}{2^j} = 2^h \sum_{j=0}^h  \frac{j}{2^j}  \le 2^h \sum_{j=0}^{+\infty}  \frac{j}{2^j} \le 2^h \cdot 2 = 2^{\log n} = n
 
 Exercise 5.1.10
-""""""""""""""""
+"""""""""""""""
 
-Is the use of a priority queue essential to be able to build a Huffman code? 
-Can you imagine another solution using a sorting algorithm? 
-Would the computational complexity be better than the original algorithm? Why or why not?
+Is using a priority queue essential to build a Huffman code? 
+Can you design an alternative solution that uses a sorting algorithm? 
+Would its time complexity be better than the original algorithm? Why or why not?
 
 .. answer::
 
     Oui indispensable. Un insertion sort coûterait du :math:`\mathcal{O}(n)` à chaque fois donc ça serait du :math:`\mathcal{O}(n^2)` pour construire le tree au départ du tableau des fréquences.
 
 Exercise 5.1.11
-""""""""""""""""
+"""""""""""""""
 
 * What are the different steps in a text *compression* algorithm that takes a text as input and provides a compressed version of that text as output using Huffman coding? Be specific in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.
 * What are the different steps of a text *decompression* algorithm that takes as input a compressed version of a text using Huffman coding and provides as output the original text? Be precise in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.
@@ -215,33 +214,33 @@ Exercise 5.1.11
     bullet point p835.
 
 
-Exercise 5.1.12 (Inginious, heap)
-""""""""""""""""""""""""""""""""""
+Exercise 5.1.12 (INGInious: Heap)
+"""""""""""""""""""""""""""""""""
 
-Implement the `Push of a binary Heap <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap>`_
-
-
-
-Exercise 5.1.13 (Inginious, Global Warming)
-""""""""""""""""""""""""""""""""""""""""""""""
+Implement the `push operation of a binary heap <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap>`_.
 
 
-Implement the Global Warming to compute the number of islands using union-find `GlobalWarmming <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming>`_
+
+Exercise 5.1.13 (INGInious: Global Warming)
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-Exercise 5.1.14 (Inginious, Huffman)
-""""""""""""""""""""""""""""""""""""""""""""""
-
-Implement the Huffman tree reconstruction `Huffman <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman>`_
+Implement the Global Warming exercise to compute the number of islands using union-find: `GlobalWarming <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming>`_
 
 
-Exercise 5.1.15 (Inginious, manual exercise on UnionFind)
+Exercise 5.1.14 (INGInious: Huffman)
+""""""""""""""""""""""""""""""""""""
+
+Implement the Huffman tree reconstruction: `Huffman <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman>`_
+
+
+Exercise 5.1.15 (INGInious: Manual Exercise on Union-Find)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Small manual exercise on `UnionFind <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind>`_
+Small manual exercise on `Union-Find <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind>`_
 
 
-Exercise 5.1.16 (Inginious, manual exercise on Heaps)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 5.1.16 (INGInious: Manual Exercise on Heaps)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Small manual exercise on `Heaps <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5Heap>`_

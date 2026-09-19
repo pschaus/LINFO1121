@@ -7,100 +7,100 @@ Exercises B
     You must complete these exercises by Wednesday of W13.
 
 
-Exercise 6.2.2 (Dijkstra revisited)
-"""""""""""""""""""""""""""""""""""""""""""""
+Exercise 6.2.2 (Dijkstra Revisited)
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-We are interested in the implementation of the Dijkstra algorithm p655.
-
-
-* What is the time complexity of this algorithm.
-* Rewrite this algorithm using only auxiliary collections from *java.util*.  So we have to get rid of *IndexMinPQ* and replace this structure by something else from *java.util*.
+We are interested in the implementation of Dijkstra's algorithm on page 655.
 
 
-Exercise 6.2.3 (string of fairy lights)
-"""""""""""""""""""""""""""""""""""""""""""""
+* What is the time complexity of this algorithm?
+* Rewrite this algorithm using only auxiliary collections from ``java.util``. Specifically, replace ``IndexMinPQ`` with a standard collection from ``java.util``.
 
-The INGI department has acquired a very nice string of fairy lights for Christmas to decorate the Réaumur building.
-It has the structure of a graph with a lamp on each node.
-When the tinsel is turned on, a lamp is randomly turned on and then every second, all the lamps directly connected (on adjacent nodes) are turned on in turn.
-Implement the "minTime" method answering the following question:
-*At the end of how many seconds* **at the very least** *could our garland be completely lit?*
 
-Voici la signature de la méthode:
+Exercise 6.2.3 (String of Fairy Lights)
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+The INGI department has acquired a string of fairy lights for Christmas to decorate the Réaumur building.
+The lights form a graph with a lamp at each vertex.
+When turned on, an initial lamp is chosen at random, and every second thereafter, all lamps adjacent to currently lit lamps are switched on in turn.
+Implement the ``minTime`` method answering the following question:
+*What is the minimum number of seconds required for the entire string of lights to be fully illuminated, given an optimal starting lamp?*
+
+Here is the method signature:
 
 .. code-block:: java
 
   public int minTime(Graph G);
 
 
-You can assume that you have the Graph structure API as described in the book.
-We assume that the graph G is connected.
+You may assume the ``Graph`` API as described in the textbook.
+Assume that the graph :math:`G` is connected.
 
 * What is the time complexity of your algorithm?
 
-Exercise 6.2.4 (Maximization of minimum weight)
-"""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 6.2.4 (Maximizing the Minimum Edge Weight)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Let G be a undirected and positively weighted graph.
-Given an origin S, we want to find a path to each node that maximizes *the minimum edge weight on this path*.
+Let :math:`G` be an undirected graph with positive edge weights.
+Given a source vertex :math:`S`, we want to find a path to each vertex that maximizes *the minimum edge weight on that path*.
 
 
 .. image:: minmax.svg
     :width: 400
     :alt: Exemple de graphe
 
-For example, in this graph, S-F-B-A-C-D is such a path with 2 as the minimum edge point.
+For example, in this graph, :math:`S-F-B-A-C-D` is such a path, with a bottleneck edge weight of 2.
 
-Can you adapt an algorithm seen in class to find such paths to each node?
+Can you adapt an algorithm seen in class to find such paths to each vertex?
 
-Hint: look at the properties of the weights. Is it comparable to shortest paths?
+Hint: Consider the properties of the weights. How does this compare to shortest path algorithms (or MST algorithms)?
 
 
 
-Exercise 6.2.5 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.5 (INGInious)
+""""""""""""""""""""""""""
 
-A programming exercise on shortest path with implicit graphs (exam 2018)
+A programming exercise on shortest paths with implicit graphs (exam 2018):
 `MineClimbing <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_MineClimbing>`_
 
 
 
-Exercise 6.2.6 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.6 (INGInious)
+""""""""""""""""""""""""""
 
-A challenging path problem in a public transport network (exam 2019)
+A challenging shortest-path problem in a public transport network (exam 2019):
 `Trains <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Trains>`_
 
 
-Exercise 6.2.7 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.7 (INGInious)
+""""""""""""""""""""""""""
 
-A string transformation problem viewed as path problem on a graph:
+A string transformation problem modeled as a shortest-path problem on a graph:
 `Words <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_WordTransformationSP>`_
 
 
-Exercise 6.2.8 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.8 (INGInious)
+""""""""""""""""""""""""""
 
-Help the humanity to discover a new habitable galaxy by solving a hyperspace shortest (exam 2021)
-space: `GalaxyPath <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GalaxyPath>`_
+Help humanity discover a new habitable galaxy by solving a hyperspace shortest-path problem (exam 2021):
+`GalaxyPath <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GalaxyPath>`_
 
-Exercise 6.2.9 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.9 (INGInious)
+""""""""""""""""""""""""""
 
-A topological sort problem to help you verify if your course programme complies with univeristy pre-requisite constraints (exam 2022) 
+A topological sorting problem to verify whether a course programme complies with university prerequisite constraints (exam 2022):
 `TaskScheduler <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_TaskScheduler>`_
 
-Exercise 6.2.10 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.10 (INGInious)
+"""""""""""""""""""""""""""
 
-Help Olympic organizers plan efficient evacuation routes
+Help Olympic organizers plan efficient evacuation routes:
 `Evacuation <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Evacuation>`_
 
-Exercise 6.2.11 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.2.11 (INGInious)
+"""""""""""""""""""""""""""
 
-Help the firemen to compute the spread of a fire in a forest (exam 2022) 
+Help firefighters model the spread of a forest fire (exam 2022):
 `Wildfire <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Wildfire>`_
 
 

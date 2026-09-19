@@ -11,10 +11,10 @@ Exercises A
 Exercise 6.1.1
 """"""""""""""
 
-Give several data structures that can be used to represent an undirected :math:`G` graph
-with :math:`n` nodes (vertex) and :math:`m` arcs (edges).
+Give several data structures that can be used to represent an undirected graph :math:`G`
+with :math:`n` vertices (nodes) and :math:`m` edges.
 
-What are the complexities of the elementary operations ``Iterable<Integer> adj(int v)`` and ``addEdge(int v, int w)``?
+What are the time complexities of the elementary operations ``Iterable<Integer> adj(int v)`` and ``addEdge(int v, int w)`` for each?
 
 
 .. answer::
@@ -24,7 +24,7 @@ What are the complexities of the elementary operations ``Iterable<Integer> adj(i
 
       * - Nom
         - Type usuel
-        - ``ajd(v)``
+        - ``adj(v)``
         - ``addEdge(v)``
       * - Matrice d'adjacence
         - ``boolean[n][n]``
@@ -53,11 +53,10 @@ What are the complexities of the elementary operations ``Iterable<Integer> adj(i
 Exercise 6.1.2
 """"""""""""""
 
-A graph is bipartite if its nodes can be divided into two disjoint sets so that there is no arc
-between two nodes of the same set.
+A graph is bipartite if its vertices can be partitioned into two disjoint sets such that no edge connects two vertices of the same set.
 
-Propose a method to test if a graph is bipartite and if so who would find such a partition.
-What is the complexity of your algorithm? Hint: use a DFS.
+Propose an algorithm to test whether a graph is bipartite and, if so, find such a partition.
+What is the time complexity of your algorithm? Hint: Use DFS.
 
 .. answer::
 
@@ -78,8 +77,8 @@ What is the complexity of your algorithm? Hint: use a DFS.
 Exercise 6.1.3
 """"""""""""""
 
-Prove that any connected graph has a node whose removal (including incident arcs) would not disconnect the graph.
-Write a method that finds such a node. Hint: use a DFS and node marking.
+Prove that every connected graph has a vertex whose removal (along with its incident edges) does not disconnect the graph.
+Write an algorithm that finds such a vertex. Hint: Use DFS and vertex marking.
 
 .. answer::
 
@@ -88,12 +87,12 @@ Write a method that finds such a node. Hint: use a DFS and node marking.
 
     Celui-ci peut donc être retiré.
 
-Exercise 6.1.4 (Inginious)
-""""""""""""""""""""""""""""
+Exercise 6.1.4 (INGInious: Maze)
+""""""""""""""""""""""""""""""""
 
-Let be an undirected and weightless graph :math:`G` whose arcs represent the possible elementary moves of a robot in a maze from all possible positions (nodes). 
-Given the current position and a node, implement method to find a path to the exit that minimizes the number of elementary moves: `Maze <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Maze>`_.
-What is the complexity of your method? Does it depend on the implementation of the graph (for example if it is an adjacency matrix?)
+Consider an unweighted, undirected graph :math:`G` whose edges represent valid moves for a robot in a maze between positions (nodes). 
+Given a starting position and a destination node, implement a method to find a path to the exit that minimizes the number of moves: `Maze <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Maze>`_.
+What is the time complexity of your method? Does it depend on the graph representation (for example, adjacency lists vs. adjacency matrix)?
 
 
 
@@ -109,11 +108,11 @@ What is the complexity of your method? Does it depend on the implementation of t
 Exercise 6.1.5
 """"""""""""""
 
-The EPL course syllabus lists the prerequisites for each course.
-You want to make sure that all courses can be taken, i.e. that there is no cycle of dependency between courses.
+The EPL course syllabus lists prerequisites for each course.
+You want to verify that all courses can be taken, i.e., that there is no circular dependency between courses.
 
-What method do you propose to perform this test?
-What would be the time complexity of your method?
+What algorithm do you propose to perform this check?
+What is the time complexity of your method?
 
 .. answer::
 
@@ -159,17 +158,16 @@ What would be the time complexity of your method?
 Exercise 6.1.6
 """"""""""""""
 
-Develop (write the code) a topological sorting algorithm for a directed graph that maintains an array of the size of the number of
-nodes with each entry corresponding to the in-degree of each node.
-Your algorithm also maintains a queue of *sources* (nodes with an in-degree of 0).
-Initialize these two structures in a single pass on all edges.
-Then perform the following operations until the source queue becomes empty:
+Develop (write the code for) a topological sorting algorithm for a directed graph that maintains an array of size :math:`V` where each entry corresponds to the in-degree of a vertex.
+Your algorithm should also maintain a queue of *sources* (vertices with an in-degree of 0).
+Initialize these two structures in a single pass over all edges.
+Then, repeat the following steps until the source queue is empty:
 
-* remove a source from the queue and mark it.
-* decrement the in-degree of the adjacent destinations of the node marked in the previous step.
-* if the in-degree of a node becomes 0, insert it in the source queue.
+* Remove a source from the queue and add it to the topological order.
+* Decrement the in-degree of each neighbor of that vertex.
+* If the in-degree of a neighbor becomes 0, insert it into the source queue.
 
-Is it possible to detect whether the topological sort is unique? 
+How can you detect whether the topological sort is unique? 
 What is the time complexity of your algorithm?
 
 .. answer::
@@ -233,14 +231,13 @@ What is the time complexity of your algorithm?
 Exercise 6.1.7
 """"""""""""""
 
-Let :math:`G(V,E)` be an undirected graph with weights on which a minimum spanning tree has been computed.
-Then :math:`k` arcs have been randomly removed from this MST.
-Write a method to retrieve an MST from the partial MST.
-The final MST does not have to be identical to the original, only the remaining :math:`V-1-k` arcs must
-at least be present.
+Let :math:`G = (V,E)` be an edge-weighted undirected graph for which a minimum spanning tree (MST) has already been computed.
+Suppose :math:`k` edges are removed from this MST.
+Write a method to reconstruct an MST from the remaining :math:`|V|-1-k` edges.
+The final MST does not need to be identical to the original one, but it must contain the :math:`|V|-1-k` preserved edges.
 
-On what important property(ies) of MSTs is your algorithm based?
-What is the complexity of your method?
+On what fundamental property (or properties) of MSTs is your algorithm based?
+What is the time complexity of your method?
 
 .. answer::
 
@@ -260,10 +257,10 @@ What is the complexity of your method?
 Exercise 6.1.8
 """"""""""""""
 
-Let :math:`G(V,E)` be an undirected graph with weight on which a minimum spanning tree has been computed.
-The edge :math:`e \in E` of weight :math:`w` is not part of this MST.
-Can you recompute an MST that would include :math:`e` by adapting the original MST? Describe your algorithm (code).
-What is the time complexity? Hint: DFS on the original MST.
+Let :math:`G = (V,E)` be an edge-weighted undirected graph for which an MST has already been computed.
+Suppose an edge :math:`e \in E` with weight :math:`w` is not part of this MST.
+How can you compute a new MST that is constrained to include :math:`e` by adapting the original MST? Describe your algorithm.
+What is the time complexity? Hint: Use DFS on the original MST.
 
 
 .. answer::
@@ -278,11 +275,12 @@ What is the time complexity? Hint: DFS on the original MST.
     Il suffit de voir que si on démarrait avec les deux noeuds liés à :math:`e` fusionné, l'arbre obtenu
     ici est bien un MST.
 
+
 Exercise 6.1.9
 """"""""""""""
 
-Could ``java.util.PriorityQueue`` be used to effectively implement Dijkstra?
-If not, why not? What would be the complexity of using this priority queue?
+Could ``java.util.PriorityQueue`` be used to efficiently implement Dijkstra's algorithm?
+If not, why not? What would the time complexity be if you used this priority queue?
 
 .. answer::
 
@@ -315,9 +313,9 @@ If not, why not? What would be the complexity of using this priority queue?
 Exercise 6.1.10
 """""""""""""""
 
-Explain why DijkstraSP does not support arcs with negative weight?
-Would the result be wrong or would the complexity no longer be guaranteed?
-Show an example of input that illustrates the problem.
+Explain why Dijkstra's algorithm (``DijkstraSP``) does not support edges with negative weights.
+Would the computed distances be incorrect, or would the time complexity guarantee no longer hold?
+Provide an example graph illustrating the problem.
 
 .. answer::
 
@@ -337,14 +335,12 @@ Show an example of input that illustrates the problem.
 Exercise 6.1.11
 """""""""""""""
 
-Let :math:`G` be a graph with potentially negative weights but there is no negative cycle.
-I am looking for the shortest path between a :math:`u` node and a :math:`v` node.
-I have at my disposal an implementation of Dijkstra which does not allow to manage negative weights.
-So I just have to increase all the weights by the same amount corresponding to the absolute value of the smallest weight and apply Dijkstra to the
-and to apply Dijkstra on this graph.
+Let :math:`G` be a directed graph with potentially negative edge weights, but without any negative cycles.
+Suppose we want to find the shortest path between a vertex :math:`u` and a vertex :math:`v`.
+We only have access to an implementation of Dijkstra's algorithm that does not support negative weights.
+A proposed heuristic is to add a constant to all edge weights equal to the absolute value of the most negative weight (making all weights non-negative), and then run Dijkstra's algorithm on this modified graph.
 Is this method valid?
-If yes, prove it.
-If not, show a counter example.
+If so, prove it. If not, provide a counterexample.
 
 .. answer::
 
@@ -357,11 +353,11 @@ If not, show a counter example.
 Exercise 6.1.12
 """""""""""""""
 
-Let :math:`G` be a graph with positive weights. I am looking for the longest path between a :math:`u` node and a :math:`v` node.
-I have at my disposal the Bellman-Ford implementation (which supports negative weights).
-I just need to compute the shortest path on the same graph with the opposite weights.
-Is this method valid? If not, can you propose a method to compute the longest path?
-Does your method apply to all graphs? If not, what particular types of graphs can it handle?
+Let :math:`G` be a directed graph with positive edge weights. We want to find the longest path between vertex :math:`u` and vertex :math:`v`.
+Suppose we have an implementation of the Bellman-Ford algorithm (which supports negative weights).
+Can we simply negate all edge weights and compute the shortest path using Bellman-Ford?
+Is this method valid? If not, can you propose an algorithm to find the longest simple path?
+Does your method apply to all graphs? If not, what specific class of graphs can it handle?
 
 .. answer::
 
@@ -369,7 +365,7 @@ Does your method apply to all graphs? If not, what particular types of graphs ca
 
 
 
-Exercise 6.1.13 (Inginious)
+Exercise 6.1.13 (INGInious)
 """""""""""""""""""""""""""
 
 Implement a
@@ -377,14 +373,14 @@ Implement a
 
 
 
-Exercise 6.1.14 (Inginious)
+Exercise 6.1.14 (INGInious)
 """""""""""""""""""""""""""
 
-Implement an algorihtm for finding a path (its length does not matter) between a node source and a destination using
+Implement an algorithm for finding a path (its length does not matter) between a source node and a destination using
 `Depth First Search <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_DepthFirstPaths>`_
 
 
-Exercise 6.1.15 (Inginious)
+Exercise 6.1.15 (INGInious)
 """""""""""""""""""""""""""
 
 Implement the computation of the number of connected components in a Graph:
@@ -392,16 +388,14 @@ Implement the computation of the number of connected components in a Graph:
 
 
 
-Exercise 6.1.16 (Inginious)
+Exercise 6.1.16 (INGInious)
 """""""""""""""""""""""""""
 
-A programming exercise on finding
-the the relations to forbid in a contact network
-to satisfy the belgian covid rules:
-`Covid bubbles  <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Bubbles>`_
+A programming exercise on finding which contacts to prohibit in a network to satisfy Belgian COVID-19 bubble regulations:
+`Covid bubbles <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Bubbles>`_
 
 
-Exercise 6.1.17 (Inginious)
+Exercise 6.1.17 (INGInious)
 """""""""""""""""""""""""""
 
 A programming exercise on BFS to find the shortest path from multiple possible sources to a destination node:
@@ -409,17 +403,17 @@ A programming exercise on BFS to find the shortest path from multiple possible s
 
 
 
-Exercise 6.1.18 (Inginious)
+Exercise 6.1.18 (INGInious)
 """""""""""""""""""""""""""
 
 A programming exercise on shortest path in an implicit graph:
 `Global Warming Path <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarmingPaths>`_
 
 
-Exercise 6.1.19 (Inginious)
+Exercise 6.1.19 (INGInious)
 """""""""""""""""""""""""""
 
-Revisit your computation of the number of islands but this time using DFS rather than union-find
+Revisit the computation of the number of islands, this time using DFS rather than union-find:
 `Global Warming Island <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming>`_
 
 

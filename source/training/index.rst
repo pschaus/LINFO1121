@@ -17,9 +17,9 @@ It is recommended to:
 Practice Exam
 """"""""""""""
 
-* Help Santa calculate the median gift price efficiently using a magical Christmas search tree. `SantaInventory <https://inginious.info.ucl.ac.be/course/LINFO1121/exam_SantaInventory>`_
-* Help Santa match children with their gifts from elves’ lists `SantaDB <https://inginious.info.ucl.ac.be/course/LINFO1121/exam_SantaDB>`_
-* Help Nayeli to find the cheapeast shop to buy a christmast gift with a time budget (exam 2022) `SmallestPrice <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_SmallestPrice>`_
+* Help Santa calculate the median gift price efficiently using a magical Christmas search tree: `SantaInventory <https://inginious.info.ucl.ac.be/course/LINFO1121/exam_SantaInventory>`_
+* Help Santa match children with their gifts from the elves' lists: `SantaDB <https://inginious.info.ucl.ac.be/course/LINFO1121/exam_SantaDB>`_
+* Help Nayeli find the cheapest shop to buy a Christmas gift within a time budget (exam 2022): `SmallestPrice <https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_SmallestPrice>`_
 
 
 

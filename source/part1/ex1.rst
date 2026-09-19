@@ -10,42 +10,40 @@ Exercises A
 Exercise 1.1.1
 """"""""""""""
 
-Define what an abstract data type (ADT) is. In java, is it better to describe an ADT by a
+Define what an abstract data type (ADT) is. In Java, is it better to describe an ADT by a
 class or an interface? Why?
 
 .. answer::
 
-    Page 64 of the book. In java, we use an interface, because a class is either
+    Page 64 of the book. In Java, we use an interface, because a class either:
 
-    * useless because it is completely abstract (it might as well be replaced by an interface)
+    * is useless because it is completely abstract (it might as well be replaced by an interface)
     * already imposes a method to implement the ADT.
 
     There are some cases where you want to use an abstract class rather than an interface.
     For example, to reuse code that we know to be common to all possible implementations.
 
-    A practical example: an abstract class could implement ``isEmpty()`` from
-    from ``size()`` (``return size() == 0``). But since java 8, we can also have a default implementation
-    of methods in interfaces so that is not totally true.
+    A practical example: an abstract class could implement ``isEmpty()``
+    from ``size()`` (``return size() == 0``). But since Java 8, we can also have default implementations
+    of methods in interfaces, so that distinction is less strict.
 
 
 Exercise 1.1.2
 """"""""""""""
 
-How to implement a *stack* by a simply linked list where the operations
-and `pop` operations are done at **end of list**? Is this solution efficient? Argue.
+How would you implement a *stack* using a singly linked list where the `push` and `pop` operations are done at the **end of the list**? Is this solution efficient? Justify your answer.
 
 
 .. answer::
 
-    In practice, on the exam, you will need to implement it! Remind students that they need to do more
-    that they need to do more than just understand the general idea. This is a good exercise to do yourself in IntelliJ.
+    In practice, on the exam, you will need to implement it! Remind students that they need to do more than just understand the general idea. This is a good exercise to do yourself in IntelliJ.
 
 Exercise 1.1.3
 """"""""""""""
 
 What are the possible implementations for a stack? By consulting the Java API documentation, describe
 the implementation of a stack by the class `java.util.Stack`. Go to the source code of the implementation
-`java.util.Stack` (crtl+B from IntelliJ).
+`java.util.Stack` (Ctrl+B from IntelliJ).
 
 Why do you think Java developers chose this implementation
 (hint: argue about memory and garbage collection)?
@@ -60,8 +58,8 @@ Why do you think Java developers chose this implementation
     La complexité est donc un peu plus complexe que l'habituel ":math:`\mathcal{O}(1)` pour push/pop".
     La vérité est que c'est une complexité amortie!
 
-    C'est un bon moment pour prendre le temps d'expliquer à tout les groupes en même temps,
-    au tableau, comme fonctionne un tableau redimensionnable en temps amorti constant.
+    C'est un bon moment pour prendre le temps d'expliquer à tous les groupes en même temps,
+    au tableau, comment fonctionne un tableau redimensionnable en temps amorti constant.
 
     Soit un tableau de taille 1, initialement vide. On double la taille du tableau
     à chaque fois qu'il est complet:
@@ -85,23 +83,23 @@ Why do you think Java developers chose this implementation
     Note rigolote: Java recommande d'utiliser Deque à la place de Stack.
     "Qu'est-ce que ça change?" est une bonne question à poser aux étudiants.
 
-Exercise 1.1.4 (Inginious: Implement a stack with two queues)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 1.1.4 (INGInious: Implement a stack with two queues)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 How do you implement the abstract data type *stack* using two *queues*?
 In particular, describe how the `push` and `pop` methods work in this case.
 
-As an example, specify the state of each of the two queues after stacking the integers `1 2 3` from an initially empty stack. 
+As an example, specify the state of each of the two queues after pushing the integers `1 2 3` onto an initially empty stack. 
 Describe what happens next when the `pop` operation is performed.
 
-What is the time complexity of these methods if we assume that each `queue` and `dequeue` operation
-operations are executed in constant time?
+What is the time complexity of these methods if we assume that each `enqueue` and `dequeue`
+operation is executed in constant time?
 
 Is this implementation of a stack efficient (for :math:`n` operations)
 compared to the other implementations presented in the reference book?
 
 
-Once you have imagined your solution on paper, you can solve the corresponding Inginious task `StackWithTwoQueues <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues>`_ .
+Once you have imagined your solution on paper, you can solve the corresponding INGInious task `StackWithTwoQueues <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues>`_.
 
 .. answer::
 
@@ -153,7 +151,7 @@ Exercise 1.1.5
 """"""""""""""
 
 
-What do you think about these three different ways of iterating over the elements of a `java.util.LinkedList`? Are they equivalent? Use a time-complecity argument.
+What do you think about these three different ways of iterating over the elements of a `java.util.LinkedList`? Are they equivalent? Use a time-complexity argument.
 
 .. code-block:: java
 
@@ -191,15 +189,15 @@ What do you think about these three different ways of iterating over the element
 
 
 Exercise 1.1.6
-"""""""""""""""
+""""""""""""""
 
 
-The :math:`\sim` (tilde) notation is used in the reference book for the analysis of the calculation times of
-algorithms. How this notation differs or resembles the more classically used notations :math:`\mathcal{O}`
-(big Oh), :math:`\mathcal{\Omega}` (big Omega) and :math:`\mathcal{\Theta}` (big Theta)?
+The :math:`\sim` (tilde) notation is used in the reference book for the analysis of the running times of
+algorithms. How does this notation differ from or resemble the more commonly used notations :math:`\mathcal{O}`
+(big Oh), :math:`\mathcal{\Omega}` (big Omega), and :math:`\mathcal{\Theta}` (big Theta)?
 
 Explain precisely the links and similarities between them.
-What do you see as the advantage of using :math:`\sim` (tilde) notation rather than :math:`\mathcal{O}`
+What do you see as the advantage of using the :math:`\sim` (tilde) notation rather than :math:`\mathcal{O}`
 when possible?
 
 .. answer::
@@ -209,8 +207,8 @@ when possible?
 Exercise 1.1.7
 """"""""""""""
 
-Explain how we can extract the characterization :math:`\sim` (tilde) from the implementation of an algorithm to
-using the *Doubling ratio* test.
+Explain how we can extract the :math:`\sim` (tilde) characterization from the implementation of an algorithm
+using the *doubling ratio* test.
 
 * How does this test work?
 
@@ -251,7 +249,7 @@ input size :math:`n`:
     ===================  ================  ================  ==== ==== ===== ===== =====
 
     On a donc :math:`2^b \sim 4.0`, :math:`b=2`. On serait donc théoriquement en :math:`\mathcal{O}(n^2\log n)`.
-    En pratique, cette fonction est en :math:`\mathcal{O}
+    En pratique, cette fonction est en :math:`\mathcal{O}(n^2)`.
 
 
 * What would be the running time for 128000?
@@ -265,16 +263,16 @@ input size :math:`n`:
 Exercise 1.1.8
 """""""""""""""
 
-* What do heap and stack mean when talking about the execution of a program in a programming language?
-* What do the -Xmx, -Xms parameters mean that we can pass to the JVM for the execution of a bytecode?
+* What do heap and stack represent when talking about the execution of a program?
+* What do the ``-Xmx`` and ``-Xms`` parameters mean when running Java bytecode on the JVM?
 * Can these parameters influence the execution speed of a Java program? Why?
-* What is the JVM garbage collector
+* What is the JVM garbage collector?
 
 .. answer::
 
     A good opportunity to recall/introduce the notion of amortized constant time complexity.
-    Depite the fact that operations using an array are amortized constant time, they are generally preferred
-    because they generate less objects on the heap that eventually will be garbabe collected (Nodes, etc).
+    Despite the fact that operations using an array are amortized constant time, they are generally preferred
+    because they generate fewer objects on the heap that eventually will be garbage collected (Nodes, etc).
     Garbage collection can substantially slow down the execution.
     Extreme case: you do a series of consecutive push, pop, push, pop, etc...
 
@@ -282,8 +280,8 @@ Exercise 1.1.9
 """""""""""""""
 
 * What is a good set of unit tests to verify the correctness of a data structure?
-* Do you think about borderline cases?
-* What could possibly go wrong with the implementation of this method implementation?
+* Do you think about edge cases?
+* What could possibly go wrong with this method implementation?
 
 .. code-block:: java
 
@@ -294,21 +292,21 @@ Exercise 1.1.9
 
 .. answer::
 
-    a + b might cause a (silent) int overflow, for instance if a = b = Integer.MAXINT
-    to avoid it, the implementation should be a + (b-a)/ 2 (assuming b is the largest number here)
+    a + b might cause a (silent) integer overflow, for instance if a = b = Integer.MAX_VALUE.
+    To avoid it, the implementation should be a + (b - a) / 2 (assuming b >= a) or (a + b) >>> 1.
 
 * How can random data generation be useful for testing data structures?
 * Why is it important to work with a fixed seed for testing?
-* How a code coverage analysis tool can be useful (such as `Jacoco <http://eclemma.org/jacoco/>`_)
-   to help you design tests.
-* How to verify experimentally that the implementation of a data structure or an algorithm has
-   the expected theoretical time complexity?
+* How can a code coverage analysis tool (such as `JaCoCo <http://eclemma.org/jacoco/>`_)
+  help you design tests?
+* How can you verify experimentally that the implementation of a data structure or an algorithm has
+  the expected theoretical time complexity?
 * How can you test the time complexity of your program?
 
 .. answer::
 
-    testing time is not always easy (possible using doubling ratio test), couting operations might be a good alternative
+    Testing time is not always easy (it is possible using the doubling ratio test); counting operations might be a good alternative.
 
-Exercise 1.1.10 (Inginious: SegmentedList and iterators)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-You are asked to implement an ADT called a `SegmentedList` and the iterator method of this ADT: `SegmentedList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList>`_ .
+Exercise 1.1.10 (INGInious: SegmentedList and iterators)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+You are asked to implement an ADT called a `SegmentedList` and the iterator method of this ADT: `SegmentedList <https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList>`_.

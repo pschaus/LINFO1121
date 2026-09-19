@@ -8,10 +8,10 @@ Exercises B
 
 
 Exercise 4.2.1 (Hash of Long and Double)
-"""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Here is the formula used by Java to calculate a hash function
-on doubles (bits is a 64 bit array represented as a long):
+Here is the formula used by Java to calculate the hash code
+of a ``double`` (where ``bits`` is a 64-bit value represented as a ``long``):
 
 
 .. code-block:: java
@@ -20,20 +20,20 @@ on doubles (bits is a 64 bit array represented as a long):
 
 
 
-* Why not just use ``(int) bits`` (casting from long to int)? Hint: The reference book suggests that a good hash function should use all bits for its calculation. Why?
-* A double in Java is represented in 64 bits as :math:`(-1)^s \times m \times 2^{(e - 1023)}`. The first bit :math:`s` is the sign, the next 11 bits represent the exponent in binary form and the last 52 bits represent the mantissa (decimal part) in binary form.  Do a positive decimal number and its opposite get different hash functions?
+* Why not simply use ``(int) bits`` (casting from ``long`` to ``int``)? Hint: The textbook suggests that a good hash function should use all bits in its calculation. Why?
+* A ``double`` in Java is represented in 64 bits as :math:`(-1)^s \times m \times 2^{(e - 1023)}`. The first bit :math:`s` is the sign bit, the next 11 bits represent the exponent in binary, and the last 52 bits represent the mantissa (significand). Do a positive floating-point number and its opposite receive different hash codes?
 
 .. answer::
 
    Oui un décimal positif et son opposé n'obtiennent pas les mêmes fonction de hachage. Exemple hashCode(6.0)=1075314688, alors que hashCode(-6L)=-1072168960. Vous pouvez leur dire de tester directement dans Java :-)
    On pourrait penser que le xor suivi du casting ne prenne pas en compte les 32 premiers bits (dont le bit de poids fort).
-   Mais grâce (bits ``>>>`` 32), tous les bits auront bien un impact sur la fonction de hachage. Propritété évidemment souhaitable pour éviter les collisions et obtenir une mapping le plus réparti possible sur les int. (il faut que deux double/long "adjacent" (+1, -1, *2, ...) soient "éloignés" les un des autres quand ils sont hashés).
+   Mais grâce à (bits ``>>>`` 32), tous les bits auront bien un impact sur la fonction de hachage. Propriété évidemment souhaitable pour éviter les collisions et obtenir un mapping le plus réparti possible sur les int (il faut que deux double/long "adjacents" (+1, -1, \*2, ...) soient "éloignés" les uns des autres quand ils sont hashés).
 
 Exercise 4.2.2 (Hash and casting of integers)
-"""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-* Is the hash function of a 32-bit integer the same as the hash function of the same integer that would be double-cast?
+* Is the hash code of a 32-bit integer the same as the hash code of the same integer cast to a ``double``?
 
   .. answer::
 
@@ -41,7 +41,7 @@ Exercise 4.2.2 (Hash and casting of integers)
    0-10000000001-0100000000000000000000000000000000000000000000000000.
    Ce nombre de 64 bit est sans grand rapport avec :math:`0^{61}101`, or la formule est la même. Le hashcode sera donc différent.
 
-* Is the hash function of a 32-bit integer the same as the hash function of the same integer that would be cast as a long?  Hint: `Long.toBinaryString( Double.doubleToRawLongBits(a))` displays the array of bits used to represent a double.
+* Is the hash code of a 32-bit integer the same as the hash code of the same integer cast to a ``long``? Hint: ``Long.toBinaryString(Double.doubleToRawLongBits(a))`` displays the bits used to represent a ``double``.
 
   .. answer::
 
@@ -54,11 +54,11 @@ Exercise 4.2.2 (Hash and casting of integers)
    * *cas.2* si l'entier est négatif: **c'est faux** car pour l'entier  de 32 bits casté en Long aura une représentation différente.
      :math:`5 = (61\times 0)101`, :math:`-5 = (61\times 1) 011 ` en utilisant le complément à 2 de :math:`5`.
 
-Exercise 4.2.3 (Hash of String: the choice of M and R constants)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 4.2.3 (String Hashing: Choice of M and R Constants)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-The hash function for a given string as presented in the book p460 is as follows:
+The hash function for a given string as presented on page 460 of the book is as follows:
 
 .. code-block:: java
 
@@ -68,7 +68,7 @@ The hash function for a given string as presented in the book p460 is as follows
 
 
 In the book's implementation, :math:`M` (the size of the hash table) is a power of two.
-The suggested value for :math:`R` is *a small prime such that 31 so that the bits of all characters play a role.*
+The suggested value for :math:`R` is *a small prime such as 31 so that the bits of all characters play a role.*
 
 * Suppose that :math:`R` is a multiple of :math:`M`. What would happen in the calculation?
 
@@ -96,25 +96,25 @@ The suggested value for :math:`R` is *a small prime such that 31 so that the bit
 
    Donc tous les caractères (et donc tous les bits) ne seront pas pris en compte. Pas bien!
 
-In both cases, how many entries in the string will actually determine the hash code? What are the risks in terms of collision? Can load factor control solve the problem? Explain why using 31 is a good choice for array sizes that are powers of two? Would it also be a good choice for an array size that starts at 31 and is multiplied by two each time it needs to resize?
+In both cases, how many characters in the string will actually determine the hash code? What are the risks in terms of collisions? Can controlling the load factor solve this problem? Explain why using 31 is a good choice for array sizes that are powers of two. Would it also be a good choice for an array size that starts at 31 and is multiplied by two each time it is resized?
 
-* In the book implementation, :math:`M` (the size of the hash table) is a power of two, initialized to 16. Suppose that at some point :math:`M` is :math:`2^8=256`. Then two integer keys are added to a hash table implemented with separate chaining: respectively :math:`2560` and :math:`3072` (it is assumed that these additions do not cause any resizing of the table). As you know, the hash code of an integer key (int) is the number itself.
-  Will adding these two values cause a collision between them in the table? If so why?
+* In the book's implementation, :math:`M` (the size of the hash table) is a power of two, initialized to 16. Suppose that at some point :math:`M` is :math:`2^8 = 256`. Then two integer keys are added to a hash table implemented with separate chaining: :math:`2560` and :math:`3072` respectively (assume that these additions do not cause a resize). As you know, the hash code of an integer key (``int``) in Java is the integer itself.
+  Will adding these two values cause a collision between them in the table? If so, why?
 
   .. answer::
 
    Oui car dans les deux cas, le :math:`\%256` donne 0.
 
-  If so can you suggest a third value that will also collide?
+  If so, can you suggest a third value that will also collide?
 
   .. answer::
 
    512
 
-  If there is a collision, can it disappear the next time the table is resized as in the book implementation?
+  If there is a collision, can it disappear the next time the table is resized using the book's resizing strategy?
 
 
-* What do you suggest to avoid this problem? What is the :math:`M` initialization and resizing policy used in ``java.util.HashMap``? Does this solve the problem on our example?
+* What do you suggest to avoid this problem? What is the initialization and resizing policy for :math:`M` used in ``java.util.Hashtable`` / ``java.util.HashMap``? Does this solve the problem in our example?
 
   .. answer::
 
@@ -122,11 +122,11 @@ In both cases, how many entries in the string will actually determine the hash c
    Dans ce cas-ci, on n'a pas de problème. L'avantage de la stratégie de Java est qu'une collision peut disparaître au prochain dimensionnement.
    Alors que pour la stratégie du livre pas nécessairement. En effet, lorsqu'on passe à :math:`M=512`, les deux collisions sont toujours là.
 
-Exercise 4.2.4 (Design of Hash function for Vehicules)
+Exercise 4.2.4 (Design of a Hash Function for Vehicles)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-* What would you suggest as a hash function for identifying vehicles that are strings of numbers and letters of the form: "9X9XX99X9XX999999" where a 9 represents a number and an "X" represents a letter from A to Z.
-* Does your hash function have the property that for a hypothetical array size N of :math:`10^{11} \cdot 26^6` there is never a collision?
+* What would you suggest as a hash function for vehicle identifiers that are strings of numbers and letters of the form: ``"9X9XX99X9XX999999"``, where each ``9`` represents a digit (0–9) and each ``X`` represents an uppercase letter (A–Z)?
+* Does your hash function have the property that for a hypothetical array size :math:`N` of :math:`10^{11} \cdot 26^6` there will never be any collision?
 
 .. answer::
 
@@ -136,24 +136,23 @@ Exercise 4.2.4 (Design of Hash function for Vehicules)
    Un fonction de hash pour :math:`XY` est :math:`X \cdot 10^{11} + Y`.
    Le maximum de ce nombre est bien :math:`10^{11} \cdot 26^6` et il existe bien une correspondance 1 à 1 (une bijection, donc) entre la fonction de hash et les strings des véhicules.
 
-Exercise 4.2.5 (Design of Hash function: Citizens)
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 4.2.5 (Design of a Hash Function: Citizens)
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Let's imagine that we want to build a directory of Belgian citizens
-and we want to be able to access each citizen by his identity card number
-(12 digits).
-We can then consider this number as the unique key identifying
-each citizen and use this key as an index in an array in Java.
-To each index would correspond a reference to an instance of the class
-class whose fields constitute the information that we want to store for each citizen.
+Suppose we want to build a directory of Belgian citizens
+where each citizen can be accessed by their 12-digit national identity card number.
+We can consider this number as the unique key identifying each citizen
+and use it directly as an index in a Java array.
+Each array index would hold a reference to an instance of a class
+whose fields contain the citizen's personal information.
+
 What is the time complexity of the following operations?
 
-* search for the information relative to a citizen from his identity card number.
-  identity card number.
-* add a new citizen.
+* Searching for a citizen's information using their identity card number.
+* Adding a new citizen.
 
-Isn't this implementation of a dictionary even better than a hash table?
-Can we have a collision problem in this case? Justify.
+Is this implementation of a dictionary not even better than a hash table?
+Can a collision occur in this design? Justify your answer.
 
 .. answer::
 
@@ -169,12 +168,10 @@ Can we have a collision problem in this case? Justify.
 
    Ca ne semble pas être une utilisation très raisonnable de l'espace...
 
-Exercise 4.2.6 Rabin-Karp, the return of revenge
-""""""""""""""""""""""""""""""""""""""""""""""""""""
+Exercise 4.2.6 (Rabin-Karp Revisited)
+"""""""""""""""""""""""""""""""""""""
 
-Check that you have obtained a solution in :math:`\mathcal{O}(n)`, and not :math:`\mathcal{O}(kn)` (not counting the initial hashing of the keywords to be searched, which is in :math:`\mathcal{O}(km)`), and
-not counting the initial hashing of the keywords to be searched which is in :math:`\mathcal{O}(km)`),
-for last week's Exercise 4.1.11.
+Check that you have obtained a solution in :math:`\mathcal{O}(n)` and not :math:`\mathcal{O}(kn)` (not counting the initial hashing of the keywords to be searched, which is in :math:`\mathcal{O}(km)`) for last week's Exercise 4.1.11.
 
 .. answer::
 
@@ -192,29 +189,29 @@ for last week's Exercise 4.1.11.
     qu'avec un seul mot-clé! Magique, non?
 
 
-Exercise 4.2.7 (Inginious: Linear Probing)
-""""""""""""""""""""""""""""""""""""""""""""
+Exercise 4.2.7 (INGInious: Linear Probing)
+""""""""""""""""""""""""""""""""""""""""""
 
-Implement a `Linear Probing Hashtable <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST>`_
-
-
-Exercise 4.2.8 (Inginious: Tries and Autocompletion)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Implement an efficient auto-completionalgorithm using a trie data structure: `AutoCompletor <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_AutoCompleter>`_
+Implement a `linear probing hash table <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST>`_.
 
 
+Exercise 4.2.8 (INGInious: Tries and Autocompletion)
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Exercise 4.2.9 (Inginious: An funny exercise using HashTables)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Implement an efficient auto-completion algorithm using a trie data structure: `AutoCompleter <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_AutoCompleter>`_
 
-This is the question 21 of the `advent of code 2022 <https://adventofcode.com>`_.
-It can be efficently solved using a hashtables in combination with a linked tree data-structure: `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
 
-Exercise 4.2.10 (Inginious: Bitset)
-"""""""""""""""""""""""""""""""""""""
 
-Implement an efficient alternative to using a Hashset when you need to store a dense set of integers : `Bitset <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset>`_
+Exercise 4.2.9 (INGInious: A Fun Exercise Using Hash Tables)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+This is problem 21 of the `Advent of Code 2022 <https://adventofcode.com>`_.
+It can be efficiently solved using a hash table in combination with a linked tree data structure: `Monkeys <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys>`_
+
+Exercise 4.2.10 (INGInious: Bitset)
+"""""""""""""""""""""""""""""""""""
+
+Implement an efficient alternative to a ``HashSet`` when you need to store a dense set of integers: `Bitset <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset>`_
 
 
 

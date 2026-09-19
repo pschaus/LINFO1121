@@ -11,10 +11,10 @@ Exercises A
 Exercise 4.1.1
 """"""""""""""
 
-Name at least four different implementations of a dictionary (table of symbols).
-Specify, in each case, what are the main properties of these implementations.
-In which case(s) are they interesting?
-What are the computational complexities of their main methods?
+Name at least four different implementations of a symbol table (dictionary).
+Specify the main properties of each implementation.
+In which scenario(s) are they most appropriate?
+What are the time complexities of their main operations?
 
 .. answer::
 
@@ -60,7 +60,7 @@ What are the computational complexities of their main methods?
         - nécessite un comparateur
       * - Linked Hash tables
         - ``LinkedHashMap``
-        - ``inkedHashMap``
+        - ``LinkedHashSet``
         - :math:`\mathcal{O}(1)` amorti
         - :math:`\mathcal{O}(1)` amorti
         - :math:`\mathcal{O}(1)` amorti
@@ -70,7 +70,7 @@ What are the computational complexities of their main methods?
 Exercise 4.1.2
 """"""""""""""
 
-Recall the following question proposed in the assignment on sorting: Given a set :math:`S` of size :math:`n`, and a number :math:`x`. Describe an efficient algorithm using a HashTable to find if there exists a pair :math:`(a,b)` with :math:`a \in S,b \in S` such that :math:`a+b=x`. What is the complexity of your algorithm? Is it better than your solution which used a sort?
+Recall the following question from the sorting assignment: Given a set :math:`S` of size :math:`n` and a number :math:`x`, describe an efficient algorithm using a hash table to determine whether there exists a pair :math:`(a, b)` with :math:`a \in S, b \in S` such that :math:`a + b = x`. What is the time complexity of your algorithm? Is it better than your solution that used sorting?
 
 .. answer::
 
@@ -79,11 +79,11 @@ Recall the following question proposed in the assignment on sorting: Given a set
    est présent dans l'ensemble. Complexité totale: :math:`\mathcal{O}(n)`.
 
 Exercise 4.1.3
-""""""""""""""""
+""""""""""""""
 
-Show that :math:`(a + b) \% M` is equivalent to :math:`((a \% M) + b) \% M`. How can this property be useful to build a hash function on Strings.
-Explain how Java computes a hash function on Strings?
-What is the complexity of computing 1 time and :math:`N` times the hashcode of a String.
+Show that :math:`(a + b) \% M` is equivalent to :math:`((a \% M) + b) \% M`. How can this property be useful when building a hash function for strings?
+Explain how Java computes a hash function for strings.
+What is the time complexity of computing the hash code of a string once, and computing it :math:`N` times?
 
 .. answer::
 
@@ -99,12 +99,12 @@ What is the complexity of computing 1 time and :math:`N` times the hashcode of a
    pour :math:`N` appel à ``hashCode`` est donc :math:`n+N`.
 
 Exercise 4.1.4
-""""""""""""""""
+""""""""""""""
 
-Explain why the ``hash()`` method p461 in the book returns `(x.hashCode() \& 0x7FFFFFFF) \% M` and not just `x.hashCode() \% M`?
-What number represents ``0x7FFFFFFF`` ?
-What is its binary representation ?
-Show the binary impact on an example where ``x.hashCode()`` returns a negative number. Hint: use ``Integer.toBinaryString(int)`` to verify your answer.
+Explain why the ``hash()`` method on page 461 of the book returns ``(x.hashCode() & 0x7FFFFFFF) % M`` and not simply ``x.hashCode() % M``?
+What number does ``0x7FFFFFFF`` represent?
+What is its binary representation?
+Show the effect at the bit level on an example where ``x.hashCode()`` returns a negative number. Hint: use ``Integer.toBinaryString(int)`` to verify your answer.
 
 .. answer::
 
@@ -116,13 +116,13 @@ Show the binary impact on an example where ``x.hashCode()`` returns a negative n
    Question bonus: est-ce que `x \& 0x7FFFFFFF = abs(x)`? Non car on utilise une notation en complément de deux. Une bonne raison d'être attentif au cours de systèmes informatiques...
 
 Exercise 4.1.5
-""""""""""""""""
+""""""""""""""
 
 Java provides the class ``java.util.Hashtable`` as an implementation of the ``java.util.Map`` interface.
-Can you determine exactly which variant of hash table this is?
+Which variant of hash table does it use?
 Does Java provide other implementations of the ``Map`` interface?
-Make a diagram that represents the interfaces and classes that relate to ``Map`` and specify what, in each case, characterizes them.
-What can be used as a key for a hashtable in Java? Be specific.
+Draw a diagram representing the interfaces and classes related to ``Map`` and specify the key characteristics of each.
+What can be used as a key for a hash table in Java? Be specific.
 
 .. answer::
 
@@ -131,11 +131,11 @@ What can be used as a key for a hashtable in Java? Be specific.
    Ensuite il y a aussi les SortedMap dont la TreeMap qui implémente les red-black tree et *ajoute des fonctionnalité relative à l'ordre (firstKey, ceil, floor, etc)*.
 
 Exercise 4.1.6
-""""""""""""""""
+""""""""""""""
 
-What is meant by the notion of "collision" in a hash table?
-Do collisions have an influence on the complexity of operations?
-If yes, which operation(s) with which complexity(ies), otherwise specify why.
+What is meant by a "collision" in a hash table?
+Do collisions affect the time complexity of operations?
+If so, which operation(s) and with what complexity? If not, explain why.
 
 .. answer::
 
@@ -144,13 +144,13 @@ If yes, which operation(s) with which complexity(ies), otherwise specify why.
    Assurez-vous que tout le monde à bien compris le separate chaining et le linear probing (notamment la recherche et la suppression...)
 
 Exercise 4.1.7
-""""""""""""""""
+""""""""""""""
 
-What is the load factor of a hash table.
-Is the load factor control necessary/optional for the proper functioning of a hash table with Linear Probing or Separate Chaining?
-What is the strategy used by ``java.util.Hashtable`` to control the load factor?
-How is it different from the one proposed in ``LinearProbinHashST``?
-What is the link between load factor and collision?
+What is the load factor of a hash table?
+Is controlling the load factor necessary or optional for the proper operation of a hash table using linear probing or separate chaining?
+What strategy is used by ``java.util.Hashtable`` to control the load factor?
+How does it differ from the strategy used in ``LinearProbingHashST``?
+What is the relationship between the load factor and collisions?
 
 .. answer::
 
@@ -159,19 +159,19 @@ What is the link between load factor and collision?
    Dès que le nombre d'element atteint cette limite threshold, on rehashe tout dans un nouveau tableau dont la capacité est multipliée par deux plus 1 (pourquoi?).
 
 Exercise 4.1.8
-"""""""""""""""
+""""""""""""""
 
 Imagine a new ``iterator()`` method that returns an iterator over the keys of ``LinearProbingHashST``.
-Your iterator should not accept a modification of the hash table while it is in use: a ``ConcurrentModificationException()`` should be thrown if it does.
-What do you suggest to do this? Hint: Take inspiration from the ``java.util.Hashtable`` strategy.
+Your iterator must not allow modifications to the hash table while in use: a ``ConcurrentModificationException`` should be thrown if a modification occurs.
+How would you implement this? Hint: Take inspiration from the ``java.util.Hashtable`` strategy.
 
 
 Exercise 4.1.9
-"""""""""""""""
+""""""""""""""
 
-Describe the implementation of the ``put(key)`` method in a hash table that uses the linear probing technique to handle collisions that would use a special marker to represent entries deleted using the ``delete(key)`` method.
-In other words the ``delete(key)`` method instead of rearranging the contents of the hash table so that it is as if the deleted entry had never been inserted, will simply mark the entry with the special marker.
-What is the advantage or disadvantage of this approach over the "LinearProbingHashST" approach in the book?
+Describe the implementation of the ``put(key)`` method in a hash table using linear probing where deleted entries are marked with a special sentinel value (tombstone) via the ``delete(key)`` method.
+In other words, instead of rehashing and shifting subsequent entries so that it is as if the deleted entry was never inserted, ``delete(key)`` simply flags the entry with this special marker.
+What are the advantages and disadvantages of this approach compared to the ``LinearProbingHashST`` implementation in the book?
 
 .. answer::
 
@@ -184,7 +184,7 @@ What is the advantage or disadvantage of this approach over the "LinearProbingHa
 Exercise 4.1.10 (Rabin-Karp)
 """"""""""""""""""""""""""""
 
-Imagine a hash function for a string :math:`s` such that knowing its value for the sub-string :math:`s[i,...,i+n-1]` would allow to compute the hash function of the string :math:`s[i+1,...,i+n]` in constant time (incrementally).
+Imagine a hash function for a string :math:`s` such that knowing its value for the substring :math:`s[i \ldots i+n-1]` allows computing the hash value of the substring :math:`s[i+1 \ldots i+n]` in constant time (incrementally).
 
 .. answer::
 
@@ -193,9 +193,9 @@ Imagine a hash function for a string :math:`s` such that knowing its value for t
 Exercise 4.1.11 (Rabin-Karp)
 """"""""""""""""""""""""""""
 
-Explain how to search for a sub-string of size :math:`m` in a long string of size :math:`n` in :math:`\mathcal{O}(n)` using an incremental hash function.
-How would you do it if you have :math:`k` strings of size :math:`m` to search in the long string of size :math:`n`?
-What would be the complexity of your method? Is it better than running the Rabin-Karp algorithm k times?
+Explain how to search for a substring of length :math:`m` in a text of length :math:`n` in :math:`\mathcal{O}(n)` time using an incremental hash function.
+How would you do this if you had :math:`k` patterns of length :math:`m` to search for in a text of length :math:`n`?
+What is the time complexity of your method? Is it better than running the Rabin-Karp algorithm :math:`k` times?
 
 .. answer::
 
@@ -208,43 +208,43 @@ What would be the complexity of your method? Is it better than running the Rabin
    On peut aussi chercher les matchs du suffixe de longeur 5. Ensuite faire une double boucle pour voir si les matchs matches entre eux ;-)
 
 
-Exercise 4.1.12 (Inginious, MCQ)
-"""""""""""""""""""""""""""""""""
+Exercise 4.1.12 (INGInious: MCQ)
+""""""""""""""""""""""""""""""""
 
 `Multiple choice questions on hash function <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmHashing>`_
 
 
-Exercise 4.1.13 (Inginious, MCQ)
-"""""""""""""""""""""""""""""""""
+Exercise 4.1.13 (INGInious: MCQ)
+""""""""""""""""""""""""""""""""
 
-`Multiple choice questions on RabinKarp <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk>`_
+`Multiple choice questions on Rabin-Karp <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk>`_
 
-Exercise 4.1.14 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 4.1.14 (INGInious)
+"""""""""""""""""""""""""""
 
-An easy to implement a tool for counting word occurences (exam 2022). 
-Word counting is a frequent task in natural language processing algorithm.
+An easy tool to implement for counting word occurrences (exam 2022). 
+Word counting is a frequent task in natural language processing algorithms.
 `Word Counter <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_WordCounter>`_
 
 
-Exercise 4.1.15 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 4.1.15 (INGInious)
+"""""""""""""""""""""""""""
 
 Incremental computation of a hash function (exam 2018).
 `Incremental Hash <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash>`_
 
 
-Exercise 4.1.16 (Inginious)
-""""""""""""""""""""""""""""""""""""""""""""
+Exercise 4.1.16 (INGInious)
+"""""""""""""""""""""""""""
 
-Very interesting hash-map with a bounded memory keeping only the most recently used ones (exam 2022).
+A bounded-capacity cache that retains only the most recently used entries (exam 2022).
 `LRUCache <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_LRUCache>`_
 
 
-Exercise 4.1.17 (Inginious)
-"""""""""""""""""""""""""""""""""
+Exercise 4.1.17 (INGInious)
+"""""""""""""""""""""""""""
 
-Implement a version of RabinKarp but for looking for `K patterns <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp>`_ instead of just one.
+Implement a version of Rabin-Karp to search for `K patterns <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp>`_ simultaneously instead of just one.
 
 
 
