@@ -265,9 +265,9 @@
 <section id="exercise-2-1-1">
 <h2>Exercise 2.1.1<a class="headerlink" href="#exercise-2-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Given an array containing <span class="math notranslate nohighlight">\(n\)</span> sorted integers, and a number <span class="math notranslate nohighlight">\(x\)</span> to insert into the array, can you
-indicate an algorithm to find the position where to insert <span class="math notranslate nohighlight">\(x\)</span> while keeping the array sorted?</p>
-<p>What is the complexity of this algorithm?
-Does your algorithm also work for a sorted linked-list? With what complexity?</p>
+describe an algorithm to find the position where <span class="math notranslate nohighlight">\(x\)</span> should be inserted while keeping the array sorted?</p>
+<p>What is the time complexity of this algorithm?
+Does your algorithm also work for a sorted linked list? With what complexity?</p>
 </section>
 <section id="exercise-2-1-2">
 <h2>Exercise 2.1.2<a class="headerlink" href="#exercise-2-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
@@ -277,22 +277,22 @@ Only one job can be performed at a time.</p>
 <p>The goal is to complete all jobs while maximizing customer satisfaction.
 Maximizing customer satisfaction means building a schedule that minimizes
 the average job completion time.</p>
-<p>For example, if the duration of the jobs is 5,8,3,4 and the jobs are carried out in this order,
-the end times will be 5,13,16,20 and therefore the average end time will be
+<p>For example, if the durations of the jobs are 5, 8, 3, 4 and the jobs are carried out in this order,
+the completion times will be 5, 13, 16, 20 and therefore the average completion time will be
 <span class="math notranslate nohighlight">\(\frac{5+13+16+20}{4}=13.5\)</span>.</p>
 <p>Prove (with a written proof!) that sorting the <span class="math notranslate nohighlight">\(n\)</span> jobs in ascending order of <span class="math notranslate nohighlight">\(t_j\)</span> generates an optimal
 solution to the problem.</p>
 </section>
 <section id="exercise-2-1-3">
 <h2>Exercise 2.1.3<a class="headerlink" href="#exercise-2-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What is meant by a stable and in place sorting algorithm?
+<p>What is meant by a stable and an in-place sorting algorithm?
 For all the algorithms presented in the reference book,
-indicate whether they are in place (or not) or stable (or not).</p>
-<p>Answer to the small <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/sorting_property">Inginious MCQ</a></p>
+indicate whether they are in-place (or not) and whether they are stable (or not).</p>
+<p>Answer the short <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/sorting_property">INGInious MCQ</a>.</p>
 </section>
-<section id="exercise-2-1-4-inginious">
-<h2>Exercise 2.1.4 (Inginious)<a class="headerlink" href="#exercise-2-1-4-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How would you sort increasingly a pile of cards with the restriction that
+<section id="exercise-2-1-4-inginious-card-sorter">
+<h2>Exercise 2.1.4 (INGInious: Card Sorter)<a class="headerlink" href="#exercise-2-1-4-inginious-card-sorter" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>How would you sort a pile of cards in ascending order with the restriction that
 the only permitted operations are:</p>
 <ol class="arabic simple">
 <li><p>compare the first two cards,</p></li>
@@ -301,18 +301,18 @@ the only permitted operations are:</p>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
-<p>Try to maintain the invariant that the <cite>last i elements of the pile are sorted and those are the ith biggest ones</cite>.
+<p>Try to maintain the invariant that the <cite>last i elements of the pile are sorted and are the i largest ones</cite>.
 Then at each iteration try to make this invariant true for one more card (i+1).</p>
 </div>
-<p>Write the pseudo code of your algorithm on paper and give the complexity.</p>
-<p>Once it is done, implement your solution on the inginious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_CardSorter">task</a></p>
+<p>Write the pseudocode of your algorithm on paper and give its time complexity.</p>
+<p>Once it is done, implement your solution on the INGInious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_CardSorter">task</a>.</p>
 </section>
 <section id="exercise-2-1-5">
 <h2>Exercise 2.1.5<a class="headerlink" href="#exercise-2-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How to sort a doubly linked list (which therefore does not allow access
-to a position by its index) efficiently? How complex is your
+<p>How can you sort a doubly linked list (which does not allow access
+to a position by index) efficiently? What is the time complexity of your
 algorithm?</p>
-<p>Which algorithm is used by the <cite>sort</cite> method of the <cite>Collections</cite> class below?</p>
+<p>Which algorithm is used by the <cite>sort</cite> method of the <cite>List</cite> interface below?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">list</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
@@ -323,12 +323,12 @@ algorithm?</p>
 </section>
 <section id="exercise-2-1-6">
 <h2>Exercise 2.1.6<a class="headerlink" href="#exercise-2-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Design an efficient algorithm for counting the number of pairs of disordered values.
-For example in the sequence <span class="math notranslate nohighlight">\(1,3,2,5,6,4,8\)</span> there are the pairs <span class="math notranslate nohighlight">\((3,2),(5,4),(6,4)\)</span>
-which are unordered. Justify the complexity of your algorithm and give its pseudo code.</p>
+<p>Design an efficient algorithm for counting the number of inverted (out-of-order) pairs of values.
+For example, in the sequence <span class="math notranslate nohighlight">\(1,3,2,5,6,4,8\)</span>, there are the pairs <span class="math notranslate nohighlight">\((3,2), (5,4), (6,4)\)</span>
+which are unordered. Justify the complexity of your algorithm and give its pseudocode.</p>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
-<p>Assume two arrays <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, let <span class="math notranslate nohighlight">\(A.B\)</span> be the array result of the
+<p>Assume two arrays <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, let <span class="math notranslate nohighlight">\(A.B\)</span> be the array resulting from the
 concatenation of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Let <span class="math notranslate nohighlight">\(nUnsorted(A)\)</span> be the number of unsorted pairs
 in an array <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>We have the following property that you can prove:</p>
@@ -336,7 +336,7 @@ in an array <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[nUnsorted(A.B) = nUnsorted(A)+ nUnsorted(B)+|\{(i,j) : A[i]&gt;B[j]\}|\]</div>
 </div>
-<p>What is the complexity to calculate <span class="math notranslate nohighlight">\(|\{(i,j) : A[i]&gt;B[j]\}|\)</span> ?
+<p>What is the complexity of calculating <span class="math notranslate nohighlight">\(|\{(i,j) : A[i]&gt;B[j]\}|\)</span>?
 Can this complexity be improved if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are sorted?
 Could you compute <span class="math notranslate nohighlight">\(nUnsorted\)</span> based on some adaptation of a well-known sorting algorithm
 that runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n \cdot \log(n))\)</span>?</p>
@@ -345,9 +345,9 @@ that runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n \cdot \l
 <section id="exercise-2-1-7">
 <h2>Exercise 2.1.7<a class="headerlink" href="#exercise-2-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Imagine that we want to sort a collection of <cite>Person</cite> objects lexicographically by their (weight, age, height)
-but also <cite>Student</cite> objects by their (age, grade, year), how to avoid duplicating the sorting algorithm
+and also <cite>Student</cite> objects by their (age, grade, year). How can you avoid duplicating the sorting algorithm
 specifically for these classes?</p>
-<p>Explain why the notions of <cite>Comparable</cite> and <cite>Comparator</cite> of Java are useful for this?
+<p>Explain why the <cite>Comparable</cite> and <cite>Comparator</cite> interfaces in Java are useful for this.
 Explain how you would implement an efficient <cite>Comparator</cite> for <cite>String</cite>.</p>
 </section>
 <section id="exercise-2-1-8">
@@ -356,51 +356,51 @@ Explain how you would implement an efficient <cite>Comparator</cite> for <cite>S
 </section>
 <section id="exercise-2-1-9">
 <h2>Exercise 2.1.9<a class="headerlink" href="#exercise-2-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How would you get the 3rd smallest value in an array of one million int?
-How complex is your algorithm?</p>
-</section>
-<section id="exercise-2-1-10-inginious">
-<h2>Exercise 2.1.10 (Inginious)<a class="headerlink" href="#exercise-2-1-10-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How would you get the median of an array of values (so the <span class="math notranslate nohighlight">\(\frac{n}{2}\)</span> th value)?
+<p>How would you find the 3rd smallest value in an array of one million <cite>int</cite> values?
 What is the time complexity of your algorithm?</p>
-<p>Solve the related Inginious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Median">Median</a></p>
+</section>
+<section id="exercise-2-1-10-inginious-median">
+<h2>Exercise 2.1.10 (INGInious: Median)<a class="headerlink" href="#exercise-2-1-10-inginious-median" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>How would you get the median of an array of values (i.e., the <span class="math notranslate nohighlight">\(\frac{n}{2}\)</span>-th value)?
+What is the time complexity of your algorithm?</p>
+<p>Solve the related INGInious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Median">Median</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
 <p>What can you infer regarding the position of the median after the partitioning operation
-around a <span class="math notranslate nohighlight">\(v\)</span> value in Quick-Sort algorithm?</p>
+around a pivot value <span class="math notranslate nohighlight">\(v\)</span> in the QuickSort algorithm?</p>
 </div>
 </section>
 <section id="exercise-2-1-11">
 <h2>Exercise 2.1.11<a class="headerlink" href="#exercise-2-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>What is Autoboxing and Unboxing in Java?
 How can this impact the performance of a sorting algorithm?</p>
-<p>Compare the performance of <code class="docutils literal notranslate"><span class="pre">java.util.Sort</span></code> on an array of 10000000 entries consisting of <code class="docutils literal notranslate"><span class="pre">int</span></code> and
+<p>Compare the performance of <code class="docutils literal notranslate"><span class="pre">Arrays.sort</span></code> on an array of 10,000,000 entries consisting of <code class="docutils literal notranslate"><span class="pre">int</span></code> and
 the same array with <code class="docutils literal notranslate"><span class="pre">Integer</span></code>.</p>
 </section>
 <section id="exercise-2-1-12">
 <h2>Exercise 2.1.12<a class="headerlink" href="#exercise-2-1-12" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>What is a code <em>profiler</em>?
 What information provided by a profiler could you use to improve
-performance of your algorithms and data structures in general (speed, memory, GC)?</p>
+the performance of your algorithms and data structures in general (speed, memory, GC)?</p>
 <p>A good free profiler is VisualVM.</p>
 <p>Use VisualVM on your code for the previous question.</p>
 </section>
 <section id="exercise-2-1-13-inginious-merge-sort">
-<h2>Exercise 2.1.13 (Inginious: Merge Sort)<a class="headerlink" href="#exercise-2-1-13-inginious-merge-sort" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Complete (without reading the book since you won’t have it at the exam) the implementation of <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort">Merge Sort</a></p>
+<h2>Exercise 2.1.13 (INGInious: Merge Sort)<a class="headerlink" href="#exercise-2-1-13-inginious-merge-sort" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Complete (without reading the book since you won’t have it during the exam) the implementation of <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort">Merge Sort</a>.</p>
 </section>
-<section id="exercise-2-1-14-inginious-a-photograp-problem">
-<h2>Exercise 2.1.14 (Inginious: A Photograp problem)<a class="headerlink" href="#exercise-2-1-14-inginious-a-photograp-problem" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Help the photograph to arrange players of two soccer teams so that every body is visible on the picture (exam 2022) <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Photo">Photo</a></p>
+<section id="exercise-2-1-14-inginious-a-photographer-problem">
+<h2>Exercise 2.1.14 (INGInious: A Photographer problem)<a class="headerlink" href="#exercise-2-1-14-inginious-a-photographer-problem" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Help the photographer arrange players of two soccer teams so that everybody is visible in the picture (exam 2022): <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Photo">Photo</a>.</p>
 </section>
-<section id="exercise-2-1-15-inginious-on-olympic-problem">
-<h2>Exercise 2.1.15 (Inginious: On Olympic Problem)<a class="headerlink" href="#exercise-2-1-15-inginious-on-olympic-problem" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Help the olympic games organisers to compute the number of training rooms (exam 2024) <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TrainingSessions">TrainigSessions</a></p>
+<section id="exercise-2-1-15-inginious-an-olympic-problem">
+<h2>Exercise 2.1.15 (INGInious: An Olympic Problem)<a class="headerlink" href="#exercise-2-1-15-inginious-an-olympic-problem" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Help the Olympic Games organizers compute the number of training rooms (exam 2024): <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TrainingSessions">TrainingSessions</a>.</p>
 </section>
 <section id="exercise-2-1-16-inginious-fix-quicksort">
-<h2>Exercise 2.1.16 (Inginious: Fix QuickSort)<a class="headerlink" href="#exercise-2-1-16-inginious-fix-quicksort" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>It seems that this quick sort implementation does not always have the right time complexity.
-Help us improve it <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_FixQuickSort">FixQuickSort</a></p>
+<h2>Exercise 2.1.16 (INGInious: Fix QuickSort)<a class="headerlink" href="#exercise-2-1-16-inginious-fix-quicksort" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>It seems that this QuickSort implementation does not always have the expected time complexity.
+Help us improve it: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_FixQuickSort">FixQuickSort</a>.</p>
 </section>
 </section>
 
@@ -468,19 +468,19 @@ Help us improve it <a class="reference external" href="https://inginious.info.uc
 <li><a class="reference internal" href="#exercise-2-1-1">Exercise 2.1.1</a></li>
 <li><a class="reference internal" href="#exercise-2-1-2">Exercise 2.1.2</a></li>
 <li><a class="reference internal" href="#exercise-2-1-3">Exercise 2.1.3</a></li>
-<li><a class="reference internal" href="#exercise-2-1-4-inginious">Exercise 2.1.4 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-4-inginious-card-sorter">Exercise 2.1.4 (INGInious: Card Sorter)</a></li>
 <li><a class="reference internal" href="#exercise-2-1-5">Exercise 2.1.5</a></li>
 <li><a class="reference internal" href="#exercise-2-1-6">Exercise 2.1.6</a></li>
 <li><a class="reference internal" href="#exercise-2-1-7">Exercise 2.1.7</a></li>
 <li><a class="reference internal" href="#exercise-2-1-8">Exercise 2.1.8</a></li>
 <li><a class="reference internal" href="#exercise-2-1-9">Exercise 2.1.9</a></li>
-<li><a class="reference internal" href="#exercise-2-1-10-inginious">Exercise 2.1.10 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-10-inginious-median">Exercise 2.1.10 (INGInious: Median)</a></li>
 <li><a class="reference internal" href="#exercise-2-1-11">Exercise 2.1.11</a></li>
 <li><a class="reference internal" href="#exercise-2-1-12">Exercise 2.1.12</a></li>
-<li><a class="reference internal" href="#exercise-2-1-13-inginious-merge-sort">Exercise 2.1.13 (Inginious: Merge Sort)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-14-inginious-a-photograp-problem">Exercise 2.1.14 (Inginious: A Photograp problem)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-15-inginious-on-olympic-problem">Exercise 2.1.15 (Inginious: On Olympic Problem)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-16-inginious-fix-quicksort">Exercise 2.1.16 (Inginious: Fix QuickSort)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-13-inginious-merge-sort">Exercise 2.1.13 (INGInious: Merge Sort)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-14-inginious-a-photographer-problem">Exercise 2.1.14 (INGInious: A Photographer problem)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-15-inginious-an-olympic-problem">Exercise 2.1.15 (INGInious: An Olympic Problem)</a></li>
+<li><a class="reference internal" href="#exercise-2-1-16-inginious-fix-quicksort">Exercise 2.1.16 (INGInious: Fix QuickSort)</a></li>
 </ul>
 </li>
 </ul>

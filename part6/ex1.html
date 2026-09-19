@@ -264,132 +264,125 @@
 </div>
 <section id="exercise-6-1-1">
 <h2>Exercise 6.1.1<a class="headerlink" href="#exercise-6-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Give several data structures that can be used to represent an undirected <span class="math notranslate nohighlight">\(G\)</span> graph
-with <span class="math notranslate nohighlight">\(n\)</span> nodes (vertex) and <span class="math notranslate nohighlight">\(m\)</span> arcs (edges).</p>
-<p>What are the complexities of the elementary operations <code class="docutils literal notranslate"><span class="pre">Iterable&lt;Integer&gt;</span> <span class="pre">adj(int</span> <span class="pre">v)</span></code> and <code class="docutils literal notranslate"><span class="pre">addEdge(int</span> <span class="pre">v,</span> <span class="pre">int</span> <span class="pre">w)</span></code>?</p>
+<p>Give several data structures that can be used to represent an undirected graph <span class="math notranslate nohighlight">\(G\)</span>
+with <span class="math notranslate nohighlight">\(n\)</span> vertices (nodes) and <span class="math notranslate nohighlight">\(m\)</span> edges.</p>
+<p>What are the time complexities of the elementary operations <code class="docutils literal notranslate"><span class="pre">Iterable&lt;Integer&gt;</span> <span class="pre">adj(int</span> <span class="pre">v)</span></code> and <code class="docutils literal notranslate"><span class="pre">addEdge(int</span> <span class="pre">v,</span> <span class="pre">int</span> <span class="pre">w)</span></code> for each?</p>
 </section>
 <section id="exercise-6-1-2">
 <h2>Exercise 6.1.2<a class="headerlink" href="#exercise-6-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>A graph is bipartite if its nodes can be divided into two disjoint sets so that there is no arc
-between two nodes of the same set.</p>
-<p>Propose a method to test if a graph is bipartite and if so who would find such a partition.
-What is the complexity of your algorithm? Hint: use a DFS.</p>
+<p>A graph is bipartite if its vertices can be partitioned into two disjoint sets such that no edge connects two vertices of the same set.</p>
+<p>Propose an algorithm to test whether a graph is bipartite and, if so, find such a partition.
+What is the time complexity of your algorithm? Hint: Use DFS.</p>
 </section>
 <section id="exercise-6-1-3">
 <h2>Exercise 6.1.3<a class="headerlink" href="#exercise-6-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Prove that any connected graph has a node whose removal (including incident arcs) would not disconnect the graph.
-Write a method that finds such a node. Hint: use a DFS and node marking.</p>
+<p>Prove that every connected graph has a vertex whose removal (along with its incident edges) does not disconnect the graph.
+Write an algorithm that finds such a vertex. Hint: Use DFS and vertex marking.</p>
 </section>
-<section id="exercise-6-1-4-inginious">
-<h2>Exercise 6.1.4 (Inginious)<a class="headerlink" href="#exercise-6-1-4-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Let be an undirected and weightless graph <span class="math notranslate nohighlight">\(G\)</span> whose arcs represent the possible elementary moves of a robot in a maze from all possible positions (nodes).
-Given the current position and a node, implement method to find a path to the exit that minimizes the number of elementary moves: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Maze">Maze</a>.
-What is the complexity of your method? Does it depend on the implementation of the graph (for example if it is an adjacency matrix?)</p>
+<section id="exercise-6-1-4-inginious-maze">
+<h2>Exercise 6.1.4 (INGInious: Maze)<a class="headerlink" href="#exercise-6-1-4-inginious-maze" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Consider an unweighted, undirected graph <span class="math notranslate nohighlight">\(G\)</span> whose edges represent valid moves for a robot in a maze between positions (nodes).
+Given a starting position and a destination node, implement a method to find a path to the exit that minimizes the number of moves: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Maze">Maze</a>.
+What is the time complexity of your method? Does it depend on the graph representation (for example, adjacency lists vs. adjacency matrix)?</p>
 </section>
 <section id="exercise-6-1-5">
 <h2>Exercise 6.1.5<a class="headerlink" href="#exercise-6-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>The EPL course syllabus lists the prerequisites for each course.
-You want to make sure that all courses can be taken, i.e. that there is no cycle of dependency between courses.</p>
-<p>What method do you propose to perform this test?
-What would be the time complexity of your method?</p>
+<p>The EPL course syllabus lists prerequisites for each course.
+You want to verify that all courses can be taken, i.e., that there is no circular dependency between courses.</p>
+<p>What algorithm do you propose to perform this check?
+What is the time complexity of your method?</p>
 </section>
 <section id="exercise-6-1-6">
 <h2>Exercise 6.1.6<a class="headerlink" href="#exercise-6-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Develop (write the code) a topological sorting algorithm for a directed graph that maintains an array of the size of the number of
-nodes with each entry corresponding to the in-degree of each node.
-Your algorithm also maintains a queue of <em>sources</em> (nodes with an in-degree of 0).
-Initialize these two structures in a single pass on all edges.
-Then perform the following operations until the source queue becomes empty:</p>
+<p>Develop (write the code for) a topological sorting algorithm for a directed graph that maintains an array of size <span class="math notranslate nohighlight">\(V\)</span> where each entry corresponds to the in-degree of a vertex.
+Your algorithm should also maintain a queue of <em>sources</em> (vertices with an in-degree of 0).
+Initialize these two structures in a single pass over all edges.
+Then, repeat the following steps until the source queue is empty:</p>
 <ul class="simple">
-<li><p>remove a source from the queue and mark it.</p></li>
-<li><p>decrement the in-degree of the adjacent destinations of the node marked in the previous step.</p></li>
-<li><p>if the in-degree of a node becomes 0, insert it in the source queue.</p></li>
+<li><p>Remove a source from the queue and add it to the topological order.</p></li>
+<li><p>Decrement the in-degree of each neighbor of that vertex.</p></li>
+<li><p>If the in-degree of a neighbor becomes 0, insert it into the source queue.</p></li>
 </ul>
-<p>Is it possible to detect whether the topological sort is unique?
+<p>How can you detect whether the topological sort is unique?
 What is the time complexity of your algorithm?</p>
 </section>
 <section id="exercise-6-1-7">
 <h2>Exercise 6.1.7<a class="headerlink" href="#exercise-6-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(G(V,E)\)</span> be an undirected graph with weights on which a minimum spanning tree has been computed.
-Then <span class="math notranslate nohighlight">\(k\)</span> arcs have been randomly removed from this MST.
-Write a method to retrieve an MST from the partial MST.
-The final MST does not have to be identical to the original, only the remaining <span class="math notranslate nohighlight">\(V-1-k\)</span> arcs must
-at least be present.</p>
-<p>On what important property(ies) of MSTs is your algorithm based?
-What is the complexity of your method?</p>
+<p>Let <span class="math notranslate nohighlight">\(G = (V,E)\)</span> be an edge-weighted undirected graph for which a minimum spanning tree (MST) has already been computed.
+Suppose <span class="math notranslate nohighlight">\(k\)</span> edges are removed from this MST.
+Write a method to reconstruct an MST from the remaining <span class="math notranslate nohighlight">\(|V|-1-k\)</span> edges.
+The final MST does not need to be identical to the original one, but it must contain the <span class="math notranslate nohighlight">\(|V|-1-k\)</span> preserved edges.</p>
+<p>On what fundamental property (or properties) of MSTs is your algorithm based?
+What is the time complexity of your method?</p>
 </section>
 <section id="exercise-6-1-8">
 <h2>Exercise 6.1.8<a class="headerlink" href="#exercise-6-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(G(V,E)\)</span> be an undirected graph with weight on which a minimum spanning tree has been computed.
-The edge <span class="math notranslate nohighlight">\(e \in E\)</span> of weight <span class="math notranslate nohighlight">\(w\)</span> is not part of this MST.
-Can you recompute an MST that would include <span class="math notranslate nohighlight">\(e\)</span> by adapting the original MST? Describe your algorithm (code).
-What is the time complexity? Hint: DFS on the original MST.</p>
+<p>Let <span class="math notranslate nohighlight">\(G = (V,E)\)</span> be an edge-weighted undirected graph for which an MST has already been computed.
+Suppose an edge <span class="math notranslate nohighlight">\(e \in E\)</span> with weight <span class="math notranslate nohighlight">\(w\)</span> is not part of this MST.
+How can you compute a new MST that is constrained to include <span class="math notranslate nohighlight">\(e\)</span> by adapting the original MST? Describe your algorithm.
+What is the time complexity? Hint: Use DFS on the original MST.</p>
 </section>
 <section id="exercise-6-1-9">
 <h2>Exercise 6.1.9<a class="headerlink" href="#exercise-6-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Could <code class="docutils literal notranslate"><span class="pre">java.util.PriorityQueue</span></code> be used to effectively implement Dijkstra?
-If not, why not? What would be the complexity of using this priority queue?</p>
+<p>Could <code class="docutils literal notranslate"><span class="pre">java.util.PriorityQueue</span></code> be used to efficiently implement Dijkstra’s algorithm?
+If not, why not? What would the time complexity be if you used this priority queue?</p>
 </section>
 <section id="exercise-6-1-10">
 <h2>Exercise 6.1.10<a class="headerlink" href="#exercise-6-1-10" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Explain why DijkstraSP does not support arcs with negative weight?
-Would the result be wrong or would the complexity no longer be guaranteed?
-Show an example of input that illustrates the problem.</p>
+<p>Explain why Dijkstra’s algorithm (<code class="docutils literal notranslate"><span class="pre">DijkstraSP</span></code>) does not support edges with negative weights.
+Would the computed distances be incorrect, or would the time complexity guarantee no longer hold?
+Provide an example graph illustrating the problem.</p>
 </section>
 <section id="exercise-6-1-11">
 <h2>Exercise 6.1.11<a class="headerlink" href="#exercise-6-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(G\)</span> be a graph with potentially negative weights but there is no negative cycle.
-I am looking for the shortest path between a <span class="math notranslate nohighlight">\(u\)</span> node and a <span class="math notranslate nohighlight">\(v\)</span> node.
-I have at my disposal an implementation of Dijkstra which does not allow to manage negative weights.
-So I just have to increase all the weights by the same amount corresponding to the absolute value of the smallest weight and apply Dijkstra to the
-and to apply Dijkstra on this graph.
+<p>Let <span class="math notranslate nohighlight">\(G\)</span> be a directed graph with potentially negative edge weights, but without any negative cycles.
+Suppose we want to find the shortest path between a vertex <span class="math notranslate nohighlight">\(u\)</span> and a vertex <span class="math notranslate nohighlight">\(v\)</span>.
+We only have access to an implementation of Dijkstra’s algorithm that does not support negative weights.
+A proposed heuristic is to add a constant to all edge weights equal to the absolute value of the most negative weight (making all weights non-negative), and then run Dijkstra’s algorithm on this modified graph.
 Is this method valid?
-If yes, prove it.
-If not, show a counter example.</p>
+If so, prove it. If not, provide a counterexample.</p>
 </section>
 <section id="exercise-6-1-12">
 <h2>Exercise 6.1.12<a class="headerlink" href="#exercise-6-1-12" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(G\)</span> be a graph with positive weights. I am looking for the longest path between a <span class="math notranslate nohighlight">\(u\)</span> node and a <span class="math notranslate nohighlight">\(v\)</span> node.
-I have at my disposal the Bellman-Ford implementation (which supports negative weights).
-I just need to compute the shortest path on the same graph with the opposite weights.
-Is this method valid? If not, can you propose a method to compute the longest path?
-Does your method apply to all graphs? If not, what particular types of graphs can it handle?</p>
+<p>Let <span class="math notranslate nohighlight">\(G\)</span> be a directed graph with positive edge weights. We want to find the longest path between vertex <span class="math notranslate nohighlight">\(u\)</span> and vertex <span class="math notranslate nohighlight">\(v\)</span>.
+Suppose we have an implementation of the Bellman-Ford algorithm (which supports negative weights).
+Can we simply negate all edge weights and compute the shortest path using Bellman-Ford?
+Is this method valid? If not, can you propose an algorithm to find the longest simple path?
+Does your method apply to all graphs? If not, what specific class of graphs can it handle?</p>
 </section>
 <section id="exercise-6-1-13-inginious">
-<h2>Exercise 6.1.13 (Inginious)<a class="headerlink" href="#exercise-6-1-13-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 6.1.13 (INGInious)<a class="headerlink" href="#exercise-6-1-13-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Implement a
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Digraph">Digraph Data Structure</a></p>
 </section>
 <section id="exercise-6-1-14-inginious">
-<h2>Exercise 6.1.14 (Inginious)<a class="headerlink" href="#exercise-6-1-14-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement an algorihtm for finding a path (its length does not matter) between a node source and a destination using
+<h2>Exercise 6.1.14 (INGInious)<a class="headerlink" href="#exercise-6-1-14-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement an algorithm for finding a path (its length does not matter) between a source node and a destination using
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_DepthFirstPaths">Depth First Search</a></p>
 </section>
 <section id="exercise-6-1-15-inginious">
-<h2>Exercise 6.1.15 (Inginious)<a class="headerlink" href="#exercise-6-1-15-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 6.1.15 (INGInious)<a class="headerlink" href="#exercise-6-1-15-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Implement the computation of the number of connected components in a Graph:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_ConnectedComponents">ConnectedComponents</a></p>
 </section>
 <section id="exercise-6-1-16-inginious">
-<h2>Exercise 6.1.16 (Inginious)<a class="headerlink" href="#exercise-6-1-16-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>A programming exercise on finding
-the the relations to forbid in a contact network
-to satisfy the belgian covid rules:
+<h2>Exercise 6.1.16 (INGInious)<a class="headerlink" href="#exercise-6-1-16-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>A programming exercise on finding which contacts to prohibit in a network to satisfy Belgian COVID-19 bubble regulations:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Bubbles">Covid bubbles</a></p>
 </section>
 <section id="exercise-6-1-17-inginious">
-<h2>Exercise 6.1.17 (Inginious)<a class="headerlink" href="#exercise-6-1-17-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 6.1.17 (INGInious)<a class="headerlink" href="#exercise-6-1-17-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>A programming exercise on BFS to find the shortest path from multiple possible sources to a destination node:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_BreadthFirstShortestPaths">BFS multiple sources</a></p>
 </section>
 <section id="exercise-6-1-18-inginious">
-<h2>Exercise 6.1.18 (Inginious)<a class="headerlink" href="#exercise-6-1-18-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 6.1.18 (INGInious)<a class="headerlink" href="#exercise-6-1-18-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>A programming exercise on shortest path in an implicit graph:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarmingPaths">Global Warming Path</a></p>
 </section>
 <section id="exercise-6-1-19-inginious">
-<h2>Exercise 6.1.19 (Inginious)<a class="headerlink" href="#exercise-6-1-19-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Revisit your computation of the number of islands but this time using DFS rather than union-find
+<h2>Exercise 6.1.19 (INGInious)<a class="headerlink" href="#exercise-6-1-19-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Revisit the computation of the number of islands, this time using DFS rather than union-find:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">Global Warming Island</a></p>
 </section>
 </section>
@@ -458,7 +451,7 @@ to satisfy the belgian covid rules:
 <li><a class="reference internal" href="#exercise-6-1-1">Exercise 6.1.1</a></li>
 <li><a class="reference internal" href="#exercise-6-1-2">Exercise 6.1.2</a></li>
 <li><a class="reference internal" href="#exercise-6-1-3">Exercise 6.1.3</a></li>
-<li><a class="reference internal" href="#exercise-6-1-4-inginious">Exercise 6.1.4 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-4-inginious-maze">Exercise 6.1.4 (INGInious: Maze)</a></li>
 <li><a class="reference internal" href="#exercise-6-1-5">Exercise 6.1.5</a></li>
 <li><a class="reference internal" href="#exercise-6-1-6">Exercise 6.1.6</a></li>
 <li><a class="reference internal" href="#exercise-6-1-7">Exercise 6.1.7</a></li>
@@ -467,13 +460,13 @@ to satisfy the belgian covid rules:
 <li><a class="reference internal" href="#exercise-6-1-10">Exercise 6.1.10</a></li>
 <li><a class="reference internal" href="#exercise-6-1-11">Exercise 6.1.11</a></li>
 <li><a class="reference internal" href="#exercise-6-1-12">Exercise 6.1.12</a></li>
-<li><a class="reference internal" href="#exercise-6-1-13-inginious">Exercise 6.1.13 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-14-inginious">Exercise 6.1.14 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-15-inginious">Exercise 6.1.15 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-16-inginious">Exercise 6.1.16 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-17-inginious">Exercise 6.1.17 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-18-inginious">Exercise 6.1.18 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-19-inginious">Exercise 6.1.19 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-13-inginious">Exercise 6.1.13 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-14-inginious">Exercise 6.1.14 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-15-inginious">Exercise 6.1.15 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-16-inginious">Exercise 6.1.16 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-17-inginious">Exercise 6.1.17 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-18-inginious">Exercise 6.1.18 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-6-1-19-inginious">Exercise 6.1.19 (INGInious)</a></li>
 </ul>
 </li>
 </ul>

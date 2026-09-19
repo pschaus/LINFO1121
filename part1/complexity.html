@@ -269,14 +269,14 @@ for multivariate functions from other sets.</p>
     f(n) \leq k \cdot g(n) \quad
     \forall n \geq n_0\]</div>
 </div>
-<p>A function <span class="math notranslate nohighlight">\(f(n)\)</span> is said to belong to <span class="math notranslate nohighlight">\(\mathcal{O}(g(n))\)</span> if there is a constant <span class="math notranslate nohighlight">\(k\)</span>,
-such that <span class="math notranslate nohighlight">\(k \cdot g(n)\)</span> is systematically greater than <span class="math notranslate nohighlight">\(f(n)\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> large enough
-(that is, there is a <span class="math notranslate nohighlight">\(n_0\)</span> from which the rule is satisfied).</p>
-<p><span class="math notranslate nohighlight">\(g(n)\)</span> therefore works as an upper bound on the function up to a constant.</p>
+<p>A function <span class="math notranslate nohighlight">\(f(n)\)</span> is said to belong to <span class="math notranslate nohighlight">\(\mathcal{O}(g(n))\)</span> if there is a constant <span class="math notranslate nohighlight">\(k\)</span>
+such that <span class="math notranslate nohighlight">\(k \cdot g(n)\)</span> is systematically greater than or equal to <span class="math notranslate nohighlight">\(f(n)\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> large enough
+(that is, there is an <span class="math notranslate nohighlight">\(n_0\)</span> from which the rule is satisfied).</p>
+<p><span class="math notranslate nohighlight">\(g(n)\)</span> therefore acts as an upper bound on the function up to a constant factor.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(f(n) = 2n^2+3n\)</span>. We have that <span class="math notranslate nohighlight">\(f(n)\in \mathcal{O}(n^2)\)</span> (in other words, we choose <span class="math notranslate nohighlight">\(g(n)=n^2\)</span>).
-Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule is respected from <span class="math notranslate nohighlight">\(n=3\)</span>.</p>
+Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule is respected for all <span class="math notranslate nohighlight">\(n \geq 3\)</span>.</p>
 <p>Similarly, the same function <span class="math notranslate nohighlight">\(f(n) = 2n^2+3n\)</span> belongs to other sets:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(n) \in \mathcal{O}(n^3)\)</span></p></li>
@@ -285,14 +285,14 @@ Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule
 <li><p><span class="math notranslate nohighlight">\(f(n) \in \mathcal{O}(2^n)\)</span></p></li>
 <li><p>…</p></li>
 </ul>
-<p>because all these functions are upper bounds than <span class="math notranslate nohighlight">\(n^2\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is large.</p>
-<p>In the majority of cases, we will want to choose the smallest possible <span class="math notranslate nohighlight">\(g(n)\)</span> function that respects the
-property, since it will give us the most information.</p>
+<p>because all these functions grow at least as fast as <span class="math notranslate nohighlight">\(n^2\)</span> when <span class="math notranslate nohighlight">\(n\)</span> is large.</p>
+<p>In the majority of cases, we want to choose the smallest possible <span class="math notranslate nohighlight">\(g(n)\)</span> function that satisfies the
+property, since it gives us the most information.</p>
 </section>
 </section>
 <section id="notation-big-omega-omega">
 <h2>Notation Big-Omega (<span class="math notranslate nohighlight">\(\Omega\)</span>)<a class="headerlink" href="#notation-big-omega-omega" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>The definition is similar to that of Big-Oh. In bold the differences:</p>
+<p>The definition is similar to that of Big-Oh. The differences are shown in bold:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathbf{\Omega}(g(n)) \quad \Longleftrightarrow \quad
@@ -300,10 +300,10 @@ property, since it will give us the most information.</p>
     \mathbf{k \cdot f(n) \geq g(n)} \quad
     \forall n \geq n_0\]</div>
 </div>
-<p>For large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> is always greater than <span class="math notranslate nohighlight">\(g(n)\)</span> to a constant
-close. Concretely, this means that the function <span class="math notranslate nohighlight">\(g(n)\)</span> places a bound
-lower on the complexity of <span class="math notranslate nohighlight">\(f(n)\)</span>. In other words, <span class="math notranslate nohighlight">\(g(n)\)</span> characterizes the
-« best case » possible for the calculation of f(n) (this is an abuse of language: see below).</p>
+<p>For large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> is always greater than <span class="math notranslate nohighlight">\(g(n)\)</span> up to a constant
+factor. Concretely, this means that the function <span class="math notranslate nohighlight">\(g(n)\)</span> places a lower
+bound on the complexity of <span class="math notranslate nohighlight">\(f(n)\)</span>. In other words, <span class="math notranslate nohighlight">\(g(n)\)</span> characterizes the
+« best case » possible for the calculation of <span class="math notranslate nohighlight">\(f(n)\)</span> (this is an abuse of language: see below).</p>
 <section id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>In the general case, Insert outputs <span class="math notranslate nohighlight">\(\in \Omega(n)\)</span>.</p>
@@ -327,9 +327,9 @@ lower on the complexity of <span class="math notranslate nohighlight">\(f(n)\)</
 </div>
 <section id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Lien permanent vers cette rubrique">#</a></h3>
-<p>It is not possible to find a <span class="math notranslate nohighlight">\(g(n)\)</span> function such as <span class="math notranslate nohighlight">\(f(n) \in \Theta(g(n))\)</span> for any <span class="math notranslate nohighlight">\(f(n) function )\)</span>.
-For example, for Insertion sort, Since it is in <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> but in <span class="math notranslate nohighlight">\(\Omega(n)\)</span>, and that these two bounds are reached,
-it is not possible to say that Insertion is in <span class="math notranslate nohighlight">\(\Theta(g(n))\)</span>.</p>
+<p>It is not always possible to find a function <span class="math notranslate nohighlight">\(g(n)\)</span> such that <span class="math notranslate nohighlight">\(f(n) \in \Theta(g(n))\)</span> for an arbitrary function <span class="math notranslate nohighlight">\(f(n)\)</span>.
+For example, for insertion sort, since its worst case is in <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> while its best case is in <span class="math notranslate nohighlight">\(\Omega(n)\)</span>, and both bounds are tight,
+it is not possible to say that insertion sort is in <span class="math notranslate nohighlight">\(\Theta(g(n))\)</span> in general.</p>
 </section>
 <section id="id2">
 <h3>Example<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">#</a></h3>
@@ -343,14 +343,14 @@ it is not possible to say that Insertion is in <span class="math notranslate noh
 <div class="math notranslate nohighlight">
 \[f(n) \sim g(n) \quad \quad \Longleftrightarrow \quad \lim_{n\rightarrow\infty} \frac{f(n)}{g(n)} = 1\]</div>
 </div>
-<p>This a priori more complicated definition simply allows us to see that
+<p>This seemingly more complicated definition simply allows us to see that
 for large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> and <span class="math notranslate nohighlight">\(g(n)\)</span> behave the same way:
 the intuition is therefore somewhat the same as for <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>. Besides, we also have:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \sim g(n) \quad \quad \Longrightarrow \quad f(n) \in \mathcal{O}(g(n))\]</div>
 </div>
-<p>But the opposite relationship is not true. Indeed, if we take the example of an
+<p>But the converse is not true. Indeed, if we take the example of an
 algorithm with an execution time <span class="math notranslate nohighlight">\(A\)</span> which needs to go through a list twice, we have:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -358,52 +358,51 @@ algorithm with an execution time <span class="math notranslate nohighlight">\(A\
 </div>
 <p>This example shows us the main difference between <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> and <span class="math notranslate nohighlight">\(\sim\)</span>: tilde keeps the
 multiplicative factor.</p>
-<p>There is another difference: tilde provides a <em>reached</em> bound. For example: according to the definition of <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>, we have that</p>
+<p>There is another difference: tilde provides a <em>tight</em> (achieved) bound. For example, according to the definition of <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>, we have:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(n \in \mathcal{O}(n)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n \in \mathcal{O}(n^2)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n \in \mathcal{O}(2^n)\)</span></p></li>
 </ul>
-<p>because <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n^2\)</span> and <span class="math notranslate nohighlight">\(2^n\)</span> all eventually become « bigger » than <span class="math notranslate nohighlight">\(n\)</span>. Now, we have that</p>
+<p>because <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n^2\)</span>, and <span class="math notranslate nohighlight">\(2^n\)</span> all eventually upper-bound <span class="math notranslate nohighlight">\(n\)</span>. However, we have:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(n \sim n\)</span> (of course …)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n \sim n\)</span> (of course)</p></li>
 <li><p><span class="math notranslate nohighlight">\(n \not\sim n^2\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n \not\sim 2^n\)</span></p></li>
 </ul>
-<p>because the limit of the latter two functions tends to 0, not 1!</p>
-<p>There are other more subtle differences, which we will discuss in exercises.</p>
+<p>because the limit of the ratio for the latter two functions tends to 0, not 1!</p>
+<p>There are other more subtle differences, which we will discuss in the exercises.</p>
 </section>
 <section id="best-case-worst-case-average-case">
 <h2>Best case, worst case, average case<a class="headerlink" href="#best-case-worst-case-average-case" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>We too often hear that <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> is the <em>worst case</em> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <em>best case</em>.
 This is <strong>false</strong> in general, depending on how you define your function.</p>
-<p>Let’s say we’re using a Quick Sort algorithm, which we’ll see in Part 2 of the course.
-If you define <span class="math notranslate nohighlight">\(f(n)\)</span> as « the number of comparison operations to perform for an array of size n », then you have:</p>
+<p>Let’s say we are analyzing the QuickSort algorithm, which we will see in Part 2 of the course.
+If you define <span class="math notranslate nohighlight">\(f(n)\)</span> as « the number of comparison operations performed on an array of size <span class="math notranslate nohighlight">\(n\)</span> », then you have:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f(n) \sim n^2\)</span> et <span class="math notranslate nohighlight">\(f(n) \in \mathcal{O}(n^2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(n) \sim n^2\)</span> and <span class="math notranslate nohighlight">\(f(n) \in \mathcal{O}(n^2)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(f(n) \in \Omega(n\log_2 n)\)</span></p></li>
 </ul>
-<p>If you now define <span class="math notranslate nohighlight">\(g(n)\)</span> as « the <strong>average</strong> (expectation) number of comparison operations to perform
-for an array of size n, <strong>when selecting arrays uniformly</strong> », you get:</p>
+<p>If you now define <span class="math notranslate nohighlight">\(g(n)\)</span> as « the <strong>expected</strong> number of comparison operations performed
+on an array of size <span class="math notranslate nohighlight">\(n\)</span>, <strong>assuming arrays are selected uniformly at random</strong> », you get:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(g(n) \sim n\log_2 n\)</span> et <span class="math notranslate nohighlight">\(g(n) \in \mathcal{O}(n\log_2 n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g(n) \sim n\log_2 n\)</span> and <span class="math notranslate nohighlight">\(g(n) \in \mathcal{O}(n\log_2 n)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g(n) \in \Omega(n\log_2 n)\)</span></p></li>
-<li><p>et donc <span class="math notranslate nohighlight">\(g(n) \in \Theta(n\log_2 n)\)</span></p></li>
+<li><p>and therefore <span class="math notranslate nohighlight">\(g(n) \in \Theta(n\log_2 n)\)</span></p></li>
 </ul>
-<p>By a (slight) abuse of language, we say that the « average case » of Quick Sort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.
-But the general case is not!</p>
+<p>By a (slight) abuse of language, we say that the « average case » of QuickSort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.
+However, the general case is not!</p>
 </section>
-<section id="amortized-comlexity">
-<h2>Amortized Comlexity<a class="headerlink" href="#amortized-comlexity" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Another useful type of complexity is that which counts the average complexity for <span class="math notranslate nohighlight">\(m\)</span> operations.
-This complexity is called the <em>amortized complexity</em>.
+<section id="amortized-complexity">
+<h2>Amortized Complexity<a class="headerlink" href="#amortized-complexity" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Another useful measure of complexity is that which counts the average cost per operation over a sequence of <span class="math notranslate nohighlight">\(m\)</span> operations.
+This is called <em>amortized complexity</em>.
 For example, an <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>
-in java is implemented with an array that doubles its size as soon as its capacity is reached.
-The doubling of size operation is done in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the current size of the array
-Inserting <span class="math notranslate nohighlight">\(n+1\)</span> operations with the <em>add(E e)</em> method when the array has a current size of <span class="math notranslate nohighlight">\(n\)</span>
-will cost on average <span class="math notranslate nohighlight">\(\mathcal{O}(1)*n+\mathcal{O}(n)/(n+1)=\mathcal{O}(1)\)</span>.</p>
-<p>Warning: the complexity of the method <em>add(E e)</em> in isolation is well <span class="math notranslate nohighlight">\(\Omega(1)\)</span> and <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>
-where <span class="math notranslate nohighlight">\(n\)</span> is the number of elements in the ArrayList.</p>
+in Java is implemented with an array that doubles its capacity as soon as it is full.
+The resizing operation takes <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the current size of the array.
+Performing <span class="math notranslate nohighlight">\(n+1\)</span> operations with the <em>add(E e)</em> method starting from an empty array
+will cost on average <span class="math notranslate nohighlight">\((\mathcal{O}(1)\cdot n + \mathcal{O}(n))/(n+1) = \mathcal{O}(1)\)</span>.</p>
+<p>Warning: the worst-case complexity of an individual call to <em>add(E e)</em> is indeed <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>, while its best case is <span class="math notranslate nohighlight">\(\Omega(1)\)</span>.</p>
 </section>
 <section id="frequent-complexities">
 <h2>Frequent complexities<a class="headerlink" href="#frequent-complexities" title="Lien permanent vers cette rubrique">#</a></h2>
@@ -415,14 +414,14 @@ where <span class="math notranslate nohighlight">\(n\)</span> is the number of e
 <col style="width: 49%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Classe</p></th>
-<th class="head"><p>Nom</p></th>
-<th class="head"><p>Exemple</p></th>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Example</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(1)\)</span></p></td>
-<td><p>Constante</p></td>
+<td><p>Constant</p></td>
 <td><p>Find min in sorted array</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(\log_2{n})\)</span></p></td>
@@ -443,7 +442,7 @@ where <span class="math notranslate nohighlight">\(n\)</span> is the number of e
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n^c)\)</span></p></td>
 <td><p>Polynomial</p></td>
-<td><p>Magorith of algorithms in this course</p></td>
+<td><p>Majority of algorithms in this course</p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(c^n)\)</span></p></td>
 <td><p>Exponential</p></td>
@@ -451,7 +450,7 @@ where <span class="math notranslate nohighlight">\(n\)</span> is the number of e
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{O}(n!)\)</span></p></td>
 <td><p>Factorial</p></td>
-<td><p>Brute force Solving of the TSP (all permutations)</p></td>
+<td><p>Brute-force solving of the TSP (all permutations)</p></td>
 </tr>
 </tbody>
 </table>
@@ -535,7 +534,7 @@ where <span class="math notranslate nohighlight">\(n\)</span> is the number of e
 </li>
 <li><a class="reference internal" href="#notation-tilde-mathcal-sim">Notation Tilde (<span class="math notranslate nohighlight">\(\mathcal{\sim}\)</span>)</a></li>
 <li><a class="reference internal" href="#best-case-worst-case-average-case">Best case, worst case, average case</a></li>
-<li><a class="reference internal" href="#amortized-comlexity">Amortized Comlexity</a></li>
+<li><a class="reference internal" href="#amortized-complexity">Amortized Complexity</a></li>
 <li><a class="reference internal" href="#frequent-complexities">Frequent complexities</a></li>
 </ul>
 </li>

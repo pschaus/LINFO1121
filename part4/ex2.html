@@ -264,94 +264,90 @@
 </div>
 <section id="exercise-4-2-1-hash-of-long-and-double">
 <h2>Exercise 4.2.1 (Hash of Long and Double)<a class="headerlink" href="#exercise-4-2-1-hash-of-long-and-double" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Here is the formula used by Java to calculate a hash function
-on doubles (bits is a 64 bit array represented as a long):</p>
+<p>Here is the formula used by Java to calculate the hash code
+of a <code class="docutils literal notranslate"><span class="pre">double</span></code> (where <code class="docutils literal notranslate"><span class="pre">bits</span></code> is a 64-bit value represented as a <code class="docutils literal notranslate"><span class="pre">long</span></code>):</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">bits</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Why not just use <code class="docutils literal notranslate"><span class="pre">(int)</span> <span class="pre">bits</span></code> (casting from long to int)? Hint: The reference book suggests that a good hash function should use all bits for its calculation. Why?</p></li>
-<li><p>A double in Java is represented in 64 bits as <span class="math notranslate nohighlight">\((-1)^s \times m \times 2^{(e - 1023)}\)</span>. The first bit <span class="math notranslate nohighlight">\(s\)</span> is the sign, the next 11 bits represent the exponent in binary form and the last 52 bits represent the mantissa (decimal part) in binary form.  Do a positive decimal number and its opposite get different hash functions?</p></li>
+<li><p>Why not simply use <code class="docutils literal notranslate"><span class="pre">(int)</span> <span class="pre">bits</span></code> (casting from <code class="docutils literal notranslate"><span class="pre">long</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code>)? Hint: The textbook suggests that a good hash function should use all bits in its calculation. Why?</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">double</span></code> in Java is represented in 64 bits as <span class="math notranslate nohighlight">\((-1)^s \times m \times 2^{(e - 1023)}\)</span>. The first bit <span class="math notranslate nohighlight">\(s\)</span> is the sign bit, the next 11 bits represent the exponent in binary, and the last 52 bits represent the mantissa (significand). Do a positive floating-point number and its opposite receive different hash codes?</p></li>
 </ul>
 </section>
 <section id="exercise-4-2-2-hash-and-casting-of-integers">
 <h2>Exercise 4.2.2 (Hash and casting of integers)<a class="headerlink" href="#exercise-4-2-2-hash-and-casting-of-integers" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
-<li><p>Is the hash function of a 32-bit integer the same as the hash function of the same integer that would be double-cast?</p></li>
-<li><p>Is the hash function of a 32-bit integer the same as the hash function of the same integer that would be cast as a long?  Hint: <cite>Long.toBinaryString( Double.doubleToRawLongBits(a))</cite> displays the array of bits used to represent a double.</p></li>
+<li><p>Is the hash code of a 32-bit integer the same as the hash code of the same integer cast to a <code class="docutils literal notranslate"><span class="pre">double</span></code>?</p></li>
+<li><p>Is the hash code of a 32-bit integer the same as the hash code of the same integer cast to a <code class="docutils literal notranslate"><span class="pre">long</span></code>? Hint: <code class="docutils literal notranslate"><span class="pre">Long.toBinaryString(Double.doubleToRawLongBits(a))</span></code> displays the bits used to represent a <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p></li>
 </ul>
 </section>
-<section id="exercise-4-2-3-hash-of-string-the-choice-of-m-and-r-constants">
-<h2>Exercise 4.2.3 (Hash of String: the choice of M and R constants)<a class="headerlink" href="#exercise-4-2-3-hash-of-string-the-choice-of-m-and-r-constants" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>The hash function for a given string as presented in the book p460 is as follows:</p>
+<section id="exercise-4-2-3-string-hashing-choice-of-m-and-r-constants">
+<h2>Exercise 4.2.3 (String Hashing: Choice of M and R Constants)<a class="headerlink" href="#exercise-4-2-3-string-hashing-choice-of-m-and-r-constants" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>The hash function for a given string as presented on page 460 of the book is as follows:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="w">    </span><span class="n">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">R</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">M</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>In the book’s implementation, <span class="math notranslate nohighlight">\(M\)</span> (the size of the hash table) is a power of two.
-The suggested value for <span class="math notranslate nohighlight">\(R\)</span> is <em>a small prime such that 31 so that the bits of all characters play a role.</em></p>
+The suggested value for <span class="math notranslate nohighlight">\(R\)</span> is <em>a small prime such as 31 so that the bits of all characters play a role.</em></p>
 <ul class="simple">
 <li><p>Suppose that <span class="math notranslate nohighlight">\(R\)</span> is a multiple of <span class="math notranslate nohighlight">\(M\)</span>. What would happen in the calculation?</p></li>
 <li><p>Suppose that <span class="math notranslate nohighlight">\(R\)</span> is an even number. What would happen?</p></li>
 </ul>
-<p>In both cases, how many entries in the string will actually determine the hash code? What are the risks in terms of collision? Can load factor control solve the problem? Explain why using 31 is a good choice for array sizes that are powers of two? Would it also be a good choice for an array size that starts at 31 and is multiplied by two each time it needs to resize?</p>
+<p>In both cases, how many characters in the string will actually determine the hash code? What are the risks in terms of collisions? Can controlling the load factor solve this problem? Explain why using 31 is a good choice for array sizes that are powers of two. Would it also be a good choice for an array size that starts at 31 and is multiplied by two each time it is resized?</p>
 <ul>
-<li><p>In the book implementation, <span class="math notranslate nohighlight">\(M\)</span> (the size of the hash table) is a power of two, initialized to 16. Suppose that at some point <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(2^8=256\)</span>. Then two integer keys are added to a hash table implemented with separate chaining: respectively <span class="math notranslate nohighlight">\(2560\)</span> and <span class="math notranslate nohighlight">\(3072\)</span> (it is assumed that these additions do not cause any resizing of the table). As you know, the hash code of an integer key (int) is the number itself.
-Will adding these two values cause a collision between them in the table? If so why?</p>
-<p>If so can you suggest a third value that will also collide?</p>
-<p>If there is a collision, can it disappear the next time the table is resized as in the book implementation?</p>
+<li><p>In the book’s implementation, <span class="math notranslate nohighlight">\(M\)</span> (the size of the hash table) is a power of two, initialized to 16. Suppose that at some point <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(2^8 = 256\)</span>. Then two integer keys are added to a hash table implemented with separate chaining: <span class="math notranslate nohighlight">\(2560\)</span> and <span class="math notranslate nohighlight">\(3072\)</span> respectively (assume that these additions do not cause a resize). As you know, the hash code of an integer key (<code class="docutils literal notranslate"><span class="pre">int</span></code>) in Java is the integer itself.
+Will adding these two values cause a collision between them in the table? If so, why?</p>
+<p>If so, can you suggest a third value that will also collide?</p>
+<p>If there is a collision, can it disappear the next time the table is resized using the book’s resizing strategy?</p>
 </li>
-<li><p>What do you suggest to avoid this problem? What is the <span class="math notranslate nohighlight">\(M\)</span> initialization and resizing policy used in <code class="docutils literal notranslate"><span class="pre">java.util.HashMap</span></code>? Does this solve the problem on our example?</p></li>
+<li><p>What do you suggest to avoid this problem? What is the initialization and resizing policy for <span class="math notranslate nohighlight">\(M\)</span> used in <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> / <code class="docutils literal notranslate"><span class="pre">java.util.HashMap</span></code>? Does this solve the problem in our example?</p></li>
 </ul>
 </section>
-<section id="exercise-4-2-4-design-of-hash-function-for-vehicules">
-<h2>Exercise 4.2.4 (Design of Hash function for Vehicules)<a class="headerlink" href="#exercise-4-2-4-design-of-hash-function-for-vehicules" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="exercise-4-2-4-design-of-a-hash-function-for-vehicles">
+<h2>Exercise 4.2.4 (Design of a Hash Function for Vehicles)<a class="headerlink" href="#exercise-4-2-4-design-of-a-hash-function-for-vehicles" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
-<li><p>What would you suggest as a hash function for identifying vehicles that are strings of numbers and letters of the form: « 9X9XX99X9XX999999 » where a 9 represents a number and an « X » represents a letter from A to Z.</p></li>
-<li><p>Does your hash function have the property that for a hypothetical array size N of <span class="math notranslate nohighlight">\(10^{11} \cdot 26^6\)</span> there is never a collision?</p></li>
+<li><p>What would you suggest as a hash function for vehicle identifiers that are strings of numbers and letters of the form: <code class="docutils literal notranslate"><span class="pre">&quot;9X9XX99X9XX999999&quot;</span></code>, where each <code class="docutils literal notranslate"><span class="pre">9</span></code> represents a digit (0–9) and each <code class="docutils literal notranslate"><span class="pre">X</span></code> represents an uppercase letter (A–Z)?</p></li>
+<li><p>Does your hash function have the property that for a hypothetical array size <span class="math notranslate nohighlight">\(N\)</span> of <span class="math notranslate nohighlight">\(10^{11} \cdot 26^6\)</span> there will never be any collision?</p></li>
 </ul>
 </section>
-<section id="exercise-4-2-5-design-of-hash-function-citizens">
-<h2>Exercise 4.2.5 (Design of Hash function: Citizens)<a class="headerlink" href="#exercise-4-2-5-design-of-hash-function-citizens" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Let’s imagine that we want to build a directory of Belgian citizens
-and we want to be able to access each citizen by his identity card number
-(12 digits).
-We can then consider this number as the unique key identifying
-each citizen and use this key as an index in an array in Java.
-To each index would correspond a reference to an instance of the class
-class whose fields constitute the information that we want to store for each citizen.
-What is the time complexity of the following operations?</p>
+<section id="exercise-4-2-5-design-of-a-hash-function-citizens">
+<h2>Exercise 4.2.5 (Design of a Hash Function: Citizens)<a class="headerlink" href="#exercise-4-2-5-design-of-a-hash-function-citizens" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Suppose we want to build a directory of Belgian citizens
+where each citizen can be accessed by their 12-digit national identity card number.
+We can consider this number as the unique key identifying each citizen
+and use it directly as an index in a Java array.
+Each array index would hold a reference to an instance of a class
+whose fields contain the citizen’s personal information.</p>
+<p>What is the time complexity of the following operations?</p>
 <ul class="simple">
-<li><p>search for the information relative to a citizen from his identity card number.
-identity card number.</p></li>
-<li><p>add a new citizen.</p></li>
+<li><p>Searching for a citizen’s information using their identity card number.</p></li>
+<li><p>Adding a new citizen.</p></li>
 </ul>
-<p>Isn’t this implementation of a dictionary even better than a hash table?
-Can we have a collision problem in this case? Justify.</p>
+<p>Is this implementation of a dictionary not even better than a hash table?
+Can a collision occur in this design? Justify your answer.</p>
 </section>
-<section id="exercise-4-2-6-rabin-karp-the-return-of-revenge">
-<h2>Exercise 4.2.6 Rabin-Karp, the return of revenge<a class="headerlink" href="#exercise-4-2-6-rabin-karp-the-return-of-revenge" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Check that you have obtained a solution in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>, and not <span class="math notranslate nohighlight">\(\mathcal{O}(kn)\)</span> (not counting the initial hashing of the keywords to be searched, which is in <span class="math notranslate nohighlight">\(\mathcal{O}(km)\)</span>), and
-not counting the initial hashing of the keywords to be searched which is in <span class="math notranslate nohighlight">\(\mathcal{O}(km)\)</span>),
-for last week’s Exercise 4.1.11.</p>
+<section id="exercise-4-2-6-rabin-karp-revisited">
+<h2>Exercise 4.2.6 (Rabin-Karp Revisited)<a class="headerlink" href="#exercise-4-2-6-rabin-karp-revisited" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Check that you have obtained a solution in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> and not <span class="math notranslate nohighlight">\(\mathcal{O}(kn)\)</span> (not counting the initial hashing of the keywords to be searched, which is in <span class="math notranslate nohighlight">\(\mathcal{O}(km)\)</span>) for last week’s Exercise 4.1.11.</p>
 </section>
 <section id="exercise-4-2-7-inginious-linear-probing">
-<h2>Exercise 4.2.7 (Inginious: Linear Probing)<a class="headerlink" href="#exercise-4-2-7-inginious-linear-probing" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement a <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST">Linear Probing Hashtable</a></p>
+<h2>Exercise 4.2.7 (INGInious: Linear Probing)<a class="headerlink" href="#exercise-4-2-7-inginious-linear-probing" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement a <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_LinearProbingHashST">linear probing hash table</a>.</p>
 </section>
 <section id="exercise-4-2-8-inginious-tries-and-autocompletion">
-<h2>Exercise 4.2.8 (Inginious: Tries and Autocompletion)<a class="headerlink" href="#exercise-4-2-8-inginious-tries-and-autocompletion" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement an efficient auto-completionalgorithm using a trie data structure: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_AutoCompleter">AutoCompletor</a></p>
+<h2>Exercise 4.2.8 (INGInious: Tries and Autocompletion)<a class="headerlink" href="#exercise-4-2-8-inginious-tries-and-autocompletion" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement an efficient auto-completion algorithm using a trie data structure: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_AutoCompleter">AutoCompleter</a></p>
 </section>
-<section id="exercise-4-2-9-inginious-an-funny-exercise-using-hashtables">
-<h2>Exercise 4.2.9 (Inginious: An funny exercise using HashTables)<a class="headerlink" href="#exercise-4-2-9-inginious-an-funny-exercise-using-hashtables" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>This is the question 21 of the <a class="reference external" href="https://adventofcode.com">advent of code 2022</a>.
-It can be efficently solved using a hashtables in combination with a linked tree data-structure: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys">Monkeys</a></p>
+<section id="exercise-4-2-9-inginious-a-fun-exercise-using-hash-tables">
+<h2>Exercise 4.2.9 (INGInious: A Fun Exercise Using Hash Tables)<a class="headerlink" href="#exercise-4-2-9-inginious-a-fun-exercise-using-hash-tables" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>This is problem 21 of the <a class="reference external" href="https://adventofcode.com">Advent of Code 2022</a>.
+It can be efficiently solved using a hash table in combination with a linked tree data structure: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Monkeys">Monkeys</a></p>
 </section>
 <section id="exercise-4-2-10-inginious-bitset">
-<h2>Exercise 4.2.10 (Inginious: Bitset)<a class="headerlink" href="#exercise-4-2-10-inginious-bitset" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement an efficient alternative to using a Hashset when you need to store a dense set of integers : <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset">Bitset</a></p>
+<h2>Exercise 4.2.10 (INGInious: Bitset)<a class="headerlink" href="#exercise-4-2-10-inginious-bitset" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement an efficient alternative to a <code class="docutils literal notranslate"><span class="pre">HashSet</span></code> when you need to store a dense set of integers: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Bitset">Bitset</a></p>
 </section>
 </section>
 
@@ -418,14 +414,14 @@ It can be efficently solved using a hashtables in combination with a linked tree
 <li><a class="reference internal" href="#">Exercises B</a><ul>
 <li><a class="reference internal" href="#exercise-4-2-1-hash-of-long-and-double">Exercise 4.2.1 (Hash of Long and Double)</a></li>
 <li><a class="reference internal" href="#exercise-4-2-2-hash-and-casting-of-integers">Exercise 4.2.2 (Hash and casting of integers)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-3-hash-of-string-the-choice-of-m-and-r-constants">Exercise 4.2.3 (Hash of String: the choice of M and R constants)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-4-design-of-hash-function-for-vehicules">Exercise 4.2.4 (Design of Hash function for Vehicules)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-5-design-of-hash-function-citizens">Exercise 4.2.5 (Design of Hash function: Citizens)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-6-rabin-karp-the-return-of-revenge">Exercise 4.2.6 Rabin-Karp, the return of revenge</a></li>
-<li><a class="reference internal" href="#exercise-4-2-7-inginious-linear-probing">Exercise 4.2.7 (Inginious: Linear Probing)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-8-inginious-tries-and-autocompletion">Exercise 4.2.8 (Inginious: Tries and Autocompletion)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-9-inginious-an-funny-exercise-using-hashtables">Exercise 4.2.9 (Inginious: An funny exercise using HashTables)</a></li>
-<li><a class="reference internal" href="#exercise-4-2-10-inginious-bitset">Exercise 4.2.10 (Inginious: Bitset)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-3-string-hashing-choice-of-m-and-r-constants">Exercise 4.2.3 (String Hashing: Choice of M and R Constants)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-4-design-of-a-hash-function-for-vehicles">Exercise 4.2.4 (Design of a Hash Function for Vehicles)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-5-design-of-a-hash-function-citizens">Exercise 4.2.5 (Design of a Hash Function: Citizens)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-6-rabin-karp-revisited">Exercise 4.2.6 (Rabin-Karp Revisited)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-7-inginious-linear-probing">Exercise 4.2.7 (INGInious: Linear Probing)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-8-inginious-tries-and-autocompletion">Exercise 4.2.8 (INGInious: Tries and Autocompletion)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-9-inginious-a-fun-exercise-using-hash-tables">Exercise 4.2.9 (INGInious: A Fun Exercise Using Hash Tables)</a></li>
+<li><a class="reference internal" href="#exercise-4-2-10-inginious-bitset">Exercise 4.2.10 (INGInious: Bitset)</a></li>
 </ul>
 </li>
 </ul>

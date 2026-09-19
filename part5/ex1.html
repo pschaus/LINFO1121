@@ -264,14 +264,14 @@
 </div>
 <section id="exercise-5-1-1">
 <h2>Exercise 5.1.1<a class="headerlink" href="#exercise-5-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 6 union operations on a starting set of 10 items with the quick-find algorithm.
+<p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 6 union operations on an initial set of 10 items using the quick-find algorithm:
 <code class="docutils literal notranslate"><span class="pre">3-8,</span> <span class="pre">1-7,</span> <span class="pre">1-8,</span> <span class="pre">9-4,</span> <span class="pre">6-4,</span> <span class="pre">2-0</span></code>.
 Your answer must be a sequence of 10 integers.
-Reminder: the quick-find convention for the <code class="docutils literal notranslate"><span class="pre">p-q</span></code> union is to change <code class="docutils literal notranslate"><span class="pre">id[p]</span></code> (and possibly other inputs) but not <code class="docutils literal notranslate"><span class="pre">id[q]</span></code>.</p>
+Reminder: the quick-find convention for the union operation <code class="docutils literal notranslate"><span class="pre">p-q</span></code> is to change <code class="docutils literal notranslate"><span class="pre">id[p]</span></code> (and all other entries with value <code class="docutils literal notranslate"><span class="pre">id[p]</span></code>) to <code class="docutils literal notranslate"><span class="pre">id[q]</span></code>.</p>
 </section>
 <section id="exercise-5-1-2">
 <h2>Exercise 5.1.2<a class="headerlink" href="#exercise-5-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Give the array id[] that results from the following sequence of 9 union operations on a set of 10 items using the weighted quick-union algorithm:</p>
+<p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 9 union operations on an initial set of 10 items using the weighted quick-union algorithm:</p>
 <p><code class="docutils literal notranslate"><span class="pre">4-6,</span> <span class="pre">3-6,</span> <span class="pre">8-9,</span> <span class="pre">7-0,</span> <span class="pre">1-2,</span> <span class="pre">8-4,</span> <span class="pre">6-5,</span> <span class="pre">1-7,</span> <span class="pre">6-0.</span></code></p>
 <p>Your answer must be a sequence of 10 integers. Reminder: When merging two trees of the same size, the weighted quick-union algorithm uses the convention
 to point the root of the second tree to the root of the first tree.
@@ -279,8 +279,8 @@ Our algorithm uses union by size (number of nodes) and not union by height, nor 
 </section>
 <section id="exercise-5-1-3">
 <h2>Exercise 5.1.3<a class="headerlink" href="#exercise-5-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Which of the following id[] array(s) could result from applying the weighted quick-union algorithm on a set of 10 items at the beginning?
-Reminder: we use union by size (number of nodes) and not union by height.</p>
+<p>Which of the following <code class="docutils literal notranslate"><span class="pre">id[]</span></code> array(s) could result from applying the weighted quick-union algorithm on an initial set of 10 items?
+Reminder: we use union by size (number of nodes), not union by height.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">8</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">7</span> <span class="pre">6</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">9</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">2</span> <span class="pre">6</span> <span class="pre">6</span> <span class="pre">2</span> <span class="pre">6</span> <span class="pre">6</span> <span class="pre">2</span> <span class="pre">4</span> <span class="pre">2</span></code></p></li>
@@ -291,16 +291,15 @@ Reminder: we use union by size (number of nodes) and not union by height.</p>
 </section>
 <section id="exercise-5-1-4">
 <h2>Exercise 5.1.4<a class="headerlink" href="#exercise-5-1-4" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Give the sequence of keys in the table that results from inserting the sequence of the 3 keys 48, 30 and 84
-in the following heap (oriented to the maximum) of size 10:</p>
-<p><code class="docutils literal notranslate"><span class="pre">97</span> <span class="pre">,</span> <span class="pre">93</span> <span class="pre">,</span> <span class="pre">89</span> <span class="pre">,</span> <span class="pre">83</span> <span class="pre">,</span> <span class="pre">38</span> <span class="pre">,</span> <span class="pre">32</span> <span class="pre">,</span> <span class="pre">40</span> <span class="pre">,</span> <span class="pre">12</span> <span class="pre">,</span> <span class="pre">26</span> <span class="pre">,</span> <span class="pre">24</span></code>.</p>
+<p>Give the sequence of keys in the array that results from inserting the sequence of 3 keys 48, 30, and 84
+into the following max-oriented heap of size 10:</p>
+<p><code class="docutils literal notranslate"><span class="pre">97,</span> <span class="pre">93,</span> <span class="pre">89,</span> <span class="pre">83,</span> <span class="pre">38,</span> <span class="pre">32,</span> <span class="pre">40,</span> <span class="pre">12,</span> <span class="pre">26,</span> <span class="pre">24</span></code>.</p>
 <p>Your answer should be a sequence of 13 integers.</p>
 </section>
 <section id="exercise-5-1-5">
 <h2>Exercise 5.1.5<a class="headerlink" href="#exercise-5-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Give the sequence of keys in the array that results from adding 3 successive deletion operations from the maximum in the following heap (oriented to the maximum)
-of size 10:</p>
-<p><code class="docutils literal notranslate"><span class="pre">98</span> <span class="pre">,</span> <span class="pre">96</span> <span class="pre">,</span> <span class="pre">84</span> <span class="pre">,</span> <span class="pre">34</span> <span class="pre">,</span> <span class="pre">62</span> <span class="pre">,</span> <span class="pre">31</span> <span class="pre">,</span> <span class="pre">72</span> <span class="pre">,</span> <span class="pre">13</span> <span class="pre">,</span> <span class="pre">27</span> <span class="pre">,</span> <span class="pre">33</span></code>.</p>
+<p>Give the sequence of keys in the array that results from performing 3 successive delete-the-maximum operations on the following max-oriented heap of size 10:</p>
+<p><code class="docutils literal notranslate"><span class="pre">98,</span> <span class="pre">96,</span> <span class="pre">84,</span> <span class="pre">34,</span> <span class="pre">62,</span> <span class="pre">31,</span> <span class="pre">72,</span> <span class="pre">13,</span> <span class="pre">27,</span> <span class="pre">33</span></code>.</p>
 <p>Your answer should be a sequence of 7 integers.</p>
 </section>
 <section id="exercise-5-1-6">
@@ -310,33 +309,33 @@ a heap rather than a list?</p>
 </section>
 <section id="exercise-5-1-7">
 <h2>Exercise 5.1.7<a class="headerlink" href="#exercise-5-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Can you find an example of a valid heap T storing 7 distinct elements such that
-an infix traversal of T visists the elements in decreasing order?
-What about an prefix or postfix traversal?</p>
+<p>Can you find an example of a valid heap <span class="math notranslate nohighlight">\(T\)</span> storing 7 distinct elements such that
+an inorder traversal of <span class="math notranslate nohighlight">\(T\)</span> visits the elements in decreasing order?
+What about a preorder or postorder traversal?</p>
 </section>
 <section id="exercise-5-1-8">
 <h2>Exercise 5.1.8<a class="headerlink" href="#exercise-5-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Which of the following statements are true about a priority queue implemented by a heap?
-By default heaps are maximum oriented and use an index base starting at 1.</p>
+<p>Which of the following statements are true for a priority queue implemented as a binary heap?
+Assume heaps are max-oriented and 1-indexed.</p>
 <ul class="simple">
-<li><p>In the worst case, inserting a key into a binary heap containing N keys requires <span class="math notranslate nohighlight">\(\sim \log N\)</span> comparisons.</p></li>
-<li><p>Let <span class="math notranslate nohighlight">\(a[]\)</span> be an array such that <span class="math notranslate nohighlight">\(a[1] &gt; a[2] &gt; a[N]\)</span> (and <span class="math notranslate nohighlight">\(a[0]\)</span> is empty). Then <span class="math notranslate nohighlight">\(a[]\)</span> satisfies the properties of a binary heap.</p></li>
-<li><p>The inernal array of a binary (max-)heap is always an array sorted in non increasing order.</p></li>
-<li><p>Given a binary heap of N distinct keys, deleting the maximum key and then inserting it directly leaves the array of the heap unchanged (we ignore the possible resizing of the array).</p></li>
+<li><p>In the worst case, inserting a key into a binary heap containing <span class="math notranslate nohighlight">\(N\)</span> keys requires <span class="math notranslate nohighlight">\(\sim \log N\)</span> comparisons.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(a[]\)</span> be an array such that <span class="math notranslate nohighlight">\(a[1] &gt; a[2] &gt; \dots &gt; a[N]\)</span> (and <span class="math notranslate nohighlight">\(a[0]\)</span> is empty). Then <span class="math notranslate nohighlight">\(a[]\)</span> satisfies the properties of a binary heap.</p></li>
+<li><p>The internal array of a binary (max-)heap is always sorted in non-increasing order.</p></li>
+<li><p>Given a binary heap of <span class="math notranslate nohighlight">\(N\)</span> distinct keys, deleting the maximum key and then immediately re-inserting it leaves the heap array unchanged (ignoring any array resizing).</p></li>
 </ul>
 </section>
 <section id="exercise-5-1-9">
 <h2>Exercise 5.1.9<a class="headerlink" href="#exercise-5-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Prove that the bottom-up « sink » construction of a heap for the Heapsort (p323) is done in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>.
-Hint: count the number of nodes at the <span class="math notranslate nohighlight">\(h\)</span> level of the heap.
-What is the complexity of a sink at this level. Do the sum for all levels. Useful formula: <span class="math notranslate nohighlight">\(\sum_{k=0}^\infty k x^k = x/(1-x)^2\)</span> for
+<p>Prove that the bottom-up « sink-based » heap construction for heapsort (page 323) runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time.
+Hint: Count the number of nodes at level <span class="math notranslate nohighlight">\(h\)</span> of the heap.
+What is the cost of a <code class="docutils literal notranslate"><span class="pre">sink</span></code> operation at this level? Sum the costs over all levels. Useful formula: <span class="math notranslate nohighlight">\(\sum_{k=0}^\infty k x^k = \frac{x}{(1-x)^2}\)</span> for
 <span class="math notranslate nohighlight">\(|x| &lt; 1\)</span>.</p>
 </section>
 <section id="exercise-5-1-10">
 <h2>Exercise 5.1.10<a class="headerlink" href="#exercise-5-1-10" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Is the use of a priority queue essential to be able to build a Huffman code?
-Can you imagine another solution using a sorting algorithm?
-Would the computational complexity be better than the original algorithm? Why or why not?</p>
+<p>Is using a priority queue essential to build a Huffman code?
+Can you design an alternative solution that uses a sorting algorithm?
+Would its time complexity be better than the original algorithm? Why or why not?</p>
 </section>
 <section id="exercise-5-1-11">
 <h2>Exercise 5.1.11<a class="headerlink" href="#exercise-5-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
@@ -346,23 +345,23 @@ Would the computational complexity be better than the original algorithm? Why or
 </ul>
 </section>
 <section id="exercise-5-1-12-inginious-heap">
-<h2>Exercise 5.1.12 (Inginious, heap)<a class="headerlink" href="#exercise-5-1-12-inginious-heap" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap">Push of a binary Heap</a></p>
+<h2>Exercise 5.1.12 (INGInious: Heap)<a class="headerlink" href="#exercise-5-1-12-inginious-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap">push operation of a binary heap</a>.</p>
 </section>
 <section id="exercise-5-1-13-inginious-global-warming">
-<h2>Exercise 5.1.13 (Inginious, Global Warming)<a class="headerlink" href="#exercise-5-1-13-inginious-global-warming" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement the Global Warming to compute the number of islands using union-find <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">GlobalWarmming</a></p>
+<h2>Exercise 5.1.13 (INGInious: Global Warming)<a class="headerlink" href="#exercise-5-1-13-inginious-global-warming" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement the Global Warming exercise to compute the number of islands using union-find: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">GlobalWarming</a></p>
 </section>
 <section id="exercise-5-1-14-inginious-huffman">
-<h2>Exercise 5.1.14 (Inginious, Huffman)<a class="headerlink" href="#exercise-5-1-14-inginious-huffman" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement the Huffman tree reconstruction <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman">Huffman</a></p>
+<h2>Exercise 5.1.14 (INGInious: Huffman)<a class="headerlink" href="#exercise-5-1-14-inginious-huffman" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement the Huffman tree reconstruction: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman">Huffman</a></p>
 </section>
-<section id="exercise-5-1-15-inginious-manual-exercise-on-unionfind">
-<h2>Exercise 5.1.15 (Inginious, manual exercise on UnionFind)<a class="headerlink" href="#exercise-5-1-15-inginious-manual-exercise-on-unionfind" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind">UnionFind</a></p>
+<section id="exercise-5-1-15-inginious-manual-exercise-on-union-find">
+<h2>Exercise 5.1.15 (INGInious: Manual Exercise on Union-Find)<a class="headerlink" href="#exercise-5-1-15-inginious-manual-exercise-on-union-find" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind">Union-Find</a></p>
 </section>
 <section id="exercise-5-1-16-inginious-manual-exercise-on-heaps">
-<h2>Exercise 5.1.16 (Inginious, manual exercise on Heaps)<a class="headerlink" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 5.1.16 (INGInious: Manual Exercise on Heaps)<a class="headerlink" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5Heap">Heaps</a></p>
 </section>
 </section>
@@ -439,11 +438,11 @@ Would the computational complexity be better than the original algorithm? Why or
 <li><a class="reference internal" href="#exercise-5-1-9">Exercise 5.1.9</a></li>
 <li><a class="reference internal" href="#exercise-5-1-10">Exercise 5.1.10</a></li>
 <li><a class="reference internal" href="#exercise-5-1-11">Exercise 5.1.11</a></li>
-<li><a class="reference internal" href="#exercise-5-1-12-inginious-heap">Exercise 5.1.12 (Inginious, heap)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-13-inginious-global-warming">Exercise 5.1.13 (Inginious, Global Warming)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-14-inginious-huffman">Exercise 5.1.14 (Inginious, Huffman)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-15-inginious-manual-exercise-on-unionfind">Exercise 5.1.15 (Inginious, manual exercise on UnionFind)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps">Exercise 5.1.16 (Inginious, manual exercise on Heaps)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-12-inginious-heap">Exercise 5.1.12 (INGInious: Heap)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-13-inginious-global-warming">Exercise 5.1.13 (INGInious: Global Warming)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-14-inginious-huffman">Exercise 5.1.14 (INGInious: Huffman)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-15-inginious-manual-exercise-on-union-find">Exercise 5.1.15 (INGInious: Manual Exercise on Union-Find)</a></li>
+<li><a class="reference internal" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps">Exercise 5.1.16 (INGInious: Manual Exercise on Heaps)</a></li>
 </ul>
 </li>
 </ul>

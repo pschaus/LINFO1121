@@ -264,37 +264,36 @@
 </div>
 <section id="exercise-1-1-1">
 <h2>Exercise 1.1.1<a class="headerlink" href="#exercise-1-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Define what an abstract data type (ADT) is. In java, is it better to describe an ADT by a
+<p>Define what an abstract data type (ADT) is. In Java, is it better to describe an ADT by a
 class or an interface? Why?</p>
 </section>
 <section id="exercise-1-1-2">
 <h2>Exercise 1.1.2<a class="headerlink" href="#exercise-1-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How to implement a <em>stack</em> by a simply linked list where the operations
-and <cite>pop</cite> operations are done at <strong>end of list</strong>? Is this solution efficient? Argue.</p>
+<p>How would you implement a <em>stack</em> using a singly linked list where the <cite>push</cite> and <cite>pop</cite> operations are done at the <strong>end of the list</strong>? Is this solution efficient? Justify your answer.</p>
 </section>
 <section id="exercise-1-1-3">
 <h2>Exercise 1.1.3<a class="headerlink" href="#exercise-1-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>What are the possible implementations for a stack? By consulting the Java API documentation, describe
 the implementation of a stack by the class <cite>java.util.Stack</cite>. Go to the source code of the implementation
-<cite>java.util.Stack</cite> (crtl+B from IntelliJ).</p>
+<cite>java.util.Stack</cite> (Ctrl+B from IntelliJ).</p>
 <p>Why do you think Java developers chose this implementation
 (hint: argue about memory and garbage collection)?</p>
 </section>
 <section id="exercise-1-1-4-inginious-implement-a-stack-with-two-queues">
-<h2>Exercise 1.1.4 (Inginious: Implement a stack with two queues)<a class="headerlink" href="#exercise-1-1-4-inginious-implement-a-stack-with-two-queues" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 1.1.4 (INGInious: Implement a stack with two queues)<a class="headerlink" href="#exercise-1-1-4-inginious-implement-a-stack-with-two-queues" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>How do you implement the abstract data type <em>stack</em> using two <em>queues</em>?
 In particular, describe how the <cite>push</cite> and <cite>pop</cite> methods work in this case.</p>
-<p>As an example, specify the state of each of the two queues after stacking the integers <cite>1 2 3</cite> from an initially empty stack.
+<p>As an example, specify the state of each of the two queues after pushing the integers <cite>1 2 3</cite> onto an initially empty stack.
 Describe what happens next when the <cite>pop</cite> operation is performed.</p>
-<p>What is the time complexity of these methods if we assume that each <cite>queue</cite> and <cite>dequeue</cite> operation
-operations are executed in constant time?</p>
+<p>What is the time complexity of these methods if we assume that each <cite>enqueue</cite> and <cite>dequeue</cite>
+operation is executed in constant time?</p>
 <p>Is this implementation of a stack efficient (for <span class="math notranslate nohighlight">\(n\)</span> operations)
 compared to the other implementations presented in the reference book?</p>
-<p>Once you have imagined your solution on paper, you can solve the corresponding Inginious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues">StackWithTwoQueues</a> .</p>
+<p>Once you have imagined your solution on paper, you can solve the corresponding INGInious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues">StackWithTwoQueues</a>.</p>
 </section>
 <section id="exercise-1-1-5">
 <h2>Exercise 1.1.5<a class="headerlink" href="#exercise-1-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What do you think about these three different ways of iterating over the elements of a <cite>java.util.LinkedList</cite>? Are they equivalent? Use a time-complecity argument.</p>
+<p>What do you think about these three different ways of iterating over the elements of a <cite>java.util.LinkedList</cite>? Are they equivalent? Use a time-complexity argument.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
 <span class="c1">// assume I insert n elements in the list here</span>
@@ -318,17 +317,17 @@ compared to the other implementations presented in the reference book?</p>
 </section>
 <section id="exercise-1-1-6">
 <h2>Exercise 1.1.6<a class="headerlink" href="#exercise-1-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>The <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation is used in the reference book for the analysis of the calculation times of
-algorithms. How this notation differs or resembles the more classically used notations <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
-(big Oh), <span class="math notranslate nohighlight">\(\mathcal{\Omega}\)</span> (big Omega) and <span class="math notranslate nohighlight">\(\mathcal{\Theta}\)</span> (big Theta)?</p>
+<p>The <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation is used in the reference book for the analysis of the running times of
+algorithms. How does this notation differ from or resemble the more commonly used notations <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
+(big Oh), <span class="math notranslate nohighlight">\(\mathcal{\Omega}\)</span> (big Omega), and <span class="math notranslate nohighlight">\(\mathcal{\Theta}\)</span> (big Theta)?</p>
 <p>Explain precisely the links and similarities between them.
-What do you see as the advantage of using <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation rather than <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
+What do you see as the advantage of using the <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation rather than <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
 when possible?</p>
 </section>
 <section id="exercise-1-1-7">
 <h2>Exercise 1.1.7<a class="headerlink" href="#exercise-1-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Explain how we can extract the characterization <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) from the implementation of an algorithm to
-using the <em>Doubling ratio</em> test.</p>
+<p>Explain how we can extract the <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) characterization from the implementation of an algorithm
+using the <em>doubling ratio</em> test.</p>
 <ul class="simple">
 <li><p>How does this test work?</p></li>
 <li><p>What are the limitations and advantages of this test?</p></li>
@@ -377,18 +376,18 @@ input size <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <section id="exercise-1-1-8">
 <h2>Exercise 1.1.8<a class="headerlink" href="#exercise-1-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
-<li><p>What do heap and stack mean when talking about the execution of a program in a programming language?</p></li>
-<li><p>What do the -Xmx, -Xms parameters mean that we can pass to the JVM for the execution of a bytecode?</p></li>
+<li><p>What do heap and stack represent when talking about the execution of a program?</p></li>
+<li><p>What do the <code class="docutils literal notranslate"><span class="pre">-Xmx</span></code> and <code class="docutils literal notranslate"><span class="pre">-Xms</span></code> parameters mean when running Java bytecode on the JVM?</p></li>
 <li><p>Can these parameters influence the execution speed of a Java program? Why?</p></li>
-<li><p>What is the JVM garbage collector</p></li>
+<li><p>What is the JVM garbage collector?</p></li>
 </ul>
 </section>
 <section id="exercise-1-1-9">
 <h2>Exercise 1.1.9<a class="headerlink" href="#exercise-1-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>What is a good set of unit tests to verify the correctness of a data structure?</p></li>
-<li><p>Do you think about borderline cases?</p></li>
-<li><p>What could possibly go wrong with the implementation of this method implementation?</p></li>
+<li><p>Do you think about edge cases?</p></li>
+<li><p>What could possibly go wrong with this method implementation?</p></li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// return the floor of the average between a and b</span>
 <span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">average</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -399,22 +398,16 @@ input size <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <ul class="simple">
 <li><p>How can random data generation be useful for testing data structures?</p></li>
 <li><p>Why is it important to work with a fixed seed for testing?</p></li>
-<li><dl class="simple">
-<dt>How a code coverage analysis tool can be useful (such as <a class="reference external" href="http://eclemma.org/jacoco/">Jacoco</a>)</dt><dd><p>to help you design tests.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>How to verify experimentally that the implementation of a data structure or an algorithm has</dt><dd><p>the expected theoretical time complexity?</p>
-</dd>
-</dl>
-</li>
+<li><p>How can a code coverage analysis tool (such as <a class="reference external" href="http://eclemma.org/jacoco/">JaCoCo</a>)
+help you design tests?</p></li>
+<li><p>How can you verify experimentally that the implementation of a data structure or an algorithm has
+the expected theoretical time complexity?</p></li>
 <li><p>How can you test the time complexity of your program?</p></li>
 </ul>
 </section>
 <section id="exercise-1-1-10-inginious-segmentedlist-and-iterators">
-<h2>Exercise 1.1.10 (Inginious: SegmentedList and iterators)<a class="headerlink" href="#exercise-1-1-10-inginious-segmentedlist-and-iterators" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>You are asked to implement an ADT called a <cite>SegmentedList</cite> and the iterator method of this ADT: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList">SegmentedList</a> .</p>
+<h2>Exercise 1.1.10 (INGInious: SegmentedList and iterators)<a class="headerlink" href="#exercise-1-1-10-inginious-segmentedlist-and-iterators" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>You are asked to implement an ADT called a <cite>SegmentedList</cite> and the iterator method of this ADT: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList">SegmentedList</a>.</p>
 </section>
 </section>
 
@@ -482,13 +475,13 @@ input size <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <li><a class="reference internal" href="#exercise-1-1-1">Exercise 1.1.1</a></li>
 <li><a class="reference internal" href="#exercise-1-1-2">Exercise 1.1.2</a></li>
 <li><a class="reference internal" href="#exercise-1-1-3">Exercise 1.1.3</a></li>
-<li><a class="reference internal" href="#exercise-1-1-4-inginious-implement-a-stack-with-two-queues">Exercise 1.1.4 (Inginious: Implement a stack with two queues)</a></li>
+<li><a class="reference internal" href="#exercise-1-1-4-inginious-implement-a-stack-with-two-queues">Exercise 1.1.4 (INGInious: Implement a stack with two queues)</a></li>
 <li><a class="reference internal" href="#exercise-1-1-5">Exercise 1.1.5</a></li>
 <li><a class="reference internal" href="#exercise-1-1-6">Exercise 1.1.6</a></li>
 <li><a class="reference internal" href="#exercise-1-1-7">Exercise 1.1.7</a></li>
 <li><a class="reference internal" href="#exercise-1-1-8">Exercise 1.1.8</a></li>
 <li><a class="reference internal" href="#exercise-1-1-9">Exercise 1.1.9</a></li>
-<li><a class="reference internal" href="#exercise-1-1-10-inginious-segmentedlist-and-iterators">Exercise 1.1.10 (Inginious: SegmentedList and iterators)</a></li>
+<li><a class="reference internal" href="#exercise-1-1-10-inginious-segmentedlist-and-iterators">Exercise 1.1.10 (INGInious: SegmentedList and iterators)</a></li>
 </ul>
 </li>
 </ul>

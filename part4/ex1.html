@@ -264,99 +264,99 @@
 </div>
 <section id="exercise-4-1-1">
 <h2>Exercise 4.1.1<a class="headerlink" href="#exercise-4-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Name at least four different implementations of a dictionary (table of symbols).
-Specify, in each case, what are the main properties of these implementations.
-In which case(s) are they interesting?
-What are the computational complexities of their main methods?</p>
+<p>Name at least four different implementations of a symbol table (dictionary).
+Specify the main properties of each implementation.
+In which scenario(s) are they most appropriate?
+What are the time complexities of their main operations?</p>
 </section>
 <section id="exercise-4-1-2">
 <h2>Exercise 4.1.2<a class="headerlink" href="#exercise-4-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Recall the following question proposed in the assignment on sorting: Given a set <span class="math notranslate nohighlight">\(S\)</span> of size <span class="math notranslate nohighlight">\(n\)</span>, and a number <span class="math notranslate nohighlight">\(x\)</span>. Describe an efficient algorithm using a HashTable to find if there exists a pair <span class="math notranslate nohighlight">\((a,b)\)</span> with <span class="math notranslate nohighlight">\(a \in S,b \in S\)</span> such that <span class="math notranslate nohighlight">\(a+b=x\)</span>. What is the complexity of your algorithm? Is it better than your solution which used a sort?</p>
+<p>Recall the following question from the sorting assignment: Given a set <span class="math notranslate nohighlight">\(S\)</span> of size <span class="math notranslate nohighlight">\(n\)</span> and a number <span class="math notranslate nohighlight">\(x\)</span>, describe an efficient algorithm using a hash table to determine whether there exists a pair <span class="math notranslate nohighlight">\((a, b)\)</span> with <span class="math notranslate nohighlight">\(a \in S, b \in S\)</span> such that <span class="math notranslate nohighlight">\(a + b = x\)</span>. What is the time complexity of your algorithm? Is it better than your solution that used sorting?</p>
 </section>
 <section id="exercise-4-1-3">
 <h2>Exercise 4.1.3<a class="headerlink" href="#exercise-4-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Show that <span class="math notranslate nohighlight">\((a + b) \% M\)</span> is equivalent to <span class="math notranslate nohighlight">\(((a \% M) + b) \% M\)</span>. How can this property be useful to build a hash function on Strings.
-Explain how Java computes a hash function on Strings?
-What is the complexity of computing 1 time and <span class="math notranslate nohighlight">\(N\)</span> times the hashcode of a String.</p>
+<p>Show that <span class="math notranslate nohighlight">\((a + b) \% M\)</span> is equivalent to <span class="math notranslate nohighlight">\(((a \% M) + b) \% M\)</span>. How can this property be useful when building a hash function for strings?
+Explain how Java computes a hash function for strings.
+What is the time complexity of computing the hash code of a string once, and computing it <span class="math notranslate nohighlight">\(N\)</span> times?</p>
 </section>
 <section id="exercise-4-1-4">
 <h2>Exercise 4.1.4<a class="headerlink" href="#exercise-4-1-4" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Explain why the <code class="docutils literal notranslate"><span class="pre">hash()</span></code> method p461 in the book returns <cite>(x.hashCode() &amp; 0x7FFFFFFF) % M</cite> and not just <cite>x.hashCode() % M</cite>?
-What number represents <code class="docutils literal notranslate"><span class="pre">0x7FFFFFFF</span></code> ?
-What is its binary representation ?
-Show the binary impact on an example where <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span></code> returns a negative number. Hint: use <code class="docutils literal notranslate"><span class="pre">Integer.toBinaryString(int)</span></code> to verify your answer.</p>
+<p>Explain why the <code class="docutils literal notranslate"><span class="pre">hash()</span></code> method on page 461 of the book returns <code class="docutils literal notranslate"><span class="pre">(x.hashCode()</span> <span class="pre">&amp;</span> <span class="pre">0x7FFFFFFF)</span> <span class="pre">%</span> <span class="pre">M</span></code> and not simply <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span> <span class="pre">%</span> <span class="pre">M</span></code>?
+What number does <code class="docutils literal notranslate"><span class="pre">0x7FFFFFFF</span></code> represent?
+What is its binary representation?
+Show the effect at the bit level on an example where <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span></code> returns a negative number. Hint: use <code class="docutils literal notranslate"><span class="pre">Integer.toBinaryString(int)</span></code> to verify your answer.</p>
 </section>
 <section id="exercise-4-1-5">
 <h2>Exercise 4.1.5<a class="headerlink" href="#exercise-4-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Java provides the class <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> as an implementation of the <code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code> interface.
-Can you determine exactly which variant of hash table this is?
+Which variant of hash table does it use?
 Does Java provide other implementations of the <code class="docutils literal notranslate"><span class="pre">Map</span></code> interface?
-Make a diagram that represents the interfaces and classes that relate to <code class="docutils literal notranslate"><span class="pre">Map</span></code> and specify what, in each case, characterizes them.
-What can be used as a key for a hashtable in Java? Be specific.</p>
+Draw a diagram representing the interfaces and classes related to <code class="docutils literal notranslate"><span class="pre">Map</span></code> and specify the key characteristics of each.
+What can be used as a key for a hash table in Java? Be specific.</p>
 </section>
 <section id="exercise-4-1-6">
 <h2>Exercise 4.1.6<a class="headerlink" href="#exercise-4-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What is meant by the notion of « collision » in a hash table?
-Do collisions have an influence on the complexity of operations?
-If yes, which operation(s) with which complexity(ies), otherwise specify why.</p>
+<p>What is meant by a « collision » in a hash table?
+Do collisions affect the time complexity of operations?
+If so, which operation(s) and with what complexity? If not, explain why.</p>
 </section>
 <section id="exercise-4-1-7">
 <h2>Exercise 4.1.7<a class="headerlink" href="#exercise-4-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What is the load factor of a hash table.
-Is the load factor control necessary/optional for the proper functioning of a hash table with Linear Probing or Separate Chaining?
-What is the strategy used by <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> to control the load factor?
-How is it different from the one proposed in <code class="docutils literal notranslate"><span class="pre">LinearProbinHashST</span></code>?
-What is the link between load factor and collision?</p>
+<p>What is the load factor of a hash table?
+Is controlling the load factor necessary or optional for the proper operation of a hash table using linear probing or separate chaining?
+What strategy is used by <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> to control the load factor?
+How does it differ from the strategy used in <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code>?
+What is the relationship between the load factor and collisions?</p>
 </section>
 <section id="exercise-4-1-8">
 <h2>Exercise 4.1.8<a class="headerlink" href="#exercise-4-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Imagine a new <code class="docutils literal notranslate"><span class="pre">iterator()</span></code> method that returns an iterator over the keys of <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code>.
-Your iterator should not accept a modification of the hash table while it is in use: a <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException()</span></code> should be thrown if it does.
-What do you suggest to do this? Hint: Take inspiration from the <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> strategy.</p>
+Your iterator must not allow modifications to the hash table while in use: a <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException</span></code> should be thrown if a modification occurs.
+How would you implement this? Hint: Take inspiration from the <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> strategy.</p>
 </section>
 <section id="exercise-4-1-9">
 <h2>Exercise 4.1.9<a class="headerlink" href="#exercise-4-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Describe the implementation of the <code class="docutils literal notranslate"><span class="pre">put(key)</span></code> method in a hash table that uses the linear probing technique to handle collisions that would use a special marker to represent entries deleted using the <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> method.
-In other words the <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> method instead of rearranging the contents of the hash table so that it is as if the deleted entry had never been inserted, will simply mark the entry with the special marker.
-What is the advantage or disadvantage of this approach over the « LinearProbingHashST » approach in the book?</p>
+<p>Describe the implementation of the <code class="docutils literal notranslate"><span class="pre">put(key)</span></code> method in a hash table using linear probing where deleted entries are marked with a special sentinel value (tombstone) via the <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> method.
+In other words, instead of rehashing and shifting subsequent entries so that it is as if the deleted entry was never inserted, <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> simply flags the entry with this special marker.
+What are the advantages and disadvantages of this approach compared to the <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code> implementation in the book?</p>
 </section>
 <section id="exercise-4-1-10-rabin-karp">
 <h2>Exercise 4.1.10 (Rabin-Karp)<a class="headerlink" href="#exercise-4-1-10-rabin-karp" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Imagine a hash function for a string <span class="math notranslate nohighlight">\(s\)</span> such that knowing its value for the sub-string <span class="math notranslate nohighlight">\(s[i,...,i+n-1]\)</span> would allow to compute the hash function of the string <span class="math notranslate nohighlight">\(s[i+1,...,i+n]\)</span> in constant time (incrementally).</p>
+<p>Imagine a hash function for a string <span class="math notranslate nohighlight">\(s\)</span> such that knowing its value for the substring <span class="math notranslate nohighlight">\(s[i \ldots i+n-1]\)</span> allows computing the hash value of the substring <span class="math notranslate nohighlight">\(s[i+1 \ldots i+n]\)</span> in constant time (incrementally).</p>
 </section>
 <section id="exercise-4-1-11-rabin-karp">
 <h2>Exercise 4.1.11 (Rabin-Karp)<a class="headerlink" href="#exercise-4-1-11-rabin-karp" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Explain how to search for a sub-string of size <span class="math notranslate nohighlight">\(m\)</span> in a long string of size <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> using an incremental hash function.
-How would you do it if you have <span class="math notranslate nohighlight">\(k\)</span> strings of size <span class="math notranslate nohighlight">\(m\)</span> to search in the long string of size <span class="math notranslate nohighlight">\(n\)</span>?
-What would be the complexity of your method? Is it better than running the Rabin-Karp algorithm k times?</p>
+<p>Explain how to search for a substring of length <span class="math notranslate nohighlight">\(m\)</span> in a text of length <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time using an incremental hash function.
+How would you do this if you had <span class="math notranslate nohighlight">\(k\)</span> patterns of length <span class="math notranslate nohighlight">\(m\)</span> to search for in a text of length <span class="math notranslate nohighlight">\(n\)</span>?
+What is the time complexity of your method? Is it better than running the Rabin-Karp algorithm <span class="math notranslate nohighlight">\(k\)</span> times?</p>
 </section>
 <section id="exercise-4-1-12-inginious-mcq">
-<h2>Exercise 4.1.12 (Inginious, MCQ)<a class="headerlink" href="#exercise-4-1-12-inginious-mcq" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 4.1.12 (INGInious: MCQ)<a class="headerlink" href="#exercise-4-1-12-inginious-mcq" title="Lien permanent vers cette rubrique">#</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmHashing">Multiple choice questions on hash function</a></p>
 </section>
 <section id="exercise-4-1-13-inginious-mcq">
-<h2>Exercise 4.1.13 (Inginious, MCQ)<a class="headerlink" href="#exercise-4-1-13-inginious-mcq" title="Lien permanent vers cette rubrique">#</a></h2>
-<p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk">Multiple choice questions on RabinKarp</a></p>
+<h2>Exercise 4.1.13 (INGInious: MCQ)<a class="headerlink" href="#exercise-4-1-13-inginious-mcq" title="Lien permanent vers cette rubrique">#</a></h2>
+<p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk">Multiple choice questions on Rabin-Karp</a></p>
 </section>
 <section id="exercise-4-1-14-inginious">
-<h2>Exercise 4.1.14 (Inginious)<a class="headerlink" href="#exercise-4-1-14-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>An easy to implement a tool for counting word occurences (exam 2022).
-Word counting is a frequent task in natural language processing algorithm.
+<h2>Exercise 4.1.14 (INGInious)<a class="headerlink" href="#exercise-4-1-14-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>An easy tool to implement for counting word occurrences (exam 2022).
+Word counting is a frequent task in natural language processing algorithms.
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_WordCounter">Word Counter</a></p>
 </section>
 <section id="exercise-4-1-15-inginious">
-<h2>Exercise 4.1.15 (Inginious)<a class="headerlink" href="#exercise-4-1-15-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 4.1.15 (INGInious)<a class="headerlink" href="#exercise-4-1-15-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Incremental computation of a hash function (exam 2018).
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash">Incremental Hash</a></p>
 </section>
 <section id="exercise-4-1-16-inginious">
-<h2>Exercise 4.1.16 (Inginious)<a class="headerlink" href="#exercise-4-1-16-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Very interesting hash-map with a bounded memory keeping only the most recently used ones (exam 2022).
+<h2>Exercise 4.1.16 (INGInious)<a class="headerlink" href="#exercise-4-1-16-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>A bounded-capacity cache that retains only the most recently used entries (exam 2022).
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_LRUCache">LRUCache</a></p>
 </section>
 <section id="exercise-4-1-17-inginious">
-<h2>Exercise 4.1.17 (Inginious)<a class="headerlink" href="#exercise-4-1-17-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement a version of RabinKarp but for looking for <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp">K patterns</a> instead of just one.</p>
+<h2>Exercise 4.1.17 (INGInious)<a class="headerlink" href="#exercise-4-1-17-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement a version of Rabin-Karp to search for <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp">K patterns</a> simultaneously instead of just one.</p>
 </section>
 </section>
 
@@ -432,12 +432,12 @@ Word counting is a frequent task in natural language processing algorithm.
 <li><a class="reference internal" href="#exercise-4-1-9">Exercise 4.1.9</a></li>
 <li><a class="reference internal" href="#exercise-4-1-10-rabin-karp">Exercise 4.1.10 (Rabin-Karp)</a></li>
 <li><a class="reference internal" href="#exercise-4-1-11-rabin-karp">Exercise 4.1.11 (Rabin-Karp)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-12-inginious-mcq">Exercise 4.1.12 (Inginious, MCQ)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-13-inginious-mcq">Exercise 4.1.13 (Inginious, MCQ)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-14-inginious">Exercise 4.1.14 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-15-inginious">Exercise 4.1.15 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-16-inginious">Exercise 4.1.16 (Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-17-inginious">Exercise 4.1.17 (Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-12-inginious-mcq">Exercise 4.1.12 (INGInious: MCQ)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-13-inginious-mcq">Exercise 4.1.13 (INGInious: MCQ)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-14-inginious">Exercise 4.1.14 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-15-inginious">Exercise 4.1.15 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-16-inginious">Exercise 4.1.16 (INGInious)</a></li>
+<li><a class="reference internal" href="#exercise-4-1-17-inginious">Exercise 4.1.17 (INGInious)</a></li>
 </ul>
 </li>
 </ul>

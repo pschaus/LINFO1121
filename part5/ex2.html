@@ -264,80 +264,76 @@
 </div>
 <section id="exercise-5-2-1">
 <h2>Exercise 5.2.1<a class="headerlink" href="#exercise-5-2-1" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>In the Huffman coding compression technique, it is useful to
-to include in the compressed file a header containing the information necessary to decode of the file.
-In your implementation, the header is probably a serialized version
-of the tree (result of a prefix parse) as proposed in the book.
-Do you think it would be more or less interesting from a memory point of view to store for each symbol its binary encoding
-rather than the serialized tree?</p>
+<p>In Huffman coding compression, it is necessary to include a header in the compressed file containing the information needed to decode the file.
+In your implementation, the header is likely a serialized version of the trie (the result of a preorder traversal), as proposed in the textbook.
+Do you think it would be more or less efficient in terms of memory to store the binary encoding of each symbol directly rather than the serialized trie?</p>
 </section>
 <section id="exercise-5-2-2">
 <h2>Exercise 5.2.2<a class="headerlink" href="#exercise-5-2-2" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Can we gain even more compression ratio if we reapply Huffman’s compression algorithm
-Huffman’s compression algorithm on a file already compressed once?
+<p>Can we achieve an even better compression ratio if we reapply Huffman’s compression algorithm to a file that has already been compressed once?
 What happens in this case?
 Does this open the door to a recursive and optimal compression algorithm?</p>
 </section>
 <section id="exercise-5-2-3">
 <h2>Exercise 5.2.3<a class="headerlink" href="#exercise-5-2-3" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>What is, approximately, the compression ratio obtained if we apply the Huffman compression algorithm
-on a file with a single string consisting of the character “a” repeated a million times (:math:<code class="docutils literal notranslate"><span class="pre">approx</span> <span class="pre">2^{20}</span></code>), followed by the character <code class="docutils literal notranslate"><span class="pre">b</span></code> present only once?</p>
+to a file with a single string consisting of the character “a” repeated a million times (<span class="math notranslate nohighlight">\(\approx 2^{20}\)</span>), followed by the character <code class="docutils literal notranslate"><span class="pre">b</span></code> occurring only once?</p>
 <p>Does the resulting compression ratio vary with the length of the file (for example, if the <code class="docutils literal notranslate"><span class="pre">a</span></code> character is repeated two million times)?</p>
 <p>What is the minimum number of bits needed to represent this file in compressed form?</p>
-<p>Can we use another compression scheme, compressing more than Huffman compression in this particular case?</p>
-<p>Can Huffman compression algorithm be used for other input than text files (say for instance a picture)?
+<p>Can we use another compression scheme that achieves higher compression than Huffman coding in this particular case?</p>
+<p>Can the Huffman compression algorithm be used for inputs other than text files (for instance, an image)?
 What would the algorithm count in this case?</p>
 </section>
-<section id="exercise-5-2-4-linked-heap-inginious">
-<h2>Exercise 5.2.4 (Linked Heap, Inginious)<a class="headerlink" href="#exercise-5-2-4-linked-heap-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Imagine a heap implementation of a priority queue using a chained structure to represent the essentially complete binary tree corresponding to the heap.
+<section id="exercise-5-2-4-inginious-linked-heap">
+<h2>Exercise 5.2.4 (INGInious: Linked Heap)<a class="headerlink" href="#exercise-5-2-4-inginious-linked-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Imagine a heap implementation of a priority queue using a linked structure to represent the essentially complete binary tree corresponding to the heap.
 How many links are needed in each node?
-Write the code for the methods <em>insert</em>, <em>delMax</em>. What is the complexity? Is it useful to give the size <em>max N</em> in the constructor?
-How do you add a new node in the heap or remove the next node? Can this be done from the current heap size?</p>
+Write the code for the methods <code class="docutils literal notranslate"><span class="pre">insert</span></code> and <code class="docutils literal notranslate"><span class="pre">delMax</span></code>. What are their time complexities? Is it necessary to specify a maximum capacity <span class="math notranslate nohighlight">\(N\)</span> in the constructor?
+How do you add a new node to the heap or remove the last node? Can this be determined from the current heap size?</p>
 <p>Implement the min priority queue using a linked structure for representing the heap: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinPQLinked">MinPQLinked</a></p>
 </section>
-<section id="exercise-5-2-5-inginious-minmax-heap">
-<h2>Exercise 5.2.5 (Inginious: MinMax Heap)<a class="headerlink" href="#exercise-5-2-5-inginious-minmax-heap" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Propose a data structure that would support the following operations in logarithmic time: <em>insert</em>, <em>remove maximum</em>, <em>remove minimum</em>;
-and the following operations in constant time: <em>find maximum and minimum</em>.
-For this, we propose to study the following property called min-max heap.
+<section id="exercise-5-2-5-inginious-min-max-heap">
+<h2>Exercise 5.2.5 (INGInious: Min-Max Heap)<a class="headerlink" href="#exercise-5-2-5-inginious-min-max-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Propose a data structure that supports the following operations in logarithmic time: <em>insert</em>, <em>remove maximum</em>, <em>remove minimum</em>;
+and the following operations in constant time: <em>find maximum</em> and <em>find minimum</em>.
+For this, we consider the min-max heap data structure.
 The even levels are: 0 (root), 2, 4, etc.
-These even levels are also called the <span class="math notranslate nohighlight">\(min\)</span> levels.
+These even levels are called the <span class="math notranslate nohighlight">\(\min\)</span> levels.
 The odd levels are 1, 3, 5, etc.
-Odd levels are also called <span class="math notranslate nohighlight">\(max\)</span> levels.
-For any <span class="math notranslate nohighlight">\(x\)</span> element in the min-max heap we have the following property:</p>
+These odd levels are called the <span class="math notranslate nohighlight">\(\max\)</span> levels.
+For any element <span class="math notranslate nohighlight">\(x\)</span> in the min-max heap, the following property holds:</p>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is at a <span class="math notranslate nohighlight">\(min\)</span> level, all descendants of <span class="math notranslate nohighlight">\(x\)</span> are greater than <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is at a level <span class="math notranslate nohighlight">\(max\)</span>, all descendants of <span class="math notranslate nohighlight">\(x\)</span> are lower than <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is at a <span class="math notranslate nohighlight">\(\min\)</span> level, all descendants of <span class="math notranslate nohighlight">\(x\)</span> are greater than or equal to <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(x\)</span> is at a <span class="math notranslate nohighlight">\(\max\)</span> level, all descendants of <span class="math notranslate nohighlight">\(x\)</span> are less than or equal to <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
 <p>Questions related to this min-max heap:</p>
 <ul class="simple">
-<li><p>Which is the smallest element of the heap?</p></li>
-<li><p>Which is the largest element of the heap?</p></li>
-<li><p>Draw a min-max heap that contains the following elements: 10,8,71,31,41,46,51,31,21,11,16,13.</p></li>
-<li><p>Describe the insertion operation in a min-max heap? Give the pseudo-code.</p></li>
+<li><p>Where is the smallest element of the heap located?</p></li>
+<li><p>Where is the largest element of the heap located?</p></li>
+<li><p>Draw a min-max heap that contains the following elements: 10, 8, 71, 31, 41, 46, 51, 31, 21, 11, 16, 13.</p></li>
+<li><p>Describe the insertion operation in a min-max heap. Give the pseudocode.</p></li>
 </ul>
-<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinMaxHeap">MinMax Heap</a></p>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinMaxHeap">MinMax Heap</a>.</p>
 </section>
 <section id="exercise-5-2-6-inginious-medianheap">
-<h2>Exercise 5.2.6 (Inginious: MedianHeap)<a class="headerlink" href="#exercise-5-2-6-inginious-medianheap" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Imagine a data structure that supports</p>
+<h2>Exercise 5.2.6 (INGInious: MedianHeap)<a class="headerlink" href="#exercise-5-2-6-inginious-medianheap" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Imagine a data structure that supports:</p>
 <ol class="arabic simple">
 <li><p><em>insertion</em> in logarithmic time</p></li>
-<li><p>the <em>find median</em> operation in constant time</p></li>
+<li><p><em>find median</em> in constant time</p></li>
 <li><p><em>deleting the median</em> in logarithmic time.</p></li>
 </ol>
-<p>Hint: There is solution that uses two internal heaps.</p>
+<p>Hint: There is a solution that uses two internal heaps.</p>
 <p>Before starting your implementation, think about the class invariant or property that you want
 to maintain between the two heaps after each operation.</p>
-<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MedianHeap">MedianHeap</a></p>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MedianHeap">MedianHeap</a>.</p>
 </section>
-<section id="exercise-5-2-7-ternary-heap-inginious">
-<h2>Exercise 5.2.7 (Ternary Heap, Inginious)<a class="headerlink" href="#exercise-5-2-7-ternary-heap-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement a ternary heap that stores three children rather than one.
-Be carefull here, we start storing the values at index 0 and not at index 1 as for the binary heap, as the formulla <span class="math notranslate nohighlight">\(2k\)</span> and <span class="math notranslate nohighlight">\(2k+1\)</span> does not work for the ternary case.
-What is the time complexity for an <cite>insert</cite> and <cite>delMax</cite> operations?</p>
-<p>Implement the: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TernaryHeap">TernaryHeap</a></p>
+<section id="exercise-5-2-7-inginious-ternary-heap">
+<h2>Exercise 5.2.7 (INGInious: Ternary Heap)<a class="headerlink" href="#exercise-5-2-7-inginious-ternary-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Implement a ternary heap where each node has up to three children rather than two.
+Be careful here: we store the values starting at index 0 rather than index 1 as in the binary heap, because the formulas <span class="math notranslate nohighlight">\(2k\)</span> and <span class="math notranslate nohighlight">\(2k+1\)</span> do not apply to the ternary case.
+What is the time complexity for the <code class="docutils literal notranslate"><span class="pre">insert</span></code> and <code class="docutils literal notranslate"><span class="pre">delMax</span></code> operations?</p>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TernaryHeap">TernaryHeap</a>.</p>
 </section>
 </section>
 
@@ -405,10 +401,10 @@ What is the time complexity for an <cite>insert</cite> and <cite>delMax</cite> o
 <li><a class="reference internal" href="#exercise-5-2-1">Exercise 5.2.1</a></li>
 <li><a class="reference internal" href="#exercise-5-2-2">Exercise 5.2.2</a></li>
 <li><a class="reference internal" href="#exercise-5-2-3">Exercise 5.2.3</a></li>
-<li><a class="reference internal" href="#exercise-5-2-4-linked-heap-inginious">Exercise 5.2.4 (Linked Heap, Inginious)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-5-inginious-minmax-heap">Exercise 5.2.5 (Inginious: MinMax Heap)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-6-inginious-medianheap">Exercise 5.2.6 (Inginious: MedianHeap)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-7-ternary-heap-inginious">Exercise 5.2.7 (Ternary Heap, Inginious)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-4-inginious-linked-heap">Exercise 5.2.4 (INGInious: Linked Heap)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-5-inginious-min-max-heap">Exercise 5.2.5 (INGInious: Min-Max Heap)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-6-inginious-medianheap">Exercise 5.2.6 (INGInious: MedianHeap)</a></li>
+<li><a class="reference internal" href="#exercise-5-2-7-inginious-ternary-heap">Exercise 5.2.7 (INGInious: Ternary Heap)</a></li>
 </ul>
 </li>
 </ul>

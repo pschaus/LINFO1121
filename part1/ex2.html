@@ -263,42 +263,42 @@
 <p>You must complete these exercises by Wednesday of W3.</p>
 </div>
 <section id="exercise-1-2-1-inginious-circular-linked-list">
-<h2>Exercise 1.2.1 (Inginious: Circular Linked List)<a class="headerlink" href="#exercise-1-2-1-inginious-circular-linked-list" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 1.2.1 (INGInious: Circular Linked List)<a class="headerlink" href="#exercise-1-2-1-inginious-circular-linked-list" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
-<li><p>What is the difference between an Iterable and an Iterator?</p></li>
+<li><p>What is the difference between an <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> and an <code class="docutils literal notranslate"><span class="pre">Iterator</span></code>?</p></li>
 </ul>
 <p>Implement a <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_CircularLinkedList">Circular Linked List</a> and its iterator.</p>
 <p>In your implementation, what is the time complexity of:</p>
 <ul class="simple">
 <li><p><cite>public void enqueue(Item item)</cite>?</p></li>
-<li><p><cite>public Item remove(int index)</cite> ?</p></li>
-<li><p>a sequence of operations which consists of <em>creating an iterator and then iterating over the first k-elements</em>?</p></li>
+<li><p><cite>public Item remove(int index)</cite>?</p></li>
+<li><p>a sequence of operations consisting of <em>creating an iterator and then iterating over the first k elements</em>?</p></li>
 </ul>
 </section>
 <section id="exercise-1-2-2-inginious-implement-a-stack-with-an-array">
-<h2>Exercise 1.2.2 (Inginious: Implement a stack with an Array)<a class="headerlink" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 1.2.2 (INGInious: Implement a stack with an Array)<a class="headerlink" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>In your implementation, you will need to resize the array if the size of the stack reaches the maximum size.
 Does Java have an efficient way to resize/refill an array? If yes, give an example of Java code to perform this operation.</p>
-<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_Stack">Stack</a> interface with an internal array-based implemenation and with a linked-list.</p>
+<p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_Stack">Stack</a> interface with an internal array-based implementation and with a linked list.</p>
 <p>In your implementation, what is the time complexity of:</p>
 <ul class="simple">
 <li><p><cite>public void push(E item)</cite>?</p></li>
-<li><p>a sequence of n <cite>push</cite> operations</p></li>
+<li><p>a sequence of <span class="math notranslate nohighlight">\(n\)</span> <cite>push</cite> operations?</p></li>
 </ul>
 </section>
 <section id="exercise-1-2-3">
 <h2>Exercise 1.2.3<a class="headerlink" href="#exercise-1-2-3" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Post-fix notation (or <a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_Polish_Notation">Inverse Polish</a>) is used
+<p>Postfix notation (or <a class="reference external" href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish notation</a>) is used
 to represent algebraic expressions.
-We consider for simplicity only post-fix expressions with positive integers
-and the <cite>+</cite> and <cite>*</cite> operators. For example <cite>2 3 1 * + 9 *</cite> whose result is 45
-and the result of <cite>4 20 + 3 5 1 * * +</cite> is 39.</p>
+For simplicity, we only consider postfix expressions with positive integers
+and the <cite>+</cite> and <cite>*</cite> operators: for example, <cite>2 3 1 * + 9 *</cite>, which evaluates to 45,
+and <cite>4 20 + 3 5 1 * * +</cite>, which evaluates to 39.</p>
 <ol class="arabic simple">
-<li><p>Write an algorithm in Java to evaluate a post-fix expression from a string of n-characters.</p></li>
+<li><p>Write an algorithm in Java to evaluate a postfix expression from a string of <span class="math notranslate nohighlight">\(n\)</span> characters.</p></li>
 <li><p>What data structure do you use?</p></li>
-<li><p>What is the complexity of your algorithm (temporal and spatial)?</p></li>
+<li><p>What is the time and space complexity of your algorithm?</p></li>
 </ol>
-<p>As a reminder, here is how you can iterate over the elements of a string that are separated by spaces.</p>
+<p>As a reminder, here is how you can iterate over the elements of a string that are separated by spaces:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"4 20 + 3 5 1 * * +"</span><span class="p">;</span>
 <span class="n">StringTokenizer</span><span class="w"> </span><span class="n">tokenizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringTokenizer</span><span class="p">(</span><span class="n">in</span><span class="p">);</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tokenizer</span><span class="p">.</span><span class="na">hasMoreTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
@@ -308,11 +308,11 @@ and the result of <cite>4 20 + 3 5 1 * * +</cite> is 39.</p>
 </div>
 </section>
 <section id="exercise-1-2-4-inginious-functional-lists">
-<h2>Exercise 1.2.4 (Inginious: Functional Lists)<a class="headerlink" href="#exercise-1-2-4-inginious-functional-lists" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Exercise 1.2.4 (INGInious: Functional Lists)<a class="headerlink" href="#exercise-1-2-4-inginious-functional-lists" title="Lien permanent vers cette rubrique">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Functional_Programming">Functional Programming</a> is an increasingly important programming paradigm.
 In this programming paradigm, data structures are <a class="reference external" href="https://en.wikipedia.org/wiki/Purely_functional_data_structure">immutable</a>.
-We are interested here in the implementation of an immutable list called <em>FList</em> allowing to be used in a functional framework.
-Here is the API of a <em>FList</em></p>
+We are interested here in implementing an immutable list called <em>FList</em> designed for use in a functional framework.
+Here is the API of <em>FList</em>:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// creates an empty list</span>
@@ -333,22 +333,22 @@ Here is the API of a <em>FList</em></p>
 <span class="w">    </span><span class="c1">// return the tail of the list</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">tail</span><span class="p">();</span>
 
-<span class="w">    </span><span class="c1">// return a list on which each element has been applied function f</span>
+<span class="w">    </span><span class="c1">// return a list where function f has been applied to each element</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// return a list on which only the elements that satisfies predicate are kept</span>
+<span class="w">    </span><span class="c1">// return a list containing only the elements that satisfy the predicate</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FList</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// return an iterator on the element of the list</span>
+<span class="w">    </span><span class="c1">// return an iterator over the elements of the list</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">iterator</span><span class="p">();</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>As you can see, none of the methods allow you to modify the state of the list.
-Here is an example of manipulation of such a list.
-If you are unfamiliar with the <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</a> functional interfaces of Java8,
-we ask that you familiarize yourself with these first.</p>
+Here is an example of manipulating such a list.
+If you are unfamiliar with Java 8 <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">functional interfaces</a>,
+we recommend familiarizing yourself with them first.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">FList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FList</span><span class="p">.</span><span class="na">nil</span><span class="p">();</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -443,22 +443,22 @@ we ask that you familiarize yourself with these first.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>We ask you to</p>
+<p>We ask you to:</p>
 <ul class="simple">
-<li><p>complete this implementation, if possible use recursive methods as much as possible.</p></li>
-<li><p>determine the complexity of each method.</p></li>
+<li><p>complete this implementation (prefer recursive methods where appropriate).</p></li>
+<li><p>determine the time complexity of each method.</p></li>
 </ul>
-<p>The inginious taks is the following: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList">FList</a></p>
+<p>The INGInious task is the following: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_FList">FList</a>.</p>
 </section>
 <section id="exercise-1-2-5">
 <h2>Exercise 1.2.5<a class="headerlink" href="#exercise-1-2-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Fill in the following table with the complexities of each operation?
-If an operation is not possible (for example, going to the middle of a Stack is impossible because not provided for by the TAD, indicate it with a cross.
-Specify each time if it is an amortized complexity or not.
-SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentioning.</p>
+<p>Fill in the following table with the time complexity of each operation.
+If an operation is not supported (for example, accessing the middle of a Stack is not supported by the ADT), indicate it with a cross.
+Specify in each case whether it is an amortized complexity.
+SL = Singly Linked List, DL = Doubly Linked List, Arr = Resizing Array.</p>
 <div class="table-wrapper docutils container" id="id1">
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Complexité</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">#</a></caption>
+<caption><span class="caption-text">Complexity</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">#</a></caption>
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 9%" />
@@ -473,7 +473,7 @@ SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentionin
 <col style="width: 9%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>TAD</p></th>
+<tr class="row-odd"><th class="head"><p>ADT</p></th>
 <th class="head"><p>Implementation</p></th>
 <th class="head"><p>Insertion (head)</p></th>
 <th class="head"><p>Insertion (end)</p></th>
@@ -559,7 +559,7 @@ SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentionin
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Liste</p></td>
+<tr class="row-even"><td><p>List</p></td>
 <td><p>Arr</p></td>
 <td></td>
 <td></td>
@@ -574,19 +574,15 @@ SL = Simply Linked List, DL = Doubly Linked List, Arr = Array with redimentionin
 </tbody>
 </table>
 </div>
-<p>What is this ?</p>
 </section>
-<section id="exercice-1-2-6">
-<h2>Exercice 1.2.6<a class="headerlink" href="#exercice-1-2-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="exercise-1-2-6">
+<h2>Exercise 1.2.6<a class="headerlink" href="#exercise-1-2-6" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul>
-<li><dl class="simple">
-<dt>Does Java provide a class for <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, <code class="docutils literal notranslate"><span class="pre">Vector</span></code>, <code class="docutils literal notranslate"><span class="pre">List</span></code>?</dt><dd><p>If so in which package? In your opinion, is it interesting to know this package well for the exam?
+<li><p>Does Java provide classes for <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, <code class="docutils literal notranslate"><span class="pre">Vector</span></code>, <code class="docutils literal notranslate"><span class="pre">List</span></code>?
+If so, in which package? In your opinion, is it important to know this package well for the exam?
 Is <code class="docutils literal notranslate"><span class="pre">List</span></code> an interface or a class?
-How to create an object of type <code class="docutils literal notranslate"><span class="pre">List</span></code>? And an object of type <code class="docutils literal notranslate"><span class="pre">Queue</span></code>?</p>
-</dd>
-</dl>
-</li>
-<li><p>What is the error in the following code where the student is looking to create an array of 5 lists and then insert the integer 4 into the 3rd list? Correct the code.</p>
+How can you create an object of type <code class="docutils literal notranslate"><span class="pre">List</span></code>? What about an object of type <code class="docutils literal notranslate"><span class="pre">Queue</span></code>?</p></li>
+<li><p>What is the error in the following code where the student is trying to create an array of 5 lists and then insert the integer 4 into the 3rd list? Correct the code.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="w"> </span><span class="n">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
 <span class="n">myList</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 </pre></div>
@@ -609,7 +605,7 @@ How to create an object of type <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 </li>
-<li><p>What is the time complexity of is this code, given the size of the list, <span class="math notranslate nohighlight">\(n\)</span>? How to improve it?</p>
+<li><p>What is the time complexity of this code, given a list of size <span class="math notranslate nohighlight">\(n\)</span>? How can it be improved?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">printList</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
@@ -684,12 +680,12 @@ How to create an object of type <code class="docutils literal notranslate"><span
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
-<li><a class="reference internal" href="#exercise-1-2-1-inginious-circular-linked-list">Exercise 1.2.1 (Inginious: Circular Linked List)</a></li>
-<li><a class="reference internal" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array">Exercise 1.2.2 (Inginious: Implement a stack with an Array)</a></li>
+<li><a class="reference internal" href="#exercise-1-2-1-inginious-circular-linked-list">Exercise 1.2.1 (INGInious: Circular Linked List)</a></li>
+<li><a class="reference internal" href="#exercise-1-2-2-inginious-implement-a-stack-with-an-array">Exercise 1.2.2 (INGInious: Implement a stack with an Array)</a></li>
 <li><a class="reference internal" href="#exercise-1-2-3">Exercise 1.2.3</a></li>
-<li><a class="reference internal" href="#exercise-1-2-4-inginious-functional-lists">Exercise 1.2.4 (Inginious: Functional Lists)</a></li>
+<li><a class="reference internal" href="#exercise-1-2-4-inginious-functional-lists">Exercise 1.2.4 (INGInious: Functional Lists)</a></li>
 <li><a class="reference internal" href="#exercise-1-2-5">Exercise 1.2.5</a></li>
-<li><a class="reference internal" href="#exercice-1-2-6">Exercice 1.2.6</a></li>
+<li><a class="reference internal" href="#exercise-1-2-6">Exercise 1.2.6</a></li>
 </ul>
 </li>
 </ul>
