@@ -152,10 +152,11 @@ Exercise 1.1.5
 
 
 What do you think about these three different ways of iterating over the elements of a `java.util.LinkedList`? Are they equivalent? Use a time-complexity argument.
+Does changing `new LinkedList<>()` by `new ArrayListList<>()` at the first line would change the performance of these loops? 
 
 .. code-block:: java
 
-    LinkedList<Integer> list = new LinkedList<>();
+    List<Integer> list = new LinkedList<>();
 
     // assume I insert n elements in the list here
 
