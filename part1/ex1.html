@@ -293,8 +293,9 @@ compared to the other implementations presented in the reference book?</p>
 </section>
 <section id="exercise-1-1-5">
 <h2>Exercise 1.1.5<a class="headerlink" href="#exercise-1-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What do you think about these three different ways of iterating over the elements of a <cite>java.util.LinkedList</cite>? Are they equivalent? Use a time-complexity argument.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<p>What do you think about these three different ways of iterating over the elements of a <cite>java.util.LinkedList</cite>? Are they equivalent? Use a time-complexity argument.
+Does changing <cite>new LinkedList&lt;&gt;()</cite> by <cite>new ArrayListList&lt;&gt;()</cite> at the first line would change the performance of these loops?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
 <span class="c1">// assume I insert n elements in the list here</span>
 
