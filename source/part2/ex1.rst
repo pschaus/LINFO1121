@@ -126,12 +126,14 @@ Write the pseudocode of your algorithm on paper and give its time complexity.
 
 Once it is done, implement your solution on the INGInious `task <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_CardSorter>`_.
 
-Exercise 2.1.5
-""""""""""""""
+Exercise 2.1.5 (INGInious: Sort Linked List)
+""""""""""""""""""""""""""""""""""""""""""""
 
-How can you sort a doubly linked list (which does not allow access
+How can you sort a simply linked list (which does not allow access
 to a position by index) efficiently? What is the time complexity of your
 algorithm?
+
+Solve the related INGInious task `SortLinkedList <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_SortLinkedList>`_.
 
 
 Which algorithm is used by the `sort` method of the `List` interface below?
