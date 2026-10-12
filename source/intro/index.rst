@@ -50,6 +50,12 @@ The exercises point to `Inginious Grading <https://inginious.org>`_ platform, pr
 The repository also stands as a valuable tool for individuals preparing for programming interviews.
 
 
+General Resources
+======================================
+
+* `Interactive Algorithm Visualizations <https://pschaus.github.io/algorithms_animations>`_ (interactive animations and visualizers for algorithms and data structures)
+
+
 Java Resources
 ======================================
 
