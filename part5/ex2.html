@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Part 6 | Graphs: paths, spanning trees, and shortest paths" href="../part6/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Part 6 | Graphs: paths, spanning trees, and shortest paths" href="../part6/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises B - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,43 +263,43 @@
         </div>
         <article role="main">
           <section id="exercises-b">
-<span id="part5-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part5-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W11.</p>
 </div>
-<section id="exercise-5-2-1">
-<h2>Exercise 5.2.1<a class="headerlink" href="#exercise-5-2-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="huffman-header-serialized-trie-vs-codeword-table">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Huffman Header: Serialized Trie vs. Codeword Table</span><a class="headerlink" href="#huffman-header-serialized-trie-vs-codeword-table" title="Permalink to this heading">#</a></h2>
 <p>In Huffman coding compression, it is necessary to include a header in the compressed file containing the information needed to decode the file.
 In your implementation, the header is likely a serialized version of the trie (the result of a preorder traversal), as proposed in the textbook.
 Do you think it would be more or less efficient in terms of memory to store the binary encoding of each symbol directly rather than the serialized trie?</p>
 </section>
-<section id="exercise-5-2-2">
-<h2>Exercise 5.2.2<a class="headerlink" href="#exercise-5-2-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="repeated-huffman-compression">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Repeated Huffman Compression</span><a class="headerlink" href="#repeated-huffman-compression" title="Permalink to this heading">#</a></h2>
 <p>Can we achieve an even better compression ratio if we reapply Huffman’s compression algorithm to a file that has already been compressed once?
 What happens in this case?
 Does this open the door to a recursive and optimal compression algorithm?</p>
 </section>
-<section id="exercise-5-2-3">
-<h2>Exercise 5.2.3<a class="headerlink" href="#exercise-5-2-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="huffman-compression-ratio-and-run-length-encoding">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Huffman Compression Ratio and Run-Length Encoding</span><a class="headerlink" href="#huffman-compression-ratio-and-run-length-encoding" title="Permalink to this heading">#</a></h2>
 <p>What is, approximately, the compression ratio obtained if we apply the Huffman compression algorithm
-to a file with a single string consisting of the character “a” repeated a million times (<span class="math notranslate nohighlight">\(\approx 2^{20}\)</span>), followed by the character <code class="docutils literal notranslate"><span class="pre">b</span></code> occurring only once?</p>
-<p>Does the resulting compression ratio vary with the length of the file (for example, if the <code class="docutils literal notranslate"><span class="pre">a</span></code> character is repeated two million times)?</p>
+to a file with a single string consisting of the character <code class="docutils literal notranslate"><span class="pre">'a'</span></code> repeated a million times (<span class="math notranslate nohighlight">\(\approx 2^{20}\)</span>), followed by the character <code class="docutils literal notranslate"><span class="pre">'b'</span></code> occurring only once?</p>
+<p>Does the resulting compression ratio vary with the length of the file (for example, if the <code class="docutils literal notranslate"><span class="pre">'a'</span></code> character is repeated two million times)?</p>
 <p>What is the minimum number of bits needed to represent this file in compressed form?</p>
 <p>Can we use another compression scheme that achieves higher compression than Huffman coding in this particular case?</p>
 <p>Can the Huffman compression algorithm be used for inputs other than text files (for instance, an image)?
 What would the algorithm count in this case?</p>
 </section>
-<section id="exercise-5-2-4-inginious-linked-heap">
-<h2>Exercise 5.2.4 (INGInious: Linked Heap)<a class="headerlink" href="#exercise-5-2-4-inginious-linked-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="linked-heap">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Linked Heap</span><a class="headerlink" href="#linked-heap" title="Permalink to this heading">#</a></h2>
 <p>Imagine a heap implementation of a priority queue using a linked structure to represent the essentially complete binary tree corresponding to the heap.
 How many links are needed in each node?
 Write the code for the methods <code class="docutils literal notranslate"><span class="pre">insert</span></code> and <code class="docutils literal notranslate"><span class="pre">delMax</span></code>. What are their time complexities? Is it necessary to specify a maximum capacity <span class="math notranslate nohighlight">\(N\)</span> in the constructor?
 How do you add a new node to the heap or remove the last node? Can this be determined from the current heap size?</p>
 <p>Implement the min priority queue using a linked structure for representing the heap: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinPQLinked">MinPQLinked</a></p>
 </section>
-<section id="exercise-5-2-5-inginious-min-max-heap">
-<h2>Exercise 5.2.5 (INGInious: Min-Max Heap)<a class="headerlink" href="#exercise-5-2-5-inginious-min-max-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="min-max-heap">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Min-Max Heap</span><a class="headerlink" href="#min-max-heap" title="Permalink to this heading">#</a></h2>
 <p>Propose a data structure that supports the following operations in logarithmic time: <em>insert</em>, <em>remove maximum</em>, <em>remove minimum</em>;
 and the following operations in constant time: <em>find maximum</em> and <em>find minimum</em>.
 For this, we consider the min-max heap data structure.
@@ -315,8 +321,8 @@ For any element <span class="math notranslate nohighlight">\(x\)</span> in the m
 </ul>
 <p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinMaxHeap">MinMax Heap</a>.</p>
 </section>
-<section id="exercise-5-2-6-inginious-medianheap">
-<h2>Exercise 5.2.6 (INGInious: MedianHeap)<a class="headerlink" href="#exercise-5-2-6-inginious-medianheap" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="medianheap">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MedianHeap</span><a class="headerlink" href="#medianheap" title="Permalink to this heading">#</a></h2>
 <p>Imagine a data structure that supports:</p>
 <ol class="arabic simple">
 <li><p><em>insertion</em> in logarithmic time</p></li>
@@ -328,8 +334,8 @@ For any element <span class="math notranslate nohighlight">\(x\)</span> in the m
 to maintain between the two heaps after each operation.</p>
 <p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MedianHeap">MedianHeap</a>.</p>
 </section>
-<section id="exercise-5-2-7-inginious-ternary-heap">
-<h2>Exercise 5.2.7 (INGInious: Ternary Heap)<a class="headerlink" href="#exercise-5-2-7-inginious-ternary-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="ternary-heap">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Ternary Heap</span><a class="headerlink" href="#ternary-heap" title="Permalink to this heading">#</a></h2>
 <p>Implement a ternary heap where each node has up to three children rather than two.
 Be careful here: we store the values starting at index 0 rather than index 1 as in the binary heap, because the formulas <span class="math notranslate nohighlight">\(2k\)</span> and <span class="math notranslate nohighlight">\(2k+1\)</span> do not apply to the ternary case.
 What is the time complexity for the <code class="docutils literal notranslate"><span class="pre">insert</span></code> and <code class="docutils literal notranslate"><span class="pre">delMax</span></code> operations?</p>
@@ -398,13 +404,13 @@ What is the time complexity for the <code class="docutils literal notranslate"><
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
-<li><a class="reference internal" href="#exercise-5-2-1">Exercise 5.2.1</a></li>
-<li><a class="reference internal" href="#exercise-5-2-2">Exercise 5.2.2</a></li>
-<li><a class="reference internal" href="#exercise-5-2-3">Exercise 5.2.3</a></li>
-<li><a class="reference internal" href="#exercise-5-2-4-inginious-linked-heap">Exercise 5.2.4 (INGInious: Linked Heap)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-5-inginious-min-max-heap">Exercise 5.2.5 (INGInious: Min-Max Heap)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-6-inginious-medianheap">Exercise 5.2.6 (INGInious: MedianHeap)</a></li>
-<li><a class="reference internal" href="#exercise-5-2-7-inginious-ternary-heap">Exercise 5.2.7 (INGInious: Ternary Heap)</a></li>
+<li><a class="reference internal" href="#huffman-header-serialized-trie-vs-codeword-table"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Huffman Header: Serialized Trie vs. Codeword Table</span></a></li>
+<li><a class="reference internal" href="#repeated-huffman-compression"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Repeated Huffman Compression</span></a></li>
+<li><a class="reference internal" href="#huffman-compression-ratio-and-run-length-encoding"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Huffman Compression Ratio and Run-Length Encoding</span></a></li>
+<li><a class="reference internal" href="#linked-heap"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Linked Heap</span></a></li>
+<li><a class="reference internal" href="#min-max-heap"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Min-Max Heap</span></a></li>
+<li><a class="reference internal" href="#medianheap"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MedianHeap</span></a></li>
+<li><a class="reference internal" href="#ternary-heap"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Ternary Heap</span></a></li>
 </ul>
 </li>
 </ul>
@@ -423,7 +429,6 @@ What is the time complexity for the <code class="docutils literal notranslate"><
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

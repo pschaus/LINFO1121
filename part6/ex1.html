@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises A - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,43 +263,43 @@
         </div>
         <article role="main">
           <section id="exercises-a">
-<span id="part6-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part6-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W12.</p>
 </div>
-<section id="exercise-6-1-1">
-<h2>Exercise 6.1.1<a class="headerlink" href="#exercise-6-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="graph-representations-and-elementary-complexities">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Graph Representations and Elementary Complexities</span><a class="headerlink" href="#graph-representations-and-elementary-complexities" title="Permalink to this heading">#</a></h2>
 <p>Give several data structures that can be used to represent an undirected graph <span class="math notranslate nohighlight">\(G\)</span>
 with <span class="math notranslate nohighlight">\(n\)</span> vertices (nodes) and <span class="math notranslate nohighlight">\(m\)</span> edges.</p>
 <p>What are the time complexities of the elementary operations <code class="docutils literal notranslate"><span class="pre">Iterable&lt;Integer&gt;</span> <span class="pre">adj(int</span> <span class="pre">v)</span></code> and <code class="docutils literal notranslate"><span class="pre">addEdge(int</span> <span class="pre">v,</span> <span class="pre">int</span> <span class="pre">w)</span></code> for each?</p>
 </section>
-<section id="exercise-6-1-2">
-<h2>Exercise 6.1.2<a class="headerlink" href="#exercise-6-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="bipartite-graph-detection-with-dfs">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Bipartite Graph Detection with DFS</span><a class="headerlink" href="#bipartite-graph-detection-with-dfs" title="Permalink to this heading">#</a></h2>
 <p>A graph is bipartite if its vertices can be partitioned into two disjoint sets such that no edge connects two vertices of the same set.</p>
 <p>Propose an algorithm to test whether a graph is bipartite and, if so, find such a partition.
 What is the time complexity of your algorithm? Hint: Use DFS.</p>
 </section>
-<section id="exercise-6-1-3">
-<h2>Exercise 6.1.3<a class="headerlink" href="#exercise-6-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="non-disconnecting-vertex-removal">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Non-Disconnecting Vertex Removal</span><a class="headerlink" href="#non-disconnecting-vertex-removal" title="Permalink to this heading">#</a></h2>
 <p>Prove that every connected graph has a vertex whose removal (along with its incident edges) does not disconnect the graph.
 Write an algorithm that finds such a vertex. Hint: Use DFS and vertex marking.</p>
 </section>
-<section id="exercise-6-1-4-inginious-maze">
-<h2>Exercise 6.1.4 (INGInious: Maze)<a class="headerlink" href="#exercise-6-1-4-inginious-maze" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="maze-shortest-path">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Maze Shortest Path</span><a class="headerlink" href="#maze-shortest-path" title="Permalink to this heading">#</a></h2>
 <p>Consider an unweighted, undirected graph <span class="math notranslate nohighlight">\(G\)</span> whose edges represent valid moves for a robot in a maze between positions (nodes).
 Given a starting position and a destination node, implement a method to find a path to the exit that minimizes the number of moves: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Maze">Maze</a>.
 What is the time complexity of your method? Does it depend on the graph representation (for example, adjacency lists vs. adjacency matrix)?</p>
 </section>
-<section id="exercise-6-1-5">
-<h2>Exercise 6.1.5<a class="headerlink" href="#exercise-6-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="cycle-detection-in-course-prerequisites">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Cycle Detection in Course Prerequisites</span><a class="headerlink" href="#cycle-detection-in-course-prerequisites" title="Permalink to this heading">#</a></h2>
 <p>The EPL course syllabus lists prerequisites for each course.
 You want to verify that all courses can be taken, i.e., that there is no circular dependency between courses.</p>
 <p>What algorithm do you propose to perform this check?
 What is the time complexity of your method?</p>
 </section>
-<section id="exercise-6-1-6">
-<h2>Exercise 6.1.6<a class="headerlink" href="#exercise-6-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="kahn-s-algorithm-for-topological-sorting">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Kahn’s Algorithm for Topological Sorting</span><a class="headerlink" href="#kahn-s-algorithm-for-topological-sorting" title="Permalink to this heading">#</a></h2>
 <p>Develop (write the code for) a topological sorting algorithm for a directed graph that maintains an array of size <span class="math notranslate nohighlight">\(V\)</span> where each entry corresponds to the in-degree of a vertex.
 Your algorithm should also maintain a queue of <em>sources</em> (vertices with an in-degree of 0).
 Initialize these two structures in a single pass over all edges.
@@ -306,8 +312,8 @@ Then, repeat the following steps until the source queue is empty:</p>
 <p>How can you detect whether the topological sort is unique?
 What is the time complexity of your algorithm?</p>
 </section>
-<section id="exercise-6-1-7">
-<h2>Exercise 6.1.7<a class="headerlink" href="#exercise-6-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="reconstructing-an-mst-after-removing-k-edges">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Reconstructing an MST After Removing k Edges</span><a class="headerlink" href="#reconstructing-an-mst-after-removing-k-edges" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(G = (V,E)\)</span> be an edge-weighted undirected graph for which a minimum spanning tree (MST) has already been computed.
 Suppose <span class="math notranslate nohighlight">\(k\)</span> edges are removed from this MST.
 Write a method to reconstruct an MST from the remaining <span class="math notranslate nohighlight">\(|V|-1-k\)</span> edges.
@@ -315,26 +321,26 @@ The final MST does not need to be identical to the original one, but it must con
 <p>On what fundamental property (or properties) of MSTs is your algorithm based?
 What is the time complexity of your method?</p>
 </section>
-<section id="exercise-6-1-8">
-<h2>Exercise 6.1.8<a class="headerlink" href="#exercise-6-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="forcing-an-edge-into-an-mst">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Forcing an Edge into an MST</span><a class="headerlink" href="#forcing-an-edge-into-an-mst" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(G = (V,E)\)</span> be an edge-weighted undirected graph for which an MST has already been computed.
-Suppose an edge <span class="math notranslate nohighlight">\(e \in E\)</span> with weight <span class="math notranslate nohighlight">\(w\)</span> is not part of this MST.
+Suppose an edge <span class="math notranslate nohighlight">\(e = (u, v) \in E\)</span> with weight <span class="math notranslate nohighlight">\(w\)</span> is not part of this MST.
 How can you compute a new MST that is constrained to include <span class="math notranslate nohighlight">\(e\)</span> by adapting the original MST? Describe your algorithm.
 What is the time complexity? Hint: Use DFS on the original MST.</p>
 </section>
-<section id="exercise-6-1-9">
-<h2>Exercise 6.1.9<a class="headerlink" href="#exercise-6-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="dijkstra-s-algorithm-with-java-util-priorityqueue">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Dijkstra’s Algorithm with java.util.PriorityQueue</span><a class="headerlink" href="#dijkstra-s-algorithm-with-java-util-priorityqueue" title="Permalink to this heading">#</a></h2>
 <p>Could <code class="docutils literal notranslate"><span class="pre">java.util.PriorityQueue</span></code> be used to efficiently implement Dijkstra’s algorithm?
 If not, why not? What would the time complexity be if you used this priority queue?</p>
 </section>
-<section id="exercise-6-1-10">
-<h2>Exercise 6.1.10<a class="headerlink" href="#exercise-6-1-10" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="why-dijkstra-fails-on-negative-edge-weights">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Why Dijkstra Fails on Negative Edge Weights</span><a class="headerlink" href="#why-dijkstra-fails-on-negative-edge-weights" title="Permalink to this heading">#</a></h2>
 <p>Explain why Dijkstra’s algorithm (<code class="docutils literal notranslate"><span class="pre">DijkstraSP</span></code>) does not support edges with negative weights.
 Would the computed distances be incorrect, or would the time complexity guarantee no longer hold?
 Provide an example graph illustrating the problem.</p>
 </section>
-<section id="exercise-6-1-11">
-<h2>Exercise 6.1.11<a class="headerlink" href="#exercise-6-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="shifting-negative-edge-weights-in-dijkstra">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Shifting Negative Edge Weights in Dijkstra</span><a class="headerlink" href="#shifting-negative-edge-weights-in-dijkstra" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(G\)</span> be a directed graph with potentially negative edge weights, but without any negative cycles.
 Suppose we want to find the shortest path between a vertex <span class="math notranslate nohighlight">\(u\)</span> and a vertex <span class="math notranslate nohighlight">\(v\)</span>.
 We only have access to an implementation of Dijkstra’s algorithm that does not support negative weights.
@@ -342,48 +348,47 @@ A proposed heuristic is to add a constant to all edge weights equal to the absol
 Is this method valid?
 If so, prove it. If not, provide a counterexample.</p>
 </section>
-<section id="exercise-6-1-12">
-<h2>Exercise 6.1.12<a class="headerlink" href="#exercise-6-1-12" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="longest-path-and-bellman-ford-with-negated-weights">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Longest Path and Bellman-Ford with Negated Weights</span><a class="headerlink" href="#longest-path-and-bellman-ford-with-negated-weights" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(G\)</span> be a directed graph with positive edge weights. We want to find the longest path between vertex <span class="math notranslate nohighlight">\(u\)</span> and vertex <span class="math notranslate nohighlight">\(v\)</span>.
 Suppose we have an implementation of the Bellman-Ford algorithm (which supports negative weights).
 Can we simply negate all edge weights and compute the shortest path using Bellman-Ford?
 Is this method valid? If not, can you propose an algorithm to find the longest simple path?
 Does your method apply to all graphs? If not, what specific class of graphs can it handle?</p>
 </section>
-<section id="exercise-6-1-13-inginious">
-<h2>Exercise 6.1.13 (INGInious)<a class="headerlink" href="#exercise-6-1-13-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implement a
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Digraph">Digraph Data Structure</a></p>
+<section class="exercise-section exercise-inginious" id="digraph-data-structure">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Digraph Data Structure</span><a class="headerlink" href="#digraph-data-structure" title="Permalink to this heading">#</a></h2>
+<p>Implement a <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Digraph">Digraph Data Structure</a>.</p>
 </section>
-<section id="exercise-6-1-14-inginious">
-<h2>Exercise 6.1.14 (INGInious)<a class="headerlink" href="#exercise-6-1-14-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="depth-first-paths">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Depth-First Paths</span><a class="headerlink" href="#depth-first-paths" title="Permalink to this heading">#</a></h2>
 <p>Implement an algorithm for finding a path (its length does not matter) between a source node and a destination using
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_DepthFirstPaths">Depth First Search</a></p>
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_DepthFirstPaths">Depth First Search</a>.</p>
 </section>
-<section id="exercise-6-1-15-inginious">
-<h2>Exercise 6.1.15 (INGInious)<a class="headerlink" href="#exercise-6-1-15-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="connected-components">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Connected Components</span><a class="headerlink" href="#connected-components" title="Permalink to this heading">#</a></h2>
 <p>Implement the computation of the number of connected components in a Graph:
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_ConnectedComponents">ConnectedComponents</a></p>
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_ConnectedComponents">ConnectedComponents</a>.</p>
 </section>
-<section id="exercise-6-1-16-inginious">
-<h2>Exercise 6.1.16 (INGInious)<a class="headerlink" href="#exercise-6-1-16-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="covid-bubbles">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Covid Bubbles</span><a class="headerlink" href="#covid-bubbles" title="Permalink to this heading">#</a></h2>
 <p>A programming exercise on finding which contacts to prohibit in a network to satisfy Belgian COVID-19 bubble regulations:
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Bubbles">Covid bubbles</a></p>
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_Bubbles">Covid bubbles</a>.</p>
 </section>
-<section id="exercise-6-1-17-inginious">
-<h2>Exercise 6.1.17 (INGInious)<a class="headerlink" href="#exercise-6-1-17-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="multi-source-shortest-paths">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Multi-Source Shortest Paths</span><a class="headerlink" href="#multi-source-shortest-paths" title="Permalink to this heading">#</a></h2>
 <p>A programming exercise on BFS to find the shortest path from multiple possible sources to a destination node:
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_BreadthFirstShortestPaths">BFS multiple sources</a></p>
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_BreadthFirstShortestPaths">BFS multiple sources</a>.</p>
 </section>
-<section id="exercise-6-1-18-inginious">
-<h2>Exercise 6.1.18 (INGInious)<a class="headerlink" href="#exercise-6-1-18-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="global-warming-shortest-path">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming Shortest Path</span><a class="headerlink" href="#global-warming-shortest-path" title="Permalink to this heading">#</a></h2>
 <p>A programming exercise on shortest path in an implicit graph:
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarmingPaths">Global Warming Path</a></p>
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarmingPaths">Global Warming Path</a>.</p>
 </section>
-<section id="exercise-6-1-19-inginious">
-<h2>Exercise 6.1.19 (INGInious)<a class="headerlink" href="#exercise-6-1-19-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="global-warming-islands-with-dfs">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming Islands with DFS</span><a class="headerlink" href="#global-warming-islands-with-dfs" title="Permalink to this heading">#</a></h2>
 <p>Revisit the computation of the number of islands, this time using DFS rather than union-find:
-<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">Global Warming Island</a></p>
+<a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">Global Warming Island</a>.</p>
 </section>
 </section>
 
@@ -448,25 +453,25 @@ Does your method apply to all graphs? If not, what specific class of graphs can 
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
-<li><a class="reference internal" href="#exercise-6-1-1">Exercise 6.1.1</a></li>
-<li><a class="reference internal" href="#exercise-6-1-2">Exercise 6.1.2</a></li>
-<li><a class="reference internal" href="#exercise-6-1-3">Exercise 6.1.3</a></li>
-<li><a class="reference internal" href="#exercise-6-1-4-inginious-maze">Exercise 6.1.4 (INGInious: Maze)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-5">Exercise 6.1.5</a></li>
-<li><a class="reference internal" href="#exercise-6-1-6">Exercise 6.1.6</a></li>
-<li><a class="reference internal" href="#exercise-6-1-7">Exercise 6.1.7</a></li>
-<li><a class="reference internal" href="#exercise-6-1-8">Exercise 6.1.8</a></li>
-<li><a class="reference internal" href="#exercise-6-1-9">Exercise 6.1.9</a></li>
-<li><a class="reference internal" href="#exercise-6-1-10">Exercise 6.1.10</a></li>
-<li><a class="reference internal" href="#exercise-6-1-11">Exercise 6.1.11</a></li>
-<li><a class="reference internal" href="#exercise-6-1-12">Exercise 6.1.12</a></li>
-<li><a class="reference internal" href="#exercise-6-1-13-inginious">Exercise 6.1.13 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-14-inginious">Exercise 6.1.14 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-15-inginious">Exercise 6.1.15 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-16-inginious">Exercise 6.1.16 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-17-inginious">Exercise 6.1.17 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-18-inginious">Exercise 6.1.18 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-6-1-19-inginious">Exercise 6.1.19 (INGInious)</a></li>
+<li><a class="reference internal" href="#graph-representations-and-elementary-complexities"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Graph Representations and Elementary Complexities</span></a></li>
+<li><a class="reference internal" href="#bipartite-graph-detection-with-dfs"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Bipartite Graph Detection with DFS</span></a></li>
+<li><a class="reference internal" href="#non-disconnecting-vertex-removal"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Non-Disconnecting Vertex Removal</span></a></li>
+<li><a class="reference internal" href="#maze-shortest-path"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Maze Shortest Path</span></a></li>
+<li><a class="reference internal" href="#cycle-detection-in-course-prerequisites"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Cycle Detection in Course Prerequisites</span></a></li>
+<li><a class="reference internal" href="#kahn-s-algorithm-for-topological-sorting"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Kahn’s Algorithm for Topological Sorting</span></a></li>
+<li><a class="reference internal" href="#reconstructing-an-mst-after-removing-k-edges"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Reconstructing an MST After Removing k Edges</span></a></li>
+<li><a class="reference internal" href="#forcing-an-edge-into-an-mst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Forcing an Edge into an MST</span></a></li>
+<li><a class="reference internal" href="#dijkstra-s-algorithm-with-java-util-priorityqueue"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Dijkstra’s Algorithm with java.util.PriorityQueue</span></a></li>
+<li><a class="reference internal" href="#why-dijkstra-fails-on-negative-edge-weights"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Why Dijkstra Fails on Negative Edge Weights</span></a></li>
+<li><a class="reference internal" href="#shifting-negative-edge-weights-in-dijkstra"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Shifting Negative Edge Weights in Dijkstra</span></a></li>
+<li><a class="reference internal" href="#longest-path-and-bellman-ford-with-negated-weights"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Longest Path and Bellman-Ford with Negated Weights</span></a></li>
+<li><a class="reference internal" href="#digraph-data-structure"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Digraph Data Structure</span></a></li>
+<li><a class="reference internal" href="#depth-first-paths"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Depth-First Paths</span></a></li>
+<li><a class="reference internal" href="#connected-components"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Connected Components</span></a></li>
+<li><a class="reference internal" href="#covid-bubbles"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Covid Bubbles</span></a></li>
+<li><a class="reference internal" href="#multi-source-shortest-paths"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Multi-Source Shortest Paths</span></a></li>
+<li><a class="reference internal" href="#global-warming-shortest-path"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming Shortest Path</span></a></li>
+<li><a class="reference internal" href="#global-warming-islands-with-dfs"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming Islands with DFS</span></a></li>
 </ul>
 </li>
 </ul>
@@ -485,7 +490,6 @@ Does your method apply to all graphs? If not, what specific class of graphs can 
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

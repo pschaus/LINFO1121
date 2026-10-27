@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises A" href="ex1.html" /><link rel="prev" title="Part 5 | Priority queues, union-find and data compression" href="index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exercises A" href="ex1.html" /><link rel="prev" title="Part 5 | Priority queues, union-find and data compression" href="index.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Objectives - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,7 +263,7 @@
         </div>
         <article role="main">
           <section id="objectives">
-<span id="intro5"></span><h1>Objectives<a class="headerlink" href="#objectives" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="intro5"></span><h1>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h1>
 <p>Upon completion of this part, each student will be able to:</p>
 <ul class="simple">
 <li><p>accurately and precisely describe the concepts presented in the reference book that deal with <em>union-find structures</em>, <em>priority files</em>, and textual data manipulation/compression,</p></li>
@@ -266,7 +272,7 @@
 </ul>
 </section>
 <section id="to-read">
-<h1>To read<a class="headerlink" href="#to-read" title="Lien permanent vers cette rubrique">#</a></h1>
+<h1>To read<a class="headerlink" href="#to-read" title="Permalink to this heading">#</a></h1>
 <p>Reference book:</p>
 <ul class="simple">
 <li><p>chapter 1.5 (union find), 2.4 (heap), 5.5 (Huffman compression).</p></li>
@@ -336,6 +342,5 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     </body>
 </html>

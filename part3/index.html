@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Objectives" href="intro.html" /><link rel="prev" title="Exercises B" href="../part2/ex2.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Objectives" href="intro.html" /><link rel="prev" title="Exercises B" href="../part2/ex2.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Part 3 | Search Trees - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,40 +263,40 @@
         </div>
         <article role="main">
           <section id="part-3-search-trees">
-<span id="part3"></span><h1>Part 3 |  Search Trees<a class="headerlink" href="#part-3-search-trees" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part3"></span><h1>Part 3 |  Search Trees<a class="headerlink" href="#part-3-search-trees" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html#to-read">To read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ex1.html">Exercises A</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-1">Exercise 3.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-3">Exercise 3.1.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-4">Exercise 3.1.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-5">Exercise 3.1.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-6">Exercise 3.1.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-7">Exercise 3.1.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-8">Exercise 3.1.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-9">Exercise 3.1.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-10">Exercise 3.1.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-11-inginious-mcq-on-tree-traversals">Exercise 3.1.11 (INGInious MCQ on tree traversals)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-12-inginious-bst-iterator">Exercise 3.1.12 (INGInious: BST Iterator)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-13-inginious-ceil">Exercise 3.1.13 (INGInious: Ceil)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-14-inginious-higher-key">Exercise 3.1.14 (INGInious: Higher key)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-15-inginious-mcq-on-bst-time-complexity">Exercise 3.1.15 (INGInious MCQ on BST Time-Complexity)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-16-inginious-small-exercises-on-red-black">Exercise 3.1.16 (INGInious: Small exercises on red-black)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-3-1-17-inginious-red-black-tree-conversion">Exercise 3.1.17 (INGInious: Red-Black Tree Conversion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#sequentialsearchst-vs-binarysearchst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">SequentialSearchST vs. BinarySearchST</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#interpolation-search"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Interpolation Search</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#software-caching-in-binarysearchst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Software Caching in BinarySearchST</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#validating-a-binary-search-tree"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Validating a Binary Search Tree</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#valid-bst-search-key-sequences"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Valid BST Search Key Sequences</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#validating-a-red-black-bst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Validating a Red-Black BST</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#enumerating-bst-keys-in-ascending-order"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Enumerating BST Keys in Ascending Order</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#bst-vs-2-3-tree-insertion-trace"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">BST vs. 2-3 Tree Insertion Trace</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#identifying-valid-red-black-bsts"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Identifying Valid Red-Black BSTs</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#mcq-on-tree-traversals"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MCQ on Tree Traversals</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#bst-iterator"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BST Iterator</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#ceil"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Ceil</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#higher-key"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Higher Key</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#mcq-on-bst-time-complexity"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MCQ on BST Time Complexity</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#red-black-tree-insertions"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Red-Black Tree Insertions</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#red-black-tree-conversion"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Red-Black Tree Conversion</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ex2.html">Exercises B</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-1-true-false">Exercise 3.2.1 (True/False)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-2-sorting-with-bst">Exercise 3.2.2 (Sorting with BST)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-3-delete-complexity">Exercise 3.2.3 (Delete Complexity)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-4-delete-commutativity">Exercise 3.2.4 (Delete Commutativity)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-5-inginious-bst-serialization">Exercise 3.2.5 (INGInious: BST Serialization)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-6-inginious-birthdaymap">Exercise 3.2.6 (INGInious: BirthdayMap)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-7-inginious-skyline">Exercise 3.2.7 (INGInious: Skyline)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-8-inginious-array-bst-put-and-get">Exercise 3.2.8 (INGInious: Array BST, put and get)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-3-2-9-inginious-array-bst-delete">Exercise 3.2.9 (INGInious: Array BST, delete)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#true-false-binary-search-bsts-and-red-black-trees"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">True/False: Binary Search, BSTs, and Red-Black Trees</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#sorting-with-a-bst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Sorting with a BST</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#bst-deletion-complexity"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">BST Deletion Complexity</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#commutativity-of-bst-deletion"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Commutativity of BST Deletion</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#bst-serialization"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BST Serialization</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#birthdaymap"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BirthdayMap</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#skyline"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Skyline</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#array-bst-put-and-get"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Array BST, Put and Get</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#array-bst-delete"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Array BST, Delete</span></a></li>
 </ul>
 </li>
 </ul>
@@ -358,6 +364,5 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     </body>
 </html>

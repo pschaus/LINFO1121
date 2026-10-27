@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises A - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,20 +263,20 @@
         </div>
         <article role="main">
           <section id="exercises-a">
-<span id="part2-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part2-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W4.</p>
 </div>
-<section id="exercise-2-1-1">
-<h2>Exercise 2.1.1<a class="headerlink" href="#exercise-2-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="search-and-insertion-in-a-sorted-sequence">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Search and Insertion in a Sorted Sequence</span><a class="headerlink" href="#search-and-insertion-in-a-sorted-sequence" title="Permalink to this heading">#</a></h2>
 <p>Given an array containing <span class="math notranslate nohighlight">\(n\)</span> sorted integers, and a number <span class="math notranslate nohighlight">\(x\)</span> to insert into the array, can you
 describe an algorithm to find the position where <span class="math notranslate nohighlight">\(x\)</span> should be inserted while keeping the array sorted?</p>
 <p>What is the time complexity of this algorithm?
 Does your algorithm also work for a sorted linked list? With what complexity?</p>
 </section>
-<section id="exercise-2-1-2">
-<h2>Exercise 2.1.2<a class="headerlink" href="#exercise-2-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="optimal-job-scheduling">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Optimal Job Scheduling</span><a class="headerlink" href="#optimal-job-scheduling" title="Permalink to this heading">#</a></h2>
 <p>We consider the very general problem where we have <span class="math notranslate nohighlight">\(n\)</span> jobs to perform for clients
 and each job <span class="math notranslate nohighlight">\(j\)</span> takes <span class="math notranslate nohighlight">\(t_j\)</span> seconds to complete.
 Only one job can be performed at a time.</p>
@@ -283,15 +289,15 @@ the completion times will be 5, 13, 16, 20 and therefore the average completion 
 <p>Prove (with a written proof!) that sorting the <span class="math notranslate nohighlight">\(n\)</span> jobs in ascending order of <span class="math notranslate nohighlight">\(t_j\)</span> generates an optimal
 solution to the problem.</p>
 </section>
-<section id="exercise-2-1-3">
-<h2>Exercise 2.1.3<a class="headerlink" href="#exercise-2-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="stability-and-in-place-sorting">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Stability and In-Place Sorting</span><a class="headerlink" href="#stability-and-in-place-sorting" title="Permalink to this heading">#</a></h2>
 <p>What is meant by a stable and an in-place sorting algorithm?
 For all the algorithms presented in the reference book,
 indicate whether they are in-place (or not) and whether they are stable (or not).</p>
 <p>Answer the short <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/sorting_property">INGInious MCQ</a>.</p>
 </section>
-<section id="exercise-2-1-4-inginious-card-sorter">
-<h2>Exercise 2.1.4 (INGInious: Card Sorter)<a class="headerlink" href="#exercise-2-1-4-inginious-card-sorter" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="card-sorter">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Card Sorter</span><a class="headerlink" href="#card-sorter" title="Permalink to this heading">#</a></h2>
 <p>How would you sort a pile of cards in ascending order with the restriction that
 the only permitted operations are:</p>
 <ol class="arabic simple">
@@ -300,35 +306,35 @@ the only permitted operations are:</p>
 <li><p>move the first card to the back of the pile?</p></li>
 </ol>
 <div class="admonition tip">
-<p class="admonition-title">Astuce</p>
+<p class="admonition-title">Tip</p>
 <p>Try to maintain the invariant that the <cite>last i elements of the pile are sorted and are the i largest ones</cite>.
 Then at each iteration try to make this invariant true for one more card (i+1).</p>
 </div>
 <p>Write the pseudocode of your algorithm on paper and give its time complexity.</p>
 <p>Once it is done, implement your solution on the INGInious <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_CardSorter">task</a>.</p>
 </section>
-<section id="exercise-2-1-5-inginious-sort-linked-list">
-<h2>Exercise 2.1.5 (INGInious: Sort Linked List)<a class="headerlink" href="#exercise-2-1-5-inginious-sort-linked-list" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How can you sort a simply linked list (which does not allow access
+<section class="exercise-section exercise-inginious" id="sort-linked-list">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Sort Linked List</span><a class="headerlink" href="#sort-linked-list" title="Permalink to this heading">#</a></h2>
+<p>How can you sort a singly linked list (which does not allow access
 to a position by index) efficiently? What is the time complexity of your
 algorithm?</p>
 <p>Solve the related INGInious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_SortLinkedList">SortLinkedList</a>.</p>
-<p>Which algorithm is used by the <cite>sort</cite> method of the <cite>List</cite> interface below?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">list</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<p>Which algorithm is used by the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method of the <code class="docutils literal notranslate"><span class="pre">List</span></code> interface below?</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nb">list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">compare</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">compare</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
-<section id="exercise-2-1-6">
-<h2>Exercise 2.1.6<a class="headerlink" href="#exercise-2-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="counting-inversions">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Counting Inversions</span><a class="headerlink" href="#counting-inversions" title="Permalink to this heading">#</a></h2>
 <p>Design an efficient algorithm for counting the number of inverted (out-of-order) pairs of values.
 For example, in the sequence <span class="math notranslate nohighlight">\(1,3,2,5,6,4,8\)</span>, there are the pairs <span class="math notranslate nohighlight">\((3,2), (5,4), (6,4)\)</span>
 which are unordered. Justify the complexity of your algorithm and give its pseudocode.</p>
 <div class="admonition tip">
-<p class="admonition-title">Astuce</p>
+<p class="admonition-title">Tip</p>
 <p>Assume two arrays <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, let <span class="math notranslate nohighlight">\(A.B\)</span> be the array resulting from the
 concatenation of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Let <span class="math notranslate nohighlight">\(nUnsorted(A)\)</span> be the number of unsorted pairs
 in an array <span class="math notranslate nohighlight">\(A\)</span>.</p>
@@ -343,63 +349,63 @@ Could you compute <span class="math notranslate nohighlight">\(nUnsorted\)</span
 that runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n \cdot \log(n))\)</span>?</p>
 </div>
 </section>
-<section id="exercise-2-1-7">
-<h2>Exercise 2.1.7<a class="headerlink" href="#exercise-2-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Imagine that we want to sort a collection of <cite>Person</cite> objects lexicographically by their (weight, age, height)
-and also <cite>Student</cite> objects by their (age, grade, year). How can you avoid duplicating the sorting algorithm
+<section class="exercise-section exercise-theory" id="lexicographical-sorting-with-comparable-and-comparator">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Lexicographical Sorting with Comparable and Comparator</span><a class="headerlink" href="#lexicographical-sorting-with-comparable-and-comparator" title="Permalink to this heading">#</a></h2>
+<p>Imagine that we want to sort a collection of <code class="docutils literal notranslate"><span class="pre">Person</span></code> objects lexicographically by their (weight, age, height)
+and also <code class="docutils literal notranslate"><span class="pre">Student</span></code> objects by their (age, grade, year). How can you avoid duplicating the sorting algorithm
 specifically for these classes?</p>
-<p>Explain why the <cite>Comparable</cite> and <cite>Comparator</cite> interfaces in Java are useful for this.
-Explain how you would implement an efficient <cite>Comparator</cite> for <cite>String</cite>.</p>
+<p>Explain why the <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> and <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> interfaces in Java are useful for this.
+Explain how you would implement an efficient <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> for <code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
 </section>
-<section id="exercise-2-1-8">
-<h2>Exercise 2.1.8<a class="headerlink" href="#exercise-2-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="making-any-sorting-algorithm-stable">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Making Any Sorting Algorithm Stable</span><a class="headerlink" href="#making-any-sorting-algorithm-stable" title="Permalink to this heading">#</a></h2>
 <p>Is it possible to get a stable sort starting from an unstable sorting algorithm? How?</p>
 </section>
-<section id="exercise-2-1-9">
-<h2>Exercise 2.1.9<a class="headerlink" href="#exercise-2-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How would you find the 3rd smallest value in an array of one million <cite>int</cite> values?
+<section class="exercise-section exercise-theory" id="finding-the-3rd-smallest-element">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Finding the 3rd Smallest Element</span><a class="headerlink" href="#finding-the-3rd-smallest-element" title="Permalink to this heading">#</a></h2>
+<p>How would you find the 3rd smallest value in an array of one million <code class="docutils literal notranslate"><span class="pre">int</span></code> values?
 What is the time complexity of your algorithm?</p>
 </section>
-<section id="exercise-2-1-10-inginious-median">
-<h2>Exercise 2.1.10 (INGInious: Median)<a class="headerlink" href="#exercise-2-1-10-inginious-median" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="median">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Median</span><a class="headerlink" href="#median" title="Permalink to this heading">#</a></h2>
 <p>How would you get the median of an array of values (i.e., the <span class="math notranslate nohighlight">\(\frac{n}{2}\)</span>-th value)?
 What is the time complexity of your algorithm?</p>
 <p>Solve the related INGInious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Median">Median</a>.</p>
 <div class="admonition tip">
-<p class="admonition-title">Astuce</p>
+<p class="admonition-title">Tip</p>
 <p>What can you infer regarding the position of the median after the partitioning operation
 around a pivot value <span class="math notranslate nohighlight">\(v\)</span> in the QuickSort algorithm?</p>
 </div>
 </section>
-<section id="exercise-2-1-11">
-<h2>Exercise 2.1.11<a class="headerlink" href="#exercise-2-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="autoboxing-unboxing-and-sorting-performance">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Autoboxing, Unboxing, and Sorting Performance</span><a class="headerlink" href="#autoboxing-unboxing-and-sorting-performance" title="Permalink to this heading">#</a></h2>
 <p>What is Autoboxing and Unboxing in Java?
 How can this impact the performance of a sorting algorithm?</p>
 <p>Compare the performance of <code class="docutils literal notranslate"><span class="pre">Arrays.sort</span></code> on an array of 10,000,000 entries consisting of <code class="docutils literal notranslate"><span class="pre">int</span></code> and
 the same array with <code class="docutils literal notranslate"><span class="pre">Integer</span></code>.</p>
 </section>
-<section id="exercise-2-1-12">
-<h2>Exercise 2.1.12<a class="headerlink" href="#exercise-2-1-12" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="code-profiling-with-visualvm">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Code Profiling with VisualVM</span><a class="headerlink" href="#code-profiling-with-visualvm" title="Permalink to this heading">#</a></h2>
 <p>What is a code <em>profiler</em>?
 What information provided by a profiler could you use to improve
 the performance of your algorithms and data structures in general (speed, memory, GC)?</p>
 <p>A good free profiler is VisualVM.</p>
 <p>Use VisualVM on your code for the previous question.</p>
 </section>
-<section id="exercise-2-1-13-inginious-merge-sort">
-<h2>Exercise 2.1.13 (INGInious: Merge Sort)<a class="headerlink" href="#exercise-2-1-13-inginious-merge-sort" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="merge-sort">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Merge Sort</span><a class="headerlink" href="#merge-sort" title="Permalink to this heading">#</a></h2>
 <p>Complete (without reading the book since you won’t have it during the exam) the implementation of <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MergeSort">Merge Sort</a>.</p>
 </section>
-<section id="exercise-2-1-14-inginious-a-photographer-problem">
-<h2>Exercise 2.1.14 (INGInious: A Photographer problem)<a class="headerlink" href="#exercise-2-1-14-inginious-a-photographer-problem" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="a-photographer-problem">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">A Photographer Problem</span><a class="headerlink" href="#a-photographer-problem" title="Permalink to this heading">#</a></h2>
 <p>Help the photographer arrange players of two soccer teams so that everybody is visible in the picture (exam 2022): <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Photo">Photo</a>.</p>
 </section>
-<section id="exercise-2-1-15-inginious-an-olympic-problem">
-<h2>Exercise 2.1.15 (INGInious: An Olympic Problem)<a class="headerlink" href="#exercise-2-1-15-inginious-an-olympic-problem" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="an-olympic-problem">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">An Olympic Problem</span><a class="headerlink" href="#an-olympic-problem" title="Permalink to this heading">#</a></h2>
 <p>Help the Olympic Games organizers compute the number of training rooms (exam 2024): <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TrainingSessions">TrainingSessions</a>.</p>
 </section>
-<section id="exercise-2-1-16-inginious-fix-quicksort">
-<h2>Exercise 2.1.16 (INGInious: Fix QuickSort)<a class="headerlink" href="#exercise-2-1-16-inginious-fix-quicksort" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="fix-quicksort">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Fix QuickSort</span><a class="headerlink" href="#fix-quicksort" title="Permalink to this heading">#</a></h2>
 <p>It seems that this QuickSort implementation does not always have the expected time complexity.
 Help us improve it: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_FixQuickSort">FixQuickSort</a>.</p>
 </section>
@@ -466,22 +472,22 @@ Help us improve it: <a class="reference external" href="https://inginious.info.u
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
-<li><a class="reference internal" href="#exercise-2-1-1">Exercise 2.1.1</a></li>
-<li><a class="reference internal" href="#exercise-2-1-2">Exercise 2.1.2</a></li>
-<li><a class="reference internal" href="#exercise-2-1-3">Exercise 2.1.3</a></li>
-<li><a class="reference internal" href="#exercise-2-1-4-inginious-card-sorter">Exercise 2.1.4 (INGInious: Card Sorter)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-5-inginious-sort-linked-list">Exercise 2.1.5 (INGInious: Sort Linked List)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-6">Exercise 2.1.6</a></li>
-<li><a class="reference internal" href="#exercise-2-1-7">Exercise 2.1.7</a></li>
-<li><a class="reference internal" href="#exercise-2-1-8">Exercise 2.1.8</a></li>
-<li><a class="reference internal" href="#exercise-2-1-9">Exercise 2.1.9</a></li>
-<li><a class="reference internal" href="#exercise-2-1-10-inginious-median">Exercise 2.1.10 (INGInious: Median)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-11">Exercise 2.1.11</a></li>
-<li><a class="reference internal" href="#exercise-2-1-12">Exercise 2.1.12</a></li>
-<li><a class="reference internal" href="#exercise-2-1-13-inginious-merge-sort">Exercise 2.1.13 (INGInious: Merge Sort)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-14-inginious-a-photographer-problem">Exercise 2.1.14 (INGInious: A Photographer problem)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-15-inginious-an-olympic-problem">Exercise 2.1.15 (INGInious: An Olympic Problem)</a></li>
-<li><a class="reference internal" href="#exercise-2-1-16-inginious-fix-quicksort">Exercise 2.1.16 (INGInious: Fix QuickSort)</a></li>
+<li><a class="reference internal" href="#search-and-insertion-in-a-sorted-sequence"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Search and Insertion in a Sorted Sequence</span></a></li>
+<li><a class="reference internal" href="#optimal-job-scheduling"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Optimal Job Scheduling</span></a></li>
+<li><a class="reference internal" href="#stability-and-in-place-sorting"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Stability and In-Place Sorting</span></a></li>
+<li><a class="reference internal" href="#card-sorter"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Card Sorter</span></a></li>
+<li><a class="reference internal" href="#sort-linked-list"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Sort Linked List</span></a></li>
+<li><a class="reference internal" href="#counting-inversions"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Counting Inversions</span></a></li>
+<li><a class="reference internal" href="#lexicographical-sorting-with-comparable-and-comparator"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Lexicographical Sorting with Comparable and Comparator</span></a></li>
+<li><a class="reference internal" href="#making-any-sorting-algorithm-stable"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Making Any Sorting Algorithm Stable</span></a></li>
+<li><a class="reference internal" href="#finding-the-3rd-smallest-element"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Finding the 3rd Smallest Element</span></a></li>
+<li><a class="reference internal" href="#median"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Median</span></a></li>
+<li><a class="reference internal" href="#autoboxing-unboxing-and-sorting-performance"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Autoboxing, Unboxing, and Sorting Performance</span></a></li>
+<li><a class="reference internal" href="#code-profiling-with-visualvm"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Code Profiling with VisualVM</span></a></li>
+<li><a class="reference internal" href="#merge-sort"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Merge Sort</span></a></li>
+<li><a class="reference internal" href="#a-photographer-problem"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">A Photographer Problem</span></a></li>
+<li><a class="reference internal" href="#an-olympic-problem"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">An Olympic Problem</span></a></li>
+<li><a class="reference internal" href="#fix-quicksort"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Fix QuickSort</span></a></li>
 </ul>
 </li>
 </ul>
@@ -500,7 +506,6 @@ Help us improve it: <a class="reference external" href="https://inginious.info.u
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

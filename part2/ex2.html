@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Part 3 | Search Trees" href="../part3/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Part 3 | Search Trees" href="../part3/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises B - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,55 +263,55 @@
         </div>
         <article role="main">
           <section id="exercises-b">
-<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part2-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W5.</p>
 </div>
-<section id="exercise-2-2-1-inginious-union-of-intervals">
-<h2>Exercise 2.2.1 (INGInious: Union of Intervals)<a class="headerlink" href="#exercise-2-2-1-inginious-union-of-intervals" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-inginious" id="union-of-intervals">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Union of Intervals</span><a class="headerlink" href="#union-of-intervals" title="Permalink to this heading">#</a></h2>
 <p>Write a method that takes an array of intervals as input and returns the union of those intervals as an array of disjoint intervals.
 What is the time complexity of your method?</p>
 <p>Solve the corresponding task on INGInious: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Union">Union intervals</a>.</p>
 </section>
-<section id="exercise-2-2-2">
-<h2>Exercise 2.2.2<a class="headerlink" href="#exercise-2-2-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="three-value-array-sorting">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Three-Value Array Sorting</span><a class="headerlink" href="#three-value-array-sorting" title="Permalink to this heading">#</a></h2>
 <p>You need to sort a large array containing only values in the set <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1,</span> <span class="pre">2}</span></code>.
 What sorting algorithm do you suggest? Write the code.
-What is the time complexity to sort the array? Discuss this complexity with respect to the lower bound for comparison-based sorting algorithms (Proposition 1, pages 280-281).</p>
+What is the time complexity to sort the array? Discuss this complexity with respect to the lower bound for comparison-based sorting algorithms (Proposition I, pages 280-281).</p>
 </section>
-<section id="exercise-2-2-3">
-<h2>Exercise 2.2.3<a class="headerlink" href="#exercise-2-2-3" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>The mode of an array of numbers is the number that appears most frequently in the array. For example, [4, 6, 2, 4, 3, 1] has mode 4. Give an efficient algorithm to calculate the mode of an array of <span class="math notranslate nohighlight">\(n\)</span> numbers. What if we know that the array only contains values from 0 to <span class="math notranslate nohighlight">\(k\)</span>?</p>
+<section class="exercise-section exercise-theory" id="finding-the-mode-of-an-array">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Finding the Mode of an Array</span><a class="headerlink" href="#finding-the-mode-of-an-array" title="Permalink to this heading">#</a></h2>
+<p>The mode of an array of numbers is the number that appears most frequently in the array. For example, <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">6,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">1]</span></code> has mode 4. Give an efficient algorithm to calculate the mode of an array of <span class="math notranslate nohighlight">\(n\)</span> numbers. What if we know that the array only contains values from 0 to <span class="math notranslate nohighlight">\(k\)</span>?</p>
 </section>
-<section id="exercise-2-2-4">
-<h2>Exercise 2.2.4<a class="headerlink" href="#exercise-2-2-4" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="two-sum-across-two-sets">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Two-Sum Across Two Sets</span><a class="headerlink" href="#two-sum-across-two-sets" title="Permalink to this heading">#</a></h2>
 <p>Given two sets <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> (each of size <span class="math notranslate nohighlight">\(n\)</span>), and a target number <span class="math notranslate nohighlight">\(x\)</span>. Describe an efficient algorithm to find if there is a pair <span class="math notranslate nohighlight">\((a,b)\)</span> with <span class="math notranslate nohighlight">\(a \in S_1, b \in S_2\)</span> such that <span class="math notranslate nohighlight">\(a+b=x\)</span>.
 What is the time complexity of your algorithm? What if the sets are already given in sorted arrays?</p>
 </section>
-<section id="exercise-2-2-5">
-<h2>Exercise 2.2.5<a class="headerlink" href="#exercise-2-2-5" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="two-sum-in-a-single-set">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Two-Sum in a Single Set</span><a class="headerlink" href="#two-sum-in-a-single-set" title="Permalink to this heading">#</a></h2>
 <p>Same question as above, but for a single set. What if the set is already given in a sorted array?</p>
 </section>
-<section id="exercise-2-2-6">
-<h2>Exercise 2.2.6<a class="headerlink" href="#exercise-2-2-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="union-of-two-sorted-sets">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Union of Two Sorted Sets</span><a class="headerlink" href="#union-of-two-sorted-sets" title="Permalink to this heading">#</a></h2>
 <p>Give an algorithm to compute the union of two sets <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.
 Suppose next that the already sorted set <span class="math notranslate nohighlight">\(A\)</span> has size <span class="math notranslate nohighlight">\(n\)</span> and the already sorted set <span class="math notranslate nohighlight">\(B\)</span> has size <span class="math notranslate nohighlight">\(n^2\)</span>. What would be the time complexity of your algorithm? Would your algorithm change?</p>
 </section>
-<section id="exercise-2-2-7">
-<h2>Exercise 2.2.7<a class="headerlink" href="#exercise-2-2-7" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="searching-in-a-sorted-matrix">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Searching in a Sorted Matrix</span><a class="headerlink" href="#searching-in-a-sorted-matrix" title="Permalink to this heading">#</a></h2>
 <p>Given an <span class="math notranslate nohighlight">\(n \times m\)</span> matrix of integers where rows and columns are sorted, how do you find a given number in the matrix efficiently?
 Hint: There is an <span class="math notranslate nohighlight">\(\mathcal{O}(n+m)\)</span> time algorithm. To do this, start in the upper-right corner and compare the element with the target number. Which parts of the matrix can you prune from your search based on the result?</p>
 </section>
-<section id="exercise-2-2-8-inginious-global-warming">
-<h2>Exercise 2.2.8 (INGInious: Global Warming)<a class="headerlink" href="#exercise-2-2-8-inginious-global-warming" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="global-warming">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming</span><a class="headerlink" href="#global-warming" title="Permalink to this heading">#</a></h2>
 <p>Design an algorithm to compute the number of entries greater than or equal to a given value <span class="math notranslate nohighlight">\(v_1\)</span> in an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix of integers.
 What if you need to recompute it for a different value <span class="math notranslate nohighlight">\(v_2\)</span>?
 Do you need to redo the computation from scratch, or can some precomputation be done to answer queries more efficiently?</p>
 <p>INGInious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_GlobalWarmingImpl">Global Warming</a>.</p>
 </section>
-<section id="exercise-2-2-9-inginious-radix-sort">
-<h2>Exercise 2.2.9 (INGInious: Radix Sort)<a class="headerlink" href="#exercise-2-2-9-inginious-radix-sort" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="radix-sort">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Radix Sort</span><a class="headerlink" href="#radix-sort" title="Permalink to this heading">#</a></h2>
 <p>Every integer is encoded using 32 bits in Java.
 An integer can thus be seen as a string of 32 bits.
 The radix sort algorithm is a version of string sort that starts with the least significant bit rather than the most significant bit (unlike MSD sort, page 710).</p>
@@ -319,8 +325,8 @@ The radix sort algorithm is a version of string sort that starts with the least 
 <li><p>How would you adapt the radix sort implementation to sort numbers that may be positive or negative (be careful about the way negative numbers are represented bitwise)?</p></li>
 </ol>
 </section>
-<section id="exercise-2-2-10-inginious-aggregate-january-2023">
-<h2>Exercise 2.2.10 (INGInious: Aggregate, January 2023)<a class="headerlink" href="#exercise-2-2-10-inginious-aggregate-january-2023" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="aggregate-january-2023">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Aggregate, January 2023</span><a class="headerlink" href="#aggregate-january-2023" title="Permalink to this heading">#</a></h2>
 <p>INGInious task: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_Aggregate">Aggregate</a>.</p>
 </section>
 </section>
@@ -386,16 +392,16 @@ The radix sort algorithm is a version of string sort that starts with the least 
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
-<li><a class="reference internal" href="#exercise-2-2-1-inginious-union-of-intervals">Exercise 2.2.1 (INGInious: Union of Intervals)</a></li>
-<li><a class="reference internal" href="#exercise-2-2-2">Exercise 2.2.2</a></li>
-<li><a class="reference internal" href="#exercise-2-2-3">Exercise 2.2.3</a></li>
-<li><a class="reference internal" href="#exercise-2-2-4">Exercise 2.2.4</a></li>
-<li><a class="reference internal" href="#exercise-2-2-5">Exercise 2.2.5</a></li>
-<li><a class="reference internal" href="#exercise-2-2-6">Exercise 2.2.6</a></li>
-<li><a class="reference internal" href="#exercise-2-2-7">Exercise 2.2.7</a></li>
-<li><a class="reference internal" href="#exercise-2-2-8-inginious-global-warming">Exercise 2.2.8 (INGInious: Global Warming)</a></li>
-<li><a class="reference internal" href="#exercise-2-2-9-inginious-radix-sort">Exercise 2.2.9 (INGInious: Radix Sort)</a></li>
-<li><a class="reference internal" href="#exercise-2-2-10-inginious-aggregate-january-2023">Exercise 2.2.10 (INGInious: Aggregate, January 2023)</a></li>
+<li><a class="reference internal" href="#union-of-intervals"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Union of Intervals</span></a></li>
+<li><a class="reference internal" href="#three-value-array-sorting"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Three-Value Array Sorting</span></a></li>
+<li><a class="reference internal" href="#finding-the-mode-of-an-array"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Finding the Mode of an Array</span></a></li>
+<li><a class="reference internal" href="#two-sum-across-two-sets"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Two-Sum Across Two Sets</span></a></li>
+<li><a class="reference internal" href="#two-sum-in-a-single-set"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Two-Sum in a Single Set</span></a></li>
+<li><a class="reference internal" href="#union-of-two-sorted-sets"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Union of Two Sorted Sets</span></a></li>
+<li><a class="reference internal" href="#searching-in-a-sorted-matrix"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Searching in a Sorted Matrix</span></a></li>
+<li><a class="reference internal" href="#global-warming"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming</span></a></li>
+<li><a class="reference internal" href="#radix-sort"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Radix Sort</span></a></li>
+<li><a class="reference internal" href="#aggregate-january-2023"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Aggregate, January 2023</span></a></li>
 </ul>
 </li>
 </ul>
@@ -414,7 +420,6 @@ The radix sort algorithm is a version of string sort that starts with the least 
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

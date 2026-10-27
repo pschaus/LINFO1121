@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises A - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,105 +263,105 @@
         </div>
         <article role="main">
           <section id="exercises-a">
-<span id="part4-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part4-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W7.</p>
 </div>
-<section id="exercise-4-1-1">
-<h2>Exercise 4.1.1<a class="headerlink" href="#exercise-4-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="symbol-table-implementations-comparison">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Symbol Table Implementations Comparison</span><a class="headerlink" href="#symbol-table-implementations-comparison" title="Permalink to this heading">#</a></h2>
 <p>Name at least four different implementations of a symbol table (dictionary).
 Specify the main properties of each implementation.
 In which scenario(s) are they most appropriate?
 What are the time complexities of their main operations?</p>
 </section>
-<section id="exercise-4-1-2">
-<h2>Exercise 4.1.2<a class="headerlink" href="#exercise-4-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="two-sum-using-a-hash-table">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Two-Sum Using a Hash Table</span><a class="headerlink" href="#two-sum-using-a-hash-table" title="Permalink to this heading">#</a></h2>
 <p>Recall the following question from the sorting assignment: Given a set <span class="math notranslate nohighlight">\(S\)</span> of size <span class="math notranslate nohighlight">\(n\)</span> and a number <span class="math notranslate nohighlight">\(x\)</span>, describe an efficient algorithm using a hash table to determine whether there exists a pair <span class="math notranslate nohighlight">\((a, b)\)</span> with <span class="math notranslate nohighlight">\(a \in S, b \in S\)</span> such that <span class="math notranslate nohighlight">\(a + b = x\)</span>. What is the time complexity of your algorithm? Is it better than your solution that used sorting?</p>
 </section>
-<section id="exercise-4-1-3">
-<h2>Exercise 4.1.3<a class="headerlink" href="#exercise-4-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="modular-arithmetic-and-string-hashing-in-java">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Modular Arithmetic and String Hashing in Java</span><a class="headerlink" href="#modular-arithmetic-and-string-hashing-in-java" title="Permalink to this heading">#</a></h2>
 <p>Show that <span class="math notranslate nohighlight">\((a + b) \% M\)</span> is equivalent to <span class="math notranslate nohighlight">\(((a \% M) + b) \% M\)</span>. How can this property be useful when building a hash function for strings?
 Explain how Java computes a hash function for strings.
 What is the time complexity of computing the hash code of a string once, and computing it <span class="math notranslate nohighlight">\(N\)</span> times?</p>
 </section>
-<section id="exercise-4-1-4">
-<h2>Exercise 4.1.4<a class="headerlink" href="#exercise-4-1-4" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="sign-bit-masking-in-hash-functions">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Sign Bit Masking in Hash Functions</span><a class="headerlink" href="#sign-bit-masking-in-hash-functions" title="Permalink to this heading">#</a></h2>
 <p>Explain why the <code class="docutils literal notranslate"><span class="pre">hash()</span></code> method on page 461 of the book returns <code class="docutils literal notranslate"><span class="pre">(x.hashCode()</span> <span class="pre">&amp;</span> <span class="pre">0x7FFFFFFF)</span> <span class="pre">%</span> <span class="pre">M</span></code> and not simply <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span> <span class="pre">%</span> <span class="pre">M</span></code>?
 What number does <code class="docutils literal notranslate"><span class="pre">0x7FFFFFFF</span></code> represent?
 What is its binary representation?
 Show the effect at the bit level on an example where <code class="docutils literal notranslate"><span class="pre">x.hashCode()</span></code> returns a negative number. Hint: use <code class="docutils literal notranslate"><span class="pre">Integer.toBinaryString(int)</span></code> to verify your answer.</p>
 </section>
-<section id="exercise-4-1-5">
-<h2>Exercise 4.1.5<a class="headerlink" href="#exercise-4-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="java-map-hierarchy-and-hashtable">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Java Map Hierarchy and Hashtable</span><a class="headerlink" href="#java-map-hierarchy-and-hashtable" title="Permalink to this heading">#</a></h2>
 <p>Java provides the class <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> as an implementation of the <code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code> interface.
 Which variant of hash table does it use?
 Does Java provide other implementations of the <code class="docutils literal notranslate"><span class="pre">Map</span></code> interface?
 Draw a diagram representing the interfaces and classes related to <code class="docutils literal notranslate"><span class="pre">Map</span></code> and specify the key characteristics of each.
 What can be used as a key for a hash table in Java? Be specific.</p>
 </section>
-<section id="exercise-4-1-6">
-<h2>Exercise 4.1.6<a class="headerlink" href="#exercise-4-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What is meant by a « collision » in a hash table?
+<section class="exercise-section exercise-theory" id="hash-collisions-and-resolution-strategies">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Hash Collisions and Resolution Strategies</span><a class="headerlink" href="#hash-collisions-and-resolution-strategies" title="Permalink to this heading">#</a></h2>
+<p>What is meant by a “collision” in a hash table?
 Do collisions affect the time complexity of operations?
 If so, which operation(s) and with what complexity? If not, explain why.</p>
 </section>
-<section id="exercise-4-1-7">
-<h2>Exercise 4.1.7<a class="headerlink" href="#exercise-4-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="load-factor-and-resizing-strategies">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Load Factor and Resizing Strategies</span><a class="headerlink" href="#load-factor-and-resizing-strategies" title="Permalink to this heading">#</a></h2>
 <p>What is the load factor of a hash table?
 Is controlling the load factor necessary or optional for the proper operation of a hash table using linear probing or separate chaining?
 What strategy is used by <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> to control the load factor?
 How does it differ from the strategy used in <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code>?
 What is the relationship between the load factor and collisions?</p>
 </section>
-<section id="exercise-4-1-8">
-<h2>Exercise 4.1.8<a class="headerlink" href="#exercise-4-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="fail-fast-iterator-for-linearprobinghashst">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Fail-Fast Iterator for LinearProbingHashST</span><a class="headerlink" href="#fail-fast-iterator-for-linearprobinghashst" title="Permalink to this heading">#</a></h2>
 <p>Imagine a new <code class="docutils literal notranslate"><span class="pre">iterator()</span></code> method that returns an iterator over the keys of <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code>.
 Your iterator must not allow modifications to the hash table while in use: a <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException</span></code> should be thrown if a modification occurs.
 How would you implement this? Hint: Take inspiration from the <code class="docutils literal notranslate"><span class="pre">java.util.Hashtable</span></code> strategy.</p>
 </section>
-<section id="exercise-4-1-9">
-<h2>Exercise 4.1.9<a class="headerlink" href="#exercise-4-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="lazy-deletion-with-tombstones-in-linear-probing">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Lazy Deletion with Tombstones in Linear Probing</span><a class="headerlink" href="#lazy-deletion-with-tombstones-in-linear-probing" title="Permalink to this heading">#</a></h2>
 <p>Describe the implementation of the <code class="docutils literal notranslate"><span class="pre">put(key)</span></code> method in a hash table using linear probing where deleted entries are marked with a special sentinel value (tombstone) via the <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> method.
 In other words, instead of rehashing and shifting subsequent entries so that it is as if the deleted entry was never inserted, <code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> simply flags the entry with this special marker.
 What are the advantages and disadvantages of this approach compared to the <code class="docutils literal notranslate"><span class="pre">LinearProbingHashST</span></code> implementation in the book?</p>
 </section>
-<section id="exercise-4-1-10-rabin-karp">
-<h2>Exercise 4.1.10 (Rabin-Karp)<a class="headerlink" href="#exercise-4-1-10-rabin-karp" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="incremental-rolling-hash-rabin-karp">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Incremental Rolling Hash — Rabin-Karp</span><a class="headerlink" href="#incremental-rolling-hash-rabin-karp" title="Permalink to this heading">#</a></h2>
 <p>Imagine a hash function for a string <span class="math notranslate nohighlight">\(s\)</span> such that knowing its value for the substring <span class="math notranslate nohighlight">\(s[i \ldots i+n-1]\)</span> allows computing the hash value of the substring <span class="math notranslate nohighlight">\(s[i+1 \ldots i+n]\)</span> in constant time (incrementally).</p>
 </section>
-<section id="exercise-4-1-11-rabin-karp">
-<h2>Exercise 4.1.11 (Rabin-Karp)<a class="headerlink" href="#exercise-4-1-11-rabin-karp" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="single-and-multi-pattern-substring-search-rabin-karp">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Single and Multi-Pattern Substring Search — Rabin-Karp</span><a class="headerlink" href="#single-and-multi-pattern-substring-search-rabin-karp" title="Permalink to this heading">#</a></h2>
 <p>Explain how to search for a substring of length <span class="math notranslate nohighlight">\(m\)</span> in a text of length <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time using an incremental hash function.
 How would you do this if you had <span class="math notranslate nohighlight">\(k\)</span> patterns of length <span class="math notranslate nohighlight">\(m\)</span> to search for in a text of length <span class="math notranslate nohighlight">\(n\)</span>?
 What is the time complexity of your method? Is it better than running the Rabin-Karp algorithm <span class="math notranslate nohighlight">\(k\)</span> times?</p>
 </section>
-<section id="exercise-4-1-12-inginious-mcq">
-<h2>Exercise 4.1.12 (INGInious: MCQ)<a class="headerlink" href="#exercise-4-1-12-inginious-mcq" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="mcq-on-hash-functions">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MCQ on Hash Functions</span><a class="headerlink" href="#mcq-on-hash-functions" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmHashing">Multiple choice questions on hash function</a></p>
 </section>
-<section id="exercise-4-1-13-inginious-mcq">
-<h2>Exercise 4.1.13 (INGInious: MCQ)<a class="headerlink" href="#exercise-4-1-13-inginious-mcq" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="mcq-on-rabin-karp">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MCQ on Rabin-Karp</span><a class="headerlink" href="#mcq-on-rabin-karp" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk">Multiple choice questions on Rabin-Karp</a></p>
 </section>
-<section id="exercise-4-1-14-inginious">
-<h2>Exercise 4.1.14 (INGInious)<a class="headerlink" href="#exercise-4-1-14-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="word-counter">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Word Counter</span><a class="headerlink" href="#word-counter" title="Permalink to this heading">#</a></h2>
 <p>An easy tool to implement for counting word occurrences (exam 2022).
-Word counting is a frequent task in natural language processing algorithms.
+Word counting is a frequent task in natural language processing algorithms:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_WordCounter">Word Counter</a></p>
 </section>
-<section id="exercise-4-1-15-inginious">
-<h2>Exercise 4.1.15 (INGInious)<a class="headerlink" href="#exercise-4-1-15-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Incremental computation of a hash function (exam 2018).
+<section class="exercise-section exercise-inginious" id="incremental-hash">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Incremental Hash</span><a class="headerlink" href="#incremental-hash" title="Permalink to this heading">#</a></h2>
+<p>Incremental computation of a hash function (exam 2018):
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash">Incremental Hash</a></p>
 </section>
-<section id="exercise-4-1-16-inginious">
-<h2>Exercise 4.1.16 (INGInious)<a class="headerlink" href="#exercise-4-1-16-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>A bounded-capacity cache that retains only the most recently used entries (exam 2022).
+<section class="exercise-section exercise-inginious" id="lru-cache">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">LRU Cache</span><a class="headerlink" href="#lru-cache" title="Permalink to this heading">#</a></h2>
+<p>A bounded-capacity cache that retains only the most recently used entries (exam 2022):
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_LRUCache">LRUCache</a></p>
 </section>
-<section id="exercise-4-1-17-inginious">
-<h2>Exercise 4.1.17 (INGInious)<a class="headerlink" href="#exercise-4-1-17-inginious" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="multi-pattern-rabin-karp">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Multi-Pattern Rabin-Karp</span><a class="headerlink" href="#multi-pattern-rabin-karp" title="Permalink to this heading">#</a></h2>
 <p>Implement a version of Rabin-Karp to search for <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp">K patterns</a> simultaneously instead of just one.</p>
 </section>
 </section>
@@ -421,23 +427,23 @@ Word counting is a frequent task in natural language processing algorithms.
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
-<li><a class="reference internal" href="#exercise-4-1-1">Exercise 4.1.1</a></li>
-<li><a class="reference internal" href="#exercise-4-1-2">Exercise 4.1.2</a></li>
-<li><a class="reference internal" href="#exercise-4-1-3">Exercise 4.1.3</a></li>
-<li><a class="reference internal" href="#exercise-4-1-4">Exercise 4.1.4</a></li>
-<li><a class="reference internal" href="#exercise-4-1-5">Exercise 4.1.5</a></li>
-<li><a class="reference internal" href="#exercise-4-1-6">Exercise 4.1.6</a></li>
-<li><a class="reference internal" href="#exercise-4-1-7">Exercise 4.1.7</a></li>
-<li><a class="reference internal" href="#exercise-4-1-8">Exercise 4.1.8</a></li>
-<li><a class="reference internal" href="#exercise-4-1-9">Exercise 4.1.9</a></li>
-<li><a class="reference internal" href="#exercise-4-1-10-rabin-karp">Exercise 4.1.10 (Rabin-Karp)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-11-rabin-karp">Exercise 4.1.11 (Rabin-Karp)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-12-inginious-mcq">Exercise 4.1.12 (INGInious: MCQ)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-13-inginious-mcq">Exercise 4.1.13 (INGInious: MCQ)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-14-inginious">Exercise 4.1.14 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-15-inginious">Exercise 4.1.15 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-16-inginious">Exercise 4.1.16 (INGInious)</a></li>
-<li><a class="reference internal" href="#exercise-4-1-17-inginious">Exercise 4.1.17 (INGInious)</a></li>
+<li><a class="reference internal" href="#symbol-table-implementations-comparison"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Symbol Table Implementations Comparison</span></a></li>
+<li><a class="reference internal" href="#two-sum-using-a-hash-table"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Two-Sum Using a Hash Table</span></a></li>
+<li><a class="reference internal" href="#modular-arithmetic-and-string-hashing-in-java"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Modular Arithmetic and String Hashing in Java</span></a></li>
+<li><a class="reference internal" href="#sign-bit-masking-in-hash-functions"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Sign Bit Masking in Hash Functions</span></a></li>
+<li><a class="reference internal" href="#java-map-hierarchy-and-hashtable"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Java Map Hierarchy and Hashtable</span></a></li>
+<li><a class="reference internal" href="#hash-collisions-and-resolution-strategies"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Hash Collisions and Resolution Strategies</span></a></li>
+<li><a class="reference internal" href="#load-factor-and-resizing-strategies"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Load Factor and Resizing Strategies</span></a></li>
+<li><a class="reference internal" href="#fail-fast-iterator-for-linearprobinghashst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Fail-Fast Iterator for LinearProbingHashST</span></a></li>
+<li><a class="reference internal" href="#lazy-deletion-with-tombstones-in-linear-probing"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Lazy Deletion with Tombstones in Linear Probing</span></a></li>
+<li><a class="reference internal" href="#incremental-rolling-hash-rabin-karp"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Incremental Rolling Hash — Rabin-Karp</span></a></li>
+<li><a class="reference internal" href="#single-and-multi-pattern-substring-search-rabin-karp"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Single and Multi-Pattern Substring Search — Rabin-Karp</span></a></li>
+<li><a class="reference internal" href="#mcq-on-hash-functions"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MCQ on Hash Functions</span></a></li>
+<li><a class="reference internal" href="#mcq-on-rabin-karp"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">MCQ on Rabin-Karp</span></a></li>
+<li><a class="reference internal" href="#word-counter"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Word Counter</span></a></li>
+<li><a class="reference internal" href="#incremental-hash"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Incremental Hash</span></a></li>
+<li><a class="reference internal" href="#lru-cache"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">LRU Cache</span></a></li>
+<li><a class="reference internal" href="#multi-pattern-rabin-karp"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Multi-Pattern Rabin-Karp</span></a></li>
 </ul>
 </li>
 </ul>
@@ -456,7 +462,6 @@ Word counting is a frequent task in natural language processing algorithms.
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

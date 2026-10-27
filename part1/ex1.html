@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises A - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,44 +263,44 @@
         </div>
         <article role="main">
           <section id="exercises-a">
-<span id="part1-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part1-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W2.</p>
 </div>
-<section id="exercise-1-1-1">
-<h2>Exercise 1.1.1<a class="headerlink" href="#exercise-1-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="abstract-data-types-interface-vs-class">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Abstract Data Types: Interface vs. Class</span><a class="headerlink" href="#abstract-data-types-interface-vs-class" title="Permalink to this heading">#</a></h2>
 <p>Define what an abstract data type (ADT) is. In Java, is it better to describe an ADT by a
 class or an interface? Why?</p>
 </section>
-<section id="exercise-1-1-2">
-<h2>Exercise 1.1.2<a class="headerlink" href="#exercise-1-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>How would you implement a <em>stack</em> using a singly linked list where the <cite>push</cite> and <cite>pop</cite> operations are done at the <strong>end of the list</strong>? Is this solution efficient? Justify your answer.</p>
+<section class="exercise-section exercise-theory" id="stack-at-the-end-of-a-singly-linked-list">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Stack at the End of a Singly Linked List</span><a class="headerlink" href="#stack-at-the-end-of-a-singly-linked-list" title="Permalink to this heading">#</a></h2>
+<p>How would you implement a <em>stack</em> using a singly linked list where the <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pop</span></code> operations are done at the <strong>end of the list</strong>? Is this solution efficient? Justify your answer.</p>
 </section>
-<section id="exercise-1-1-3">
-<h2>Exercise 1.1.3<a class="headerlink" href="#exercise-1-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="stack-implementations-and-java-util-stack">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Stack Implementations and java.util.Stack</span><a class="headerlink" href="#stack-implementations-and-java-util-stack" title="Permalink to this heading">#</a></h2>
 <p>What are the possible implementations for a stack? By consulting the Java API documentation, describe
-the implementation of a stack by the class <cite>java.util.Stack</cite>. Go to the source code of the implementation
-<cite>java.util.Stack</cite> (Ctrl+B from IntelliJ).</p>
+the implementation of a stack by the class <code class="docutils literal notranslate"><span class="pre">java.util.Stack</span></code>. Go to the source code of the implementation
+<code class="docutils literal notranslate"><span class="pre">java.util.Stack</span></code> (Ctrl+B from IntelliJ).</p>
 <p>Why do you think Java developers chose this implementation
 (hint: argue about memory and garbage collection)?</p>
 </section>
-<section id="exercise-1-1-4-inginious-implement-a-stack-with-two-queues">
-<h2>Exercise 1.1.4 (INGInious: Implement a stack with two queues)<a class="headerlink" href="#exercise-1-1-4-inginious-implement-a-stack-with-two-queues" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="implement-a-stack-with-two-queues">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Implement a Stack with Two Queues</span><a class="headerlink" href="#implement-a-stack-with-two-queues" title="Permalink to this heading">#</a></h2>
 <p>How do you implement the abstract data type <em>stack</em> using two <em>queues</em>?
-In particular, describe how the <cite>push</cite> and <cite>pop</cite> methods work in this case.</p>
-<p>As an example, specify the state of each of the two queues after pushing the integers <cite>1 2 3</cite> onto an initially empty stack.
-Describe what happens next when the <cite>pop</cite> operation is performed.</p>
-<p>What is the time complexity of these methods if we assume that each <cite>enqueue</cite> and <cite>dequeue</cite>
+In particular, describe how the <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pop</span></code> methods work in this case.</p>
+<p>As an example, specify the state of each of the two queues after pushing the integers <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code> onto an initially empty stack.
+Describe what happens next when the <code class="docutils literal notranslate"><span class="pre">pop</span></code> operation is performed.</p>
+<p>What is the time complexity of these methods if we assume that each <code class="docutils literal notranslate"><span class="pre">enqueue</span></code> and <code class="docutils literal notranslate"><span class="pre">dequeue</span></code>
 operation is executed in constant time?</p>
 <p>Is this implementation of a stack efficient (for <span class="math notranslate nohighlight">\(n\)</span> operations)
 compared to the other implementations presented in the reference book?</p>
 <p>Once you have imagined your solution on paper, you can solve the corresponding INGInious task <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_StackWithTwoQueues">StackWithTwoQueues</a>.</p>
 </section>
-<section id="exercise-1-1-5">
-<h2>Exercise 1.1.5<a class="headerlink" href="#exercise-1-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What do you think about these three different ways of iterating over the elements of a <cite>java.util.LinkedList</cite>? Are they equivalent? Use a time-complexity argument.
-Does changing <cite>new LinkedList&lt;&gt;()</cite> by <cite>new ArrayListList&lt;&gt;()</cite> at the first line would change the performance of these loops?</p>
+<section class="exercise-section exercise-theory" id="iterating-over-a-linkedlist-vs-arraylist">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Iterating Over a LinkedList vs. ArrayList</span><a class="headerlink" href="#iterating-over-a-linkedlist-vs-arraylist" title="Permalink to this heading">#</a></h2>
+<p>What do you think about these three different ways of iterating over the elements of a <code class="docutils literal notranslate"><span class="pre">java.util.LinkedList</span></code>? Are they equivalent? Use a time-complexity argument.
+Does replacing <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">LinkedList&lt;&gt;()</span></code> with <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">ArrayList&lt;&gt;()</span></code> on the first line change the performance of these loops?</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
 <span class="c1">// assume I insert n elements in the list here</span>
@@ -316,8 +322,8 @@ Does changing <cite>new LinkedList&lt;&gt;()</cite> by <cite>new ArrayListList&l
 </pre></div>
 </div>
 </section>
-<section id="exercise-1-1-6">
-<h2>Exercise 1.1.6<a class="headerlink" href="#exercise-1-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="asymptotic-notations-tilde-vs-big-oh-omega-theta">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Asymptotic Notations: Tilde vs. Big-Oh, Omega, Theta</span><a class="headerlink" href="#asymptotic-notations-tilde-vs-big-oh-omega-theta" title="Permalink to this heading">#</a></h2>
 <p>The <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation is used in the reference book for the analysis of the running times of
 algorithms. How does this notation differ from or resemble the more commonly used notations <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
 (big Oh), <span class="math notranslate nohighlight">\(\mathcal{\Omega}\)</span> (big Omega), and <span class="math notranslate nohighlight">\(\mathcal{\Theta}\)</span> (big Theta)?</p>
@@ -325,8 +331,8 @@ algorithms. How does this notation differ from or resemble the more commonly use
 What do you see as the advantage of using the <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) notation rather than <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>
 when possible?</p>
 </section>
-<section id="exercise-1-1-7">
-<h2>Exercise 1.1.7<a class="headerlink" href="#exercise-1-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="the-doubling-ratio-test">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">The Doubling Ratio Test</span><a class="headerlink" href="#the-doubling-ratio-test" title="Permalink to this heading">#</a></h2>
 <p>Explain how we can extract the <span class="math notranslate nohighlight">\(\sim\)</span> (tilde) characterization from the implementation of an algorithm
 using the <em>doubling ratio</em> test.</p>
 <ul class="simple">
@@ -374,8 +380,8 @@ input size <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <li><p>What would be the running time for 128000?</p></li>
 </ul>
 </section>
-<section id="exercise-1-1-8">
-<h2>Exercise 1.1.8<a class="headerlink" href="#exercise-1-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="jvm-memory-stack-heap-and-garbage-collector">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">JVM Memory: Stack, Heap, and Garbage Collector</span><a class="headerlink" href="#jvm-memory-stack-heap-and-garbage-collector" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What do heap and stack represent when talking about the execution of a program?</p></li>
 <li><p>What do the <code class="docutils literal notranslate"><span class="pre">-Xmx</span></code> and <code class="docutils literal notranslate"><span class="pre">-Xms</span></code> parameters mean when running Java bytecode on the JVM?</p></li>
@@ -383,8 +389,8 @@ input size <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <li><p>What is the JVM garbage collector?</p></li>
 </ul>
 </section>
-<section id="exercise-1-1-9">
-<h2>Exercise 1.1.9<a class="headerlink" href="#exercise-1-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="unit-testing-edge-cases-and-complexity-verification">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Unit Testing, Edge Cases, and Complexity Verification</span><a class="headerlink" href="#unit-testing-edge-cases-and-complexity-verification" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What is a good set of unit tests to verify the correctness of a data structure?</p></li>
 <li><p>Do you think about edge cases?</p></li>
@@ -406,9 +412,9 @@ the expected theoretical time complexity?</p></li>
 <li><p>How can you test the time complexity of your program?</p></li>
 </ul>
 </section>
-<section id="exercise-1-1-10-inginious-segmentedlist-and-iterators">
-<h2>Exercise 1.1.10 (INGInious: SegmentedList and iterators)<a class="headerlink" href="#exercise-1-1-10-inginious-segmentedlist-and-iterators" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>You are asked to implement an ADT called a <cite>SegmentedList</cite> and the iterator method of this ADT: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList">SegmentedList</a>.</p>
+<section class="exercise-section exercise-inginious" id="segmentedlist-and-iterators">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">SegmentedList and Iterators</span><a class="headerlink" href="#segmentedlist-and-iterators" title="Permalink to this heading">#</a></h2>
+<p>You are asked to implement an ADT called a <code class="docutils literal notranslate"><span class="pre">SegmentedList</span></code> and the iterator method of this ADT: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/fundamentals_SegmentedList">SegmentedList</a>.</p>
 </section>
 </section>
 
@@ -473,16 +479,16 @@ the expected theoretical time complexity?</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
-<li><a class="reference internal" href="#exercise-1-1-1">Exercise 1.1.1</a></li>
-<li><a class="reference internal" href="#exercise-1-1-2">Exercise 1.1.2</a></li>
-<li><a class="reference internal" href="#exercise-1-1-3">Exercise 1.1.3</a></li>
-<li><a class="reference internal" href="#exercise-1-1-4-inginious-implement-a-stack-with-two-queues">Exercise 1.1.4 (INGInious: Implement a stack with two queues)</a></li>
-<li><a class="reference internal" href="#exercise-1-1-5">Exercise 1.1.5</a></li>
-<li><a class="reference internal" href="#exercise-1-1-6">Exercise 1.1.6</a></li>
-<li><a class="reference internal" href="#exercise-1-1-7">Exercise 1.1.7</a></li>
-<li><a class="reference internal" href="#exercise-1-1-8">Exercise 1.1.8</a></li>
-<li><a class="reference internal" href="#exercise-1-1-9">Exercise 1.1.9</a></li>
-<li><a class="reference internal" href="#exercise-1-1-10-inginious-segmentedlist-and-iterators">Exercise 1.1.10 (INGInious: SegmentedList and iterators)</a></li>
+<li><a class="reference internal" href="#abstract-data-types-interface-vs-class"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Abstract Data Types: Interface vs. Class</span></a></li>
+<li><a class="reference internal" href="#stack-at-the-end-of-a-singly-linked-list"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Stack at the End of a Singly Linked List</span></a></li>
+<li><a class="reference internal" href="#stack-implementations-and-java-util-stack"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Stack Implementations and java.util.Stack</span></a></li>
+<li><a class="reference internal" href="#implement-a-stack-with-two-queues"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Implement a Stack with Two Queues</span></a></li>
+<li><a class="reference internal" href="#iterating-over-a-linkedlist-vs-arraylist"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Iterating Over a LinkedList vs. ArrayList</span></a></li>
+<li><a class="reference internal" href="#asymptotic-notations-tilde-vs-big-oh-omega-theta"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Asymptotic Notations: Tilde vs. Big-Oh, Omega, Theta</span></a></li>
+<li><a class="reference internal" href="#the-doubling-ratio-test"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">The Doubling Ratio Test</span></a></li>
+<li><a class="reference internal" href="#jvm-memory-stack-heap-and-garbage-collector"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">JVM Memory: Stack, Heap, and Garbage Collector</span></a></li>
+<li><a class="reference internal" href="#unit-testing-edge-cases-and-complexity-verification"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Unit Testing, Edge Cases, and Complexity Verification</span></a></li>
+<li><a class="reference internal" href="#segmentedlist-and-iterators"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">SegmentedList and Iterators</span></a></li>
 </ul>
 </li>
 </ul>
@@ -501,7 +507,6 @@ the expected theoretical time complexity?</p></li>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

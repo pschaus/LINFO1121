@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Part 4 | Maps: hash tables and other implementations, Strings: Trie and sub-string search algo" href="../part4/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Part 4 | Maps: hash tables and other implementations, Strings: Trie and sub-string search algo" href="../part4/index.html" /><link rel="prev" title="Exercises A" href="ex1.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises B - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,22 +263,22 @@
         </div>
         <article role="main">
           <section id="exercises-b">
-<span id="part3-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part3-ex2"></span><h1>Exercises B<a class="headerlink" href="#exercises-b" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W7.</p>
 </div>
-<section id="exercise-3-2-1-true-false">
-<h2>Exercise 3.2.1 (True/False)<a class="headerlink" href="#exercise-3-2-1-true-false" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="true-false-binary-search-bsts-and-red-black-trees">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">True/False: Binary Search, BSTs, and Red-Black Trees</span><a class="headerlink" href="#true-false-binary-search-bsts-and-red-black-trees" title="Permalink to this heading">#</a></h2>
 <p>True or False?</p>
 <section id="binary-search">
-<h3>Binary Search<a class="headerlink" href="#binary-search" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Binary Search<a class="headerlink" href="#binary-search" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>In the best case, the number of key comparisons for a binary search for a particular key in a sorted array of <span class="math notranslate nohighlight">\(N\)</span> distinct keys is <span class="math notranslate nohighlight">\(\sim \log N\)</span>.</p></li>
 </ul>
 </section>
 <section id="binary-search-trees">
-<h3>Binary Search Trees<a class="headerlink" href="#binary-search-trees" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Binary Search Trees<a class="headerlink" href="#binary-search-trees" title="Permalink to this heading">#</a></h3>
 <p>Note: BST is understood here as the implementation from the textbook, i.e., a tree that is not necessarily balanced.
 The 2-3 / red-black BST is also understood to be the one in the reference textbook.</p>
 <p>We recommend that you first become familiar with the notions of <a class="reference external" href="https://en.wikipedia.org/wiki/Tree_traversal">tree traversals</a>: inorder (infix), preorder (prefix), and postorder (postfix).</p>
@@ -285,7 +291,7 @@ The 2-3 / red-black BST is also understood to be the one in the reference textbo
 </ul>
 </section>
 <section id="red-black-trees">
-<h3>Red-Black Trees<a class="headerlink" href="#red-black-trees" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Red-Black Trees<a class="headerlink" href="#red-black-trees" title="Permalink to this heading">#</a></h3>
 <p>For the statements related to red-black trees, we advise you to first translate them into statements about 2-3 trees,
 as there is a one-to-one mapping between the two representations.
 In most cases, it is easier to evaluate the validity of the statement for 2-3 trees.</p>
@@ -297,64 +303,64 @@ In most cases, it is easier to evaluate the validity of the statement for 2-3 tr
 </ul>
 </section>
 </section>
-<section id="exercise-3-2-2-sorting-with-bst">
-<h2>Exercise 3.2.2 (Sorting with BST)<a class="headerlink" href="#exercise-3-2-2-sorting-with-bst" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="sorting-with-a-bst">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Sorting with a BST</span><a class="headerlink" href="#sorting-with-a-bst" title="Permalink to this heading">#</a></h2>
 <p>Imagine a sorting algorithm using a BST. What would this algorithm look like?
 What would be the complexity of your algorithm if the BST is replaced by a red-black BST?</p>
 </section>
-<section id="exercise-3-2-3-delete-complexity">
-<h2>Exercise 3.2.3 (Delete Complexity)<a class="headerlink" href="#exercise-3-2-3-delete-complexity" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>What is the time complexity of deleting key 5 from the BST depicted below using the textbook implementation?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">15</span>
+<section class="exercise-section exercise-theory" id="bst-deletion-complexity">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">BST Deletion Complexity</span><a class="headerlink" href="#bst-deletion-complexity" title="Permalink to this heading">#</a></h2>
+<p>What is the time complexity of deleting the root key <code class="docutils literal notranslate"><span class="pre">15</span></code> from the BST depicted below using the textbook (Hibbard deletion) implementation?</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  15
     \
-     <span class="n">x</span>
-    <span class="o">/</span> \
-   <span class="o">/</span>   \
-  <span class="o">/</span>     \
- <span class="o">/</span><span class="n">n</span> <span class="n">nodes</span>\
-<span class="o">/</span>         \
-<span class="o">-----------</span>
+     x
+    / \
+   /   \
+  /     \
+ /n nodes\
+/         \
+-----------
 </pre></div>
 </div>
 </section>
-<section id="exercise-3-2-4-delete-commutativity">
-<h2>Exercise 3.2.4 (Delete Commutativity)<a class="headerlink" href="#exercise-3-2-4-delete-commutativity" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Is the delete operation (as implemented in the book) in a BST « commutative »?
+<section class="exercise-section exercise-theory" id="commutativity-of-bst-deletion">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Commutativity of BST Deletion</span><a class="headerlink" href="#commutativity-of-bst-deletion" title="Permalink to this heading">#</a></h2>
+<p>Is the delete operation (as implemented in the book) in a BST “commutative”?
 That is, deleting <span class="math notranslate nohighlight">\(x\)</span> and then directly <span class="math notranslate nohighlight">\(y\)</span> from a BST
 leaves the tree in the same state as if we had first deleted <span class="math notranslate nohighlight">\(y\)</span> and then <span class="math notranslate nohighlight">\(x\)</span>?
 Give a counterexample or argue why this is indeed always the case.
 To help you, consider the following tree and the deletion operations of 5 and 10.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">10</span>
- <span class="o">/</span> \
-<span class="mi">5</span>   <span class="mi">15</span>
-   <span class="o">/</span>
-  <span class="mi">11</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  10
+ / \
+5   15
+   /
+  11
 </pre></div>
 </div>
 </section>
-<section id="exercise-3-2-5-inginious-bst-serialization">
-<h2>Exercise 3.2.5 (INGInious: BST Serialization)<a class="headerlink" href="#exercise-3-2-5-inginious-bst-serialization" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="bst-serialization">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BST Serialization</span><a class="headerlink" href="#bst-serialization" title="Permalink to this heading">#</a></h2>
 <p>Data structure serialization refers to the process of converting a data structure (such as a list, tree, or graph) into a format that can be stored or transmitted and then reconstructed (deserialized) later.
 Here, we are interested in reconstructing (deserializing) a BST that has been serialized using a preorder traversal.</p>
 <p>Implement the reconstruction of a BST from the preorder traversal:
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_PreorderToBST">Preorder reconstruction</a></p>
 </section>
-<section id="exercise-3-2-6-inginious-birthdaymap">
-<h2>Exercise 3.2.6 (INGInious: BirthdayMap)<a class="headerlink" href="#exercise-3-2-6-inginious-birthdaymap" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="birthdaymap">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BirthdayMap</span><a class="headerlink" href="#birthdaymap" title="Permalink to this heading">#</a></h2>
 <p>An easy exercise to efficiently query persons by their birthday (exam 2023): <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BirthdayMap">BirthdayMap</a></p>
 </section>
-<section id="exercise-3-2-7-inginious-skyline">
-<h2>Exercise 3.2.7 (INGInious: Skyline)<a class="headerlink" href="#exercise-3-2-7-inginious-skyline" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="skyline">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Skyline</span><a class="headerlink" href="#skyline" title="Permalink to this heading">#</a></h2>
 <p>Design an efficient algorithm to compute the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_Skyline">Skyline</a> from a set of building shapes (rectangles) that can overlap.</p>
 </section>
-<section id="exercise-3-2-8-inginious-array-bst-put-and-get">
-<h2>Exercise 3.2.8 (INGInious: Array BST, put and get)<a class="headerlink" href="#exercise-3-2-8-inginious-array-bst-put-and-get" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Special implementation of a binary search tree with ArrayLists (mid-term quiz 2022).
+<section class="exercise-section exercise-inginious" id="array-bst-put-and-get">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Array BST, Put and Get</span><a class="headerlink" href="#array-bst-put-and-get" title="Permalink to this heading">#</a></h2>
+<p>Special implementation of a binary search tree with ArrayLists (mid-term quiz 2022):
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST">ArrayBST put and get</a></p>
 </section>
-<section id="exercise-3-2-9-inginious-array-bst-delete">
-<h2>Exercise 3.2.9 (INGInious: Array BST, delete)<a class="headerlink" href="#exercise-3-2-9-inginious-array-bst-delete" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Implementation of the <code class="docutils literal notranslate"><span class="pre">delete</span></code> method in our array-based implementation of a BST (mid-term quiz 2023).
+<section class="exercise-section exercise-inginious" id="array-bst-delete">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Array BST, Delete</span><a class="headerlink" href="#array-bst-delete" title="Permalink to this heading">#</a></h2>
+<p>Implementation of the <code class="docutils literal notranslate"><span class="pre">delete</span></code> method in our array-based implementation of a BST (mid-term quiz 2023):
 <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/searching_ArrayBST">ArrayBST with delete</a></p>
 </section>
 </section>
@@ -420,20 +426,20 @@ Here, we are interested in reconstructing (deserializing) a BST that has been se
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises B</a><ul>
-<li><a class="reference internal" href="#exercise-3-2-1-true-false">Exercise 3.2.1 (True/False)</a><ul>
+<li><a class="reference internal" href="#true-false-binary-search-bsts-and-red-black-trees"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">True/False: Binary Search, BSTs, and Red-Black Trees</span></a><ul>
 <li><a class="reference internal" href="#binary-search">Binary Search</a></li>
 <li><a class="reference internal" href="#binary-search-trees">Binary Search Trees</a></li>
 <li><a class="reference internal" href="#red-black-trees">Red-Black Trees</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exercise-3-2-2-sorting-with-bst">Exercise 3.2.2 (Sorting with BST)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-3-delete-complexity">Exercise 3.2.3 (Delete Complexity)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-4-delete-commutativity">Exercise 3.2.4 (Delete Commutativity)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-5-inginious-bst-serialization">Exercise 3.2.5 (INGInious: BST Serialization)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-6-inginious-birthdaymap">Exercise 3.2.6 (INGInious: BirthdayMap)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-7-inginious-skyline">Exercise 3.2.7 (INGInious: Skyline)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-8-inginious-array-bst-put-and-get">Exercise 3.2.8 (INGInious: Array BST, put and get)</a></li>
-<li><a class="reference internal" href="#exercise-3-2-9-inginious-array-bst-delete">Exercise 3.2.9 (INGInious: Array BST, delete)</a></li>
+<li><a class="reference internal" href="#sorting-with-a-bst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Sorting with a BST</span></a></li>
+<li><a class="reference internal" href="#bst-deletion-complexity"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">BST Deletion Complexity</span></a></li>
+<li><a class="reference internal" href="#commutativity-of-bst-deletion"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Commutativity of BST Deletion</span></a></li>
+<li><a class="reference internal" href="#bst-serialization"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BST Serialization</span></a></li>
+<li><a class="reference internal" href="#birthdaymap"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">BirthdayMap</span></a></li>
+<li><a class="reference internal" href="#skyline"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Skyline</span></a></li>
+<li><a class="reference internal" href="#array-bst-put-and-get"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Array BST, Put and Get</span></a></li>
+<li><a class="reference internal" href="#array-bst-delete"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Array BST, Delete</span></a></li>
 </ul>
 </li>
 </ul>
@@ -452,7 +458,6 @@ Here, we are interested in reconstructing (deserializing) a BST that has been se
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

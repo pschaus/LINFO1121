@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Objectives" href="intro.html" /><link rel="prev" title="Exercises B" href="../part5/ex2.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Objectives" href="intro.html" /><link rel="prev" title="Exercises B" href="../part5/ex2.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Part 6 | Graphs: paths, spanning trees, and shortest paths - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,44 +263,44 @@
         </div>
         <article role="main">
           <section id="part-6-graphs-paths-spanning-trees-and-shortest-paths">
-<span id="part6"></span><h1>Part 6 |  Graphs: paths, spanning trees, and shortest paths<a class="headerlink" href="#part-6-graphs-paths-spanning-trees-and-shortest-paths" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part6"></span><h1>Part 6 |  Graphs: paths, spanning trees, and shortest paths<a class="headerlink" href="#part-6-graphs-paths-spanning-trees-and-shortest-paths" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html#to-read">To read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ex1.html">Exercises A</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-1">Exercise 6.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-2">Exercise 6.1.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-3">Exercise 6.1.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-4-inginious-maze">Exercise 6.1.4 (INGInious: Maze)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-5">Exercise 6.1.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-6">Exercise 6.1.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-7">Exercise 6.1.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-8">Exercise 6.1.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-9">Exercise 6.1.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-10">Exercise 6.1.10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-11">Exercise 6.1.11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-12">Exercise 6.1.12</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-13-inginious">Exercise 6.1.13 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-14-inginious">Exercise 6.1.14 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-15-inginious">Exercise 6.1.15 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-16-inginious">Exercise 6.1.16 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-17-inginious">Exercise 6.1.17 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-18-inginious">Exercise 6.1.18 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-6-1-19-inginious">Exercise 6.1.19 (INGInious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#graph-representations-and-elementary-complexities"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Graph Representations and Elementary Complexities</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#bipartite-graph-detection-with-dfs"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Bipartite Graph Detection with DFS</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#non-disconnecting-vertex-removal"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Non-Disconnecting Vertex Removal</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#maze-shortest-path"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Maze Shortest Path</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#cycle-detection-in-course-prerequisites"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Cycle Detection in Course Prerequisites</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#kahn-s-algorithm-for-topological-sorting"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Kahn’s Algorithm for Topological Sorting</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#reconstructing-an-mst-after-removing-k-edges"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Reconstructing an MST After Removing k Edges</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#forcing-an-edge-into-an-mst"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Forcing an Edge into an MST</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#dijkstra-s-algorithm-with-java-util-priorityqueue"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Dijkstra’s Algorithm with java.util.PriorityQueue</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#why-dijkstra-fails-on-negative-edge-weights"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Why Dijkstra Fails on Negative Edge Weights</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#shifting-negative-edge-weights-in-dijkstra"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Shifting Negative Edge Weights in Dijkstra</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#longest-path-and-bellman-ford-with-negated-weights"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Longest Path and Bellman-Ford with Negated Weights</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#digraph-data-structure"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Digraph Data Structure</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#depth-first-paths"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Depth-First Paths</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#connected-components"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Connected Components</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#covid-bubbles"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Covid Bubbles</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#multi-source-shortest-paths"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Multi-Source Shortest Paths</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#global-warming-shortest-path"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming Shortest Path</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#global-warming-islands-with-dfs"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming Islands with DFS</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ex2.html">Exercises B</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-2-dijkstra-revisited">Exercise 6.2.2 (Dijkstra Revisited)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-3-string-of-fairy-lights">Exercise 6.2.3 (String of Fairy Lights)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-4-maximizing-the-minimum-edge-weight">Exercise 6.2.4 (Maximizing the Minimum Edge Weight)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-5-inginious">Exercise 6.2.5 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-6-inginious">Exercise 6.2.6 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-7-inginious">Exercise 6.2.7 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-8-inginious">Exercise 6.2.8 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-9-inginious">Exercise 6.2.9 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-10-inginious">Exercise 6.2.10 (INGInious)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-6-2-11-inginious">Exercise 6.2.11 (INGInious)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#dijkstra-revisited"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Dijkstra Revisited</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#string-of-fairy-lights"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">String of Fairy Lights</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#maximizing-the-minimum-edge-weight"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Maximizing the Minimum Edge Weight</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#mine-climbing"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Mine Climbing</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#train-network"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Train Network</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#word-transformation"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Word Transformation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#galaxy-path"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Galaxy Path</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#task-scheduler"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Task Scheduler</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#olympic-evacuation"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Olympic Evacuation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#wildfire-spread"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Wildfire Spread</span></a></li>
 </ul>
 </li>
 </ul>
@@ -362,6 +368,5 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     </body>
 </html>

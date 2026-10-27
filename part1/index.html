@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Objectives" href="intro.html" /><link rel="prev" title="Organization (UCLouvain Specific)" href="../course/index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Objectives" href="intro.html" /><link rel="prev" title="Organization (UCLouvain Specific)" href="../course/index.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Part 1 | Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,38 +263,38 @@
         </div>
         <article role="main">
           <section id="part-1-abstract-data-types-complexity-java-collections-stacks-queues-and-linked-lists">
-<span id="part1"></span><h1>Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists<a class="headerlink" href="#part-1-abstract-data-types-complexity-java-collections-stacks-queues-and-linked-lists" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part1"></span><h1>Part 1 |  Abstract data types, Complexity, Java Collections; Stacks, queues and linked lists<a class="headerlink" href="#part-1-abstract-data-types-complexity-java-collections-stacks-queues-and-linked-lists" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Objectives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html#to-read">To read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ex1.html">Exercises A</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-1">Exercise 1.1.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-2">Exercise 1.1.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-3">Exercise 1.1.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-4-inginious-implement-a-stack-with-two-queues">Exercise 1.1.4 (INGInious: Implement a stack with two queues)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-5">Exercise 1.1.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-6">Exercise 1.1.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-7">Exercise 1.1.7</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-8">Exercise 1.1.8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-9">Exercise 1.1.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html#exercise-1-1-10-inginious-segmentedlist-and-iterators">Exercise 1.1.10 (INGInious: SegmentedList and iterators)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#abstract-data-types-interface-vs-class"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Abstract Data Types: Interface vs. Class</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#stack-at-the-end-of-a-singly-linked-list"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Stack at the End of a Singly Linked List</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#stack-implementations-and-java-util-stack"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Stack Implementations and java.util.Stack</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#implement-a-stack-with-two-queues"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Implement a Stack with Two Queues</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#iterating-over-a-linkedlist-vs-arraylist"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Iterating Over a LinkedList vs. ArrayList</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#asymptotic-notations-tilde-vs-big-oh-omega-theta"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Asymptotic Notations: Tilde vs. Big-Oh, Omega, Theta</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#the-doubling-ratio-test"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">The Doubling Ratio Test</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#jvm-memory-stack-heap-and-garbage-collector"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">JVM Memory: Stack, Heap, and Garbage Collector</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#unit-testing-edge-cases-and-complexity-verification"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Unit Testing, Edge Cases, and Complexity Verification</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html#segmentedlist-and-iterators"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">SegmentedList and Iterators</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ex2.html">Exercises B</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-1-2-1-inginious-circular-linked-list">Exercise 1.2.1 (INGInious: Circular Linked List)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-1-2-2-inginious-implement-a-stack-with-an-array">Exercise 1.2.2 (INGInious: Implement a stack with an Array)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-1-2-3">Exercise 1.2.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-1-2-4-inginious-functional-lists">Exercise 1.2.4 (INGInious: Functional Lists)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-1-2-5">Exercise 1.2.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html#exercise-1-2-6">Exercise 1.2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#circular-linked-list"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Circular Linked List</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#implement-a-stack-with-an-array"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Implement a Stack with an Array</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#reverse-polish-notation-evaluation"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Reverse Polish Notation Evaluation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#functional-lists"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Functional Lists</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#complexity-of-list-stack-and-queue-implementations"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Complexity of List, Stack, and Queue Implementations</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html#java-collections-and-common-implementation-pitfalls"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Java Collections and Common Implementation Pitfalls</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="complexity.html">Complexity</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="complexity.html#notation-big-oh-mathcal-o">Notation Big-Oh (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="complexity.html#notation-big-omega-omega">Notation Big-Omega (<span class="math notranslate nohighlight">\(\Omega\)</span>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="complexity.html#notation-big-theta-theta">Notation Big-Theta (<span class="math notranslate nohighlight">\(\Theta\)</span>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="complexity.html#notation-tilde-mathcal-sim">Notation Tilde (<span class="math notranslate nohighlight">\(\mathcal{\sim}\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complexity.html#big-oh-notation">Big-Oh Notation (𝒪)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complexity.html#big-omega-notation">Big-Omega Notation (Ω)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complexity.html#big-theta-notation">Big-Theta Notation (Θ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complexity.html#tilde-notation">Tilde Notation (~)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="complexity.html#best-case-worst-case-average-case">Best case, worst case, average case</a></li>
 <li class="toctree-l2"><a class="reference internal" href="complexity.html#amortized-complexity">Amortized Complexity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="complexity.html#frequent-complexities">Frequent complexities</a></li>
@@ -359,6 +365,5 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     </body>
 </html>

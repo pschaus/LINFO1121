@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Organization (UCLouvain Specific)" href="../course/index.html" /><link rel="prev" title="LINFO1121: Data Structures and Algorithms" href="../index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Organization (UCLouvain Specific)" href="../course/index.html" /><link rel="prev" title="LINFO1121: Data Structures and Algorithms" href="../index.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Introduction - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,7 +263,7 @@
         </div>
         <article role="main">
           <section id="introduction">
-<span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
 <p>This is the website of <a class="reference external" href="https://uclouvain.be/en-cours-2024-linfo1121">LINFO1121</a> , the course of data-structures and algorithm tought by prof <a class="reference external" href="http://www.info.ucl.ac.be/~pschaus">Pierre Schaus</a> at UCLouvain.</p>
 <p>It serves as a supplementary resource to the foundational text <a class="reference external" href="https://algs4.cs.princeton.edu/home/">Algorithms</a> (4th Edition) by Sedgewick and Wayne, offering a set of theoretical and programming exercises designed to complement the book’s content.
 These exercises are ideally suited for a flipped classroom setting, allowing for an interactive, student-centered learning experience.
@@ -294,20 +300,20 @@ The exercises point to <a class="reference external" href="https://inginious.org
   </div>
 </div><p>The repository also stands as a valuable tool for individuals preparing for programming interviews.</p>
 <section id="general-resources">
-<h2>General Resources<a class="headerlink" href="#general-resources" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>General Resources<a class="headerlink" href="#general-resources" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pschaus.github.io/algorithms_animations">Interactive Algorithm Visualizations</a> (interactive animations and visualizers for algorithms and data structures)</p></li>
 </ul>
 </section>
 <section id="java-resources">
-<h2>Java Resources<a class="headerlink" href="#java-resources" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Java Resources<a class="headerlink" href="#java-resources" title="Permalink to this heading">#</a></h2>
 <p>We use the <em>Java</em> language and more specifically the <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api">Java8</a> version.
 The recommended IDE for this course and available for the exam is <a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ</a>.
 We will also use the <a class="reference external" href="https://junit.org/junit5/">Junit5</a> tool to perform unit tests.
 It is strongly recommended that you familiarize yourself with these tools in preparation for the exam.</p>
 </section>
 <section id="open-source-course-material">
-<h2>Open-Source Course Material<a class="headerlink" href="#open-source-course-material" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Open-Source Course Material<a class="headerlink" href="#open-source-course-material" title="Permalink to this heading">#</a></h2>
 <p>The <em>source code of all programming exercises</em> and tests are available on Github.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pschaus/algorithms_exercises_students">Github Student Repository</a></p></li>
@@ -325,7 +331,7 @@ allowing you to reflect on and analyze the differences between your approach and
 <img alt="CC-BY-SA" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
 </section>
 <section id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h2>
 <p>Since 2016, Professor <a class="reference external" href="http://www.info.ucl.ac.be/~pschaus">Pierre Schaus</a> has been leading the Data Structures and Algorithms course at UCLouvain.
 This rich collection of theoretical and hands-on programming exercises is not just a solo endeavor of his; it’s a collaborative work.
 Here is the list of persons who have contributed to this educational work over the years.</p>
@@ -434,6 +440,5 @@ Here is the list of persons who have contributed to this educational work over t
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     </body>
 </html>

@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Part 2 | Sorting and Properties of Sorted Sets" href="../part2/index.html" /><link rel="prev" title="Exercises B" href="ex2.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Part 2 | Sorting and Properties of Sorted Sets" href="../part2/index.html" /><link rel="prev" title="Exercises B" href="ex2.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Complexity - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,11 +263,11 @@
         </div>
         <article role="main">
           <section id="complexity">
-<span id="part1complexity"></span><h1>Complexity<a class="headerlink" href="#complexity" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part1complexity"></span><h1>Complexity<a class="headerlink" href="#complexity" title="Permalink to this heading">#</a></h1>
 <p>Please note that all definitions here are for positive functions with one integer argument, but are almost identical
 for multivariate functions from other sets.</p>
-<section id="notation-big-oh-mathcal-o">
-<h2>Notation Big-Oh (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>)<a class="headerlink" href="#notation-big-oh-mathcal-o" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="big-oh-notation">
+<h2>Big-Oh Notation (𝒪)<a class="headerlink" href="#big-oh-notation" title="Permalink to this heading">#</a></h2>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathcal{O}(g(n)) \quad \Longleftrightarrow \quad
@@ -274,7 +280,7 @@ such that <span class="math notranslate nohighlight">\(k \cdot g(n)\)</span> is 
 (that is, there is an <span class="math notranslate nohighlight">\(n_0\)</span> from which the rule is satisfied).</p>
 <p><span class="math notranslate nohighlight">\(g(n)\)</span> therefore acts as an upper bound on the function up to a constant factor.</p>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(f(n) = 2n^2+3n\)</span>. We have that <span class="math notranslate nohighlight">\(f(n)\in \mathcal{O}(n^2)\)</span> (in other words, we choose <span class="math notranslate nohighlight">\(g(n)=n^2\)</span>).
 Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule is respected for all <span class="math notranslate nohighlight">\(n \geq 3\)</span>.</p>
 <p>Similarly, the same function <span class="math notranslate nohighlight">\(f(n) = 2n^2+3n\)</span> belongs to other sets:</p>
@@ -290,8 +296,8 @@ Indeed, with <span class="math notranslate nohighlight">\(k=3\)</span>, the rule
 property, since it gives us the most information.</p>
 </section>
 </section>
-<section id="notation-big-omega-omega">
-<h2>Notation Big-Omega (<span class="math notranslate nohighlight">\(\Omega\)</span>)<a class="headerlink" href="#notation-big-omega-omega" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="big-omega-notation">
+<h2>Big-Omega Notation (Ω)<a class="headerlink" href="#big-omega-notation" title="Permalink to this heading">#</a></h2>
 <p>The definition is similar to that of Big-Oh. The differences are shown in bold:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -303,14 +309,14 @@ property, since it gives us the most information.</p>
 <p>For large values of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(n)\)</span> is always greater than <span class="math notranslate nohighlight">\(g(n)\)</span> up to a constant
 factor. Concretely, this means that the function <span class="math notranslate nohighlight">\(g(n)\)</span> places a lower
 bound on the complexity of <span class="math notranslate nohighlight">\(f(n)\)</span>. In other words, <span class="math notranslate nohighlight">\(g(n)\)</span> characterizes the
-« best case » possible for the calculation of <span class="math notranslate nohighlight">\(f(n)\)</span> (this is an abuse of language: see below).</p>
+“best case” possible for the calculation of <span class="math notranslate nohighlight">\(f(n)\)</span> (this is an abuse of language: see below).</p>
 <section id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>In the general case, Insert outputs <span class="math notranslate nohighlight">\(\in \Omega(n)\)</span>.</p>
 </section>
 </section>
-<section id="notation-big-theta-theta">
-<h2>Notation Big-Theta (<span class="math notranslate nohighlight">\(\Theta\)</span>)<a class="headerlink" href="#notation-big-theta-theta" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="big-theta-notation">
+<h2>Big-Theta Notation (Θ)<a class="headerlink" href="#big-theta-notation" title="Permalink to this heading">#</a></h2>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad
@@ -326,18 +332,18 @@ bound on the complexity of <span class="math notranslate nohighlight">\(f(n)\)</
 \[f(n) \in \mathbf{\Theta}(g(n)) \quad \Longleftrightarrow \quad f(n) \in \mathbf{\mathcal{O}}(g(n)) \quad\wedge\quad f(n) \in \mathbf{\Omega}(g(n))\]</div>
 </div>
 <section id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h3>
 <p>It is not always possible to find a function <span class="math notranslate nohighlight">\(g(n)\)</span> such that <span class="math notranslate nohighlight">\(f(n) \in \Theta(g(n))\)</span> for an arbitrary function <span class="math notranslate nohighlight">\(f(n)\)</span>.
 For example, for insertion sort, since its worst case is in <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> while its best case is in <span class="math notranslate nohighlight">\(\Omega(n)\)</span>, and both bounds are tight,
 it is not possible to say that insertion sort is in <span class="math notranslate nohighlight">\(\Theta(g(n))\)</span> in general.</p>
 </section>
 <section id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Merge sort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.</p>
 </section>
 </section>
-<section id="notation-tilde-mathcal-sim">
-<h2>Notation Tilde (<span class="math notranslate nohighlight">\(\mathcal{\sim}\)</span>)<a class="headerlink" href="#notation-tilde-mathcal-sim" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="tilde-notation">
+<h2>Tilde Notation (~)<a class="headerlink" href="#tilde-notation" title="Permalink to this heading">#</a></h2>
 <p>The definition of tilde notation is based on different principles:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -374,27 +380,27 @@ multiplicative factor.</p>
 <p>There are other more subtle differences, which we will discuss in the exercises.</p>
 </section>
 <section id="best-case-worst-case-average-case">
-<h2>Best case, worst case, average case<a class="headerlink" href="#best-case-worst-case-average-case" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Best case, worst case, average case<a class="headerlink" href="#best-case-worst-case-average-case" title="Permalink to this heading">#</a></h2>
 <p>We too often hear that <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> is the <em>worst case</em> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <em>best case</em>.
 This is <strong>false</strong> in general, depending on how you define your function.</p>
 <p>Let’s say we are analyzing the QuickSort algorithm, which we will see in Part 2 of the course.
-If you define <span class="math notranslate nohighlight">\(f(n)\)</span> as « the number of comparison operations performed on an array of size <span class="math notranslate nohighlight">\(n\)</span> », then you have:</p>
+If you define <span class="math notranslate nohighlight">\(f(n)\)</span> as “the number of comparison operations performed on an array of size <span class="math notranslate nohighlight">\(n\)</span>”, then you have:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(n) \sim n^2\)</span> and <span class="math notranslate nohighlight">\(f(n) \in \mathcal{O}(n^2)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(f(n) \in \Omega(n\log_2 n)\)</span></p></li>
 </ul>
-<p>If you now define <span class="math notranslate nohighlight">\(g(n)\)</span> as « the <strong>expected</strong> number of comparison operations performed
-on an array of size <span class="math notranslate nohighlight">\(n\)</span>, <strong>assuming arrays are selected uniformly at random</strong> », you get:</p>
+<p>If you now define <span class="math notranslate nohighlight">\(g(n)\)</span> as “the <strong>expected</strong> number of comparison operations performed
+on an array of size <span class="math notranslate nohighlight">\(n\)</span>, <strong>assuming arrays are selected uniformly at random</strong>”, you get:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(g(n) \sim n\log_2 n\)</span> and <span class="math notranslate nohighlight">\(g(n) \in \mathcal{O}(n\log_2 n)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g(n) \in \Omega(n\log_2 n)\)</span></p></li>
 <li><p>and therefore <span class="math notranslate nohighlight">\(g(n) \in \Theta(n\log_2 n)\)</span></p></li>
 </ul>
-<p>By a (slight) abuse of language, we say that the « average case » of QuickSort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.
+<p>By a (slight) abuse of language, we say that the “average case” of QuickSort is in <span class="math notranslate nohighlight">\(\Theta(n\log_2 n)\)</span>.
 However, the general case is not!</p>
 </section>
 <section id="amortized-complexity">
-<h2>Amortized Complexity<a class="headerlink" href="#amortized-complexity" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Amortized Complexity<a class="headerlink" href="#amortized-complexity" title="Permalink to this heading">#</a></h2>
 <p>Another useful measure of complexity is that which counts the average cost per operation over a sequence of <span class="math notranslate nohighlight">\(m\)</span> operations.
 This is called <em>amortized complexity</em>.
 For example, an <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>
@@ -405,7 +411,7 @@ will cost on average <span class="math notranslate nohighlight">\((\mathcal{O}(1
 <p>Warning: the worst-case complexity of an individual call to <em>add(E e)</em> is indeed <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span>, while its best case is <span class="math notranslate nohighlight">\(\Omega(1)\)</span>.</p>
 </section>
 <section id="frequent-complexities">
-<h2>Frequent complexities<a class="headerlink" href="#frequent-complexities" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Frequent complexities<a class="headerlink" href="#frequent-complexities" title="Permalink to this heading">#</a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -519,20 +525,20 @@ will cost on average <span class="math notranslate nohighlight">\((\mathcal{O}(1
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Complexity</a><ul>
-<li><a class="reference internal" href="#notation-big-oh-mathcal-o">Notation Big-Oh (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>)</a><ul>
+<li><a class="reference internal" href="#big-oh-notation">Big-Oh Notation (𝒪)</a><ul>
 <li><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#notation-big-omega-omega">Notation Big-Omega (<span class="math notranslate nohighlight">\(\Omega\)</span>)</a><ul>
+<li><a class="reference internal" href="#big-omega-notation">Big-Omega Notation (Ω)</a><ul>
 <li><a class="reference internal" href="#id1">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#notation-big-theta-theta">Notation Big-Theta (<span class="math notranslate nohighlight">\(\Theta\)</span>)</a><ul>
+<li><a class="reference internal" href="#big-theta-notation">Big-Theta Notation (Θ)</a><ul>
 <li><a class="reference internal" href="#notes">Notes</a></li>
 <li><a class="reference internal" href="#id2">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#notation-tilde-mathcal-sim">Notation Tilde (<span class="math notranslate nohighlight">\(\mathcal{\sim}\)</span>)</a></li>
+<li><a class="reference internal" href="#tilde-notation">Tilde Notation (~)</a></li>
 <li><a class="reference internal" href="#best-case-worst-case-average-case">Best case, worst case, average case</a></li>
 <li><a class="reference internal" href="#amortized-complexity">Amortized Complexity</a></li>
 <li><a class="reference internal" href="#frequent-complexities">Frequent complexities</a></li>
@@ -554,7 +560,6 @@ will cost on average <span class="math notranslate nohighlight">\((\mathcal{O}(1
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

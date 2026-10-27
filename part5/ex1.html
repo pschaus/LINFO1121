@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exercises B" href="ex2.html" /><link rel="prev" title="Objectives" href="intro.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.2.2 and Furo 2023.03.27 -->
         <title>Exercises A - LINFO1121: Data Structures and Algorithms</title>
@@ -17,27 +17,33 @@
 
 <style>
   body {
-    --color-code-background: #eeffcc;
+    --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   --color-brand-primary: #1d5b79;
   --color-brand-content: #1a5276;
-  --color-admonition-background: #f8f9fa;
+  --color-admonition-background: #f4f8fb;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #dceefb;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   --color-brand-primary: #5dade2;
   --color-brand-content: #5dade2;
+  --color-highlight-on-target: transparent;
+  --color-highlighted-background: #1e3a5f;
   
       }
     }
@@ -167,7 +173,7 @@
   <span class="sidebar-brand-text">LINFO1121: Data Structures and Algorithms</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -219,7 +225,7 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../training/index.html">Exam Training</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Partie 7: Révisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part7/s13.html">Part 7: Review Session &amp; QCM</a></li>
 </ul>
 </li>
 </ul>
@@ -257,28 +263,28 @@
         </div>
         <article role="main">
           <section id="exercises-a">
-<span id="part5-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Lien permanent vers cette rubrique">#</a></h1>
+<span id="part5-ex1"></span><h1>Exercises A<a class="headerlink" href="#exercises-a" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must complete these exercises by Wednesday of W10.</p>
 </div>
-<section id="exercise-5-1-1">
-<h2>Exercise 5.1.1<a class="headerlink" href="#exercise-5-1-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<div class="exercise-legend" role="note" aria-label="Exercise types legend"><span class="legend-item"><span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span><span class="legend-desc">Theoretical &amp; conceptual</span></span><span class="legend-item"><span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span><span class="legend-desc">INGInious coding &amp; grading</span></span></div><section class="exercise-section exercise-theory" id="quick-find-trace">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Quick-Find Trace</span><a class="headerlink" href="#quick-find-trace" title="Permalink to this heading">#</a></h2>
 <p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 6 union operations on an initial set of 10 items using the quick-find algorithm:
 <code class="docutils literal notranslate"><span class="pre">3-8,</span> <span class="pre">1-7,</span> <span class="pre">1-8,</span> <span class="pre">9-4,</span> <span class="pre">6-4,</span> <span class="pre">2-0</span></code>.
 Your answer must be a sequence of 10 integers.
 Reminder: the quick-find convention for the union operation <code class="docutils literal notranslate"><span class="pre">p-q</span></code> is to change <code class="docutils literal notranslate"><span class="pre">id[p]</span></code> (and all other entries with value <code class="docutils literal notranslate"><span class="pre">id[p]</span></code>) to <code class="docutils literal notranslate"><span class="pre">id[q]</span></code>.</p>
 </section>
-<section id="exercise-5-1-2">
-<h2>Exercise 5.1.2<a class="headerlink" href="#exercise-5-1-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="weighted-quick-union-trace">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Weighted Quick-Union Trace</span><a class="headerlink" href="#weighted-quick-union-trace" title="Permalink to this heading">#</a></h2>
 <p>Give the array <code class="docutils literal notranslate"><span class="pre">id[]</span></code> that results from the following sequence of 9 union operations on an initial set of 10 items using the weighted quick-union algorithm:</p>
 <p><code class="docutils literal notranslate"><span class="pre">4-6,</span> <span class="pre">3-6,</span> <span class="pre">8-9,</span> <span class="pre">7-0,</span> <span class="pre">1-2,</span> <span class="pre">8-4,</span> <span class="pre">6-5,</span> <span class="pre">1-7,</span> <span class="pre">6-0.</span></code></p>
 <p>Your answer must be a sequence of 10 integers. Reminder: When merging two trees of the same size, the weighted quick-union algorithm uses the convention
 to point the root of the second tree to the root of the first tree.
 Our algorithm uses union by size (number of nodes) and not union by height, nor the path compression technique.</p>
 </section>
-<section id="exercise-5-1-3">
-<h2>Exercise 5.1.3<a class="headerlink" href="#exercise-5-1-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="valid-weighted-quick-union-trees">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Valid Weighted Quick-Union Trees</span><a class="headerlink" href="#valid-weighted-quick-union-trees" title="Permalink to this heading">#</a></h2>
 <p>Which of the following <code class="docutils literal notranslate"><span class="pre">id[]</span></code> array(s) could result from applying the weighted quick-union algorithm on an initial set of 10 items?
 Reminder: we use union by size (number of nodes), not union by height.</p>
 <ul class="simple">
@@ -289,79 +295,79 @@ Reminder: we use union by size (number of nodes), not union by height.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">6</span> <span class="pre">4</span> <span class="pre">1</span> <span class="pre">6</span> <span class="pre">0</span> <span class="pre">6</span> <span class="pre">8</span></code></p></li>
 </ul>
 </section>
-<section id="exercise-5-1-4">
-<h2>Exercise 5.1.4<a class="headerlink" href="#exercise-5-1-4" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="binary-max-heap-insertions">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Binary Max-Heap Insertions</span><a class="headerlink" href="#binary-max-heap-insertions" title="Permalink to this heading">#</a></h2>
 <p>Give the sequence of keys in the array that results from inserting the sequence of 3 keys 48, 30, and 84
 into the following max-oriented heap of size 10:</p>
 <p><code class="docutils literal notranslate"><span class="pre">97,</span> <span class="pre">93,</span> <span class="pre">89,</span> <span class="pre">83,</span> <span class="pre">38,</span> <span class="pre">32,</span> <span class="pre">40,</span> <span class="pre">12,</span> <span class="pre">26,</span> <span class="pre">24</span></code>.</p>
 <p>Your answer should be a sequence of 13 integers.</p>
 </section>
-<section id="exercise-5-1-5">
-<h2>Exercise 5.1.5<a class="headerlink" href="#exercise-5-1-5" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="binary-max-heap-deletions">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Binary Max-Heap Deletions</span><a class="headerlink" href="#binary-max-heap-deletions" title="Permalink to this heading">#</a></h2>
 <p>Give the sequence of keys in the array that results from performing 3 successive delete-the-maximum operations on the following max-oriented heap of size 10:</p>
 <p><code class="docutils literal notranslate"><span class="pre">98,</span> <span class="pre">96,</span> <span class="pre">84,</span> <span class="pre">34,</span> <span class="pre">62,</span> <span class="pre">31,</span> <span class="pre">72,</span> <span class="pre">13,</span> <span class="pre">27,</span> <span class="pre">33</span></code>.</p>
 <p>Your answer should be a sequence of 7 integers.</p>
 </section>
-<section id="exercise-5-1-6">
-<h2>Exercise 5.1.6<a class="headerlink" href="#exercise-5-1-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="priority-queue-binary-heap-vs-sorted-list">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Priority Queue: Binary Heap vs. Sorted List</span><a class="headerlink" href="#priority-queue-binary-heap-vs-sorted-list" title="Permalink to this heading">#</a></h2>
 <p>What are the possible advantages and disadvantages of implementing a priority queue with
 a heap rather than a list?</p>
 </section>
-<section id="exercise-5-1-7">
-<h2>Exercise 5.1.7<a class="headerlink" href="#exercise-5-1-7" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="heap-tree-traversals">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Heap Tree Traversals</span><a class="headerlink" href="#heap-tree-traversals" title="Permalink to this heading">#</a></h2>
 <p>Can you find an example of a valid heap <span class="math notranslate nohighlight">\(T\)</span> storing 7 distinct elements such that
 an inorder traversal of <span class="math notranslate nohighlight">\(T\)</span> visits the elements in decreasing order?
 What about a preorder or postorder traversal?</p>
 </section>
-<section id="exercise-5-1-8">
-<h2>Exercise 5.1.8<a class="headerlink" href="#exercise-5-1-8" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="true-false-binary-heaps">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">True/False: Binary Heaps</span><a class="headerlink" href="#true-false-binary-heaps" title="Permalink to this heading">#</a></h2>
 <p>Which of the following statements are true for a priority queue implemented as a binary heap?
 Assume heaps are max-oriented and 1-indexed.</p>
 <ul class="simple">
-<li><p>In the worst case, inserting a key into a binary heap containing <span class="math notranslate nohighlight">\(N\)</span> keys requires <span class="math notranslate nohighlight">\(\sim \log N\)</span> comparisons.</p></li>
+<li><p>In the worst case, inserting a key into a binary heap containing <span class="math notranslate nohighlight">\(N\)</span> keys requires <span class="math notranslate nohighlight">\(\sim \log_2 N\)</span> comparisons.</p></li>
 <li><p>Let <span class="math notranslate nohighlight">\(a[]\)</span> be an array such that <span class="math notranslate nohighlight">\(a[1] &gt; a[2] &gt; \dots &gt; a[N]\)</span> (and <span class="math notranslate nohighlight">\(a[0]\)</span> is empty). Then <span class="math notranslate nohighlight">\(a[]\)</span> satisfies the properties of a binary heap.</p></li>
 <li><p>The internal array of a binary (max-)heap is always sorted in non-increasing order.</p></li>
 <li><p>Given a binary heap of <span class="math notranslate nohighlight">\(N\)</span> distinct keys, deleting the maximum key and then immediately re-inserting it leaves the heap array unchanged (ignoring any array resizing).</p></li>
 </ul>
 </section>
-<section id="exercise-5-1-9">
-<h2>Exercise 5.1.9<a class="headerlink" href="#exercise-5-1-9" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Prove that the bottom-up « sink-based » heap construction for heapsort (page 323) runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time.
+<section class="exercise-section exercise-theory" id="linear-time-bottom-up-heap-construction">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Linear-Time Bottom-Up Heap Construction</span><a class="headerlink" href="#linear-time-bottom-up-heap-construction" title="Permalink to this heading">#</a></h2>
+<p>Prove that the bottom-up “sink-based” heap construction for heapsort (page 323) runs in <span class="math notranslate nohighlight">\(\mathcal{O}(n)\)</span> time.
 Hint: Count the number of nodes at level <span class="math notranslate nohighlight">\(h\)</span> of the heap.
 What is the cost of a <code class="docutils literal notranslate"><span class="pre">sink</span></code> operation at this level? Sum the costs over all levels. Useful formula: <span class="math notranslate nohighlight">\(\sum_{k=0}^\infty k x^k = \frac{x}{(1-x)^2}\)</span> for
 <span class="math notranslate nohighlight">\(|x| &lt; 1\)</span>.</p>
 </section>
-<section id="exercise-5-1-10">
-<h2>Exercise 5.1.10<a class="headerlink" href="#exercise-5-1-10" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="building-a-huffman-tree-priority-queue-vs-sorting">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Building a Huffman Tree: Priority Queue vs. Sorting</span><a class="headerlink" href="#building-a-huffman-tree-priority-queue-vs-sorting" title="Permalink to this heading">#</a></h2>
 <p>Is using a priority queue essential to build a Huffman code?
 Can you design an alternative solution that uses a sorting algorithm?
 Would its time complexity be better than the original algorithm? Why or why not?</p>
 </section>
-<section id="exercise-5-1-11">
-<h2>Exercise 5.1.11<a class="headerlink" href="#exercise-5-1-11" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-theory" id="huffman-compression-and-decompression-pipeline">
+<h2><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Huffman Compression and Decompression Pipeline</span><a class="headerlink" href="#huffman-compression-and-decompression-pipeline" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What are the different steps in a text <em>compression</em> algorithm that takes a text as input and provides a compressed version of that text as output using Huffman coding? Be specific in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.</p></li>
 <li><p>What are the different steps of a text <em>decompression</em> algorithm that takes as input a compressed version of a text using Huffman coding and provides as output the original text? Be precise in your description by isolating each step of the problem. Specify for each step the useful data structures and the time complexity of the operations performed.</p></li>
 </ul>
 </section>
-<section id="exercise-5-1-12-inginious-heap">
-<h2>Exercise 5.1.12 (INGInious: Heap)<a class="headerlink" href="#exercise-5-1-12-inginious-heap" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="binary-heap-push">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Binary Heap Push</span><a class="headerlink" href="#binary-heap-push" title="Permalink to this heading">#</a></h2>
 <p>Implement the <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_BinaryHeap">push operation of a binary heap</a>.</p>
 </section>
-<section id="exercise-5-1-13-inginious-global-warming">
-<h2>Exercise 5.1.13 (INGInious: Global Warming)<a class="headerlink" href="#exercise-5-1-13-inginious-global-warming" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="global-warming-with-union-find">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming with Union-Find</span><a class="headerlink" href="#global-warming-with-union-find" title="Permalink to this heading">#</a></h2>
 <p>Implement the Global Warming exercise to compute the number of islands using union-find: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/graphs_GlobalWarming">GlobalWarming</a></p>
 </section>
-<section id="exercise-5-1-14-inginious-huffman">
-<h2>Exercise 5.1.14 (INGInious: Huffman)<a class="headerlink" href="#exercise-5-1-14-inginious-huffman" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="huffman-tree">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Huffman Tree</span><a class="headerlink" href="#huffman-tree" title="Permalink to this heading">#</a></h2>
 <p>Implement the Huffman tree reconstruction: <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121/strings_Huffman">Huffman</a></p>
 </section>
-<section id="exercise-5-1-15-inginious-manual-exercise-on-union-find">
-<h2>Exercise 5.1.15 (INGInious: Manual Exercise on Union-Find)<a class="headerlink" href="#exercise-5-1-15-inginious-manual-exercise-on-union-find" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="manual-exercise-on-union-find">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Manual Exercise on Union-Find</span><a class="headerlink" href="#manual-exercise-on-union-find" title="Permalink to this heading">#</a></h2>
 <p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5UnionFind">Union-Find</a></p>
 </section>
-<section id="exercise-5-1-16-inginious-manual-exercise-on-heaps">
-<h2>Exercise 5.1.16 (INGInious: Manual Exercise on Heaps)<a class="headerlink" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps" title="Lien permanent vers cette rubrique">#</a></h2>
+<section class="exercise-section exercise-inginious" id="manual-exercise-on-heaps">
+<h2><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Manual Exercise on Heaps</span><a class="headerlink" href="#manual-exercise-on-heaps" title="Permalink to this heading">#</a></h2>
 <p>Small manual exercise on <a class="reference external" href="https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part5Heap">Heaps</a></p>
 </section>
 </section>
@@ -427,22 +433,22 @@ Would its time complexity be better than the original algorithm? Why or why not?
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Exercises A</a><ul>
-<li><a class="reference internal" href="#exercise-5-1-1">Exercise 5.1.1</a></li>
-<li><a class="reference internal" href="#exercise-5-1-2">Exercise 5.1.2</a></li>
-<li><a class="reference internal" href="#exercise-5-1-3">Exercise 5.1.3</a></li>
-<li><a class="reference internal" href="#exercise-5-1-4">Exercise 5.1.4</a></li>
-<li><a class="reference internal" href="#exercise-5-1-5">Exercise 5.1.5</a></li>
-<li><a class="reference internal" href="#exercise-5-1-6">Exercise 5.1.6</a></li>
-<li><a class="reference internal" href="#exercise-5-1-7">Exercise 5.1.7</a></li>
-<li><a class="reference internal" href="#exercise-5-1-8">Exercise 5.1.8</a></li>
-<li><a class="reference internal" href="#exercise-5-1-9">Exercise 5.1.9</a></li>
-<li><a class="reference internal" href="#exercise-5-1-10">Exercise 5.1.10</a></li>
-<li><a class="reference internal" href="#exercise-5-1-11">Exercise 5.1.11</a></li>
-<li><a class="reference internal" href="#exercise-5-1-12-inginious-heap">Exercise 5.1.12 (INGInious: Heap)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-13-inginious-global-warming">Exercise 5.1.13 (INGInious: Global Warming)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-14-inginious-huffman">Exercise 5.1.14 (INGInious: Huffman)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-15-inginious-manual-exercise-on-union-find">Exercise 5.1.15 (INGInious: Manual Exercise on Union-Find)</a></li>
-<li><a class="reference internal" href="#exercise-5-1-16-inginious-manual-exercise-on-heaps">Exercise 5.1.16 (INGInious: Manual Exercise on Heaps)</a></li>
+<li><a class="reference internal" href="#quick-find-trace"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Quick-Find Trace</span></a></li>
+<li><a class="reference internal" href="#weighted-quick-union-trace"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Weighted Quick-Union Trace</span></a></li>
+<li><a class="reference internal" href="#valid-weighted-quick-union-trees"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Valid Weighted Quick-Union Trees</span></a></li>
+<li><a class="reference internal" href="#binary-max-heap-insertions"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Binary Max-Heap Insertions</span></a></li>
+<li><a class="reference internal" href="#binary-max-heap-deletions"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Binary Max-Heap Deletions</span></a></li>
+<li><a class="reference internal" href="#priority-queue-binary-heap-vs-sorted-list"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Priority Queue: Binary Heap vs. Sorted List</span></a></li>
+<li><a class="reference internal" href="#heap-tree-traversals"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Heap Tree Traversals</span></a></li>
+<li><a class="reference internal" href="#true-false-binary-heaps"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">True/False: Binary Heaps</span></a></li>
+<li><a class="reference internal" href="#linear-time-bottom-up-heap-construction"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Linear-Time Bottom-Up Heap Construction</span></a></li>
+<li><a class="reference internal" href="#building-a-huffman-tree-priority-queue-vs-sorting"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Building a Huffman Tree: Priority Queue vs. Sorting</span></a></li>
+<li><a class="reference internal" href="#huffman-compression-and-decompression-pipeline"><span class="ex-icon ex-icon-theory"></span> <span class="ex-title-text">Huffman Compression and Decompression Pipeline</span></a></li>
+<li><a class="reference internal" href="#binary-heap-push"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Binary Heap Push</span></a></li>
+<li><a class="reference internal" href="#global-warming-with-union-find"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Global Warming with Union-Find</span></a></li>
+<li><a class="reference internal" href="#huffman-tree"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Huffman Tree</span></a></li>
+<li><a class="reference internal" href="#manual-exercise-on-union-find"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Manual Exercise on Union-Find</span></a></li>
+<li><a class="reference internal" href="#manual-exercise-on-heaps"><span class="ex-icon ex-icon-inginious"></span> <span class="ex-title-text">Manual Exercise on Heaps</span></a></li>
 </ul>
 </li>
 </ul>
@@ -461,7 +467,6 @@ Would its time complexity be better than the original algorithm? Why or why not?
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/translations.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
