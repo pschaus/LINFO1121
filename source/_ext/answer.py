@@ -1,3 +1,4 @@
+import re
 from docutils import nodes
 from docutils.parsers.rst.directives.admonitions import BaseAdmonition
 from docutils.parsers.rst import directives
@@ -21,8 +22,6 @@ def depart_answer_node_html(self, node):
 
 
 def visit_answer_node_latex(self, node):
-    #self.visit_admonition(node)
-    #self.body.append('\n\\begin{sphinxadmonition}{note}')
     title = str(node.children[0].children[0])
     self.body.append('\n\\begin{tcolorbox}[title='+title+']')
     node.children = node.children[1:]
@@ -30,8 +29,6 @@ def visit_answer_node_latex(self, node):
 
 
 def depart_answer_node_latex(self, node):
-    #self.depart_admonition(node)
-    #self.body.append('\\end{sphinxadmonition}\n')
     self.body.append('\\end{tcolorbox}\n')
     self.no_latex_floats -= 1
 
@@ -69,6 +66,90 @@ class AnswerDirective(BaseAdmonition, SphinxDirective):
             raise RuntimeError  # never reached here
 
 
+class FormatExercisesTransform(SphinxTransform):
+    """
+    Automatically classifies exercise sections on exercise pages into
+    'exercise-theory' or 'exercise-inginious' (by detecting INGInious links or
+    optional 'INGInious:' title prefixes) and prepends a compact icon to each
+    exercise heading and TOC entry—without requiring hardcoded exercise numbers
+    or redundant text labels.
+    """
+    default_priority = 300
+
+    def apply(self, **kwargs):
+        docname = getattr(self.env, 'docname', '')
+        if not re.match(r'^part\d+/(ex\d+|s13)$', docname):
+            return
+
+        root_sections = [n for n in self.document.children if isinstance(n, nodes.section)]
+        if not root_sections:
+            return
+        root_section = root_sections[0]
+
+        first_exercise_section = None
+
+        for section in [n for n in root_section.children if isinstance(n, nodes.section)]:
+            if not section.children or not isinstance(section.children[0], nodes.title):
+                continue
+            title_node = section.children[0]
+            raw_text = title_node.astext().strip()
+
+            # Support optional legacy prefixes if ever used in the future, while keeping clean titles
+            m = re.match(r'^Exercise\s+[\d\.]+\s*(?:\((.*)\))?$', raw_text, flags=re.IGNORECASE)
+            if m and m.group(1):
+                clean_title = m.group(1).strip()
+            else:
+                clean_title = raw_text
+
+            has_inginious_prefix = bool(re.match(r'^inginious\s*[:\-]', clean_title, flags=re.IGNORECASE))
+            if has_inginious_prefix:
+                clean_title = re.sub(r'^inginious\s*[:\-]\s*', '', clean_title, flags=re.IGNORECASE).strip()
+
+            has_inginious_link = any(
+                'inginious' in ref.get('refuri', '').lower()
+                for ref in section.findall(nodes.reference)
+            )
+            is_inginious = has_inginious_prefix or has_inginious_link
+
+            if first_exercise_section is None:
+                first_exercise_section = section
+
+            if is_inginious:
+                section['classes'].extend(['exercise-section', 'exercise-inginious'])
+                icon_class = 'ex-icon-inginious'
+            else:
+                section['classes'].extend(['exercise-section', 'exercise-theory'])
+                icon_class = 'ex-icon-theory'
+
+            new_children = [
+                nodes.inline('', '', classes=['ex-icon', icon_class]),
+                nodes.Text(' '),
+                nodes.inline('', clean_title, classes=['ex-title-text']),
+            ]
+
+            title_node.clear()
+            for child in new_children:
+                title_node += child
+
+        if first_exercise_section is not None and first_exercise_section.parent is not None:
+            legend_html = (
+                '<div class="exercise-legend" role="note" aria-label="Exercise types legend">'
+                '<span class="legend-item">'
+                '<span class="ex-icon ex-icon-theory" title="Theoretical exercise"></span>'
+                '<span class="legend-desc">Theoretical &amp; conceptual</span>'
+                '</span>'
+                '<span class="legend-item">'
+                '<span class="ex-icon ex-icon-inginious" title="INGInious exercise"></span>'
+                '<span class="legend-desc">INGInious coding &amp; grading</span>'
+                '</span>'
+                '</div>'
+            )
+            legend_node = nodes.raw('', legend_html, format='html')
+            parent = first_exercise_section.parent
+            idx = parent.index(first_exercise_section)
+            parent.insert(idx, legend_node)
+
+
 class HideNextWeeksFiles(SphinxTransform):
     default_priority = 400
 
@@ -88,7 +169,6 @@ class HideNextWeeksFiles(SphinxTransform):
             return
 
         self.document.children = []
-
 
 
 class HideNextWeeksTOC(SphinxTransform):
@@ -135,12 +215,14 @@ def override_papertheme_data(app, pagename, templatename, context, doctree):
         if not x['title'].startswith('Partie ') or len(x['entries']) != 0
     ]
 
+
 def setup(app):
     app.add_node(answer_node,
                  html=(visit_answer_node_html, depart_answer_node_html),
                  latex=(visit_answer_node_latex, depart_answer_node_latex))
 
     app.add_directive('answer', AnswerDirective)
+    app.add_transform(FormatExercisesTransform)
     app.add_transform(HideNextWeeksFiles)
     app.add_transform(HideNextWeeksTOC)
     app.connect('html-page-context', override_papertheme_data, priority=800)
@@ -154,4 +236,3 @@ def setup(app):
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
-

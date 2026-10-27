@@ -139,7 +139,7 @@ The course is organized in **6 modules of 2 weeks**. Each module spans over an i
        <span class="quick-link-icon">📅</span>
        <span>Check Rooms Schedule (ADE)</span>
      </a>
-     <a class="quick-link-card" href="https://www.google.com/maps/d/u/0/viewer?mid=1UaZEWHizhiTYLF-kG9b6TRXjLnQ&femb=1&ll=50.66759707303555%2C4.620358972176275&z=17" target="_blank" rel="noopener">
+     <a class="quick-link-card" href="https://www.google.com/maps/d/u/0/viewer?mid=1LhefFjePIBksJEJ91QsFZk2V4hDuNQEL&amp;g_ep=CAISEjI2LjM3LjMuOTc3MTgxMTk2MBgAIN1iKmcsOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsMTAwODIxNTU5LDQ3MDcxNzA0LDk0MjE4NjQxLDk0MjgyMTM0LDEwMDgzNTY5OSw5NDI4Njg2OSwxMDA4MjAyNDcsMTAwODIyNTA0QgJCRQ%3D%3D&amp;skid=cf7f489f-3439-4a51-80cb-395debe0abe7&amp;g_st=ic&amp;ll=50.66893714275131%2C4.618649383860323&amp;z=16" target="_blank" rel="noopener">
        <span class="quick-link-icon">🗺️</span>
        <span>Map to Find the Labs</span>
      </a>

@@ -7,48 +7,38 @@ Exercises A
     You must complete these exercises by Wednesday of W6.
 
 
-
-Exercise 3.1.1
-""""""""""""""
+SequentialSearchST vs. BinarySearchST
+"""""""""""""""""""""""""""""""""""""
 
 Which of the two implementations, ``SequentialSearchST`` or ``BinarySearchST``, would you use for an application
 that performs :math:`10^3` ``put()`` and :math:`10^6` ``get()`` operations in random order? Justify your choice.
 
 .. answer::
 
-    For ``SequentialSearchST``:
+    * **For ``SequentialSearchST``** (unordered linked list):
 
-    - Search: :math:`N` (Worst-case), :math:`N/2` (Average-case)
-    - Insert: :math:`N` (Worst-case), :math:`N` (Average-case)
+      * Search (``get``): :math:`N` (worst case), :math:`N/2` (average case)
+      * Insert (``put``): :math:`N` (worst and average case, as it scans the list to check for an existing key)
 
+    * **For ``BinarySearchST``** (ordered parallel arrays with binary search):
 
-    For ``BinarySearchST``:
+      * Search (``get``): :math:`\log_2 N` (worst and average case)
+      * Insert (``put``): :math:`\sim 2N` array accesses in the worst case and :math:`\sim N` in the average case (to shift larger keys and values to the right, assuming amortized :math:`\mathcal{O}(1)` array resizing).
 
-    - Search: :math:`\log(N)` (Worst-case), :math:`\log(N)` (Average-case)
-    - Insert: :math:`2N+\ln(N) \in \mathcal{O}(N)` (Worst-case), :math:`\ln(N)+2\cdot N/2 \in \mathcal{O}(N)` (Average-case)
-
-    (note: the book doesn't consider that the array is copied at each iteration, thus this is the amortized complexity;
-    may be a good opportunity to explain what this is to students: if we double the size of the internal array
-    each time there is an overflow, the complexity per element is :math:`\mathcal{O}(1)` for the array copy)
-    (the factor of 2 appears here because there are two parallel arrays: keys and values)
-
-    Let :math:`M` be the initial size of the array before we do the put and get operations. If :math:`M \gg 10^3`, the total number of operations is:
+    For a table of size :math:`M` (at most :math:`10^3`), performing :math:`10^3` ``put()`` and :math:`10^6` ``get()`` operations costs approximately:
 
     .. math::
 
-        \approx 10^3\cdot I(M) + 10^6\cdot S(M)
+        \text{Total cost} \approx 10^3 \cdot I(M) + 10^6 \cdot S(M)
 
-    where :math:`I(M)` and :math:`S(M)` are the cost of inserting and searching in an array of size :math:`M`.
+    * ``SequentialSearchST``: :math:`\approx 10^3 \cdot M + 10^6 \cdot (M/2) \approx 5 \cdot 10^8` operations for :math:`M \approx 10^3`.
+    * ``BinarySearchST``: :math:`\approx 10^3 \cdot M + 10^6 \cdot \log_2(M) \approx 10^6 + 10^7 \approx 1.1 \cdot 10^7` operations.
 
-    For ``SequentialSearchST`` it gives :math:`10^3M + 10^6M` worst case, :math:`10^3M/2 + 10^6M` average case.
-
-    For ``BinarySearchST`` it gives :math:`10^3\cdot 2 \cdot M + 10^6\cdot\log(M)` worst case, :math:`10^3\cdot M + 10^6 \cdot\log(M)` average case.
-
-    Thus ``BinarySearchST`` is much better if :math:`M` is large enough.
+    Because ``get()`` operations outnumber ``put()`` operations by a factor of :math:`1000`, **``BinarySearchST`` is overwhelmingly faster**.
 
 
-Exercise 3.1.3
-""""""""""""""
+Interpolation Search
+""""""""""""""""""""
 
 *Exercise 3.1.24 of the book*.
 
@@ -63,48 +53,38 @@ Implement ``InterpolationSearchST`` and compare this on ``FrequencyCounter``.
 
 .. answer::
 
-    On garde tout le même code source que BinarySearchST (pages 379, 380) et on
-    remplace la fonction ``rank`` (p 380) par celle-ci:
+    We keep the same structure as ``BinarySearchST`` (pages 379–380 of the textbook) and replace the midpoint calculation in ``rank`` with the interpolated position:
 
     .. code-block:: java
 
-        private int getPos(Integer k, int start, int end) {
-            int rng = end - 1 - start;
+        public int rank(Integer key) {
+            int lo = 0, hi = N - 1;
+            while (lo <= hi) {
+                if (lo == hi || keys[lo].equals(keys[hi])) {
+                    return key.compareTo(keys[lo]) <= 0 ? lo : lo + 1;
+                }
+                if (key.compareTo(keys[lo]) <= 0) return lo;
+                if (key.compareTo(keys[hi]) > 0)  return hi + 1;
 
-            if(rng < 0) return start;
-            if(rng == 0) return k.compareTo(keys[start]) < 0 ? start : end;
+                double fraction = (double) (key - keys[lo]) / (keys[hi] - keys[lo]);
+                int mid = lo + (int) Math.floor(fraction * (hi - lo));
 
-            int k_start = keys[start];
-            int k_end   = keys[end-1];
-
-            Double interpol = ( (k - k_start) / (1.0 * (k_end - k_start)));
-            interpol = Math.max(0, interpol);
-            interpol = Math.min(1, interpol);
-            Double ddm = Math.floor(rng * interpol);
-            int mid    = start+ ddm.intValue();
-            Integer piv = keys[mid];
-
-            int cmp = piv != null ? k.compareTo(piv) : 0;
-            if(cmp <  0) return getPos(k, start, mid);
-            if(cmp >  0) return getPos(k, mid+1,   end);
-            return mid;
+                int cmp = key.compareTo(keys[mid]);
+                if (cmp < 0)      hi = mid - 1;
+                else if (cmp > 0) lo = mid + 1;
+                else              return mid;
+            }
+            return lo;
         }
 
-    Pdv performances, si on reprend le FrequencyCounter (et qu'on l'adapte pour que
-    l'interpolation search soit utilisable) on obtient les résultats suivants:
+    **Performance discussion**:
 
-    - Le comptage des fréquences prend exactement le même temps pour
-      BinarySearchST que pour InterpolationSearchST parce que le cout du
-      décalage de tous les éléments (:math:`\mathcal{O}(n)`) qui est nécessaire lorsqu'on inclut
-      une nouvelle clé dans la structure est largement supérieur au bénéfice
-      potentiel de l'interpolation.
-    - Même si on ne fait que des queries dans le tableau, on n'observe pas de
-      différence de performance importante entre les deux algos (même si on
-      pense intuitivement que l'interpolation devrait aller plus vite).
+    * On uniformly distributed numeric keys, interpolation search performs :math:`\mathcal{O}(\log \log N)` comparisons on average (though :math:`\mathcal{O}(N)` in the worst case if keys are skewed).
+    * However, in ``FrequencyCounter``, inserting a new key into ``BinarySearchST`` or ``InterpolationSearchST`` still requires shifting :math:`\mathcal{O}(N)` array elements, which completely dominates the search time.
 
 
-Exercise 3.1.4
-""""""""""""""
+Software Caching in BinarySearchST
+""""""""""""""""""""""""""""""""""
 
 *Exercise 3.1.25 of the book*.
 
@@ -117,10 +97,12 @@ Modify ``BinarySearchST`` to incorporate this idea.
 
 .. answer::
 
-    Simply create the *instance variables* ``lastKey`` and ``lastI`` (for example) and in functions ``get`` and ``put`` check if ``key==lastKey`` if so use ``lastI`` if not call ``lastI=rank(key)`` and `lastKey = key`.
+    Add an instance variable ``int cache = 0;`` (storing the index of the most recently accessed key) to ``BinarySearchST``.
+    At the beginning of ``get(Key key)`` and ``put(Key key, Value val)``, before calling ``rank(key)``, check whether ``cache < N && keys[cache].compareTo(key) == 0``. If so, use ``cache`` directly in :math:`\Theta(1)` time; otherwise, call ``rank(key)`` and update ``cache`` to the index of the found or inserted key.
 
-Exercise 3.1.5
-""""""""""""""
+
+Validating a Binary Search Tree
+"""""""""""""""""""""""""""""""
 
 *Exercise 3.2.31 of the book*.
 
@@ -132,43 +114,48 @@ What is the time complexity of your algorithm?
 
 .. answer::
 
-    (Solution from page 420 of Alg4s)
+    * **Why a local check is insufficient**: Every key in the *entire* left subtree of a node ``x`` must be strictly smaller than ``x.key``, not just ``x.left.key``.
+      *Counterexample*: Consider a tree with root ``10``, left child ``5``, and ``12`` as the right child of ``5``. Locally, ``5 < 10`` and ``12 > 5``, yet ``12`` is in the left subtree of ``10`` while ``12 > 10``, so this is **not** a valid BST!
+    * **Correct implementation** (passing down the valid range ``(min, max)`` for each subtree, page 420 of the textbook):
 
-    .. code-block:: java
+      .. code-block:: java
 
-        private boolean isBST()
-        {
-            return isBST(root, null, null);
-        }
+          public boolean isBST() {
+              return isBST(root, null, null);
+          }
 
-        private boolean isBST(Node x, Key min, Key max)
-        {
-            if (x == null) return true;
-            if (min != null && x.key.compareTo(min) <= 0) return false;
-            if (max != null && x.key.compareTo(max) >= 0) return false;
-            return isBST(x.left, min, x.key) && isBST(x.right, x.key, max);
-        }
+          private boolean isBST(Node x, Key min, Key max) {
+              if (x == null) return true;
+              if (min != null && x.key.compareTo(min) <= 0) return false;
+              if (max != null && x.key.compareTo(max) >= 0) return false;
+              return isBST(x.left, min, x.key) && isBST(x.right, x.key, max);
+          }
 
-Exercise 3.1.6
-"""""""""""""""
+    * **Time complexity**: :math:`\Theta(N)` in the worst case, since each node in the tree is visited at most once.
+
+
+Valid BST Search Key Sequences
+""""""""""""""""""""""""""""""
 
 *Exercise 3.2.4 of the book*.
 
 Suppose a certain search tree has keys between 1 and 10 and we are looking for key 5.
 Which sequence(s) cannot match the sequence of the examined keys?
 
-* 10,9,8,7,6,5
-* 4,10,8,6,5
-* 1,10,2,9,3,8,4,7,6,5
-* 2,7,3,8,4,5
-* 1,2,10,4,8,5
+* a) ``10, 9, 8, 7, 6, 5``
+* b) ``4, 10, 8, 6, 5``
+* c) ``1, 10, 2, 9, 3, 8, 4, 7, 6, 5``
+* d) ``2, 7, 3, 8, 4, 5``
+* e) ``1, 2, 10, 4, 8, 5``
 
 .. answer::
 
-    Seul le d est impossible ca on a 8 qui apparait après 7,3. Or :math:`8 \not\in\left[7,3\right]`
+    Only sequence **d) ``2, 7, 3, 8, 4, 5`` is impossible**.
+    When searching for ``5``: after examining ``7`` (since ``5 < 7``), the search moves into the **left subtree** of ``7``, meaning all subsequently examined keys must be strictly less than ``7``. However, ``8`` appears later in the sequence (after ``3``), which violates the BST ordering property (:math:`8 \notin (3, 7)`). All other sequences maintain a valid shrinking interval :math:`(\text{min}, \text{max})` containing ``5``.
 
-Exercise 3.1.7
-""""""""""""""
+
+Validating a Red-Black BST
+""""""""""""""""""""""""""
 
 *Exercise 3.3.33 of the book*.
 
@@ -177,44 +164,44 @@ to two red links and that there is no red link to the right.
 Also write a method ``isBalanced()`` that checks that any path from the root to a null link has the
 same number of black links. Finally, combine ``isBST()``, ``is23()``, and ``isBalanced()`` to implement ``isRedBlackBST()``.
 
-
 .. answer::
 
     .. code-block:: java
 
-        boolean is23() = return is23(root);
-        boolean is23(Node h) {
-           if (h == null) return true; //empty tree is 23-tree
-           if (isRed(h.right)) return false; //if red at the right !is23
-
-           // we are not the root and both node and his left node is red !is23
-           if (h != root && isRed(h) && isRed(h.left)) return false;
-
-           //if h is23 all subtree of h is23 too
-           return is23(h.left) && is23(h.right);
+        public boolean isRedBlackBST() {
+            return isBST() && is23() && isBalanced();
         }
 
-        //count the number of the black (nBlack) at the most-left path of the tree from the root. If the tree is balanced there is the same number black for all path from root to null nodes
-        boolean isBalanced() {
-            int nBlack = 0;
-            Node h = root;
-            while (h != null) {
-                if (!isRed(h)) nBlack++;
-                h = h.left;
+        private boolean is23() {
+            return is23(root);
+        }
+
+        private boolean is23(Node x) {
+            if (x == null) return true;
+            if (isRed(x.right)) return false;                  // no right-leaning red link
+            if (x != root && isRed(x) && isRed(x.left)) return false; // no two consecutive red links
+            return is23(x.left) && is23(x.right);
+        }
+
+        private boolean isBalanced() {
+            int blackHeight = 0; // count black links on the leftmost path
+            Node x = root;
+            while (x != null) {
+                if (!isRed(x)) blackHeight++;
+                x = x.left;
             }
-            return isBalanced(root, nBlack);
-        }
-        boolean isBalanced(Node h, int nBlack) {
-            if (h == null) return nBlack == 0;
-            if (!isRed(h)) nBlack--;
-            return isBalanced(h.left, nBlack) && isBalanced(h.right, nBlack);
+            return isBalanced(root, blackHeight);
         }
 
+        private boolean isBalanced(Node x, int blackHeight) {
+            if (x == null) return blackHeight == 0;
+            if (!isRed(x)) blackHeight--;
+            return isBalanced(x.left, blackHeight) && isBalanced(x.right, blackHeight);
+        }
 
-        isRedBlackBST() =  isBST() && is23() && isBalanced().
 
-Exercise 3.1.8
-""""""""""""""
+Enumerating BST Keys in Ascending Order
+"""""""""""""""""""""""""""""""""""""""
 
 How can you enumerate all stored keys in ascending order
 in a binary search tree? What is the time complexity of
@@ -222,53 +209,55 @@ this operation? Justify your answer.
 
 .. answer::
 
-    Obviously, on fait simplement un parcours *in-order* sur l'arbre. La complexité est connue et est
-    en :math:`\theta(n)`. Justification intuitive: Comme on doit toujours parcourir tous
-    les noeuds de l'arbre (3 fois) on ne fait pas mieux qu':math:`\Omega(N)` mais pas pire
-    que :math:`\mathcal{O}(N)` non plus.
+    Perform an **in-order traversal** of the BST: recursively traverse the left subtree, visit/enqueue the current node's key, and recursively traverse the right subtree.
+    By the BST invariant (all keys in the left subtree are smaller than the root, and all keys in the right subtree are larger), this visits all :math:`N` keys in strictly ascending order.
 
-Exercise 3.1.9
-""""""""""""""
+    **Time complexity**: :math:`\Theta(N)` because every node is visited a constant number of times (and each of the :math:`2N` links is traversed once).
+
+
+BST vs. 2-3 Tree Insertion Trace
+""""""""""""""""""""""""""""""""
 
 Starting from an initially empty binary search tree, what does the tree look like
-after inserting the keys 12, 5, 10, 3, 13, 14, 15, 17, 18, 15? 
+after inserting the keys 12, 5, 10, 3, 13, 14, 15, 17, 18, 15?
 For the same data, what would the tree look like for a 2-3 tree?
 
 Does this example illustrate the advantages or disadvantages of these different data structures? Why?
 
-
 .. answer::
 
-    For a binary tree:
+    * **Standard Binary Search Tree (BST)**:
 
-    .. image:: 9a.png
+      .. image:: 9a.png
 
-    For a 2-3 tree
+    * **2-3 Search Tree**:
 
-    .. image:: 9b.png
+      .. image:: 9b.png
 
-    .. image:: 9c.png
+      .. image:: 9c.png
+
+    * **Discussion**: Because the inserted keys ``13, 14, 15, 17, 18`` arrive in strictly increasing order, the right branch of the standard BST degenerates into a linear chain of height :math:`\mathcal{O}(N)`. In contrast, the 2-3 tree splits 4-nodes from the bottom up, maintaining perfect balance and logarithmic height :math:`\mathcal{O}(\log N)` regardless of insertion order.
 
 
-
-Exercise 3.1.10
-"""""""""""""""
+Identifying Valid Red-Black BSTs
+""""""""""""""""""""""""""""""""
 
 Which of these trees are red-black BSTs? For each, draw the corresponding 2-3 tree
 (described on page 432).
 
 .. image:: rbtree.png
-    :alt: Arbres
+    :alt: Red-Black Trees
 
 .. answer::
 
-    Seuls les arbres iii et iv sont des red black trees: les autres ne représentent
-    pas un 2-3 tree valide.
+    Only trees **(iii)** and **(iv)** are valid Left-Leaning Red-Black BSTs:
 
-    1. Pas d'équilibre au niveau des longueurs noires
-    2. Pas un 2-3 arbre balancé, et en plus F est à gauche de E (donc même pas un BST)
-    3. C'est un RBT (obviously !)
-    4. Idem
+    * **(i) Invalid**: Does not have perfect black balance (paths from the root to null links have different numbers of black links).
+    * **(ii) Invalid**: Not black-balanced, has a right-leaning red link, and violates the BST key ordering (``F`` is in the left subtree of ``E``).
+    * **(iii) Valid Red-Black BST**.
+    * **(iv) Valid Red-Black BST**.
+
+    Corresponding 2-3 representations:
 
     .. image:: tree_i.png
     .. image:: tree_ii.png
@@ -276,77 +265,75 @@ Which of these trees are red-black BSTs? For each, draw the corresponding 2-3 tr
     .. image:: tree_iv.png
 
 
-Exercise 3.1.11 (INGInious MCQ on tree traversals)
-""""""""""""""""""""""""""""""""""""""""""""""""""
+MCQ on Tree Traversals
+""""""""""""""""""""""
 
 `Binary search tree traversals <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3QcmBt>`_
 
 
-Exercise 3.1.12 (INGInious: BST Iterator)
-"""""""""""""""""""""""""""""""""""""""""
+BST Iterator
+""""""""""""
 
 `Implement an iterator for a BST <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeIterator>`_
 
 
-Exercise 3.1.13 (INGInious: Ceil)
-"""""""""""""""""""""""""""""""""
+Ceil
+""""""""""
 
-`Implement the ceil method <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree>`_ of ``BinarySearchST``.
-
-
+`Implement the ceil method <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTree>`_ of a Binary Search Tree (and ``BinarySearchST``).
 
 .. answer::
 
-    .. code-block:: java
+    * **In a linked ``BinarySearchTree``**:
 
-        public Key floor(Key key) {
-            //rank returns the position where the key
-            //should be if it is added
+      .. code-block:: java
 
-            //i.e. if keys[loc] == key => it exists, return key
-            //     else, return the key just before the location
-            //           where the key should be added
+          public Key ceil(Key key) {
+              Node x = ceil(root, key);
+              return x == null ? null : x.key;
+          }
 
-            int loc = rank(key);
-            if(keys[loc].compareTo(key) == 0)
-                return key;
-            return keys[loc-1];
-        }
+          private Node ceil(Node x, Key key) {
+              if (x == null) return null;
+              int cmp = key.compareTo(x.key);
+              if (cmp == 0) return x;
+              if (cmp > 0)  return ceil(x.right, key);
+              Node t = ceil(x.left, key);
+              return (t != null) ? t : x;
+          }
+
+    * **In array-based ``BinarySearchST``**: ``rank(key)`` returns the number of keys strictly smaller than ``key``, which is the exact index of the smallest key :math:`\ge \text{key}` (or ``N`` if all keys are smaller):
+
+      .. code-block:: java
+
+          public Key ceiling(Key key) {
+              int i = rank(key);
+              if (i == N) return null;
+              return keys[i];
+          }
 
 
-
-Exercise 3.1.14 (INGInious: Higher key)
-"""""""""""""""""""""""""""""""""""""""
+Higher Key
+""""""""""
 
 Implement a method that returns the least key strictly greater than a given key:
 `Higher key <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_BinarySearchTreeHigher>`_
 
 
-Exercise 3.1.15 (INGInious MCQ on BST Time-Complexity)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+MCQ on BST Time Complexity
+""""""""""""""""""""""""""
 
 `Time complexity of binary search trees <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Qcm>`_
 
 
-
-Exercise 3.1.16 (INGInious: Small exercises on red-black)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Red-Black Tree Insertions
+"""""""""""""""""""""""""
 
 `Red-black tree insertions <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/PART3Rbt>`_
 
 
-Exercise 3.1.17 (INGInious: Red-Black Tree Conversion)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Red-Black Tree Conversion
+"""""""""""""""""""""""""
 
 Implement a class that converts a 2-3 tree into a red-black tree:
-
 `RedblackTreeConverter <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_RedBlackTreeConverter>`_
-
-
-
-
-
-
-
-
-

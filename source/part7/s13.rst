@@ -1,53 +1,51 @@
 .. _part7_1:
 
-.. rubric:: Partie 7 | Révisions
-
 *************************************************************************************************
-Partie 7: Révisions
+Part 7: Review Session & QCM
 *************************************************************************************************
 
-Plan du TP:
+Recommended plan for the review session:
 
-- 20 premières minutes: lecture et réponse aux QCMs individuellement
-- 20 minutes suivantes: correction collective des QCMs. Le groupe vérifie que les réponses de chacun sont toutes les mêmes, et tente
-  de trouver la bonne si ce n'est pas le cas (+ justification et explication pour ceux qui se trompaient).
-- Pendant les 1h20 restantes, tentez de faire, en groupe, les deux questions INGInious, *séquentiellement* (travaillez
-  tous en même temps sur la même question). Ouvrez à chaque fois un partage d'écran sur Teams, et partagez IntelliJ.
-  **La personne qui partage IntelliJ devrait être différente à chaque fois, et devrait idéalement être à chaque fois**
-  **un membre de votre groupe qui se sent moins à l'aise avec la matière.** Le but est que cette personne résolve le problème
-  et que le reste du groupe l'aide.
+- **First 20 minutes**: Read and answer the multiple-choice questions (MCQs) individually.
+- **Next 20 minutes**: Collective review and discussion of the MCQs. Compare answers within your group and make sure everyone understands the justification for each statement.
+- **Remaining 1h20**: Solve the two INGInious programming tasks at the bottom of the page.
 
-QCM 1 (janvier 2020)
---------------------
 
-Etant donné un texte ne contenant que la lettre `a` répété un million de fois (:math:`10^6`) et encodé en ASCII étendu (un byte par caractère).
-Supposez maintenant que ce texte est compressé en appliquant deux fois l'algorithme de compression de Huffman successivement.
+Repeated Huffman Compression — Jan 2020
+---------------------------------------
 
-.. code::
+Given a text containing only the character ``a`` repeated one million times (:math:`10^6`) and encoded in extended ASCII (one byte per character).
+Suppose this text is compressed by applying the Huffman compression algorithm **twice** in succession:
+
+.. code-block:: text
 
     input --compress--> output1 --compress--> output2
           \-----------> tree1   \-----------> tree2
 
-Les arbres (tree1/2) ne sont pas comptés dans la taille des sorties (output1/2).
+The serialized trees (``tree1`` / ``tree2``) are not counted in the output sizes (``output1`` / ``output2``).
+Note: For a single-character alphabet (or when ``a`` is encoded using 1 bit per occurrence), each character of ``output1`` is grouped into 8-bit bytes before the second compression pass.
 
-Cochez **les** affirmations correctes. :math:`size(x)` donne la longueur en bit de `x`. Par exemple, :math:`size(input)=8\cdot 10^6`
+Check **all** correct statements. :math:`\text{size}(x)` denotes the length in bits of ``x`` (for example, :math:`\text{size}(\text{input}) = 8 \cdot 10^6`):
 
-- :math:`\Large{\frac{\text{size}(output\mathbf{1})}{\text{size}(input)}\simeq \frac{1}{8}}`
-- :math:`\Large{\frac{size(output\mathbf{1})}{size(input)}\simeq \frac{1}{2}}`
-- :math:`\Large{\frac{size(output\mathbf{2})}{size(input)}\simeq \frac{1}{64}}`
-- :math:`\Large{\frac{size(output\mathbf{2})}{size(input)}\simeq \frac{1}{16}}`
-- :math:`\Large{\frac{size(output\mathbf{2})}{size(input)}\simeq \frac{1}{8}}`
+- :math:`\Large{\frac{\text{size}(\text{output1})}{\text{size}(\text{input})} \simeq \frac{1}{8}}`
+- :math:`\Large{\frac{\text{size}(\text{output1})}{\text{size}(\text{input})} \simeq \frac{1}{2}}`
+- :math:`\Large{\frac{\text{size}(\text{output2})}{\text{size}(\text{input})} \simeq \frac{1}{64}}`
+- :math:`\Large{\frac{\text{size}(\text{output2})}{\text{size}(\text{input})} \simeq \frac{1}{16}}`
+- :math:`\Large{\frac{\text{size}(\text{output2})}{\text{size}(\text{input})} \simeq \frac{1}{8}}`
 
 .. answer::
 
-    Chaque compression successive divise la taille par 8. Donc 8 et 64 :-)
+    Because the input consists exclusively of a single repeated character ``a``, ``output1`` is a stream of :math:`10^6` identical bits (e.g., ``00000000...``), which represents :math:`10^6 / 8` identical bytes ``0x00``.
+    Therefore, the second Huffman compression pass sees a file consisting of a single repeated byte ``0x00`` and compresses each 8-bit byte into a 1-bit codeword again!
+    Each successive compression divides the bit size by 8, so the correct statements are **1/8** for ``output1`` and **1/64** for ``output2``.
 
-QCM 2 (janvier 2020)
---------------------
 
-L'en-tête d'un fichier compressé par l'algorithme de compression de Huffman contient une version sérialisée de l'arbre utilisé pour la compression. Cette sérialisation est effectuée en utilisant un parcours préfixe de l'arbre, tel que vu au cours.
+Huffman Trie Deserialization Complexity — Jan 2020
+--------------------------------------------------
 
-Etant donné qu'un arbre contient :math:`n` noeuds, quelle est la complexité temporelle (la plus précise, le cas échéant) de reconstruire l'arbre (chainé) à partir du parcours avec la méthode `readTrie()` ?
+The header of a file compressed with Huffman coding contains a serialized version of the coding trie obtained via a preorder traversal.
+
+Given that the trie contains :math:`n` nodes in total, what is the tightest time complexity of reconstructing the linked trie from the bit stream using ``readTrie()``?
 
 .. code-block:: java
 
@@ -66,23 +64,24 @@ Etant donné qu'un arbre contient :math:`n` noeuds, quelle est la complexité te
 - :math:`\mathcal{O}(n \log n)`
 - :math:`\mathcal{O}(\log n)`
 - :math:`\mathcal{O}(n^2)`
-- Aucune de ces réponses (:math:`\mathcal{O}(f(n))` où :math:`f(n)` est asymptotiquement plus grand que :math:`n^2`)
+- None of the above (:math:`\mathcal{O}(f(n))` where :math:`f(n)` grows faster than :math:`n^2`)
 
 .. answer::
 
-    Bien évidemment, c'est :math:`\mathcal{O}(n)`.
+    :math:`\mathcal{O}(n)`. Each recursive call to ``readTrie()`` creates exactly one ``Node`` of the trie and performs :math:`\Theta(1)` work, so for a trie of :math:`n` nodes, ``readTrie()`` is called exactly :math:`n` times.
 
-QCM 3 (janvier 2020)
---------------------
 
-Etant donné un tableau de fréquence avec :math:`n` entrées, quelle est la complexité temporelle (la plus précise, le cas échéant) pour construire l'arbre de Huffman au départ du tableau de fréquences avec `buildTrie` ?
+Huffman Trie Construction Complexity — Jan 2020
+-----------------------------------------------
+
+Given a frequency table with :math:`n` non-zero entries (:math:`R = n`), what is the tightest time complexity of building the Huffman trie from the frequency array using ``buildTrie``?
 
 .. code-block:: java
 
     // build the Huffman trie given frequencies
     private static Node buildTrie(int[] freq) {
 
-        // initialze priority queue with singleton trees
+        // initialize priority queue with singleton trees
         MinPQ<Node> pq = new MinPQ<Node>();
         for (char c = 0; c < R; c++)
             if (freq[c] > 0)
@@ -98,143 +97,127 @@ Etant donné un tableau de fréquence avec :math:`n` entrées, quelle est la com
         return pq.delMin();
     }
 
-- :math:`\mathcal{O}(log(n))`
+- :math:`\mathcal{O}(\log n)`
 - :math:`\mathcal{O}(n)`
-- :math:`\mathcal{O}(n.log(n))`
+- :math:`\mathcal{O}(n \log n)`
 - :math:`\mathcal{O}(n^2)`
-- Aucune de ces réponses (:math:`\mathcal{O}(f(n))` où :math:`f(n)` est asymptotiquement plus grand que :math:`n^2`)
+- None of the above (:math:`\mathcal{O}(f(n))` where :math:`f(n)` grows faster than :math:`n^2`)
 
-.. note::
+.. answer::
 
-    Notez que dans notre infinie bonté, on vous donne ici l'algorithme... vous n'avez donc qu'à le regarder et à donner
-    la complexité. C'est quelque chose qu'on fait... parfois. D'autres fois, on ne vous le donnera pas; la méthode
-    est donc à ce moment soit de connaitre la réponse par coeur (mauvaise idée sauf pour quelques algorithmes spécifiques,
-    dont la complexité n'est pas évidente à la lecture) soit d'abord de réécrire l'algorithme et de regarder sa complexité.
+    :math:`\mathcal{O}(n \log n)`. The initial loop performs :math:`n` heap insertions, and the ``while`` loop runs :math:`n - 1` iterations, each performing two ``delMin()`` and one ``insert()`` on a binary heap of size at most :math:`n` (:math:`\mathcal{O}(\log n)` per heap operation).
 
-QCM 4 (janvier 2020)
---------------------
 
-Répondez par vrai ou faux. Tout les mots sont importants!
+True/False: Shortest Paths and MSTs — Jan 2020
+----------------------------------------------
 
-La cotation de cette question est :math:`20\cdot\max(0, 2(\frac{x}{n}-0.5))` où :math:`x` est le nombre de case correctement cochées (une case est correctement cochée si l'affirmation est fausse et qu'elle n'est pas cochée ou si elle est cochée et que l'affirmation est vraie) et où :math:`n` est le nombre d'affirmations. Répondre au hasard vous vaudra donc :math:`0` en moyenne!
+Answer True or False. Every word matters!
 
-Exemple
-"""""""
-Pour vous aider, voilà un exemple de graphe. Il sera probablement utile.
+Grading rule: :math:`20 \cdot \max(0, 2(\frac{x}{n} - 0.5))` where :math:`x` is the number of correctly answered statements out of :math:`n` (random guessing yields 0 on average).
+
+**Example Graph**:
 
 .. image:: example.svg
     :width: 200px
     :align: center
     :alt: graph example
 
-Transformation linéaire
-"""""""""""""""""""""""
-
-Quand on parle de "transformation linéaire" ci-dessous, nous entendons appliquer la formule :math:`a*w+b` sur le poids :math:`w` de chaque arête du graphe. Par exemple:
+**Linear Transformation**:
+By a "linear transformation" with coefficients :math:`a > 0` and :math:`b \ge 0`, we mean replacing the weight :math:`w` of every edge in the graph by :math:`a \cdot w + b`:
 
 .. image:: linear.svg
     :width: 200px
     :align: center
-    :alt: graph example
+    :alt: linear transformation example
 
-Avec :math:`a > 0` et :math:`b \geq 0`.
-
-- L'algorithme de Dijkstra permet de trouver le chemin le plus court dans tout graphe, y compris avec des poids négatifs, mais pas dans ceux qui ont des cycles de poids négatif.
+- Dijkstra's algorithm finds the shortest path in any graph, including graphs with negative edge weights, as long as there are no negative-weight cycles.
 
   .. answer::
 
-    Non. Cf TP précédent.
+    **False.** Dijkstra's algorithm can fail on graphs with negative edge weights even when no negative cycle exists (see *Dijkstra and Negative Edge Weights* in Part 6); Bellman-Ford is required in that case.
 
-- En supposant un graphe connexe au départ, lors de son exécution, un invariant de l'algorithme de Prim est que les edges selectionnées forment un graphe connexe.
-
-  .. answer::
-
-    C'est vrai. Kruskal, au contraire, maintiens une foret.
-
-- L'algorithme de Dijkstra génère, pendant son calcul du chemin le plus court sur un graphe connexe pondéré positivement, un arbre sous-tendant du graphe. Chaque chemin partant de la racine et allant vers n'importe quel noeud est le (== un des) chemins les plus courts de la racine vers cette feuille. **Hint: raisonnez sur l'exemple ci-dessus. Cela pourrait vous aider.**
+- Assuming a connected starting graph, an invariant of Prim's algorithm during its execution is that the selected edges always form a single connected tree.
 
   .. answer::
 
-    C'est vrai
+    **True.** Prim's algorithm grows a single connected tree from the starting vertex one edge at a time (whereas Kruskal's algorithm maintains a forest of trees that gradually merge).
 
-- L'algorithme de Dijkstra génère, pendant son calcul du chemin le plus court sur un graphe connexe pondéré positivement, un arbre sous-tendant du graphe. Cet arbre est un minimum spanning tree. **Hint: raisonnez sur l'exemple ci-dessus. Cela pourrait vous aider.**
-
-  .. answer::
-
-    C'est faux; il n'est pas minimum. Faites le sur l'exemple :-)
-
-- L'algorithme de Dijkstra permet de trouver le chemin le plus court dans tout graphe, y compris avec des poids négatifs.
+- During its execution on a connected graph with positive edge weights, Dijkstra's algorithm builds a spanning tree of the graph (the shortest-path tree) where every path from the source root to any vertex is a shortest path in the graph.
 
   .. answer::
 
-    Non. Cf TP précédent pour un exemple.
+    **True.** This is the definition of the Shortest-Path Tree (SPT) built via ``edgeTo[]``.
 
-- Soit un graphe G, connexe, non-dirigé, et pondéré (positivement). On effectue une opération linéaire (de coefficient :math:`a` strictement positif et biais :math:`b` positif, **voir exemple ci-dessus**) sur le poids des arêtes. L'ensemble des MSTs de ce nouveau graphe est le même que celui du graphe original.
-
-  .. answer::
-
-    Oui, car une telle modification garde l'ordre total préexistant sur le poids des arêtes: elles sont toujours prises dans le même ordre.
-
-- Soit un graphe G, connexe, non-dirigé, et pondéré (positivement). On effectue une opération linéaire (de coefficient :math:`a` strictement positif et biais :math:`b` positif, **voir exemple ci-dessus**) sur le poids des arêtes.  Les chemins les plus courts trouvés par l'algorithme de Bellman-Ford sont les mêmes que ceux du graphe original. (Considérez par simplicité que dans le graphe original il y a au plus un chemin le plus court entre toute paire de noeud)
+- The spanning tree generated by Dijkstra's algorithm on a connected positively-weighted graph is always a Minimum Spanning Tree (MST).
 
   .. answer::
 
-    Non! Car le biais affecte plus les chemins plus long que les chemins plus courts. Contrairement, juste avec le coefficient, ça marche.
+    **False.** In the example graph above (with :math:`x=1, y=2, z=3` and edges :math:`(1,2)=2, (2,3)=2, (1,3)=3`), the MST has edges :math:`(1,2)` and :math:`(2,3)` of total weight :math:`4`, whereas Dijkstra from vertex ``1`` picks edges :math:`(1,2)` and :math:`(1,3)` of total weight :math:`2 + 3 = 5`.
 
-QCM 5 (janvier 2020)
---------------------
-
-Cochez les affirmations correctes.
-
-Dans les questions ci-dessous:
-
-- Les heaps sont toujours formées de telle sorte qu'elles donnent le plus petit élément en premier. Autrement dit, ce sont des min-heaps.
-- Quand on parle de "tableau d'un arbre complet" il s'agit de l'encodage d'arbre sous forme de tableau vu au cours. Le tableau commence à l'indice 1, cet indice représantant la racine de l'arbre. Les deux noeuds fils d'un noeud :math:`i` sont :math:`2i` et :math:`2i+1`.
-- Les arbres sont complets
-
-Tout les mots sont importants!
-
-La cotation de cette question est :math:`\max(0, 2(\frac{x}{n}-0.5))` où :math:`x` est le nombre de case correctement cochées (une case est correctement cochée si l'affirmation est fausse et qu'elle n'est pas cochée ou si elle est cochée et que l'affirmation est vraie) et où :math:`n` est le nombre d'affirmations. Répondre au hasard vous vaudra donc :math:`0` en moyenne!
-
-- Il est nécessaire et suffisant que "pour tout chemin allant de la racine vers une feuille du heap, les noeuds soient (non-strictement) croissants" pour qu'un arbre soit un heap (donnant le plus petit élément en premier).
+- Dijkstra's algorithm finds the shortest path in all graphs, including those with negative weights.
 
   .. answer::
 
-    C'est équivalent à la propriété de base des heaps, donc c'est vrai.
+    **False.**
 
-- Il est nécessaire et suffisant que "pour chaque noeud, ses deux enfants soient plus grands que lui" pour qu'un arbre soit un heap (donnant le plus petit élément en premier).
-
-  .. answer::
-
-    C'est la définition d'un heap ;-)
-
-- Le tableau d'une heap binaire complet est (non-strictement) croissant.
+- Let :math:`G` be a connected, undirected, positively-weighted graph. If we apply a linear transformation :math:`w' = a \cdot w + b` (with :math:`a > 0` and :math:`b \ge 0`) to all edge weights, the set of Minimum Spanning Trees (MSTs) of the transformed graph is identical to that of the original graph.
 
   .. answer::
 
-    C'est faux. [0 2 1] est un heap valide.
+    **True.** Every spanning tree of :math:`G` has the exact same number of edges (:math:`|V| - 1`), so for any spanning tree :math:`T`, its new total weight is :math:`w'(T) = a \cdot w(T) + (|V| - 1)b`. Since :math:`a > 0`, this strictly preserves the relative ordering of edge weights and spanning tree weights!
 
-- Un arbre binaire complet dont le tableau est croissant forme un heap.
-
-  .. answer::
-
-    C'est vrai. Un tel tableau respecte la propriété.
-
-- Etant donné un heap binaire complet de :math:`n>10` noeuds, retirer le minimum et le remettre (pop puis push) laisse le heap (le tableau) inchangé.
+- Let :math:`G` be a connected, undirected, positively-weighted graph (with a unique shortest path between any pair of vertices). If we apply a linear transformation :math:`w' = a \cdot w + b` (with :math:`a > 0` and :math:`b > 0`) to all edge weights, the shortest paths found by Bellman-Ford are always identical to those of the original graph.
 
   .. answer::
 
-    C'est faux. [0 2 1 3] -> [1 2 3] -> [0 1 3 2]
+    **False.** Adding a positive constant bias :math:`b > 0` penalizes a path of :math:`k` edges by :math:`k \cdot b` (see *Shifting Negative Weights for Dijkstra* in Part 6). In the example graph with :math:`a = 1, b = 2`, the 2-edge path :math:`1 - 2 - 3` changes weight from :math:`2 + 2 = 4` to :math:`4 + 4 = 8`, whereas the 1-edge path :math:`1 - 3` changes from :math:`5` to :math:`5 + 2 = 7 < 8`, changing the shortest path! (It only preserves shortest paths if :math:`b = 0`).
 
-- Il existe un algorithme en :math:`\Theta(n)` pour former un heap correct à partir d'un tableau d'éléments non trié.
+
+True/False: Binary Min-Heaps — Jan 2020
+---------------------------------------
+
+Check all correct statements.
+In the statements below, heaps are **min-heaps** (smallest element at the root), represented as 1-indexed complete binary tree arrays (root at index 1, children of :math:`i` at :math:`2i` and :math:`2i+1`).
+
+- It is a necessary and sufficient condition for a complete binary tree to be a min-heap that "along every path from the root to a leaf, the node keys are in non-decreasing order".
 
   .. answer::
 
-    Oui, heapsort.
+    **True.** This is equivalent to the min-heap order property (every node is :math:`\ge` its parent).
 
-Questions INGInious (examen Aout 2020)
---------------------------------------
+- It is a necessary and sufficient condition for a complete binary tree to be a min-heap that "for every node, its children (if any) have keys greater than or equal to its own key".
 
-https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q1
+  .. answer::
 
-https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q2
+    **True.** This is the exact definition of the min-heap property.
+
+- The internal array of a binary min-heap is always sorted in non-decreasing order.
+
+  .. answer::
+
+    **False.** For example, ``[-, 0, 2, 1]`` is a valid min-heap (since ``0 <= 2`` and ``0 <= 1``), but the array is not sorted.
+
+- Any complete binary tree whose internal array is sorted in non-decreasing order forms a valid min-heap.
+
+  .. answer::
+
+    **True.** If :math:`a[1] \le a[2] \le \dots \le a[n]`, then for every node :math:`i`, since :math:`i < 2i < 2i+1`, we automatically have :math:`a[i] \le a[2i]` and :math:`a[i] \le a[2i+1]`.
+
+- Given a binary min-heap of :math:`n > 10` distinct keys, removing the minimum and immediately re-inserting it (``delMin`` followed by ``insert``) always leaves the internal array unchanged.
+
+  .. answer::
+
+    **False.** For example, on ``[-, 0, 2, 1, 3]``, ``delMin()`` moves ``3`` to the root and sinks it via ``1``, giving ``[-, 1, 2, 3]``. Re-inserting ``0`` at index 4 and swimming it to the root yields ``[-, 0, 1, 3, 2]``, which differs from ``[-, 0, 2, 1, 3]``.
+
+- There exists a :math:`\Theta(n)` worst-case time algorithm to build a valid binary min-heap from an unsorted array of :math:`n` elements.
+
+  .. answer::
+
+    **True.** Bottom-up heap construction (Floyd's sink-based heapify, used in the first phase of Heapsort) builds a binary heap in :math:`\Theta(n)` time (see *Bottom-Up Heap Construction in Linear Time* in Part 5).
+
+
+August 2020 Exam Tasks
+----------------------
+
+* `August 2020 Exam — Question 1 <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q1>`_
+* `August 2020 Exam — Question 2 <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/E1Q2>`_

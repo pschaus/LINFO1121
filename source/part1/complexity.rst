@@ -8,8 +8,8 @@ Complexity
 Please note that all definitions here are for positive functions with one integer argument, but are almost identical
 for multivariate functions from other sets.
 
-Notation Big-Oh (:math:`\mathcal{O}`)
-=====================================
+Big-Oh Notation (𝒪)
+===================
 
 .. math::
 
@@ -44,8 +44,8 @@ because all these functions grow at least as fast as :math:`n^2` when :math:`n` 
 In the majority of cases, we want to choose the smallest possible :math:`g(n)` function that satisfies the
 property, since it gives us the most information.
 
-Notation Big-Omega (:math:`\Omega`)
-=============================================
+Big-Omega Notation (Ω)
+======================
 
 The definition is similar to that of Big-Oh. The differences are shown in bold:
 
@@ -66,8 +66,8 @@ Example
 
 In the general case, Insert outputs :math:`\in \Omega(n)`.
 
-Notation Big-Theta (:math:`\Theta`)
-=============================================
+Big-Theta Notation (Θ)
+======================
 
 .. math::
 
@@ -97,8 +97,8 @@ Example
 
 Merge sort is in :math:`\Theta(n\log_2 n)`.
 
-Notation Tilde (:math:`\mathcal{\sim}`)
-=======================================
+Tilde Notation (~)
+==================
 
 The definition of tilde notation is based on different principles:
 

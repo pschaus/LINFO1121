@@ -6,7 +6,7 @@ Objectives
 
 At the end of this part each student will be able to:
 
-* make the distinction between the notations :math:`\mathcal{\sim}`, :math:`\mathcal{O}`,
+* make the distinction between the notations :math:`\sim`, :math:`\mathcal{O}`,
    :math:`\mathcal{\Theta}`, and :math:`\mathcal{\Omega}`, know their properties and definitions;
 * describe precisely the properties of the abstract types *stack* and *queue*;
    as well as the various types of chained lists;

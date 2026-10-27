@@ -7,15 +7,23 @@ Exercises B
     You must complete these exercises by Wednesday of W11.
 
 
-Exercise 5.2.1
-""""""""""""""
+Huffman Header: Serialized Trie vs. Codeword Table
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-In Huffman coding compression, it is necessary to include a header in the compressed file containing the information needed to decode the file. 
+In Huffman coding compression, it is necessary to include a header in the compressed file containing the information needed to decode the file.
 In your implementation, the header is likely a serialized version of the trie (the result of a preorder traversal), as proposed in the textbook.
 Do you think it would be more or less efficient in terms of memory to store the binary encoding of each symbol directly rather than the serialized trie?
 
-Exercise 5.2.2
-""""""""""""""
+.. answer::
+
+    Storing the **serialized trie** via preorder traversal is significantly **more memory-efficient** (and simpler to decode) than storing an explicit table of ``(symbol, codeword)`` pairs:
+
+    * **Serialized trie size**: A full binary tree with :math:`k` distinct leaf symbols has :math:`k - 1` internal nodes and :math:`k` leaves (:math:`2k - 1` nodes total). In the preorder bitstream, each internal node costs 1 bit (``0``) and each leaf costs 1 bit (``1``) plus 8 bits for the character, totaling exactly :math:`(2k - 1) + 8k = 10k - 1` bits.
+    * **Explicit codeword table size**: Because Huffman codewords have variable lengths (from :math:`1` up to :math:`k - 1` bits), storing the binary encoding of each symbol directly requires storing the symbol (8 bits), the length of its codeword (e.g., 5–8 bits), and the codeword bits themselves (which can sum to :math:`\Theta(k^2)` bits in a skewed tree!). Furthermore, during decompression, you would still need to rebuild the trie from the codeword table to decode the bit stream bit-by-bit in :math:`\mathcal{O}(1)` per bit.
+
+
+Repeated Huffman Compression
+""""""""""""""""""""""""""""
 
 Can we achieve an even better compression ratio if we reapply Huffman's compression algorithm to a file that has already been compressed once?
 What happens in this case?
@@ -23,62 +31,57 @@ Does this open the door to a recursive and optimal compression algorithm?
 
 .. answer::
 
-    Huffman is able to compress better when the number of symbols is not large (less than the whole asci set) and/or when they are large differences in the number of occurences.
-    It works well for text input because this is exactly what we have in natural languages.
-    After a first compression, you loose this nice property of natural languages because the input does not correspond to a text anymore.
-    Also you need to consider the preorder encoding table as an input). Conclusion: no guarentee it will be usefull because it is not a natural language, the counters should be much more uniform and also you need to add again a new encoding table (preorder traversal of the tree).
+    **No, reapplying Huffman coding to an already-compressed file generally increases the file size rather than shrinking it!**
 
-Exercise 5.2.3
-""""""""""""""
+    * Huffman coding exploits **skewed symbol frequencies** (some characters appear much more frequently than others, as in natural language text).
+    * Once a text has been compressed with Huffman coding, the output bit stream has much higher entropy: when grouped into 8-bit bytes, the 256 possible byte values occur with a nearly uniform distribution.
+    * Applying Huffman coding a second time must prepend a **second header** (serialized trie + length) while the body bit stream achieves almost zero compression (or even expands if only a small header was skewed), so recursive compression is impossible (by the Pigeonhole Principle, no lossless compression algorithm can shrink all files!).
+
+
+Huffman Compression Ratio and Run-Length Encoding
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 What is, approximately, the compression ratio obtained if we apply the Huffman compression algorithm
-to a file with a single string consisting of the character 'a' repeated a million times (:math:`\approx 2^{20}`), followed by the character ``b`` occurring only once?
+to a file with a single string consisting of the character ``'a'`` repeated a million times (:math:`\approx 2^{20}`), followed by the character ``'b'`` occurring only once?
 
-Does the resulting compression ratio vary with the length of the file (for example, if the ``a`` character is repeated two million times)?
+Does the resulting compression ratio vary with the length of the file (for example, if the ``'a'`` character is repeated two million times)?
 
 What is the minimum number of bits needed to represent this file in compressed form?
 
 Can we use another compression scheme that achieves higher compression than Huffman coding in this particular case?
 
-Can the Huffman compression algorithm be used for inputs other than text files (for instance, an image)? 
+Can the Huffman compression algorithm be used for inputs other than text files (for instance, an image)?
 What would the algorithm count in this case?
-
-
 
 .. answer::
 
-    Assume the file is encoded in extended ASCI (256 symbols) thus one byte required for each letter.
-    The prefix in the encoding is negligible given the size of the text. The compression rate is thus 1/8 (since huffman will need 0 and 1 for encoding 'a' 'b').
-    This compression rate would not change whatever the number of 'a' followed buy a 'b'.
-    If we know that the form of the file is given by the regular expression :math:`[a*b]`, then only one number is needed for the number of 'a'. Thus one int.
-
-    Yep, another technique could be "character" followed by the number of consecutive occurences". For instance "aaabbbbbbbccaaa" would become "a3b7c2a3".
-
-    Yes, Huffman can count anything with the form of fixed size number of bits (colors for images, etc).
+    * **Huffman compression ratio**: Assuming the original file uses 8-bit ASCII (:math:`8 \times (10^6 + 1)` bits), the Huffman tree has only two symbols (``'a'`` and ``'b'``), so each is encoded using **1 bit** (e.g., ``0`` for ``'a'`` and ``1`` for ``'b'``). Ignoring the negligible header (:math:`\approx 19` bits + 32-bit length), the compressed file uses :math:`\approx 10^6 + 1` bits, giving a **compression ratio of** :math:`1/8 = 12.5\%`.
+    * **Dependence on file length**: The asymptotic compression ratio remains **constant at** :math:`1/8` regardless of whether ``'a'`` is repeated one million or two million times, because standard Huffman coding must assign at least 1 bit per input symbol.
+    * **Better compression scheme**: **Run-Length Encoding (RLE)** replaces consecutive runs of identical characters by ``(character, runLength)`` (e.g., ``(a, 1000000), (b, 1)``), which compresses the entire file into just a few bytes!
+    * **Non-text inputs**: Yes, Huffman coding can compress any sequence of discrete symbols (such as pixel color intensities in an image, or quantized frequency coefficients in JPEG), by counting the frequency of each symbol value.
 
 
-
-Exercise 5.2.4 (INGInious: Linked Heap)
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
+Linked Heap
+"""""""""""
 
 Imagine a heap implementation of a priority queue using a linked structure to represent the essentially complete binary tree corresponding to the heap.
 How many links are needed in each node?
 Write the code for the methods ``insert`` and ``delMax``. What are their time complexities? Is it necessary to specify a maximum capacity :math:`N` in the constructor?
 How do you add a new node to the heap or remove the last node? Can this be determined from the current heap size?
 
-
 Implement the min priority queue using a linked structure for representing the heap: `MinPQLinked <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinPQLinked>`_
-
 
 .. answer::
 
-    You need to have access to the parent and the two children for each node => 3 links/node.
-    No you don't need a "maxN" value but you need to be able to add a new node on the last layer or remove the last one of the last layer efficiently. This can be done using the current size :math:`n` in :math:`O(log(n))`.
-    The hight :math:`h = \lfloor log_2 (n+1) \rfloor`. The node index of the last node on the last layer is :math:`n-(2^h-1)`. You can consider this node index as a binary number. Each bit tells you if you should follow the left/right link from the root down to the leaf you are looking for in the tree (to retrieve where to add or delete the node at the last layer).
+    * **Links per node**: **3 links** (``parent``, ``left``, and ``right``) are needed in each ``Node`` so we can both ``swim`` up toward the root and ``sink`` down toward the leaves.
+    * **Capacity**: No maximum capacity needs to be specified in the constructor since nodes are allocated dynamically.
+    * **Locating the last position from the size** :math:`n` **in** :math:`\mathcal{O}(\log n)` **time**:
+      In a 1-indexed complete binary tree, the binary representation of any node index :math:`n` (after skipping the leading ``1`` bit, which represents the root) gives the exact path from the root to node :math:`n`: a ``0`` bit means go ``left`` and a ``1`` bit means go ``right``!
+      For example, for :math:`n = 6 = (110)_2`, starting at the root (``1``), we follow ``1`` (right) then ``0`` (left) to reach position 6 in :math:`\lfloor \log_2 n \rfloor` steps. Thus both ``insert`` and ``delMax`` run in :math:`\Theta(\log n)` worst-case time.
 
-Exercise 5.2.5 (INGInious: Min-Max Heap)
-""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Min-Max Heap
+""""""""""""
 
 Propose a data structure that supports the following operations in logarithmic time: *insert*, *remove maximum*, *remove minimum*;
 and the following operations in constant time: *find maximum* and *find minimum*.
@@ -92,20 +95,19 @@ For any element :math:`x` in the min-max heap, the following property holds:
 * If :math:`x` is at a :math:`\min` level, all descendants of :math:`x` are greater than or equal to :math:`x`.
 * If :math:`x` is at a :math:`\max` level, all descendants of :math:`x` are less than or equal to :math:`x`.
 
-
 Questions related to this min-max heap:
 
 * Where is the smallest element of the heap located?
 
   .. answer::
 
-    c'est celui de la racine.
+    At the **root** (index 1, level 0), which is a :math:`\min` level.
 
 * Where is the largest element of the heap located?
 
   .. answer::
 
-    Le maximum entre les deux éléments du niveau 1
+    At the root if :math:`N = 1`, or as the **maximum of the two children of the root** (indices 2 and 3, at level 1, which is the highest :math:`\max` level).
 
 * Draw a min-max heap that contains the following elements: 10, 8, 71, 31, 41, 46, 51, 31, 21, 11, 16, 13.
 
@@ -117,17 +119,23 @@ Questions related to this min-max heap:
 
   .. answer::
 
-    Attention, il faut aller voir au niveau :math:`i-2` pour voir s'il ne faut pas swapper.
+    1. Append the new key :math:`x` at index :math:`k = N + 1` (the next available leaf).
+    2. Let :math:`p = k / 2` be its parent:
 
+       * If :math:`k` is on a **min level**:
 
+         * If :math:`a[k] > a[p]` (where :math:`p` is on a max level), swap :math:`a[k]` and :math:`a[p]`, and then ``swimMax(p)`` up through the **max levels** (comparing with grandparents :math:`p / 4`).
+         * Otherwise, ``swimMin(k)`` up through the **min levels** (comparing with grandparents :math:`k / 4`).
+       * If :math:`k` is on a **max level**:
 
+         * If :math:`a[k] < a[p]` (where :math:`p` is on a min level), swap :math:`a[k]` and :math:`a[p]`, and then ``swimMin(p)`` up through the **min levels** (comparing with grandparents :math:`p / 4`).
+         * Otherwise, ``swimMax(k)`` up through the **max levels** (comparing with grandparents :math:`k / 4`).
 
 Implement the `MinMax Heap <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MinMaxHeap>`_.
 
 
-
-Exercise 5.2.6 (INGInious: MedianHeap)
-""""""""""""""""""""""""""""""""""""""""""""""""""
+MedianHeap
+""""""""""
 
 Imagine a data structure that supports:
 
@@ -142,26 +150,39 @@ to maintain between the two heaps after each operation.
 
 Implement the `MedianHeap <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_MedianHeap>`_.
 
-
 .. answer::
 
-    Il faut utiliser deux heap, chacune contenant la moitié des éléments.
-    La première heap est une max-heap et contient les :math:`n/2` plus petits éléments.
-    La deuxième heap est une min-heap et contient les :math:`n/2` plus grands éléments.
-    Assez facile de maintenir cette propriété lors de l'insertion d'un élément et le retrait de la médiane.
+    Maintain **two heaps**:
+
+    * A **Max-Heap** ``left`` storing the smaller half of the elements.
+    * A **Min-Heap** ``right`` storing the larger half of the elements.
+
+    **Invariants**:
+
+    1. *Ordering invariant*: Every key in ``left`` is :math:`\le` every key in ``right`` (i.e., ``left.max() <= right.min()``).
+    2. *Size balance invariant*: :math:`0 \le |\text{left}| - |\text{right}| \le 1` (or vice versa, according to the median convention).
+
+    With these invariants, the median is always at the root of ``left`` in :math:`\Theta(1)` time, and after any insertion or median deletion, we rebalance the sizes of ``left`` and ``right`` by moving at most one root element between the two heaps in :math:`\mathcal{O}(\log N)` time.
 
 
-Exercise 5.2.7 (INGInious: Ternary Heap)
-""""""""""""""""""""""""""""""""""""""""""""""""""
+Ternary Heap
+""""""""""""
 
 Implement a ternary heap where each node has up to three children rather than two.
 Be careful here: we store the values starting at index 0 rather than index 1 as in the binary heap, because the formulas :math:`2k` and :math:`2k+1` do not apply to the ternary case.
 What is the time complexity for the ``insert`` and ``delMax`` operations?
 
-
 Implement the `TernaryHeap <https://inginious.info.ucl.ac.be/course/LINFO1121/sorting_TernaryHeap>`_.
 
+.. answer::
 
+    * **0-indexed Ternary Heap index formulas**:
 
+      * Parent of node :math:`k > 0`: :math:`\lfloor (k - 1) / 3 \rfloor`
+      * Children of node :math:`k`: :math:`3k + 1`, :math:`3k + 2`, and :math:`3k + 3`
 
+    * **Time complexity**:
 
+      * The height of a ternary heap with :math:`N` nodes is :math:`\lfloor \log_3 N \rfloor`.
+      * ``insert`` (``swim``): at most :math:`\log_3 N` comparisons (:math:`\mathcal{O}(\log_3 N) = \mathcal{O}(\log N)`).
+      * ``delMax`` (``sink``): at each level we compare up to 3 children to find the largest child and swap with the parent, taking at most :math:`3 \log_3 N` comparisons (:math:`\mathcal{O}(\log_3 N) = \mathcal{O}(\log N)`).

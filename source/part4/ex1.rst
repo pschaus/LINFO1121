@@ -7,9 +7,8 @@ Exercises A
     You must complete these exercises by Wednesday of W7.
 
 
-
-Exercise 4.1.1
-""""""""""""""
+Symbol Table Implementations Comparison
+"""""""""""""""""""""""""""""""""""""""
 
 Name at least four different implementations of a symbol table (dictionary).
 Specify the main properties of each implementation.
@@ -18,68 +17,67 @@ What are the time complexities of their main operations?
 
 .. answer::
 
-   Il *FAUT* insister sur l'existence dictionnaires qui ne sont pas tables de hachage.
+    .. list-table:: Summary of Symbol Table (Dictionary) Implementations
+       :header-rows: 1
 
-   .. list-table:: Résumé des différentes implémentations
-      :header-rows: 1
-
-      * - Nom
-        - Implémentation en dictionnaire
-        - en ensemble
-        - Insertion
-        - Recherche
-        - Suppression
-        - Commentaire
-      * - Double tableau, non trié
-        -
-        -
-        - :math:`\mathcal{O}(1)` amorti
-        - :math:`\mathcal{O}(n)`
-        - :math:`\mathcal{O}(n)` (:math:`\mathcal{O}(1)` avec des listes)
-        -
-      * - Double tableau, trié
-        -
-        -
-        - :math:`\mathcal{O}(n)` amorti
-        - :math:`\mathcal{O}(\log n)`
-        - :math:`\mathcal{O}(n)` (:math:`\mathcal{O}(1)` avec des listes)
-        - nécessite un comparateur
-      * - Hash tables
-        - ``HashMap``
-        - ``HashSet``
-        - :math:`\mathcal{O}(1)` amorti
-        - :math:`\mathcal{O}(1)` amorti
-        - :math:`\mathcal{O}(1)` amorti
-        - nécessite un hash
-      * - Arbres de recherche
-        - ``TreeMap``
-        - ``TreeSet``
-        - :math:`\mathcal{O}(\log n)`
-        - :math:`\mathcal{O}(\log n)`
-        - :math:`\mathcal{O}(\log n)`
-        - nécessite un comparateur
-      * - Linked Hash tables
-        - ``LinkedHashMap``
-        - ``LinkedHashSet``
-        - :math:`\mathcal{O}(1)` amorti
-        - :math:`\mathcal{O}(1)` amorti
-        - :math:`\mathcal{O}(1)` amorti
-        - ordre d'itération = ordre insertion
+       * - Structure
+         - Java Map
+         - Java Set
+         - Insert (``put``)
+         - Search (``get``)
+         - Delete (``remove``)
+         - Key Requirement & Notes
+       * - Unordered Array / Linked List
+         - —
+         - —
+         - :math:`\mathcal{O}(N)`
+         - :math:`\mathcal{O}(N)`
+         - :math:`\mathcal{O}(N)`
+         - ``equals()``; only suitable for tiny tables
+       * - Ordered Parallel Arrays (``BinarySearchST``)
+         - —
+         - —
+         - :math:`\mathcal{O}(N)`
+         - :math:`\mathcal{O}(\log N)`
+         - :math:`\mathcal{O}(N)`
+         - ``Comparable``; great for static / read-mostly tables
+       * - Balanced Search Tree (Red-Black BST)
+         - ``TreeMap``
+         - ``TreeSet``
+         - :math:`\mathcal{O}(\log N)`
+         - :math:`\mathcal{O}(\log N)`
+         - :math:`\mathcal{O}(\log N)`
+         - ``Comparable`` / ``Comparator``; supports ordered operations (``floor``, ``ceiling``, range queries)
+       * - Hash Table (Separate Chaining / Linear Probing)
+         - ``HashMap``
+         - ``HashSet``
+         - :math:`\mathcal{O}(1)` amortized (expected)
+         - :math:`\mathcal{O}(1)` (expected)
+         - :math:`\mathcal{O}(1)` amortized (expected)
+         - ``hashCode()`` & ``equals()``; fastest for general lookup, no key ordering (under uniform hashing)
+       * - Linked Hash Table
+         - ``LinkedHashMap``
+         - ``LinkedHashSet``
+         - :math:`\mathcal{O}(1)` amortized (expected)
+         - :math:`\mathcal{O}(1)` (expected)
+         - :math:`\mathcal{O}(1)` amortized (expected)
+         - ``hashCode()`` & ``equals()``; preserves insertion order (or access order for LRU caches)
 
 
-Exercise 4.1.2
-""""""""""""""
+Two-Sum Using a Hash Table
+""""""""""""""""""""""""""
 
 Recall the following question from the sorting assignment: Given a set :math:`S` of size :math:`n` and a number :math:`x`, describe an efficient algorithm using a hash table to determine whether there exists a pair :math:`(a, b)` with :math:`a \in S, b \in S` such that :math:`a + b = x`. What is the time complexity of your algorithm? Is it better than your solution that used sorting?
 
 .. answer::
 
-   Une table de hachage étant en :math:`\mathcal{O}(1)` amorti en insertion/recherche (sous réserve d'un hachage correct)
-   on peut simplement insérer tout les nombres dans la table, puis regarder pour chaque nombre :math:`i` si :math:`x-i`
-   est présent dans l'ensemble. Complexité totale: :math:`\mathcal{O}(n)`.
+    Since a hash table (such as ``HashSet<Integer>``) supports insertion and lookup in :math:`\mathcal{O}(1)` expected time (assuming a uniform hash function), we can iterate through each element :math:`a \in S`, check whether :math:`x - a` is already in the ``HashSet``, and insert :math:`a` into the set.
 
-Exercise 4.1.3
-""""""""""""""
+    This runs in :math:`\mathcal{O}(n)` expected time and :math:`\mathcal{O}(n)` extra space, which is asymptotically faster than the :math:`\mathcal{O}(n \log n)` sorting-based approach (at the cost of :math:`\mathcal{O}(n)` memory for the hash table).
+
+
+Modular Arithmetic and String Hashing in Java
+"""""""""""""""""""""""""""""""""""""""""""""
 
 Show that :math:`(a + b) \% M` is equivalent to :math:`((a \% M) + b) \% M`. How can this property be useful when building a hash function for strings?
 Explain how Java computes a hash function for strings.
@@ -87,19 +85,25 @@ What is the time complexity of computing the hash code of a string once, and com
 
 .. answer::
 
-   Le modulo est distributif, et l'appliquer deux fois est identique à l'appliquer une fois:
+    * **Modular equivalence**: Write :math:`a = qM + r` where :math:`r = a \% M`. Then :math:`(a + b) \% M = (qM + r + b) \% M = (r + b) \% M = ((a \% M) + b) \% M` since :math:`qM` is a multiple of :math:`M`.
+      Combined with :math:`(a \cdot b) \% M = ((a \% M) \cdot b) \% M`, this allows evaluating a polynomial hash function :math:`\left(\sum_{i=0}^{n-1} s[i] \cdot R^{n-1-i}\right) \% M` using **Horner's method** by applying :math:`\% M` at every step of the loop, preventing integer overflow!
+    * **Java's ``String.hashCode()``**: Evaluates :math:`\sum_{i=0}^{n-1} s[i] \cdot 31^{n-1-i}` using Horner's method (relying on 32-bit signed integer wrap-around modulo :math:`2^{32}`):
 
-   .. math::
+      .. code-block:: java
 
-      ((a \% M) + b) \% M = (a \% M) \% M + b \% M = a \% M + b \% M
+          int h = 0;
+          for (int i = 0; i < length(); i++) {
+              h = 31 * h + charAt(i);
+          }
 
-   Pour un string :math:`s_0,s_1,\ldots,s_n` java utilise la formule :math:`\sum_{i=0}^{n-1} 31^{n-i-1}s_i`.
-   Mais l'implémentation utilise une boucle for (Horner method) similaire à celle de la page 460. La complexity est
-   donc de :math:`\sim n`. Mais attention, Java met en cache le hashcode, il est donc calculé au plus 1 fois. La complexity
-   pour :math:`N` appel à ``hashCode`` est donc :math:`n+N`.
+    * **Time complexity**:
 
-Exercise 4.1.4
-""""""""""""""
+      * Computing ``hashCode()`` the **first time** on a string of length :math:`n` takes :math:`\Theta(n)` time.
+      * Because ``String`` is **immutable**, Java **caches** the computed hash value in a private field ``private int hash``. Therefore, calling ``hashCode()`` :math:`N` times on the same ``String`` instance takes :math:`\Theta(n + N)` time in total (:math:`\Theta(n)` for the first call and :math:`\Theta(1)` for each of the remaining :math:`N - 1` calls).
+
+
+Sign Bit Masking in Hash Functions
+""""""""""""""""""""""""""""""""""
 
 Explain why the ``hash()`` method on page 461 of the book returns ``(x.hashCode() & 0x7FFFFFFF) % M`` and not simply ``x.hashCode() % M``?
 What number does ``0x7FFFFFFF`` represent?
@@ -108,15 +112,14 @@ Show the effect at the bit level on an example where ``x.hashCode()`` returns a 
 
 .. answer::
 
-   0x7FFFFFFF est une représentation hexadecimale (car il commence par 0x). Un caractère hexa spécifie 4 bits. 0x7F FF FF FF spécifie donc la valeur de 32 bits.
-   7=0111,F=1111. Donc  0x7FFFFFFF est le nombre binaire `0(suivi de 31 x 1)`. C'est l'entier maximum en Java, c'est à dire :math:`2^{31}-1=2147483647`.
-   Rien ne garanti que la méthode hashCode retourne un entier positif. Or tout entier négatif a une representation binaire qui commence par \texttt{1 (suivi de 31 x (0 ou 1))}.
-   Appliquer un :math:`\&` logique va donc mettre ce premier bit toujours à 0 afin d'éviter de calculer un index négatif qui résulterait en un OutOfBoundException dans un tableau.
+    * ``0x7FFFFFFF`` is a 32-bit hexadecimal literal. Since ``7`` is ``0111`` in binary and ``F`` is ``1111``, ``0x7FFFFFFF`` has binary representation ``01111111_11111111_11111111_11111111`` (a ``0`` sign bit followed by 31 ``1``s), which equals :math:`2^{31} - 1 = 2{,}147{,}483{,}647` (``Integer.MAX_VALUE``).
+    * **Why ``x.hashCode() % M`` is dangerous**: ``hashCode()`` returns any signed 32-bit ``int``, which can be negative. In Java, the remainder operator ``%`` with a negative dividend and positive divisor ``M`` returns a **negative** result in :math:`[-(M-1), 0]`, which would throw an ``ArrayIndexOutOfBoundsException`` when indexing the hash table array!
+    * **Effect of ``& 0x7FFFFFFF``**: Applying a bitwise AND with ``0x7FFFFFFF`` clears the sign bit (bit 31) to ``0`` while leaving the remaining 31 bits unchanged, turning any 32-bit signed integer into a non-negative 31-bit integer before taking ``% M``.
+      *(Note: why not ``Math.abs(x.hashCode()) % M``? Because ``Math.abs(Integer.MIN_VALUE)`` still returns ``Integer.MIN_VALUE = -2147483648`` due to two's complement overflow!)*
 
-   Question bonus: est-ce que `x \& 0x7FFFFFFF = abs(x)`? Non car on utilise une notation en complément de deux. Une bonne raison d'être attentif au cours de systèmes informatiques...
 
-Exercise 4.1.5
-""""""""""""""
+Java Map Hierarchy and Hashtable
+""""""""""""""""""""""""""""""""
 
 Java provides the class ``java.util.Hashtable`` as an implementation of the ``java.util.Map`` interface.
 Which variant of hash table does it use?
@@ -126,12 +129,18 @@ What can be used as a key for a hash table in Java? Be specific.
 
 .. answer::
 
-   Java utilise du separate-chaining. Sa structure pour le chaining est une liste doublement chaînée. Un object Entry est un noeud de la liste qui à une référence vers le predecesseur et le successeur.
-   Différence entre HashMap et HashTable: HashMap accepte les clefs et valeurs nulles et celle-ci n'est pas synchronisée.
-   Ensuite il y a aussi les SortedMap dont la TreeMap qui implémente les red-black tree et *ajoute des fonctionnalité relative à l'ordre (firstKey, ceil, floor, etc)*.
+    * **Variant used**: Both ``java.util.Hashtable`` and ``java.util.HashMap`` use **separate chaining** (in Java 8+, ``HashMap`` converts chains longer than 8 nodes into balanced Red-Black trees to guarantee :math:`\mathcal{O}(\log N)` worst-case lookup even under hash-flooding attacks).
+    * **Differences and ``Map`` implementations**:
 
-Exercise 4.1.6
-""""""""""""""
+      * ``HashMap``: Unsynchronized, permits one ``null`` key and ``null`` values, :math:`\mathcal{O}(1)` expected operations. Preferred over legacy ``Hashtable`` (which is synchronized on every method call and forbids ``null`` keys/values).
+      * ``LinkedHashMap``: Subclass of ``HashMap`` that threads a doubly linked list through all entries to maintain insertion order (or access order).
+      * ``ConcurrentHashMap``: Thread-safe hash table using fine-grained lock striping / CAS operations instead of locking the entire table.
+      * ``TreeMap`` (implements ``NavigableMap`` / ``SortedMap``): Red-Black tree implementation keeping keys sorted in :math:`\mathcal{O}(\log N)` time per operation.
+    * **Requirements for keys in a hash table**: Any object class can be used as a key, provided it properly overrides ``equals(Object)`` and ``hashCode()`` to obey the contract (``a.equals(b)`` implies ``a.hashCode() == b.hashCode()``), and **keys must be immutable** (modifying fields that participate in ``hashCode()`` after inserting a key into a map makes the entry unreachable!).
+
+
+Hash Collisions and Resolution Strategies
+"""""""""""""""""""""""""""""""""""""""""
 
 What is meant by a "collision" in a hash table?
 Do collisions affect the time complexity of operations?
@@ -139,12 +148,17 @@ If so, which operation(s) and with what complexity? If not, explain why.
 
 .. answer::
 
-   Une collision entre deux entrées veut dire qu'elle ont le même hash (après modulo). Clairement, cela force à utiliser une technique pour gérer ces cas.
-   Il faut profiter de cette question pour demander aux étudiants quels sont les méthodes usuelles dans des hash tables pour gérer cela.
-   Assurez-vous que tout le monde à bien compris le separate chaining et le linear probing (notamment la recherche et la suppression...)
+    A **collision** occurs when two distinct keys :math:`k_1 \neq k_2` map to the same array index :math:`\text{hash}(k_1) = \text{hash}(k_2)` in the hash table.
 
-Exercise 4.1.7
-""""""""""""""
+    **Impact on time complexity**:
+    Yes, collisions directly affect the time complexity of **all** dictionary operations (``get``, ``put``, and ``delete``):
+
+    * **Expected case (under uniform hashing and bounded load factor** :math:`\alpha = N/M` **)**: The expected number of probes per operation is :math:`\Theta(1 + \alpha) = \Theta(1)`.
+    * **Worst case (all :math:`N` keys collide into the same bucket or cluster)**: Both **separate chaining** (with linked lists) and **linear probing** degrade to :math:`\Theta(N)` time for ``get``, ``put``, and ``delete`` because they must linearly scan all :math:`N` colliding keys.
+
+
+Load Factor and Resizing Strategies
+"""""""""""""""""""""""""""""""""""
 
 What is the load factor of a hash table?
 Is controlling the load factor necessary or optional for the proper operation of a hash table using linear probing or separate chaining?
@@ -154,20 +168,56 @@ What is the relationship between the load factor and collisions?
 
 .. answer::
 
-   Il y a une valeur threshold = taille du tableau x facteur de charge limite.
-   Le facteur de charge limite est par défaut de 0.75 mais le constructeur permet de le changer.
-   Dès que le nombre d'element atteint cette limite threshold, on rehashe tout dans un nouveau tableau dont la capacité est multipliée par deux plus 1 (pourquoi?).
+    * **Load factor**: :math:`\alpha = N / M`, where :math:`N` is the number of stored key-value pairs and :math:`M` is the size of the internal table array.
+    * **Necessity of controlling** :math:`\alpha`:
 
-Exercise 4.1.8
-""""""""""""""
+      * In **separate chaining**, :math:`\alpha` is the average chain length (which can exceed 1). Controlling :math:`\alpha` is necessary to keep the average search time :math:`\Theta(1 + \alpha)` constant; without resizing, operations degrade to :math:`\Theta(N/M) = \Theta(N)`.
+      * In **linear probing**, :math:`\alpha` **must strictly satisfies** :math:`\alpha < 1` (if :math:`N = M`, the table is completely full and an unsuccessful search loops infinitely!). Moreover, as :math:`\alpha \to 1`, primary clustering causes the expected probe length :math:`\sim \frac{1}{2}\left(1 + \frac{1}{(1-\alpha)^2}\right)` to blow up rapidly, so ``LinearProbingHashST`` resizes to keep :math:`\alpha \in [1/8, 1/2]`.
+    * **``java.util.Hashtable`` / ``HashMap`` strategy**: Uses a default load factor threshold of ``0.75``. When :math:`N > 0.75 \cdot M`, ``Hashtable`` allocates a new array of size :math:`2M + 1` (keeping the table size odd) and rehashes all entries, whereas ``HashMap`` doubles :math:`M` (power of two) and mixes the upper 16 bits of the hash code into the lower 16 bits (``h ^ (h >>> 16)``).
+
+
+Fail-Fast Iterator for LinearProbingHashST
+""""""""""""""""""""""""""""""""""""""""""
 
 Imagine a new ``iterator()`` method that returns an iterator over the keys of ``LinearProbingHashST``.
 Your iterator must not allow modifications to the hash table while in use: a ``ConcurrentModificationException`` should be thrown if a modification occurs.
 How would you implement this? Hint: Take inspiration from the ``java.util.Hashtable`` strategy.
 
+.. answer::
 
-Exercise 4.1.9
-""""""""""""""
+    Maintain an integer counter ``private int modCount = 0;`` in ``LinearProbingHashST`` that is incremented every time the table is structurally modified (i.e., whenever a key is added in ``put`` or removed in ``delete``).
+
+    When ``iterator()`` is called, the iterator instance records ``int expectedModCount = modCount;`` at construction time and scans the internal ``keys[]`` array to skip ``null`` slots:
+
+    .. code-block:: java
+
+        public Iterator<Key> iterator() {
+            return new Iterator<Key>() {
+                private final int expectedModCount = modCount;
+                private int idx = 0;
+                private int yielded = 0;
+
+                public boolean hasNext() {
+                    if (modCount != expectedModCount)
+                        throw new ConcurrentModificationException();
+                    return yielded < N;
+                }
+
+                public Key next() {
+                    if (!hasNext())
+                        throw new NoSuchElementException();
+                    while (keys[idx] == null) {
+                        idx++;
+                    }
+                    yielded++;
+                    return keys[idx++];
+                }
+            };
+        }
+
+
+Lazy Deletion with Tombstones in Linear Probing
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 Describe the implementation of the ``put(key)`` method in a hash table using linear probing where deleted entries are marked with a special sentinel value (tombstone) via the ``delete(key)`` method.
 In other words, instead of rehashing and shifting subsequent entries so that it is as if the deleted entry was never inserted, ``delete(key)`` simply flags the entry with this special marker.
@@ -175,23 +225,37 @@ What are the advantages and disadvantages of this approach compared to the ``Lin
 
 .. answer::
 
-   L'inconvénient est que le get risque de prendre beaucoup plus de temps.
-   si on fait un get et que la clef n'est pas là, on ne peut plus s'arrêter après le premier trou, il faudra a chaque fois tout parcourir.
-   Le meilleur temps dans le cas où la clef n'est pas présente prendra donc :math:`\Theta(N)` au lieu de :math:`\mathcal{O}(1)`.
-   Par contre le delete est plus rapide puisqu'il ne faut pas décaler vers la gauche les clefs.
-   Il y d'autres problèmes que les étudiants pourraient soulever...
+    * **Implementation of ``put(key, val)`` with tombstones**:
+      When probing from ``i = hash(key)``, we cannot stop at the first tombstone ``DELETED`` because the key ``key`` might already exist further along the cluster! Therefore, ``put(key, val)`` must:
 
-Exercise 4.1.10 (Rabin-Karp)
-""""""""""""""""""""""""""""
+      1. Remember the index ``firstTombstone`` of the first ``DELETED`` slot encountered along the probe sequence.
+      2. Continue probing until either ``keys[i].equals(key)`` (in which case we update ``vals[i] = val`` in place) or ``keys[i] == null`` (end of cluster).
+      3. If ``keys[i] == null``, insert the new pair at ``firstTombstone`` (if one was seen) or at ``i`` otherwise.
+
+    * **Advantages**: ``delete(key)`` is simpler to implement and faster on the spot because it avoids rehashing the rest of the cluster.
+    * **Disadvantages**: Over time, tombstones accumulate and link separate clusters together! Unsuccessful searches (``get`` for a missing key, or ``put`` for a new key) **cannot stop at tombstones** and must probe all the way until a true ``null`` slot. Even if the number of live keys :math:`N` is very small, the effective load factor for unsuccessful searches includes all tombstones, severely degrading ``get`` and ``put`` performance until a full table rehash cleans them out.
+
+
+Incremental Rolling Hash — Rabin-Karp
+"""""""""""""""""""""""""""""""""""""
 
 Imagine a hash function for a string :math:`s` such that knowing its value for the substring :math:`s[i \ldots i+n-1]` allows computing the hash value of the substring :math:`s[i+1 \ldots i+n]` in constant time (incrementally).
 
 .. answer::
 
-   C'est l'idée de Rabin-Karp p 775 du livre. Soit :math:`x_i` le hash sur :math:`s[i,...,i+n-1]` alors :math:`x_{i+1}= (x_i-t_iR^{n-1})R+t_{i+n}`.
+    This is the **Rabin-Karp rolling hash** (page 775 of the textbook).
+    Let :math:`x_i = \left(\sum_{k=0}^{n-1} s[i+k] \cdot R^{n-1-k}\right) \bmod Q` be the polynomial hash of substring :math:`s[i \dots i+n-1]`.
+    Then the hash :math:`x_{i+1}` of the next window :math:`s[i+1 \dots i+n]` is obtained in :math:`\Theta(1)` time by subtracting the leading character term :math:`s[i] \cdot R^{n-1}`, multiplying by :math:`R`, and adding the new trailing character :math:`s[i+n]`:
 
-Exercise 4.1.11 (Rabin-Karp)
-""""""""""""""""""""""""""""
+    .. math::
+
+        x_{i+1} = \Big(\big(x_i + Q - (s[i] \cdot R^{n-1}) \bmod Q\big) \cdot R + s[i+n]\Big) \bmod Q
+
+    where :math:`R^{n-1} \bmod Q` is precomputed once before sliding the window.
+
+
+Single and Multi-Pattern Substring Search — Rabin-Karp
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Explain how to search for a substring of length :math:`m` in a text of length :math:`n` in :math:`\mathcal{O}(n)` time using an incremental hash function.
 How would you do this if you had :math:`k` patterns of length :math:`m` to search for in a text of length :math:`n`?
@@ -199,52 +263,49 @@ What is the time complexity of your method? Is it better than running the Rabin-
 
 .. answer::
 
-   Pour la première partie c'est Rabin-Karp, classique.
-   Pour la deuxième question, le cout de hashage sera :math:`\mathcal{O}(km)` car il y a :math:`km` clef a mettre dans la table de hashage.
-   Ensuite c'est :math:`\mathcal{O}(k)` pour tester les :math:`k` string.
-   On peut imaginer de nombreuses optimisations.
-   Imaginons qu'on cherche deux mots de longueur 5 et 10.
-   On fait le RK classique pour la longueur 5. Ensuite si on trouve un match, on peut chercher à l'étendre pour matcher les 10 symboles.
-   On peut aussi chercher les matchs du suffixe de longeur 5. Ensuite faire une double boucle pour voir si les matchs matches entre eux ;-)
+    * **Single pattern of length** :math:`m`: Compute the hash of the pattern in :math:`\Theta(m)` time and the initial hash of :math:`\text{text}[0 \dots m-1]` in :math:`\Theta(m)` time. Then slide the window across the text for :math:`i = 0 \dots n - m`, updating the rolling hash in :math:`\Theta(1)` time per step and comparing it against the pattern hash. Total expected time: :math:`\mathcal{O}(n + m)`.
+    * **Searching for** :math:`k` **patterns of length** :math:`m` **simultaneously**:
+
+      1. Compute the hash of each of the :math:`k` patterns and store them in a ``HashSet`` (or ``HashMap<Long, List<String>>``) in :math:`\Theta(k \cdot m)` preprocessing time.
+      2. Slide the window of length :math:`m` once over the text of length :math:`n`. At each position :math:`i`, update the rolling hash in :math:`\Theta(1)` time and check whether the current window hash is contained in the ``HashSet`` in :math:`\mathcal{O}(1)` expected time!
+      3. **Complexity**: :math:`\mathcal{O}(k m + n)` expected time, which is significantly faster than running single-pattern Rabin-Karp :math:`k` separate times (:math:`\mathcal{O}(k m + k n)`).
 
 
-Exercise 4.1.12 (INGInious: MCQ)
-""""""""""""""""""""""""""""""""
+MCQ on Hash Functions
+"""""""""""""""""""""
 
 `Multiple choice questions on hash function <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmHashing>`_
 
 
-Exercise 4.1.13 (INGInious: MCQ)
-""""""""""""""""""""""""""""""""
+MCQ on Rabin-Karp
+"""""""""""""""""
 
 `Multiple choice questions on Rabin-Karp <https://inginious.info.ucl.ac.be/course/LINFO1121-QCM/Part4QcmRk>`_
 
-Exercise 4.1.14 (INGInious)
-"""""""""""""""""""""""""""
 
-An easy tool to implement for counting word occurrences (exam 2022). 
-Word counting is a frequent task in natural language processing algorithms.
+Word Counter
+""""""""""""
+
+An easy tool to implement for counting word occurrences (exam 2022).
+Word counting is a frequent task in natural language processing algorithms:
 `Word Counter <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_WordCounter>`_
 
 
-Exercise 4.1.15 (INGInious)
-"""""""""""""""""""""""""""
+Incremental Hash
+""""""""""""""""
 
-Incremental computation of a hash function (exam 2018).
+Incremental computation of a hash function (exam 2018):
 `Incremental Hash <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_IncrementalHash>`_
 
 
-Exercise 4.1.16 (INGInious)
-"""""""""""""""""""""""""""
+LRU Cache
+""""""""""
 
-A bounded-capacity cache that retains only the most recently used entries (exam 2022).
+A bounded-capacity cache that retains only the most recently used entries (exam 2022):
 `LRUCache <https://inginious.info.ucl.ac.be/course/LINFO1121/searching_LRUCache>`_
 
 
-Exercise 4.1.17 (INGInious)
-"""""""""""""""""""""""""""
+Multi-Pattern Rabin-Karp
+""""""""""""""""""""""""
 
 Implement a version of Rabin-Karp to search for `K patterns <https://inginious.info.ucl.ac.be/course/LINFO1121/strings_RabinKarp>`_ simultaneously instead of just one.
-
-
-
