@@ -24,8 +24,8 @@ Reference book:
 
 Slides
 
-* `Slides exercises <../_static/slides/s4-part2-exercises.pdf>`_
-* `Slides restructuration <../_static/slides/s5-part2-bilan-part3-intro.pdf>`_
+* `Midpoint Slides <../_static/slides/s4-part2-exercises.pdf>`_
+* `Wrap-up slides <../_static/slides/s5-part2-bilan-part3-intro.pdf>`_
 
 
 

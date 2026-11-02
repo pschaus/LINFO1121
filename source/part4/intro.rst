@@ -21,5 +21,5 @@ Reference book:
 
 * chapter 3.4, 3.5, 5.2 (Tries), 5.3 (Rabin-Karp fingerprint search only). 
 
-* `Slides1 <../_static/slides/s8-part4-exercises.pdf>`_
-* `Slides2 <../_static/slides/s9-part4-bilan-part5-intro.pdf>`_
+* `Midpoint Slides <../_static/slides/s8-part4-exercises.pdf>`_
+* `Wrap-up slides <../_static/slides/s9-part4-bilan-part5-intro.pdf>`_

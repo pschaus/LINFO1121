@@ -19,5 +19,5 @@ Reference book:
 
 
 
-* `Slides1 <../_static/slides/s10-part5-exercises.pdf>`_
-* `Slides2 <../_static/slides/s11-part5-bilan-part6-intro.pdf>`_
+* `Midpoint Slides <../_static/slides/s10-part5-exercises.pdf>`_
+* `Wrap-up slides <../_static/slides/s11-part5-bilan-part6-intro.pdf>`_

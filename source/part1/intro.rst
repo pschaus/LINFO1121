@@ -32,9 +32,9 @@ As well as this document summarizing the different notations of :ref:`part1compl
 
 Slides
 
-* `Slides introduction <../_static/slides/s1-part1-intro.pdf>`_
-* `Slides exercices <../_static/slides/s2-part1-exercises.pdf>`_
-* `Slides restructuration <../_static/slides/s3-part1-bilan-part2-intro.pdf>`_
+* `Introduction slides <../_static/slides/s1-part1-intro.pdf>`_
+* `Midpoint Slides <../_static/slides/s2-part1-exercises.pdf>`_
+* `Wrap-up slides <../_static/slides/s3-part1-bilan-part2-intro.pdf>`_
 
 
 
